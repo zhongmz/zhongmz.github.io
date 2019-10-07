@@ -84,7 +84,7 @@
 </a>
     
   <div class="article-category">
-    <a class="article-category-link" href="/category/Body/">Body</a>
+    <a class="article-category-link" href="/categories/Body/">Body</a>
   </div>
 
   </div>
@@ -130,10 +130,10 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/10/07/ Back-1/" data-id="ck1gi8ja00000vkvipppe70di" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/10/07/ Back-1/" data-id="ck1gl4293000098vik2sh2s7i" class="article-share-link">Share</a>
       
       
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tag/Back/">Back</a></li></ul>
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Back/">Back</a></li></ul>
 
     </footer>
   </div>
@@ -148,6 +148,10 @@
   <time datetime="2019-10-01T06:25:53.000Z" itemprop="datePublished">2019-10-01</time>
 </a>
     
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/algorithm/">algorithm</a>
+  </div>
+
   </div>
   <div class="article-inner">
     
@@ -164,15 +168,27 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>next 数组相当于“最大长度值” 整体向右移动一位，然后初始值赋为-1。意识到了这一点，你会惊呼原来next 数组的求解竟然如此简单：就是找最大对称长度的前缀后缀，然后整体右移一位，初值赋为-1</p>
+        <h3 id="名字由来"><a href="#名字由来" class="headerlink" title="名字由来"></a>名字由来</h3><p>​    由<strong>K</strong>nuth，<strong>M</strong>orris,<strong>P</strong>ratt三人所设计的线性时间字符串匹配算法</p>
+<h3 id="时间复杂度"><a href="#时间复杂度" class="headerlink" title="时间复杂度"></a>时间复杂度</h3><p>​    设有长度为n的文本串S和长度为m的匹配串P，求匹配串成功匹配文本串字串的首地址</p>
+<p>​    O(n+m)</p>
+<h3 id="原理"><a href="#原理" class="headerlink" title="原理"></a>原理</h3><h5 id="引出"><a href="#引出" class="headerlink" title="引出"></a>引出</h5><p>​    对匹配串预处理生成一种失配的映射（或者称为函数，其实称为函数会更加恰当），我们姑且把这个函数成为Next函数。当匹配串对文本串进行匹配时，不妨想象一下，我们在失配的时候对应的失配位置<strong>i</strong>，都会有相同的移动位移，这样就会产生一个关于<strong>i</strong>的函数，我们姑且把这样的函数称之为Next(i)，那么这个函数的返回值是什么呢？在不同的博客上它的返回值是不一样的，比如，有些直接返回P下一个需要比较的位置，有些是返回P需要移动的距离（自行脑补一下），有些是返回最大该位置的最大的前后缀一样的字串的字符数，有些的Next函数是经过优化过的，自然返回值和原来的有些不一样。不过它们的使用方法都大同小异。</p>
+<p>​    我们以返回值为P下一个需要匹配的位置为例</p>
+<h5 id="Next函数的产生"><a href="#Next函数的产生" class="headerlink" title="Next函数的产生"></a>Next函数的产生</h5><p>​    <del>先挖坑</del></p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">void</span> <span class="title">GetNext</span><span class="params">(<span class="keyword">int</span> Next[],<span class="keyword">char</span> P[])</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> pLen=<span class="built_in">strlen</span>(P);</span><br><span class="line">    <span class="keyword">int</span> k=<span class="number">-1</span>;</span><br><span class="line">    <span class="keyword">int</span> j=<span class="number">0</span>;</span><br><span class="line">    Next[<span class="number">0</span>]=<span class="number">-1</span>;</span><br><span class="line">    <span class="keyword">while</span>(j&lt;pLen<span class="number">-1</span>)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">if</span>(k==<span class="number">-1</span>||P[k]==P[j])</span><br><span class="line">        &#123;</span><br><span class="line">            k++;</span><br><span class="line">            j++;</span><br><span class="line">            Next[j]=k;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span></span><br><span class="line">        &#123;</span><br><span class="line">            k=Next[k];</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h5 id="NextPro数组的产生"><a href="#NextPro数组的产生" class="headerlink" title="NextPro数组的产生"></a>NextPro数组的产生</h5><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">void</span> <span class="title">GetProNext</span><span class="params">(<span class="keyword">int</span> Next[],<span class="keyword">char</span> P[])</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> pLen=<span class="built_in">strlen</span>(P);</span><br><span class="line">    <span class="keyword">int</span> k=<span class="number">-1</span>;</span><br><span class="line">    <span class="keyword">int</span> j=<span class="number">0</span>;</span><br><span class="line">    Next[<span class="number">0</span>]=<span class="number">-1</span>;</span><br><span class="line">    <span class="keyword">while</span>(j&lt;pLen<span class="number">-1</span>)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">if</span>(k==<span class="number">-1</span>||P[k]==P[j])</span><br><span class="line">        &#123;</span><br><span class="line">            k++;</span><br><span class="line">            j++;</span><br><span class="line">            <span class="comment">//只是比Next数组多了一个判断罢了</span></span><br><span class="line">            <span class="keyword">if</span>(P[j]!=P[k])</span><br><span class="line">                Next[j]=k;</span><br><span class="line">            <span class="keyword">else</span></span><br><span class="line">                Next[j]=Next[k];</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span></span><br><span class="line">            k=Next[k];</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h5 id="KMPSearch代码"><a href="#KMPSearch代码" class="headerlink" title="KMPSearch代码"></a>KMPSearch代码</h5><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> MAX=<span class="number">10010</span>;</span><br><span class="line"><span class="keyword">char</span> P[MAX];</span><br><span class="line"><span class="keyword">char</span> S[MAX];</span><br><span class="line"><span class="keyword">int</span> Next[MAX];</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">KmpSearch</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    GetProNext();<span class="comment">//只需要在这里预处理P的Next数组即可</span></span><br><span class="line">    <span class="keyword">int</span> sLen=<span class="built_in">strlen</span>(S);</span><br><span class="line">    <span class="keyword">int</span> pLen=<span class="built_in">strlen</span>(P);</span><br><span class="line">    <span class="keyword">int</span> i=<span class="number">0</span>;</span><br><span class="line">    <span class="keyword">int</span> j=<span class="number">0</span>;</span><br><span class="line">    <span class="keyword">while</span>(i&lt;sLen&amp;&amp;j&lt;pLen)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">if</span>(j==<span class="number">-1</span>||S[i]==P[j])</span><br><span class="line">        &#123;</span><br><span class="line">            i++;</span><br><span class="line">            j++;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span></span><br><span class="line">        &#123;</span><br><span class="line">            j=Next[j];</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span>(j==pLen)</span><br><span class="line">        <span class="keyword">return</span> i-j;</span><br><span class="line">    <span class="keyword">else</span></span><br><span class="line">        <span class="keyword">return</span> <span class="number">-1</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="这个讲解很棒"><a href="#这个讲解很棒" class="headerlink" title="这个讲解很棒"></a>这个讲解很棒</h3><p><a href="https://blog.csdn.net/v_JULY_v/article/details/7041827" target="_blank" rel="noopener">https://blog.csdn.net/v_JULY_v/article/details/7041827</a></p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/10/01/ KMP/" data-id="ck1gi8ja50002vkvijsum8cch" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/10/01/ KMP/" data-id="ck1gl42a8000898viluemn75f" class="article-share-link">Share</a>
       
       
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tag/AL/">AL</a></li></ul>
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/KMP/">KMP</a></li></ul>
 
     </footer>
   </div>
@@ -187,6 +203,10 @@
   <time datetime="2019-09-25T10:26:26.000Z" itemprop="datePublished">2019-09-25</time>
 </a>
     
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/DIARY/">DIARY</a>
+  </div>
+
   </div>
   <div class="article-inner">
     
@@ -212,11 +232,9 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/09/25/ 机房空荡荡/" data-id="ck1gi8jab0007vkviw8ittnrb" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/09/25/ 机房空荡荡/" data-id="ck1gl42ah000b98viyl7tya8u" class="article-share-link">Share</a>
       
       
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tag/日记/">日记</a></li></ul>
-
     </footer>
   </div>
   
@@ -231,7 +249,7 @@
 </a>
     
   <div class="article-category">
-    <a class="article-category-link" href="/category/Body/">Body</a>
+    <a class="article-category-link" href="/categories/Body/">Body</a>
   </div>
 
   </div>
@@ -285,11 +303,9 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/09/23/ Back/" data-id="ck1gi8ja80005vkvi1uhk8ole" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/09/23/ Back/" data-id="ck1gl429j000298vihoq2xvlo" class="article-share-link">Share</a>
       
       
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tag/Back/">Back</a></li></ul>
-
     </footer>
   </div>
   
@@ -303,6 +319,10 @@
   <time datetime="2019-09-22T15:19:49.000Z" itemprop="datePublished">2019-09-22</time>
 </a>
     
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/DIARY/">DIARY</a>
+  </div>
+
   </div>
   <div class="article-inner">
     
@@ -327,7 +347,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/09/22/ index/" data-id="ck1gi8jaa0006vkviuhlmzsze" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/09/22/ index/" data-id="ck1gl429x000698vihwwkq765" class="article-share-link">Share</a>
       
       
     </footer>
@@ -376,7 +396,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/08/30/ hello-world/" data-id="ck1gi8jae000bvkvi9y8zn9et" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/08/30/ hello-world/" data-id="ck1gl42a3000798viv50jyqv5" class="article-share-link">Share</a>
       
       
     </footer>
@@ -396,7 +416,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">分类</h3>
     <div class="widget">
-      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/category/Body/">Body</a></li></ul>
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Body/">Body</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/DIARY/">DIARY</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/algorithm/">algorithm</a></li></ul>
     </div>
   </div>
 
@@ -406,7 +426,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">标签</h3>
     <div class="widget">
-      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tag/AL/">AL</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tag/Back/">Back</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tag/日记/">日记</a></li></ul>
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Back/">Back</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/KMP/">KMP</a></li></ul>
     </div>
   </div>
 
@@ -416,7 +436,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">标签云</h3>
     <div class="widget tagcloud">
-      <a href="/tag/AL/" style="font-size: 10px;">AL</a> <a href="/tag/Back/" style="font-size: 20px;">Back</a> <a href="/tag/日记/" style="font-size: 10px;">日记</a>
+      <a href="/tags/Back/" style="font-size: 10px;">Back</a> <a href="/tags/KMP/" style="font-size: 10px;">KMP</a>
     </div>
   </div>
 
