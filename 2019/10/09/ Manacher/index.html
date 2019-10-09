@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="utf-8">
+  
+
+  
+  <title>Manacher | zhongmz</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="由来​    1975年，一个叫Manacher的人发明了一个Manacher算法 作用​    给定一个字符串S，求出其最大回文子串 时间复杂度 O(n)  原理 对称性  1.字符串处理​    由于回文分为偶回文（比如 bccb）和奇回文（比如 bcacb），而在处理奇偶问题上会比较繁琐，所以这里我们使用一个技巧，具体做法是：在字符串首尾，及各字符间各插入一个字符（前提这个字符未出现在串里）">
+<meta name="keywords" content="Manacher">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Manacher">
+<meta property="og:url" content="http://yoursite.com/2019/10/09/ Manacher/index.html">
+<meta property="og:site_name" content="zhongmz">
+<meta property="og:description" content="由来​    1975年，一个叫Manacher的人发明了一个Manacher算法 作用​    给定一个字符串S，求出其最大回文子串 时间复杂度 O(n)  原理 对称性  1.字符串处理​    由于回文分为偶回文（比如 bccb）和奇回文（比如 bcacb），而在处理奇偶问题上会比较繁琐，所以这里我们使用一个技巧，具体做法是：在字符串首尾，及各字符间各插入一个字符（前提这个字符未出现在串里）">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2019-10-09T15:59:46.433Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Manacher">
+<meta name="twitter:description" content="由来​    1975年，一个叫Manacher的人发明了一个Manacher算法 作用​    给定一个字符串S，求出其最大回文子串 时间复杂度 O(n)  原理 对称性  1.字符串处理​    由于回文分为偶回文（比如 bccb）和奇回文（比如 bcacb），而在处理奇偶问题上会比较繁琐，所以这里我们使用一个技巧，具体做法是：在字符串首尾，及各字符间各插入一个字符（前提这个字符未出现在串里）">
+  
+    <link rel="alternate" href="/atom.xml" title="zhongmz" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+
+
+</head>
+
+</html>
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">zhongmz</a>
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="/" id="subtitle">Don</a>
+        </h2>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/tags">Tags</a>
+        
+          <a class="main-nav-link" href="/categories">Categories</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="搜索"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-Manacher" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/10/09/ Manacher/" class="article-date">
+  <time datetime="2019-10-09T15:21:21.000Z" itemprop="datePublished">2019-10-09</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/algorithm/">algorithm</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Manacher
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="由来"><a href="#由来" class="headerlink" title="由来"></a>由来</h3><p>​    1975年，一个叫Manacher的人发明了一个Manacher算法</p>
+<h3 id="作用"><a href="#作用" class="headerlink" title="作用"></a>作用</h3><p>​    给定一个字符串S，求出其最大回文子串</p>
+<h3 id="时间复杂度"><a href="#时间复杂度" class="headerlink" title="时间复杂度"></a>时间复杂度</h3><blockquote>
+<p>O(n)</p>
+</blockquote>
+<h3 id="原理"><a href="#原理" class="headerlink" title="原理"></a>原理</h3><blockquote>
+<p>对称性</p>
+</blockquote>
+<h5 id="1-字符串处理"><a href="#1-字符串处理" class="headerlink" title="1.字符串处理"></a>1.字符串处理</h5><p>​    由于回文分为偶回文（比如 bccb）和奇回文（比如 bcacb），而在处理奇偶问题上会比较繁琐，所以这里我们使用一个技巧，具体做法是：在字符串首尾，及各字符间各插入一个字符（前提这个字符未出现在串里）。</p>
+<p>​    Example：</p>
+<table>
+<thead>
+<tr>
+<th>原串S</th>
+<th>a</th>
+<th>c</th>
+<th>a</th>
+<th>b</th>
+<th>a</th>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody><tr>
+<td>转换后的串T</td>
+<td>#</td>
+<td>a</td>
+<td>#</td>
+<td>c</td>
+<td>#</td>
+<td>a</td>
+<td>#</td>
+<td>b</td>
+<td>#</td>
+<td>a</td>
+<td>#</td>
+</tr>
+</tbody></table>
+<p>​    为了防止越界，做出以下修改，使得T变成$#a#a#a#b#a#@</p>
+<h5 id="2-Len数组"><a href="#2-Len数组" class="headerlink" title="2.Len数组"></a>2.Len数组</h5><p>​    设有字符串T上的位置i，Len[i]表示以i为中心的回文串的半径，和KMP算法相比，这里的数组并非只是预处理的作用，而是在线的处理</p>
+<p>​    可得：</p>
+<table>
+<thead>
+<tr>
+<th>i</th>
+<th>1</th>
+<th>2</th>
+<th>3</th>
+<th>4</th>
+<th>5</th>
+<th>6</th>
+<th>7</th>
+<th>8</th>
+<th>9</th>
+<th>10</th>
+<th>11</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>T[i]</td>
+<td>#</td>
+<td>a</td>
+<td>#</td>
+<td>c</td>
+<td>#</td>
+<td>a</td>
+<td>#</td>
+<td>b</td>
+<td>#</td>
+<td>a</td>
+<td>#</td>
+</tr>
+<tr>
+<td>Len[i]</td>
+<td>1</td>
+<td>2</td>
+<td>1</td>
+<td>4</td>
+<td>1</td>
+<td>2</td>
+<td>1</td>
+<td>4</td>
+<td>1</td>
+<td>2</td>
+<td>1</td>
+</tr>
+</tbody></table>
+<p>​    如何得到Len数组？</p>
+<p>​    <del>（先挖坑）</del></p>
+<p>​    主要思想是利用对称性</p>
+<h3 id="代码实现"><a href="#代码实现" class="headerlink" title="代码实现"></a>代码实现</h3><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> MAX=<span class="number">110000000</span>+<span class="number">10</span>;</span><br><span class="line"><span class="keyword">char</span> S[MAX];<span class="comment">//原串</span></span><br><span class="line"><span class="keyword">char</span> tmp[MAX*<span class="number">2</span>+<span class="number">10</span>];<span class="comment">//辅助字符串T</span></span><br><span class="line"><span class="keyword">int</span> Len[MAX*<span class="number">2</span>+<span class="number">10</span>];<span class="comment">//Len数组</span></span><br><span class="line"><span class="keyword">int</span> N1;<span class="comment">//原串S的长度</span></span><br><span class="line"><span class="keyword">int</span> N2;<span class="comment">//T的长度</span></span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">void</span> <span class="title">GetT</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> i,N1=<span class="built_in">strlen</span>(S);</span><br><span class="line">    N2=N1*<span class="number">2</span>+<span class="number">1</span>;</span><br><span class="line">    tmp[<span class="number">0</span>]=<span class="string">'$'</span>;</span><br><span class="line">    <span class="keyword">for</span>(i=<span class="number">1</span>;i&lt;=<span class="number">2</span>*N1;i=i+<span class="number">2</span>)</span><br><span class="line">    &#123;</span><br><span class="line">        tmp[i]=<span class="string">'#'</span>;</span><br><span class="line">        tmp[i+<span class="number">1</span>]=S[i/<span class="number">2</span>];</span><br><span class="line">    &#125;</span><br><span class="line">    tmp[i]=<span class="string">'#'</span>;</span><br><span class="line">    tmp[i+<span class="number">1</span>]=<span class="string">'@'</span>;</span><br><span class="line">    tmp[i+<span class="number">2</span>]=<span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//得到最大的回文串长度</span></span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">int</span> <span class="title">Manacher</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    GetLen();</span><br><span class="line">    <span class="keyword">int</span> mx=<span class="number">0</span>;</span><br><span class="line">    <span class="keyword">int</span> ans=<span class="number">0</span>;</span><br><span class="line">    <span class="keyword">int</span> po=<span class="number">0</span>;</span><br><span class="line">    <span class="keyword">int</span> i;</span><br><span class="line">    <span class="keyword">for</span>(i=<span class="number">1</span>;i&lt;=N2;i++)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">if</span>(mx&gt;i)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="comment">//对称性</span></span><br><span class="line">            <span class="keyword">if</span>((mx-i)&lt;Len[<span class="number">2</span>*po<span class="number">-1</span>])</span><br><span class="line">                Len[i]=mx-i;</span><br><span class="line">            <span class="keyword">else</span></span><br><span class="line">                Len[i]=Len[<span class="number">2</span>*po<span class="number">-1</span>];</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span><span class="comment">//第三种情况</span></span><br><span class="line">            Len[i]=<span class="number">1</span>;</span><br><span class="line">        <span class="comment">//不断向外扩展，巧妙</span></span><br><span class="line">        <span class="keyword">while</span>(tmp[i-Len[i]]==tmp[i+Len[i]])</span><br><span class="line">            Len[i]++;</span><br><span class="line">        <span class="comment">//更新值</span></span><br><span class="line">        <span class="keyword">if</span>(Len[i]+i&gt;mx)</span><br><span class="line">        &#123;</span><br><span class="line">            mx=Len[i]+i;</span><br><span class="line">            po=i;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span>(Len[i]&gt;ans)</span><br><span class="line">            ans=Len[i];</span><br><span class="line">    &#125;</span><br><span class="line">   </span><br><span class="line">    <span class="keyword">return</span> ans<span class="number">-1</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>​    =-=</p>
+<p>​    <a href="https://blog.csdn.net/dyx404514/article/details/42061017" target="_blank" rel="noopener">https://blog.csdn.net/dyx404514/article/details/42061017</a></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2019/10/09/ Manacher/" data-id="ck1jgmmh3000cgcvi317u71wf" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Manacher/">Manacher</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2019/10/09/ Leg/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          Leg
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2019/10/08/ Abdomen/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">Abdomen</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">分类</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/BODY/">BODY</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Body/">Body</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/DIARY/">DIARY</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/algorithm/">algorithm</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">标签</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Abdomen/">Abdomen</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Back/">Back</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Chest/">Chest</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/KMP/">KMP</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Manacher/">Manacher</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/teg/">teg</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">标签云</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/Abdomen/" style="font-size: 10px;">Abdomen</a> <a href="/tags/Back/" style="font-size: 10px;">Back</a> <a href="/tags/Chest/" style="font-size: 10px;">Chest</a> <a href="/tags/KMP/" style="font-size: 10px;">KMP</a> <a href="/tags/Manacher/" style="font-size: 10px;">Manacher</a> <a href="/tags/teg/" style="font-size: 10px;">teg</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">归档</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/10/">十月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/09/">九月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/08/">八月 2019</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">最新文章</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2019/10/09/ Leg/">Leg</a>
+          </li>
+        
+          <li>
+            <a href="/2019/10/09/ Manacher/">Manacher</a>
+          </li>
+        
+          <li>
+            <a href="/2019/10/08/ Abdomen/">Abdomen</a>
+          </li>
+        
+          <li>
+            <a href="/2019/10/08/ Chest/">Chest</a>
+          </li>
+        
+          <li>
+            <a href="/2019/10/07/ Back-1/">Back</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2019 钟美智<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/tags" class="mobile-nav-link">Tags</a>
+  
+    <a href="/categories" class="mobile-nav-link">Categories</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+
+
+  </div>
+</body>
+</html>
