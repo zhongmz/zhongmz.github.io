@@ -5,19 +5,20 @@
   
 
   
-  <title>归档: 2019/10 | zhongmz</title>
+  <title>EulerSieve | zhongmz</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="写写算法 写写日记">
-<meta name="keywords" content="algorithm math">
-<meta property="og:type" content="website">
-<meta property="og:title" content="zhongmz">
-<meta property="og:url" content="http://yoursite.com/archives/2019/10/index.html">
+  <meta name="description" content="EulerSieve##### 时间复杂度​    O(n) 实现12345678910111213141516171819202122const int maxn = 10100;   int prime[maxn], pNum = 0;              // prime记录素数，pNum记录素数个数                                        //保">
+<meta name="keywords" content="Prime">
+<meta property="og:type" content="article">
+<meta property="og:title" content="EulerSieve">
+<meta property="og:url" content="http://yoursite.com/2019/10/21/ EulerSieve/index.html">
 <meta property="og:site_name" content="zhongmz">
-<meta property="og:description" content="写写算法 写写日记">
+<meta property="og:description" content="EulerSieve##### 时间复杂度​    O(n) 实现12345678910111213141516171819202122const int maxn = 10100;   int prime[maxn], pNum = 0;              // prime记录素数，pNum记录素数个数                                        //保">
 <meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2019-10-21T06:21:04.389Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="zhongmz">
-<meta name="twitter:description" content="写写算法 写写日记">
+<meta name="twitter:title" content="EulerSieve">
+<meta name="twitter:description" content="EulerSieve##### 时间复杂度​    O(n) 实现12345678910111213141516171819202122const int maxn = 10100;   int prime[maxn], pNum = 0;              // prime记录素数，pNum记录素数个数                                        //保">
   
     <link rel="alternate" href="/atom.xml" title="zhongmz" type="application/atom+xml">
   
@@ -75,216 +76,70 @@
   </div>
 </header>
       <div class="outer">
-        <section id="main">
-  
-  
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2019" class="archive-year">2019</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2019/10/27/ course/" class="archive-article-date">
-  <time datetime="2019-10-27T04:28:29.000Z" itemprop="datePublished">10月 27</time>
+        <section id="main"><article id="post-EulerSieve" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/10/21/ EulerSieve/" class="article-date">
+  <time datetime="2019-10-21T06:16:46.000Z" itemprop="datePublished">2019-10-21</time>
 </a>
-      
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/algorithm/">algorithm</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/10/27/ course/">course</a>
+    <h1 class="article-title" itemprop="name">
+      EulerSieve
     </h1>
   
 
-    </header>
-  </div>
-</article>
-  
+      </header>
     
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2019/10/21/ 大数运算/" class="archive-article-date">
-  <time datetime="2019-10-21T07:02:01.000Z" itemprop="datePublished">10月 21</time>
-</a>
+    <div class="article-entry" itemprop="articleBody">
       
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/10/21/ 大数运算/">大数运算</a>
-    </h1>
-  
+        <h3 id="EulerSieve"><a href="#EulerSieve" class="headerlink" title="EulerSieve"></a>EulerSieve</h3><pre><code>##### 时间复杂度</code></pre><p>​    O(n)</p>
+<h5 id="实现"><a href="#实现" class="headerlink" title="实现"></a>实现</h5><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> maxn = <span class="number">10100</span>;   </span><br><span class="line"><span class="keyword">int</span> prime[maxn], pNum = <span class="number">0</span>;              <span class="comment">// prime记录素数，pNum记录素数个数</span></span><br><span class="line">                                        <span class="comment">//保存的值为0~pNum-1</span></span><br><span class="line"><span class="keyword">bool</span> p[maxn] = &#123;<span class="literal">false</span>&#125;;                 <span class="comment">// p记录当前数是否被筛去</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">EulerSieve</span><span class="params">(<span class="keyword">int</span> n)</span>                  <span class="comment">// 查找记录2-n的素数</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> j;</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">2</span>; i &lt;= n; i++)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">if</span> (p[i] == <span class="literal">false</span>)              <span class="comment">// 如果未被筛过，则为素数</span></span><br><span class="line">			prime[pNum++] = i;</span><br><span class="line">		<span class="keyword">for</span> (j = <span class="number">0</span>; j &lt; pNum; j++)</span><br><span class="line">		&#123;</span><br><span class="line">			<span class="keyword">if</span> (i * prime[j] &gt; n)       <span class="comment">// 当要标记的合数超出范围时跳出</span></span><br><span class="line">				<span class="keyword">break</span>;</span><br><span class="line">			p[i * prime[j]] = <span class="literal">true</span>;     <span class="comment">// 将已经记录的素数的倍数进行标记</span></span><br><span class="line">			<span class="keyword">if</span> (i % prime[j] == <span class="number">0</span>)      <span class="comment">//关键步骤</span></span><br><span class="line">				<span class="keyword">break</span>;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2019/10/21/ EulerSieve/" class="archive-article-date">
-  <time datetime="2019-10-21T06:16:46.000Z" itemprop="datePublished">10月 21</time>
-</a>
+<h5 id="理解"><a href="#理解" class="headerlink" title="理解"></a>理解</h5><p><a href="https://www.cnblogs.com/cicos/p/10258703.html" target="_blank" rel="noopener">时间复杂度证明</a></p>
+
       
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/10/21/ EulerSieve/">EulerSieve</a>
-    </h1>
-  
-
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2019/10/21/ 10-20/" class="archive-article-date">
-  <time datetime="2019-10-21T05:28:05.000Z" itemprop="datePublished">10月 21</time>
-</a>
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2019/10/21/ EulerSieve/" data-id="ck28hull2000caoviuo80yvba" class="article-share-link">Share</a>
       
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/10/21/ 10-20/">10-20</a>
-    </h1>
-  
-
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2019/10/21/ Train-10-20/" class="archive-article-date">
-  <time datetime="2019-10-21T05:28:05.000Z" itemprop="datePublished">10月 21</time>
-</a>
       
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/10/21/ Train-10-20/">Train-10-20</a>
-    </h1>
-  
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Prime/">Prime</a></li></ul>
 
-    </header>
+    </footer>
   </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2019/10/21/ 大数运算/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          大数运算
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2019/10/21/ 10-20/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">10-20</div>
+    </a>
+  
+</nav>
+
+  
 </article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2019/10/21/ Train-10-19/" class="archive-article-date">
-  <time datetime="2019-10-20T17:40:28.000Z" itemprop="datePublished">10月 21</time>
-</a>
-      
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/10/21/ Train-10-19/">Train-10-19</a>
-    </h1>
-  
-
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2019/10/21/ Fermat-little-theorem/" class="archive-article-date">
-  <time datetime="2019-10-20T17:33:43.000Z" itemprop="datePublished">10月 21</time>
-</a>
-      
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/10/21/ Fermat-little-theorem/">Fermat little theorem</a>
-    </h1>
-  
-
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2019/10/21/ qpow/" class="archive-article-date">
-  <time datetime="2019-10-20T17:18:42.000Z" itemprop="datePublished">10月 21</time>
-</a>
-      
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/10/21/ qpow/">qpow</a>
-    </h1>
-  
-
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2019/10/10/ Kruskal/" class="archive-article-date">
-  <time datetime="2019-10-10T14:56:52.000Z" itemprop="datePublished">10月 10</time>
-</a>
-      
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/10/10/ Kruskal/">Kruskal</a>
-    </h1>
-  
-
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2019/10/09/ Leg/" class="archive-article-date">
-  <time datetime="2019-10-09T15:21:37.000Z" itemprop="datePublished">10月 9</time>
-</a>
-      
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/10/09/ Leg/">Leg</a>
-    </h1>
-  
-
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
-
-
-  <nav id="page-nav">
-    
-    <span class="page-number current">1</span><a class="page-number" href="/archives/2019/10/page/2/">2</a><a class="extend next" rel="next" href="/archives/2019/10/page/2/">下一页 &raquo;</a>
-  </nav>
 
 </section>
         

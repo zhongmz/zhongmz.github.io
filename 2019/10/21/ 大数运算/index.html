@@ -5,20 +5,20 @@
   
 
   
-  <title>qpow | zhongmz</title>
+  <title>大数运算 | zhongmz</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="快速幂假设​    求x^n的值 时间复杂度​    O(log n) 解释​    通过加大底数的权重来使得乘法次数更少 ​    1.假设n为奇数：x^n=x*x^(n-1)            则将x计入结果 ​    2.假设n为偶数：x^n=x^(n/2)*x^(n/2)    则将x的权重变为x^2 实现代码1234567891011121314/*快速幂运算 log 2 n*/ty">
-<meta name="keywords" content="快速幂">
+  <meta name="description" content="12345678910111213141516171819202122232425262728293031323334353637383940414243444546//大数和整数的除法string div(string a,int b)&amp;#123;    string c;    int len=a.length(),ans=0;    char s;    for(int i=0; i&amp;lt;">
+<meta name="keywords" content="Bignumber">
 <meta property="og:type" content="article">
-<meta property="og:title" content="qpow">
-<meta property="og:url" content="http://yoursite.com/2019/10/21/ qpow/index.html">
+<meta property="og:title" content="大数运算">
+<meta property="og:url" content="http://yoursite.com/2019/10/21/ 大数运算/index.html">
 <meta property="og:site_name" content="zhongmz">
-<meta property="og:description" content="快速幂假设​    求x^n的值 时间复杂度​    O(log n) 解释​    通过加大底数的权重来使得乘法次数更少 ​    1.假设n为奇数：x^n=x*x^(n-1)            则将x计入结果 ​    2.假设n为偶数：x^n=x^(n/2)*x^(n/2)    则将x的权重变为x^2 实现代码1234567891011121314/*快速幂运算 log 2 n*/ty">
+<meta property="og:description" content="12345678910111213141516171819202122232425262728293031323334353637383940414243444546//大数和整数的除法string div(string a,int b)&amp;#123;    string c;    int len=a.length(),ans=0;    char s;    for(int i=0; i&amp;lt;">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-10-20T17:32:10.167Z">
+<meta property="og:updated_time" content="2019-10-21T07:04:12.755Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="qpow">
-<meta name="twitter:description" content="快速幂假设​    求x^n的值 时间复杂度​    O(log n) 解释​    通过加大底数的权重来使得乘法次数更少 ​    1.假设n为奇数：x^n=x*x^(n-1)            则将x计入结果 ​    2.假设n为偶数：x^n=x^(n/2)*x^(n/2)    则将x的权重变为x^2 实现代码1234567891011121314/*快速幂运算 log 2 n*/ty">
+<meta name="twitter:title" content="大数运算">
+<meta name="twitter:description" content="12345678910111213141516171819202122232425262728293031323334353637383940414243444546//大数和整数的除法string div(string a,int b)&amp;#123;    string c;    int len=a.length(),ans=0;    char s;    for(int i=0; i&amp;lt;">
   
     <link rel="alternate" href="/atom.xml" title="zhongmz" type="application/atom+xml">
   
@@ -76,10 +76,10 @@
   </div>
 </header>
       <div class="outer">
-        <section id="main"><article id="post-qpow" class="article article-type-post" itemscope itemprop="blogPost">
+        <section id="main"><article id="post-大数运算" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2019/10/21/ qpow/" class="article-date">
-  <time datetime="2019-10-20T17:18:42.000Z" itemprop="datePublished">2019-10-21</time>
+    <a href="/2019/10/21/ 大数运算/" class="article-date">
+  <time datetime="2019-10-21T07:02:01.000Z" itemprop="datePublished">2019-10-21</time>
 </a>
     
   <div class="article-category">
@@ -94,7 +94,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      qpow
+      大数运算
     </h1>
   
 
@@ -102,21 +102,16 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h3 id="快速幂"><a href="#快速幂" class="headerlink" title="快速幂"></a>快速幂</h3><h5 id="假设"><a href="#假设" class="headerlink" title="假设"></a>假设</h5><p>​    求x^n的值</p>
-<h5 id="时间复杂度"><a href="#时间复杂度" class="headerlink" title="时间复杂度"></a>时间复杂度</h5><p>​    O(log n)</p>
-<h5 id="解释"><a href="#解释" class="headerlink" title="解释"></a>解释</h5><p>​    通过加大底数的权重来使得乘法次数更少</p>
-<p>​    1.假设n为奇数：x^n=x*x^(n-1)            则将x计入结果</p>
-<p>​    2.假设n为偶数：x^n=x^(n/2)*x^(n/2)    则将x的权重变为x^2</p>
-<h5 id="实现代码"><a href="#实现代码" class="headerlink" title="实现代码"></a>实现代码</h5><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*快速幂运算 log 2 n*/</span></span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">long</span> <span class="keyword">long</span> LL;</span><br><span class="line"><span class="function">LL <span class="title">qpow</span><span class="params">(LL a, LL n, LL mod)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	LL result = <span class="number">1</span>;</span><br><span class="line">	<span class="keyword">while</span> (n!=<span class="number">0</span>)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">if</span> (n &amp; <span class="number">1</span>)</span><br><span class="line">			result = (result * a) % mod;<span class="comment">//计入结果</span></span><br><span class="line">		a = (a * a) % mod;<span class="comment">//权重变大</span></span><br><span class="line">		n &gt;&gt;= <span class="number">1</span>;<span class="comment">//n=n/2;</span></span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> result;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+        <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//大数和整数的除法</span></span><br><span class="line"><span class="function"><span class="built_in">string</span> <span class="title">div</span><span class="params">(<span class="built_in">string</span> a,<span class="keyword">int</span> b)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="built_in">string</span> c;</span><br><span class="line">    <span class="keyword">int</span> len=a.length(),ans=<span class="number">0</span>;</span><br><span class="line">    <span class="keyword">char</span> s;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>; i&lt;len; i++)&#123;</span><br><span class="line">        ans=ans*<span class="number">10</span>+a[i]-<span class="string">'0'</span>;</span><br><span class="line">        s=ans/b+<span class="string">'0'</span>;</span><br><span class="line">        ans%=b;</span><br><span class="line">        c+=s;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">int</span> pos=<span class="number">0</span>;</span><br><span class="line">    <span class="keyword">while</span>(pos&lt;len &amp;&amp; c[pos]==<span class="string">'0'</span>) pos++;</span><br><span class="line">    <span class="keyword">if</span>(pos==len) <span class="keyword">return</span> <span class="string">"0"</span>;</span><br><span class="line">    <span class="keyword">return</span> c.substr(pos);</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//大数和整数的乘法</span></span><br><span class="line"><span class="function"><span class="built_in">string</span> <span class="title">mul</span><span class="params">(<span class="built_in">string</span> a,<span class="keyword">int</span> b)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="built_in">string</span> c;</span><br><span class="line">    <span class="keyword">char</span> s;</span><br><span class="line">    <span class="keyword">int</span> len=a.length(),ok=<span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=len<span class="number">-1</span>; i&gt;=<span class="number">0</span>; i--)&#123;</span><br><span class="line">        <span class="keyword">int</span> temp=(a[i]-<span class="string">'0'</span>)*b+ok;</span><br><span class="line">        ok=temp/<span class="number">10</span>;</span><br><span class="line">        s=temp%<span class="number">10</span>+<span class="string">'0'</span>;</span><br><span class="line">        c=s+c;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">while</span>(ok)&#123;</span><br><span class="line">        s=ok%<span class="number">10</span>+<span class="string">'0'</span>;</span><br><span class="line">        c=s+c;</span><br><span class="line">        ok/=<span class="number">10</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> c;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//大数对整数取模</span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">MOD</span><span class="params">(<span class="built_in">string</span> str,<span class="keyword">int</span> mod)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> rem=<span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>; i&lt;str.length(); i++)&#123;</span><br><span class="line">        rem=rem*<span class="number">10</span>+str[i]-<span class="string">'0'</span>;</span><br><span class="line">        rem=rem%mod;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> rem;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/10/21/ qpow/" data-id="ck28hullj0015aovi3ozdw4ws" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/10/21/ 大数运算/" data-id="ck28hulln001eaoviig9zgjti" class="article-share-link">Share</a>
       
       
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/快速幂/">快速幂</a></li></ul>
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Bignumber/">Bignumber</a></li></ul>
 
     </footer>
   </div>
@@ -124,19 +119,19 @@
     
 <nav id="article-nav">
   
-    <a href="/2019/10/21/ Fermat-little-theorem/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2019/10/27/ course/" id="article-nav-newer" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Newer</strong>
       <div class="article-nav-title">
         
-          Fermat little theorem
+          course
         
       </div>
     </a>
   
   
-    <a href="/2019/10/10/ Kruskal/" id="article-nav-older" class="article-nav-link-wrap">
+    <a href="/2019/10/21/ EulerSieve/" id="article-nav-older" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Older</strong>
-      <div class="article-nav-title">Kruskal</div>
+      <div class="article-nav-title">EulerSieve</div>
     </a>
   
 </nav>
