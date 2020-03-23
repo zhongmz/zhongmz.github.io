@@ -5,19 +5,20 @@
   
 
   
-  <title>归档: 2019 | zhongmz</title>
+  <title>zhongmz</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="写写算法 写写日记">
+  <meta name="description" content="12证明$f(n)=O(g(n))$，有  \exists c,n_0,对于\forall n\geq n_0 有 f(n)\leq c*g(n)即$g(n)$时$f(n)$的渐近上限。 证明$f(n)=\Omega (g(n))$，有  \exists c,n_0,对于\forall n\geq n_0 有 f(n)\geq c*g(n)即$g(n)$时$f(n)$的渐近下限。 若同时满足$(1">
 <meta name="keywords" content="algorithm math">
-<meta property="og:type" content="website">
+<meta property="og:type" content="article">
 <meta property="og:title" content="zhongmz">
-<meta property="og:url" content="http://yoursite.com/archives/2019/index.html">
+<meta property="og:url" content="http://yoursite.com/2020/02/25/ 算法设计及分析/index.html">
 <meta property="og:site_name" content="zhongmz">
-<meta property="og:description" content="写写算法 写写日记">
+<meta property="og:description" content="12证明$f(n)=O(g(n))$，有  \exists c,n_0,对于\forall n\geq n_0 有 f(n)\leq c*g(n)即$g(n)$时$f(n)$的渐近上限。 证明$f(n)=\Omega (g(n))$，有  \exists c,n_0,对于\forall n\geq n_0 有 f(n)\geq c*g(n)即$g(n)$时$f(n)$的渐近下限。 若同时满足$(1">
 <meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2020-02-26T12:40:29.449Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="zhongmz">
-<meta name="twitter:description" content="写写算法 写写日记">
+<meta name="twitter:description" content="12证明$f(n)=O(g(n))$，有  \exists c,n_0,对于\forall n\geq n_0 有 f(n)\leq c*g(n)即$g(n)$时$f(n)$的渐近上限。 证明$f(n)=\Omega (g(n))$，有  \exists c,n_0,对于\forall n\geq n_0 有 f(n)\geq c*g(n)即$g(n)$时$f(n)$的渐近下限。 若同时满足$(1">
   
     <link rel="alternate" href="/atom.xml" title="zhongmz" type="application/atom+xml">
   
@@ -75,205 +76,92 @@
   </div>
 </header>
       <div class="outer">
-        <section id="main">
-  
-  
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2019" class="archive-year">2019</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2019/11/30/ Kmeans/" class="archive-article-date">
-  <time datetime="2019-11-30T10:43:33.123Z" itemprop="datePublished">11月 30</time>
+        <section id="main"><article id="post-算法设计及分析" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2020/02/25/ 算法设计及分析/" class="article-date">
+  <time datetime="2020-02-25T13:40:21.040Z" itemprop="datePublished">2020-02-25</time>
 </a>
-      
-    </header>
+    
   </div>
-</article>
-  
+  <div class="article-inner">
     
     
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2019/11/18/ Warshall/" class="archive-article-date">
-  <time datetime="2019-11-18T13:44:59.000Z" itemprop="datePublished">11月 18</time>
-</a>
+    <div class="article-entry" itemprop="articleBody">
       
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/11/18/ Warshall/">Warshall&amp;All_componet</a>
-    </h1>
-  
+        <h3 id="1"><a href="#1" class="headerlink" title="1"></a>1</h3><h3 id="2"><a href="#2" class="headerlink" title="2"></a>2</h3><p>证明$f(n)=O(g(n))$，有</p>
+<script type="math/tex; mode=display">
+\exists c,n_0,对于\forall n\geq n_0 有 f(n)\leq c*g(n)</script><p>即$g(n)$时$f(n)$的渐近上限。</p>
+<p>证明$f(n)=\Omega (g(n))$，有</p>
+<script type="math/tex; mode=display">
+\exists c,n_0,对于\forall n\geq n_0 有 f(n)\geq c*g(n)</script><p>即$g(n)$时$f(n)$的渐近下限。</p>
+<p>若同时满足$(1),(2)$</p>
+<p>则有</p>
+<script type="math/tex; mode=display">
+f(n)=\Theta (g(n)),且g(n)=\theta (f(n))</script><p>例题：</p>
+<h5 id="1-1"><a href="#1-1" class="headerlink" title="1"></a>1</h5><p>证明$g(n)=\Omega (f(n)),则 \Omega (f(n))+\Omega (g(n))=\Omega (f(n))$</p>
+<p>易知$\exists c_1,n_1,对于\forall n\geq n_1,有f(n)\geq c_1*g(n)$</p>
+<p>设有$p(n)=\Omega (g(n)),即\exists c_2,n_2,对于\forall n\geq n_2,有g(n)\geq c_2*p(n) $</p>
+<p>可得$\Omega (f(n))+\Omega (g(n))=g(n)+p(n),设n_3= max{ n1,n2},g(n)+p(n))\geq c_1<em>f(n)+c_2</em>g(n)$</p>
+<p>$则\exists c_3=min{ c_1,c_2},使得\forall n\geq n_3,有\Omega(f(n))+\Omega(g(n))\geq c_3*(f(n)+g(n)),故有\Omega(f(n))+\Omega(g(n))=\Omega(f(n)+g(n))$</p>
+<h5 id="2-1"><a href="#2-1" class="headerlink" title="2"></a>2</h5><p>证明$\Omega(cf(n))=\Omega(f(n))$</p>
+<p>不妨设$\Omega(f(n))=g(n),即\exists c_1,n_1,对于\forall n\geq n_1,有f(n)\geq c_1*g(n)$</p>
+<p>故有$c<em>f(n)\geq c</em>c_1*g(n)。$</p>
+<p>即$\exists c<em>c1,n_1,对于\forall n\geq n_1,有f(n)\geq c</em>c_1*g(n)$</p>
+<p>故有$\Omega(cf(n))=g(n)$</p>
+<p>故有$\Omega(cf(n))=\Omega(f(n))$</p>
+<h5 id="3"><a href="#3" class="headerlink" title="3"></a>3</h5><p>证明$f(n)=\Omega(f(n))$</p>
+<p>$易知，\exists c=1,n_0=1,对于\forall n \geq n_0,有f(n)\geq c*f(n)$</p>
+<p>故原式成立。</p>
+<h5 id="4"><a href="#4" class="headerlink" title="4"></a>4</h5><p>不成立。</p>
+<p>比如：</p>
+<p>$f(n)=n^3 而 g(n)=n^2$</p>
+<h5 id="5"><a href="#5" class="headerlink" title="5"></a>5</h5><p>证明$\Theta(f(n))+\theta(g(n))=\Theta(max(f(n)+g(n)))$</p>
+<p>设$p(n)=max{f(n),g(n)}$</p>
+<p>$不妨设f_1(n)=\Theta(f(n)),g_1(n)=\theta(g(n)),可得$</p>
+<p>$\exists c_1,c_2,n_1,对于\forall n\geq n_1,有c_1<em>f(n)\leq f_1(n)\leq c_2</em>f(n)$</p>
+<p>$\exists b_1,b_2,n_2,对于\forall n\geq n_2,有b_1<em>g(n)\leq g_1(n)\leq b_2</em>g(n)$</p>
+<p>对于任意$n\geq max{ n_1,n_2}$</p>
+<p>有$\frac{min{ c_1,b_1}}{2}<em>max{ f(n),g(n)}\leq f_1(n)+g_1(n)\leq 2</em>max{ c_2,b_2}*max{ f(n),g(n)}$</p>
+<p>故原式成立。</p>
+<h5 id="6"><a href="#6" class="headerlink" title="6"></a>6</h5><p>证明$\Theta (f(n))+\Theta(g(n))=\Theta(f(n)+g(n))$</p>
+<p>$不妨设f_1(n)=\Theta(f(n)),g_1(n)=\theta(g(n)),可得$</p>
+<p>$\exists c_1,c_2,n_1,对于\forall n\geq n_1,有c_1<em>f(n)\leq f_1(n)\leq c_2</em>f(n)$</p>
+<p>$\exists b_1,b_2,n_2,对于\forall n\geq n_2,有b_1<em>g(n)\leq g_1(n)\leq b_2</em>g(n)$</p>
+<p>对于任意$n\geq max{ n_1,n_2}$</p>
+<p>有$min{ c_1,b_1}<em>(f(n)+g(n))\leq f_1(n)+g_1(n)\leq max{ c_2,b_2}</em>(f(n)+g(n))$</p>
+<p>故原式成立。</p>
 
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2019/11/13/ Prim/" class="archive-article-date">
-  <time datetime="2019-11-13T14:42:33.000Z" itemprop="datePublished">11月 13</time>
-</a>
       
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/11/13/ Prim/">Prim</a>
-    </h1>
-  
-
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2019/10/27/ BinTree/" class="archive-article-date">
-  <time datetime="2019-10-27T04:28:29.000Z" itemprop="datePublished">10月 27</time>
-</a>
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2020/02/25/ 算法设计及分析/" data-id="ck84azjkf000x3svi6ynh814v" class="article-share-link">Share</a>
       
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/10/27/ BinTree/">BinTree</a>
-    </h1>
-  
-
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2019/10/21/ EulerSieve/" class="archive-article-date">
-  <time datetime="2019-10-21T06:16:46.000Z" itemprop="datePublished">10月 21</time>
-</a>
       
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/10/21/ EulerSieve/">EulerSieve</a>
-    </h1>
-  
-
-    </header>
+    </footer>
   </div>
-</article>
   
     
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2019/10/21/ qpow/" class="archive-article-date">
-  <time datetime="2019-10-20T17:18:42.000Z" itemprop="datePublished">10月 21</time>
-</a>
-      
+<nav id="article-nav">
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/10/21/ qpow/">qpow</a>
-    </h1>
+    <a href="/2020/03/21/ 离散数学第4讲/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          state machine&amp;Euclidean Alg
+        
+      </div>
+    </a>
   
+  
+    <a href="/2020/02/24/ 概率论与数理统计/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title"></div>
+    </a>
+  
+</nav>
 
-    </header>
-  </div>
+  
 </article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2019/10/10/ Kruskal/" class="archive-article-date">
-  <time datetime="2019-10-10T14:56:52.000Z" itemprop="datePublished">10月 10</time>
-</a>
-      
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/10/10/ Kruskal/">Kruskal</a>
-    </h1>
-  
-
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2019/10/09/ Manacher/" class="archive-article-date">
-  <time datetime="2019-10-09T15:21:21.000Z" itemprop="datePublished">10月 9</time>
-</a>
-      
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/10/09/ Manacher/">Manacher</a>
-    </h1>
-  
-
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2019/10/01/ KMP/" class="archive-article-date">
-  <time datetime="2019-10-01T06:25:53.000Z" itemprop="datePublished">10月 1</time>
-</a>
-      
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/10/01/ KMP/">KMP</a>
-    </h1>
-  
-
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2019/08/30/ hello-world/" class="archive-article-date">
-  <time datetime="2019-08-30T08:49:53.178Z" itemprop="datePublished">8月 30</time>
-</a>
-      
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/08/30/ hello-world/">Hello World</a>
-    </h1>
-  
-
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
-
 
 </section>
         

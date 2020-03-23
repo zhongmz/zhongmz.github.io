@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="utf-8">
+  
+
+  
+  <title>state machine&amp;Euclidean Alg | zhongmz</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="state machine 水壶问题 有两个容量分别为 x升 和 y升 的水壶以及无限多的水。请判断能否通过使用这两个水壶，从而可以得到恰好 z升 的水？ 如果可以，最后请用以上水壶中的一或两个来盛放取得的 z升 水。 你允许：  装满任意一个水壶 清空任意一个水壶 从一个水壶向另外一个水壶倒水，直到装满或者倒空  示例 1:  12输入: x = 3, y = 5, z = 4输出: True">
+<meta name="keywords" content="algorithm math">
+<meta property="og:type" content="article">
+<meta property="og:title" content="state machine&amp;Euclidean Alg">
+<meta property="og:url" content="http://yoursite.com/2020/03/21/ 离散数学第4讲/index.html">
+<meta property="og:site_name" content="zhongmz">
+<meta property="og:description" content="state machine 水壶问题 有两个容量分别为 x升 和 y升 的水壶以及无限多的水。请判断能否通过使用这两个水壶，从而可以得到恰好 z升 的水？ 如果可以，最后请用以上水壶中的一或两个来盛放取得的 z升 水。 你允许：  装满任意一个水壶 清空任意一个水壶 从一个水壶向另外一个水壶倒水，直到装满或者倒空  示例 1:  12输入: x = 3, y = 5, z = 4输出: True">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2020-03-23T10:03:45.067Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="state machine&amp;Euclidean Alg">
+<meta name="twitter:description" content="state machine 水壶问题 有两个容量分别为 x升 和 y升 的水壶以及无限多的水。请判断能否通过使用这两个水壶，从而可以得到恰好 z升 的水？ 如果可以，最后请用以上水壶中的一或两个来盛放取得的 z升 水。 你允许：  装满任意一个水壶 清空任意一个水壶 从一个水壶向另外一个水壶倒水，直到装满或者倒空  示例 1:  12输入: x = 3, y = 5, z = 4输出: True">
+  
+    <link rel="alternate" href="/atom.xml" title="zhongmz" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+
+
+</head>
+
+</html>
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">zhongmz</a>
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="/" id="subtitle">Don</a>
+        </h2>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/tags">Tags</a>
+        
+          <a class="main-nav-link" href="/categories">Categories</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="搜索"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-离散数学第4讲" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2020/03/21/ 离散数学第4讲/" class="article-date">
+  <time datetime="2020-03-21T08:09:17.000Z" itemprop="datePublished">2020-03-21</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/离散数学/">离散数学</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      state machine&amp;Euclidean Alg
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><em>state machine</em></p>
+<p><a href="https://leetcode-cn.com/problems/water-and-jug-problem/" target="_blank" rel="noopener">水壶问题</a></p>
+<p>有两个容量分别为 <em>x</em>升 和 <em>y</em>升 的水壶以及无限多的水。请判断能否通过使用这两个水壶，从而可以得到恰好 <em>z</em>升 的水？</p>
+<p>如果可以，最后请用以上水壶中的一或两个来盛放取得的 <em>z升</em> 水。</p>
+<p>你允许：</p>
+<ul>
+<li>装满任意一个水壶</li>
+<li>清空任意一个水壶</li>
+<li>从一个水壶向另外一个水壶倒水，直到装满或者倒空</li>
+</ul>
+<p><strong>示例 1:</strong> </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">输入: x = 3, y = 5, z = 4</span><br><span class="line">输出: True</span><br></pre></td></tr></table></figure>
+<p><strong>示例 2:</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">输入: x = 2, y = 6, z = 5</span><br><span class="line">输出: False</span><br></pre></td></tr></table></figure>
+<p>我们不妨将每一次两个水壶中所拥有的水的体积作为该时刻的状态。</p>
+<p><strong>状态表示</strong>为$P(n)=(a,b)$。</p>
+<p>其中，$a$表示容量为$x$升的水壶所有的水，$b$表示容量为$y$升的水壶所有的水。</p>
+<p><strong>状态转移</strong>有装满一个水壶；清空一个水壶；从一个水壶向另外一个水壶倒水，知道装满或者倒空。</p>
+<p><strong>最终状态</strong>必然有$a_0+b_0=z$</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">结论：ans=GCD(x,y)|z</span><br></pre></td></tr></table></figure>
+<p>容易推理出若$m|a_0,m|b_0,则有m|z$</p>
+<p>那么我们需要寻找这样的状态$(a_0,b_0)$</p>
+<script type="math/tex; mode=display">
+证明：m|x且m|y\Longrightarrow m|a且m|b</script><p>不妨设$m|x且m|y$。</p>
+<p>显然$P(0)=(0,0),任意m|0符合(1)式$</p>
+<p>设$P(n)=(a,b),m|a且m|b$</p>
+<p>证明$P(n+1)=(a_1,b_1),m|a_1,m|b_1$</p>
+<p>根据状态转移有</p>
+<script type="math/tex; mode=display">
+P(n+1)=\left\{
+\begin{array}{lr}
+(a,0)\\
+(0,b)\\
+(x,b)\\
+(a,y)\\
+(a-(y-b),y)\\
+(0,a+b)\\
+(x,b-(x-a))\\
+(a+b,0)\\
+\end{array}
+\right.</script><p>只证$(2)式$的每一个数字都能被$m$整除，答案是显然的。</p>
+<p>那么我们就可以得到最终的状态$(a_0,b_0)必然有m|a_0,m|b_0,那么有m|z$。</p>
+<p>为了保证每一个$m$的取值都能满足以上推论。</p>
+<p>必然需要满足$GCD(x,y)|z$</p>
+<p>所以有$z\%GCD(x,y)==0$</p>
+<p><em>Euclidean Alg</em></p>
+<script type="math/tex; mode=display">
+GCD(a,b)=GCD(Remainder(b,a),a)\\
+其中，Remainder(b,a)=b-q*a=b\%a\geq0\ \ \ \ \ a,b,q均为正整数</script><p>证明$m|a且m|b\Longrightarrow m|Remainder(b,a)且m|a$</p>
+<p>答案是显然的。</p>
+<p>现只需证明$m|Remainder(b,a) 且m|a\Longrightarrow  m|b$</p>
+<script type="math/tex; mode=display">
+已知b-qa=k_1m,a=k_2m\\
+有b=(k_1+k_2q)m\\
+有m|b</script><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">GCD</span><span class="params">(<span class="keyword">int</span> a,<span class="keyword">int</span> b)</span></span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(a==<span class="number">0</span>||b==<span class="number">0</span>)  <span class="keyword">return</span> max(a,b);</span><br><span class="line">        <span class="keyword">int</span> c;</span><br><span class="line">        <span class="keyword">while</span>(b%a!=<span class="number">0</span>)&#123;</span><br><span class="line">            c=b%a;</span><br><span class="line">            b=a;</span><br><span class="line">            a=c;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> a;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">bool</span> <span class="title">canMeasureWater</span><span class="params">(<span class="keyword">int</span> x, <span class="keyword">int</span> y, <span class="keyword">int</span> z)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(z==<span class="number">0</span>)    <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">        <span class="keyword">if</span>(z&gt;x+y)<span class="keyword">return</span> <span class="literal">false</span>; </span><br><span class="line">        <span class="keyword">int</span> m=GCD(x,y);</span><br><span class="line">        <span class="keyword">if</span>(z%m==<span class="number">0</span>)  <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2020/03/21/ 离散数学第4讲/" data-id="ck84azjke000v3svibc8r4cre" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2020/02/25/ 算法设计及分析/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title"></div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">分类</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/algorithm/">algorithm</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/“algorithm/">“algorithm"</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/图/">图</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/离散数学/">离散数学</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">标签</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Course/">Course</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/KMP/">KMP</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Kruskal/">Kruskal</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Manacher/">Manacher</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Prime/">Prime</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/快速幂/">快速幂</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">标签云</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/Course/" style="font-size: 20px;">Course</a> <a href="/tags/KMP/" style="font-size: 10px;">KMP</a> <a href="/tags/Kruskal/" style="font-size: 10px;">Kruskal</a> <a href="/tags/Manacher/" style="font-size: 10px;">Manacher</a> <a href="/tags/Prime/" style="font-size: 10px;">Prime</a> <a href="/tags/快速幂/" style="font-size: 10px;">快速幂</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">归档</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/03/">三月 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/02/">二月 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/11/">十一月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/10/">十月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/08/">八月 2019</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">最新文章</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2020/03/21/ 离散数学第4讲/">state machine&amp;Euclidean Alg</a>
+          </li>
+        
+          <li>
+            <a href="/2020/02/25/ 算法设计及分析/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2020/02/24/ 概率论与数理统计/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2019/11/30/ Kmeans/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2019/11/18/ Warshall/">Warshall&amp;All_componet</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2020 钟美智<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/tags" class="mobile-nav-link">Tags</a>
+  
+    <a href="/categories" class="mobile-nav-link">Categories</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+
+
+  </div>
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\(","\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<!--<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>-->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+</body>
+</html>
