@@ -3,19 +3,18 @@
 <head><meta name="generator" content="Hexo 3.9.0">
   <meta charset="utf-8">
   
-
   
   <title>KMP | Xxgzbd&#39;s Blog</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta name="description" content="名字由来 ​	由Knuth，Morris,Pratt三人所设计的线性时间字符串匹配算法  时间复杂度 ​	设有长度为n的文本串S和长度为m的匹配串P，求匹配串成功匹配文本串字串的首地址 ​	O(n+m)  原理  引出 ​	对匹配串预处理生成一种失配的映射（或者称为函数，其实称为函数会更加恰当），我们姑且把这个函数成为Next函数。当匹配串对文本串进行匹配时，不妨想象一下，我们在失配的时候对应的">
-<meta name="keywords" content="KMP">
+<meta name="keywords" content="algorithm math">
 <meta property="og:type" content="article">
 <meta property="og:title" content="KMP">
 <meta property="og:url" content="http://yoursite.com/2019/10/01/ KMP/index.html">
 <meta property="og:site_name" content="Xxgzbd&#39;s Blog">
 <meta property="og:description" content="名字由来 ​	由Knuth，Morris,Pratt三人所设计的线性时间字符串匹配算法  时间复杂度 ​	设有长度为n的文本串S和长度为m的匹配串P，求匹配串成功匹配文本串字串的首地址 ​	O(n+m)  原理  引出 ​	对匹配串预处理生成一种失配的映射（或者称为函数，其实称为函数会更加恰当），我们姑且把这个函数成为Next函数。当匹配串对文本串进行匹配时，不妨想象一下，我们在失配的时候对应的">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-11-30T10:42:49.444Z">
+<meta property="og:updated_time" content="2020-03-23T14:19:45.078Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="KMP">
 <meta name="twitter:description" content="名字由来 ​	由Knuth，Morris,Pratt三人所设计的线性时间字符串匹配算法  时间复杂度 ​	设有长度为n的文本串S和长度为m的匹配串P，求匹配串成功匹配文本串字串的首地址 ​	O(n+m)  原理  引出 ​	对匹配串预处理生成一种失配的映射（或者称为函数，其实称为函数会更加恰当），我们姑且把这个函数成为Next函数。当匹配串对文本串进行匹配时，不妨想象一下，我们在失配的时候对应的">
@@ -26,14 +25,14 @@
     <link rel="icon" href="/favicon.png">
   
   
-    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/typeface-source-code-pro@0.0.71/index.min.css">
   
   <link rel="stylesheet" href="/css/style.css">
-
-
+  
+    <link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
+  
 </head>
 
-</html>
 <body>
   <div id="container">
     <div id="wrap">
@@ -52,10 +51,6 @@
         
           <a class="main-nav-link" href="/">Home</a>
         
-          <a class="main-nav-link" href="/tags">Tags</a>
-        
-          <a class="main-nav-link" href="/categories">Categories</a>
-        
           <a class="main-nav-link" href="/archives">Archives</a>
         
       </nav>
@@ -66,16 +61,16 @@
         <a id="nav-search-btn" class="nav-icon" title="搜索"></a>
       </nav>
       <div id="search-form-wrap">
-        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="搜索"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
       </div>
     </div>
   </div>
 </header>
       <div class="outer">
-        <section id="main"><article id="post-KMP" class="article article-type-post" itemscope itemprop="blogPost">
+        <section id="main"><article id="post-KMP" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
     <a href="/2019/10/01/ KMP/" class="article-date">
-  <time datetime="2019-10-01T06:25:53.000Z" itemprop="datePublished">2019-10-01</time>
+  <time class="dt-published" datetime="2019-10-01T06:25:53.000Z" itemprop="datePublished">2019-10-01</time>
 </a>
     
   <div class="article-category">
@@ -89,14 +84,14 @@
       <header class="article-header">
         
   
-    <h1 class="article-title" itemprop="name">
+    <h1 class="p-name article-title" itemprop="headline name">
       KMP
     </h1>
   
 
       </header>
     
-    <div class="article-entry" itemprop="articleBody">
+    <div class="e-content article-entry" itemprop="articleBody">
       
         <h3 id="名字由来"><a class="markdownIt-Anchor" href="#名字由来"></a> 名字由来</h3>
 <p>​	由<strong>K</strong>nuth，<strong>M</strong>orris,<strong>P</strong>ratt三人所设计的线性时间字符串匹配算法</p>
@@ -120,11 +115,10 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/10/01/ KMP/" data-id="ck84jch930008toviit6bmkyx" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/10/01/ KMP/" data-id="ck84k8zq20006mkvi1s3ncugx" data-title="KMP" class="article-share-link">Share</a>
       
       
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/KMP/">KMP</a></li></ul>
-
+      
     </footer>
   </div>
   
@@ -151,6 +145,7 @@
   
 </article>
 
+
 </section>
         
           <aside id="sidebar">
@@ -159,30 +154,16 @@
   <div class="widget-wrap">
     <h3 class="widget-title">分类</h3>
     <div class="widget">
-      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/algorithm/">algorithm</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/“algorithm/">“algorithm"</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/图/">图</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/离散数学/">离散数学</a></li></ul>
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Course/">Course</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/algorithm/">algorithm</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/机器学习/">机器学习</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/离散数学/">离散数学</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/算法设计与分析/">算法设计与分析</a></li></ul>
     </div>
   </div>
 
 
   
     
-  <div class="widget-wrap">
-    <h3 class="widget-title">标签</h3>
-    <div class="widget">
-      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Course/">Course</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/KMP/">KMP</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Kruskal/">Kruskal</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Manacher/">Manacher</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Prime/">Prime</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/快速幂/">快速幂</a></li></ul>
-    </div>
-  </div>
-
 
   
     
-  <div class="widget-wrap">
-    <h3 class="widget-title">标签云</h3>
-    <div class="widget tagcloud">
-      <a href="/tags/Course/" style="font-size: 20px;">Course</a> <a href="/tags/KMP/" style="font-size: 10px;">KMP</a> <a href="/tags/Kruskal/" style="font-size: 10px;">Kruskal</a> <a href="/tags/Manacher/" style="font-size: 10px;">Manacher</a> <a href="/tags/Prime/" style="font-size: 10px;">Prime</a> <a href="/tags/快速幂/" style="font-size: 10px;">快速幂</a>
-    </div>
-  </div>
-
   
     
   <div class="widget-wrap">
@@ -205,19 +186,19 @@
           </li>
         
           <li>
-            <a href="/2020/02/25/ 算法设计及分析/">(no title)</a>
-          </li>
-        
-          <li>
-            <a href="/2020/02/24/ 概率论与数理统计/">(no title)</a>
-          </li>
-        
-          <li>
-            <a href="/2019/11/30/ Kmeans/">(no title)</a>
+            <a href="/2020/02/13/ 算法设计及分析/">算法设计与分析</a>
           </li>
         
           <li>
             <a href="/2019/11/18/ Warshall/">Warshall&amp;All_componet</a>
+          </li>
+        
+          <li>
+            <a href="/2019/11/13/ Kmeans/">Kmeans</a>
+          </li>
+        
+          <li>
+            <a href="/2019/11/13/ Prim/">Prim</a>
           </li>
         
       </ul>
@@ -233,32 +214,29 @@
   <div class="outer">
     <div id="footer-info" class="inner">
       &copy; 2020 钟美智<br>
-      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
     </div>
   </div>
 </footer>
+
     </div>
     <nav id="mobile-nav">
   
     <a href="/" class="mobile-nav-link">Home</a>
-  
-    <a href="/tags" class="mobile-nav-link">Tags</a>
-  
-    <a href="/categories" class="mobile-nav-link">Categories</a>
   
     <a href="/archives" class="mobile-nav-link">Archives</a>
   
 </nav>
     
 
-<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+<script src="/js/jquery-3.4.1.min.js"></script>
 
 
-  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
-  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+  <script src="/fancybox/jquery.fancybox.min.js"></script>
 
 
 <script src="/js/script.js"></script>
+
 
 
 
