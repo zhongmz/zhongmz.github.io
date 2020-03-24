@@ -6,18 +6,18 @@
   
   <title>EulerSieve | Xxgzbd&#39;s Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="EulerSieve时间复杂度​    O(n) 实现12345678910111213141516171819202122const int maxn = 10100;   int prime[maxn], pNum = 0;              // prime记录素数，pNum记录素数个数                                        //保存的值为0~">
+  <meta name="description" content="EulerSieve  时间复杂度 ​	O(n)  实现 12345678910111213141516171819202122const int maxn = 10100;   int prime[maxn], pNum = 0;              // prime记录素数，pNum记录素数个数                                        //保存的值">
 <meta name="keywords" content="algorithm math">
 <meta property="og:type" content="article">
 <meta property="og:title" content="EulerSieve">
 <meta property="og:url" content="http://yoursite.com/2019/10/21/ EulerSieve/index.html">
 <meta property="og:site_name" content="Xxgzbd&#39;s Blog">
-<meta property="og:description" content="EulerSieve时间复杂度​    O(n) 实现12345678910111213141516171819202122const int maxn = 10100;   int prime[maxn], pNum = 0;              // prime记录素数，pNum记录素数个数                                        //保存的值为0~">
+<meta property="og:description" content="EulerSieve  时间复杂度 ​	O(n)  实现 12345678910111213141516171819202122const int maxn = 10100;   int prime[maxn], pNum = 0;              // prime记录素数，pNum记录素数个数                                        //保存的值">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:updated_time" content="2020-03-23T14:14:06.771Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="EulerSieve">
-<meta name="twitter:description" content="EulerSieve时间复杂度​    O(n) 实现12345678910111213141516171819202122const int maxn = 10100;   int prime[maxn], pNum = 0;              // prime记录素数，pNum记录素数个数                                        //保存的值为0~">
+<meta name="twitter:description" content="EulerSieve  时间复杂度 ​	O(n)  实现 12345678910111213141516171819202122const int maxn = 10100;   int prime[maxn], pNum = 0;              // prime记录素数，pNum记录素数个数                                        //保存的值">
   
     <link rel="alternative" href="/atom.xml" title="Xxgzbd&#39;s Blog" type="application/atom+xml">
   
@@ -95,15 +95,19 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h3 id="EulerSieve"><a href="#EulerSieve" class="headerlink" title="EulerSieve"></a>EulerSieve</h3><h5 id="时间复杂度"><a href="#时间复杂度" class="headerlink" title="时间复杂度"></a>时间复杂度</h5><p>​    O(n)</p>
-<h5 id="实现"><a href="#实现" class="headerlink" title="实现"></a>实现</h5><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> maxn = <span class="number">10100</span>;   </span><br><span class="line"><span class="keyword">int</span> prime[maxn], pNum = <span class="number">0</span>;              <span class="comment">// prime记录素数，pNum记录素数个数</span></span><br><span class="line">                                        <span class="comment">//保存的值为0~pNum-1</span></span><br><span class="line"><span class="keyword">bool</span> p[maxn] = &#123;<span class="literal">false</span>&#125;;                 <span class="comment">// p记录当前数是否被筛去</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">EulerSieve</span><span class="params">(<span class="keyword">int</span> n)</span>                  <span class="comment">// 查找记录2-n的素数</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> j;</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">2</span>; i &lt;= n; i++)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">if</span> (p[i] == <span class="literal">false</span>)              <span class="comment">// 如果未被筛过，则为素数</span></span><br><span class="line">			prime[pNum++] = i;</span><br><span class="line">		<span class="keyword">for</span> (j = <span class="number">0</span>; j &lt; pNum; j++)</span><br><span class="line">		&#123;</span><br><span class="line">			<span class="keyword">if</span> (i * prime[j] &gt; n)       <span class="comment">// 当要标记的合数超出范围时跳出</span></span><br><span class="line">				<span class="keyword">break</span>;</span><br><span class="line">			p[i * prime[j]] = <span class="literal">true</span>;     <span class="comment">// 将已经记录的素数的倍数进行标记</span></span><br><span class="line">			<span class="keyword">if</span> (i % prime[j] == <span class="number">0</span>)      <span class="comment">//关键步骤</span></span><br><span class="line">				<span class="keyword">break</span>;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h5 id="理解"><a href="#理解" class="headerlink" title="理解"></a>理解</h5><p><a href="https://www.cnblogs.com/cicos/p/10258703.html" target="_blank" rel="noopener">时间复杂度证明</a></p>
+        <h3 id="eulersieve"><a class="markdownIt-Anchor" href="#eulersieve"></a> EulerSieve</h3>
+<h5 id="时间复杂度"><a class="markdownIt-Anchor" href="#时间复杂度"></a> 时间复杂度</h5>
+<p>​	O(n)</p>
+<h5 id="实现"><a class="markdownIt-Anchor" href="#实现"></a> 实现</h5>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> maxn = <span class="number">10100</span>;   </span><br><span class="line"><span class="keyword">int</span> prime[maxn], pNum = <span class="number">0</span>;              <span class="comment">// prime记录素数，pNum记录素数个数</span></span><br><span class="line">                                        <span class="comment">//保存的值为0~pNum-1</span></span><br><span class="line"><span class="keyword">bool</span> p[maxn] = &#123;<span class="literal">false</span>&#125;;                 <span class="comment">// p记录当前数是否被筛去</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">EulerSieve</span><span class="params">(<span class="keyword">int</span> n)</span>                  <span class="comment">// 查找记录2-n的素数</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> j;</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">2</span>; i &lt;= n; i++)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">if</span> (p[i] == <span class="literal">false</span>)              <span class="comment">// 如果未被筛过，则为素数</span></span><br><span class="line">			prime[pNum++] = i;</span><br><span class="line">		<span class="keyword">for</span> (j = <span class="number">0</span>; j &lt; pNum; j++)</span><br><span class="line">		&#123;</span><br><span class="line">			<span class="keyword">if</span> (i * prime[j] &gt; n)       <span class="comment">// 当要标记的合数超出范围时跳出</span></span><br><span class="line">				<span class="keyword">break</span>;</span><br><span class="line">			p[i * prime[j]] = <span class="literal">true</span>;     <span class="comment">// 将已经记录的素数的倍数进行标记</span></span><br><span class="line">			<span class="keyword">if</span> (i % prime[j] == <span class="number">0</span>)      <span class="comment">//关键步骤</span></span><br><span class="line">				<span class="keyword">break</span>;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h5 id="理解"><a class="markdownIt-Anchor" href="#理解"></a> 理解</h5>
+<p><a href="https://www.cnblogs.com/cicos/p/10258703.html" target="_blank" rel="noopener">时间复杂度证明</a></p>
 
       
     </div>
     <footer class="article-footer">
       
-        <a data-url="http://yoursite.com/2019/10/21/ EulerSieve/" data-id="ck85fxl790002mwviwpf25190" class="article-share-link" data-share="baidu" data-title="EulerSieve">分享到</a>
+        <a data-url="http://yoursite.com/2019/10/21/ EulerSieve/" data-id="ck85ha8em0005vgvifeujfzby" class="article-share-link" data-share="baidu" data-title="EulerSieve">分享到</a>
       
 
       
@@ -214,6 +218,10 @@
         
           <li>
             <a href="http://yuancheng.work" target="_blank">远程.work</a>
+          </li>
+        
+          <li>
+            <a href="https://endacsd.com/" target="_blank">endATql</a>
           </li>
         
       </ul>
