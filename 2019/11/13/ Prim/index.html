@@ -1,11 +1,11 @@
+
 <!DOCTYPE html>
 <html>
 <head><meta name="generator" content="Hexo 3.9.0">
   <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="utf-8">
   
-  
   <title>Prim | Xxgzbd&#39;s Blog</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="Prim1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950515253545556575859606162636465666768697071727374757677787980818283848586878889909192939495969798991001011">
 <meta name="keywords" content="algorithm math">
 <meta property="og:type" content="article">
@@ -19,24 +19,19 @@
 <meta name="twitter:title" content="Prim">
 <meta name="twitter:description" content="Prim1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950515253545556575859606162636465666768697071727374757677787980818283848586878889909192939495969798991001011">
   
-    <link rel="alternate" href="/atom.xml" title="Xxgzbd&#39;s Blog" type="application/atom+xml">
+    <link rel="alternative" href="/atom.xml" title="Xxgzbd&#39;s Blog" type="application/atom+xml">
   
   
     <link rel="icon" href="/favicon.png">
   
-  
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/typeface-source-code-pro@0.0.71/index.min.css">
-  
   <link rel="stylesheet" href="/css/style.css">
+  <!--[if lt IE 9]><script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7/html5shiv.min.js"></script><![endif]--><!-- hexo-inject:begin --><!-- hexo-inject:end -->
   
-    <link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css"><!-- hexo-inject:begin --><!-- hexo-inject:end -->
-  
-</head>
-
+</head></html>
 <body>
-  <!-- hexo-inject:begin --><!-- hexo-inject:end --><div id="container">
-    <div id="wrap">
-      <header id="header">
+<!-- hexo-inject:begin --><!-- hexo-inject:end --><div id="container">
+  <div id="wrap">
+    <header id="header">
   <div id="banner"></div>
   <div id="header-outer" class="outer">
     <div id="header-title" class="inner">
@@ -58,19 +53,26 @@
         
           <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
         
-        <a id="nav-search-btn" class="nav-icon" title="搜索"></a>
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
       </nav>
       <div id="search-form-wrap">
-        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="搜索"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+        <form action="//www.baidu.com/baidu" method="get" accept-charset="utf-8" class="search-form">
+          <input type="search" name="word" maxlength="20" class="search-form-input" placeholder="Search">
+          <input type="submit" value="" class="search-form-submit">
+          <input name=tn type=hidden value="bds">
+          <input name=cl type=hidden value="3">
+          <input name=ct type=hidden value="2097152">
+          <input type="hidden" name="si" value="yoursite.com">
+        </form>
       </div>
     </div>
   </div>
 </header>
-      <div class="outer">
-        <section id="main"><article id="post-Prim" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+    <div class="outer">
+      <section id="main"><article id="post-Prim" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2019/11/13/ Prim/" class="article-date">
-  <time class="dt-published" datetime="2019-11-13T14:42:33.000Z" itemprop="datePublished">2019-11-13</time>
+  <time datetime="2019-11-13T14:42:33.000Z" itemprop="datePublished">2019-11-13</time>
 </a>
     
   <div class="article-category">
@@ -84,23 +86,28 @@
       <header class="article-header">
         
   
-    <h1 class="p-name article-title" itemprop="headline name">
+    <h1 class="article-title" itemprop="name">
       Prim
     </h1>
   
 
       </header>
     
-    <div class="e-content article-entry" itemprop="articleBody">
+    <div class="article-entry" itemprop="articleBody">
       
         <h5 id="Prim"><a href="#Prim" class="headerlink" title="Prim"></a>Prim</h5><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;queue&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">edge</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line">    <span class="keyword">int</span> cost;</span><br><span class="line">    <span class="keyword">int</span> head;</span><br><span class="line">    <span class="keyword">int</span> tail;</span><br><span class="line">&#125;;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> MAX=<span class="number">1e6</span>;</span><br><span class="line">edge E[MAX];</span><br><span class="line">edge TE[MAX];</span><br><span class="line"><span class="keyword">int</span> graphsize;</span><br><span class="line"><span class="keyword">int</span> edgesize;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">LV</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line">    <span class="keyword">int</span> Lowcost;</span><br><span class="line">    <span class="keyword">int</span> Vex;</span><br><span class="line">&#125;;</span><br><span class="line">LV closedge[MAX];</span><br><span class="line"><span class="keyword">int</span> Edge[<span class="number">5010</span>][<span class="number">5010</span>];</span><br><span class="line"></span><br><span class="line"><span class="comment">//稠密图，使用邻接矩阵</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">Prim</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> i;</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">"%d%d"</span>,&amp;graphsize,&amp;edgesize);</span><br><span class="line">    <span class="keyword">for</span>(i=<span class="number">0</span>;i&lt;graphsize;i++)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> j=<span class="number">0</span>;j&lt;graphsize;j++)</span><br><span class="line">        &#123;</span><br><span class="line">            Edge[i][j]=<span class="number">1e9</span>;</span><br><span class="line">            Edge[j][i]=<span class="number">1e9</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">for</span>(i=<span class="number">0</span>;i&lt;edgesize;i++)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="built_in">scanf</span>(<span class="string">"%d%d%d"</span>,&amp;E[i].head,&amp;E[i].tail,&amp;E[i].cost);</span><br><span class="line">        <span class="comment">//防止重边</span></span><br><span class="line">        <span class="keyword">if</span>(E[i].cost&lt;Edge[E[i].head<span class="number">-1</span>][E[i].tail<span class="number">-1</span>])</span><br><span class="line">        &#123;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">        Edge[E[i].head<span class="number">-1</span>][E[i].tail<span class="number">-1</span>]=E[i].cost;</span><br><span class="line">        Edge[E[i].tail<span class="number">-1</span>][E[i].head<span class="number">-1</span>]=E[i].cost;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">for</span>(i=<span class="number">0</span>;i&lt;graphsize;i++)</span><br><span class="line">    &#123;</span><br><span class="line">        closedge[i].Lowcost=Edge[<span class="number">0</span>][i];</span><br><span class="line">        closedge[i].Vex=<span class="number">0</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    closedge[<span class="number">0</span>].Vex=<span class="number">-1</span>;</span><br><span class="line">    <span class="keyword">int</span> count=<span class="number">0</span>;</span><br><span class="line">    <span class="keyword">int</span> ans=<span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span>(i=<span class="number">1</span>;i&lt;graphsize;i++)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">int</span> Min=<span class="number">1e9</span>+<span class="number">1</span>;</span><br><span class="line">        <span class="keyword">int</span> v=<span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> j=<span class="number">0</span>;j&lt;graphsize;j++)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">if</span>(closedge[j].Vex!=<span class="number">-1</span>&amp;&amp;closedge[j].Lowcost&lt;Min)</span><br><span class="line">            &#123;</span><br><span class="line">                v=j;</span><br><span class="line">                Min=closedge[j].Lowcost;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span>(v!=<span class="number">0</span>)</span><br><span class="line">        &#123;</span><br><span class="line">            ans=ans+closedge[v].Lowcost;</span><br><span class="line">            TE[count].head=closedge[v].Vex;</span><br><span class="line">            TE[count].tail=v;</span><br><span class="line">            TE[count].cost=closedge[v].Lowcost;</span><br><span class="line">            count++;</span><br><span class="line">            closedge[v].Lowcost=<span class="number">0</span>;</span><br><span class="line">            closedge[v].Vex=<span class="number">-1</span>;</span><br><span class="line">            <span class="comment">//进行一些操作使得它们保持最小</span></span><br><span class="line">            <span class="keyword">for</span>(<span class="keyword">int</span> j=<span class="number">0</span>;j&lt;graphsize;j++)</span><br><span class="line">            &#123;</span><br><span class="line">                <span class="keyword">if</span>(closedge[j].Vex!=<span class="number">-1</span>&amp;&amp;Edge[v][j]&lt;closedge[j].Lowcost)</span><br><span class="line">                &#123;</span><br><span class="line">                    closedge[j].Lowcost=Edge[v][j];</span><br><span class="line">                    closedge[j].Vex=v;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"%d"</span>,ans);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//prim</span></span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">6 10</span></span><br><span class="line"><span class="comment">0 1 1</span></span><br><span class="line"><span class="comment">0 2 4</span></span><br><span class="line"><span class="comment">0 3 7</span></span><br><span class="line"><span class="comment">1 2 4</span></span><br><span class="line"><span class="comment">2 3 2</span></span><br><span class="line"><span class="comment">1 5 2</span></span><br><span class="line"><span class="comment">2 5 5</span></span><br><span class="line"><span class="comment">2 4 3</span></span><br><span class="line"><span class="comment">3 4 6</span></span><br><span class="line"><span class="comment">4 5 3</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    Prim();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/11/13/ Prim/" data-id="ck85dg3mi000ajkvi8dyxl5eo" data-title="Prim" class="article-share-link">Share</a>
       
+        <a data-url="http://yoursite.com/2019/11/13/ Prim/" data-id="ck85fxl7p000fmwvi6jj6ybrj" class="article-share-link" data-share="baidu" data-title="Prim">分享到</a>
       
+
+      
+        <a href="http://yoursite.com/2019/11/13/ Prim/#ds-thread" class="article-comment-link">评论</a>
+      
+
       
     </footer>
   </div>
@@ -109,7 +116,7 @@
 <nav id="article-nav">
   
     <a href="/2019/11/13/ Kmeans/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Newer</strong>
+      <strong class="article-nav-caption">下一篇</strong>
       <div class="article-nav-title">
         
           Kmeans
@@ -119,7 +126,7 @@
   
   
     <a href="/2019/11/13/ 概率论与数理统计/" id="article-nav-older" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Older</strong>
+      <strong class="article-nav-caption">上一篇</strong>
       <div class="article-nav-title">随机数学</div>
     </a>
   
@@ -129,22 +136,23 @@
 </article>
 
 
+  <section id="comments">
+    <div id="ds-thread" class="ds-thread" data-thread-key="2019/11/13/ Prim/" data-title="Prim" data-url="http://yoursite.com/2019/11/13/ Prim/"></div>
+  </section>
 </section>
-        
-          <aside id="sidebar">
+      
+      <aside id="sidebar">
   
     
   <div class="widget-wrap">
     <h3 class="widget-title">分类</h3>
     <div class="widget">
-      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Course/">Course</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/algorithm/">algorithm</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/机器学习/">机器学习</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/离散数学/">离散数学</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/算法设计与分析/">算法设计与分析</a></li></ul>
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Course/">Course</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/algorithm/">algorithm</a><span class="category-list-count">8</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/机器学习/">机器学习</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/离散数学/">离散数学</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/算法设计与分析/">算法设计与分析</a><span class="category-list-count">1</span></li></ul>
     </div>
   </div>
 
-
   
     
-
   
     
   
@@ -152,15 +160,14 @@
   <div class="widget-wrap">
     <h3 class="widget-title">归档</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/03/">三月 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/02/">二月 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/11/">十一月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/10/">十月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/08/">八月 2019</a></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/03/">三月 2020</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/02/">二月 2020</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/11/">十一月 2019</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/10/">十月 2019</a><span class="archive-list-count">6</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/08/">八月 2019</a><span class="archive-list-count">1</span></li></ul>
     </div>
   </div>
-
 
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">最新文章</h3>
+    <h3 class="widget-title">近期文章</h3>
     <div class="widget">
       <ul>
         
@@ -189,40 +196,163 @@
   </div>
 
   
-</aside>
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">友情链接</h3>
+    <div class="widget">
+      <ul>
         
-      </div>
-      <footer id="footer">
+          <li>
+            <a href="http://arvinxiang.com" target="_blank">主题作者</a>
+          </li>
+        
+          <li>
+            <a href="http://reqianduan.com" target="_blank">热前端</a>
+          </li>
+        
+          <li>
+            <a href="http://yuancheng.work" target="_blank">远程.work</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+      
+    </div>
+    <footer id="footer">
   
   <div class="outer">
     <div id="footer-info" class="inner">
       &copy; 2020 钟美智<br>
-      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
+      Powered by <a href="//hexo.io/" target="_blank">Hexo</a>
+      .
+      Theme by <a href="https://github.com/xiangming/landscape-plus" target="_blank">Landscape-plus</a>
     </div>
   </div>
 </footer>
-
-    </div>
-    <nav id="mobile-nav">
+  </div>
+  <nav id="mobile-nav">
   
     <a href="/" class="mobile-nav-link">Home</a>
   
     <a href="/archives" class="mobile-nav-link">Archives</a>
   
 </nav>
+  <!-- totop start -->
+<div id="totop">
+<a title="返回顶部"><img src="/img/scrollup.png"/></a>
+</div>
+
+<!-- totop end -->
+
+<!-- 多说公共js代码 start -->
+<script type="text/javascript">
+var duoshuoQuery = {short_name:"reqianduan"};
+  (function() {
+    var ds = document.createElement('script');
+    ds.type = 'text/javascript';ds.async = true;
+    ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+    ds.charset = 'UTF-8';
+    (document.getElementsByTagName('head')[0]
+     || document.getElementsByTagName('body')[0]).appendChild(ds);
+  })();
+  </script>
+<!-- 多说公共js代码 end -->
+
+
+<!-- 百度分享 start -->
+
+<div id="article-share-box" class="article-share-box">
+  <div id="bdshare" class="bdsharebuttonbox article-share-links">
+    <a class="article-share-weibo" data-cmd="tsina" title="分享到新浪微博"></a>
+    <a class="article-share-weixin" data-cmd="weixin" title="分享到微信"></a>
+    <a class="article-share-qq" data-cmd="sqq" title="分享到QQ"></a>
+    <a class="article-share-renren" data-cmd="renren" title="分享到人人网"></a>
+    <a class="article-share-more" data-cmd="more" title="更多"></a>
+  </div>
+</div>
+<script>
+  function SetShareData(cmd, config) {
+    if (shareDataTitle && shareDataUrl) {
+      config.bdText = shareDataTitle;
+      config.bdUrl = shareDataUrl;
+    }
+    return config;
+  }
+  window._bd_share_config={
+    "common":{onBeforeClick: SetShareData},
+    "share":{"bdCustomStyle":"/css/bdshare.css"}
+  };
+  with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='//bdimg.share.baidu.com/static/api/js/share.js?cdnversion='+~(-new Date()/36e5)];
+</script>
+
+<!-- 百度分享 end -->
+
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+
+
+
+
+<! -- mathjax config similar to math.stackexchange -->
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+                processEscapes: true
+                    
+}
+  
+        });
+</script>
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+tex2jax: {
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+                  
+}
     
+        });
+</script>
 
-<script src="/js/jquery-3.4.1.min.js"></script>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Queue(function() {
+            var all = MathJax.Hub.getAllJax(), i;
+            for(i=0; i < all.length; i += 1) {
+                            all[i].SourceElement().parentNode.className += ' has-jax';
+                                    
+            }
+                
+        });
+</script>
 
-
-  <script src="/fancybox/jquery.fancybox.min.js"></script>
+<script type="text/javascript" src="//cdn.bootcss.com/mathjax/2.5.3/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
 
 
 <script src="/js/script.js"></script>
 
+</div><!-- hexo-inject:begin --><!-- Begin: Injected MathJax -->
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({"tex2jax":{"inlineMath":[["$","$"],["\\(","\\)"]],"skipTags":["script","noscript","style","textarea","pre","code"],"processEscapes":true},"TeX":{"equationNumbers":{"autoNumber":"AMS"}}});
+</script>
 
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+      all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+  });
+</script>
 
-
-  </div><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js">
+</script>
+<!-- End: Injected MathJax -->
+<!-- hexo-inject:end -->
 </body>
 </html>
