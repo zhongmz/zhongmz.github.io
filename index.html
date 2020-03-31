@@ -70,6 +70,141 @@
     <div class="outer">
       <section id="main">
   
+    <article id="post-计算机系统结构" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2020/03/31/ 计算机系统结构/" class="article-date">
+  <time datetime="2020-03-31T06:20:46.000Z" itemprop="datePublished">2020-03-31</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/计算机系统结构/">计算机系统结构</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/03/31/ 计算机系统结构/">计算机系统结构</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h4 id="1"><a href="#1" class="headerlink" title="1"></a>1</h4><p><em>系统结构，组成，实现</em></p>
+<ol>
+<li>计算机系统结构：计算机系统的软，硬件的界面。</li>
+<li>计算机组成：计算机系统结构的逻辑实现。</li>
+<li>计算机实现：计算机组成的物理实现</li>
+</ol>
+<p>换句话来说，我们设计计算机的时间轴为：$系统结构\longrightarrow 组成\longrightarrow 实现$</p>
+<h5 id="EG"><a href="#EG" class="headerlink" title="EG"></a>EG</h5><p>$e.g.1$</p>
+<p><img src="计算机系统结构.assets/image-20200308150608490.png" alt="image-20200308150608490"></p>
+<p>解</p>
+<p>不妨设加速比为S</p>
+<p>那么有</p>
+<script type="math/tex; mode=display">
+S=\frac {time_前}{time_后}=\frac{11.1\%*2+33.3\%*20+38.9\%*10+16.7\%*4}{11.1\%*1+33.3\%*15+38.9\%*3+16.7\%*1}=\frac{11.44}{6.44}=1.77</script><p>$e.g.2$</p>
+<p>考虑条件分支指令的两种不同设计方法：<br>（1）CPUA：通过比较指令设置条件码，然后测试条件码进行分支。<br>（2）CPUB：在分支指令中包括比较过程。<br>在这两种CPU中，条件分支指令都占用2个时钟周期，而所有其他指令占用1个时钟周期。对于CPUA，执行的指令中分支指令占20%；由于每条分支指令之前都需要有比较指令，因此比较指令也占20%。不妨假设其他指令条数相同。由于CPUA在分支时不需要比较，因此CPUB的时钟周期时间是CPUA的1.25倍。问：<strong>哪一个CPU更快</strong>？如果CPUB的时钟周期时间只是CPUA的1.1倍，哪一个CPU更快呢？</p>
+<p>$t_{cpu}=IC<em>CPI</em>T$</p>
+<p>其中</p>
+<p>$t_{cpu}:$执行一段程序所用的CPU时间。</p>
+<p>$IC:$该段程序的指令条数，取决于指令集<em>结构</em> 和编译技术。</p>
+<p>$CPI:$平均每一条指令所需要的时钟周期，取决于<em>组成</em>和指令集<em>结构</em></p>
+<p>$T:$时钟周期，取决于<em>实现</em> 和<em>组成</em></p>
+<p>那么有</p>
+<script type="math/tex; mode=display">
+t_{cpuA}=IC*(0.4*2+0.6*1)*T \\
+t_{cpuB}=IC*(2/8*2+6/8*1)*1.25T</script><p>最后即可得答案。</p>
+<h4 id="2-流水线"><a href="#2-流水线" class="headerlink" title="2 流水线"></a>2 流水线</h4><p><em>以静态，线性，顺序流水线为例</em></p>
+<p>$吞吐率\ ThroughPut\ TP=\frac{n}{T_k}=\frac{任务数量}{运行时间}=\frac{n}{(k+n-1)\Delta t}$</p>
+<p>$加速比\ Speedup\ S=\frac{T_s}{T_k}=\frac{顺序执行时间}{运行时间}=\frac{nk}{k+m-1}$</p>
+<p>$效率\ Efficiency\ E=\frac{n\Delta t}{T_k}=\frac{设备实际使用时间}{运行时间*设备数目}=\frac{n}{k+n-1}$</p>
+<p>。。。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      
+        <a data-url="http://yoursite.com/2020/03/31/ 计算机系统结构/" data-id="ck8fitcno000rxkvinw6ud05q" class="article-share-link" data-share="baidu" data-title="计算机系统结构">分享到</a>
+      
+
+      
+        <a href="http://yoursite.com/2020/03/31/ 计算机系统结构/#ds-thread" class="article-comment-link">评论</a>
+      
+
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-操作系统" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2020/03/31/ 操作系统/" class="article-date">
+  <time datetime="2020-03-31T06:16:46.000Z" itemprop="datePublished">2020-03-31</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/操作系统/">操作系统</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/03/31/ 操作系统/">操作系统</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="中断"><a href="#中断" class="headerlink" title="中断"></a>中断</h3><p>1 <em>中断</em>，在程序运行过程中出现某种紧急事件，必须中止当前正在运行的程序，转去处理此事件，然后再恢复原来运行的程序。有$\begin{Bmatrix} 强迫性中断\ 自愿性中断\  \end {Bmatrix}$。</p>
+<p>2 <em>中断系统</em>，中断装置+中断处理程序</p>
+<p>3 <em>中断装置</em>，识别中断源$\Longrightarrow$ 保存现场$(运行的物理环境：地址寄存器，通用寄存器，浮点寄存器，SP，PSW，PC，文件表)\Longrightarrow $引出中断程序</p>
+<p>1 进程互斥；进程同步；进程饥饿；进程死机；进程饿死</p>
+<p>2 $吞吐量=\frac{任务数量}{处理时间}$</p>
+<p>3 $PCB,process\  control\ block $，进程控制块，是标志进程存在的数据结构，其中包含系统对进程进行管理所需要的全部信息。</p>
+<p>4 $TCB,thread\  control\ block$，线程控制块，是标志线程存在的数据结构，其中包含系统对线程进行管理所需要的全部信息。</p>
+<p>5 $PSW,program\ status\ word$，程序状态字，表示当前程序的运行环境，状态</p>
+<p>6 $JCB\ ,Job\ Control\ Block$，作业控制块，是标志作业存在的数据结构，其中包含系统对作业进行管理所需要的全部信息。</p>
+<p>7 $PC$，指令计数。</p>
+<p><strong>处理及调度算法</strong></p>
+<p>1 $FCFS,first\ come\ first\ service $，先到先服务。</p>
+<p>。。。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      
+        <a data-url="http://yoursite.com/2020/03/31/ 操作系统/" data-id="ck8fitcnk000kxkvivenef6cv" class="article-share-link" data-share="baidu" data-title="操作系统">分享到</a>
+      
+
+      
+        <a href="http://yoursite.com/2020/03/31/ 操作系统/#ds-thread" class="article-comment-link">评论</a>
+      
+
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-离散数学第4讲" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2020/03/21/ 离散数学第4讲/" class="article-date">
@@ -156,7 +291,7 @@ GCD(a,b)=GCD(Remainder(b,a),a)\\
     </div>
     <footer class="article-footer">
       
-        <a data-url="http://yoursite.com/2020/03/21/ 离散数学第4讲/" data-id="ck85oqplh000n8ovi6fk1jx5r" class="article-share-link" data-share="baidu" data-title="state machine&amp;Euclidean Alg">分享到</a>
+        <a data-url="http://yoursite.com/2020/03/21/ 离散数学第4讲/" data-id="ck8fitcnm000mxkvi6byouesg" class="article-share-link" data-share="baidu" data-title="state machine&amp;Euclidean Alg">分享到</a>
       
 
       
@@ -197,7 +332,7 @@ GCD(a,b)=GCD(Remainder(b,a),a)\\
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h3 id="1"><a href="#1" class="headerlink" title="1"></a>1</h3><h3 id="2"><a href="#2" class="headerlink" title="2"></a>2</h3><p>证明$f(n)=O(g(n))$，有</p>
+        <h3 id="2"><a href="#2" class="headerlink" title="2"></a>2</h3><p>证明$f(n)=O(g(n))$，有</p>
 <script type="math/tex; mode=display">
 \exists c,n_0,对于\forall n\geq n_0 有 f(n)\leq c*g(n)</script><p>即$g(n)$时$f(n)$的渐近上限。</p>
 <p>证明$f(n)=\Omega (g(n))$，有</p>
@@ -207,7 +342,7 @@ GCD(a,b)=GCD(Remainder(b,a),a)\\
 <p>则有</p>
 <script type="math/tex; mode=display">
 f(n)=\Theta (g(n)),且g(n)=\theta (f(n))</script><p>例题：</p>
-<h5 id="1-1"><a href="#1-1" class="headerlink" title="1"></a>1</h5><p>证明$g(n)=\Omega (f(n)),则 \Omega (f(n))+\Omega (g(n))=\Omega (f(n))$</p>
+<h5 id="1"><a href="#1" class="headerlink" title="1"></a>1</h5><p>证明$g(n)=\Omega (f(n)),则 \Omega (f(n))+\Omega (g(n))=\Omega (f(n))$</p>
 <p>易知$\exists c_1,n_1,对于\forall n\geq n_1,有f(n)\geq c_1*g(n)$</p>
 <p>设有$p(n)=\Omega (g(n)),即\exists c_2,n_2,对于\forall n\geq n_2,有g(n)\geq c_2*p(n) $</p>
 <p>可得$ \Omega (f(n))+\Omega (g(n))=g(n)+p(n),设n_3= max{ n1,n2},g(n)+p(n))\geq c_1<em>f(n)+c_2</em>g(n)$</p>
@@ -239,12 +374,14 @@ f(n)=\Theta (g(n)),且g(n)=\theta (f(n))</script><p>例题：</p>
 <p>对于任意$n\geq max{ n_1,n_2}$</p>
 <p>有$min{ c_1,b_1}<em>(f(n)+g(n))\leq f_1(n)+g_1(n)\leq max{ c_2,b_2}</em>(f(n)+g(n))$</p>
 <p>故原式成立。</p>
-
+<h3 id="3-贪心方法"><a href="#3-贪心方法" class="headerlink" title="3 贪心方法"></a>3 贪心方法</h3><h4 id="1-一般方法"><a href="#1-一般方法" class="headerlink" title="1 一般方法"></a>1 一般方法</h4><script type="math/tex; mode=display">
+n个输入,可行解为n个输入的子集\\
+约束条件\Longrightarrow 可行解 根据目标函数\Longrightarrow最优解</script><h4 id="核心：选取能产生最优解的量度标准"><a href="#核心：选取能产生最优解的量度标准" class="headerlink" title="核心：选取能产生最优解的量度标准"></a>核心：选取能产生最优解的量度标准</h4><h4 id="2背包"><a href="#2背包" class="headerlink" title="2背包"></a>2背包</h4>
       
     </div>
     <footer class="article-footer">
       
-        <a data-url="http://yoursite.com/2020/02/13/ 算法设计及分析/" data-id="ck85oqpli000p8oviyja83sdo" class="article-share-link" data-share="baidu" data-title="算法设计与分析">分享到</a>
+        <a data-url="http://yoursite.com/2020/02/13/ 算法设计及分析/" data-id="ck8fitcnp000txkviejm4186b" class="article-share-link" data-share="baidu" data-title="算法设计与分析">分享到</a>
       
 
       
@@ -291,7 +428,7 @@ f(n)=\Theta (g(n)),且g(n)=\theta (f(n))</script><p>例题：</p>
     </div>
     <footer class="article-footer">
       
-        <a data-url="http://yoursite.com/2019/11/18/ Warshall/" data-id="ck85oqplb000d8ovisxurz5mf" class="article-share-link" data-share="baidu" data-title="Warshall&amp;All_componet">分享到</a>
+        <a data-url="http://yoursite.com/2019/11/18/ Warshall/" data-id="ck8fitcng000dxkvigl6rupak" class="article-share-link" data-share="baidu" data-title="Warshall&amp;All_componet">分享到</a>
       
 
       
@@ -338,7 +475,7 @@ f(n)=\Theta (g(n)),且g(n)=\theta (f(n))</script><p>例题：</p>
     </div>
     <footer class="article-footer">
       
-        <a data-url="http://yoursite.com/2019/11/13/ Kmeans/" data-id="ck85oqpl400068ovirho501df" class="article-share-link" data-share="baidu" data-title="Kmeans">分享到</a>
+        <a data-url="http://yoursite.com/2019/11/13/ Kmeans/" data-id="ck8fitcn80006xkvinmbcfvl3" class="article-share-link" data-share="baidu" data-title="Kmeans">分享到</a>
       
 
       
@@ -385,7 +522,7 @@ f(n)=\Theta (g(n)),且g(n)=\theta (f(n))</script><p>例题：</p>
     </div>
     <footer class="article-footer">
       
-        <a data-url="http://yoursite.com/2019/11/13/ Prim/" data-id="ck85oqpl500078ovimc3u1upc" class="article-share-link" data-share="baidu" data-title="Prim">分享到</a>
+        <a data-url="http://yoursite.com/2019/11/13/ Prim/" data-id="ck8fitcnh000fxkvir4fcey11" class="article-share-link" data-share="baidu" data-title="Prim">分享到</a>
       
 
       
@@ -407,7 +544,7 @@ f(n)=\Theta (g(n)),且g(n)=\theta (f(n))</script><p>例题：</p>
 </a>
     
   <div class="article-category">
-    <a class="article-category-link" href="/categories/Course/">Course</a>
+    <a class="article-category-link" href="/categories/随机数学/">随机数学</a>
   </div>
 
   </div>
@@ -455,12 +592,12 @@ f(n)=\Theta (g(n)),且g(n)=\theta (f(n))</script><p>例题：</p>
 <p>条件概型的性质：非负性；<strong>规范性：$P(\Omega |A)=1$</strong>；可列可加性：对于<strong>不相容</strong>的事件$B_1,B_2,\cdot \cdot \cdot $有</p>
 <script type="math/tex; mode=display">
 P((\cup_{i=1}^\infty B_i )|A)=\sum_{i=1}^\infty P(B_i|A)</script><p><strong>全概率公式：</strong>$P(B)=\sum\limits_{i=1}^nP(A_i)P(B|A_i)$</p>
-<p>​    其中：</p>
+<p>其中：</p>
 <p>$\cup <em>{i=1} ^n A_i=\Omega 且 \cap </em>{i=1} ^n A_i=\Phi$</p>
 <p><em>推导：</em></p>
 <p><em>对任意事件B，有</em></p>
 <script type="math/tex; mode=display">
-B=B\cap \Omega =B\cap (\cup _{i=1} ^n A_i)=\cup _{i=1} ^n {A_iB}</script><p><img src="概率论与数理统计.assets/pic/概率_25.jpg" alt></p>
+B=B\cap \Omega =B\cap (\cup _{i=1} ^n A_i)=\cup _{i=1} ^n {A_iB}</script><p><img src="概率论与数理统计.assets/概率_25.jpg" alt></p>
 <p>由条件概型的性质可得全概率公式。若某问题可画出概率树，那么该问题属于条件概型，甚至符合全概率公式。</p>
 <p><strong>贝叶斯公式：</strong></p>
 <script type="math/tex; mode=display">
@@ -477,21 +614,37 @@ P_n(k)=(_k^n)p^k(1-p)^{n-k}=C_n^kp^k(1-p)^{n-k}</script><h3 id="随机变量及�
 <p>$F(+\infty )=lim_{x\rightarrow +\infty }F(x)=1$</p>
 <p>F(x)是右连续的，即$F(x^{+})=F(x)$</p>
 <h5 id="2离散型随机变量"><a href="#2离散型随机变量" class="headerlink" title="2离散型随机变量"></a>2离散型随机变量</h5><p>两点分布</p>
-<p>二项分布</p>
+<p>二项分布，伯努利试验记作$X ~B(n,p) X在(n+1)p处取得最大值$</p>
 <p>几何分布</p>
-<p>泊松分布：$P{ X=k}=\frac{\lambda ^ke^{-\lambda}}{k!}$，其中，$\lambda$为服从参数</p>
-<h5 id="3连续型随机变量"><a href="#3连续型随机变量" class="headerlink" title="3连续型随机变量"></a>3连续型随机变量</h5><p>均匀分布</p>
-<p>指数分布</p>
-<p>正态分布，有概率密度函数</p>
+<p>泊松分布：$P{ X=k}=\frac{\lambda ^ke^{-\lambda}}{k!}$，其中，$\lambda$为服从参数,记作$X P(\lambda)$，$X在\lambda处取得最大值$</p>
+<h5 id="3连续型随机变量"><a href="#3连续型随机变量" class="headerlink" title="3连续型随机变量"></a>3连续型随机变量</h5><p><strong>均匀分布</strong></p>
 <script type="math/tex; mode=display">
-f(x)=\frac{1}{\sqrt{2\pi }\sigma}e^{-\frac{(x-u)^2}{2\sigma^2}},-\infty <x<+\infty</script><p>其中$u,\sigma$为服从参数。当$u,\sigma$分布为0，1时，则称$X$服从标准正态分布</p>
+f(x)=\left\{    \begin{array}{lr}        \frac{1}{b-a},a<x<b\\        0,其他            \end{array}\right.\\</script><p><strong>指数分布</strong></p>
 <script type="math/tex; mode=display">
-F(x)=\Phi (\frac{x-\mu}{\sigma})</script>
+f(x)=\left\{    \begin{array}{lr}        \lambda e^{-\lambda x} &x>0,\\        0&x\leq 0            \end{array}\right.\\F(x)=\left\{    \begin{array}{lr}    1-e^{-\lambda x}&x>0\\    0&x\leq0\\    \end{array}    \right.\\其中，\lambda>0是常数，称为X服从参数为\lambda的指数分布\\</script><p><strong>正态分布</strong></p>
+<p>$N(\mu ,\sigma^2)$有概率密度函数</p>
+<script type="math/tex; mode=display">
+f(x)=\frac{1}{\sqrt{2\pi }\sigma}e^{-\frac{(x-u)^2}{2\sigma^2}},-\infty <x<+\infty\\F(\mu)=\frac{1}{2}\\f(\mu)=\frac{1}{\sqrt{2\pi}\sigma}</script><p>标准正态分布</p>
+<p>$N(\mu,\sigma^2)=N(0,1)$</p>
+<script type="math/tex; mode=display">
+f(x)=\frac{1}{\sqrt{2\pi}}e^{-\frac{x^2}{2}}</script><p>其中$u,\sigma$为服从参数。当$u,\sigma$分布为0，1时，则称$X$服从标准正态分布</p>
+<script type="math/tex; mode=display">
+F(x)=\Phi (\frac{x-\mu}{\sigma})</script><h5 id="5-二维连续型随机变量"><a href="#5-二维连续型随机变量" class="headerlink" title="5 二维连续型随机变量"></a>5 二维连续型随机变量</h5><script type="math/tex; mode=display">
+F(x,y)=\int_{-\infty}^{x}\int_{-\infty}^yf(u,v)dudv\\其中F(x,y)为概率分布函数,f(x,y)为联合概率密度。\\</script><p>$1.f(x,y)\ge 0$</p>
+<p>$2. \int<em>{-\infty}^{+\infty}\int</em>{-\infty}^{+\infty}f(u,v)dudv=1$</p>
+<p>$3.若G是xOy上的一个区域，则,P{(X,Y)\in G}=\displaystyle\iint_{G}f(x,y)dxdy $</p>
+<p>$4.关于Y的边缘概率密度函数f<em>Y(y)=\displaystyle\int</em>{-\infty}^{+\infty}f(x,y)dx$</p>
+<p>若随机变量X和Y相互独立，那么有$f(x,y)=f_X(x)f_Y(y)$</p>
+<p><strong>均匀分布</strong></p>
+<script type="math/tex; mode=display">
+设D是xOy面上的有界区域，其面积为A，若\\f(x,y)=\left\{    \begin{array}{lr}        \frac{1}{A}&(x,y)\in D,\\        0&其他            \end{array}\right.\\则称(X,Y)在区域D上服从均匀分布。</script><p><strong>正态分布</strong></p>
+<script type="math/tex; mode=display">
+f(x,y)=\frac{1}{2\pi \sigma_1 \sigma_2 \sqrt{1-\rho^2} }\cdot e^{\frac{-1}{2(1-\rho^2)}[\frac{(x-\mu_1)^2}{\sigma_1^2}-2\rho \frac{(x-\mu_1)(y-\mu_2)}{\sigma_1\sigma_2}+\frac{(y-\mu_2)^2}{\sigma_2^2}]},(x,y)\in R^2\\其中\sigma_i>0,-1<\rho<1,记作(X,Y) ~N(\mu_1,\mu_2,\sigma_1^2,\sigma_2^2,\rho)</script>
       
     </div>
     <footer class="article-footer">
       
-        <a data-url="http://yoursite.com/2019/11/13/ 概率论与数理统计/" data-id="ck85oqplf000i8ovicj6dr6i4" class="article-share-link" data-share="baidu" data-title="随机数学">分享到</a>
+        <a data-url="http://yoursite.com/2019/11/13/ 概率论与数理统计/" data-id="ck8fitcnn000pxkvi8ac3tr2j" class="article-share-link" data-share="baidu" data-title="随机数学">分享到</a>
       
 
       
@@ -538,7 +691,7 @@ F(x)=\Phi (\frac{x-\mu}{\sigma})</script>
     </div>
     <footer class="article-footer">
       
-        <a data-url="http://yoursite.com/2019/10/27/ BinTree/" data-id="ck85oqpku00008ovirnntptta" class="article-share-link" data-share="baidu" data-title="BinTree">分享到</a>
+        <a data-url="http://yoursite.com/2019/10/27/ BinTree/" data-id="ck8fitcmy0000xkvimrqv66d5" class="article-share-link" data-share="baidu" data-title="BinTree">分享到</a>
       
 
       
@@ -587,131 +740,11 @@ F(x)=\Phi (\frac{x-\mu}{\sigma})</script>
     </div>
     <footer class="article-footer">
       
-        <a data-url="http://yoursite.com/2019/10/21/ EulerSieve/" data-id="ck85oqpkz00028ovi6nx6imlr" class="article-share-link" data-share="baidu" data-title="EulerSieve">分享到</a>
+        <a data-url="http://yoursite.com/2019/10/21/ EulerSieve/" data-id="ck8fitcn70005xkvifo2zd3yp" class="article-share-link" data-share="baidu" data-title="EulerSieve">分享到</a>
       
 
       
         <a href="http://yoursite.com/2019/10/21/ EulerSieve/#ds-thread" class="article-comment-link">评论</a>
-      
-
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-qpow" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2019/10/21/ qpow/" class="article-date">
-  <time datetime="2019-10-20T17:18:42.000Z" itemprop="datePublished">2019-10-21</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/algorithm/">algorithm</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/10/21/ qpow/">qpow</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="快速幂"><a href="#快速幂" class="headerlink" title="快速幂"></a>快速幂</h3><h5 id="假设"><a href="#假设" class="headerlink" title="假设"></a>假设</h5><p>​    求x^n的值</p>
-<h5 id="时间复杂度"><a href="#时间复杂度" class="headerlink" title="时间复杂度"></a>时间复杂度</h5><p>​    O(log n)</p>
-<h5 id="解释"><a href="#解释" class="headerlink" title="解释"></a>解释</h5><p>​    通过加大底数的权重来使得乘法次数更少</p>
-<p>​    1.假设n为奇数：x^n=x*x^(n-1)            则将x计入结果</p>
-<p>​    2.假设n为偶数：x^n=x^(n/2)*x^(n/2)    则将x的权重变为x^2</p>
-<h5 id="实现代码"><a href="#实现代码" class="headerlink" title="实现代码"></a>实现代码</h5><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*快速幂运算 log 2 n*/</span></span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">long</span> <span class="keyword">long</span> LL;</span><br><span class="line"><span class="function">LL <span class="title">qpow</span><span class="params">(LL a, LL n, LL mod)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	LL result = <span class="number">1</span>;</span><br><span class="line">	<span class="keyword">while</span> (n!=<span class="number">0</span>)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">if</span> (n &amp; <span class="number">1</span>)</span><br><span class="line">			result = (result * a) % mod;<span class="comment">//计入结果</span></span><br><span class="line">		a = (a * a) % mod;<span class="comment">//权重变大</span></span><br><span class="line">		n &gt;&gt;= <span class="number">1</span>;<span class="comment">//n=n/2;</span></span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> result;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-      
-    </div>
-    <footer class="article-footer">
-      
-        <a data-url="http://yoursite.com/2019/10/21/ qpow/" data-id="ck85oqplg000k8ovid4peyoa8" class="article-share-link" data-share="baidu" data-title="qpow">分享到</a>
-      
-
-      
-        <a href="http://yoursite.com/2019/10/21/ qpow/#ds-thread" class="article-comment-link">评论</a>
-      
-
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-Kruskal" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2019/10/10/ Kruskal/" class="article-date">
-  <time datetime="2019-10-10T14:56:52.000Z" itemprop="datePublished">2019-10-10</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/algorithm/">algorithm</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/10/10/ Kruskal/">Kruskal</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="Kruskal"><a href="#Kruskal" class="headerlink" title="Kruskal"></a>Kruskal</h3><blockquote>
-<p>Kruskal总是维护无向连通图的最小生成森林</p>
-<p>最终得到该图的最小生成树</p>
-</blockquote>
-<h5 id="由来"><a href="#由来" class="headerlink" title="由来"></a>由来</h5><p>​    <strong>Kruskal算法</strong>是一种用来查找<a href="https://baike.baidu.com/item/最小生成树" target="_blank" rel="noopener">最小生成树</a>的贪心算法，由Joseph Kruskal在1956年发表。</p>
-<h5 id="假设"><a href="#假设" class="headerlink" title="假设"></a>假设</h5><p>​    有n个点m条无向边的图，且已知每一条边(x,y,z)，代表点x和点y之间有哦权值为z的无向边。    </p>
-<h5 id="时间复杂度"><a href="#时间复杂度" class="headerlink" title="时间复杂度"></a>时间复杂度</h5><p>​    O(m log m)</p>
-<h5 id="预备知识"><a href="#预备知识" class="headerlink" title="预备知识"></a>预备知识</h5><p>​    并查集        <del>先挖坑</del></p>
-<h5 id="解释"><a href="#解释" class="headerlink" title="解释"></a>解释</h5><p>​        在遍历所给无向连通图的过程中，kruskal 总是维护着最小生成森林。</p>
-<p>​    最终得到最小生成树。</p>
-<p>​        有以下步骤：</p>
-<p>​    1.初始化并查集，每一个点各自构成一个集合</p>
-<p>​    2.对边集S进行从小到大排序</p>
-<p>​    3.从S中取出一条边（注意：现在是从S中从小到大取出，判断这条边的两个端点是否属于同一个集合（使用并查集维护），不是则将端点x和端点y使用并查集combine起来。且将边加入最小生成森林。</p>
-<p>​    4.不断重复S直至访问完所有边</p>
-<h5 id="实现代码"><a href="#实现代码" class="headerlink" title="实现代码"></a>实现代码</h5><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//以边集来保存图，假设有m条边</span></span><br><span class="line"><span class="comment">//时间复杂度为mlogm</span></span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> MAX=<span class="number">11010</span>;</span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">edge</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line">    <span class="keyword">int</span> x;</span><br><span class="line">    <span class="keyword">int</span> y;</span><br><span class="line">    <span class="keyword">int</span> z;</span><br><span class="line">&#125;;<span class="comment">//代表x和y两点之间有路且权值为z</span></span><br><span class="line">edge S[MAX];</span><br><span class="line"><span class="keyword">int</span> Father[MAX];</span><br><span class="line"><span class="keyword">int</span> n,m;</span><br><span class="line"><span class="keyword">int</span> ans;</span><br><span class="line"><span class="keyword">bool</span> <span class="keyword">operator</span> &lt;(<span class="keyword">const</span> edge&amp;a,<span class="keyword">const</span> edge&amp;b)</span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">return</span> a.z&lt;b.z;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">void</span> <span class="title">Init</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> i;</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">"%d%d"</span>,&amp;n,&amp;m);</span><br><span class="line">    <span class="keyword">for</span>(i=<span class="number">1</span>;i&lt;=m;i++)</span><br><span class="line">        <span class="built_in">scanf</span>(<span class="string">"%d%d%d"</span>,&amp;S[i].x,&amp;S[i].y,&amp;S[i].z);</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//并查集找父亲</span></span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">int</span> <span class="title">Find</span><span class="params">(<span class="keyword">int</span> x)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">while</span>(x!=Father[x])</span><br><span class="line">        x=Father[x];</span><br><span class="line">    <span class="keyword">return</span> x;   </span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//combine</span></span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">void</span> <span class="title">combine</span><span class="params">(<span class="keyword">int</span> x,<span class="keyword">int</span> y)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">       Father[x]=y;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">void</span> <span class="title">Kruskal</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    ans=<span class="number">0</span>;</span><br><span class="line">    <span class="keyword">int</span> x;</span><br><span class="line">    <span class="keyword">int</span> y;</span><br><span class="line">    <span class="keyword">int</span> i;</span><br><span class="line">    <span class="keyword">for</span>(i=<span class="number">1</span>;i&lt;=n;i++)</span><br><span class="line">        Father[i]=i;</span><br><span class="line">    sort(S+<span class="number">1</span>,S+m+<span class="number">1</span>);</span><br><span class="line">    <span class="keyword">for</span>(i=<span class="number">1</span>;i&lt;=m;i++)</span><br><span class="line">    &#123;</span><br><span class="line">        x=Find(S[i].x);</span><br><span class="line">        y=Find(S[i].y);</span><br><span class="line">        <span class="keyword">if</span>(x!=y)</span><br><span class="line">        &#123;</span><br><span class="line">            ans=ans+S[i].z;</span><br><span class="line">            combine(x,y);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<blockquote>
-<p><a href="http://acm.hdu.edu.cn/showproblem.php?pid=1233" target="_blank" rel="noopener">模板题</a></p>
-</blockquote>
-<p>​    回顾学习算法的第四天。<del>戒掉可乐的第四天</del></p>
-<p>​        Orz</p>
-<p>​        Orz</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      
-        <a data-url="http://yoursite.com/2019/10/10/ Kruskal/" data-id="ck85oqpl700098ovi1zzb6yrn" class="article-share-link" data-share="baidu" data-title="Kruskal">分享到</a>
-      
-
-      
-        <a href="http://yoursite.com/2019/10/10/ Kruskal/#ds-thread" class="article-comment-link">评论</a>
       
 
       
@@ -735,7 +768,7 @@ F(x)=\Phi (\frac{x-\mu}{\sigma})</script>
   <div class="widget-wrap">
     <h3 class="widget-title">分类</h3>
     <div class="widget">
-      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Course/">Course</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/algorithm/">algorithm</a><span class="category-list-count">8</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/机器学习/">机器学习</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/离散数学/">离散数学</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/算法设计与分析/">算法设计与分析</a><span class="category-list-count">1</span></li></ul>
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/algorithm/">algorithm</a><span class="category-list-count">8</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/操作系统/">操作系统</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/机器学习/">机器学习</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/离散数学/">离散数学</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/算法设计与分析/">算法设计与分析</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/计算机系统结构/">计算机系统结构</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/随机数学/">随机数学</a><span class="category-list-count">1</span></li></ul>
     </div>
   </div>
 
@@ -748,7 +781,7 @@ F(x)=\Phi (\frac{x-\mu}{\sigma})</script>
   <div class="widget-wrap">
     <h3 class="widget-title">归档</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/03/">三月 2020</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/02/">二月 2020</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/11/">十一月 2019</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/10/">十月 2019</a><span class="archive-list-count">6</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/08/">八月 2019</a><span class="archive-list-count">1</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/03/">三月 2020</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/02/">二月 2020</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/11/">十一月 2019</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/10/">十月 2019</a><span class="archive-list-count">6</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/08/">八月 2019</a><span class="archive-list-count">1</span></li></ul>
     </div>
   </div>
 
@@ -760,6 +793,14 @@ F(x)=\Phi (\frac{x-\mu}{\sigma})</script>
       <ul>
         
           <li>
+            <a href="/2020/03/31/ 计算机系统结构/">计算机系统结构</a>
+          </li>
+        
+          <li>
+            <a href="/2020/03/31/ 操作系统/">操作系统</a>
+          </li>
+        
+          <li>
             <a href="/2020/03/21/ 离散数学第4讲/">state machine&amp;Euclidean Alg</a>
           </li>
         
@@ -769,14 +810,6 @@ F(x)=\Phi (\frac{x-\mu}{\sigma})</script>
         
           <li>
             <a href="/2019/11/18/ Warshall/">Warshall&amp;All_componet</a>
-          </li>
-        
-          <li>
-            <a href="/2019/11/13/ Kmeans/">Kmeans</a>
-          </li>
-        
-          <li>
-            <a href="/2019/11/13/ Prim/">Prim</a>
           </li>
         
       </ul>

@@ -4,19 +4,20 @@
 <head><meta name="generator" content="Hexo 3.9.0">
   <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="utf-8">
   
-  <title>Archives | Xxgzbd&#39;s Blog</title>
+  <title>操作系统 | Xxgzbd&#39;s Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="记录">
+  <meta name="description" content="中断1 中断，在程序运行过程中出现某种紧急事件，必须中止当前正在运行的程序，转去处理此事件，然后再恢复原来运行的程序。有$\begin{Bmatrix} 强迫性中断\ 自愿性中断\  \end {Bmatrix}$。 2 中断系统，中断装置+中断处理程序 3 中断装置，识别中断源$\Longrightarrow$ 保存现场$(运行的物理环境：地址寄存器，通用寄存器，浮点寄存器，SP，PSW，PC，">
 <meta name="keywords" content="algorithm math">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Xxgzbd&#39;s Blog">
-<meta property="og:url" content="http://yoursite.com/archives/page/2/index.html">
+<meta property="og:type" content="article">
+<meta property="og:title" content="操作系统">
+<meta property="og:url" content="http://yoursite.com/2020/03/31/ 操作系统/index.html">
 <meta property="og:site_name" content="Xxgzbd&#39;s Blog">
-<meta property="og:description" content="记录">
+<meta property="og:description" content="中断1 中断，在程序运行过程中出现某种紧急事件，必须中止当前正在运行的程序，转去处理此事件，然后再恢复原来运行的程序。有$\begin{Bmatrix} 强迫性中断\ 自愿性中断\  \end {Bmatrix}$。 2 中断系统，中断装置+中断处理程序 3 中断装置，识别中断源$\Longrightarrow$ 保存现场$(运行的物理环境：地址寄存器，通用寄存器，浮点寄存器，SP，PSW，PC，">
 <meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2020-03-31T06:24:38.897Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Xxgzbd&#39;s Blog">
-<meta name="twitter:description" content="记录">
+<meta name="twitter:title" content="操作系统">
+<meta name="twitter:description" content="中断1 中断，在程序运行过程中出现某种紧急事件，必须中止当前正在运行的程序，转去处理此事件，然后再恢复原来运行的程序。有$\begin{Bmatrix} 强迫性中断\ 自愿性中断\  \end {Bmatrix}$。 2 中断系统，中断装置+中断处理程序 3 中断装置，识别中断源$\Longrightarrow$ 保存现场$(运行的物理环境：地址寄存器，通用寄存器，浮点寄存器，SP，PSW，PC，">
   
     <link rel="alternative" href="/atom.xml" title="Xxgzbd&#39;s Blog" type="application/atom+xml">
   
@@ -68,120 +69,88 @@
   </div>
 </header>
     <div class="outer">
-      <section id="main">
-  
-  
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2019" class="archive-year">2019</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2019/10/21/ qpow/" class="archive-article-date">
-  <time datetime="2019-10-20T17:18:42.000Z" itemprop="datePublished">10月 21</time>
+      <section id="main"><article id="post-操作系统" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2020/03/31/ 操作系统/" class="article-date">
+  <time datetime="2020-03-31T06:16:46.000Z" itemprop="datePublished">2020-03-31</time>
 </a>
-      
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/操作系统/">操作系统</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/10/21/ qpow/">qpow</a>
+    <h1 class="article-title" itemprop="name">
+      操作系统
     </h1>
   
 
-    </header>
-  </div>
-</article>
-  
+      </header>
     
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2019/10/10/ Kruskal/" class="archive-article-date">
-  <time datetime="2019-10-10T14:56:52.000Z" itemprop="datePublished">10月 10</time>
-</a>
+    <div class="article-entry" itemprop="articleBody">
       
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/10/10/ Kruskal/">Kruskal</a>
-    </h1>
-  
+        <h3 id="中断"><a href="#中断" class="headerlink" title="中断"></a>中断</h3><p>1 <em>中断</em>，在程序运行过程中出现某种紧急事件，必须中止当前正在运行的程序，转去处理此事件，然后再恢复原来运行的程序。有$\begin{Bmatrix} 强迫性中断\ 自愿性中断\  \end {Bmatrix}$。</p>
+<p>2 <em>中断系统</em>，中断装置+中断处理程序</p>
+<p>3 <em>中断装置</em>，识别中断源$\Longrightarrow$ 保存现场$(运行的物理环境：地址寄存器，通用寄存器，浮点寄存器，SP，PSW，PC，文件表)\Longrightarrow $引出中断程序</p>
+<p>1 进程互斥；进程同步；进程饥饿；进程死机；进程饿死</p>
+<p>2 $吞吐量=\frac{任务数量}{处理时间}$</p>
+<p>3 $PCB,process\  control\ block $，进程控制块，是标志进程存在的数据结构，其中包含系统对进程进行管理所需要的全部信息。</p>
+<p>4 $TCB,thread\  control\ block$，线程控制块，是标志线程存在的数据结构，其中包含系统对线程进行管理所需要的全部信息。</p>
+<p>5 $PSW,program\ status\ word$，程序状态字，表示当前程序的运行环境，状态</p>
+<p>6 $JCB\ ,Job\ Control\ Block$，作业控制块，是标志作业存在的数据结构，其中包含系统对作业进行管理所需要的全部信息。</p>
+<p>7 $PC$，指令计数。</p>
+<p><strong>处理及调度算法</strong></p>
+<p>1 $FCFS,first\ come\ first\ service $，先到先服务。</p>
+<p>。。。</p>
 
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2019/10/09/ Manacher/" class="archive-article-date">
-  <time datetime="2019-10-09T15:21:21.000Z" itemprop="datePublished">10月 9</time>
-</a>
       
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/10/09/ Manacher/">Manacher</a>
-    </h1>
-  
-
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2019/10/01/ KMP/" class="archive-article-date">
-  <time datetime="2019-10-01T06:25:53.000Z" itemprop="datePublished">10月 1</time>
-</a>
+    </div>
+    <footer class="article-footer">
       
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/10/01/ KMP/">KMP</a>
-    </h1>
-  
-
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2019/08/30/ hello-world/" class="archive-article-date">
-  <time datetime="2019-08-30T08:49:53.178Z" itemprop="datePublished">8月 30</time>
-</a>
+        <a data-url="http://yoursite.com/2020/03/31/ 操作系统/" data-id="ck8fitcnk000kxkvivenef6cv" class="article-share-link" data-share="baidu" data-title="操作系统">分享到</a>
       
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/08/30/ hello-world/">Hello World</a>
-    </h1>
-  
 
-    </header>
+      
+        <a href="http://yoursite.com/2020/03/31/ 操作系统/#ds-thread" class="article-comment-link">评论</a>
+      
+
+      
+    </footer>
   </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2020/03/31/ 计算机系统结构/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">下一篇</strong>
+      <div class="article-nav-title">
+        
+          计算机系统结构
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2020/03/21/ 离散数学第4讲/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">上一篇</strong>
+      <div class="article-nav-title">state machine&amp;Euclidean Alg</div>
+    </a>
+  
+</nav>
+
+  
 </article>
-  
-  
-    </div></section>
-  
 
 
-  <nav id="page-nav">
-    <a class="extend prev" rel="prev" href="/archives/">&laquo; 上一页</a><a class="page-number" href="/archives/">1</a><span class="page-number current">2</span>
-  </nav>
+  <section id="comments">
+    <div id="ds-thread" class="ds-thread" data-thread-key="2020/03/31/ 操作系统/" data-title="操作系统" data-url="http://yoursite.com/2020/03/31/ 操作系统/"></div>
+  </section>
 </section>
       
       <aside id="sidebar">

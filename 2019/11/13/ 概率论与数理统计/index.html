@@ -14,12 +14,12 @@
 <meta property="og:site_name" content="Xxgzbd&#39;s Blog">
 <meta property="og:description" content="随机事件及其概率1引入随机试验，简称为试验；若均满足：可重复性；可观测性；随机性。 $E:$    试验 $w$:    样本点 $\Omega = ${ $w_1,w_2…w_i$ } :    样本空间 $A$，其中$A\subseteqq \Omega$:    事件 {$w_i$} :    基本事件 $\Omega$:    必然事件 $\phi$:    不可能事件 若 试验结果 $w">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:image" content="http://yoursite.com/2019/11/13/%20概率论与数理统计/概率论与数理统计.assets/pic/概率_25.jpg">
-<meta property="og:updated_time" content="2020-03-23T14:16:35.592Z">
+<meta property="og:image" content="http://yoursite.com/2019/11/13/%20概率论与数理统计/概率论与数理统计.assets/概率_25.jpg">
+<meta property="og:updated_time" content="2020-03-31T06:19:33.751Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="随机数学">
 <meta name="twitter:description" content="随机事件及其概率1引入随机试验，简称为试验；若均满足：可重复性；可观测性；随机性。 $E:$    试验 $w$:    样本点 $\Omega = ${ $w_1,w_2…w_i$ } :    样本空间 $A$，其中$A\subseteqq \Omega$:    事件 {$w_i$} :    基本事件 $\Omega$:    必然事件 $\phi$:    不可能事件 若 试验结果 $w">
-<meta name="twitter:image" content="http://yoursite.com/2019/11/13/%20概率论与数理统计/概率论与数理统计.assets/pic/概率_25.jpg">
+<meta name="twitter:image" content="http://yoursite.com/2019/11/13/%20概率论与数理统计/概率论与数理统计.assets/概率_25.jpg">
   
     <link rel="alternative" href="/atom.xml" title="Xxgzbd&#39;s Blog" type="application/atom+xml">
   
@@ -78,7 +78,7 @@
 </a>
     
   <div class="article-category">
-    <a class="article-category-link" href="/categories/Course/">Course</a>
+    <a class="article-category-link" href="/categories/随机数学/">随机数学</a>
   </div>
 
   </div>
@@ -126,12 +126,12 @@
 <p>条件概型的性质：非负性；<strong>规范性：$P(\Omega |A)=1$</strong>；可列可加性：对于<strong>不相容</strong>的事件$B_1,B_2,\cdot \cdot \cdot $有</p>
 <script type="math/tex; mode=display">
 P((\cup_{i=1}^\infty B_i )|A)=\sum_{i=1}^\infty P(B_i|A)</script><p><strong>全概率公式：</strong>$P(B)=\sum\limits_{i=1}^nP(A_i)P(B|A_i)$</p>
-<p>​    其中：</p>
+<p>其中：</p>
 <p>$\cup <em>{i=1} ^n A_i=\Omega 且 \cap </em>{i=1} ^n A_i=\Phi$</p>
 <p><em>推导：</em></p>
 <p><em>对任意事件B，有</em></p>
 <script type="math/tex; mode=display">
-B=B\cap \Omega =B\cap (\cup _{i=1} ^n A_i)=\cup _{i=1} ^n {A_iB}</script><p><img src="概率论与数理统计.assets/pic/概率_25.jpg" alt></p>
+B=B\cap \Omega =B\cap (\cup _{i=1} ^n A_i)=\cup _{i=1} ^n {A_iB}</script><p><img src="概率论与数理统计.assets/概率_25.jpg" alt></p>
 <p>由条件概型的性质可得全概率公式。若某问题可画出概率树，那么该问题属于条件概型，甚至符合全概率公式。</p>
 <p><strong>贝叶斯公式：</strong></p>
 <script type="math/tex; mode=display">
@@ -148,21 +148,37 @@ P_n(k)=(_k^n)p^k(1-p)^{n-k}=C_n^kp^k(1-p)^{n-k}</script><h3 id="随机变量及�
 <p>$F(+\infty )=lim_{x\rightarrow +\infty }F(x)=1$</p>
 <p>F(x)是右连续的，即$F(x^{+})=F(x)$</p>
 <h5 id="2离散型随机变量"><a href="#2离散型随机变量" class="headerlink" title="2离散型随机变量"></a>2离散型随机变量</h5><p>两点分布</p>
-<p>二项分布</p>
+<p>二项分布，伯努利试验记作$X ~B(n,p) X在(n+1)p处取得最大值$</p>
 <p>几何分布</p>
-<p>泊松分布：$P{ X=k}=\frac{\lambda ^ke^{-\lambda}}{k!}$，其中，$\lambda$为服从参数</p>
-<h5 id="3连续型随机变量"><a href="#3连续型随机变量" class="headerlink" title="3连续型随机变量"></a>3连续型随机变量</h5><p>均匀分布</p>
-<p>指数分布</p>
-<p>正态分布，有概率密度函数</p>
+<p>泊松分布：$P{ X=k}=\frac{\lambda ^ke^{-\lambda}}{k!}$，其中，$\lambda$为服从参数,记作$X P(\lambda)$，$X在\lambda处取得最大值$</p>
+<h5 id="3连续型随机变量"><a href="#3连续型随机变量" class="headerlink" title="3连续型随机变量"></a>3连续型随机变量</h5><p><strong>均匀分布</strong></p>
 <script type="math/tex; mode=display">
-f(x)=\frac{1}{\sqrt{2\pi }\sigma}e^{-\frac{(x-u)^2}{2\sigma^2}},-\infty <x<+\infty</script><p>其中$u,\sigma$为服从参数。当$u,\sigma$分布为0，1时，则称$X$服从标准正态分布</p>
+f(x)=\left\{    \begin{array}{lr}        \frac{1}{b-a},a<x<b\\        0,其他            \end{array}\right.\\</script><p><strong>指数分布</strong></p>
 <script type="math/tex; mode=display">
-F(x)=\Phi (\frac{x-\mu}{\sigma})</script>
+f(x)=\left\{    \begin{array}{lr}        \lambda e^{-\lambda x} &x>0,\\        0&x\leq 0            \end{array}\right.\\F(x)=\left\{    \begin{array}{lr}    1-e^{-\lambda x}&x>0\\    0&x\leq0\\    \end{array}    \right.\\其中，\lambda>0是常数，称为X服从参数为\lambda的指数分布\\</script><p><strong>正态分布</strong></p>
+<p>$N(\mu ,\sigma^2)$有概率密度函数</p>
+<script type="math/tex; mode=display">
+f(x)=\frac{1}{\sqrt{2\pi }\sigma}e^{-\frac{(x-u)^2}{2\sigma^2}},-\infty <x<+\infty\\F(\mu)=\frac{1}{2}\\f(\mu)=\frac{1}{\sqrt{2\pi}\sigma}</script><p>标准正态分布</p>
+<p>$N(\mu,\sigma^2)=N(0,1)$</p>
+<script type="math/tex; mode=display">
+f(x)=\frac{1}{\sqrt{2\pi}}e^{-\frac{x^2}{2}}</script><p>其中$u,\sigma$为服从参数。当$u,\sigma$分布为0，1时，则称$X$服从标准正态分布</p>
+<script type="math/tex; mode=display">
+F(x)=\Phi (\frac{x-\mu}{\sigma})</script><h5 id="5-二维连续型随机变量"><a href="#5-二维连续型随机变量" class="headerlink" title="5 二维连续型随机变量"></a>5 二维连续型随机变量</h5><script type="math/tex; mode=display">
+F(x,y)=\int_{-\infty}^{x}\int_{-\infty}^yf(u,v)dudv\\其中F(x,y)为概率分布函数,f(x,y)为联合概率密度。\\</script><p>$1.f(x,y)\ge 0$</p>
+<p>$2. \int<em>{-\infty}^{+\infty}\int</em>{-\infty}^{+\infty}f(u,v)dudv=1$</p>
+<p>$3.若G是xOy上的一个区域，则,P{(X,Y)\in G}=\displaystyle\iint_{G}f(x,y)dxdy $</p>
+<p>$4.关于Y的边缘概率密度函数f<em>Y(y)=\displaystyle\int</em>{-\infty}^{+\infty}f(x,y)dx$</p>
+<p>若随机变量X和Y相互独立，那么有$f(x,y)=f_X(x)f_Y(y)$</p>
+<p><strong>均匀分布</strong></p>
+<script type="math/tex; mode=display">
+设D是xOy面上的有界区域，其面积为A，若\\f(x,y)=\left\{    \begin{array}{lr}        \frac{1}{A}&(x,y)\in D,\\        0&其他            \end{array}\right.\\则称(X,Y)在区域D上服从均匀分布。</script><p><strong>正态分布</strong></p>
+<script type="math/tex; mode=display">
+f(x,y)=\frac{1}{2\pi \sigma_1 \sigma_2 \sqrt{1-\rho^2} }\cdot e^{\frac{-1}{2(1-\rho^2)}[\frac{(x-\mu_1)^2}{\sigma_1^2}-2\rho \frac{(x-\mu_1)(y-\mu_2)}{\sigma_1\sigma_2}+\frac{(y-\mu_2)^2}{\sigma_2^2}]},(x,y)\in R^2\\其中\sigma_i>0,-1<\rho<1,记作(X,Y) ~N(\mu_1,\mu_2,\sigma_1^2,\sigma_2^2,\rho)</script>
       
     </div>
     <footer class="article-footer">
       
-        <a data-url="http://yoursite.com/2019/11/13/ 概率论与数理统计/" data-id="ck85oqplf000i8ovicj6dr6i4" class="article-share-link" data-share="baidu" data-title="随机数学">分享到</a>
+        <a data-url="http://yoursite.com/2019/11/13/ 概率论与数理统计/" data-id="ck8fitcnn000pxkvi8ac3tr2j" class="article-share-link" data-share="baidu" data-title="随机数学">分享到</a>
       
 
       
@@ -208,7 +224,7 @@ F(x)=\Phi (\frac{x-\mu}{\sigma})</script>
   <div class="widget-wrap">
     <h3 class="widget-title">分类</h3>
     <div class="widget">
-      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Course/">Course</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/algorithm/">algorithm</a><span class="category-list-count">8</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/机器学习/">机器学习</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/离散数学/">离散数学</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/算法设计与分析/">算法设计与分析</a><span class="category-list-count">1</span></li></ul>
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/algorithm/">algorithm</a><span class="category-list-count">8</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/操作系统/">操作系统</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/机器学习/">机器学习</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/离散数学/">离散数学</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/算法设计与分析/">算法设计与分析</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/计算机系统结构/">计算机系统结构</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/随机数学/">随机数学</a><span class="category-list-count">1</span></li></ul>
     </div>
   </div>
 
@@ -221,7 +237,7 @@ F(x)=\Phi (\frac{x-\mu}{\sigma})</script>
   <div class="widget-wrap">
     <h3 class="widget-title">归档</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/03/">三月 2020</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/02/">二月 2020</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/11/">十一月 2019</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/10/">十月 2019</a><span class="archive-list-count">6</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/08/">八月 2019</a><span class="archive-list-count">1</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/03/">三月 2020</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/02/">二月 2020</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/11/">十一月 2019</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/10/">十月 2019</a><span class="archive-list-count">6</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/08/">八月 2019</a><span class="archive-list-count">1</span></li></ul>
     </div>
   </div>
 
@@ -233,6 +249,14 @@ F(x)=\Phi (\frac{x-\mu}{\sigma})</script>
       <ul>
         
           <li>
+            <a href="/2020/03/31/ 计算机系统结构/">计算机系统结构</a>
+          </li>
+        
+          <li>
+            <a href="/2020/03/31/ 操作系统/">操作系统</a>
+          </li>
+        
+          <li>
             <a href="/2020/03/21/ 离散数学第4讲/">state machine&amp;Euclidean Alg</a>
           </li>
         
@@ -242,14 +266,6 @@ F(x)=\Phi (\frac{x-\mu}{\sigma})</script>
         
           <li>
             <a href="/2019/11/18/ Warshall/">Warshall&amp;All_componet</a>
-          </li>
-        
-          <li>
-            <a href="/2019/11/13/ Kmeans/">Kmeans</a>
-          </li>
-        
-          <li>
-            <a href="/2019/11/13/ Prim/">Prim</a>
           </li>
         
       </ul>
