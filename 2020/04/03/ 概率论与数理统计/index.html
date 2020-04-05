@@ -10,16 +10,16 @@
 <meta name="keywords" content="algorithm math">
 <meta property="og:type" content="article">
 <meta property="og:title" content="随机数学">
-<meta property="og:url" content="http://yoursite.com/2019/11/13/ 概率论与数理统计/index.html">
+<meta property="og:url" content="http://yoursite.com/2020/04/03/ 概率论与数理统计/index.html">
 <meta property="og:site_name" content="Xxgzbd&#39;s Blog">
 <meta property="og:description" content="随机事件及其概率1引入随机试验，简称为试验；若均满足：可重复性；可观测性；随机性。 $E:$    试验 $w$:    样本点 $\Omega = ${ $w_1,w_2…w_i$ } :    样本空间 $A$，其中$A\subseteqq \Omega$:    事件 {$w_i$} :    基本事件 $\Omega$:    必然事件 $\phi$:    不可能事件 若 试验结果 $w">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:image" content="http://yoursite.com/2019/11/13/%20概率论与数理统计/概率论与数理统计.assets/概率_25.jpg">
-<meta property="og:updated_time" content="2020-03-31T06:19:33.751Z">
+<meta property="og:image" content="http://yoursite.com/2020/04/03/%20概率论与数理统计/概率论与数理统计.assets/概率_25.jpg">
+<meta property="og:updated_time" content="2020-04-03T16:29:38.688Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="随机数学">
 <meta name="twitter:description" content="随机事件及其概率1引入随机试验，简称为试验；若均满足：可重复性；可观测性；随机性。 $E:$    试验 $w$:    样本点 $\Omega = ${ $w_1,w_2…w_i$ } :    样本空间 $A$，其中$A\subseteqq \Omega$:    事件 {$w_i$} :    基本事件 $\Omega$:    必然事件 $\phi$:    不可能事件 若 试验结果 $w">
-<meta name="twitter:image" content="http://yoursite.com/2019/11/13/%20概率论与数理统计/概率论与数理统计.assets/概率_25.jpg">
+<meta name="twitter:image" content="http://yoursite.com/2020/04/03/%20概率论与数理统计/概率论与数理统计.assets/概率_25.jpg">
   
     <link rel="alternative" href="/atom.xml" title="Xxgzbd&#39;s Blog" type="application/atom+xml">
   
@@ -73,8 +73,8 @@
     <div class="outer">
       <section id="main"><article id="post-概率论与数理统计" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2019/11/13/ 概率论与数理统计/" class="article-date">
-  <time datetime="2019-11-13T14:42:33.000Z" itemprop="datePublished">2019-11-13</time>
+    <a href="/2020/04/03/ 概率论与数理统计/" class="article-date">
+  <time datetime="2020-04-03T04:42:33.000Z" itemprop="datePublished">2020-04-03</time>
 </a>
     
   <div class="article-category">
@@ -173,16 +173,26 @@ F(x,y)=\int_{-\infty}^{x}\int_{-\infty}^yf(u,v)dudv\\其中F(x,y)为概率分布
 <script type="math/tex; mode=display">
 设D是xOy面上的有界区域，其面积为A，若\\f(x,y)=\left\{    \begin{array}{lr}        \frac{1}{A}&(x,y)\in D,\\        0&其他            \end{array}\right.\\则称(X,Y)在区域D上服从均匀分布。</script><p><strong>正态分布</strong></p>
 <script type="math/tex; mode=display">
-f(x,y)=\frac{1}{2\pi \sigma_1 \sigma_2 \sqrt{1-\rho^2} }\cdot e^{\frac{-1}{2(1-\rho^2)}[\frac{(x-\mu_1)^2}{\sigma_1^2}-2\rho \frac{(x-\mu_1)(y-\mu_2)}{\sigma_1\sigma_2}+\frac{(y-\mu_2)^2}{\sigma_2^2}]},(x,y)\in R^2\\其中\sigma_i>0,-1<\rho<1,记作(X,Y) ~N(\mu_1,\mu_2,\sigma_1^2,\sigma_2^2,\rho)</script>
+f(x,y)=\frac{1}{2\pi \sigma_1 \sigma_2 \sqrt{1-\rho^2} }\cdot e^{\frac{-1}{2(1-\rho^2)}[\frac{(x-\mu_1)^2}{\sigma_1^2}-2\rho \frac{(x-\mu_1)(y-\mu_2)}{\sigma_1\sigma_2}+\frac{(y-\mu_2)^2}{\sigma_2^2}]},(x,y)\in R^2\\其中\sigma_i>0,-1<\rho<1,记作(X,Y) ~N(\mu_1,\mu_2,\sigma_1^2,\sigma_2^2,\rho)</script><p><strong>条件分布</strong></p>
+<script type="math/tex; mode=display">
+离散型：P\{X=x_i|Y=y_j\}=\frac{P{X=x_i,Y=y_j}}{P{Y=y_j}}=\frac{p_{ij}}{p_{\cdot j}}\\
+连续型条件Y=y下X的条件概率密度函数f_{Y|X}(x|y)=\frac{f(x,y)}{f_Y{y}}</script><p><strong>连续型函数分布</strong></p>
+<p>$Z=X+Y\公式法f<em>Z(z)=\displaystyle \int </em>{-\infin}^{+\infin}f(x,z-x)dx=\displaystyle \int _{-\infin} ^{+\infin}f(z-y,y)dy\分布函数法$</p>
+<p>$Z=X+Y,若X和Y相互独立\f<em>Z(z)=\displaystyle \int </em>{-\infin} ^{+\infin}f_X(x)f_Y(z-x)dx\这个公式称为f_X(x)与f_Y(y)的卷积公式$</p>
+<p>$Z=max{X,Y},X与Y相互独立$</p>
+<p>$F_Z(z)=F_X(x)F_Y(y)$</p>
+<p>$Z=min{X,Y},X与Y相互独立$</p>
+<p>$F_Z(z)=1-[1-F_X(z)][1-F_Y(z)]$</p>
+
       
     </div>
     <footer class="article-footer">
       
-        <a data-url="http://yoursite.com/2019/11/13/ 概率论与数理统计/" data-id="ck8fivwsq000os8viyuvywsf3" class="article-share-link" data-share="baidu" data-title="随机数学">分享到</a>
+        <a data-url="http://yoursite.com/2020/04/03/ 概率论与数理统计/" data-id="ck8mt2qpu000pdgvinxvzi79m" class="article-share-link" data-share="baidu" data-title="随机数学">分享到</a>
       
 
       
-        <a href="http://yoursite.com/2019/11/13/ 概率论与数理统计/#ds-thread" class="article-comment-link">评论</a>
+        <a href="http://yoursite.com/2020/04/03/ 概率论与数理统计/#ds-thread" class="article-comment-link">评论</a>
       
 
       
@@ -192,19 +202,10 @@ f(x,y)=\frac{1}{2\pi \sigma_1 \sigma_2 \sqrt{1-\rho^2} }\cdot e^{\frac{-1}{2(1-\
     
 <nav id="article-nav">
   
-    <a href="/2019/11/13/ Prim/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">下一篇</strong>
-      <div class="article-nav-title">
-        
-          Prim
-        
-      </div>
-    </a>
   
-  
-    <a href="/2019/10/27/ BinTree/" id="article-nav-older" class="article-nav-link-wrap">
+    <a href="/2020/04/02/ Java核心技术i/" id="article-nav-older" class="article-nav-link-wrap">
       <strong class="article-nav-caption">上一篇</strong>
-      <div class="article-nav-title">BinTree</div>
+      <div class="article-nav-title">Java核心技术i</div>
     </a>
   
 </nav>
@@ -214,7 +215,7 @@ f(x,y)=\frac{1}{2\pi \sigma_1 \sigma_2 \sqrt{1-\rho^2} }\cdot e^{\frac{-1}{2(1-\
 
 
   <section id="comments">
-    <div id="ds-thread" class="ds-thread" data-thread-key="2019/11/13/ 概率论与数理统计/" data-title="随机数学" data-url="http://yoursite.com/2019/11/13/ 概率论与数理统计/"></div>
+    <div id="ds-thread" class="ds-thread" data-thread-key="2020/04/03/ 概率论与数理统计/" data-title="随机数学" data-url="http://yoursite.com/2020/04/03/ 概率论与数理统计/"></div>
   </section>
 </section>
       
@@ -224,7 +225,7 @@ f(x,y)=\frac{1}{2\pi \sigma_1 \sigma_2 \sqrt{1-\rho^2} }\cdot e^{\frac{-1}{2(1-\
   <div class="widget-wrap">
     <h3 class="widget-title">分类</h3>
     <div class="widget">
-      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/algorithm/">algorithm</a><span class="category-list-count">8</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/操作系统/">操作系统</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/机器学习/">机器学习</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/离散数学/">离散数学</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/算法设计与分析/">算法设计与分析</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/计算机系统结构/">计算机系统结构</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/随机数学/">随机数学</a><span class="category-list-count">1</span></li></ul>
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Java/">Java</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Linux/">Linux</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/algorithm/">algorithm</a><span class="category-list-count">8</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/操作系统/">操作系统</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/机器学习/">机器学习</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/离散数学/">离散数学</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/算法设计与分析/">算法设计与分析</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/计算机系统结构/">计算机系统结构</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/随机数学/">随机数学</a><span class="category-list-count">1</span></li></ul>
     </div>
   </div>
 
@@ -237,7 +238,7 @@ f(x,y)=\frac{1}{2\pi \sigma_1 \sigma_2 \sqrt{1-\rho^2} }\cdot e^{\frac{-1}{2(1-\
   <div class="widget-wrap">
     <h3 class="widget-title">归档</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/03/">三月 2020</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/02/">二月 2020</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/11/">十一月 2019</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/10/">十月 2019</a><span class="archive-list-count">6</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/08/">八月 2019</a><span class="archive-list-count">1</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/04/">四月 2020</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/03/">三月 2020</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/02/">二月 2020</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/11/">十一月 2019</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/10/">十月 2019</a><span class="archive-list-count">6</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/08/">八月 2019</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/04/">四月 2012</a><span class="archive-list-count">1</span></li></ul>
     </div>
   </div>
 
@@ -249,6 +250,14 @@ f(x,y)=\frac{1}{2\pi \sigma_1 \sigma_2 \sqrt{1-\rho^2} }\cdot e^{\frac{-1}{2(1-\
       <ul>
         
           <li>
+            <a href="/2020/04/03/ 概率论与数理统计/">随机数学</a>
+          </li>
+        
+          <li>
+            <a href="/2020/04/02/ Java核心技术i/">Java核心技术i</a>
+          </li>
+        
+          <li>
             <a href="/2020/03/31/ 计算机系统结构/">计算机系统结构</a>
           </li>
         
@@ -258,14 +267,6 @@ f(x,y)=\frac{1}{2\pi \sigma_1 \sigma_2 \sqrt{1-\rho^2} }\cdot e^{\frac{-1}{2(1-\
         
           <li>
             <a href="/2020/03/21/ 离散数学第4讲/">state machine&amp;Euclidean Alg</a>
-          </li>
-        
-          <li>
-            <a href="/2020/02/13/ 算法设计及分析/">算法设计与分析</a>
-          </li>
-        
-          <li>
-            <a href="/2019/11/18/ Warshall/">Warshall&amp;All_componet</a>
           </li>
         
       </ul>

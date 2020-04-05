@@ -6,19 +6,19 @@
   
   <title>计算机系统结构 | Xxgzbd&#39;s Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="1系统结构，组成，实现  计算机系统结构：计算机系统的软，硬件的界面。 计算机组成：计算机系统结构的逻辑实现。 计算机实现：计算机组成的物理实现  换句话来说，我们设计计算机的时间轴为：$系统结构\longrightarrow 组成\longrightarrow 实现$ EG$e.g.1$  解 不妨设加速比为S 那么有  S=\frac {time_前}{time_后}=\frac{11.1\%">
+  <meta name="description" content="1系统结构，组成，实现  计算机系统结构：计算机系统的软，硬件的界面。 计算机组成：计算机系统结构的逻辑实现。 计算机实现：计算机组成的物理实现  换句话来说，我们设计计算机的时间轴为：$系统结构\longrightarrow 组成\longrightarrow 实现$ $t_{cpu}:$执行一段程序所用的CPU时间。 $IC:$该段程序的指令条数，取决于指令集结构 和编译技术。 $CPI,Cy">
 <meta name="keywords" content="algorithm math">
 <meta property="og:type" content="article">
 <meta property="og:title" content="计算机系统结构">
 <meta property="og:url" content="http://yoursite.com/2020/03/31/ 计算机系统结构/index.html">
 <meta property="og:site_name" content="Xxgzbd&#39;s Blog">
-<meta property="og:description" content="1系统结构，组成，实现  计算机系统结构：计算机系统的软，硬件的界面。 计算机组成：计算机系统结构的逻辑实现。 计算机实现：计算机组成的物理实现  换句话来说，我们设计计算机的时间轴为：$系统结构\longrightarrow 组成\longrightarrow 实现$ EG$e.g.1$  解 不妨设加速比为S 那么有  S=\frac {time_前}{time_后}=\frac{11.1\%">
+<meta property="og:description" content="1系统结构，组成，实现  计算机系统结构：计算机系统的软，硬件的界面。 计算机组成：计算机系统结构的逻辑实现。 计算机实现：计算机组成的物理实现  换句话来说，我们设计计算机的时间轴为：$系统结构\longrightarrow 组成\longrightarrow 实现$ $t_{cpu}:$执行一段程序所用的CPU时间。 $IC:$该段程序的指令条数，取决于指令集结构 和编译技术。 $CPI,Cy">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="http://yoursite.com/2020/03/31/%20计算机系统结构/计算机系统结构.assets/image-20200308150608490.png">
-<meta property="og:updated_time" content="2020-03-31T06:25:57.745Z">
+<meta property="og:updated_time" content="2020-04-04T08:29:59.667Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="计算机系统结构">
-<meta name="twitter:description" content="1系统结构，组成，实现  计算机系统结构：计算机系统的软，硬件的界面。 计算机组成：计算机系统结构的逻辑实现。 计算机实现：计算机组成的物理实现  换句话来说，我们设计计算机的时间轴为：$系统结构\longrightarrow 组成\longrightarrow 实现$ EG$e.g.1$  解 不妨设加速比为S 那么有  S=\frac {time_前}{time_后}=\frac{11.1\%">
+<meta name="twitter:description" content="1系统结构，组成，实现  计算机系统结构：计算机系统的软，硬件的界面。 计算机组成：计算机系统结构的逻辑实现。 计算机实现：计算机组成的物理实现  换句话来说，我们设计计算机的时间轴为：$系统结构\longrightarrow 组成\longrightarrow 实现$ $t_{cpu}:$执行一段程序所用的CPU时间。 $IC:$该段程序的指令条数，取决于指令集结构 和编译技术。 $CPI,Cy">
 <meta name="twitter:image" content="http://yoursite.com/2020/03/31/%20计算机系统结构/计算机系统结构.assets/image-20200308150608490.png">
   
     <link rel="alternative" href="/atom.xml" title="Xxgzbd&#39;s Blog" type="application/atom+xml">
@@ -104,6 +104,39 @@
 <li>计算机实现：计算机组成的物理实现</li>
 </ol>
 <p>换句话来说，我们设计计算机的时间轴为：$系统结构\longrightarrow 组成\longrightarrow 实现$</p>
+<p>$t_{cpu}:$执行一段程序所用的CPU时间。</p>
+<p>$IC:$该段程序的指令条数，取决于指令集<em>结构</em> 和编译技术。</p>
+<p>$CPI,Cycle \ Per \ Instruction:$平均每一条指令所需要的时钟周期，取决于<em>组成</em>和指令集<em>结构</em></p>
+<p>$T:$时钟周期，取决于<em>实现</em> 和<em>组成</em></p>
+<h4 id="3-流水线"><a href="#3-流水线" class="headerlink" title="3 流水线"></a>3 流水线</h4><p><em>以静态，线性，顺序流水线为例</em></p>
+<p>$吞吐率\ ThroughPut\ TP=\frac{n}{T_k}=\frac{任务数量}{运行时间}=\frac{n}{(k+n-1)\Delta t}$</p>
+<p>$加速比\ Speedup\ S=\frac{T_s}{T_k}=\frac{顺序执行时间}{运行时间}=\frac{nk}{k+m-1}$</p>
+<p>$效率\ Efficiency\ E=\frac{n\Delta t}{T_k}=\frac{设备实际使用时间}{运行时间*设备数目}=\frac{n}{k+n-1}$</p>
+<p><strong>dependence 相关</strong>，<em>两条指令之间存在某种依赖关系</em></p>
+<p><strong>真数据相关，data dependence</strong>，$①指令j使用指令i产生的结果\②指令j与指令k数据相关，指令k又与指令i数据相关$</p>
+<p><strong>名相关，name dependence</strong>，如果两条指令使用相同的名，但是它们之间没有数据流动</p>
+<p>$anti-dependence,反相关，指令j写的名与指令i读的名相同；\ output\ dependence,输出相关,指令j与指令i写的名相同。 $</p>
+<p><strong>控制相关，control dependence </strong>，有分支指令引起的相关。</p>
+<p><strong>流水线冲突 pipline hazards</strong>，<em>由于相关的存在，使得下一条指令不能再指定的时钟周期执行</em></p>
+<p><strong>结构冲突</strong></p>
+<p><strong>数据冲突</strong>，相关的指令靠得足够近。</p>
+<p>$RAM,Read \ After \ Write ,写后读冲突，真数据相关$</p>
+<p>$WAW,Write \ After \ Write ，写后写冲突，输出相关，在五段流水线(MIPS)中不会发生$</p>
+<p>$WAR,Write \ After  \ Read,读后写冲突.反相关$</p>
+<p>仅发生在这样的情况：有些指令的写操作被提前了，有些操作的读操作被滞后了，即指令被重新排序了,在五段流水线(MIPS)中不会发生</p>
+<h4 id="4-指令级并行"><a href="#4-指令级并行" class="headerlink" title="4 指令级并行"></a>4 指令级并行</h4><p>$ILP,Instruction-Level\ Parallelism,指令级并行\left{    \begin{array}{lr}        基于硬件（代码执行中）的动态开发方法\        基于软件（代码执行前）的静态开发方法            \end{array}\right.\$</p>
+<p>$CPI<em>{实际流水线}=CPI</em>{理想}+停顿<em>{结构冲突}+停顿</em>{数据冲突}+停顿_{控制冲突}$</p>
+<p>$IPC,Instructions \ Per\  Cycle,每个时钟周期完成的指令条数$</p>
+<p>$CDB,Common\ Data \ Bus,公共数据总线$</p>
+<p>$IS,Issue,流出阶段：指令译码，检查是否存在结构冲突。$</p>
+<p>$RO,Read\ Operands,读操作数：检测数据冲突$</p>
+<p>$BHT,Branch\ History\ Table\ ,Branch\ Predicition\ Buffer,分支历史表，分支预测缓冲器\是最简单的动态分支预测方法$</p>
+<p>$BTB,Branch\ Target\ Buffer,分支目标缓冲器，也称分支目标Cache$</p>
+<p>$branch\ folding,分支折叠$</p>
+<p>$speculation,前瞻执行$</p>
+<p>$ROB,ReOrder\ Buffer，再定序缓冲器，为了在猜错的情况下能够恢复现场$</p>
+<p>$Tomasulo算法$</p>
+<p>$基于硬件的前瞻算法，顺序流出，乱序执行，顺序确认$</p>
 <h5 id="EG"><a href="#EG" class="headerlink" title="EG"></a>EG</h5><p>$e.g.1$</p>
 <p><img src="计算机系统结构.assets/image-20200308150608490.png" alt="image-20200308150608490"></p>
 <p>解</p>
@@ -113,26 +146,16 @@
 S=\frac {time_前}{time_后}=\frac{11.1\%*2+33.3\%*20+38.9\%*10+16.7\%*4}{11.1\%*1+33.3\%*15+38.9\%*3+16.7\%*1}=\frac{11.44}{6.44}=1.77</script><p>$e.g.2$</p>
 <p>考虑条件分支指令的两种不同设计方法：<br>（1）CPUA：通过比较指令设置条件码，然后测试条件码进行分支。<br>（2）CPUB：在分支指令中包括比较过程。<br>在这两种CPU中，条件分支指令都占用2个时钟周期，而所有其他指令占用1个时钟周期。对于CPUA，执行的指令中分支指令占20%；由于每条分支指令之前都需要有比较指令，因此比较指令也占20%。不妨假设其他指令条数相同。由于CPUA在分支时不需要比较，因此CPUB的时钟周期时间是CPUA的1.25倍。问：<strong>哪一个CPU更快</strong>？如果CPUB的时钟周期时间只是CPUA的1.1倍，哪一个CPU更快呢？</p>
 <p>$t_{cpu}=IC<em>CPI</em>T$</p>
-<p>其中</p>
-<p>$t_{cpu}:$执行一段程序所用的CPU时间。</p>
-<p>$IC:$该段程序的指令条数，取决于指令集<em>结构</em> 和编译技术。</p>
-<p>$CPI:$平均每一条指令所需要的时钟周期，取决于<em>组成</em>和指令集<em>结构</em></p>
-<p>$T:$时钟周期，取决于<em>实现</em> 和<em>组成</em></p>
 <p>那么有</p>
 <script type="math/tex; mode=display">
 t_{cpuA}=IC*(0.4*2+0.6*1)*T \\
 t_{cpuB}=IC*(2/8*2+6/8*1)*1.25T</script><p>最后即可得答案。</p>
-<h4 id="2-流水线"><a href="#2-流水线" class="headerlink" title="2 流水线"></a>2 流水线</h4><p><em>以静态，线性，顺序流水线为例</em></p>
-<p>$吞吐率\ ThroughPut\ TP=\frac{n}{T_k}=\frac{任务数量}{运行时间}=\frac{n}{(k+n-1)\Delta t}$</p>
-<p>$加速比\ Speedup\ S=\frac{T_s}{T_k}=\frac{顺序执行时间}{运行时间}=\frac{nk}{k+m-1}$</p>
-<p>$效率\ Efficiency\ E=\frac{n\Delta t}{T_k}=\frac{设备实际使用时间}{运行时间*设备数目}=\frac{n}{k+n-1}$</p>
-<p>。。。</p>
 
       
     </div>
     <footer class="article-footer">
       
-        <a data-url="http://yoursite.com/2020/03/31/ 计算机系统结构/" data-id="ck8fivwss000ss8vi8a6jpfzc" class="article-share-link" data-share="baidu" data-title="计算机系统结构">分享到</a>
+        <a data-url="http://yoursite.com/2020/03/31/ 计算机系统结构/" data-id="ck8mt2qq50014dgvi2cawdtfp" class="article-share-link" data-share="baidu" data-title="计算机系统结构">分享到</a>
       
 
       
@@ -145,6 +168,15 @@ t_{cpuB}=IC*(2/8*2+6/8*1)*1.25T</script><p>最后即可得答案。</p>
   
     
 <nav id="article-nav">
+  
+    <a href="/2020/04/02/ Java核心技术i/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">下一篇</strong>
+      <div class="article-nav-title">
+        
+          Java核心技术i
+        
+      </div>
+    </a>
   
   
     <a href="/2020/03/31/ 操作系统/" id="article-nav-older" class="article-nav-link-wrap">
@@ -169,7 +201,7 @@ t_{cpuB}=IC*(2/8*2+6/8*1)*1.25T</script><p>最后即可得答案。</p>
   <div class="widget-wrap">
     <h3 class="widget-title">分类</h3>
     <div class="widget">
-      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/algorithm/">algorithm</a><span class="category-list-count">8</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/操作系统/">操作系统</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/机器学习/">机器学习</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/离散数学/">离散数学</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/算法设计与分析/">算法设计与分析</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/计算机系统结构/">计算机系统结构</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/随机数学/">随机数学</a><span class="category-list-count">1</span></li></ul>
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Java/">Java</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Linux/">Linux</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/algorithm/">algorithm</a><span class="category-list-count">8</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/操作系统/">操作系统</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/机器学习/">机器学习</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/离散数学/">离散数学</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/算法设计与分析/">算法设计与分析</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/计算机系统结构/">计算机系统结构</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/随机数学/">随机数学</a><span class="category-list-count">1</span></li></ul>
     </div>
   </div>
 
@@ -182,7 +214,7 @@ t_{cpuB}=IC*(2/8*2+6/8*1)*1.25T</script><p>最后即可得答案。</p>
   <div class="widget-wrap">
     <h3 class="widget-title">归档</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/03/">三月 2020</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/02/">二月 2020</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/11/">十一月 2019</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/10/">十月 2019</a><span class="archive-list-count">6</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/08/">八月 2019</a><span class="archive-list-count">1</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/04/">四月 2020</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/03/">三月 2020</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/02/">二月 2020</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/11/">十一月 2019</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/10/">十月 2019</a><span class="archive-list-count">6</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/08/">八月 2019</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/04/">四月 2012</a><span class="archive-list-count">1</span></li></ul>
     </div>
   </div>
 
@@ -194,6 +226,14 @@ t_{cpuB}=IC*(2/8*2+6/8*1)*1.25T</script><p>最后即可得答案。</p>
       <ul>
         
           <li>
+            <a href="/2020/04/03/ 概率论与数理统计/">随机数学</a>
+          </li>
+        
+          <li>
+            <a href="/2020/04/02/ Java核心技术i/">Java核心技术i</a>
+          </li>
+        
+          <li>
             <a href="/2020/03/31/ 计算机系统结构/">计算机系统结构</a>
           </li>
         
@@ -203,14 +243,6 @@ t_{cpuB}=IC*(2/8*2+6/8*1)*1.25T</script><p>最后即可得答案。</p>
         
           <li>
             <a href="/2020/03/21/ 离散数学第4讲/">state machine&amp;Euclidean Alg</a>
-          </li>
-        
-          <li>
-            <a href="/2020/02/13/ 算法设计及分析/">算法设计与分析</a>
-          </li>
-        
-          <li>
-            <a href="/2019/11/18/ Warshall/">Warshall&amp;All_componet</a>
           </li>
         
       </ul>
