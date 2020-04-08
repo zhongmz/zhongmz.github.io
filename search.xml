@@ -177,8 +177,8 @@ f(x,y)=\frac{1}{2\pi \sigma_1 \sigma_2 \sqrt{1-\rho^2} }\cdot e^{\frac{-1}{2(1-\
 离散型：P\{X=x_i|Y=y_j\}=\frac{P{X=x_i,Y=y_j}}{P{Y=y_j}}=\frac{p_{ij}}{p_{\cdot j}}\\
 连续型条件Y=y下X的条件概率密度函数f_{Y|X}(x|y)=\frac{f(x,y)}{f_Y{y}}</script><p><strong>连续型函数分布</strong>​</p>
 <script type="math/tex; mode=display">
-有Z=X+Y\\公式法f_Z(z)=\displaystyle \int _{-\infin}^{+\infin}f(x,z-x)dx=\displaystyle \int _{-\infin} ^{+\infin}f(z-y,y)dy\\分布函数法\\
-Z=X+Y,若X和Y相互独立\\f_Z(z)=\displaystyle \int _{-\infin} ^{+\infin}f_X(x)f_Y(z-x)dx\\</script><p>$这个公式称为f_X(x)与f_Y(y)的$<strong>卷积公式</strong></p>
+有Z=X+Y\\公式法f_Z(z)=\displaystyle \int _{-\infty}^{+\infty}f(x,z-x)dx=\displaystyle \int _{-\infty} ^{+\infty}f(z-y,y)dy\\分布函数法\\
+Z=X+Y,若X和Y相互独立\\f_Z(z)=\displaystyle \int _{-\infty} ^{+\infty}f_X(x)f_Y(z-x)dx\\</script><p>$这个公式称为f_X(x)与f_Y(y)的$<strong>卷积公式</strong></p>
 <p>$Z=max{X,Y},X与Y相互独立$</p>
 <p>$F_Z(z)=F_X(x)F_Y(y)$</p>
 <p>$Z=min{X,Y},X与Y相互独立$</p>
