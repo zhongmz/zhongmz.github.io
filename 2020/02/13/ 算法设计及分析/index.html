@@ -14,7 +14,7 @@
 <meta property="og:site_name" content="Xxgzbd&#39;s Blog">
 <meta property="og:description" content="2证明$f(n)=O(g(n))$，有  \exists c,n_0,对于\forall n\geq n_0 有 f(n)\leq c*g(n)即$g(n)$时$f(n)$的渐近上限。 证明$f(n)=\Omega (g(n))$，有  \exists c,n_0,对于\forall n\geq n_0 有 f(n)\geq c*g(n)即$g(n)$时$f(n)$的渐近下限。 若同时满足$(1)">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2020-03-31T06:20:14.283Z">
+<meta property="og:updated_time" content="2020-04-08T10:25:22.854Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="算法设计与分析">
 <meta name="twitter:description" content="2证明$f(n)=O(g(n))$，有  \exists c,n_0,对于\forall n\geq n_0 有 f(n)\leq c*g(n)即$g(n)$时$f(n)$的渐近上限。 证明$f(n)=\Omega (g(n))$，有  \exists c,n_0,对于\forall n\geq n_0 有 f(n)\geq c*g(n)即$g(n)$时$f(n)$的渐近下限。 若同时满足$(1)">
@@ -25,19 +25,8 @@
     <link rel="icon" href="/favicon.png">
   
   <link rel="stylesheet" href="/css/style.css">
-  <!--[if lt IE 9]><script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7/html5shiv.min.js"></script><![endif]-->
+  <!--[if lt IE 9]><script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7/html5shiv.min.js"></script><![endif]--><!-- hexo-inject:begin --><!-- hexo-inject:end -->
   
-
-  <script>
-    (function(){
-        if('{{ page.password }}'){
-            if (prompt('��������������') !== '{{ page.password }}'){
-                alert('�������');
-                history.back();
-            }
-        }
-    })();
-  </script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
   
 </head></html>
 <body>
@@ -116,47 +105,14 @@
 <p>若同时满足$(1),(2)$</p>
 <p>则有</p>
 <script type="math/tex; mode=display">
-f(n)=\Theta (g(n)),且g(n)=\theta (f(n))</script><p>例题：</p>
-<h5 id="1"><a href="#1" class="headerlink" title="1"></a>1</h5><p>证明$g(n)=\Omega (f(n)),则 \Omega (f(n))+\Omega (g(n))=\Omega (f(n))$</p>
-<p>易知$\exists c_1,n_1,对于\forall n\geq n_1,有f(n)\geq c_1*g(n)$</p>
-<p>设有$p(n)=\Omega (g(n)),即\exists c_2,n_2,对于\forall n\geq n_2,有g(n)\geq c_2*p(n) $</p>
-<p>可得$ \Omega (f(n))+\Omega (g(n))=g(n)+p(n),设n_3= max{ n1,n2},g(n)+p(n))\geq c_1<em>f(n)+c_2</em>g(n)$</p>
-<p>$则\exists c_3=min{ c_1,c_2},使得\forall n\geq n_3,有\Omega(f(n))+\Omega(g(n))\geq c_3*(f(n)+g(n)),故有\Omega(f(n))+\Omega(g(n))=\Omega(f(n)+g(n))$</p>
-<h5 id="2-1"><a href="#2-1" class="headerlink" title="2"></a>2</h5><p>证明$\Omega(cf(n))=\Omega(f(n))$</p>
-<p>不妨设$\Omega(f(n))=g(n),即\exists c_1,n_1,对于\forall n\geq n_1,有f(n)\geq c_1*g(n)$</p>
-<p>故有$c<em>f(n)\geq c</em>c_1*g(n)。$</p>
-<p>即$\exists c<em>c1,n_1,对于\forall n\geq n_1,有f(n)\geq c</em>c_1*g(n)$</p>
-<p>故有$\Omega(cf(n))=g(n)$</p>
-<p>故有$\Omega(cf(n))=\Omega(f(n))$</p>
-<h5 id="3"><a href="#3" class="headerlink" title="3"></a>3</h5><p>证明$f(n)=\Omega(f(n))$</p>
-<p>$易知，\exists c=1,n_0=1,对于\forall n \geq n_0,有f(n)\geq c*f(n)$</p>
-<p>故原式成立。</p>
-<h5 id="4"><a href="#4" class="headerlink" title="4"></a>4</h5><p>不成立。</p>
-<p>比如：</p>
-<p>$f(n)=n^3 而 g(n)=n^2$</p>
-<h5 id="5"><a href="#5" class="headerlink" title="5"></a>5</h5><p>证明$\Theta(f(n))+\theta(g(n))=\Theta(max(f(n)+g(n)))$</p>
-<p>设$p(n)=max{f(n),g(n)}$</p>
-<p>$不妨设f_1(n)=\Theta(f(n)),g_1(n)=\theta(g(n)),可得$</p>
-<p>$\exists c_1,c_2,n_1,对于\forall n\geq n_1,有c_1<em>f(n)\leq f_1(n)\leq c_2</em>f(n)$</p>
-<p>$\exists b_1,b_2,n_2,对于\forall n\geq n_2,有b_1<em>g(n)\leq g_1(n)\leq b_2</em>g(n)$</p>
-<p>对于任意$n\geq max{ n_1,n_2}$</p>
-<p>有$\frac{min{ c_1,b_1}}{2}<em>max{ f(n),g(n)}\leq f_1(n)+g_1(n)\leq 2</em>max{ c_2,b_2}*max{ f(n),g(n)}$</p>
-<p>故原式成立。</p>
-<h5 id="6"><a href="#6" class="headerlink" title="6"></a>6</h5><p>证明$\Theta (f(n))+\Theta(g(n))=\Theta(f(n)+g(n))$</p>
-<p>$不妨设f_1(n)=\Theta(f(n)),g_1(n)=\theta(g(n)),可得$</p>
-<p>$\exists c_1,c_2,n_1,对于\forall n\geq n_1,有c_1<em>f(n)\leq f_1(n)\leq c_2</em>f(n)$</p>
-<p>$\exists b_1,b_2,n_2,对于\forall n\geq n_2,有b_1<em>g(n)\leq g_1(n)\leq b_2</em>g(n)$</p>
-<p>对于任意$n\geq max{ n_1,n_2}$</p>
-<p>有$min{ c_1,b_1}<em>(f(n)+g(n))\leq f_1(n)+g_1(n)\leq max{ c_2,b_2}</em>(f(n)+g(n))$</p>
-<p>故原式成立。</p>
-<h3 id="3-贪心方法"><a href="#3-贪心方法" class="headerlink" title="3 贪心方法"></a>3 贪心方法</h3><h4 id="1-一般方法"><a href="#1-一般方法" class="headerlink" title="1 一般方法"></a>1 一般方法</h4><script type="math/tex; mode=display">
+f(n)=\Theta (g(n)),且g(n)=\theta (f(n))</script><h3 id="3-贪心方法"><a href="#3-贪心方法" class="headerlink" title="3 贪心方法"></a>3 贪心方法</h3><h4 id="1-一般方法"><a href="#1-一般方法" class="headerlink" title="1 一般方法"></a>1 一般方法</h4><script type="math/tex; mode=display">
 n个输入,可行解为n个输入的子集\\
 约束条件\Longrightarrow 可行解 根据目标函数\Longrightarrow最优解</script><h4 id="核心：选取能产生最优解的量度标准"><a href="#核心：选取能产生最优解的量度标准" class="headerlink" title="核心：选取能产生最优解的量度标准"></a>核心：选取能产生最优解的量度标准</h4><h4 id="2背包"><a href="#2背包" class="headerlink" title="2背包"></a>2背包</h4>
       
     </div>
     <footer class="article-footer">
       
-        <a data-url="http://yoursite.com/2020/02/13/ 算法设计及分析/" data-id="ck8r5ub7e000ypgvi0hqrmt1s" class="article-share-link" data-share="baidu" data-title="算法设计与分析">分享到</a>
+        <a data-url="http://yoursite.com/2020/02/13/ 算法设计及分析/" data-id="ck8r6wzfd000yooviczzda3qe" class="article-share-link" data-share="baidu" data-title="算法设计与分析">分享到</a>
       
 
       

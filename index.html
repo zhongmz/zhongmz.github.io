@@ -24,19 +24,8 @@
     <link rel="icon" href="/favicon.png">
   
   <link rel="stylesheet" href="/css/style.css">
-  <!--[if lt IE 9]><script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7/html5shiv.min.js"></script><![endif]-->
+  <!--[if lt IE 9]><script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7/html5shiv.min.js"></script><![endif]--><!-- hexo-inject:begin --><!-- hexo-inject:end -->
   
-
-  <script>
-    (function(){
-        if('{{ page.password }}'){
-            if (prompt('��������������') !== '{{ page.password }}'){
-                alert('�������');
-                history.back();
-            }
-        }
-    })();
-  </script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
   
 </head></html>
 <body>
@@ -140,15 +129,14 @@ M=\{ \infty \cdot a_1,\infty \cdot a_2...\infty \cdot a_n\},r \geq n,则M中每�
 \dbinom{n}{k}\\
 (1)\     \dbinom{n}{k}=\dbinom{n}{n-k} \\
 (2)\     \dbinom{n}{k}=\dbinom{n-1}{k}+\dbinom{n-1}{k-1}\\
-(3)\     \dbinom{n}{\frac{n}{2}}为max\\</script><h3 id="4-容斥原理"><a href="#4-容斥原理" class="headerlink" title="4 容斥原理"></a>4 容斥原理</h3><p>$S中不具有性质P_1,P_2\dots,P_m的元素个数为$</p>
-<p>$|\overline{A_1}\cap\overline{A_2}\cap\dots\cap\overline{A_m}|$</p>
-<p>$=|S|-\displaystyle\sum<em>{i=1}^{m}|A_i|+\displaystyle\sum</em>{1\leq i&lt;j\leq m}|A<em>i\cap A_j|-\displaystyle\sum</em>{1\leq i&lt;j&lt;k\leq m}|A_i\cap A_j\cap A_k|+\dots +(-1)^{m}|A_1\cap A_2\cap\dots\cap A_m|$</p>
-<p>不妨设</p>
+(3)\     \dbinom{n}{\frac{n}{2}}为max\\</script><h3 id="4-容斥原理"><a href="#4-容斥原理" class="headerlink" title="4 容斥原理"></a>4 容斥原理</h3><p>$S中不具有性质P_1,P_2\dots,P_m的元素个数为$$​</p>
+<script type="math/tex; mode=display">
+|\overline{A_1}\cap\overline{A_2}\cap\dots\cap\overline{A_m}|\\=|S|-\sum_{ i= 1}^{m}|A_i|+\sum_{1\leq i<j\leq m}|A_i\cap A_j|-\sum_{1\leq i<j<k\leq m}|A_i\cap A_j\cap A_k|+\dots +(-1)^{m}|A_1\cap A_2\cap\dots\cap A_m|</script><p>不妨设</p>
 <p>$W(0)=|S|$</p>
 <p>$W(1)=\displaystyle\sum_{i=1}^{m}|A_i|$</p>
 <p>$W(2)=\displaystyle\sum_{1\leq i&lt;j\leq m}|A_i\cap A_j|$</p>
 <p>$\dots$</p>
-<p>$W(m)=|A_1\cap A_2\cap \dots A_m$</p>
+<p>$W(m)=|A_1\cap A_2\cap \dots A_m|$</p>
 <p>那么有原式为$W(0)-W(1)+\dots+(-1)^mW(m)$</p>
 <p><strong>Jordon公式</strong></p>
 <p>集合S中恰好具有$r(0\leq r\leq m)$种特性质的元素个数</p>
@@ -156,8 +144,8 @@ M=\{ \infty \cdot a_1,\infty \cdot a_2...\infty \cdot a_n\},r \geq n,则M中每�
 <p><strong>对称筛公式</strong></p>
 <p>$即当\N=|S|\N(1)=|A<em>1|=|A_2|=\dots=|A_m|\N(2)=|A_1\cap A_2|=\dots=|A</em>{m-1}\cap A_{m}|\…$</p>
 <p>有</p>
-<p>$|\overline{A_1}\cap \overline{A_2}\cap\dots\cap \overline{A_m}|=N-\dbinom{m}{1}N(1)+\dots+\dbinom{m}{m}N(m)$</p>
-<p><strong>错位排列</strong></p>
+<script type="math/tex; mode=display">
+|\overline{A_1}\cap \overline{A_2}\cap\dots\cap \overline{A_m}|=N-\dbinom{m}{1}N(1)+\dots+\dbinom{m}{m}N(m)</script><p><strong>错位排列</strong></p>
 <p>​    每个物体$i$都不在第$i$个位置上的排列称为错位排列$Derangement$，通常使用$D_n$表示错位排列数</p>
 <p>对于$n\geq 1$有</p>
 <script type="math/tex; mode=display">
@@ -196,7 +184,7 @@ b_k={\alpha}^{k}a_k\quad B(x)=A(\alpha x)\\</script>
     </div>
     <footer class="article-footer">
       
-        <a data-url="http://yoursite.com/2020/04/06/ 组合数学/" data-id="ck8r5ub7p001apgvi0ip3nkju" class="article-share-link" data-share="baidu" data-title="组合数学">分享到</a>
+        <a data-url="http://yoursite.com/2020/04/06/ 组合数学/" data-id="ck8r6wzfc000wooviyjqpqhpo" class="article-share-link" data-share="baidu" data-title="组合数学">分享到</a>
       
 
       
@@ -265,13 +253,14 @@ b_k={\alpha}^{k}a_k\quad B(x)=A(\alpha x)\\</script>
 <h4 id="3"><a href="#3" class="headerlink" title="3"></a>3</h4><p><strong>条件概型：</strong>$P(B|A)=\frac{P(AB)}{P(A)} \Longrightarrow P(AB)=P(A)P(B|A)$</p>
 <p>条件概型的性质：非负性；<strong>规范性：$P(\Omega |A)=1$</strong>；可列可加性：对于<strong>不相容</strong>的事件$B_1,B_2,\cdot \cdot \cdot $有</p>
 <script type="math/tex; mode=display">
-P((\cup_{i=1}^\infty B_i )|A)=\sum_{i=1}^\infty P(B_i|A)</script><p><strong>全概率公式：</strong>$P(B)=\sum\limits_{i=1}^nP(A_i)P(B|A_i)$</p>
-<p>其中：</p>
-<p>$\cup <em>{i=1} ^n A_i=\Omega 且 \cap </em>{i=1} ^n A_i=\Phi$</p>
-<p><em>推导：</em></p>
+P((\cup_{i=1}^\infty B_i )|A)=\sum_{i=1}^\infty P(B_i|A)</script><p><strong>全概率公式：</strong></p>
+<script type="math/tex; mode=display">
+P(B)=\sum\limits_{i=1}^nP(A_i)P(B|A_i)</script><p>其中：</p>
+<script type="math/tex; mode=display">
+\cup _{i=1} ^n A_i=\Omega 且 \cap _{i=1} ^n A_i=\Phi</script><p><em>推导：</em></p>
 <p><em>对任意事件B，有</em></p>
 <script type="math/tex; mode=display">
-B=B\cap \Omega =B\cap (\cup _{i=1} ^n A_i)=\cup _{i=1} ^n {A_iB}</script><p><img src="概率论与数理统计.assets/概率_25.jpg" alt></p>
+B=B\cap \Omega =B\cap (\cup _{i=1} ^n A_i)=\cup _{i=1} ^n {A_iB}</script><p><img src="https://i.loli.net/2020/04/08/lSNC6yKmUEb7RgW.jpg" alt="概率_25.jpg"></p>
 <p>由条件概型的性质可得全概率公式。若某问题可画出概率树，那么该问题属于条件概型，甚至符合全概率公式。</p>
 <p><strong>贝叶斯公式：</strong></p>
 <script type="math/tex; mode=display">
@@ -290,8 +279,10 @@ P_n(k)=(_k^n)p^k(1-p)^{n-k}=C_n^kp^k(1-p)^{n-k}</script><h3 id="随机变量及�
 <h5 id="2离散型随机变量"><a href="#2离散型随机变量" class="headerlink" title="2离散型随机变量"></a>2离散型随机变量</h5><p>两点分布</p>
 <p>二项分布，伯努利试验记作$X ~B(n,p) X在(n+1)p处取得最大值$</p>
 <p>几何分布</p>
-<p>泊松分布：$P{ X=k}=\frac{\lambda ^ke^{-\lambda}}{k!}$，其中，$\lambda$为服从参数,记作$X P(\lambda)$，$X在\lambda处取得最大值$</p>
-<h5 id="3连续型随机变量"><a href="#3连续型随机变量" class="headerlink" title="3连续型随机变量"></a>3连续型随机变量</h5><p><strong>均匀分布</strong></p>
+<p>泊松分布：</p>
+<script type="math/tex; mode=display">
+P\{ X=k\}=\frac{\lambda ^ke^{-\lambda}}{k!}\\
+其中，\lambda为服从参数,记作X P(\lambda)</script><h5 id="3连续型随机变量"><a href="#3连续型随机变量" class="headerlink" title="3连续型随机变量"></a>3连续型随机变量</h5><p><strong>均匀分布</strong></p>
 <script type="math/tex; mode=display">
 f(x)=\left\{    \begin{array}{lr}        \frac{1}{b-a},a<x<b\\        0,其他            \end{array}\right.\\</script><p><strong>指数分布</strong></p>
 <script type="math/tex; mode=display">
@@ -304,11 +295,11 @@ f(x)=\frac{1}{\sqrt{2\pi }\sigma}e^{-\frac{(x-u)^2}{2\sigma^2}},-\infty <x<+\inf
 f(x)=\frac{1}{\sqrt{2\pi}}e^{-\frac{x^2}{2}}</script><p>其中$u,\sigma$为服从参数。当$u,\sigma$分布为0，1时，则称$X$服从标准正态分布</p>
 <script type="math/tex; mode=display">
 F(x)=\Phi (\frac{x-\mu}{\sigma})</script><h5 id="5-二维连续型随机变量"><a href="#5-二维连续型随机变量" class="headerlink" title="5 二维连续型随机变量"></a>5 二维连续型随机变量</h5><script type="math/tex; mode=display">
-F(x,y)=\int_{-\infty}^{x}\int_{-\infty}^yf(u,v)dudv\\其中F(x,y)为概率分布函数,f(x,y)为联合概率密度。\\</script><p>$1.f(x,y)\ge 0$</p>
-<p>$2. \int<em>{-\infty}^{+\infty}\int</em>{-\infty}^{+\infty}f(u,v)dudv=1$</p>
-<p>$3.若G是xOy上的一个区域，则,P{(X,Y)\in G}=\displaystyle\iint_{G}f(x,y)dxdy $</p>
-<p>$4.关于Y的边缘概率密度函数f<em>Y(y)=\displaystyle\int</em>{-\infty}^{+\infty}f(x,y)dx$</p>
-<p>若随机变量X和Y相互独立，那么有$f(x,y)=f_X(x)f_Y(y)$</p>
+F(x,y)=\int_{-\infty}^{x}\int_{-\infty}^yf(u,v)dudv\\其中F(x,y)为概率分布函数,f(x,y)为联合概率密度。\\</script><script type="math/tex; mode=display">
+1.f(x,y)\ge 0\\
+2. \int_{-\infty}^{+\infty}\int_{-\infty}^{+\infty}f(u,v)dudv=1\\
+3.若G是xOy上的一个区域，则,P\{(X,Y)\in G\}=\displaystyle\iint_{G}f(x,y)dxdy\\
+4.关于Y的边缘概率密度函数f_Y(y)=\displaystyle\int_{-\infty}^{+\infty}f(x,y)dx\\</script><p>若随机变量X和Y相互独立，那么有$f(x,y)=f_X(x)f_Y(y)$</p>
 <p><strong>均匀分布</strong></p>
 <script type="math/tex; mode=display">
 设D是xOy面上的有界区域，其面积为A，若\\f(x,y)=\left\{    \begin{array}{lr}        \frac{1}{A}&(x,y)\in D,\\        0&其他            \end{array}\right.\\则称(X,Y)在区域D上服从均匀分布。</script><p><strong>正态分布</strong></p>
@@ -316,10 +307,10 @@ F(x,y)=\int_{-\infty}^{x}\int_{-\infty}^yf(u,v)dudv\\其中F(x,y)为概率分布
 f(x,y)=\frac{1}{2\pi \sigma_1 \sigma_2 \sqrt{1-\rho^2} }\cdot e^{\frac{-1}{2(1-\rho^2)}[\frac{(x-\mu_1)^2}{\sigma_1^2}-2\rho \frac{(x-\mu_1)(y-\mu_2)}{\sigma_1\sigma_2}+\frac{(y-\mu_2)^2}{\sigma_2^2}]},(x,y)\in R^2\\其中\sigma_i>0,-1<\rho<1,记作(X,Y) ~N(\mu_1,\mu_2,\sigma_1^2,\sigma_2^2,\rho)</script><p><strong>条件分布</strong></p>
 <script type="math/tex; mode=display">
 离散型：P\{X=x_i|Y=y_j\}=\frac{P{X=x_i,Y=y_j}}{P{Y=y_j}}=\frac{p_{ij}}{p_{\cdot j}}\\
-连续型条件Y=y下X的条件概率密度函数f_{Y|X}(x|y)=\frac{f(x,y)}{f_Y{y}}</script><p><strong>连续型函数分布</strong></p>
-<p>$Z=X+Y\公式法f<em>Z(z)=\displaystyle \int </em>{-\infin}^{+\infin}f(x,z-x)dx=\displaystyle \int _{-\infin} ^{+\infin}f(z-y,y)dy\分布函数法$</p>
-<p>$Z=X+Y,若X和Y相互独立\f<em>Z(z)=\displaystyle \int </em>{-\infin} ^{+\infin}f_X(x)f_Y(z-x)dx$</p>
-<p>$这个公式称为f_X(x)与f_Y(y)的$<strong>卷积公式</strong></p>
+连续型条件Y=y下X的条件概率密度函数f_{Y|X}(x|y)=\frac{f(x,y)}{f_Y{y}}</script><p><strong>连续型函数分布</strong>​</p>
+<script type="math/tex; mode=display">
+有Z=X+Y\\公式法f_Z(z)=\displaystyle \int _{-\infin}^{+\infin}f(x,z-x)dx=\displaystyle \int _{-\infin} ^{+\infin}f(z-y,y)dy\\分布函数法\\
+Z=X+Y,若X和Y相互独立\\f_Z(z)=\displaystyle \int _{-\infin} ^{+\infin}f_X(x)f_Y(z-x)dx\\</script><p>$这个公式称为f_X(x)与f_Y(y)的$<strong>卷积公式</strong></p>
 <p>$Z=max{X,Y},X与Y相互独立$</p>
 <p>$F_Z(z)=F_X(x)F_Y(y)$</p>
 <p>$Z=min{X,Y},X与Y相互独立$</p>
@@ -329,7 +320,7 @@ f(x,y)=\frac{1}{2\pi \sigma_1 \sigma_2 \sqrt{1-\rho^2} }\cdot e^{\frac{-1}{2(1-\
     </div>
     <footer class="article-footer">
       
-        <a data-url="http://yoursite.com/2020/04/03/ 概率论与数理统计/" data-id="ck8r5ub7f0011pgvirwlt810s" class="article-share-link" data-share="baidu" data-title="随机数学">分享到</a>
+        <a data-url="http://yoursite.com/2020/04/03/ 概率论与数理统计/" data-id="ck8r6wzfe0010oovi710goqhw" class="article-share-link" data-share="baidu" data-title="随机数学">分享到</a>
       
 
       
@@ -389,7 +380,7 @@ f(x,y)=\frac{1}{2\pi \sigma_1 \sigma_2 \sqrt{1-\rho^2} }\cdot e^{\frac{-1}{2(1-\
     </div>
     <footer class="article-footer">
       
-        <a data-url="http://yoursite.com/2020/04/02/ Java核心技术i/" data-id="ck8r5ub6c0003pgvi2r4oqov8" class="article-share-link" data-share="baidu" data-title="Java核心技术i">分享到</a>
+        <a data-url="http://yoursite.com/2020/04/02/ Java核心技术i/" data-id="ck8r6wzet0005oovimfzloswk" class="article-share-link" data-share="baidu" data-title="Java核心技术i">分享到</a>
       
 
       
@@ -446,7 +437,7 @@ f(x,y)=\frac{1}{2\pi \sigma_1 \sigma_2 \sqrt{1-\rho^2} }\cdot e^{\frac{-1}{2(1-\
 <p>$加速比\ Speedup\ S=\frac{T_s}{T_k}=\frac{顺序执行时间}{运行时间}=\frac{nk}{k+m-1}$</p>
 <p>$效率\ Efficiency\ E=\frac{n\Delta t}{T_k}=\frac{设备实际使用时间}{运行时间*设备数目}=\frac{n}{k+n-1}$</p>
 <p><strong>dependence 相关</strong>，<em>两条指令之间存在某种依赖关系</em></p>
-<p><strong>真数据相关，data dependence</strong>，$①指令j使用指令i产生的结果\②指令j与指令k数据相关，指令k又与指令i数据相关$</p>
+<p><strong>真数据相关，data dependence</strong>，$①指令j使用指令i产生的结果;②指令j与指令k数据相关，指令k又与指令i数据相关$</p>
 <p><strong>名相关，name dependence</strong>，如果两条指令使用相同的名，但是它们之间没有数据流动</p>
 <p>$anti-dependence,反相关，指令j写的名与指令i读的名相同；\ output\ dependence,输出相关,指令j与指令i写的名相同。 $</p>
 <p><strong>控制相关，control dependence </strong>，有分支指令引起的相关。</p>
@@ -457,8 +448,8 @@ f(x,y)=\frac{1}{2\pi \sigma_1 \sigma_2 \sqrt{1-\rho^2} }\cdot e^{\frac{-1}{2(1-\
 <p>$WAW,Write \ After \ Write ，写后写冲突，输出相关，在五段流水线(MIPS)中不会发生$</p>
 <p>$WAR,Write \ After  \ Read,读后写冲突.反相关$</p>
 <p>仅发生在这样的情况：有些指令的写操作被提前了，有些操作的读操作被滞后了，即指令被重新排序了,在五段流水线(MIPS)中不会发生</p>
-<h4 id="4-指令级并行"><a href="#4-指令级并行" class="headerlink" title="4 指令级并行"></a>4 指令级并行</h4><p>$ILP,Instruction-Level\ Parallelism,指令级并行\left{    \begin{array}{lr}        基于硬件（代码执行中）的动态开发方法\        基于软件（代码执行前）的静态开发方法            \end{array}\right.\$</p>
-<p>$CPI<em>{实际流水线}=CPI</em>{理想}+停顿<em>{结构冲突}+停顿</em>{数据冲突}+停顿_{控制冲突}$</p>
+<h4 id="4-指令级并行​"><a href="#4-指令级并行​" class="headerlink" title="4 指令级并行​"></a>4 指令级并行​</h4><script type="math/tex; mode=display">
+ILP,Instruction-Level\ Parallelism,指令级并行\left\{    \begin{array}{lr}        基于硬件（代码执行中）的动态开发方法\\        基于软件（代码执行前）的静态开发方法            \end{array}\right.\\</script><p>$CPI<em>{实际流水线}=CPI</em>{理想}+停顿<em>{结构冲突}+停顿</em>{数据冲突}+停顿_{控制冲突}$</p>
 <p>$IPC,Instructions \ Per\  Cycle,每个时钟周期完成的指令条数$</p>
 <p>$CDB,Common\ Data \ Bus,公共数据总线$</p>
 <p>$IS,Issue,流出阶段：指令译码，检查是否存在结构冲突。$</p>
@@ -471,7 +462,7 @@ f(x,y)=\frac{1}{2\pi \sigma_1 \sigma_2 \sqrt{1-\rho^2} }\cdot e^{\frac{-1}{2(1-\
 <p>$Tomasulo算法$</p>
 <p>$基于硬件的前瞻算法，顺序流出，乱序执行，顺序确认$</p>
 <h5 id="EG"><a href="#EG" class="headerlink" title="EG"></a>EG</h5><p>$e.g.1$</p>
-<p><img src="计算机系统结构.assets/image-20200308150608490.png" alt="image-20200308150608490"></p>
+<p><img src="https://i.loli.net/2020/04/08/7rioSuvb5ew9sGK.png" alt="image-20200308150608490.png"></p>
 <p>解</p>
 <p>不妨设加速比为S</p>
 <p>那么有</p>
@@ -488,7 +479,7 @@ t_{cpuB}=IC*(2/8*2+6/8*1)*1.25T</script><p>最后即可得答案。</p>
     </div>
     <footer class="article-footer">
       
-        <a data-url="http://yoursite.com/2020/03/31/ 计算机系统结构/" data-id="ck8r5ub7d000wpgvihmajebs8" class="article-share-link" data-share="baidu" data-title="计算机系统结构">分享到</a>
+        <a data-url="http://yoursite.com/2020/03/31/ 计算机系统结构/" data-id="ck8r6wzff0013oovix3hcgs58" class="article-share-link" data-share="baidu" data-title="计算机系统结构">分享到</a>
       
 
       
@@ -552,7 +543,7 @@ t_{cpuB}=IC*(2/8*2+6/8*1)*1.25T</script><p>最后即可得答案。</p>
     </div>
     <footer class="article-footer">
       
-        <a data-url="http://yoursite.com/2020/03/31/ 操作系统/" data-id="ck8r5ub79000ppgvidja1nbqg" class="article-share-link" data-share="baidu" data-title="操作系统">分享到</a>
+        <a data-url="http://yoursite.com/2020/03/31/ 操作系统/" data-id="ck8r6wzf9000roovijnn7xup2" class="article-share-link" data-share="baidu" data-title="操作系统">分享到</a>
       
 
       
@@ -653,7 +644,7 @@ GCD(a,b)=GCD(Remainder(b,a),a)\\
     </div>
     <footer class="article-footer">
       
-        <a data-url="http://yoursite.com/2020/03/21/ 离散数学第4讲/" data-id="ck8r5ub7b000upgvis3fmwjo9" class="article-share-link" data-share="baidu" data-title="state machine&amp;Euclidean Alg">分享到</a>
+        <a data-url="http://yoursite.com/2020/03/21/ 离散数学第4讲/" data-id="ck8r6wzfa000toovioy94ehxz" class="article-share-link" data-share="baidu" data-title="state machine&amp;Euclidean Alg">分享到</a>
       
 
       
@@ -703,47 +694,14 @@ GCD(a,b)=GCD(Remainder(b,a),a)\\
 <p>若同时满足$(1),(2)$</p>
 <p>则有</p>
 <script type="math/tex; mode=display">
-f(n)=\Theta (g(n)),且g(n)=\theta (f(n))</script><p>例题：</p>
-<h5 id="1"><a href="#1" class="headerlink" title="1"></a>1</h5><p>证明$g(n)=\Omega (f(n)),则 \Omega (f(n))+\Omega (g(n))=\Omega (f(n))$</p>
-<p>易知$\exists c_1,n_1,对于\forall n\geq n_1,有f(n)\geq c_1*g(n)$</p>
-<p>设有$p(n)=\Omega (g(n)),即\exists c_2,n_2,对于\forall n\geq n_2,有g(n)\geq c_2*p(n) $</p>
-<p>可得$ \Omega (f(n))+\Omega (g(n))=g(n)+p(n),设n_3= max{ n1,n2},g(n)+p(n))\geq c_1<em>f(n)+c_2</em>g(n)$</p>
-<p>$则\exists c_3=min{ c_1,c_2},使得\forall n\geq n_3,有\Omega(f(n))+\Omega(g(n))\geq c_3*(f(n)+g(n)),故有\Omega(f(n))+\Omega(g(n))=\Omega(f(n)+g(n))$</p>
-<h5 id="2-1"><a href="#2-1" class="headerlink" title="2"></a>2</h5><p>证明$\Omega(cf(n))=\Omega(f(n))$</p>
-<p>不妨设$\Omega(f(n))=g(n),即\exists c_1,n_1,对于\forall n\geq n_1,有f(n)\geq c_1*g(n)$</p>
-<p>故有$c<em>f(n)\geq c</em>c_1*g(n)。$</p>
-<p>即$\exists c<em>c1,n_1,对于\forall n\geq n_1,有f(n)\geq c</em>c_1*g(n)$</p>
-<p>故有$\Omega(cf(n))=g(n)$</p>
-<p>故有$\Omega(cf(n))=\Omega(f(n))$</p>
-<h5 id="3"><a href="#3" class="headerlink" title="3"></a>3</h5><p>证明$f(n)=\Omega(f(n))$</p>
-<p>$易知，\exists c=1,n_0=1,对于\forall n \geq n_0,有f(n)\geq c*f(n)$</p>
-<p>故原式成立。</p>
-<h5 id="4"><a href="#4" class="headerlink" title="4"></a>4</h5><p>不成立。</p>
-<p>比如：</p>
-<p>$f(n)=n^3 而 g(n)=n^2$</p>
-<h5 id="5"><a href="#5" class="headerlink" title="5"></a>5</h5><p>证明$\Theta(f(n))+\theta(g(n))=\Theta(max(f(n)+g(n)))$</p>
-<p>设$p(n)=max{f(n),g(n)}$</p>
-<p>$不妨设f_1(n)=\Theta(f(n)),g_1(n)=\theta(g(n)),可得$</p>
-<p>$\exists c_1,c_2,n_1,对于\forall n\geq n_1,有c_1<em>f(n)\leq f_1(n)\leq c_2</em>f(n)$</p>
-<p>$\exists b_1,b_2,n_2,对于\forall n\geq n_2,有b_1<em>g(n)\leq g_1(n)\leq b_2</em>g(n)$</p>
-<p>对于任意$n\geq max{ n_1,n_2}$</p>
-<p>有$\frac{min{ c_1,b_1}}{2}<em>max{ f(n),g(n)}\leq f_1(n)+g_1(n)\leq 2</em>max{ c_2,b_2}*max{ f(n),g(n)}$</p>
-<p>故原式成立。</p>
-<h5 id="6"><a href="#6" class="headerlink" title="6"></a>6</h5><p>证明$\Theta (f(n))+\Theta(g(n))=\Theta(f(n)+g(n))$</p>
-<p>$不妨设f_1(n)=\Theta(f(n)),g_1(n)=\theta(g(n)),可得$</p>
-<p>$\exists c_1,c_2,n_1,对于\forall n\geq n_1,有c_1<em>f(n)\leq f_1(n)\leq c_2</em>f(n)$</p>
-<p>$\exists b_1,b_2,n_2,对于\forall n\geq n_2,有b_1<em>g(n)\leq g_1(n)\leq b_2</em>g(n)$</p>
-<p>对于任意$n\geq max{ n_1,n_2}$</p>
-<p>有$min{ c_1,b_1}<em>(f(n)+g(n))\leq f_1(n)+g_1(n)\leq max{ c_2,b_2}</em>(f(n)+g(n))$</p>
-<p>故原式成立。</p>
-<h3 id="3-贪心方法"><a href="#3-贪心方法" class="headerlink" title="3 贪心方法"></a>3 贪心方法</h3><h4 id="1-一般方法"><a href="#1-一般方法" class="headerlink" title="1 一般方法"></a>1 一般方法</h4><script type="math/tex; mode=display">
+f(n)=\Theta (g(n)),且g(n)=\theta (f(n))</script><h3 id="3-贪心方法"><a href="#3-贪心方法" class="headerlink" title="3 贪心方法"></a>3 贪心方法</h3><h4 id="1-一般方法"><a href="#1-一般方法" class="headerlink" title="1 一般方法"></a>1 一般方法</h4><script type="math/tex; mode=display">
 n个输入,可行解为n个输入的子集\\
 约束条件\Longrightarrow 可行解 根据目标函数\Longrightarrow最优解</script><h4 id="核心：选取能产生最优解的量度标准"><a href="#核心：选取能产生最优解的量度标准" class="headerlink" title="核心：选取能产生最优解的量度标准"></a>核心：选取能产生最优解的量度标准</h4><h4 id="2背包"><a href="#2背包" class="headerlink" title="2背包"></a>2背包</h4>
       
     </div>
     <footer class="article-footer">
       
-        <a data-url="http://yoursite.com/2020/02/13/ 算法设计及分析/" data-id="ck8r5ub7e000ypgvi0hqrmt1s" class="article-share-link" data-share="baidu" data-title="算法设计与分析">分享到</a>
+        <a data-url="http://yoursite.com/2020/02/13/ 算法设计及分析/" data-id="ck8r6wzfd000yooviczzda3qe" class="article-share-link" data-share="baidu" data-title="算法设计与分析">分享到</a>
       
 
       
@@ -790,7 +748,7 @@ n个输入,可行解为n个输入的子集\\
     </div>
     <footer class="article-footer">
       
-        <a data-url="http://yoursite.com/2019/11/18/ Warshall/" data-id="ck8r5ub78000opgvi7q3ovn3p" class="article-share-link" data-share="baidu" data-title="Warshall&amp;All_componet">分享到</a>
+        <a data-url="http://yoursite.com/2019/11/18/ Warshall/" data-id="ck8r6wzf5000ioovimelcff8q" class="article-share-link" data-share="baidu" data-title="Warshall&amp;All_componet">分享到</a>
       
 
       
@@ -837,7 +795,7 @@ n个输入,可行解为n个输入的子集\\
     </div>
     <footer class="article-footer">
       
-        <a data-url="http://yoursite.com/2019/11/13/ Kmeans/" data-id="ck8r5ub73000ipgvi3f60vgq2" class="article-share-link" data-share="baidu" data-title="Kmeans">分享到</a>
+        <a data-url="http://yoursite.com/2019/11/13/ Kmeans/" data-id="ck8r6wzew0007oovi3t4s4cqg" class="article-share-link" data-share="baidu" data-title="Kmeans">分享到</a>
       
 
       
@@ -884,7 +842,7 @@ n个输入,可行解为n个输入的子集\\
     </div>
     <footer class="article-footer">
       
-        <a data-url="http://yoursite.com/2019/11/13/ Prim/" data-id="ck8r5ub76000mpgvi94492i06" class="article-share-link" data-share="baidu" data-title="Prim">分享到</a>
+        <a data-url="http://yoursite.com/2019/11/13/ Prim/" data-id="ck8r6wzez000aoovis8vsqled" class="article-share-link" data-share="baidu" data-title="Prim">分享到</a>
       
 
       

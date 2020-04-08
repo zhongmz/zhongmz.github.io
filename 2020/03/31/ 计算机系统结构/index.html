@@ -14,12 +14,12 @@
 <meta property="og:site_name" content="Xxgzbd&#39;s Blog">
 <meta property="og:description" content="1系统结构，组成，实现  计算机系统结构：计算机系统的软，硬件的界面。 计算机组成：计算机系统结构的逻辑实现。 计算机实现：计算机组成的物理实现  换句话来说，我们设计计算机的时间轴为：$系统结构\longrightarrow 组成\longrightarrow 实现$ $t_{cpu}:$执行一段程序所用的CPU时间。 $IC:$该段程序的指令条数，取决于指令集结构 和编译技术。 $CPI,Cy">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:image" content="http://yoursite.com/2020/03/31/%20计算机系统结构/计算机系统结构.assets/image-20200308150608490.png">
-<meta property="og:updated_time" content="2020-04-04T08:29:59.667Z">
+<meta property="og:image" content="https://i.loli.net/2020/04/08/7rioSuvb5ew9sGK.png">
+<meta property="og:updated_time" content="2020-04-08T10:28:16.140Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="计算机系统结构">
 <meta name="twitter:description" content="1系统结构，组成，实现  计算机系统结构：计算机系统的软，硬件的界面。 计算机组成：计算机系统结构的逻辑实现。 计算机实现：计算机组成的物理实现  换句话来说，我们设计计算机的时间轴为：$系统结构\longrightarrow 组成\longrightarrow 实现$ $t_{cpu}:$执行一段程序所用的CPU时间。 $IC:$该段程序的指令条数，取决于指令集结构 和编译技术。 $CPI,Cy">
-<meta name="twitter:image" content="http://yoursite.com/2020/03/31/%20计算机系统结构/计算机系统结构.assets/image-20200308150608490.png">
+<meta name="twitter:image" content="https://i.loli.net/2020/04/08/7rioSuvb5ew9sGK.png">
   
     <link rel="alternative" href="/atom.xml" title="Xxgzbd&#39;s Blog" type="application/atom+xml">
   
@@ -27,19 +27,8 @@
     <link rel="icon" href="/favicon.png">
   
   <link rel="stylesheet" href="/css/style.css">
-  <!--[if lt IE 9]><script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7/html5shiv.min.js"></script><![endif]-->
+  <!--[if lt IE 9]><script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7/html5shiv.min.js"></script><![endif]--><!-- hexo-inject:begin --><!-- hexo-inject:end -->
   
-
-  <script>
-    (function(){
-        if('{{ page.password }}'){
-            if (prompt('��������������') !== '{{ page.password }}'){
-                alert('�������');
-                history.back();
-            }
-        }
-    })();
-  </script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
   
 </head></html>
 <body>
@@ -125,7 +114,7 @@
 <p>$加速比\ Speedup\ S=\frac{T_s}{T_k}=\frac{顺序执行时间}{运行时间}=\frac{nk}{k+m-1}$</p>
 <p>$效率\ Efficiency\ E=\frac{n\Delta t}{T_k}=\frac{设备实际使用时间}{运行时间*设备数目}=\frac{n}{k+n-1}$</p>
 <p><strong>dependence 相关</strong>，<em>两条指令之间存在某种依赖关系</em></p>
-<p><strong>真数据相关，data dependence</strong>，$①指令j使用指令i产生的结果\②指令j与指令k数据相关，指令k又与指令i数据相关$</p>
+<p><strong>真数据相关，data dependence</strong>，$①指令j使用指令i产生的结果;②指令j与指令k数据相关，指令k又与指令i数据相关$</p>
 <p><strong>名相关，name dependence</strong>，如果两条指令使用相同的名，但是它们之间没有数据流动</p>
 <p>$anti-dependence,反相关，指令j写的名与指令i读的名相同；\ output\ dependence,输出相关,指令j与指令i写的名相同。 $</p>
 <p><strong>控制相关，control dependence </strong>，有分支指令引起的相关。</p>
@@ -136,8 +125,8 @@
 <p>$WAW,Write \ After \ Write ，写后写冲突，输出相关，在五段流水线(MIPS)中不会发生$</p>
 <p>$WAR,Write \ After  \ Read,读后写冲突.反相关$</p>
 <p>仅发生在这样的情况：有些指令的写操作被提前了，有些操作的读操作被滞后了，即指令被重新排序了,在五段流水线(MIPS)中不会发生</p>
-<h4 id="4-指令级并行"><a href="#4-指令级并行" class="headerlink" title="4 指令级并行"></a>4 指令级并行</h4><p>$ILP,Instruction-Level\ Parallelism,指令级并行\left{    \begin{array}{lr}        基于硬件（代码执行中）的动态开发方法\        基于软件（代码执行前）的静态开发方法            \end{array}\right.\$</p>
-<p>$CPI<em>{实际流水线}=CPI</em>{理想}+停顿<em>{结构冲突}+停顿</em>{数据冲突}+停顿_{控制冲突}$</p>
+<h4 id="4-指令级并行​"><a href="#4-指令级并行​" class="headerlink" title="4 指令级并行​"></a>4 指令级并行​</h4><script type="math/tex; mode=display">
+ILP,Instruction-Level\ Parallelism,指令级并行\left\{    \begin{array}{lr}        基于硬件（代码执行中）的动态开发方法\\        基于软件（代码执行前）的静态开发方法            \end{array}\right.\\</script><p>$CPI<em>{实际流水线}=CPI</em>{理想}+停顿<em>{结构冲突}+停顿</em>{数据冲突}+停顿_{控制冲突}$</p>
 <p>$IPC,Instructions \ Per\  Cycle,每个时钟周期完成的指令条数$</p>
 <p>$CDB,Common\ Data \ Bus,公共数据总线$</p>
 <p>$IS,Issue,流出阶段：指令译码，检查是否存在结构冲突。$</p>
@@ -150,7 +139,7 @@
 <p>$Tomasulo算法$</p>
 <p>$基于硬件的前瞻算法，顺序流出，乱序执行，顺序确认$</p>
 <h5 id="EG"><a href="#EG" class="headerlink" title="EG"></a>EG</h5><p>$e.g.1$</p>
-<p><img src="计算机系统结构.assets/image-20200308150608490.png" alt="image-20200308150608490"></p>
+<p><img src="https://i.loli.net/2020/04/08/7rioSuvb5ew9sGK.png" alt="image-20200308150608490.png"></p>
 <p>解</p>
 <p>不妨设加速比为S</p>
 <p>那么有</p>
@@ -167,7 +156,7 @@ t_{cpuB}=IC*(2/8*2+6/8*1)*1.25T</script><p>最后即可得答案。</p>
     </div>
     <footer class="article-footer">
       
-        <a data-url="http://yoursite.com/2020/03/31/ 计算机系统结构/" data-id="ck8r5ub7d000wpgvihmajebs8" class="article-share-link" data-share="baidu" data-title="计算机系统结构">分享到</a>
+        <a data-url="http://yoursite.com/2020/03/31/ 计算机系统结构/" data-id="ck8r6wzff0013oovix3hcgs58" class="article-share-link" data-share="baidu" data-title="计算机系统结构">分享到</a>
       
 
       
