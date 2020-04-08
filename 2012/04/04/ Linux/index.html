@@ -6,18 +6,18 @@
   
   <title>Linux | Xxgzbd&#39;s Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="viCommand$:wq，保存并退出$ $:w,保存$ $:w \ filename,另存为filename$ $:wq!,保存强制退出$ $gg,使光标到文件头$ $ab,缩写，unab，取消缩写$ $宏操作符，map，unmap,取消宏\ page 98$ file$command\ source\ target$ 创建文件 $mkdir\ filename,创建目录$ 移除文件 $rm\">
+  <meta name="description" content="viCommand$:wq，保存并退出$ $:w,保存$ $:w \ filename,另存为filename$ $:wq!,保存强制退出$ $gg,使光标到文件头$ $G,使光标移到文件尾$ $nG,使光标移到第n行$ $ab,缩写，unab，取消缩写$ $宏操作符，map，unmap,取消宏\ page 98$ $u,撤销最近的操作$ file$command\ source\ target$">
 <meta name="keywords" content="algorithm math">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Linux">
 <meta property="og:url" content="http://yoursite.com/2012/04/04/ Linux/index.html">
 <meta property="og:site_name" content="Xxgzbd&#39;s Blog">
-<meta property="og:description" content="viCommand$:wq，保存并退出$ $:w,保存$ $:w \ filename,另存为filename$ $:wq!,保存强制退出$ $gg,使光标到文件头$ $ab,缩写，unab，取消缩写$ $宏操作符，map，unmap,取消宏\ page 98$ file$command\ source\ target$ 创建文件 $mkdir\ filename,创建目录$ 移除文件 $rm\">
+<meta property="og:description" content="viCommand$:wq，保存并退出$ $:w,保存$ $:w \ filename,另存为filename$ $:wq!,保存强制退出$ $gg,使光标到文件头$ $G,使光标移到文件尾$ $nG,使光标移到第n行$ $ab,缩写，unab，取消缩写$ $宏操作符，map，unmap,取消宏\ page 98$ $u,撤销最近的操作$ file$command\ source\ target$">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2020-04-04T15:47:38.465Z">
+<meta property="og:updated_time" content="2020-04-08T09:35:50.274Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Linux">
-<meta name="twitter:description" content="viCommand$:wq，保存并退出$ $:w,保存$ $:w \ filename,另存为filename$ $:wq!,保存强制退出$ $gg,使光标到文件头$ $ab,缩写，unab，取消缩写$ $宏操作符，map，unmap,取消宏\ page 98$ file$command\ source\ target$ 创建文件 $mkdir\ filename,创建目录$ 移除文件 $rm\">
+<meta name="twitter:description" content="viCommand$:wq，保存并退出$ $:w,保存$ $:w \ filename,另存为filename$ $:wq!,保存强制退出$ $gg,使光标到文件头$ $G,使光标移到文件尾$ $nG,使光标移到第n行$ $ab,缩写，unab，取消缩写$ $宏操作符，map，unmap,取消宏\ page 98$ $u,撤销最近的操作$ file$command\ source\ target$">
   
     <link rel="alternative" href="/atom.xml" title="Xxgzbd&#39;s Blog" type="application/atom+xml">
   
@@ -25,7 +25,19 @@
     <link rel="icon" href="/favicon.png">
   
   <link rel="stylesheet" href="/css/style.css">
-  <!--[if lt IE 9]><script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7/html5shiv.min.js"></script><![endif]--><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+  <!--[if lt IE 9]><script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7/html5shiv.min.js"></script><![endif]-->
+  
+
+  <script>
+    (function(){
+        if('{{ page.password }}'){
+            if (prompt('��������������') !== '{{ page.password }}'){
+                alert('�������');
+                history.back();
+            }
+        }
+    })();
+  </script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
   
 </head></html>
 <body>
@@ -100,8 +112,11 @@
 <p>$:w \ filename,另存为filename$</p>
 <p>$:wq!,保存强制退出$</p>
 <p>$gg,使光标到文件头$</p>
+<p>$G,使光标移到文件尾$</p>
+<p>$nG,使光标移到第n行$</p>
 <p>$ab,缩写，unab，取消缩写$</p>
 <p>$宏操作符，map，unmap,取消宏\ page 98$</p>
+<p>$u,撤销最近的操作$</p>
 <h4 id="file"><a href="#file" class="headerlink" title="file"></a>file</h4><p>$command\ source\ target$</p>
 <p><strong>创建文件</strong></p>
 <p>$mkdir\ filename,创建目录$</p>
@@ -123,13 +138,29 @@
 <p>$command \ &gt; \ filename\ 若有，则覆盖\command\  &gt;&gt;\ filename，若有，则添加到文件结尾$</p>
 <p>$cat\ &gt; filename,创建文件，但输入时无法修改，若有，则覆盖\cat\ &gt;&gt;\ filename,创建文件，但输入时违法修改，若有，则添加到文件结尾$</p>
 <p>$cat\ filename1\ &gt;\ filename2\cat\ filename1\ filename2…\ filenamei\ &gt;&gt;\ target$</p>
+<p><strong>显示文件</strong></p>
+<p>$head\ -n\ filename,显示文件的前n行$</p>
+<p>$tail\ -n\ filename,显示文件的后n行$</p>
+<p>$tail\ -n +10\ filename|head -n\ 10,显示第10-20行$</p>
+<p><strong>查找文件</strong></p>
+<p>$find\ . -name \ filename,寻找名为filename的文件$</p>
+<p>$find\ . \ -name\ filename\ -exec\  -cp\  {}\ file\  \verb|| ;,寻找名为filename的文件并且复制到file文件夹中$</p>
 <p>$eg: ls &gt;&gt; a,who &gt;&gt; a,date &gt;&gt; a$</p>
+<h1 id="Shell"><a href="#Shell" class="headerlink" title="Shell"></a>Shell</h1><h3 id="kill"><a href="#kill" class="headerlink" title="kill"></a>kill</h3><p>用户只能关闭自己的进程，root可以关闭所有进程</p>
+<h3 id="tee-分离输出"><a href="#tee-分离输出" class="headerlink" title="tee 分离输出"></a>tee 分离输出</h3><ul>
+<li>多重输出</li>
+<li>tee命令和|一起使用实现分离输出</li>
+</ul>
+<h4 id="选项"><a href="#选项" class="headerlink" title="选项"></a>选项</h4><ul>
+<li>-a    不覆盖原来内容 </li>
+<li>-i     不响应中断     </li>
+</ul>
 
       
     </div>
     <footer class="article-footer">
       
-        <a data-url="http://yoursite.com/2012/04/04/ Linux/" data-id="ck8mtbb81000dh4vip4fiw8dk" class="article-share-link" data-share="baidu" data-title="Linux">分享到</a>
+        <a data-url="http://yoursite.com/2012/04/04/ Linux/" data-id="ck8r5ub6f0005pgvi9euk5ntv" class="article-share-link" data-share="baidu" data-title="Linux">分享到</a>
       
 
       
@@ -170,7 +201,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">分类</h3>
     <div class="widget">
-      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Java/">Java</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Linux/">Linux</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/algorithm/">algorithm</a><span class="category-list-count">8</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/操作系统/">操作系统</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/机器学习/">机器学习</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/离散数学/">离散数学</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/算法设计与分析/">算法设计与分析</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/计算机系统结构/">计算机系统结构</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/随机数学/">随机数学</a><span class="category-list-count">1</span></li></ul>
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Java/">Java</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Linux/">Linux</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/algorithm/">algorithm</a><span class="category-list-count">9</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/操作系统/">操作系统</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/机器学习/">机器学习</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/离散数学/">离散数学</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/算法设计与分析/">算法设计与分析</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/组合数学/">组合数学</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/计算机系统结构/">计算机系统结构</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/随机数学/">随机数学</a><span class="category-list-count">1</span></li></ul>
     </div>
   </div>
 
@@ -183,7 +214,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">归档</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/04/">四月 2020</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/03/">三月 2020</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/02/">二月 2020</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/11/">十一月 2019</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/10/">十月 2019</a><span class="archive-list-count">6</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/08/">八月 2019</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/04/">四月 2012</a><span class="archive-list-count">1</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/04/">四月 2020</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/03/">三月 2020</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/02/">二月 2020</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/11/">十一月 2019</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/10/">十月 2019</a><span class="archive-list-count">7</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/08/">八月 2019</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/04/">四月 2012</a><span class="archive-list-count">1</span></li></ul>
     </div>
   </div>
 
@@ -193,6 +224,10 @@
     <h3 class="widget-title">近期文章</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/2020/04/06/ 组合数学/">组合数学</a>
+          </li>
         
           <li>
             <a href="/2020/04/03/ 概率论与数理统计/">随机数学</a>
@@ -208,10 +243,6 @@
         
           <li>
             <a href="/2020/03/31/ 操作系统/">操作系统</a>
-          </li>
-        
-          <li>
-            <a href="/2020/03/21/ 离散数学第4讲/">state machine&amp;Euclidean Alg</a>
           </li>
         
       </ul>
