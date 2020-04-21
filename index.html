@@ -71,6 +71,123 @@
     <div class="outer">
       <section id="main">
   
+    <article id="post-微型计算机" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2020/04/11/ 微型计算机/" class="article-date">
+  <time datetime="2020-04-11T14:56:52.000Z" itemprop="datePublished">2020-04-11</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/微机原理/">微机原理</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/04/11/ 微型计算机/">微机原理</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="从入门到入土"><a href="#从入门到入土" class="headerlink" title="从入门到入土"></a>从入门到入土</h1><ul>
+<li>字长，</li>
+<li>主频，CPU的时钟频率，决定计算机运算速度</li>
+<li>CISC，Complex Instruction Set Computer</li>
+<li>RISC，Reduced Instruction Set Computer</li>
+<li>发展</li>
+</ul>
+<h1 id="8086"><a href="#8086" class="headerlink" title="8086"></a>8086</h1><ul>
+<li><p>AX,Accumulator Register，累加器</p>
+</li>
+<li><p>BX,Base Register，基址寄存器</p>
+</li>
+<li><p>CX,Counter Register，计数器</p>
+</li>
+<li><p>DX,DataRegister，数据寄存器</p>
+</li>
+<li><p>SP,Stack Pointer，堆栈指针</p>
+</li>
+<li><p>BP,Base Pointer，基址指针</p>
+</li>
+<li><p>SI,Source Index，源变址寄存器</p>
+</li>
+<li><p>DI,Destination Index，目的变址寄存器,<a href>其中，SI与DI隐含使用</a></p>
+</li>
+<li><p>CS,Code Segment，代码段寄存器</p>
+</li>
+<li><p>SS,Stack Segment，堆栈段寄存器</p>
+</li>
+<li><p>DS,Data Segment，数据段寄存器</p>
+</li>
+<li><p>ES,Extra Segment，附加段寄存器</p>
+</li>
+<li><p>IP,Instruction Pointer，指令指针，<a href>CS:IP在地址加法器中形成物理地址，由BIU修改，不能直接修改</a></p>
+</li>
+<li><p>FL,flag，标志寄存器</p>
+<ul>
+<li><p>CF,Carry Flag，进位或错误标志</p>
+</li>
+<li><p>PF,Parity Flag</p>
+</li>
+<li><p>AF,Auxiliary Carry Flag</p>
+</li>
+<li><p>ZF,Zero Flag</p>
+</li>
+<li><p>SF,Sign Flag</p>
+</li>
+<li><p>OF,Overflow Flaw</p>
+</li>
+</ul>
+<hr>
+<p>  DF,Dirction Flag</p>
+<ul>
+<li><p>IF,Interrupt Enable Flag</p>
+</li>
+<li><p>TF,Trap Flag</p>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="总线周期"><a href="#总线周期" class="headerlink" title="总线周期"></a>总线周期</h2><ul>
+<li>工作时序</li>
+<li>时钟周期</li>
+<li>总线周期</li>
+<li>指令周期</li>
+<li>总线请求</li>
+<li>总线响应</li>
+<li>中断响应</li>
+<li>中断响应周期</li>
+<li>8086时钟状态</li>
+<li></li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      
+        <a data-url="http://yoursite.com/2020/04/11/ 微型计算机/" data-id="ck99szoti000ke4vim27vouli" class="article-share-link" data-share="baidu" data-title="微机原理">分享到</a>
+      
+
+      
+        <a href="http://yoursite.com/2020/04/11/ 微型计算机/#ds-thread" class="article-comment-link">评论</a>
+      
+
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-组合数学" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2020/04/06/ 组合数学/" class="article-date">
@@ -123,13 +240,12 @@ M=\{ \infty \cdot a_1,\infty \cdot a_2...\infty \cdot a_n\},r \geq n,则M中每�
 <p>​    (b)     字典序法</p>
 <p>$x_1+x_2…+x_n=r$的非负整数解集个数为：$\frac{(n+r-1)!}{(n-1)!*r!}=\dbinom{n+r-1}{r}$</p>
 <p>其中，$x_i\geq 0$</p>
-<p><strong>二项式定理</strong></p>
-<script type="math/tex; mode=display">
+<h2 id="二项式定理"><a href="#二项式定理" class="headerlink" title="二项式定理"></a>二项式定理</h2><script type="math/tex; mode=display">
 {(x+y)}^n=\dbinom{n}{0}x^0y^n+\dbinom{n}{1}x^1y^{n-1}...+\dbinom{n}{n-1}x^{n-1}y^1+\dbinom{n}{n}x^ny^0，其中n\geq 0</script><script type="math/tex; mode=display">
 \dbinom{n}{k}\\
 (1)\     \dbinom{n}{k}=\dbinom{n}{n-k} \\
 (2)\     \dbinom{n}{k}=\dbinom{n-1}{k}+\dbinom{n-1}{k-1}\\
-(3)\     \dbinom{n}{\frac{n}{2}}为max\\</script><h3 id="4-容斥原理"><a href="#4-容斥原理" class="headerlink" title="4 容斥原理"></a>4 容斥原理</h3><p>$S中不具有性质P_1,P_2\dots,P_m的元素个数为$$​</p>
+(3)\     \dbinom{n}{\frac{n}{2}}为max\\</script><h3 id="牛顿二项式"><a href="#牛顿二项式" class="headerlink" title="牛顿二项式"></a>牛顿二项式</h3><h1 id="容斥原理"><a href="#容斥原理" class="headerlink" title="容斥原理"></a>容斥原理</h1><p>$S中不具有性质P_1,P_2\dots,P_m的元素个数为$$​</p>
 <script type="math/tex; mode=display">
 |\overline{A_1}\cap\overline{A_2}\cap\dots\cap\overline{A_m}|\\=|S|-\sum_{ i= 1}^{m}|A_i|+\sum_{1\leq i<j\leq m}|A_i\cap A_j|-\sum_{1\leq i<j<k\leq m}|A_i\cap A_j\cap A_k|+\dots +(-1)^{m}|A_1\cap A_2\cap\dots\cap A_m|</script><p>不妨设</p>
 <p>$W(0)=|S|$</p>
@@ -142,19 +258,18 @@ M=\{ \infty \cdot a_1,\infty \cdot a_2...\infty \cdot a_n\},r \geq n,则M中每�
 <p>集合S中恰好具有$r(0\leq r\leq m)$种特性质的元素个数</p>
 <p>$M(r)=W(r)-\dbinom{r+1}{r}W(r+1)+\dots+(-1)^{m-r}\dbinom{m}{r}W(m)=\displaystyle\sum_{i=0}^{m-r}(-1)^i\dbinom{r+i}{r}W(r+i)$</p>
 <p><strong>对称筛公式</strong></p>
-<p>$即当\N=|S|\N(1)=|A<em>1|=|A_2|=\dots=|A_m|\N(2)=|A_1\cap A_2|=\dots=|A</em>{m-1}\cap A_{m}|\…$</p>
-<p>有</p>
+<p>即当</p>
 <script type="math/tex; mode=display">
-|\overline{A_1}\cap \overline{A_2}\cap\dots\cap \overline{A_m}|=N-\dbinom{m}{1}N(1)+\dots+\dbinom{m}{m}N(m)</script><p><strong>错位排列</strong></p>
-<p>​    每个物体$i$都不在第$i$个位置上的排列称为错位排列$Derangement$，通常使用$D_n$表示错位排列数</p>
+\\N=|S|\\N(1)=|A_1|=|A_2|=\dots=|A_m|\\N(2)=|A_1\cap A_2|=\dots=|A_{m-1}\cap A_{m}|\\
+...</script><p>有</p>
+<script type="math/tex; mode=display">
+|\overline{A_1}\cap \overline{A_2}\cap\dots\cap \overline{A_m}|=N-\dbinom{m}{1}N(1)+\dots+\dbinom{m}{m}N(m)</script><h2 id="错位排列"><a href="#错位排列" class="headerlink" title="错位排列"></a>错位排列</h2><p>​    每个物体$i$都不在第$i$个位置上的排列称为错位排列$Derangement$，通常使用$D_n$表示错位排列数</p>
 <p>对于$n\geq 1$有</p>
 <script type="math/tex; mode=display">
-D_n=n!(1-\frac{1}{1!}+\frac{1}{2!}-\dots+(-1)^n\frac{1}{n!})</script><p><strong>有限制条件的排列问题</strong></p>
-<p>​    一般来说，令$I={ 1,2,\dots ,n}$在$I$的排列中不出现12，23，34，…，(n-1)n的排列称为有限制条件的排列。通常把排列的个数记作$Q_n$</p>
+D_n=n!(1-\frac{1}{1!}+\frac{1}{2!}-\dots+(-1)^n\frac{1}{n!})</script><h2 id="有限制条件的排列问题"><a href="#有限制条件的排列问题" class="headerlink" title="有限制条件的排列问题"></a>有限制条件的排列问题</h2><p>​    一般来说，令$I={ 1,2,\dots ,n}$在$I$的排列中不出现12，23，34，…，(n-1)n的排列称为有限制条件的排列。通常把排列的个数记作$Q_n$</p>
 <p>对于$n\geq 1$有</p>
 <script type="math/tex; mode=display">
-Q_n=n!-\dbinom{n-1}{1}(n-1)!+\dbinom{n-1}{2}(n-2)!-\dots+(-1)^{n-1}\cdot 1!</script><p><strong>棋盘多项式与有禁区的排列</strong></p>
-<p>设$C$是一个棋盘，$r_k(C)$表示把$k$个棋子布到$C$中的方案数。</p>
+Q_n=n!-\dbinom{n-1}{1}(n-1)!+\dbinom{n-1}{2}(n-2)!-\dots+(-1)^{n-1}\cdot 1!</script><h2 id="棋盘多项式与有禁区的排列"><a href="#棋盘多项式与有禁区的排列" class="headerlink" title="棋盘多项式与有禁区的排列"></a>棋盘多项式与有禁区的排列</h2><p>设$C$是一个棋盘，$r_k(C)$表示把$k$个棋子布到$C$中的方案数。</p>
 <p>设$C_i$是从棋盘$C$中删除指定方格所在行所在列所剩余的棋盘，$C_l$是从棋盘$C$中删除指定方格后所剩余的棋盘，则有</p>
 <script type="math/tex; mode=display">
 r_k(C)=r_{k-1}(C_i)+r_k(C_l)\  其中k\geq 1</script><p>设棋盘$C$是由$C_1$和$C_2$两部分组成，且其布棋方案是互相独立的，则有</p>
@@ -164,7 +279,7 @@ r_k(C)=\displaystyle\sum_{i=0}^{k}r_i(C_1)\cdot r_{k-i}(C_2)</script><p><strong>
 R(C)=\displaystyle\sum_{k=0}^{\infty}r_k(C)x^k</script><p>有</p>
 <p>$R(C)=xR(C_i)+R(C_l)$</p>
 <p>$R(C=R(C_1)\cdot R(C_2)$</p>
-<h3 id="生成函数"><a href="#生成函数" class="headerlink" title="生成函数"></a>生成函数</h3><p>设有一个有限或无限的数列 ${a_0,a_1,…,a_k,..}$，做形式幂级数</p>
+<h1 id="生成函数"><a href="#生成函数" class="headerlink" title="生成函数"></a>生成函数</h1><h2 id="一些性质与常见的生成函数"><a href="#一些性质与常见的生成函数" class="headerlink" title="一些性质与常见的生成函数"></a>一些性质与常见的生成函数</h2><p>设有一个有限或无限的数列 ${a_0,a_1,…,a_k,..}$，做形式幂级数</p>
 <script type="math/tex; mode=display">
 G(x)=a_0+a_1x+\dots+a_kx^k+\dots,</script><p>称$G(x)$为数列${ a_0,a_1,…,a_k,..}$的（普通）生成函数，并记作$G{a_k}$</p>
 <script type="math/tex; mode=display">
@@ -179,12 +294,30 @@ b_k=\displaystyle\sum_{i=k}^{\infty}a_i\quad B(x)=\frac{A(1)-xA(x)}{1-x}\\
 b_k=ka_i \quad B(x)=xA^{'}(x)\\
 c_k=\alpha a_k+\beta b_k\quad C(x)=\alpha A(x)+\beta B(x)\\
 c_k=a_0b_k+a_1b_{k-1}+a_2b{k-2}+\dots+a_kb_0\quad C(x)=A(x)B(x)\\
-b_k={\alpha}^{k}a_k\quad B(x)=A(\alpha x)\\</script>
+b_k={\alpha}^{k}a_k\quad B(x)=A(\alpha x)\\</script><h2 id="组合数的生成函数"><a href="#组合数的生成函数" class="headerlink" title="组合数的生成函数"></a>组合数的生成函数</h2><ul>
+<li><p>设多重集</p>
+<script type="math/tex; mode=display">
+M=\{k_1\cdot a_1,...k_n\cdot a_n\}</script><p>则$M$的$k-$组合数$c_k$对应数列${c_k}$的生成函数为</p>
+<script type="math/tex; mode=display">
+G(x)=\prod _{i=1}^{n}(\sum_{j=0}^{k_i}x^j)\\
+其中，x_k为G(x)展开式中x^k的系数。</script></li>
+<li></li>
+</ul>
+<h1 id="递推关系"><a href="#递推关系" class="headerlink" title="递推关系"></a>递推关系</h1><ul>
+<li><script type="math/tex; mode=display">
+f(n)=c_1(n)f(n-1)+c_2(n)f(n-2)+\dots+c_k(n)f(n-k)+g(n)\\
+若c_i(n)为常数，那么称之为k阶常系数线性递推关系\\
+若g(n)=0，则称之为齐次的\\</script></li>
+<li><p>特征方程</p>
+<script type="math/tex; mode=display">
+x^k-c_1x^{k-1}-\dots-c_k=0\\</script></li>
+</ul>
+
       
     </div>
     <footer class="article-footer">
       
-        <a data-url="http://yoursite.com/2020/04/06/ 组合数学/" data-id="ck8r7asgp0013u4vil9w0rqj4" class="article-share-link" data-share="baidu" data-title="组合数学">分享到</a>
+        <a data-url="http://yoursite.com/2020/04/06/ 组合数学/" data-id="ck99szotq000ze4vis7y40g0e" class="article-share-link" data-share="baidu" data-title="组合数学">分享到</a>
       
 
       
@@ -225,7 +358,7 @@ b_k={\alpha}^{k}a_k\quad B(x)=A(\alpha x)\\</script>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h3 id="随机事件及其概率"><a href="#随机事件及其概率" class="headerlink" title="随机事件及其概率"></a>随机事件及其概率</h3><h4 id="1"><a href="#1" class="headerlink" title="1"></a>1</h4><h5 id="引入"><a href="#引入" class="headerlink" title="引入"></a>引入</h5><p>随机试验，简称为试验；若均满足：<strong>可重复性；可观测性；随机性。</strong></p>
+        <h1 id="随机事件及其概率"><a href="#随机事件及其概率" class="headerlink" title="随机事件及其概率"></a>随机事件及其概率</h1><h2 id="引入"><a href="#引入" class="headerlink" title="引入"></a>引入</h2><p>随机试验，简称为试验；若均满足：<strong>可重复性；可观测性；随机性。</strong></p>
 <p>$E:$    试验</p>
 <p>$w$:    样本点</p>
 <p>$\Omega = ${ $w_1,w_2…w_i$ } :    样本空间</p>
@@ -234,23 +367,23 @@ b_k={\alpha}^{k}a_k\quad B(x)=A(\alpha x)\\</script>
 <p>$\Omega$:    必然事件</p>
 <p>$\phi$:    不可能事件</p>
 <p>若 试验结果 $w\in A$,则称事件A发生</p>
-<h5 id="事件的关系"><a href="#事件的关系" class="headerlink" title="事件的关系"></a>事件的关系</h5><p>$A\subseteqq B $:    包含</p>
+<h3 id="事件的关系"><a href="#事件的关系" class="headerlink" title="事件的关系"></a>事件的关系</h3><p>$A\subseteqq B $:    包含</p>
 <p>$A=B$:    相等</p>
 <p>互斥：    不能同时发生</p>
 <p>$\bar{A}=B$:    互逆，对立</p>
-<h5 id="事件的运算"><a href="#事件的运算" class="headerlink" title="事件的运算"></a>事件的运算</h5><p>$A\cup B=${$w|w\in A或w\in B$}</p>
+<h3 id="事件的运算"><a href="#事件的运算" class="headerlink" title="事件的运算"></a>事件的运算</h3><p>$A\cup B=${$w|w\in A或w\in B$}</p>
 <p>$A\cap B或AB=${$w|w\in A或w\in B$}</p>
 <p>$A-B=${$w|w\in A且 w\notin B$}</p>
 <p>$\overline {A\cup B}=\overline A\cap \overline B$</p>
 <p>$\overline {A\cap B}=\overline A\cup \overline B$</p>
-<h4 id="2"><a href="#2" class="headerlink" title="2"></a>2</h4><p>$n_A$:    事件A发生的频数</p>
+<p>$n_A$:    事件A发生的频数</p>
 <p>$f_n(A)$:    事件A发生的频率</p>
 <p>$其中 f_n(A)=\frac{n_A}{n}$</p>
 <p><strong>减法公式：</strong>$P(B-A)=P(B)-P(AB)$</p>
 <p><strong>加法公式：</strong>$P(A\cup B)=P(A)+P(B)-P(AB)$</p>
 <p><strong>古典概型：有限个样本点；基本事件发生的可能性相同。</strong></p>
 <p><strong>几何概型</strong></p>
-<h4 id="3"><a href="#3" class="headerlink" title="3"></a>3</h4><p><strong>条件概型：</strong>$P(B|A)=\frac{P(AB)}{P(A)} \Longrightarrow P(AB)=P(A)P(B|A)$</p>
+<h2 id="条件概型"><a href="#条件概型" class="headerlink" title="条件概型"></a>条件概型</h2><p>$P(B|A)=\frac{P(AB)}{P(A)} \Longrightarrow P(AB)=P(A)P(B|A)$</p>
 <p>条件概型的性质：非负性；<strong>规范性：$P(\Omega |A)=1$</strong>；可列可加性：对于<strong>不相容</strong>的事件$B_1,B_2,\cdot \cdot \cdot $有</p>
 <script type="math/tex; mode=display">
 P((\cup_{i=1}^\infty B_i )|A)=\sum_{i=1}^\infty P(B_i|A)</script><p><strong>全概率公式：</strong></p>
@@ -264,63 +397,120 @@ B=B\cap \Omega =B\cap (\cup _{i=1} ^n A_i)=\cup _{i=1} ^n {A_iB}</script><p><img
 <p>由条件概型的性质可得全概率公式。若某问题可画出概率树，那么该问题属于条件概型，甚至符合全概率公式。</p>
 <p><strong>贝叶斯公式：</strong></p>
 <script type="math/tex; mode=display">
-P(A_j|B)=\frac{P(A_jB)}{P(B)}=\frac{P(B|A_j)P(A_j)}{\sum_{i=1}^nP(A_i)P(B|A_i)}</script><h4 id="4"><a href="#4" class="headerlink" title="4"></a>4</h4><p>如果</p>
+P(A_j|B)=\frac{P(A_jB)}{P(B)}=\frac{P(B|A_j)P(A_j)}{\sum_{i=1}^nP(A_i)P(B|A_i)}</script><h2 id="独立性"><a href="#独立性" class="headerlink" title="独立性"></a>独立性</h2><p>如果</p>
 <script type="math/tex; mode=display">
 P(AB)=P(A)P(B)</script><p>则称事件A与事件B相互独立。</p>
-<p>若某试验$E$是n重伯努利试验，即试验$E$只有两个对立的结果，将其进行n次。设$P(A)=p$。</p>
+<h2 id="伯努利"><a href="#伯努利" class="headerlink" title="伯努利"></a>伯努利</h2><p>若某试验$E$是n重伯努利试验，即试验$E$只有两个对立的结果，将其进行n次。设$P(A)=p$。</p>
 <p>有</p>
 <script type="math/tex; mode=display">
-P_n(k)=(_k^n)p^k(1-p)^{n-k}=C_n^kp^k(1-p)^{n-k}</script><h3 id="随机变量及其概率分布"><a href="#随机变量及其概率分布" class="headerlink" title="随机变量及其概率分布"></a>随机变量及其概率分布</h3><h5 id="1-随机变量"><a href="#1-随机变量" class="headerlink" title="1 随机变量"></a>1 随机变量</h5><p>性质：</p>
+P_n(k)=(_k^n)p^k(1-p)^{n-k}=C_n^kp^k(1-p)^{n-k}</script><h1 id="随机变量及其概率分布"><a href="#随机变量及其概率分布" class="headerlink" title="随机变量及其概率分布"></a>随机变量及其概率分布</h1><h2 id="随机变量"><a href="#随机变量" class="headerlink" title="随机变量"></a>随机变量</h2><p>性质：</p>
 <p>$P${$a&lt;X\leq b$}$=P{ X\leq b}-P{ X\leq a}=F(b)-F(a)$</p>
 <p>单调不减</p>
 <p>$F(-\infty )=lim_{x\rightarrow -\infty }F(x)=0$</p>
 <p>$F(+\infty )=lim_{x\rightarrow +\infty }F(x)=1$</p>
 <p>F(x)是右连续的，即$F(x^{+})=F(x)$</p>
-<h5 id="2离散型随机变量"><a href="#2离散型随机变量" class="headerlink" title="2离散型随机变量"></a>2离散型随机变量</h5><p>两点分布</p>
+<h2 id="离散型随机变量"><a href="#离散型随机变量" class="headerlink" title="离散型随机变量"></a>离散型随机变量</h2><p>两点分布</p>
 <p>二项分布，伯努利试验记作$X ~B(n,p) X在(n+1)p处取得最大值$</p>
 <p>几何分布</p>
 <p>泊松分布：</p>
 <script type="math/tex; mode=display">
 P\{ X=k\}=\frac{\lambda ^ke^{-\lambda}}{k!}\\
-其中，\lambda为服从参数,记作X P(\lambda)</script><h5 id="3连续型随机变量"><a href="#3连续型随机变量" class="headerlink" title="3连续型随机变量"></a>3连续型随机变量</h5><p><strong>均匀分布</strong></p>
+其中，\lambda为服从参数,记作X P(\lambda)</script><h2 id="连续型随机变量"><a href="#连续型随机变量" class="headerlink" title="连续型随机变量"></a>连续型随机变量</h2><h3 id="均匀分布"><a href="#均匀分布" class="headerlink" title="均匀分布"></a>均匀分布</h3><script type="math/tex; mode=display">
+f(x)=\left\{    \begin{array}{lr}        \frac{1}{b-a},a<x<b\\        0,其他            \end{array}\right.\\</script><h3 id="指数分布"><a href="#指数分布" class="headerlink" title="指数分布"></a>指数分布</h3><script type="math/tex; mode=display">
+f(x)=\left\{    \begin{array}{lr}        \lambda e^{-\lambda x} &x>0,\\        0&x\leq 0            \end{array}\right.\\F(x)=\left\{    \begin{array}{lr}    1-e^{-\lambda x}&x>0\\    0&x\leq0\\    \end{array}    \right.\\其中，\lambda>0是常数，称为X服从参数为\lambda的指数分布\\</script><h3 id="正态分布"><a href="#正态分布" class="headerlink" title="正态分布"></a>正态分布</h3><p>$N(\mu ,\sigma^2)$有概率密度函数</p>
 <script type="math/tex; mode=display">
-f(x)=\left\{    \begin{array}{lr}        \frac{1}{b-a},a<x<b\\        0,其他            \end{array}\right.\\</script><p><strong>指数分布</strong></p>
-<script type="math/tex; mode=display">
-f(x)=\left\{    \begin{array}{lr}        \lambda e^{-\lambda x} &x>0,\\        0&x\leq 0            \end{array}\right.\\F(x)=\left\{    \begin{array}{lr}    1-e^{-\lambda x}&x>0\\    0&x\leq0\\    \end{array}    \right.\\其中，\lambda>0是常数，称为X服从参数为\lambda的指数分布\\</script><p><strong>正态分布</strong></p>
-<p>$N(\mu ,\sigma^2)$有概率密度函数</p>
-<script type="math/tex; mode=display">
-f(x)=\frac{1}{\sqrt{2\pi }\sigma}e^{-\frac{(x-u)^2}{2\sigma^2}},-\infty <x<+\infty\\F(\mu)=\frac{1}{2}\\f(\mu)=\frac{1}{\sqrt{2\pi}\sigma}</script><p>标准正态分布</p>
-<p>$N(\mu,\sigma^2)=N(0,1)$</p>
+f(x)=\frac{1}{\sqrt{2\pi }\sigma}e^{-\frac{(x-u)^2}{2\sigma^2}},-\infty <x<+\infty\\F(\mu)=\frac{1}{2}\\f(\mu)=\frac{1}{\sqrt{2\pi}\sigma}</script><h4 id="标准正态分布"><a href="#标准正态分布" class="headerlink" title="标准正态分布"></a>标准正态分布</h4><p>$N(\mu,\sigma^2)=N(0,1)$</p>
 <script type="math/tex; mode=display">
 f(x)=\frac{1}{\sqrt{2\pi}}e^{-\frac{x^2}{2}}</script><p>其中$u,\sigma$为服从参数。当$u,\sigma$分布为0，1时，则称$X$服从标准正态分布</p>
 <script type="math/tex; mode=display">
-F(x)=\Phi (\frac{x-\mu}{\sigma})</script><h5 id="5-二维连续型随机变量"><a href="#5-二维连续型随机变量" class="headerlink" title="5 二维连续型随机变量"></a>5 二维连续型随机变量</h5><script type="math/tex; mode=display">
+F(x)=\Phi (\frac{x-\mu}{\sigma})</script><h1 id="二维连续型随机变量、"><a href="#二维连续型随机变量、" class="headerlink" title="二维连续型随机变量、"></a>二维连续型随机变量、</h1><h2 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h2><script type="math/tex; mode=display">
 F(x,y)=\int_{-\infty}^{x}\int_{-\infty}^yf(u,v)dudv\\其中F(x,y)为概率分布函数,f(x,y)为联合概率密度。\\</script><script type="math/tex; mode=display">
 1.f(x,y)\ge 0\\
 2. \int_{-\infty}^{+\infty}\int_{-\infty}^{+\infty}f(u,v)dudv=1\\
 3.若G是xOy上的一个区域，则,P\{(X,Y)\in G\}=\displaystyle\iint_{G}f(x,y)dxdy\\
-4.关于Y的边缘概率密度函数f_Y(y)=\displaystyle\int_{-\infty}^{+\infty}f(x,y)dx\\</script><p>若随机变量X和Y相互独立，那么有$f(x,y)=f_X(x)f_Y(y)$</p>
-<p><strong>均匀分布</strong></p>
-<script type="math/tex; mode=display">
-设D是xOy面上的有界区域，其面积为A，若\\f(x,y)=\left\{    \begin{array}{lr}        \frac{1}{A}&(x,y)\in D,\\        0&其他            \end{array}\right.\\则称(X,Y)在区域D上服从均匀分布。</script><p><strong>正态分布</strong></p>
-<script type="math/tex; mode=display">
-f(x,y)=\frac{1}{2\pi \sigma_1 \sigma_2 \sqrt{1-\rho^2} }\cdot e^{\frac{-1}{2(1-\rho^2)}[\frac{(x-\mu_1)^2}{\sigma_1^2}-2\rho \frac{(x-\mu_1)(y-\mu_2)}{\sigma_1\sigma_2}+\frac{(y-\mu_2)^2}{\sigma_2^2}]},(x,y)\in R^2\\其中\sigma_i>0,-1<\rho<1,记作(X,Y) ~N(\mu_1,\mu_2,\sigma_1^2,\sigma_2^2,\rho)</script><p><strong>条件分布</strong></p>
-<script type="math/tex; mode=display">
+4.关于Y的边缘概率密度函数f_Y(y)=\displaystyle\int_{-\infty}^{+\infty}f(x,y)dx\\</script><p><strong>独立性</strong></p>
+<p>随机变量X和Y相互独立的充要条件：</p>
+<ul>
+<li>$f(x,y)=f_X(x)f_Y(y)$</li>
+<li>$F(x,y)=F_X(x)F_Y(y)$</li>
+<li>$P(X,Y)=P_X(X)P_Y(Y)$</li>
+<li>$E(XY)=E(X)E(Y)$</li>
+</ul>
+<p>若$X_1,X_2$相互独立，那么$F_1(x)F_2(X)$一定是某一随机变量的分布密度，但$f_1(x)f_2(x)$不一定为概率密度</p>
+<h2 id="连续型"><a href="#连续型" class="headerlink" title="连续型"></a>连续型</h2><h3 id="均匀分布-1"><a href="#均匀分布-1" class="headerlink" title="均匀分布"></a>均匀分布</h3><script type="math/tex; mode=display">
+设D是xOy面上的有界区域，其面积为A，若\\f(x,y)=\left\{    \begin{array}{lr}        \frac{1}{A}&(x,y)\in D,\\        0&其他            \end{array}\right.\\则称(X,Y)在区域D上服从均匀分布。</script><h3 id="正态分布-1"><a href="#正态分布-1" class="headerlink" title="正态分布"></a>正态分布</h3><script type="math/tex; mode=display">
+f(x,y)=\frac{1}{2\pi \sigma_1 \sigma_2 \sqrt{1-\rho^2} }\cdot e^{\frac{-1}{2(1-\rho^2)}[\frac{(x-\mu_1)^2}{\sigma_1^2}-2\rho \frac{(x-\mu_1)(y-\mu_2)}{\sigma_1\sigma_2}+\frac{(y-\mu_2)^2}{\sigma_2^2}]},(x,y)\in R^2\\其中\sigma_i>0,-1<\rho<1,记作(X,Y) ~N(\mu_1,\mu_2,\sigma_1^2,\sigma_2^2,\rho)</script><h2 id="条件分布"><a href="#条件分布" class="headerlink" title="条件分布"></a>条件分布</h2><script type="math/tex; mode=display">
 离散型：P\{X=x_i|Y=y_j\}=\frac{P{X=x_i,Y=y_j}}{P{Y=y_j}}=\frac{p_{ij}}{p_{\cdot j}}\\
-连续型条件Y=y下X的条件概率密度函数f_{Y|X}(x|y)=\frac{f(x,y)}{f_Y{y}}</script><p><strong>连续型函数分布</strong>​</p>
-<script type="math/tex; mode=display">
+连续型条件Y=y下X的条件概率密度函数f_{X|Y}(x|y)=\frac{f(x,y)}{f_Y{y}}</script><h2 id="连续型函数分布​"><a href="#连续型函数分布​" class="headerlink" title="连续型函数分布​"></a>连续型函数分布​</h2><script type="math/tex; mode=display">
 有Z=X+Y\\公式法f_Z(z)=\displaystyle \int _{-\infty}^{+\infty}f(x,z-x)dx=\displaystyle \int _{-\infty} ^{+\infty}f(z-y,y)dy\\分布函数法\\
 Z=X+Y,若X和Y相互独立\\f_Z(z)=\displaystyle \int _{-\infty} ^{+\infty}f_X(x)f_Y(z-x)dx\\</script><p>$这个公式称为f_X(x)与f_Y(y)的$<strong>卷积公式</strong></p>
 <p>$Z=max{X,Y},X与Y相互独立$</p>
 <p>$F_Z(z)=F_X(x)F_Y(y)$</p>
 <p>$Z=min{X,Y},X与Y相互独立$</p>
 <p>$F_Z(z)=1-[1-F_X(z)][1-F_Y(z)]$</p>
+<h1 id="数字特征"><a href="#数字特征" class="headerlink" title="数字特征"></a>数字特征</h1><h2 id="数学期望"><a href="#数学期望" class="headerlink" title="数学期望"></a>数学期望</h2><h3 id="定义-1"><a href="#定义-1" class="headerlink" title="定义"></a>定义</h3><p><strong>离散型数学期望的定义</strong></p>
+<ul>
+<li><p>其随机变量$X$的分布律为$P{X=x_k}=p_k,(k=1,2,…)$，</p>
+<p>若级数</p>
+<script type="math/tex; mode=display">
+\sum _{k=1}^{\infty}x_kp_k绝对收敛，记作E(X)=\sum _{k=1}^{\infty} x_kp_k</script></li>
+</ul>
+<p><strong>连续型数学期望的定义</strong></p>
+<ul>
+<li><p>随机变量$X$的概率密度为$f(x)$</p>
+<p>若</p>
+<script type="math/tex; mode=display">
+\sum _{-\infty}^{+\infty}xf(x)dx绝对收敛，记作E(X)=\int _{-\infty}^{+\infty}x(x)</script></li>
+</ul>
+<h3 id="函数"><a href="#函数" class="headerlink" title="函数"></a>函数</h3><p>$Y=g(X)$</p>
+<ul>
+<li><p>离散 $E(Y)=\sum g(x_k)p_k$</p>
+</li>
+<li><p>连续</p>
+<script type="math/tex; mode=display">
+E(Y)=\int g(x_k)f(x)dx</script></li>
+</ul>
+<h2 id="方差"><a href="#方差" class="headerlink" title="方差"></a>方差</h2><ul>
+<li>$D(X)=E(X^2)-[E(X)]^2$</li>
+<li>$D(X\pm Y)=D(X)+D(Y)\pm 2Cov(X,Y)$</li>
+</ul>
+<h3 id="协方差"><a href="#协方差" class="headerlink" title="协方差"></a>协方差</h3><ul>
+<li><script type="math/tex; mode=display">
+Cov(X,Y)=E(XY)-E(X)E(Y)</script></li>
+<li><p>$Cov(aX,bY)=abCov(X,Y)$</p>
+</li>
+<li><p>$Cov(X+Y,Z)=Cov(X,Z)+Cov(Y,Z)$</p>
+</li>
+<li></li>
+</ul>
+<h3 id="相关系数"><a href="#相关系数" class="headerlink" title="相关系数"></a>相关系数</h3><ul>
+<li><script type="math/tex; mode=display">
+\rho_{XY}=\frac{Cov(X,Y)}{\sqrt{D(X)}\sqrt{D(Y)}}
+那么\rho 为X和Y的相关系数</script></li>
+<li><p>若$\rho_{XY}=0,称X与Y不相关，但不一定独立$</p>
+</li>
+<li><p>$|\rho _{XY}|\leq 1$</p>
+</li>
+<li><p>若X与Y相互独立，则$\rho _{XY}=0$</p>
+</li>
+<li><p>$|\rho|=1的充分必要条件为存在常数a,b使得P{a+bX}=1$</p>
+</li>
+</ul>
+<h4 id="相关性"><a href="#相关性" class="headerlink" title="相关性"></a>相关性</h4><p>下列命题等价</p>
+<ul>
+<li>$Cov(X,Y)=0$</li>
+<li>$X,Y不相关$</li>
+<li>$E(XY)=E(X)E(Y)$</li>
+<li>$D(X+Y)=D(X)+D(Y)$</li>
+<li>$D(X-Y)=D(X)+D(Y)$</li>
+<li>$\rho _{XY}=0$</li>
+</ul>
 
       
     </div>
     <footer class="article-footer">
       
-        <a data-url="http://yoursite.com/2020/04/03/ 概率论与数理统计/" data-id="ck8r7asgl000uu4viu4gic68c" class="article-share-link" data-share="baidu" data-title="随机数学">分享到</a>
+        <a data-url="http://yoursite.com/2020/04/03/ 概率论与数理统计/" data-id="ck99szotm000se4vityem3twt" class="article-share-link" data-share="baidu" data-title="随机数学">分享到</a>
       
 
       
@@ -375,12 +565,15 @@ Z=X+Y,若X和Y相互独立\\f_Z(z)=\displaystyle \int _{-\infty} ^{+\infty}f_X(x
 <li>循环数组</li>
 <li>链表</li>
 </ul>
-<h2 id="Map"><a href="#Map" class="headerlink" title="Map"></a>Map</h2>
+<h2 id="Map"><a href="#Map" class="headerlink" title="Map"></a>Map</h2><h1 id="IO流"><a href="#IO流" class="headerlink" title="IO流"></a>IO流</h1><ul>
+<li>字节流在直接在文件中操作，字符流需要使用缓冲区</li>
+</ul>
+
       
     </div>
     <footer class="article-footer">
       
-        <a data-url="http://yoursite.com/2020/04/02/ Java核心技术i/" data-id="ck8r7asfz0002u4vi42gjvf0n" class="article-share-link" data-share="baidu" data-title="Java核心技术i">分享到</a>
+        <a data-url="http://yoursite.com/2020/04/02/ Java核心技术i/" data-id="ck99szot00008e4viekwfj85m" class="article-share-link" data-share="baidu" data-title="Java核心技术i">分享到</a>
       
 
       
@@ -421,7 +614,12 @@ Z=X+Y,若X和Y相互独立\\f_Z(z)=\displaystyle \int _{-\infty} ^{+\infty}f_X(x
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h4 id="1"><a href="#1" class="headerlink" title="1"></a>1</h4><p><em>系统结构，组成，实现</em></p>
+        <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><ul>
+<li>1字节=1 byte=1 B</li>
+<li>1KB=$1^{10}$B</li>
+<li></li>
+</ul>
+<h4 id="1"><a href="#1" class="headerlink" title="1"></a>1</h4><p><em>系统结构，组成，实现</em></p>
 <ol>
 <li>计算机系统结构：计算机系统的软，硬件的界面。</li>
 <li>计算机组成：计算机系统结构的逻辑实现。</li>
@@ -461,6 +659,114 @@ ILP,Instruction-Level\ Parallelism,指令级并行\left\{    \begin{array}{lr}  
 <p>$ROB,ReOrder\ Buffer，再定序缓冲器，为了在猜错的情况下能够恢复现场$</p>
 <p>$Tomasulo算法$</p>
 <p>$基于硬件的前瞻算法，顺序流出，乱序执行，顺序确认$</p>
+<h1 id="存储系统"><a href="#存储系统" class="headerlink" title="存储系统"></a>存储系统</h1><p><img src="计算机系统结构.assets/image-20200416180748349.png" alt="image-20200416180748349"></p>
+<h2 id="局部性原理-principle-of-locality"><a href="#局部性原理-principle-of-locality" class="headerlink" title="局部性原理  principle of locality"></a>局部性原理  principle of locality</h2><ul>
+<li>空间局部性：程序将要用到的信息很有可能于正在使用的信息相邻</li>
+<li>时间局部性：程序将要用到的信息很可能就是现在正在使用的信息</li>
+</ul>
+<h2 id="Cache"><a href="#Cache" class="headerlink" title="Cache"></a>Cache</h2><h3 id="Cache命中：CPU能在缓存中访问到"><a href="#Cache命中：CPU能在缓存中访问到" class="headerlink" title="Cache命中：CPU能在缓存中访问到"></a>Cache命中：CPU能在缓存中访问到</h3><h3 id="存储层次的四个基本问题"><a href="#存储层次的四个基本问题" class="headerlink" title="存储层次的四个基本问题"></a>存储层次的四个基本问题</h3><ol>
+<li>映像规则</li>
+<li>查找算法</li>
+<li>替换算法<ol>
+<li>随机法</li>
+<li>FIFO,First-In-First-Out 先入先出法</li>
+<li>LRU,Least-Recently-Used 最近最少使用法</li>
+</ol>
+</li>
+<li>写策略<ol>
+<li>写直达</li>
+<li>写回</li>
+<li>按写分配</li>
+<li>不按写分配</li>
+</ol>
+</li>
+</ol>
+<h3 id="映像规则"><a href="#映像规则" class="headerlink" title="映像规则"></a>映像规则</h3><ul>
+<li>fully associative mapping 全相联映像</li>
+<li>direct mapping 直接映像 $j=i\  mod M$</li>
+<li>set associative n路组相联映像 n为每一组的块数</li>
+</ul>
+<h3 id="Cache性能分析"><a href="#Cache性能分析" class="headerlink" title="Cache性能分析"></a>Cache性能分析</h3><ul>
+<li><p>平均访存时间=命中时间+不命中率*不命中开销</p>
+</li>
+<li><p>CPU时间=（CPU执行周期数+访存次数$<em>$不命中率$</em>$不命中开销）$*$时钟周期时间</p>
+<h4 id="性能改进"><a href="#性能改进" class="headerlink" title="性能改进"></a>性能改进</h4><ol>
+<li><p>降低不命中率</p>
+<ul>
+<li><p>减少强制性不命中—增加块的大小 ，<u>增加命中时间</u></p>
+</li>
+<li><p>减少容量不命中—增加Cache容量，<u>成本增加，命中时间增加，一般用于片外Cache</u></p>
+</li>
+<li><p>减少冲突不命中—提高相联度，<u>增加命中时间</u></p>
+</li>
+<li>伪相联组</li>
+</ul>
+<p><img src="计算机系统结构.assets/image-20200416205726717.png" alt="image-20200416205726717"></p>
+</li>
+<li><p>降低不命中开销</p>
+<ul>
+<li>让读不命中优先于写不命中</li>
+<li>写缓冲合并</li>
+<li>请求字处理技术</li>
+<li>非阻塞Cache</li>
+</ul>
+</li>
+<li><p>减少命中时间</p>
+<ul>
+<li>简单小Cache</li>
+<li>虚拟Cache</li>
+<li>Cache访问流水化</li>
+<li><p>踪迹Cache</p>
+</li>
+<li><p>伪相联组</p>
+</li>
+</ul>
+</li>
+</ol>
+</li>
+</ul>
+<h2 id="并行主存系统"><a href="#并行主存系统" class="headerlink" title="并行主存系统"></a>并行主存系统</h2><ul>
+<li>性能指标<ol>
+<li>延迟，存储器的访问时间，启动一次存储器到完成该操作所需要的时间</li>
+<li>带宽，单位时间内存储器存取的信息量</li>
+</ol>
+</li>
+<li>普通存储器：单体单字宽存储器</li>
+<li>并行主存：<ul>
+<li>提高存储带宽</li>
+<li>种类：单体多字存储器和多体交叉存储器</li>
+</ul>
+</li>
+</ul>
+<h3 id="单体m字"><a href="#单体m字" class="headerlink" title="单体m字"></a>单体m字</h3><ul>
+<li>一个存储体，给一个地址，在一个存储周期，取m个CPU字</li>
+<li>$B_M=m*\frac{W}{T_M}$，带宽为单体单字的m倍</li>
+<li>主要用于主存与Cache</li>
+</ul>
+<h3 id="多体交叉存储器"><a href="#多体交叉存储器" class="headerlink" title="多体交叉存储器"></a>多体交叉存储器</h3><ul>
+<li>高位交叉编址</li>
+<li>低位交叉编址</li>
+<li>提高带宽</li>
+</ul>
+<h1 id="输入-输出系统"><a href="#输入-输出系统" class="headerlink" title="输入/输出系统"></a>输入/输出系统</h1><p>$MTTF,Mean\ Time\ To\ Failure,平均失效前时间$</p>
+<p>$MTTR,Mean\ Time\ To \ Repair，平均修复时间$</p>
+<p>$MTBF=MTTF+MTTR,Mean\ Time\ Between\ Failure,平均失效间隔时间$</p>
+<p>$reliability,可靠性$</p>
+<script type="math/tex; mode=display">
+衡量标准：MTTF,其中失效率=\frac{1}{MTTF}</script><p>$availability,可用性$</p>
+<script type="math/tex; mode=display">
+可用性=\frac{MTTF}{MTTR+MTTF}</script><p>$dependability,可信性，不可度量$</p>
+<p>提高系统组成部件可靠性的方法：$valid\ construction,有效构建方法；error\ correction,纠错方法$</p>
+<p><a href="[https://baike.baidu.com/item/%E6%80%BB%E7%BA%BF%E4%BB%B2%E8%A3%81/10538148?fr=aladdin](https://baike.baidu.com/item/总线仲裁/10538148?fr=aladdin">仲裁</a>)</p>
+<p><a href="[https://baike.baidu.com/item/%E7%A8%8B%E5%BA%8F%E6%9F%A5%E8%AF%A2%E6%96%B9%E5%BC%8F/7716839?fr=aladdin](https://baike.baidu.com/item/程序查询方式/7716839?fr=aladdin">程序查询方式</a>)</p>
+<h3 id="通道流量分析"><a href="#通道流量分析" class="headerlink" title="通道流量分析"></a>通道流量分析</h3><ul>
+<li>$T_S,设备选择时间$</li>
+<li>$T_D,传送一个字节所用的时间$</li>
+<li>$p:在一个通道上连接的设备数目，且这些设备都同时在工作$</li>
+<li>$n:每台设备传送的字节数$</li>
+<li>$k:数组多路通道传输一个数据块中包含的字节数。一般情况下，k&lt;n$</li>
+<li>$T:通道完成全部数据传送工作所需要的时间$</li>
+</ul>
 <h5 id="EG"><a href="#EG" class="headerlink" title="EG"></a>EG</h5><p>$e.g.1$</p>
 <p><img src="https://i.loli.net/2020/04/08/7rioSuvb5ew9sGK.png" alt="image-20200308150608490.png"></p>
 <p>解</p>
@@ -479,7 +785,7 @@ t_{cpuB}=IC*(2/8*2+6/8*1)*1.25T</script><p>最后即可得答案。</p>
     </div>
     <footer class="article-footer">
       
-        <a data-url="http://yoursite.com/2020/03/31/ 计算机系统结构/" data-id="ck8r7asgn000yu4vi5nwjg4r9" class="article-share-link" data-share="baidu" data-title="计算机系统结构">分享到</a>
+        <a data-url="http://yoursite.com/2020/03/31/ 计算机系统结构/" data-id="ck99szots0013e4viuuku00m7" class="article-share-link" data-share="baidu" data-title="计算机系统结构">分享到</a>
       
 
       
@@ -538,12 +844,28 @@ t_{cpuB}=IC*(2/8*2+6/8*1)*1.25T</script><p>最后即可得答案。</p>
 <p>$race\ condition,竞争条件，多个进程在访问变量时，因实际交叉次序不同而导致执行结果不同$</p>
 <p><strong>Peterson互斥算法</strong></p>
 <p>$bus \ request\ protocol,总线请求协议$</p>
+<h2 id="同步"><a href="#同步" class="headerlink" title="同步"></a>同步</h2><p>$synchronization,同步$</p>
+<p>$process\ cooperation,进程合作$</p>
+<p>$cooperation\ process,合作进程$</p>
+<p>$semaphore,信号量；PV$</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">semaphore</span>&#123;</span></span><br><span class="line">    <span class="keyword">int</span> value;</span><br><span class="line">    pointer_to_PCB <span class="built_in">queue</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>$primitive,原语，不可间断的程序$</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">P</span><span class="params">(semaphore *s)</span></span>&#123;</span><br><span class="line">    s-&gt;value--;</span><br><span class="line">    <span class="keyword">if</span>(s-&gt;value&lt;<span class="number">0</span>)</span><br><span class="line">        asleep(s-&gt;<span class="built_in">queue</span>);</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">V</span><span class="params">(semphore *s)</span></span>&#123;</span><br><span class="line">    s-&gt;value++;</span><br><span class="line">    <span class="keyword">if</span>(s-&gt;value&gt;=<span class="number">0</span>)</span><br><span class="line">        wakeup(s-&gt;<span class="built_in">queue</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>$e.g$</p>
+<ul>
+<li>司机-售票员问题，同步</li>
+<li>生产者-消费者问题，单资源管理</li>
+<li>读者-写者问题，互斥同时提高并发性</li>
+<li>吸烟者问题，多资源管理</li>
+</ul>
+<h1 id="死锁"><a href="#死锁" class="headerlink" title="死锁"></a>死锁</h1><h2 id="死锁的避免"><a href="#死锁的避免" class="headerlink" title="死锁的避免"></a>死锁的避免</h2><h3 id="银行家算法"><a href="#银行家算法" class="headerlink" title="银行家算法"></a>银行家算法</h3><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> n;<span class="comment">//进程总数</span></span><br><span class="line"><span class="keyword">int</span> m;<span class="comment">//资源类的总数</span></span><br><span class="line"><span class="keyword">int</span> Available[m];<span class="comment">//当前可用资源数，初始化为资源总量</span></span><br><span class="line"><span class="keyword">int</span> Claim[n,m];<span class="comment">//进程i最多需要j种资源的数量</span></span><br><span class="line"><span class="keyword">int</span> Allocation[n,m];<span class="comment">//进程i现在占有j种资源的数量，初始化为0</span></span><br><span class="line"><span class="keyword">int</span> Need[n,m];<span class="comment">//进程i还需要j种资源的数量，初始化为Claim[i][j]</span></span><br><span class="line"><span class="keyword">int</span> Request[n,m];<span class="comment">//进程i当前申请j种资源的数量</span></span><br><span class="line"><span class="function"><span class="keyword">bool</span> <span class="title">g</span><span class="params">()</span></span>;</span><br><span class="line"><span class="function"><span class="keyword">bool</span> <span class="title">f</span><span class="params">(<span class="keyword">int</span> i)</span></span>&#123;<span class="comment">//进程i发出资源申请</span></span><br><span class="line">	<span class="keyword">if</span>(Request[i]&gt;Need[i])	<span class="keyword">return</span> <span class="literal">false</span>;<span class="comment">//大于尚需资源</span></span><br><span class="line">	<span class="keyword">if</span>(Request[i]&gt;Available[i])	<span class="keyword">return</span> <span class="literal">false</span>;<span class="comment">//大于当前资源数</span></span><br><span class="line">	<span class="comment">//资源预分配</span></span><br><span class="line">	Available=Available-Request[i];</span><br><span class="line">	Allocation[i]=Allocation[i]+Request[i];</span><br><span class="line">	Need[i]=Need[i]-Request[i];</span><br><span class="line">	<span class="keyword">return</span> g();<span class="comment">//检测算法</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">bool</span> <span class="title">g</span><span class="params">()</span></span>&#123;<span class="comment">//判断是否会发生死锁状态</span></span><br><span class="line">	<span class="keyword">int</span> Work[m];</span><br><span class="line">	Work=Available;<span class="comment">//防止影响到原来的Availabe</span></span><br><span class="line">	<span class="keyword">bool</span> Finish[n]=<span class="literal">false</span>;<span class="comment">//有哪些已经完成了</span></span><br><span class="line">	<span class="keyword">bool</span> flag=<span class="literal">true</span>;</span><br><span class="line">    <span class="keyword">int</span> i=<span class="number">1</span>;</span><br><span class="line">    <span class="keyword">while</span>(flag)&#123;</span><br><span class="line">    	flag=<span class="literal">false</span>;</span><br><span class="line">        <span class="keyword">for</span>(i=<span class="number">0</span>;i&lt;n;i++)&#123;</span><br><span class="line">        	<span class="keyword">if</span>(Finish[i]==<span class="literal">false</span>&amp;&amp;Need[i]&lt;=Work[i])&#123;<span class="comment">//i可执行</span></span><br><span class="line">                <span class="comment">/*</span></span><br><span class="line"><span class="comment">                注意再Shoshami和Coffman所提出的是</span></span><br><span class="line"><span class="comment">                Finish[i]==false&amp;&amp;Request[i]&lt;=Work[i]</span></span><br><span class="line"><span class="comment">                </span></span><br><span class="line"><span class="comment">                */</span></span><br><span class="line">                flag=<span class="literal">true</span>;</span><br><span class="line">                Work=Work+Allocation[i];<span class="comment">//恢复资源</span></span><br><span class="line">        		Finish[i]=<span class="literal">true</span>;</span><br><span class="line">        	&#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">for</span>(i=<span class="number">0</span>;i&lt;n;i++)&#123;</span><br><span class="line">        <span class="keyword">if</span>(Finish[i]==<span class="literal">false</span>)	<span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="Shoshamin-amp-amp-Coffman的死锁检测算法"><a href="#Shoshamin-amp-amp-Coffman的死锁检测算法" class="headerlink" title="Shoshamin&amp;&amp;Coffman的死锁检测算法"></a>Shoshamin&amp;&amp;Coffman的死锁检测算法</h2><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">bool</span> <span class="title">g</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> Work[m]=Available;</span><br><span class="line">    <span class="keyword">bool</span> Finish[n]=<span class="literal">false</span>;</span><br><span class="line">    <span class="keyword">bool</span> flag=<span class="literal">true</span>;</span><br><span class="line">    <span class="keyword">while</span>(flag)&#123;</span><br><span class="line">        flag=<span class="literal">false</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;n;i++)&#123;</span><br><span class="line">            <span class="keyword">if</span>(Finish[i]==<span class="literal">false</span>&amp;&amp;Request[i]&lt;=Work)&#123;</span><br><span class="line">                flag=<span class="literal">true</span>;</span><br><span class="line">                Finish=<span class="literal">true</span>;</span><br><span class="line">                Work=Work+Allocation[i];<span class="comment">//恢复</span></span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;n;i++)&#123;</span><br><span class="line">        <span class="keyword">if</span>(Finish[i]==<span class="literal">false</span>)	<span class="keyword">return</span>  <span class="literal">false</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
       
     </div>
     <footer class="article-footer">
       
-        <a data-url="http://yoursite.com/2020/03/31/ 操作系统/" data-id="ck8r7asgj000pu4vi00aiksbd" class="article-share-link" data-share="baidu" data-title="操作系统">分享到</a>
+        <a data-url="http://yoursite.com/2020/03/31/ 操作系统/" data-id="ck99szotl000qe4viyc4cubdj" class="article-share-link" data-share="baidu" data-title="操作系统">分享到</a>
       
 
       
@@ -644,7 +966,7 @@ GCD(a,b)=GCD(Remainder(b,a),a)\\
     </div>
     <footer class="article-footer">
       
-        <a data-url="http://yoursite.com/2020/03/21/ 离散数学第4讲/" data-id="ck8r7asgo0011u4viitl5fj8g" class="article-share-link" data-share="baidu" data-title="state machine&amp;Euclidean Alg">分享到</a>
+        <a data-url="http://yoursite.com/2020/03/21/ 离散数学第4讲/" data-id="ck99szotn000ue4vixdij3cwk" class="article-share-link" data-share="baidu" data-title="state machine&amp;Euclidean Alg">分享到</a>
       
 
       
@@ -696,12 +1018,75 @@ GCD(a,b)=GCD(Remainder(b,a),a)\\
 <script type="math/tex; mode=display">
 f(n)=\Theta (g(n)),且g(n)=\theta (f(n))</script><h3 id="3-贪心方法"><a href="#3-贪心方法" class="headerlink" title="3 贪心方法"></a>3 贪心方法</h3><h4 id="1-一般方法"><a href="#1-一般方法" class="headerlink" title="1 一般方法"></a>1 一般方法</h4><script type="math/tex; mode=display">
 n个输入,可行解为n个输入的子集\\
-约束条件\Longrightarrow 可行解 根据目标函数\Longrightarrow最优解</script><h4 id="核心：选取能产生最优解的量度标准"><a href="#核心：选取能产生最优解的量度标准" class="headerlink" title="核心：选取能产生最优解的量度标准"></a>核心：选取能产生最优解的量度标准</h4><h4 id="2背包"><a href="#2背包" class="headerlink" title="2背包"></a>2背包</h4>
+约束条件\Longrightarrow 可行解 根据目标函数\Longrightarrow最优解</script><h4 id="核心：选取能产生最优解的量度标准"><a href="#核心：选取能产生最优解的量度标准" class="headerlink" title="核心：选取能产生最优解的量度标准"></a>核心：选取能产生最优解的量度标准</h4><h4 id="2背包"><a href="#2背包" class="headerlink" title="2背包"></a>2背包</h4><p><strong>定理5.1</strong></p>
+<ul>
+<li>如果$p_1 /w_1 ≥ p_2 /w_2 ≥ … ≥ p_n /w_n $，则算法<br>GREEDY-KNAPSACK 对于给定的背包问题实例<br>生成一个最优解。</li>
+</ul>
+<p><strong>证明</strong></p>
+<p>​    设$X=(x_1,…,x_n)$是算法生成的解</p>
+<p>1.若所有的$x_i$=1,显然这个解就是最优解。</p>
+<p>2.否则，设j是使得$x_j!=1$的最小下标，那么由算法可知</p>
+<ul>
+<li>对于$1\leq i&lt;j$，$x_i=1$</li>
+<li>对于$j&lt;i\leq n$，$x_i=0$</li>
+<li>对于$i=j$，$0\leq x_i&lt;1$</li>
+</ul>
+<p>3.若$X$不是最优解，那么必然存在一个最优解$Y=(y_1…y_n),使得\sum p_i y_i&gt;\sum p_ix_i,那么必然有\sum w_iy_i=M$</p>
+<p>设$k$是使得$y_k!=x_k$的最小下标，这样的$k$必然存在</p>
+<ul>
+<li>$k&lt;j$时，由于$x_k=1$,必然有$y_k&lt; x_k$</li>
+<li>$k=j$时，若$y_k&gt;x_k$，那么必然有$\sum w_i y_i&gt;M$，矛盾，故必然有$y_k&lt;x_k$</li>
+<li>$k&gt;j$时，若$y_k&gt;x_k$，那么必然有$\sum w_i y_i&gt;M$，矛盾，故必然有$y_k&lt;x_k$</li>
+</ul>
+<p>故有$y_k&lt;x_k$。</p>
+<p>4.现在使得$y<em>k=x_k$,那么其代价为$y</em>{k+1},…y_n$必须减去同样多的重量，使得总容量为$M$,那么导致了新解$Z$。<br>有</p>
+<script type="math/tex; mode=display">
+\sum _{k<i\leq n}w_i(y_i-z_i)=w_k(z_k-y_k)</script><p>5.那么有</p>
+<script type="math/tex; mode=display">
+\sum _{1\leq i\leq n}p_iz_i=\sum _{1\leq i \leq n}p_iy_i+(z_k-y_k)p_k-\sum _{k< i\leq n}p_i(y_i-z_i)
+\geq \sum _{1\leq i\leq n}p_iy_i</script><p>6.那么必然有</p>
+<script type="math/tex; mode=display">
+\sum _{1\leq i\leq n}p_iz_i=
+\sum _{1\leq i\leq n}p_iy_i</script><ul>
+<li><p>若此时</p>
+<script type="math/tex; mode=display">
+\sum _{1\leq i\leq n}p_iz_i=
+\sum _{1\leq i\leq n}p_ix_i\\
+则证毕</script></li>
+<li><p>否则，重复上面讨论，必然最终得到</p>
+<script type="math/tex; mode=display">
+\sum _{1\leq i\leq n}p_iz_i=
+\sum _{1\leq i\leq n}p_ix_i\\</script></li>
+</ul>
+<p>证毕</p>
+<p><strong>定理5.2</strong>，设$I为最优解，J为贪心解$<br>1.证明$I,J$是互不包含的关系</p>
+<ul>
+<li>若$I=J$，则证毕</li>
+<li>若$I\subset J$，与$I$为最优解矛盾</li>
+<li>若$J\subset I$，那么必然存在$b\in I且b\notin J$，设$J^{’}\subset J$，因为$I$是可行解，那么根据算法，当$J^{‘}考虑到b时，此时J^{‘}\cup {b}$必然也是可行解，与算法矛盾，那么证明其不成立完毕。</li>
+</ul>
+<p>2.证明$I=J$，设$I!=J$</p>
+<ul>
+<li>设有$A={a|a\in J且a\notin I},B={b|b\in I且b\notin J}，P_a=max{P_i|i\in A},P_b=max{P_i|i\in B}$，证明$P_a\geq P_b$: 若$P_b&gt;P_a$,那么当$J^{‘}考虑到b时，此时J^{‘}\cup {b}必然时可行解$，与算法矛盾。</li>
+</ul>
+<p>证毕</p>
+<p><strong>定理5.3</strong></p>
+<ul>
+<li>若$\delta $可行，那么$J$必然存在$\delta$这样的排列可行，必要性证毕</li>
+<li>现在证明充分性，若$J$可行，证明$\delta可行$，若$J$可行，必然有$a 为可行解$，现在证明$\delta$时可行解。设$\delta=i_1,i_2,…i_k;a=r_1,r_2,…r_k$令$a是使得r_a!=i_a$的最小下标，必然有$r_b=i_a$,显然$b&gt;a$,那么在$a$中将$r_a与r_b$互换，，这样的互换不违反期限。通过不断的互换，可以得到$\delta$</li>
+</ul>
+<p>证毕</p>
+<h1 id="动态规划"><a href="#动态规划" class="headerlink" title="动态规划"></a>动态规划</h1><ul>
+<li>多阶段过程</li>
+<li>满足最优性原理</li>
+<li>建立递推关系式</li>
+</ul>
+
       
     </div>
     <footer class="article-footer">
       
-        <a data-url="http://yoursite.com/2020/02/13/ 算法设计及分析/" data-id="ck8r7asgm000wu4vivlzkidcn" class="article-share-link" data-share="baidu" data-title="算法设计与分析">分享到</a>
+        <a data-url="http://yoursite.com/2020/02/13/ 算法设计及分析/" data-id="ck99szotr0010e4vinpwrfqrb" class="article-share-link" data-share="baidu" data-title="算法设计与分析">分享到</a>
       
 
       
@@ -748,58 +1133,11 @@ n个输入,可行解为n个输入的子集\\
     </div>
     <footer class="article-footer">
       
-        <a data-url="http://yoursite.com/2019/11/18/ Warshall/" data-id="ck8r7asgi000nu4vif94ebu0g" class="article-share-link" data-share="baidu" data-title="Warshall&amp;All_componet">分享到</a>
+        <a data-url="http://yoursite.com/2019/11/18/ Warshall/" data-id="ck99szotp000we4vi2a71tqt3" class="article-share-link" data-share="baidu" data-title="Warshall&amp;All_componet">分享到</a>
       
 
       
         <a href="http://yoursite.com/2019/11/18/ Warshall/#ds-thread" class="article-comment-link">评论</a>
-      
-
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-Kmeans" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2019/11/13/ Kmeans/" class="article-date">
-  <time datetime="2019-11-13T14:42:33.000Z" itemprop="datePublished">2019-11-13</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/机器学习/">机器学习</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/11/13/ Kmeans/">Kmeans</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br><span class="line">165</span><br><span class="line">166</span><br><span class="line">167</span><br><span class="line">168</span><br><span class="line">169</span><br><span class="line">170</span><br><span class="line">171</span><br><span class="line">172</span><br><span class="line">173</span><br><span class="line">174</span><br><span class="line">175</span><br><span class="line">176</span><br><span class="line">177</span><br><span class="line">178</span><br><span class="line">179</span><br><span class="line">180</span><br><span class="line">181</span><br><span class="line">182</span><br><span class="line">183</span><br><span class="line">184</span><br><span class="line">185</span><br><span class="line">186</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="comment">#基于聚类算法(kmeans)的图像分割</span></span><br><span class="line"><span class="string">'''</span></span><br><span class="line"><span class="string">导入所需要的模块：</span></span><br><span class="line"><span class="string">1.用于处理二维矩阵的数学库</span></span><br><span class="line"><span class="string">2.随机生成数的模块</span></span><br><span class="line"><span class="string">3.用于将图片(JPG)转换为矩阵以及把矩阵转换为图片(JPG)的模块</span></span><br><span class="line"><span class="string">'''</span></span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"><span class="keyword">from</span> random <span class="keyword">import</span> random</span><br><span class="line"><span class="keyword">from</span> PIL <span class="keyword">import</span> Image</span><br><span class="line"><span class="comment"># 导入数据，file_path是图像的存储位置</span></span><br><span class="line"><span class="comment"># 返回值</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">load_data</span><span class="params">(file_path)</span>:</span></span><br><span class="line">    f = open(file_path, <span class="string">"rb"</span>)  <span class="comment"># 以二进制的方式打开图像文件</span></span><br><span class="line">    data = []</span><br><span class="line">    im = Image.open(f)  <span class="comment"># 导入图片</span></span><br><span class="line">    m, n = im.size  <span class="comment"># 得到图片的大小</span></span><br><span class="line">    <span class="keyword">print</span> (m), (n)</span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(m):</span><br><span class="line">        <span class="keyword">for</span> j <span class="keyword">in</span> range(n):</span><br><span class="line">            tmp = []</span><br><span class="line">            x, y, z = im.getpixel((i, j))</span><br><span class="line">            tmp.append(x / <span class="number">256.0</span>)</span><br><span class="line">            tmp.append(y / <span class="number">256.0</span>)</span><br><span class="line">            tmp.append(z / <span class="number">256.0</span>)</span><br><span class="line">            data.append(tmp)</span><br><span class="line">    f.close()</span><br><span class="line">    <span class="keyword">return</span> np.mat(data)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">distance</span><span class="params">(vecA, vecB)</span>:</span></span><br><span class="line">    <span class="string">'''计算vecA与vecB之间的欧式距离的平方</span></span><br><span class="line"><span class="string">    input:  vecA(mat)A点坐标</span></span><br><span class="line"><span class="string">        vecB(mat)B点坐标</span></span><br><span class="line"><span class="string">    output: dist[0, 0](float)A点与B点距离的平方</span></span><br><span class="line"><span class="string">    '''</span></span><br><span class="line">    dist = (vecA - vecB) * (vecA - vecB).T</span><br><span class="line">    <span class="keyword">return</span> dist[<span class="number">0</span>, <span class="number">0</span>]</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">randCent</span><span class="params">(data, k)</span>:</span></span><br><span class="line">    <span class="string">'''随机初始化聚类中心</span></span><br><span class="line"><span class="string">    input:  data(mat):训练数据</span></span><br><span class="line"><span class="string">        k(int):类别个数</span></span><br><span class="line"><span class="string">    output: centroids(mat):聚类中心</span></span><br><span class="line"><span class="string">    '''</span></span><br><span class="line">    n = np.shape(data)[<span class="number">1</span>]  <span class="comment"># 属性的个数</span></span><br><span class="line">    centroids = np.mat(np.zeros((k, n)))  <span class="comment"># 初始化k个聚类中心</span></span><br><span class="line">    <span class="keyword">for</span> j <span class="keyword">in</span> range(n):  <span class="comment"># 初始化聚类中心每一维的坐标</span></span><br><span class="line">        minJ = np.min(data[:, j])</span><br><span class="line">        rangeJ = np.max(data[:, j]) - minJ</span><br><span class="line">        <span class="comment"># 在最大值和最小值之间随机初始化</span></span><br><span class="line">        centroids[:, j] = minJ * np.mat(np.ones((k , <span class="number">1</span>))) + np.random.rand(k, <span class="number">1</span>) * rangeJ</span><br><span class="line">    <span class="keyword">return</span> centroids</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">kmeans</span><span class="params">(data, k, centroids)</span>:</span></span><br><span class="line">    <span class="string">'''根据KMeans算法求解聚类中心</span></span><br><span class="line"><span class="string">    input:  data(mat):训练数据</span></span><br><span class="line"><span class="string">        k(int):类别个数</span></span><br><span class="line"><span class="string">        centroids(mat):随机初始化的聚类中心</span></span><br><span class="line"><span class="string">    output: centroids(mat):训练完成的聚类中心</span></span><br><span class="line"><span class="string">        subCenter(mat):每一个样本所属的类别</span></span><br><span class="line"><span class="string">    '''</span></span><br><span class="line">    m, n = np.shape(data)  <span class="comment"># m：样本的个数，n：特征的维度</span></span><br><span class="line">    subCenter = np.mat(np.zeros((m, <span class="number">2</span>)))  <span class="comment"># 初始化每一个样本所属的类别</span></span><br><span class="line">    change = <span class="literal">True</span>  <span class="comment"># 判断是否需要重新计算聚类中心</span></span><br><span class="line">    <span class="keyword">while</span> change == <span class="literal">True</span>:</span><br><span class="line">        change = <span class="literal">False</span>  <span class="comment"># 重置</span></span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> range(m):</span><br><span class="line">            minDist = np.inf  <span class="comment"># 设置样本与聚类中心之间的最小的距离，初始值为争取穷</span></span><br><span class="line">            minIndex = <span class="number">0</span>  <span class="comment"># 所属的类别</span></span><br><span class="line">            <span class="keyword">for</span> j <span class="keyword">in</span> range(k):</span><br><span class="line">                <span class="comment"># 计算i和每个聚类中心之间的距离</span></span><br><span class="line">                dist = distance(data[i, ], centroids[j, ])</span><br><span class="line">                <span class="keyword">if</span> dist &lt; minDist:</span><br><span class="line">                    minDist = dist</span><br><span class="line">                    minIndex = j</span><br><span class="line">            <span class="comment"># 判断是否需要改变</span></span><br><span class="line">            <span class="keyword">if</span> subCenter[i, <span class="number">0</span>] != minIndex:  <span class="comment"># 需要改变</span></span><br><span class="line">                change = <span class="literal">True</span></span><br><span class="line">                subCenter[i, ] = np.mat([minIndex, minDist])</span><br><span class="line">        <span class="comment"># 重新计算聚类中心</span></span><br><span class="line">        <span class="keyword">for</span> j <span class="keyword">in</span> range(k):</span><br><span class="line">            sum_all = np.mat(np.zeros((<span class="number">1</span>, n)))</span><br><span class="line">            r = <span class="number">0</span>  <span class="comment"># 每个类别中的样本的个数</span></span><br><span class="line">            <span class="keyword">for</span> i <span class="keyword">in</span> range(m):</span><br><span class="line">                <span class="keyword">if</span> subCenter[i, <span class="number">0</span>] == j:  <span class="comment"># 计算第j个类别</span></span><br><span class="line">                    sum_all += data[i, ]</span><br><span class="line">                    r += <span class="number">1</span></span><br><span class="line">            <span class="keyword">for</span> z <span class="keyword">in</span> range(n):</span><br><span class="line">                <span class="keyword">try</span>:</span><br><span class="line">                    centroids[j, z] = sum_all[<span class="number">0</span>, z] / r</span><br><span class="line">                    <span class="keyword">print</span> (r)</span><br><span class="line">                <span class="keyword">except</span>:</span><br><span class="line">                    <span class="keyword">print</span> (<span class="string">" r is zero"</span>)</span><br><span class="line">    <span class="keyword">return</span> subCenter</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">save_result</span><span class="params">(file_name, source)</span>:</span></span><br><span class="line">    <span class="string">'''保存source中的结果到file_name文件中</span></span><br><span class="line"><span class="string">    input:  file_name(string):文件名</span></span><br><span class="line"><span class="string">        source(mat):需要保存的数据</span></span><br><span class="line"><span class="string">    output:</span></span><br><span class="line"><span class="string">    '''</span></span><br><span class="line">    m, n = np.shape(source)</span><br><span class="line">    f = open(file_name, <span class="string">"w"</span>)</span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(m):</span><br><span class="line">        tmp = []</span><br><span class="line">        <span class="keyword">for</span> j <span class="keyword">in</span> range(n):</span><br><span class="line">            tmp.append(str(source[i, j]))</span><br><span class="line">        f.write(<span class="string">"\t"</span>.join(tmp) + <span class="string">"\n"</span>)</span><br><span class="line">    f.close()</span><br><span class="line"><span class="comment"># --------------------------------------------------</span></span><br><span class="line">FLOAT_MAX = <span class="number">1e100</span>  <span class="comment"># 设置一个较大的值作为初始化的最小的距离</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">nearest</span><span class="params">(point, cluster_centers)</span>:</span></span><br><span class="line">    <span class="string">'''计算point和cluster_centers之间的最小距离</span></span><br><span class="line"><span class="string">    input:  point(mat):当前的样本点</span></span><br><span class="line"><span class="string">        cluster_centers(mat):当前已经初始化的聚类中心</span></span><br><span class="line"><span class="string">    output: min_dist(float):点point和当前的聚类中心之间的最短距离</span></span><br><span class="line"><span class="string">    '''</span></span><br><span class="line">    min_dist = FLOAT_MAX</span><br><span class="line">    m = np.shape(cluster_centers)[<span class="number">0</span>]  <span class="comment"># 当前已经初始化的聚类中心的个数</span></span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(m):</span><br><span class="line">        <span class="comment"># 计算point与每个聚类中心之间的距离</span></span><br><span class="line">        d = distance(point, cluster_centers[i, ])</span><br><span class="line">        <span class="comment"># 选择最短距离</span></span><br><span class="line">        <span class="keyword">if</span> min_dist &gt; d:</span><br><span class="line">            min_dist = d</span><br><span class="line">    <span class="keyword">return</span> min_dist</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">get_centroids</span><span class="params">(points, k)</span>:</span></span><br><span class="line">    <span class="string">'''KMeans++的初始化聚类中心的方法</span></span><br><span class="line"><span class="string">    input:  points(mat):样本</span></span><br><span class="line"><span class="string">        k(int):聚类中心的个数</span></span><br><span class="line"><span class="string">    output: cluster_centers(mat):初始化后的聚类中心</span></span><br><span class="line"><span class="string">    '''</span></span><br><span class="line">    m, n = np.shape(points)</span><br><span class="line">    cluster_centers = np.mat(np.zeros((k , n)))</span><br><span class="line">    <span class="comment"># 1、随机选择一个样本点为第一个聚类中心</span></span><br><span class="line">    index = np.random.randint(<span class="number">0</span>, m)</span><br><span class="line">    cluster_centers[<span class="number">0</span>, ] = np.copy(points[index, ])</span><br><span class="line">    <span class="comment"># 2、初始化一个距离的序列</span></span><br><span class="line">    d = [<span class="number">0.0</span> <span class="keyword">for</span> _ <span class="keyword">in</span> range(m)]</span><br><span class="line">    <span class="keyword">print</span> (<span class="string">"\t初始化一个距离序列"</span>)</span><br><span class="line">    <span class="keyword">print</span> (<span class="string">" k="</span>,k)</span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">1</span>, k):</span><br><span class="line">        print(i)</span><br><span class="line">        sum_all = <span class="number">0</span></span><br><span class="line">        <span class="keyword">for</span> j <span class="keyword">in</span> range(m):</span><br><span class="line">            <span class="comment"># 3、对每一个样本找到最近的聚类中心点</span></span><br><span class="line">            d[j] = nearest(points[j, ], cluster_centers[<span class="number">0</span>:i, ])</span><br><span class="line">            <span class="comment"># 4、将所有的最短距离相加</span></span><br><span class="line">            sum_all += d[j]</span><br><span class="line">        <span class="comment"># 5、取得sum_all之间的随机值</span></span><br><span class="line">        sum_all *= random()</span><br><span class="line">        <span class="comment"># 6、获得距离最远的样本点作为聚类中心点</span></span><br><span class="line">        <span class="keyword">for</span> j, di <span class="keyword">in</span> enumerate(d):</span><br><span class="line">            sum_all -= di</span><br><span class="line">            <span class="keyword">if</span> sum_all &gt; <span class="number">0</span>:</span><br><span class="line">                <span class="keyword">continue</span></span><br><span class="line">            cluster_centers[i] = np.copy(points[j, ])</span><br><span class="line">            <span class="keyword">break</span></span><br><span class="line">    <span class="keyword">return</span> cluster_centers</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">run_kmeanspp</span><span class="params">(data, k)</span>:</span></span><br><span class="line">    <span class="comment"># 1、KMeans++的聚类中心初始化方法</span></span><br><span class="line">    <span class="keyword">print</span> (<span class="string">"\t---------- 1.K-Means++ generate centers ------------"</span>)</span><br><span class="line">    centroids = get_centroids(data, k)</span><br><span class="line">    <span class="comment"># 2、聚类计算</span></span><br><span class="line">    <span class="keyword">print</span> (<span class="string">"\t---------- 2.kmeans ------------"</span>)</span><br><span class="line">    subCenter = kmeans(data, k, centroids)</span><br><span class="line">    <span class="comment"># 3、保存所属的类别文件</span></span><br><span class="line">    <span class="keyword">print</span> (<span class="string">"\t---------- 3.save subCenter ------------"</span>)</span><br><span class="line">    save_result(<span class="string">"sub_pp"</span>, subCenter)</span><br><span class="line">    <span class="comment"># 4、保存聚类中心</span></span><br><span class="line">    <span class="keyword">print</span> (<span class="string">"\t---------- 4.save centroids ------------"</span>)</span><br><span class="line">    save_result(<span class="string">"center_pp"</span>, centroids)</span><br><span class="line"><span class="comment">#--------------------------------------------------</span></span><br><span class="line"></span><br><span class="line">k = <span class="number">4</span>                       <span class="comment">#聚类中心的个数</span></span><br><span class="line"><span class="comment"># 1、导入数据</span></span><br><span class="line"><span class="keyword">print</span> (<span class="string">"---------- 1.load data ------------"</span>)</span><br><span class="line">data = load_data(<span class="string">"Pic_B.jpg"</span>)</span><br><span class="line"><span class="comment"># 2、利用kMeans++聚类</span></span><br><span class="line"><span class="keyword">print</span> (<span class="string">"---------- 2.run kmeans++ ------------"</span>)</span><br><span class="line">run_kmeanspp(data, k)</span><br></pre></td></tr></table></figure>
-
-      
-    </div>
-    <footer class="article-footer">
-      
-        <a data-url="http://yoursite.com/2019/11/13/ Kmeans/" data-id="ck8r7asg9000au4vi1ocnjfhy" class="article-share-link" data-share="baidu" data-title="Kmeans">分享到</a>
-      
-
-      
-        <a href="http://yoursite.com/2019/11/13/ Kmeans/#ds-thread" class="article-comment-link">评论</a>
       
 
       
@@ -842,7 +1180,7 @@ n个输入,可行解为n个输入的子集\\
     </div>
     <footer class="article-footer">
       
-        <a data-url="http://yoursite.com/2019/11/13/ Prim/" data-id="ck8r7asgd000fu4vik7qqpgk6" class="article-share-link" data-share="baidu" data-title="Prim">分享到</a>
+        <a data-url="http://yoursite.com/2019/11/13/ Prim/" data-id="ck99szot7000ce4virut4wo7r" class="article-share-link" data-share="baidu" data-title="Prim">分享到</a>
       
 
       
@@ -870,7 +1208,7 @@ n个输入,可行解为n个输入的子集\\
   <div class="widget-wrap">
     <h3 class="widget-title">分类</h3>
     <div class="widget">
-      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Java/">Java</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Linux/">Linux</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/algorithm/">algorithm</a><span class="category-list-count">9</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/操作系统/">操作系统</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/机器学习/">机器学习</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/离散数学/">离散数学</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/算法设计与分析/">算法设计与分析</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/组合数学/">组合数学</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/计算机系统结构/">计算机系统结构</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/随机数学/">随机数学</a><span class="category-list-count">1</span></li></ul>
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Java/">Java</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Linux/">Linux</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/algorithm/">algorithm</a><span class="category-list-count">8</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/微机原理/">微机原理</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/操作系统/">操作系统</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/机器学习/">机器学习</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/离散数学/">离散数学</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/算法设计与分析/">算法设计与分析</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/组合数学/">组合数学</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/计算机系统结构/">计算机系统结构</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/随机数学/">随机数学</a><span class="category-list-count">1</span></li></ul>
     </div>
   </div>
 
@@ -883,7 +1221,7 @@ n个输入,可行解为n个输入的子集\\
   <div class="widget-wrap">
     <h3 class="widget-title">归档</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/04/">四月 2020</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/03/">三月 2020</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/02/">二月 2020</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/11/">十一月 2019</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/10/">十月 2019</a><span class="archive-list-count">7</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/08/">八月 2019</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/04/">四月 2012</a><span class="archive-list-count">1</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/04/">四月 2020</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/03/">三月 2020</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/02/">二月 2020</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/11/">十一月 2019</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/10/">十月 2019</a><span class="archive-list-count">6</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/08/">八月 2019</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/04/">四月 2012</a><span class="archive-list-count">1</span></li></ul>
     </div>
   </div>
 
@@ -893,6 +1231,10 @@ n个输入,可行解为n个输入的子集\\
     <h3 class="widget-title">近期文章</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/2020/04/11/ 微型计算机/">微机原理</a>
+          </li>
         
           <li>
             <a href="/2020/04/06/ 组合数学/">组合数学</a>
@@ -908,10 +1250,6 @@ n个输入,可行解为n个输入的子集\\
         
           <li>
             <a href="/2020/03/31/ 计算机系统结构/">计算机系统结构</a>
-          </li>
-        
-          <li>
-            <a href="/2020/03/31/ 操作系统/">操作系统</a>
           </li>
         
       </ul>

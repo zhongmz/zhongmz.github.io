@@ -14,7 +14,7 @@
 <meta property="og:site_name" content="Xxgzbd&#39;s Blog">
 <meta property="og:description" content="2证明$f(n)=O(g(n))$，有  \exists c,n_0,对于\forall n\geq n_0 有 f(n)\leq c*g(n)即$g(n)$时$f(n)$的渐近上限。 证明$f(n)=\Omega (g(n))$，有  \exists c,n_0,对于\forall n\geq n_0 有 f(n)\geq c*g(n)即$g(n)$时$f(n)$的渐近下限。 若同时满足$(1)">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2020-04-08T10:25:22.854Z">
+<meta property="og:updated_time" content="2020-04-14T07:26:44.912Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="算法设计与分析">
 <meta name="twitter:description" content="2证明$f(n)=O(g(n))$，有  \exists c,n_0,对于\forall n\geq n_0 有 f(n)\leq c*g(n)即$g(n)$时$f(n)$的渐近上限。 证明$f(n)=\Omega (g(n))$，有  \exists c,n_0,对于\forall n\geq n_0 有 f(n)\geq c*g(n)即$g(n)$时$f(n)$的渐近下限。 若同时满足$(1)">
@@ -107,12 +107,75 @@
 <script type="math/tex; mode=display">
 f(n)=\Theta (g(n)),且g(n)=\theta (f(n))</script><h3 id="3-贪心方法"><a href="#3-贪心方法" class="headerlink" title="3 贪心方法"></a>3 贪心方法</h3><h4 id="1-一般方法"><a href="#1-一般方法" class="headerlink" title="1 一般方法"></a>1 一般方法</h4><script type="math/tex; mode=display">
 n个输入,可行解为n个输入的子集\\
-约束条件\Longrightarrow 可行解 根据目标函数\Longrightarrow最优解</script><h4 id="核心：选取能产生最优解的量度标准"><a href="#核心：选取能产生最优解的量度标准" class="headerlink" title="核心：选取能产生最优解的量度标准"></a>核心：选取能产生最优解的量度标准</h4><h4 id="2背包"><a href="#2背包" class="headerlink" title="2背包"></a>2背包</h4>
+约束条件\Longrightarrow 可行解 根据目标函数\Longrightarrow最优解</script><h4 id="核心：选取能产生最优解的量度标准"><a href="#核心：选取能产生最优解的量度标准" class="headerlink" title="核心：选取能产生最优解的量度标准"></a>核心：选取能产生最优解的量度标准</h4><h4 id="2背包"><a href="#2背包" class="headerlink" title="2背包"></a>2背包</h4><p><strong>定理5.1</strong></p>
+<ul>
+<li>如果$p_1 /w_1 ≥ p_2 /w_2 ≥ … ≥ p_n /w_n $，则算法<br>GREEDY-KNAPSACK 对于给定的背包问题实例<br>生成一个最优解。</li>
+</ul>
+<p><strong>证明</strong></p>
+<p>​    设$X=(x_1,…,x_n)$是算法生成的解</p>
+<p>1.若所有的$x_i$=1,显然这个解就是最优解。</p>
+<p>2.否则，设j是使得$x_j!=1$的最小下标，那么由算法可知</p>
+<ul>
+<li>对于$1\leq i&lt;j$，$x_i=1$</li>
+<li>对于$j&lt;i\leq n$，$x_i=0$</li>
+<li>对于$i=j$，$0\leq x_i&lt;1$</li>
+</ul>
+<p>3.若$X$不是最优解，那么必然存在一个最优解$Y=(y_1…y_n),使得\sum p_i y_i&gt;\sum p_ix_i,那么必然有\sum w_iy_i=M$</p>
+<p>设$k$是使得$y_k!=x_k$的最小下标，这样的$k$必然存在</p>
+<ul>
+<li>$k&lt;j$时，由于$x_k=1$,必然有$y_k&lt; x_k$</li>
+<li>$k=j$时，若$y_k&gt;x_k$，那么必然有$\sum w_i y_i&gt;M$，矛盾，故必然有$y_k&lt;x_k$</li>
+<li>$k&gt;j$时，若$y_k&gt;x_k$，那么必然有$\sum w_i y_i&gt;M$，矛盾，故必然有$y_k&lt;x_k$</li>
+</ul>
+<p>故有$y_k&lt;x_k$。</p>
+<p>4.现在使得$y<em>k=x_k$,那么其代价为$y</em>{k+1},…y_n$必须减去同样多的重量，使得总容量为$M$,那么导致了新解$Z$。<br>有</p>
+<script type="math/tex; mode=display">
+\sum _{k<i\leq n}w_i(y_i-z_i)=w_k(z_k-y_k)</script><p>5.那么有</p>
+<script type="math/tex; mode=display">
+\sum _{1\leq i\leq n}p_iz_i=\sum _{1\leq i \leq n}p_iy_i+(z_k-y_k)p_k-\sum _{k< i\leq n}p_i(y_i-z_i)
+\geq \sum _{1\leq i\leq n}p_iy_i</script><p>6.那么必然有</p>
+<script type="math/tex; mode=display">
+\sum _{1\leq i\leq n}p_iz_i=
+\sum _{1\leq i\leq n}p_iy_i</script><ul>
+<li><p>若此时</p>
+<script type="math/tex; mode=display">
+\sum _{1\leq i\leq n}p_iz_i=
+\sum _{1\leq i\leq n}p_ix_i\\
+则证毕</script></li>
+<li><p>否则，重复上面讨论，必然最终得到</p>
+<script type="math/tex; mode=display">
+\sum _{1\leq i\leq n}p_iz_i=
+\sum _{1\leq i\leq n}p_ix_i\\</script></li>
+</ul>
+<p>证毕</p>
+<p><strong>定理5.2</strong>，设$I为最优解，J为贪心解$<br>1.证明$I,J$是互不包含的关系</p>
+<ul>
+<li>若$I=J$，则证毕</li>
+<li>若$I\subset J$，与$I$为最优解矛盾</li>
+<li>若$J\subset I$，那么必然存在$b\in I且b\notin J$，设$J^{’}\subset J$，因为$I$是可行解，那么根据算法，当$J^{‘}考虑到b时，此时J^{‘}\cup {b}$必然也是可行解，与算法矛盾，那么证明其不成立完毕。</li>
+</ul>
+<p>2.证明$I=J$，设$I!=J$</p>
+<ul>
+<li>设有$A={a|a\in J且a\notin I},B={b|b\in I且b\notin J}，P_a=max{P_i|i\in A},P_b=max{P_i|i\in B}$，证明$P_a\geq P_b$: 若$P_b&gt;P_a$,那么当$J^{‘}考虑到b时，此时J^{‘}\cup {b}必然时可行解$，与算法矛盾。</li>
+</ul>
+<p>证毕</p>
+<p><strong>定理5.3</strong></p>
+<ul>
+<li>若$\delta $可行，那么$J$必然存在$\delta$这样的排列可行，必要性证毕</li>
+<li>现在证明充分性，若$J$可行，证明$\delta可行$，若$J$可行，必然有$a 为可行解$，现在证明$\delta$时可行解。设$\delta=i_1,i_2,…i_k;a=r_1,r_2,…r_k$令$a是使得r_a!=i_a$的最小下标，必然有$r_b=i_a$,显然$b&gt;a$,那么在$a$中将$r_a与r_b$互换，，这样的互换不违反期限。通过不断的互换，可以得到$\delta$</li>
+</ul>
+<p>证毕</p>
+<h1 id="动态规划"><a href="#动态规划" class="headerlink" title="动态规划"></a>动态规划</h1><ul>
+<li>多阶段过程</li>
+<li>满足最优性原理</li>
+<li>建立递推关系式</li>
+</ul>
+
       
     </div>
     <footer class="article-footer">
       
-        <a data-url="http://yoursite.com/2020/02/13/ 算法设计及分析/" data-id="ck8r7asgm000wu4vivlzkidcn" class="article-share-link" data-share="baidu" data-title="算法设计与分析">分享到</a>
+        <a data-url="http://yoursite.com/2020/02/13/ 算法设计及分析/" data-id="ck99szotr0010e4vinpwrfqrb" class="article-share-link" data-share="baidu" data-title="算法设计与分析">分享到</a>
       
 
       
@@ -158,7 +221,7 @@ n个输入,可行解为n个输入的子集\\
   <div class="widget-wrap">
     <h3 class="widget-title">分类</h3>
     <div class="widget">
-      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Java/">Java</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Linux/">Linux</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/algorithm/">algorithm</a><span class="category-list-count">9</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/操作系统/">操作系统</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/机器学习/">机器学习</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/离散数学/">离散数学</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/算法设计与分析/">算法设计与分析</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/组合数学/">组合数学</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/计算机系统结构/">计算机系统结构</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/随机数学/">随机数学</a><span class="category-list-count">1</span></li></ul>
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Java/">Java</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Linux/">Linux</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/algorithm/">algorithm</a><span class="category-list-count">8</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/微机原理/">微机原理</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/操作系统/">操作系统</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/机器学习/">机器学习</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/离散数学/">离散数学</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/算法设计与分析/">算法设计与分析</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/组合数学/">组合数学</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/计算机系统结构/">计算机系统结构</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/随机数学/">随机数学</a><span class="category-list-count">1</span></li></ul>
     </div>
   </div>
 
@@ -171,7 +234,7 @@ n个输入,可行解为n个输入的子集\\
   <div class="widget-wrap">
     <h3 class="widget-title">归档</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/04/">四月 2020</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/03/">三月 2020</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/02/">二月 2020</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/11/">十一月 2019</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/10/">十月 2019</a><span class="archive-list-count">7</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/08/">八月 2019</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/04/">四月 2012</a><span class="archive-list-count">1</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/04/">四月 2020</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/03/">三月 2020</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/02/">二月 2020</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/11/">十一月 2019</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/10/">十月 2019</a><span class="archive-list-count">6</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/08/">八月 2019</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/04/">四月 2012</a><span class="archive-list-count">1</span></li></ul>
     </div>
   </div>
 
@@ -181,6 +244,10 @@ n个输入,可行解为n个输入的子集\\
     <h3 class="widget-title">近期文章</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/2020/04/11/ 微型计算机/">微机原理</a>
+          </li>
         
           <li>
             <a href="/2020/04/06/ 组合数学/">组合数学</a>
@@ -196,10 +263,6 @@ n个输入,可行解为n个输入的子集\\
         
           <li>
             <a href="/2020/03/31/ 计算机系统结构/">计算机系统结构</a>
-          </li>
-        
-          <li>
-            <a href="/2020/03/31/ 操作系统/">操作系统</a>
           </li>
         
       </ul>

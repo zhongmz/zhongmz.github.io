@@ -14,7 +14,7 @@
 <meta property="og:site_name" content="Xxgzbd&#39;s Blog">
 <meta property="og:description" content="1n阶幻方，其幻和为：  \frac {n*(1+n^2)}{2}存在性：存在除2阶外的任意阶幻方。 计数与分类：奇数阶幻方；4n阶幻方；4n+2阶幻方。 构造方法：见课本 优化问题：略 2鸽巢原理 Ramsey定理 3线排列 圆排列 n元素集合的$r-$圆排列数为  \frac {1}{r}P(n,r)=\frac {n!}{r(n-r)!}集合的排列数和组合数 多重集合的排列  M=\{ \i">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2020-04-08T10:16:52.490Z">
+<meta property="og:updated_time" content="2020-04-21T11:06:10.591Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="组合数学">
 <meta name="twitter:description" content="1n阶幻方，其幻和为：  \frac {n*(1+n^2)}{2}存在性：存在除2阶外的任意阶幻方。 计数与分类：奇数阶幻方；4n阶幻方；4n+2阶幻方。 构造方法：见课本 优化问题：略 2鸽巢原理 Ramsey定理 3线排列 圆排列 n元素集合的$r-$圆排列数为  \frac {1}{r}P(n,r)=\frac {n!}{r(n-r)!}集合的排列数和组合数 多重集合的排列  M=\{ \i">
@@ -122,13 +122,12 @@ M=\{ \infty \cdot a_1,\infty \cdot a_2...\infty \cdot a_n\},r \geq n,则M中每�
 <p>​    (b)     字典序法</p>
 <p>$x_1+x_2…+x_n=r$的非负整数解集个数为：$\frac{(n+r-1)!}{(n-1)!*r!}=\dbinom{n+r-1}{r}$</p>
 <p>其中，$x_i\geq 0$</p>
-<p><strong>二项式定理</strong></p>
-<script type="math/tex; mode=display">
+<h2 id="二项式定理"><a href="#二项式定理" class="headerlink" title="二项式定理"></a>二项式定理</h2><script type="math/tex; mode=display">
 {(x+y)}^n=\dbinom{n}{0}x^0y^n+\dbinom{n}{1}x^1y^{n-1}...+\dbinom{n}{n-1}x^{n-1}y^1+\dbinom{n}{n}x^ny^0，其中n\geq 0</script><script type="math/tex; mode=display">
 \dbinom{n}{k}\\
 (1)\     \dbinom{n}{k}=\dbinom{n}{n-k} \\
 (2)\     \dbinom{n}{k}=\dbinom{n-1}{k}+\dbinom{n-1}{k-1}\\
-(3)\     \dbinom{n}{\frac{n}{2}}为max\\</script><h3 id="4-容斥原理"><a href="#4-容斥原理" class="headerlink" title="4 容斥原理"></a>4 容斥原理</h3><p>$S中不具有性质P_1,P_2\dots,P_m的元素个数为$$​</p>
+(3)\     \dbinom{n}{\frac{n}{2}}为max\\</script><h3 id="牛顿二项式"><a href="#牛顿二项式" class="headerlink" title="牛顿二项式"></a>牛顿二项式</h3><h1 id="容斥原理"><a href="#容斥原理" class="headerlink" title="容斥原理"></a>容斥原理</h1><p>$S中不具有性质P_1,P_2\dots,P_m的元素个数为$$​</p>
 <script type="math/tex; mode=display">
 |\overline{A_1}\cap\overline{A_2}\cap\dots\cap\overline{A_m}|\\=|S|-\sum_{ i= 1}^{m}|A_i|+\sum_{1\leq i<j\leq m}|A_i\cap A_j|-\sum_{1\leq i<j<k\leq m}|A_i\cap A_j\cap A_k|+\dots +(-1)^{m}|A_1\cap A_2\cap\dots\cap A_m|</script><p>不妨设</p>
 <p>$W(0)=|S|$</p>
@@ -141,19 +140,18 @@ M=\{ \infty \cdot a_1,\infty \cdot a_2...\infty \cdot a_n\},r \geq n,则M中每�
 <p>集合S中恰好具有$r(0\leq r\leq m)$种特性质的元素个数</p>
 <p>$M(r)=W(r)-\dbinom{r+1}{r}W(r+1)+\dots+(-1)^{m-r}\dbinom{m}{r}W(m)=\displaystyle\sum_{i=0}^{m-r}(-1)^i\dbinom{r+i}{r}W(r+i)$</p>
 <p><strong>对称筛公式</strong></p>
-<p>$即当\N=|S|\N(1)=|A<em>1|=|A_2|=\dots=|A_m|\N(2)=|A_1\cap A_2|=\dots=|A</em>{m-1}\cap A_{m}|\…$</p>
-<p>有</p>
+<p>即当</p>
 <script type="math/tex; mode=display">
-|\overline{A_1}\cap \overline{A_2}\cap\dots\cap \overline{A_m}|=N-\dbinom{m}{1}N(1)+\dots+\dbinom{m}{m}N(m)</script><p><strong>错位排列</strong></p>
-<p>​    每个物体$i$都不在第$i$个位置上的排列称为错位排列$Derangement$，通常使用$D_n$表示错位排列数</p>
+\\N=|S|\\N(1)=|A_1|=|A_2|=\dots=|A_m|\\N(2)=|A_1\cap A_2|=\dots=|A_{m-1}\cap A_{m}|\\
+...</script><p>有</p>
+<script type="math/tex; mode=display">
+|\overline{A_1}\cap \overline{A_2}\cap\dots\cap \overline{A_m}|=N-\dbinom{m}{1}N(1)+\dots+\dbinom{m}{m}N(m)</script><h2 id="错位排列"><a href="#错位排列" class="headerlink" title="错位排列"></a>错位排列</h2><p>​    每个物体$i$都不在第$i$个位置上的排列称为错位排列$Derangement$，通常使用$D_n$表示错位排列数</p>
 <p>对于$n\geq 1$有</p>
 <script type="math/tex; mode=display">
-D_n=n!(1-\frac{1}{1!}+\frac{1}{2!}-\dots+(-1)^n\frac{1}{n!})</script><p><strong>有限制条件的排列问题</strong></p>
-<p>​    一般来说，令$I={ 1,2,\dots ,n}$在$I$的排列中不出现12，23，34，…，(n-1)n的排列称为有限制条件的排列。通常把排列的个数记作$Q_n$</p>
+D_n=n!(1-\frac{1}{1!}+\frac{1}{2!}-\dots+(-1)^n\frac{1}{n!})</script><h2 id="有限制条件的排列问题"><a href="#有限制条件的排列问题" class="headerlink" title="有限制条件的排列问题"></a>有限制条件的排列问题</h2><p>​    一般来说，令$I={ 1,2,\dots ,n}$在$I$的排列中不出现12，23，34，…，(n-1)n的排列称为有限制条件的排列。通常把排列的个数记作$Q_n$</p>
 <p>对于$n\geq 1$有</p>
 <script type="math/tex; mode=display">
-Q_n=n!-\dbinom{n-1}{1}(n-1)!+\dbinom{n-1}{2}(n-2)!-\dots+(-1)^{n-1}\cdot 1!</script><p><strong>棋盘多项式与有禁区的排列</strong></p>
-<p>设$C$是一个棋盘，$r_k(C)$表示把$k$个棋子布到$C$中的方案数。</p>
+Q_n=n!-\dbinom{n-1}{1}(n-1)!+\dbinom{n-1}{2}(n-2)!-\dots+(-1)^{n-1}\cdot 1!</script><h2 id="棋盘多项式与有禁区的排列"><a href="#棋盘多项式与有禁区的排列" class="headerlink" title="棋盘多项式与有禁区的排列"></a>棋盘多项式与有禁区的排列</h2><p>设$C$是一个棋盘，$r_k(C)$表示把$k$个棋子布到$C$中的方案数。</p>
 <p>设$C_i$是从棋盘$C$中删除指定方格所在行所在列所剩余的棋盘，$C_l$是从棋盘$C$中删除指定方格后所剩余的棋盘，则有</p>
 <script type="math/tex; mode=display">
 r_k(C)=r_{k-1}(C_i)+r_k(C_l)\  其中k\geq 1</script><p>设棋盘$C$是由$C_1$和$C_2$两部分组成，且其布棋方案是互相独立的，则有</p>
@@ -163,7 +161,7 @@ r_k(C)=\displaystyle\sum_{i=0}^{k}r_i(C_1)\cdot r_{k-i}(C_2)</script><p><strong>
 R(C)=\displaystyle\sum_{k=0}^{\infty}r_k(C)x^k</script><p>有</p>
 <p>$R(C)=xR(C_i)+R(C_l)$</p>
 <p>$R(C=R(C_1)\cdot R(C_2)$</p>
-<h3 id="生成函数"><a href="#生成函数" class="headerlink" title="生成函数"></a>生成函数</h3><p>设有一个有限或无限的数列 ${a_0,a_1,…,a_k,..}$，做形式幂级数</p>
+<h1 id="生成函数"><a href="#生成函数" class="headerlink" title="生成函数"></a>生成函数</h1><h2 id="一些性质与常见的生成函数"><a href="#一些性质与常见的生成函数" class="headerlink" title="一些性质与常见的生成函数"></a>一些性质与常见的生成函数</h2><p>设有一个有限或无限的数列 ${a_0,a_1,…,a_k,..}$，做形式幂级数</p>
 <script type="math/tex; mode=display">
 G(x)=a_0+a_1x+\dots+a_kx^k+\dots,</script><p>称$G(x)$为数列${ a_0,a_1,…,a_k,..}$的（普通）生成函数，并记作$G{a_k}$</p>
 <script type="math/tex; mode=display">
@@ -178,12 +176,30 @@ b_k=\displaystyle\sum_{i=k}^{\infty}a_i\quad B(x)=\frac{A(1)-xA(x)}{1-x}\\
 b_k=ka_i \quad B(x)=xA^{'}(x)\\
 c_k=\alpha a_k+\beta b_k\quad C(x)=\alpha A(x)+\beta B(x)\\
 c_k=a_0b_k+a_1b_{k-1}+a_2b{k-2}+\dots+a_kb_0\quad C(x)=A(x)B(x)\\
-b_k={\alpha}^{k}a_k\quad B(x)=A(\alpha x)\\</script>
+b_k={\alpha}^{k}a_k\quad B(x)=A(\alpha x)\\</script><h2 id="组合数的生成函数"><a href="#组合数的生成函数" class="headerlink" title="组合数的生成函数"></a>组合数的生成函数</h2><ul>
+<li><p>设多重集</p>
+<script type="math/tex; mode=display">
+M=\{k_1\cdot a_1,...k_n\cdot a_n\}</script><p>则$M$的$k-$组合数$c_k$对应数列${c_k}$的生成函数为</p>
+<script type="math/tex; mode=display">
+G(x)=\prod _{i=1}^{n}(\sum_{j=0}^{k_i}x^j)\\
+其中，x_k为G(x)展开式中x^k的系数。</script></li>
+<li></li>
+</ul>
+<h1 id="递推关系"><a href="#递推关系" class="headerlink" title="递推关系"></a>递推关系</h1><ul>
+<li><script type="math/tex; mode=display">
+f(n)=c_1(n)f(n-1)+c_2(n)f(n-2)+\dots+c_k(n)f(n-k)+g(n)\\
+若c_i(n)为常数，那么称之为k阶常系数线性递推关系\\
+若g(n)=0，则称之为齐次的\\</script></li>
+<li><p>特征方程</p>
+<script type="math/tex; mode=display">
+x^k-c_1x^{k-1}-\dots-c_k=0\\</script></li>
+</ul>
+
       
     </div>
     <footer class="article-footer">
       
-        <a data-url="http://yoursite.com/2020/04/06/ 组合数学/" data-id="ck8r7asgp0013u4vil9w0rqj4" class="article-share-link" data-share="baidu" data-title="组合数学">分享到</a>
+        <a data-url="http://yoursite.com/2020/04/06/ 组合数学/" data-id="ck99szotq000ze4vis7y40g0e" class="article-share-link" data-share="baidu" data-title="组合数学">分享到</a>
       
 
       
@@ -196,6 +212,15 @@ b_k={\alpha}^{k}a_k\quad B(x)=A(\alpha x)\\</script>
   
     
 <nav id="article-nav">
+  
+    <a href="/2020/04/11/ 微型计算机/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">下一篇</strong>
+      <div class="article-nav-title">
+        
+          微机原理
+        
+      </div>
+    </a>
   
   
     <a href="/2020/04/03/ 概率论与数理统计/" id="article-nav-older" class="article-nav-link-wrap">
@@ -220,7 +245,7 @@ b_k={\alpha}^{k}a_k\quad B(x)=A(\alpha x)\\</script>
   <div class="widget-wrap">
     <h3 class="widget-title">分类</h3>
     <div class="widget">
-      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Java/">Java</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Linux/">Linux</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/algorithm/">algorithm</a><span class="category-list-count">9</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/操作系统/">操作系统</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/机器学习/">机器学习</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/离散数学/">离散数学</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/算法设计与分析/">算法设计与分析</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/组合数学/">组合数学</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/计算机系统结构/">计算机系统结构</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/随机数学/">随机数学</a><span class="category-list-count">1</span></li></ul>
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Java/">Java</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Linux/">Linux</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/algorithm/">algorithm</a><span class="category-list-count">8</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/微机原理/">微机原理</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/操作系统/">操作系统</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/机器学习/">机器学习</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/离散数学/">离散数学</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/算法设计与分析/">算法设计与分析</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/组合数学/">组合数学</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/计算机系统结构/">计算机系统结构</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/随机数学/">随机数学</a><span class="category-list-count">1</span></li></ul>
     </div>
   </div>
 
@@ -233,7 +258,7 @@ b_k={\alpha}^{k}a_k\quad B(x)=A(\alpha x)\\</script>
   <div class="widget-wrap">
     <h3 class="widget-title">归档</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/04/">四月 2020</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/03/">三月 2020</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/02/">二月 2020</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/11/">十一月 2019</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/10/">十月 2019</a><span class="archive-list-count">7</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/08/">八月 2019</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/04/">四月 2012</a><span class="archive-list-count">1</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/04/">四月 2020</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/03/">三月 2020</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/02/">二月 2020</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/11/">十一月 2019</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/10/">十月 2019</a><span class="archive-list-count">6</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/08/">八月 2019</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/04/">四月 2012</a><span class="archive-list-count">1</span></li></ul>
     </div>
   </div>
 
@@ -243,6 +268,10 @@ b_k={\alpha}^{k}a_k\quad B(x)=A(\alpha x)\\</script>
     <h3 class="widget-title">近期文章</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/2020/04/11/ 微型计算机/">微机原理</a>
+          </li>
         
           <li>
             <a href="/2020/04/06/ 组合数学/">组合数学</a>
@@ -258,10 +287,6 @@ b_k={\alpha}^{k}a_k\quad B(x)=A(\alpha x)\\</script>
         
           <li>
             <a href="/2020/03/31/ 计算机系统结构/">计算机系统结构</a>
-          </li>
-        
-          <li>
-            <a href="/2020/03/31/ 操作系统/">操作系统</a>
           </li>
         
       </ul>

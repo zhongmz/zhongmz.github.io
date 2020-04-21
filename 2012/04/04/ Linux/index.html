@@ -6,18 +6,18 @@
   
   <title>Linux | Xxgzbd&#39;s Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="viCommand$:wq，保存并退出$ $:w,保存$ $:w \ filename,另存为filename$ $:wq!,保存强制退出$ $gg,使光标到文件头$ $G,使光标移到文件尾$ $nG,使光标移到第n行$ $ab,缩写，unab，取消缩写$ $宏操作符，map，unmap,取消宏\ page 98$ $u,撤销最近的操作$ file$command\ source\ target$">
+  <meta name="description" content="VICommand$:wq，保存并退出$ $:w,保存$ $:w \ filename,另存为filename$ $:wq!,保存强制退出$ $gg,使光标到文件头$ $G,使光标移到文件尾$ $nG,使光标移到第n行$ $ab,缩写，unab，取消缩写$ $宏操作符，map，unmap,取消宏\ page 98$ $u,撤销最近的操作$ 文件$command\ source\ target$ 创">
 <meta name="keywords" content="algorithm math">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Linux">
 <meta property="og:url" content="http://yoursite.com/2012/04/04/ Linux/index.html">
 <meta property="og:site_name" content="Xxgzbd&#39;s Blog">
-<meta property="og:description" content="viCommand$:wq，保存并退出$ $:w,保存$ $:w \ filename,另存为filename$ $:wq!,保存强制退出$ $gg,使光标到文件头$ $G,使光标移到文件尾$ $nG,使光标移到第n行$ $ab,缩写，unab，取消缩写$ $宏操作符，map，unmap,取消宏\ page 98$ $u,撤销最近的操作$ file$command\ source\ target$">
+<meta property="og:description" content="VICommand$:wq，保存并退出$ $:w,保存$ $:w \ filename,另存为filename$ $:wq!,保存强制退出$ $gg,使光标到文件头$ $G,使光标移到文件尾$ $nG,使光标移到第n行$ $ab,缩写，unab，取消缩写$ $宏操作符，map，unmap,取消宏\ page 98$ $u,撤销最近的操作$ 文件$command\ source\ target$ 创">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2020-04-08T09:35:50.274Z">
+<meta property="og:updated_time" content="2020-04-17T17:02:27.618Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Linux">
-<meta name="twitter:description" content="viCommand$:wq，保存并退出$ $:w,保存$ $:w \ filename,另存为filename$ $:wq!,保存强制退出$ $gg,使光标到文件头$ $G,使光标移到文件尾$ $nG,使光标移到第n行$ $ab,缩写，unab，取消缩写$ $宏操作符，map，unmap,取消宏\ page 98$ $u,撤销最近的操作$ file$command\ source\ target$">
+<meta name="twitter:description" content="VICommand$:wq，保存并退出$ $:w,保存$ $:w \ filename,另存为filename$ $:wq!,保存强制退出$ $gg,使光标到文件头$ $G,使光标移到文件尾$ $nG,使光标移到第n行$ $ab,缩写，unab，取消缩写$ $宏操作符，map，unmap,取消宏\ page 98$ $u,撤销最近的操作$ 文件$command\ source\ target$ 创">
   
     <link rel="alternative" href="/atom.xml" title="Xxgzbd&#39;s Blog" type="application/atom+xml">
   
@@ -96,7 +96,7 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h4 id="vi"><a href="#vi" class="headerlink" title="vi"></a>vi</h4><h5 id="Command"><a href="#Command" class="headerlink" title="Command"></a>Command</h5><p>$:wq，保存并退出$</p>
+        <h1 id="VI"><a href="#VI" class="headerlink" title="VI"></a>VI</h1><h5 id="Command"><a href="#Command" class="headerlink" title="Command"></a>Command</h5><p>$:wq，保存并退出$</p>
 <p>$:w,保存$</p>
 <p>$:w \ filename,另存为filename$</p>
 <p>$:wq!,保存强制退出$</p>
@@ -106,17 +106,17 @@
 <p>$ab,缩写，unab，取消缩写$</p>
 <p>$宏操作符，map，unmap,取消宏\ page 98$</p>
 <p>$u,撤销最近的操作$</p>
-<h4 id="file"><a href="#file" class="headerlink" title="file"></a>file</h4><p>$command\ source\ target$</p>
-<p><strong>创建文件</strong></p>
-<p>$mkdir\ filename,创建目录$</p>
-<p><strong>移除文件</strong></p>
-<p>$rm\ filename,移除文件$</p>
-<p><strong>复制文件</strong></p>
-<p>$cp\ filename1\ filename2$</p>
+<h1 id="文件"><a href="#文件" class="headerlink" title="文件"></a>文件</h1><p>$command\ source\ target$</p>
+<h2 id="创建文件"><a href="#创建文件" class="headerlink" title="创建文件"></a>创建文件</h2><p>$mkdir\ filename,创建目录$</p>
+<h2 id="移除文件"><a href="#移除文件" class="headerlink" title="移除文件"></a>移除文件</h2><ul>
+<li><code>rm filename</code>         移除文件</li>
+<li><code>rm -rf /test</code>        移除非空目录<code>/test</code></li>
+<li></li>
+</ul>
+<h2 id="复制文件"><a href="#复制文件" class="headerlink" title="复制文件"></a>复制文件</h2><p>$cp\ filename1\ filename2$</p>
 <p>$cp\ filename\ list$</p>
 <p>$cp\ -r\ list1(or\ filename)\ list2,若list2不存在则创建$</p>
-<p><strong>移动文件</strong></p>
-<p>$mv\ filename\ list$</p>
+<h2 id="移动文件"><a href="#移动文件" class="headerlink" title="移动文件"></a>移动文件</h2><p>$mv\ filename\ list$</p>
 <p>$mv\  filename1\ filename2,将filename1文件名改为filename2$</p>
 <p><strong>链接文件</strong></p>
 <p><strong>寻找文件</strong></p>
@@ -135,21 +135,105 @@
 <p>$find\ . -name \ filename,寻找名为filename的文件$</p>
 <p>$find\ . \ -name\ filename\ -exec\  -cp\  {}\ file\  \verb|| ;,寻找名为filename的文件并且复制到file文件夹中$</p>
 <p>$eg: ls &gt;&gt; a,who &gt;&gt; a,date &gt;&gt; a$</p>
-<h1 id="Shell"><a href="#Shell" class="headerlink" title="Shell"></a>Shell</h1><h3 id="kill"><a href="#kill" class="headerlink" title="kill"></a>kill</h3><p>用户只能关闭自己的进程，root可以关闭所有进程</p>
+<h1 id="Shell"><a href="#Shell" class="headerlink" title="Shell"></a>Shell</h1><h2 id="Shell-变量"><a href="#Shell-变量" class="headerlink" title="Shell 变量"></a>Shell 变量</h2><ul>
+<li>环境变量，即标准变量，由系统管理员定义</li>
+<li>局部变量，由用户定义</li>
+<li>shell对于所有分配给变量的值按字符对待</li>
+</ul>
+<h3 id="kill"><a href="#kill" class="headerlink" title="kill"></a>kill</h3><ul>
+<li>用户只能关闭自己的进程，root可以关闭所有进程</li>
+<li>终止一个前台进程<code>^C</code></li>
+<li><code>SIGKILL</code>由<code>kill -9</code>发送</li>
+<li><code>SIGINT</code>由<code>^C</code>发送</li>
+<li><code>SIGTERM</code>由<code>kill -15</code>or<code>kill</code>发送</li>
+<li><code>SIGHUP</code>挂起信号，关闭终端时会产生</li>
+<li></li>
+</ul>
 <h3 id="tee-分离输出"><a href="#tee-分离输出" class="headerlink" title="tee 分离输出"></a>tee 分离输出</h3><ul>
 <li>多重输出</li>
 <li>tee命令和|一起使用实现分离输出</li>
+<li><code>ls -C | tee file</code></li>
+</ul>
+<h3 id="expr"><a href="#expr" class="headerlink" title="expr"></a>expr</h3><ul>
+<li><p>算术运算</p>
+</li>
+<li><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"> $expr 1 + 1</span><br><span class="line">2</span><br><span class="line"> $x=`expr $x +1 `</span><br></pre></td></tr></table></figure>
+</li>
 </ul>
 <h4 id="选项"><a href="#选项" class="headerlink" title="选项"></a>选项</h4><ul>
 <li>-a    不覆盖原来内容 </li>
 <li>-i     不响应中断     </li>
 </ul>
-
+<ul>
+<li>ps    查看进程表</li>
+</ul>
+<ul>
+<li><p><code>./won</code>表示在全局范围内搜索命令</p>
+</li>
+<li><p><code>won</code>表示在PATH中搜索命令</p>
+</li>
+<li><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">cat bye</span><br><span class="line">exit</span><br><span class="line">chmod u+x bye</span><br><span class="line">./bye</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h3 id="全局变量"><a href="#全局变量" class="headerlink" title="全局变量"></a>全局变量</h3><h4 id="PS1，用于编辑命令行的格式"><a href="#PS1，用于编辑命令行的格式" class="headerlink" title="PS1，用于编辑命令行的格式"></a>PS1，用于编辑命令行的格式</h4><ul>
+<li>\d</li>
+<li>\H</li>
+<li>\h</li>
+<li>\t</li>
+<li>\T</li>
+<li>\A</li>
+<li>\u</li>
+<li>\v</li>
+<li>\w</li>
+<li>\W</li>
+<li>#</li>
+<li>$</li>
+</ul>
+<ul>
+<li><code>help</code>            是<code>bash</code>的内置命令，用于记录<code>bash</code>的内置命令和关键字</li>
+<li><code>man</code>              是全系统的文档系统，用于与查看命令联机帮助页</li>
+<li><code>info</code>            是源自<code>GNU</code>项目的另外一个文档系统                </li>
+</ul>
+<h3 id="正则表达式"><a href="#正则表达式" class="headerlink" title="正则表达式"></a>正则表达式</h3><h4 id="元字符"><a href="#元字符" class="headerlink" title="元字符"></a>元字符</h4><h5 id="关机"><a href="#关机" class="headerlink" title="关机"></a>关机</h5><ul>
+<li><code>halt</code></li>
+<li><code>shut down</code></li>
+<li><code>poweroff</code></li>
+<li>注意，<code>init 0</code>只能作为超级用户使用的关机，实际上<code>init 0</code>只是将当前运行级别更改为0</li>
+</ul>
+<h3 id="grep"><a href="#grep" class="headerlink" title="grep"></a>grep</h3><ul>
+<li>文件内容查找</li>
+</ul>
+<h3 id="echo"><a href="#echo" class="headerlink" title="echo"></a>echo</h3><ul>
+<li>输出指定字符串或变量</li>
+<li><code>-e</code>：激活转义字符</li>
+<li>消除元字符：<code>\</code> <code>&quot; &quot;</code> <code>&#39; &#39;</code></li>
+<li>因为反斜杠是元字符的一种，所以在激活转义字符的时候需要消除转义字符中的反斜杠的影响</li>
+<li></li>
+</ul>
+<h5 id="ls"><a href="#ls" class="headerlink" title="ls"></a>ls</h5><ul>
+<li><code>ls ~</code>        显示当前用户主目录的内容</li>
+</ul>
+<h5 id="cd"><a href="#cd" class="headerlink" title="cd"></a>cd</h5><ul>
+<li><code>cd</code>    回到<code>HOME</code>变量所设置的主目录</li>
+</ul>
+<ul>
+<li>Linux文件名长度限制是255个字符</li>
+</ul>
+<h5 id="clear"><a href="#clear" class="headerlink" title="clear"></a>clear</h5><ul>
+<li><code>Ctrl-L</code></li>
+<li><code>\033c</code></li>
+</ul>
+<h3 id="test"><a href="#test" class="headerlink" title="test"></a>test</h3><ul>
+<li><h1 id="元字符-1"><a href="#元字符-1" class="headerlink" title="元字符"></a>元字符</h1></li>
+<li><p>`command`命令替换符</p>
+</li>
+</ul>
+<h1 id="转义字符"><a href="#转义字符" class="headerlink" title="转义字符"></a>转义字符</h1>
       
     </div>
     <footer class="article-footer">
       
-        <a data-url="http://yoursite.com/2012/04/04/ Linux/" data-id="ck8r7asg40006u4viq5qqhkcr" class="article-share-link" data-share="baidu" data-title="Linux">分享到</a>
+        <a data-url="http://yoursite.com/2012/04/04/ Linux/" data-id="ck99szot9000ee4vipzf7mmqh" class="article-share-link" data-share="baidu" data-title="Linux">分享到</a>
       
 
       
@@ -190,7 +274,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">分类</h3>
     <div class="widget">
-      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Java/">Java</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Linux/">Linux</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/algorithm/">algorithm</a><span class="category-list-count">9</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/操作系统/">操作系统</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/机器学习/">机器学习</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/离散数学/">离散数学</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/算法设计与分析/">算法设计与分析</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/组合数学/">组合数学</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/计算机系统结构/">计算机系统结构</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/随机数学/">随机数学</a><span class="category-list-count">1</span></li></ul>
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Java/">Java</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Linux/">Linux</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/algorithm/">algorithm</a><span class="category-list-count">8</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/微机原理/">微机原理</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/操作系统/">操作系统</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/机器学习/">机器学习</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/离散数学/">离散数学</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/算法设计与分析/">算法设计与分析</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/组合数学/">组合数学</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/计算机系统结构/">计算机系统结构</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/随机数学/">随机数学</a><span class="category-list-count">1</span></li></ul>
     </div>
   </div>
 
@@ -203,7 +287,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">归档</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/04/">四月 2020</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/03/">三月 2020</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/02/">二月 2020</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/11/">十一月 2019</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/10/">十月 2019</a><span class="archive-list-count">7</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/08/">八月 2019</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/04/">四月 2012</a><span class="archive-list-count">1</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/04/">四月 2020</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/03/">三月 2020</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/02/">二月 2020</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/11/">十一月 2019</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/10/">十月 2019</a><span class="archive-list-count">6</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/08/">八月 2019</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/04/">四月 2012</a><span class="archive-list-count">1</span></li></ul>
     </div>
   </div>
 
@@ -213,6 +297,10 @@
     <h3 class="widget-title">近期文章</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/2020/04/11/ 微型计算机/">微机原理</a>
+          </li>
         
           <li>
             <a href="/2020/04/06/ 组合数学/">组合数学</a>
@@ -228,10 +316,6 @@
         
           <li>
             <a href="/2020/03/31/ 计算机系统结构/">计算机系统结构</a>
-          </li>
-        
-          <li>
-            <a href="/2020/03/31/ 操作系统/">操作系统</a>
           </li>
         
       </ul>

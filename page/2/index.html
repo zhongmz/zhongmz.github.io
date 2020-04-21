@@ -71,6 +71,53 @@
     <div class="outer">
       <section id="main">
   
+    <article id="post-Kmeans" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/11/13/ Kmeans/" class="article-date">
+  <time datetime="2019-11-13T14:42:33.000Z" itemprop="datePublished">2019-11-13</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/机器学习/">机器学习</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/11/13/ Kmeans/">Kmeans</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br><span class="line">165</span><br><span class="line">166</span><br><span class="line">167</span><br><span class="line">168</span><br><span class="line">169</span><br><span class="line">170</span><br><span class="line">171</span><br><span class="line">172</span><br><span class="line">173</span><br><span class="line">174</span><br><span class="line">175</span><br><span class="line">176</span><br><span class="line">177</span><br><span class="line">178</span><br><span class="line">179</span><br><span class="line">180</span><br><span class="line">181</span><br><span class="line">182</span><br><span class="line">183</span><br><span class="line">184</span><br><span class="line">185</span><br><span class="line">186</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="comment">#基于聚类算法(kmeans)的图像分割</span></span><br><span class="line"><span class="string">'''</span></span><br><span class="line"><span class="string">导入所需要的模块：</span></span><br><span class="line"><span class="string">1.用于处理二维矩阵的数学库</span></span><br><span class="line"><span class="string">2.随机生成数的模块</span></span><br><span class="line"><span class="string">3.用于将图片(JPG)转换为矩阵以及把矩阵转换为图片(JPG)的模块</span></span><br><span class="line"><span class="string">'''</span></span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"><span class="keyword">from</span> random <span class="keyword">import</span> random</span><br><span class="line"><span class="keyword">from</span> PIL <span class="keyword">import</span> Image</span><br><span class="line"><span class="comment"># 导入数据，file_path是图像的存储位置</span></span><br><span class="line"><span class="comment"># 返回值</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">load_data</span><span class="params">(file_path)</span>:</span></span><br><span class="line">    f = open(file_path, <span class="string">"rb"</span>)  <span class="comment"># 以二进制的方式打开图像文件</span></span><br><span class="line">    data = []</span><br><span class="line">    im = Image.open(f)  <span class="comment"># 导入图片</span></span><br><span class="line">    m, n = im.size  <span class="comment"># 得到图片的大小</span></span><br><span class="line">    <span class="keyword">print</span> (m), (n)</span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(m):</span><br><span class="line">        <span class="keyword">for</span> j <span class="keyword">in</span> range(n):</span><br><span class="line">            tmp = []</span><br><span class="line">            x, y, z = im.getpixel((i, j))</span><br><span class="line">            tmp.append(x / <span class="number">256.0</span>)</span><br><span class="line">            tmp.append(y / <span class="number">256.0</span>)</span><br><span class="line">            tmp.append(z / <span class="number">256.0</span>)</span><br><span class="line">            data.append(tmp)</span><br><span class="line">    f.close()</span><br><span class="line">    <span class="keyword">return</span> np.mat(data)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">distance</span><span class="params">(vecA, vecB)</span>:</span></span><br><span class="line">    <span class="string">'''计算vecA与vecB之间的欧式距离的平方</span></span><br><span class="line"><span class="string">    input:  vecA(mat)A点坐标</span></span><br><span class="line"><span class="string">        vecB(mat)B点坐标</span></span><br><span class="line"><span class="string">    output: dist[0, 0](float)A点与B点距离的平方</span></span><br><span class="line"><span class="string">    '''</span></span><br><span class="line">    dist = (vecA - vecB) * (vecA - vecB).T</span><br><span class="line">    <span class="keyword">return</span> dist[<span class="number">0</span>, <span class="number">0</span>]</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">randCent</span><span class="params">(data, k)</span>:</span></span><br><span class="line">    <span class="string">'''随机初始化聚类中心</span></span><br><span class="line"><span class="string">    input:  data(mat):训练数据</span></span><br><span class="line"><span class="string">        k(int):类别个数</span></span><br><span class="line"><span class="string">    output: centroids(mat):聚类中心</span></span><br><span class="line"><span class="string">    '''</span></span><br><span class="line">    n = np.shape(data)[<span class="number">1</span>]  <span class="comment"># 属性的个数</span></span><br><span class="line">    centroids = np.mat(np.zeros((k, n)))  <span class="comment"># 初始化k个聚类中心</span></span><br><span class="line">    <span class="keyword">for</span> j <span class="keyword">in</span> range(n):  <span class="comment"># 初始化聚类中心每一维的坐标</span></span><br><span class="line">        minJ = np.min(data[:, j])</span><br><span class="line">        rangeJ = np.max(data[:, j]) - minJ</span><br><span class="line">        <span class="comment"># 在最大值和最小值之间随机初始化</span></span><br><span class="line">        centroids[:, j] = minJ * np.mat(np.ones((k , <span class="number">1</span>))) + np.random.rand(k, <span class="number">1</span>) * rangeJ</span><br><span class="line">    <span class="keyword">return</span> centroids</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">kmeans</span><span class="params">(data, k, centroids)</span>:</span></span><br><span class="line">    <span class="string">'''根据KMeans算法求解聚类中心</span></span><br><span class="line"><span class="string">    input:  data(mat):训练数据</span></span><br><span class="line"><span class="string">        k(int):类别个数</span></span><br><span class="line"><span class="string">        centroids(mat):随机初始化的聚类中心</span></span><br><span class="line"><span class="string">    output: centroids(mat):训练完成的聚类中心</span></span><br><span class="line"><span class="string">        subCenter(mat):每一个样本所属的类别</span></span><br><span class="line"><span class="string">    '''</span></span><br><span class="line">    m, n = np.shape(data)  <span class="comment"># m：样本的个数，n：特征的维度</span></span><br><span class="line">    subCenter = np.mat(np.zeros((m, <span class="number">2</span>)))  <span class="comment"># 初始化每一个样本所属的类别</span></span><br><span class="line">    change = <span class="literal">True</span>  <span class="comment"># 判断是否需要重新计算聚类中心</span></span><br><span class="line">    <span class="keyword">while</span> change == <span class="literal">True</span>:</span><br><span class="line">        change = <span class="literal">False</span>  <span class="comment"># 重置</span></span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> range(m):</span><br><span class="line">            minDist = np.inf  <span class="comment"># 设置样本与聚类中心之间的最小的距离，初始值为争取穷</span></span><br><span class="line">            minIndex = <span class="number">0</span>  <span class="comment"># 所属的类别</span></span><br><span class="line">            <span class="keyword">for</span> j <span class="keyword">in</span> range(k):</span><br><span class="line">                <span class="comment"># 计算i和每个聚类中心之间的距离</span></span><br><span class="line">                dist = distance(data[i, ], centroids[j, ])</span><br><span class="line">                <span class="keyword">if</span> dist &lt; minDist:</span><br><span class="line">                    minDist = dist</span><br><span class="line">                    minIndex = j</span><br><span class="line">            <span class="comment"># 判断是否需要改变</span></span><br><span class="line">            <span class="keyword">if</span> subCenter[i, <span class="number">0</span>] != minIndex:  <span class="comment"># 需要改变</span></span><br><span class="line">                change = <span class="literal">True</span></span><br><span class="line">                subCenter[i, ] = np.mat([minIndex, minDist])</span><br><span class="line">        <span class="comment"># 重新计算聚类中心</span></span><br><span class="line">        <span class="keyword">for</span> j <span class="keyword">in</span> range(k):</span><br><span class="line">            sum_all = np.mat(np.zeros((<span class="number">1</span>, n)))</span><br><span class="line">            r = <span class="number">0</span>  <span class="comment"># 每个类别中的样本的个数</span></span><br><span class="line">            <span class="keyword">for</span> i <span class="keyword">in</span> range(m):</span><br><span class="line">                <span class="keyword">if</span> subCenter[i, <span class="number">0</span>] == j:  <span class="comment"># 计算第j个类别</span></span><br><span class="line">                    sum_all += data[i, ]</span><br><span class="line">                    r += <span class="number">1</span></span><br><span class="line">            <span class="keyword">for</span> z <span class="keyword">in</span> range(n):</span><br><span class="line">                <span class="keyword">try</span>:</span><br><span class="line">                    centroids[j, z] = sum_all[<span class="number">0</span>, z] / r</span><br><span class="line">                    <span class="keyword">print</span> (r)</span><br><span class="line">                <span class="keyword">except</span>:</span><br><span class="line">                    <span class="keyword">print</span> (<span class="string">" r is zero"</span>)</span><br><span class="line">    <span class="keyword">return</span> subCenter</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">save_result</span><span class="params">(file_name, source)</span>:</span></span><br><span class="line">    <span class="string">'''保存source中的结果到file_name文件中</span></span><br><span class="line"><span class="string">    input:  file_name(string):文件名</span></span><br><span class="line"><span class="string">        source(mat):需要保存的数据</span></span><br><span class="line"><span class="string">    output:</span></span><br><span class="line"><span class="string">    '''</span></span><br><span class="line">    m, n = np.shape(source)</span><br><span class="line">    f = open(file_name, <span class="string">"w"</span>)</span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(m):</span><br><span class="line">        tmp = []</span><br><span class="line">        <span class="keyword">for</span> j <span class="keyword">in</span> range(n):</span><br><span class="line">            tmp.append(str(source[i, j]))</span><br><span class="line">        f.write(<span class="string">"\t"</span>.join(tmp) + <span class="string">"\n"</span>)</span><br><span class="line">    f.close()</span><br><span class="line"><span class="comment"># --------------------------------------------------</span></span><br><span class="line">FLOAT_MAX = <span class="number">1e100</span>  <span class="comment"># 设置一个较大的值作为初始化的最小的距离</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">nearest</span><span class="params">(point, cluster_centers)</span>:</span></span><br><span class="line">    <span class="string">'''计算point和cluster_centers之间的最小距离</span></span><br><span class="line"><span class="string">    input:  point(mat):当前的样本点</span></span><br><span class="line"><span class="string">        cluster_centers(mat):当前已经初始化的聚类中心</span></span><br><span class="line"><span class="string">    output: min_dist(float):点point和当前的聚类中心之间的最短距离</span></span><br><span class="line"><span class="string">    '''</span></span><br><span class="line">    min_dist = FLOAT_MAX</span><br><span class="line">    m = np.shape(cluster_centers)[<span class="number">0</span>]  <span class="comment"># 当前已经初始化的聚类中心的个数</span></span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(m):</span><br><span class="line">        <span class="comment"># 计算point与每个聚类中心之间的距离</span></span><br><span class="line">        d = distance(point, cluster_centers[i, ])</span><br><span class="line">        <span class="comment"># 选择最短距离</span></span><br><span class="line">        <span class="keyword">if</span> min_dist &gt; d:</span><br><span class="line">            min_dist = d</span><br><span class="line">    <span class="keyword">return</span> min_dist</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">get_centroids</span><span class="params">(points, k)</span>:</span></span><br><span class="line">    <span class="string">'''KMeans++的初始化聚类中心的方法</span></span><br><span class="line"><span class="string">    input:  points(mat):样本</span></span><br><span class="line"><span class="string">        k(int):聚类中心的个数</span></span><br><span class="line"><span class="string">    output: cluster_centers(mat):初始化后的聚类中心</span></span><br><span class="line"><span class="string">    '''</span></span><br><span class="line">    m, n = np.shape(points)</span><br><span class="line">    cluster_centers = np.mat(np.zeros((k , n)))</span><br><span class="line">    <span class="comment"># 1、随机选择一个样本点为第一个聚类中心</span></span><br><span class="line">    index = np.random.randint(<span class="number">0</span>, m)</span><br><span class="line">    cluster_centers[<span class="number">0</span>, ] = np.copy(points[index, ])</span><br><span class="line">    <span class="comment"># 2、初始化一个距离的序列</span></span><br><span class="line">    d = [<span class="number">0.0</span> <span class="keyword">for</span> _ <span class="keyword">in</span> range(m)]</span><br><span class="line">    <span class="keyword">print</span> (<span class="string">"\t初始化一个距离序列"</span>)</span><br><span class="line">    <span class="keyword">print</span> (<span class="string">" k="</span>,k)</span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">1</span>, k):</span><br><span class="line">        print(i)</span><br><span class="line">        sum_all = <span class="number">0</span></span><br><span class="line">        <span class="keyword">for</span> j <span class="keyword">in</span> range(m):</span><br><span class="line">            <span class="comment"># 3、对每一个样本找到最近的聚类中心点</span></span><br><span class="line">            d[j] = nearest(points[j, ], cluster_centers[<span class="number">0</span>:i, ])</span><br><span class="line">            <span class="comment"># 4、将所有的最短距离相加</span></span><br><span class="line">            sum_all += d[j]</span><br><span class="line">        <span class="comment"># 5、取得sum_all之间的随机值</span></span><br><span class="line">        sum_all *= random()</span><br><span class="line">        <span class="comment"># 6、获得距离最远的样本点作为聚类中心点</span></span><br><span class="line">        <span class="keyword">for</span> j, di <span class="keyword">in</span> enumerate(d):</span><br><span class="line">            sum_all -= di</span><br><span class="line">            <span class="keyword">if</span> sum_all &gt; <span class="number">0</span>:</span><br><span class="line">                <span class="keyword">continue</span></span><br><span class="line">            cluster_centers[i] = np.copy(points[j, ])</span><br><span class="line">            <span class="keyword">break</span></span><br><span class="line">    <span class="keyword">return</span> cluster_centers</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">run_kmeanspp</span><span class="params">(data, k)</span>:</span></span><br><span class="line">    <span class="comment"># 1、KMeans++的聚类中心初始化方法</span></span><br><span class="line">    <span class="keyword">print</span> (<span class="string">"\t---------- 1.K-Means++ generate centers ------------"</span>)</span><br><span class="line">    centroids = get_centroids(data, k)</span><br><span class="line">    <span class="comment"># 2、聚类计算</span></span><br><span class="line">    <span class="keyword">print</span> (<span class="string">"\t---------- 2.kmeans ------------"</span>)</span><br><span class="line">    subCenter = kmeans(data, k, centroids)</span><br><span class="line">    <span class="comment"># 3、保存所属的类别文件</span></span><br><span class="line">    <span class="keyword">print</span> (<span class="string">"\t---------- 3.save subCenter ------------"</span>)</span><br><span class="line">    save_result(<span class="string">"sub_pp"</span>, subCenter)</span><br><span class="line">    <span class="comment"># 4、保存聚类中心</span></span><br><span class="line">    <span class="keyword">print</span> (<span class="string">"\t---------- 4.save centroids ------------"</span>)</span><br><span class="line">    save_result(<span class="string">"center_pp"</span>, centroids)</span><br><span class="line"><span class="comment">#--------------------------------------------------</span></span><br><span class="line"></span><br><span class="line">k = <span class="number">4</span>                       <span class="comment">#聚类中心的个数</span></span><br><span class="line"><span class="comment"># 1、导入数据</span></span><br><span class="line"><span class="keyword">print</span> (<span class="string">"---------- 1.load data ------------"</span>)</span><br><span class="line">data = load_data(<span class="string">"Pic_B.jpg"</span>)</span><br><span class="line"><span class="comment"># 2、利用kMeans++聚类</span></span><br><span class="line"><span class="keyword">print</span> (<span class="string">"---------- 2.run kmeans++ ------------"</span>)</span><br><span class="line">run_kmeanspp(data, k)</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+    <footer class="article-footer">
+      
+        <a data-url="http://yoursite.com/2019/11/13/ Kmeans/" data-id="ck99szotj000me4vi58d20l7c" class="article-share-link" data-share="baidu" data-title="Kmeans">分享到</a>
+      
+
+      
+        <a href="http://yoursite.com/2019/11/13/ Kmeans/#ds-thread" class="article-comment-link">评论</a>
+      
+
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-BinTree" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2019/10/27/ BinTree/" class="article-date">
@@ -103,7 +150,7 @@
     </div>
     <footer class="article-footer">
       
-        <a data-url="http://yoursite.com/2019/10/27/ BinTree/" data-id="ck8r7asft0000u4vi2zinep7l" class="article-share-link" data-share="baidu" data-title="BinTree">分享到</a>
+        <a data-url="http://yoursite.com/2019/10/27/ BinTree/" data-id="ck99szosf0001e4vitz458h71" class="article-share-link" data-share="baidu" data-title="BinTree">分享到</a>
       
 
       
@@ -152,7 +199,7 @@
     </div>
     <footer class="article-footer">
       
-        <a data-url="http://yoursite.com/2019/10/21/ EulerSieve/" data-id="ck8r7asg30005u4vigraguh6k" class="article-share-link" data-share="baidu" data-title="EulerSieve">分享到</a>
+        <a data-url="http://yoursite.com/2019/10/21/ EulerSieve/" data-id="ck99szosb0000e4vi7l5yet49" class="article-share-link" data-share="baidu" data-title="EulerSieve">分享到</a>
       
 
       
@@ -204,7 +251,7 @@
     </div>
     <footer class="article-footer">
       
-        <a data-url="http://yoursite.com/2019/10/21/ qpow/" data-id="ck8r7asgg000ku4viazusdcre" class="article-share-link" data-share="baidu" data-title="qpow">分享到</a>
+        <a data-url="http://yoursite.com/2019/10/21/ qpow/" data-id="ck99szotk000pe4vi6bgv3ul0" class="article-share-link" data-share="baidu" data-title="qpow">分享到</a>
       
 
       
@@ -272,62 +319,11 @@
     </div>
     <footer class="article-footer">
       
-        <a data-url="http://yoursite.com/2019/10/10/ Kruskal/" data-id="ck8r7asg80009u4vivf3h9aiq" class="article-share-link" data-share="baidu" data-title="Kruskal">分享到</a>
+        <a data-url="http://yoursite.com/2019/10/10/ Kruskal/" data-id="ck99szot5000ae4vis6egzrgk" class="article-share-link" data-share="baidu" data-title="Kruskal">分享到</a>
       
 
       
         <a href="http://yoursite.com/2019/10/10/ Kruskal/#ds-thread" class="article-comment-link">评论</a>
-      
-
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-test" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2019/10/10/ test/" class="article-date">
-  <time datetime="2019-10-10T14:56:52.000Z" itemprop="datePublished">2019-10-10</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/algorithm/">algorithm</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/10/10/ test/">Kruskal</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        Here's something encrypted, password is required to continue reading.
-        
-          <p class="article-more-link">
-            <a href="/2019/10/10/ test/#more">Read More</a>
-          </p>
-        
-      
-    </div>
-    <footer class="article-footer">
-      
-        <a data-url="http://yoursite.com/2019/10/10/ test/" data-id="ck8r7asgk000ru4vihkyclufq" class="article-share-link" data-share="baidu" data-title="Kruskal">分享到</a>
-      
-
-      
-        <a href="http://yoursite.com/2019/10/10/ test/#ds-thread" class="article-comment-link">评论</a>
       
 
       
@@ -474,7 +470,7 @@
     </div>
     <footer class="article-footer">
       
-        <a data-url="http://yoursite.com/2019/10/09/ Manacher/" data-id="ck8r7asgc000du4vi2qwqtep4" class="article-share-link" data-share="baidu" data-title="Manacher">分享到</a>
+        <a data-url="http://yoursite.com/2019/10/09/ Manacher/" data-id="ck99szotb000fe4viyriy70z2" class="article-share-link" data-share="baidu" data-title="Manacher">分享到</a>
       
 
       
@@ -530,7 +526,7 @@
     </div>
     <footer class="article-footer">
       
-        <a data-url="http://yoursite.com/2019/10/01/ KMP/" data-id="ck8r7asg60007u4vi18xpoedq" class="article-share-link" data-share="baidu" data-title="KMP">分享到</a>
+        <a data-url="http://yoursite.com/2019/10/01/ KMP/" data-id="ck99szosv0006e4viuw53o15a" class="article-share-link" data-share="baidu" data-title="KMP">分享到</a>
       
 
       
@@ -581,7 +577,7 @@
     </div>
     <footer class="article-footer">
       
-        <a data-url="http://yoursite.com/2019/08/30/ hello-world/" data-id="ck8r7asgf000iu4viyw5f8nts" class="article-share-link" data-share="baidu" data-title="Hello World">分享到</a>
+        <a data-url="http://yoursite.com/2019/08/30/ hello-world/" data-id="ck99szotd000ie4vigu45wfh6" class="article-share-link" data-share="baidu" data-title="Hello World">分享到</a>
       
 
       
@@ -622,7 +618,7 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h4 id="vi"><a href="#vi" class="headerlink" title="vi"></a>vi</h4><h5 id="Command"><a href="#Command" class="headerlink" title="Command"></a>Command</h5><p>$:wq，保存并退出$</p>
+        <h1 id="VI"><a href="#VI" class="headerlink" title="VI"></a>VI</h1><h5 id="Command"><a href="#Command" class="headerlink" title="Command"></a>Command</h5><p>$:wq，保存并退出$</p>
 <p>$:w,保存$</p>
 <p>$:w \ filename,另存为filename$</p>
 <p>$:wq!,保存强制退出$</p>
@@ -632,17 +628,17 @@
 <p>$ab,缩写，unab，取消缩写$</p>
 <p>$宏操作符，map，unmap,取消宏\ page 98$</p>
 <p>$u,撤销最近的操作$</p>
-<h4 id="file"><a href="#file" class="headerlink" title="file"></a>file</h4><p>$command\ source\ target$</p>
-<p><strong>创建文件</strong></p>
-<p>$mkdir\ filename,创建目录$</p>
-<p><strong>移除文件</strong></p>
-<p>$rm\ filename,移除文件$</p>
-<p><strong>复制文件</strong></p>
-<p>$cp\ filename1\ filename2$</p>
+<h1 id="文件"><a href="#文件" class="headerlink" title="文件"></a>文件</h1><p>$command\ source\ target$</p>
+<h2 id="创建文件"><a href="#创建文件" class="headerlink" title="创建文件"></a>创建文件</h2><p>$mkdir\ filename,创建目录$</p>
+<h2 id="移除文件"><a href="#移除文件" class="headerlink" title="移除文件"></a>移除文件</h2><ul>
+<li><code>rm filename</code>         移除文件</li>
+<li><code>rm -rf /test</code>        移除非空目录<code>/test</code></li>
+<li></li>
+</ul>
+<h2 id="复制文件"><a href="#复制文件" class="headerlink" title="复制文件"></a>复制文件</h2><p>$cp\ filename1\ filename2$</p>
 <p>$cp\ filename\ list$</p>
 <p>$cp\ -r\ list1(or\ filename)\ list2,若list2不存在则创建$</p>
-<p><strong>移动文件</strong></p>
-<p>$mv\ filename\ list$</p>
+<h2 id="移动文件"><a href="#移动文件" class="headerlink" title="移动文件"></a>移动文件</h2><p>$mv\ filename\ list$</p>
 <p>$mv\  filename1\ filename2,将filename1文件名改为filename2$</p>
 <p><strong>链接文件</strong></p>
 <p><strong>寻找文件</strong></p>
@@ -661,21 +657,105 @@
 <p>$find\ . -name \ filename,寻找名为filename的文件$</p>
 <p>$find\ . \ -name\ filename\ -exec\  -cp\  {}\ file\  \verb|| ;,寻找名为filename的文件并且复制到file文件夹中$</p>
 <p>$eg: ls &gt;&gt; a,who &gt;&gt; a,date &gt;&gt; a$</p>
-<h1 id="Shell"><a href="#Shell" class="headerlink" title="Shell"></a>Shell</h1><h3 id="kill"><a href="#kill" class="headerlink" title="kill"></a>kill</h3><p>用户只能关闭自己的进程，root可以关闭所有进程</p>
+<h1 id="Shell"><a href="#Shell" class="headerlink" title="Shell"></a>Shell</h1><h2 id="Shell-变量"><a href="#Shell-变量" class="headerlink" title="Shell 变量"></a>Shell 变量</h2><ul>
+<li>环境变量，即标准变量，由系统管理员定义</li>
+<li>局部变量，由用户定义</li>
+<li>shell对于所有分配给变量的值按字符对待</li>
+</ul>
+<h3 id="kill"><a href="#kill" class="headerlink" title="kill"></a>kill</h3><ul>
+<li>用户只能关闭自己的进程，root可以关闭所有进程</li>
+<li>终止一个前台进程<code>^C</code></li>
+<li><code>SIGKILL</code>由<code>kill -9</code>发送</li>
+<li><code>SIGINT</code>由<code>^C</code>发送</li>
+<li><code>SIGTERM</code>由<code>kill -15</code>or<code>kill</code>发送</li>
+<li><code>SIGHUP</code>挂起信号，关闭终端时会产生</li>
+<li></li>
+</ul>
 <h3 id="tee-分离输出"><a href="#tee-分离输出" class="headerlink" title="tee 分离输出"></a>tee 分离输出</h3><ul>
 <li>多重输出</li>
 <li>tee命令和|一起使用实现分离输出</li>
+<li><code>ls -C | tee file</code></li>
+</ul>
+<h3 id="expr"><a href="#expr" class="headerlink" title="expr"></a>expr</h3><ul>
+<li><p>算术运算</p>
+</li>
+<li><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"> $expr 1 + 1</span><br><span class="line">2</span><br><span class="line"> $x=`expr $x +1 `</span><br></pre></td></tr></table></figure>
+</li>
 </ul>
 <h4 id="选项"><a href="#选项" class="headerlink" title="选项"></a>选项</h4><ul>
 <li>-a    不覆盖原来内容 </li>
 <li>-i     不响应中断     </li>
 </ul>
-
+<ul>
+<li>ps    查看进程表</li>
+</ul>
+<ul>
+<li><p><code>./won</code>表示在全局范围内搜索命令</p>
+</li>
+<li><p><code>won</code>表示在PATH中搜索命令</p>
+</li>
+<li><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">cat bye</span><br><span class="line">exit</span><br><span class="line">chmod u+x bye</span><br><span class="line">./bye</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h3 id="全局变量"><a href="#全局变量" class="headerlink" title="全局变量"></a>全局变量</h3><h4 id="PS1，用于编辑命令行的格式"><a href="#PS1，用于编辑命令行的格式" class="headerlink" title="PS1，用于编辑命令行的格式"></a>PS1，用于编辑命令行的格式</h4><ul>
+<li>\d</li>
+<li>\H</li>
+<li>\h</li>
+<li>\t</li>
+<li>\T</li>
+<li>\A</li>
+<li>\u</li>
+<li>\v</li>
+<li>\w</li>
+<li>\W</li>
+<li>#</li>
+<li>$</li>
+</ul>
+<ul>
+<li><code>help</code>            是<code>bash</code>的内置命令，用于记录<code>bash</code>的内置命令和关键字</li>
+<li><code>man</code>              是全系统的文档系统，用于与查看命令联机帮助页</li>
+<li><code>info</code>            是源自<code>GNU</code>项目的另外一个文档系统                </li>
+</ul>
+<h3 id="正则表达式"><a href="#正则表达式" class="headerlink" title="正则表达式"></a>正则表达式</h3><h4 id="元字符"><a href="#元字符" class="headerlink" title="元字符"></a>元字符</h4><h5 id="关机"><a href="#关机" class="headerlink" title="关机"></a>关机</h5><ul>
+<li><code>halt</code></li>
+<li><code>shut down</code></li>
+<li><code>poweroff</code></li>
+<li>注意，<code>init 0</code>只能作为超级用户使用的关机，实际上<code>init 0</code>只是将当前运行级别更改为0</li>
+</ul>
+<h3 id="grep"><a href="#grep" class="headerlink" title="grep"></a>grep</h3><ul>
+<li>文件内容查找</li>
+</ul>
+<h3 id="echo"><a href="#echo" class="headerlink" title="echo"></a>echo</h3><ul>
+<li>输出指定字符串或变量</li>
+<li><code>-e</code>：激活转义字符</li>
+<li>消除元字符：<code>\</code> <code>&quot; &quot;</code> <code>&#39; &#39;</code></li>
+<li>因为反斜杠是元字符的一种，所以在激活转义字符的时候需要消除转义字符中的反斜杠的影响</li>
+<li></li>
+</ul>
+<h5 id="ls"><a href="#ls" class="headerlink" title="ls"></a>ls</h5><ul>
+<li><code>ls ~</code>        显示当前用户主目录的内容</li>
+</ul>
+<h5 id="cd"><a href="#cd" class="headerlink" title="cd"></a>cd</h5><ul>
+<li><code>cd</code>    回到<code>HOME</code>变量所设置的主目录</li>
+</ul>
+<ul>
+<li>Linux文件名长度限制是255个字符</li>
+</ul>
+<h5 id="clear"><a href="#clear" class="headerlink" title="clear"></a>clear</h5><ul>
+<li><code>Ctrl-L</code></li>
+<li><code>\033c</code></li>
+</ul>
+<h3 id="test"><a href="#test" class="headerlink" title="test"></a>test</h3><ul>
+<li><h1 id="元字符-1"><a href="#元字符-1" class="headerlink" title="元字符"></a>元字符</h1></li>
+<li><p>`command`命令替换符</p>
+</li>
+</ul>
+<h1 id="转义字符"><a href="#转义字符" class="headerlink" title="转义字符"></a>转义字符</h1>
       
     </div>
     <footer class="article-footer">
       
-        <a data-url="http://yoursite.com/2012/04/04/ Linux/" data-id="ck8r7asg40006u4viq5qqhkcr" class="article-share-link" data-share="baidu" data-title="Linux">分享到</a>
+        <a data-url="http://yoursite.com/2012/04/04/ Linux/" data-id="ck99szot9000ee4vipzf7mmqh" class="article-share-link" data-share="baidu" data-title="Linux">分享到</a>
       
 
       
@@ -703,7 +783,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">分类</h3>
     <div class="widget">
-      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Java/">Java</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Linux/">Linux</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/algorithm/">algorithm</a><span class="category-list-count">9</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/操作系统/">操作系统</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/机器学习/">机器学习</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/离散数学/">离散数学</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/算法设计与分析/">算法设计与分析</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/组合数学/">组合数学</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/计算机系统结构/">计算机系统结构</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/随机数学/">随机数学</a><span class="category-list-count">1</span></li></ul>
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Java/">Java</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Linux/">Linux</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/algorithm/">algorithm</a><span class="category-list-count">8</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/微机原理/">微机原理</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/操作系统/">操作系统</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/机器学习/">机器学习</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/离散数学/">离散数学</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/算法设计与分析/">算法设计与分析</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/组合数学/">组合数学</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/计算机系统结构/">计算机系统结构</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/随机数学/">随机数学</a><span class="category-list-count">1</span></li></ul>
     </div>
   </div>
 
@@ -716,7 +796,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">归档</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/04/">四月 2020</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/03/">三月 2020</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/02/">二月 2020</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/11/">十一月 2019</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/10/">十月 2019</a><span class="archive-list-count">7</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/08/">八月 2019</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/04/">四月 2012</a><span class="archive-list-count">1</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/04/">四月 2020</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/03/">三月 2020</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/02/">二月 2020</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/11/">十一月 2019</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/10/">十月 2019</a><span class="archive-list-count">6</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/08/">八月 2019</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/04/">四月 2012</a><span class="archive-list-count">1</span></li></ul>
     </div>
   </div>
 
@@ -726,6 +806,10 @@
     <h3 class="widget-title">近期文章</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/2020/04/11/ 微型计算机/">微机原理</a>
+          </li>
         
           <li>
             <a href="/2020/04/06/ 组合数学/">组合数学</a>
@@ -741,10 +825,6 @@
         
           <li>
             <a href="/2020/03/31/ 计算机系统结构/">计算机系统结构</a>
-          </li>
-        
-          <li>
-            <a href="/2020/03/31/ 操作系统/">操作系统</a>
           </li>
         
       </ul>
