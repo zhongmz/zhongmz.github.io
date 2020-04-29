@@ -6,18 +6,18 @@
   
   <title>微机原理 | Xxgzbd&#39;s Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="从入门到入土 字长， 主频，CPU的时钟频率，决定计算机运算速度 CISC，Complex Instruction Set Computer RISC，Reduced Instruction Set Computer 发展  8086 AX,Accumulator Register，累加器  BX,Base Register，基址寄存器  CX,Counter Register，计数器  DX,D">
+  <meta name="description" content="从入门到入土 字长， 主频，CPU的时钟频率，决定计算机运算速度 CISC，Complex Instruction Set Computer RISC，Reduced Instruction Set Computer 发展  8086 AX,Accumulator Register，累加器 BX,Base Register，基址寄存器 CX,Counter Register，计数器 DX,Data">
 <meta name="keywords" content="algorithm math">
 <meta property="og:type" content="article">
 <meta property="og:title" content="微机原理">
 <meta property="og:url" content="http://yoursite.com/2020/04/11/ 微型计算机/index.html">
 <meta property="og:site_name" content="Xxgzbd&#39;s Blog">
-<meta property="og:description" content="从入门到入土 字长， 主频，CPU的时钟频率，决定计算机运算速度 CISC，Complex Instruction Set Computer RISC，Reduced Instruction Set Computer 发展  8086 AX,Accumulator Register，累加器  BX,Base Register，基址寄存器  CX,Counter Register，计数器  DX,D">
+<meta property="og:description" content="从入门到入土 字长， 主频，CPU的时钟频率，决定计算机运算速度 CISC，Complex Instruction Set Computer RISC，Reduced Instruction Set Computer 发展  8086 AX,Accumulator Register，累加器 BX,Base Register，基址寄存器 CX,Counter Register，计数器 DX,Data">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2020-04-20T14:45:27.724Z">
+<meta property="og:updated_time" content="2020-04-28T16:54:10.094Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="微机原理">
-<meta name="twitter:description" content="从入门到入土 字长， 主频，CPU的时钟频率，决定计算机运算速度 CISC，Complex Instruction Set Computer RISC，Reduced Instruction Set Computer 发展  8086 AX,Accumulator Register，累加器  BX,Base Register，基址寄存器  CX,Counter Register，计数器  DX,D">
+<meta name="twitter:description" content="从入门到入土 字长， 主频，CPU的时钟频率，决定计算机运算速度 CISC，Complex Instruction Set Computer RISC，Reduced Instruction Set Computer 发展  8086 AX,Accumulator Register，累加器 BX,Base Register，基址寄存器 CX,Counter Register，计数器 DX,Data">
   
     <link rel="alternative" href="/atom.xml" title="Xxgzbd&#39;s Blog" type="application/atom+xml">
   
@@ -98,7 +98,7 @@
       
         
     <div id="toc">
-      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#从入门到入土"><span class="toc-text">从入门到入土</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#8086"><span class="toc-text">8086</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#总线周期"><span class="toc-text">总线周期</span></a></li></ol></li></ol>
+      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#从入门到入土"><span class="toc-text">从入门到入土</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#8086"><span class="toc-text">8086</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Prntium"><span class="toc-text">Prntium</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#可由8086的16位寄存器变为32位的寄存器如，AX-gt-EAX"><span class="toc-text">可由8086的16位寄存器变为32位的寄存器如，AX-&gt;EAX</span></a></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#通用寄存器"><span class="toc-text">通用寄存器</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#系统级寄存器"><span class="toc-text">系统级寄存器</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#系统地址寄存器"><span class="toc-text">系统地址寄存器</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#控制寄存器"><span class="toc-text">控制寄存器</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#总线周期"><span class="toc-text">总线周期</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#寻址"><span class="toc-text">寻址</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#存储器寻址"><span class="toc-text">存储器寻址</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Pentium保护模式及存储管理"><span class="toc-text">Pentium保护模式及存储管理</span></a></li></ol>
     </div>
     
     
@@ -110,45 +110,39 @@
 <li>发展</li>
 </ul>
 <h1 id="8086"><a href="#8086" class="headerlink" title="8086"></a>8086</h1><ul>
-<li><p>AX,Accumulator Register，累加器</p>
-</li>
-<li><p>BX,Base Register，基址寄存器</p>
-</li>
-<li><p>CX,Counter Register，计数器</p>
-</li>
-<li><p>DX,DataRegister，数据寄存器</p>
-</li>
-<li><p>SP,Stack Pointer，堆栈指针</p>
-</li>
-<li><p>BP,Base Pointer，基址指针</p>
-</li>
-<li><p>SI,Source Index，源变址寄存器</p>
-</li>
-<li><p>DI,Destination Index，目的变址寄存器,<a href>其中，SI与DI隐含使用</a></p>
-</li>
-<li><p>CS,Code Segment，代码段寄存器</p>
-</li>
-<li><p>SS,Stack Segment，堆栈段寄存器</p>
-</li>
-<li><p>DS,Data Segment，数据段寄存器</p>
-</li>
-<li><p>ES,Extra Segment，附加段寄存器</p>
-</li>
+<li>AX,Accumulator Register，累加器</li>
+<li>BX,Base Register，基址寄存器</li>
+<li>CX,Counter Register，计数器</li>
+<li>DX,DataRegister，数据寄存器</li>
+</ul>
+<ul>
+<li>SP,Stack Pointer，堆栈指针</li>
+<li>BP,Base Pointer，基址指针</li>
+<li>SI,Source Index，源变址寄存器</li>
+<li>DI,Destination Index，目的变址寄存器,<a href>其中，SI与DI隐含使用</a></li>
+</ul>
+<ul>
+<li>CS,Code Segment，代码段寄存器</li>
+<li>SS,Stack Segment，堆栈段寄存器</li>
+<li>DS,Data Segment，数据段寄存器</li>
+<li>ES,Extra Segment，附加段寄存器</li>
+</ul>
+<ul>
 <li><p>IP,Instruction Pointer，指令指针，<a href>CS:IP在地址加法器中形成物理地址，由BIU修改，不能直接修改</a></p>
 </li>
 <li><p>FL,flag，标志寄存器</p>
 <ul>
-<li><p>CF,Carry Flag，进位或错误标志</p>
+<li><p>CF,Carry Flag，进位或错误标志，CF=1,否则CF=0</p>
 </li>
-<li><p>PF,Parity Flag</p>
+<li><p>PF,Parity Flag，低8位结果偶数个1，PF=1，否则PF=0</p>
 </li>
-<li><p>AF,Auxiliary Carry Flag</p>
+<li><p>AF,Auxiliary Carry Flag，D3有进位或借位，AF=1</p>
 </li>
-<li><p>ZF,Zero Flag</p>
+<li><p>ZF,Zero Flag，结果为0，ZF=1</p>
 </li>
-<li><p>SF,Sign Flag</p>
+<li><p>SF,Sign Flag，结果为正，SF=0</p>
 </li>
-<li><p>OF,Overflow Flaw</p>
+<li><p>OF,Overflow Flaw，有符号数算数运算超出表示范围，OF=1</p>
 </li>
 </ul>
 <hr>
@@ -160,6 +154,68 @@
 </li>
 </ul>
 </li>
+</ul>
+<h1 id="Prntium"><a href="#Prntium" class="headerlink" title="Prntium"></a>Prntium</h1><h5 id="可由8086的16位寄存器变为32位的寄存器如，AX-gt-EAX"><a href="#可由8086的16位寄存器变为32位的寄存器如，AX-gt-EAX" class="headerlink" title="可由8086的16位寄存器变为32位的寄存器如，AX-&gt;EAX"></a>可由8086的16位寄存器变为32位的寄存器如，AX-&gt;EAX</h5><h2 id="通用寄存器"><a href="#通用寄存器" class="headerlink" title="通用寄存器"></a>通用寄存器</h2><ul>
+<li>AX,Accumulator Register，累加器</li>
+<li>BX,Base Register，基址寄存器</li>
+<li>CX,Counter Register，计数器</li>
+<li>DX,DataRegister，数据寄存器</li>
+</ul>
+<ul>
+<li>SP,Stack Pointer，堆栈指针</li>
+<li>BP,Base Pointer，基址指针</li>
+<li>SI,Source Index，源变址寄存器</li>
+<li>DI,Destination Index，目的变址寄存器,<a href>其中，SI与DI隐含使用</a></li>
+</ul>
+<ul>
+<li>CS,Code Segment，代码段寄存器</li>
+<li>SS,Stack Segment，堆栈段寄存器</li>
+<li>DS,Data Segment，数据段寄存器</li>
+<li>ES,Extra Segment，附加段寄存器</li>
+<li>FS，附加段寄存器</li>
+<li><p>GS，附加段寄存器</p>
+</li>
+<li><p>IP,Instruction Pointer，指令指针，<a href>CS:IP在地址加法器中形成物理地址，由BIU修改，不能直接修改</a></p>
+</li>
+</ul>
+<ul>
+<li><p>FL,FR,flag，标志寄存器</p>
+<ul>
+<li><p>CF,Carry Flag，进位或错误标志，CF=1,否则CF=0</p>
+</li>
+<li><p>PF,Parity Flag，低8位结果偶数个1，PF=1，否则PF=0</p>
+</li>
+<li><p>AF,Auxiliary Carry Flag，D3有进位或借位，AF=1</p>
+</li>
+<li><p>ZF,Zero Flag，结果为0，ZF=1</p>
+</li>
+<li><p>SF,Sign Flag，结果为正，SF=0</p>
+</li>
+<li><p>OF,Overflow Flaw，有符号数算数运算超出表示范围，OF=1</p>
+</li>
+</ul>
+<hr>
+<p>  DF,Dirction Flag</p>
+<ul>
+<li><p>IF,Interrupt Enable Flag</p>
+</li>
+<li><p>TF,Trap Flag</p>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="系统级寄存器"><a href="#系统级寄存器" class="headerlink" title="系统级寄存器"></a>系统级寄存器</h2><h3 id="系统地址寄存器"><a href="#系统地址寄存器" class="headerlink" title="系统地址寄存器"></a>系统地址寄存器</h3><ul>
+<li>GDTR,Global Descriptor Table Register，全局描述符表寄存器</li>
+<li>IDTR,Interrupt Descriptor Table Register，中断描述符表寄存器</li>
+<li>LDTR,Local Descriptor Table Register，局部描述符表寄存器</li>
+<li>TR,Task Register，任务状态寄存器</li>
+</ul>
+<h3 id="控制寄存器"><a href="#控制寄存器" class="headerlink" title="控制寄存器"></a>控制寄存器</h3><ul>
+<li>CR0</li>
+<li>CR1</li>
+<li>CR2</li>
+<li>CR3</li>
+<li>CR4</li>
 </ul>
 <h2 id="总线周期"><a href="#总线周期" class="headerlink" title="总线周期"></a>总线周期</h2><ul>
 <li>工作时序</li>
@@ -173,12 +229,24 @@
 <li>8086时钟状态</li>
 <li></li>
 </ul>
+<h1 id="寻址"><a href="#寻址" class="headerlink" title="寻址"></a>寻址</h1><ul>
+<li>立即数</li>
+<li>寄存器</li>
+<li>存储器</li>
+</ul>
+<h2 id="存储器寻址"><a href="#存储器寻址" class="headerlink" title="存储器寻址"></a>存储器寻址</h2><ul>
+<li>Effective Address,EA，有效地址，偏移地址</li>
+</ul>
+<h1 id="Pentium保护模式及存储管理"><a href="#Pentium保护模式及存储管理" class="headerlink" title="Pentium保护模式及存储管理"></a>Pentium保护模式及存储管理</h1><ul>
+<li>GDT，全局描述符表，系统只有一个</li>
+<li></li>
+</ul>
 
       
     </div>
     <footer class="article-footer">
       
-        <a data-url="http://yoursite.com/2020/04/11/ 微型计算机/" data-id="ck99yjrya000ro8viks5as7k3" class="article-share-link" data-share="baidu" data-title="微机原理">分享到</a>
+        <a data-url="http://yoursite.com/2020/04/11/ 微型计算机/" data-id="ck9l0nbr4000rqsvii40e63j1" class="article-share-link" data-share="baidu" data-title="微机原理">分享到</a>
       
 
       
@@ -191,6 +259,15 @@
   
     
 <nav id="article-nav">
+  
+    <a href="/2020/04/23/ 汇编/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">下一篇</strong>
+      <div class="article-nav-title">
+        
+          汇编
+        
+      </div>
+    </a>
   
   
     <a href="/2020/04/06/ 组合数学/" id="article-nav-older" class="article-nav-link-wrap">
@@ -217,7 +294,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">分类</h3>
     <div class="widget">
-      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Java/">Java</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Linux/">Linux</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/algorithm/">algorithm</a><span class="category-list-count">8</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/微机原理/">微机原理</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/操作系统/">操作系统</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/机器学习/">机器学习</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/离散数学/">离散数学</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/算法设计与分析/">算法设计与分析</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/组合数学/">组合数学</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/计算机系统结构/">计算机系统结构</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/随机数学随机/">随机数学随机</a><span class="category-list-count">1</span></li></ul>
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Java/">Java</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Linux/">Linux</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/algorithm/">algorithm</a><span class="category-list-count">8</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/垃圾场/">垃圾场</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/微机原理/">微机原理</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/操作系统/">操作系统</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/机器学习/">机器学习</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/离散数学/">离散数学</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/算法设计与分析/">算法设计与分析</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/组合数学/">组合数学</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/计算机系统结构/">计算机系统结构</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/随机数学/">随机数学</a><span class="category-list-count">1</span></li></ul>
     </div>
   </div>
 
@@ -230,7 +307,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">归档</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/04/">四月 2020</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/03/">三月 2020</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/02/">二月 2020</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/11/">十一月 2019</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/10/">十月 2019</a><span class="archive-list-count">6</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/08/">八月 2019</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/04/">四月 2012</a><span class="archive-list-count">1</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/04/">四月 2020</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/03/">三月 2020</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/02/">二月 2020</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/11/">十一月 2019</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/10/">十月 2019</a><span class="archive-list-count">7</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/08/">八月 2019</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/04/">四月 2012</a><span class="archive-list-count">1</span></li></ul>
     </div>
   </div>
 
@@ -240,6 +317,10 @@
     <h3 class="widget-title">近期文章</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/2020/04/23/ 汇编/">汇编</a>
+          </li>
         
           <li>
             <a href="/2020/04/11/ 微型计算机/">微机原理</a>
@@ -255,10 +336,6 @@
         
           <li>
             <a href="/2020/04/02/ Java核心技术i/">Java核心技术i</a>
-          </li>
-        
-          <li>
-            <a href="/2020/03/31/ 计算机系统结构/">计算机系统结构</a>
           </li>
         
       </ul>

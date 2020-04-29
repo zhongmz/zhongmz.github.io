@@ -1,6 +1,86 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>汇编</title>
+    <url>/2020/04/23/%20%E6%B1%87%E7%BC%96/</url>
+    <content><![CDATA[<h1 id="控制转义指令"><a href="#控制转义指令" class="headerlink" title="控制转义指令"></a>控制转义指令</h1><div class="table-container">
+<table>
+<thead>
+<tr>
+<th>指令</th>
+<th>描述</th>
+<th>举例</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>JZ</td>
+<td>jump if zero</td>
+<td>JZ   AA1</td>
+</tr>
+<tr>
+<td>JNZ</td>
+<td>jump if not zero</td>
+<td>JNZ   AA1</td>
+</tr>
+<tr>
+<td>JNC</td>
+<td>jump if not carry(进位)</td>
+<td>JNC DST</td>
+</tr>
+<tr>
+<td>INT n</td>
+<td>n为中断的<a href="##中断指令">类型码</a></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>INC</td>
+<td>increase 1</td>
+<td>INC a</td>
+</tr>
+<tr>
+<td>SHL</td>
+<td>Shift Logical Left</td>
+<td>SHL DST 1</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</div>
+<h2 id="中断指令"><a href="#中断指令" class="headerlink" title="中断指令"></a>中断指令</h2><ul>
+<li><p>INT n</p>
+</li>
+<li><p>其中n为8位无符号数，触发类型码为n的中断</p>
+</li>
+<li><p>INT 21H 系统功能调用</p>
+<ol>
+<li>AH 为功能调用编号</li>
+<li>设置入口参数</li>
+<li>CPU执行INT 21H</li>
+<li>给出出口参数</li>
+</ol>
+<p>| AH   | 功能           | 入口参数    | 出口参数    |<br>| —— | ——————— | —————- | —————- |<br>| 01   | 键盘键入并回显 | 无          | AL=输入字符 |<br>| 02   | 显示输出       | DL=输出字符 | 无          |<br>| 4C   | 带返回码终止   | AL=返回码   | 无          |</p>
+</li>
+</ul>
+]]></content>
+      <categories>
+        <category>微机原理</category>
+      </categories>
+  </entry>
+  <entry>
     <title>微机原理</title>
     <url>/2020/04/11/%20%E5%BE%AE%E5%9E%8B%E8%AE%A1%E7%AE%97%E6%9C%BA/</url>
     <content><![CDATA[<h1 id="从入门到入土"><a href="#从入门到入土" class="headerlink" title="从入门到入土"></a>从入门到入土</h1><ul>
@@ -11,45 +91,39 @@
 <li>发展</li>
 </ul>
 <h1 id="8086"><a href="#8086" class="headerlink" title="8086"></a>8086</h1><ul>
-<li><p>AX,Accumulator Register，累加器</p>
-</li>
-<li><p>BX,Base Register，基址寄存器</p>
-</li>
-<li><p>CX,Counter Register，计数器</p>
-</li>
-<li><p>DX,DataRegister，数据寄存器</p>
-</li>
-<li><p>SP,Stack Pointer，堆栈指针</p>
-</li>
-<li><p>BP,Base Pointer，基址指针</p>
-</li>
-<li><p>SI,Source Index，源变址寄存器</p>
-</li>
-<li><p>DI,Destination Index，目的变址寄存器,<a href>其中，SI与DI隐含使用</a></p>
-</li>
-<li><p>CS,Code Segment，代码段寄存器</p>
-</li>
-<li><p>SS,Stack Segment，堆栈段寄存器</p>
-</li>
-<li><p>DS,Data Segment，数据段寄存器</p>
-</li>
-<li><p>ES,Extra Segment，附加段寄存器</p>
-</li>
+<li>AX,Accumulator Register，累加器</li>
+<li>BX,Base Register，基址寄存器</li>
+<li>CX,Counter Register，计数器</li>
+<li>DX,DataRegister，数据寄存器</li>
+</ul>
+<ul>
+<li>SP,Stack Pointer，堆栈指针</li>
+<li>BP,Base Pointer，基址指针</li>
+<li>SI,Source Index，源变址寄存器</li>
+<li>DI,Destination Index，目的变址寄存器,<a href>其中，SI与DI隐含使用</a></li>
+</ul>
+<ul>
+<li>CS,Code Segment，代码段寄存器</li>
+<li>SS,Stack Segment，堆栈段寄存器</li>
+<li>DS,Data Segment，数据段寄存器</li>
+<li>ES,Extra Segment，附加段寄存器</li>
+</ul>
+<ul>
 <li><p>IP,Instruction Pointer，指令指针，<a href>CS:IP在地址加法器中形成物理地址，由BIU修改，不能直接修改</a></p>
 </li>
 <li><p>FL,flag，标志寄存器</p>
 <ul>
-<li><p>CF,Carry Flag，进位或错误标志</p>
+<li><p>CF,Carry Flag，进位或错误标志，CF=1,否则CF=0</p>
 </li>
-<li><p>PF,Parity Flag</p>
+<li><p>PF,Parity Flag，低8位结果偶数个1，PF=1，否则PF=0</p>
 </li>
-<li><p>AF,Auxiliary Carry Flag</p>
+<li><p>AF,Auxiliary Carry Flag，D3有进位或借位，AF=1</p>
 </li>
-<li><p>ZF,Zero Flag</p>
+<li><p>ZF,Zero Flag，结果为0，ZF=1</p>
 </li>
-<li><p>SF,Sign Flag</p>
+<li><p>SF,Sign Flag，结果为正，SF=0</p>
 </li>
-<li><p>OF,Overflow Flaw</p>
+<li><p>OF,Overflow Flaw，有符号数算数运算超出表示范围，OF=1</p>
 </li>
 </ul>
 <hr>
@@ -62,6 +136,68 @@
 </ul>
 </li>
 </ul>
+<h1 id="Prntium"><a href="#Prntium" class="headerlink" title="Prntium"></a>Prntium</h1><h5 id="可由8086的16位寄存器变为32位的寄存器如，AX-gt-EAX"><a href="#可由8086的16位寄存器变为32位的寄存器如，AX-gt-EAX" class="headerlink" title="可由8086的16位寄存器变为32位的寄存器如，AX-&gt;EAX"></a>可由8086的16位寄存器变为32位的寄存器如，AX-&gt;EAX</h5><h2 id="通用寄存器"><a href="#通用寄存器" class="headerlink" title="通用寄存器"></a>通用寄存器</h2><ul>
+<li>AX,Accumulator Register，累加器</li>
+<li>BX,Base Register，基址寄存器</li>
+<li>CX,Counter Register，计数器</li>
+<li>DX,DataRegister，数据寄存器</li>
+</ul>
+<ul>
+<li>SP,Stack Pointer，堆栈指针</li>
+<li>BP,Base Pointer，基址指针</li>
+<li>SI,Source Index，源变址寄存器</li>
+<li>DI,Destination Index，目的变址寄存器,<a href>其中，SI与DI隐含使用</a></li>
+</ul>
+<ul>
+<li>CS,Code Segment，代码段寄存器</li>
+<li>SS,Stack Segment，堆栈段寄存器</li>
+<li>DS,Data Segment，数据段寄存器</li>
+<li>ES,Extra Segment，附加段寄存器</li>
+<li>FS，附加段寄存器</li>
+<li><p>GS，附加段寄存器</p>
+</li>
+<li><p>IP,Instruction Pointer，指令指针，<a href>CS:IP在地址加法器中形成物理地址，由BIU修改，不能直接修改</a></p>
+</li>
+</ul>
+<ul>
+<li><p>FL,FR,flag，标志寄存器</p>
+<ul>
+<li><p>CF,Carry Flag，进位或错误标志，CF=1,否则CF=0</p>
+</li>
+<li><p>PF,Parity Flag，低8位结果偶数个1，PF=1，否则PF=0</p>
+</li>
+<li><p>AF,Auxiliary Carry Flag，D3有进位或借位，AF=1</p>
+</li>
+<li><p>ZF,Zero Flag，结果为0，ZF=1</p>
+</li>
+<li><p>SF,Sign Flag，结果为正，SF=0</p>
+</li>
+<li><p>OF,Overflow Flaw，有符号数算数运算超出表示范围，OF=1</p>
+</li>
+</ul>
+<hr>
+<p>  DF,Dirction Flag</p>
+<ul>
+<li><p>IF,Interrupt Enable Flag</p>
+</li>
+<li><p>TF,Trap Flag</p>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="系统级寄存器"><a href="#系统级寄存器" class="headerlink" title="系统级寄存器"></a>系统级寄存器</h2><h3 id="系统地址寄存器"><a href="#系统地址寄存器" class="headerlink" title="系统地址寄存器"></a>系统地址寄存器</h3><ul>
+<li>GDTR,Global Descriptor Table Register，全局描述符表寄存器</li>
+<li>IDTR,Interrupt Descriptor Table Register，中断描述符表寄存器</li>
+<li>LDTR,Local Descriptor Table Register，局部描述符表寄存器</li>
+<li>TR,Task Register，任务状态寄存器</li>
+</ul>
+<h3 id="控制寄存器"><a href="#控制寄存器" class="headerlink" title="控制寄存器"></a>控制寄存器</h3><ul>
+<li>CR0</li>
+<li>CR1</li>
+<li>CR2</li>
+<li>CR3</li>
+<li>CR4</li>
+</ul>
 <h2 id="总线周期"><a href="#总线周期" class="headerlink" title="总线周期"></a>总线周期</h2><ul>
 <li>工作时序</li>
 <li>时钟周期</li>
@@ -72,6 +208,18 @@
 <li>中断响应</li>
 <li>中断响应周期</li>
 <li>8086时钟状态</li>
+<li></li>
+</ul>
+<h1 id="寻址"><a href="#寻址" class="headerlink" title="寻址"></a>寻址</h1><ul>
+<li>立即数</li>
+<li>寄存器</li>
+<li>存储器</li>
+</ul>
+<h2 id="存储器寻址"><a href="#存储器寻址" class="headerlink" title="存储器寻址"></a>存储器寻址</h2><ul>
+<li>Effective Address,EA，有效地址，偏移地址</li>
+</ul>
+<h1 id="Pentium保护模式及存储管理"><a href="#Pentium保护模式及存储管理" class="headerlink" title="Pentium保护模式及存储管理"></a>Pentium保护模式及存储管理</h1><ul>
+<li>GDT，全局描述符表，系统只有一个</li>
 <li></li>
 </ul>
 ]]></content>
@@ -211,9 +359,7 @@ x^k-c_1x^{k-1}-\dots-c_k=0\\</script></li>
 <p>$其中 f_n(A)=\frac{n_A}{n}$</p>
 <p><strong>减法公式：</strong>$P(B-A)=P(B)-P(AB)$</p>
 <p><strong>加法公式：</strong>$P(A\cup B)=P(A)+P(B)-P(AB)$</p>
-<p><strong>古典概型：有限个样本点；基本事件发生的可能性相同。</strong></p>
-<p><strong>几何概型</strong></p>
-<h2 id="条件概型"><a href="#条件概型" class="headerlink" title="条件概型"></a>条件概型</h2><p>$P(B|A)=\frac{P(AB)}{P(A)} \Longrightarrow P(AB)=P(A)P(B|A)$</p>
+<h3 id="古典概型：有限个样本点；基本事件发生的可能性相同。"><a href="#古典概型：有限个样本点；基本事件发生的可能性相同。" class="headerlink" title="古典概型：有限个样本点；基本事件发生的可能性相同。"></a>古典概型：有限个样本点；基本事件发生的可能性相同。</h3><h2 id="几何概型"><a href="#几何概型" class="headerlink" title="几何概型"></a>几何概型</h2><h2 id="条件概型"><a href="#条件概型" class="headerlink" title="条件概型"></a>条件概型</h2><p>$P(B|A)=\frac{P(AB)}{P(A)} \Longrightarrow P(AB)=P(A)P(B|A)$</p>
 <p>条件概型的性质：非负性；<strong>规范性：$P(\Omega |A)=1$</strong>；可列可加性：对于<strong>不相容</strong>的事件$B_1,B_2,\cdot \cdot \cdot $有</p>
 <script type="math/tex; mode=display">
 P((\cup_{i=1}^\infty B_i )|A)=\sum_{i=1}^\infty P(B_i|A)</script><p><strong>全概率公式：</strong></p>
@@ -229,7 +375,9 @@ B=B\cap \Omega =B\cap (\cup _{i=1} ^n A_i)=\cup _{i=1} ^n {A_iB}</script><p><img
 <script type="math/tex; mode=display">
 P(A_j|B)=\frac{P(A_jB)}{P(B)}=\frac{P(B|A_j)P(A_j)}{\sum_{i=1}^nP(A_i)P(B|A_i)}</script><h2 id="独立性"><a href="#独立性" class="headerlink" title="独立性"></a>独立性</h2><p>如果</p>
 <script type="math/tex; mode=display">
-P(AB)=P(A)P(B)</script><p>则称事件A与事件B相互独立。</p>
+P(AB)=P(A)P(B)\\
+P(\overline{A}B)=P(\overline{A})P(B)\\
+P(\overline{A}\overline{B})=P(\overline{A})P(\overline{B})</script><p>则称事件A与事件B相互独立。</p>
 <h2 id="伯努利"><a href="#伯努利" class="headerlink" title="伯努利"></a>伯努利</h2><p>若某试验$E$是n重伯努利试验，即试验$E$只有两个对立的结果，将其进行n次。设$P(A)=p$。</p>
 <p>有</p>
 <script type="math/tex; mode=display">
@@ -253,7 +401,7 @@ f(x)=\frac{1}{\sqrt{2\pi }\sigma}e^{-\frac{(x-u)^2}{2\sigma^2}},-\infty <x<+\inf
 <script type="math/tex; mode=display">
 f(x)=\frac{1}{\sqrt{2\pi}}e^{-\frac{x^2}{2}}</script><p>其中$u,\sigma$为服从参数。当$u,\sigma$分布为0，1时，则称$X$服从标准正态分布</p>
 <script type="math/tex; mode=display">
-F(x)=\Phi (\frac{x-\mu}{\sigma})</script><h1 id="二维连续型随机变量、"><a href="#二维连续型随机变量、" class="headerlink" title="二维连续型随机变量、"></a>二维连续型随机变量、</h1><h2 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h2><script type="math/tex; mode=display">
+F(x)=\Phi (\frac{x-\mu}{\sigma})</script><h1 id="二维连续型随机变量"><a href="#二维连续型随机变量" class="headerlink" title="二维连续型随机变量"></a>二维连续型随机变量</h1><h2 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h2><script type="math/tex; mode=display">
 F(x,y)=\int_{-\infty}^{x}\int_{-\infty}^yf(u,v)dudv\\其中F(x,y)为概率分布函数,f(x,y)为联合概率密度。\\</script><script type="math/tex; mode=display">
 1.f(x,y)\ge 0\\
 2. \int_{-\infty}^{+\infty}\int_{-\infty}^{+\infty}f(u,v)dudv=1\\
@@ -266,7 +414,7 @@ F(x,y)=\int_{-\infty}^{x}\int_{-\infty}^yf(u,v)dudv\\其中F(x,y)为概率分布
 <li>$P(X,Y)=P_X(X)P_Y(Y)$</li>
 <li>$E(XY)=E(X)E(Y)$</li>
 </ul>
-<p>若$X_1,X_2$相互独立，那么$F_1(x)F_2(X)$一定是某一随机变量的分布密度，但$f_1(x)f_2(x)$不一定为概率密度</p>
+<p>若$X_1,X_2$相互独立，那么$F_1(x)F_2(x)$一定是某一随机变量的分布密度，但$f_1(x)f_2(x)$不一定为概率密度</p>
 <h2 id="连续型"><a href="#连续型" class="headerlink" title="连续型"></a>连续型</h2><h3 id="均匀分布-1"><a href="#均匀分布-1" class="headerlink" title="均匀分布"></a>均匀分布</h3><script type="math/tex; mode=display">
 设D是xOy面上的有界区域，其面积为A，若\\f(x,y)=\left\{    \begin{array}{lr}        \frac{1}{A}&(x,y)\in D,\\        0&其他            \end{array}\right.\\则称(X,Y)在区域D上服从均匀分布。</script><h3 id="正态分布-1"><a href="#正态分布-1" class="headerlink" title="正态分布"></a>正态分布</h3><script type="math/tex; mode=display">
 f(x,y)=\frac{1}{2\pi \sigma_1 \sigma_2 \sqrt{1-\rho^2} }\cdot e^{\frac{-1}{2(1-\rho^2)}[\frac{(x-\mu_1)^2}{\sigma_1^2}-2\rho \frac{(x-\mu_1)(y-\mu_2)}{\sigma_1\sigma_2}+\frac{(y-\mu_2)^2}{\sigma_2^2}]},(x,y)\in R^2\\其中\sigma_i>0,-1<\rho<1,记作(X,Y) ~N(\mu_1,\mu_2,\sigma_1^2,\sigma_2^2,\rho)</script><h2 id="条件分布"><a href="#条件分布" class="headerlink" title="条件分布"></a>条件分布</h2><script type="math/tex; mode=display">
@@ -337,7 +485,7 @@ Cov(X,Y)=E(XY)-E(X)E(Y)</script></li>
 </ul>
 ]]></content>
       <categories>
-        <category>随机数学随机</category>
+        <category>随机数学</category>
       </categories>
   </entry>
   <entry>
@@ -576,6 +724,20 @@ t_{cpuB}=IC*(2/8*2+6/8*1)*1.25T</script><p>最后即可得答案。</p>
 </ul>
 <h1 id="死锁"><a href="#死锁" class="headerlink" title="死锁"></a>死锁</h1><h2 id="死锁的避免"><a href="#死锁的避免" class="headerlink" title="死锁的避免"></a>死锁的避免</h2><h3 id="银行家算法"><a href="#银行家算法" class="headerlink" title="银行家算法"></a>银行家算法</h3><figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="keyword">int</span> n;<span class="comment">//进程总数</span></span><br><span class="line"><span class="keyword">int</span> m;<span class="comment">//资源类的总数</span></span><br><span class="line"><span class="keyword">int</span> Available[m];<span class="comment">//当前可用资源数，初始化为资源总量</span></span><br><span class="line"><span class="keyword">int</span> Claim[n,m];<span class="comment">//进程i最多需要j种资源的数量</span></span><br><span class="line"><span class="keyword">int</span> Allocation[n,m];<span class="comment">//进程i现在占有j种资源的数量，初始化为0</span></span><br><span class="line"><span class="keyword">int</span> Need[n,m];<span class="comment">//进程i还需要j种资源的数量，初始化为Claim[i][j]</span></span><br><span class="line"><span class="keyword">int</span> Request[n,m];<span class="comment">//进程i当前申请j种资源的数量</span></span><br><span class="line"><span class="function"><span class="keyword">bool</span> <span class="title">g</span><span class="params">()</span></span>;</span><br><span class="line"><span class="function"><span class="keyword">bool</span> <span class="title">f</span><span class="params">(<span class="keyword">int</span> i)</span></span>&#123;<span class="comment">//进程i发出资源申请</span></span><br><span class="line">	<span class="keyword">if</span>(Request[i]&gt;Need[i])	<span class="keyword">return</span> <span class="literal">false</span>;<span class="comment">//大于尚需资源</span></span><br><span class="line">	<span class="keyword">if</span>(Request[i]&gt;Available[i])	<span class="keyword">return</span> <span class="literal">false</span>;<span class="comment">//大于当前资源数</span></span><br><span class="line">	<span class="comment">//资源预分配</span></span><br><span class="line">	Available=Available-Request[i];</span><br><span class="line">	Allocation[i]=Allocation[i]+Request[i];</span><br><span class="line">	Need[i]=Need[i]-Request[i];</span><br><span class="line">	<span class="keyword">return</span> g();<span class="comment">//检测算法</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">bool</span> <span class="title">g</span><span class="params">()</span></span>&#123;<span class="comment">//判断是否会发生死锁状态</span></span><br><span class="line">	<span class="keyword">int</span> Work[m];</span><br><span class="line">	Work=Available;<span class="comment">//防止影响到原来的Availabe</span></span><br><span class="line">	<span class="keyword">bool</span> Finish[n]=<span class="literal">false</span>;<span class="comment">//有哪些已经完成了</span></span><br><span class="line">	<span class="keyword">bool</span> flag=<span class="literal">true</span>;</span><br><span class="line">    <span class="keyword">int</span> i=<span class="number">1</span>;</span><br><span class="line">    <span class="keyword">while</span>(flag)&#123;</span><br><span class="line">    	flag=<span class="literal">false</span>;</span><br><span class="line">        <span class="keyword">for</span>(i=<span class="number">0</span>;i&lt;n;i++)&#123;</span><br><span class="line">        	<span class="keyword">if</span>(Finish[i]==<span class="literal">false</span>&amp;&amp;Need[i]&lt;=Work[i])&#123;<span class="comment">//i可执行</span></span><br><span class="line">                <span class="comment">/*</span></span><br><span class="line"><span class="comment">                注意再Shoshami和Coffman所提出的是</span></span><br><span class="line"><span class="comment">                Finish[i]==false&amp;&amp;Request[i]&lt;=Work[i]</span></span><br><span class="line"><span class="comment">                </span></span><br><span class="line"><span class="comment">                */</span></span><br><span class="line">                flag=<span class="literal">true</span>;</span><br><span class="line">                Work=Work+Allocation[i];<span class="comment">//恢复资源</span></span><br><span class="line">        		Finish[i]=<span class="literal">true</span>;</span><br><span class="line">        	&#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">for</span>(i=<span class="number">0</span>;i&lt;n;i++)&#123;</span><br><span class="line">        <span class="keyword">if</span>(Finish[i]==<span class="literal">false</span>)	<span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <h2 id="Shoshamin-amp-amp-Coffman的死锁检测算法"><a href="#Shoshamin-amp-amp-Coffman的死锁检测算法" class="headerlink" title="Shoshamin&amp;&amp;Coffman的死锁检测算法"></a>Shoshamin&amp;&amp;Coffman的死锁检测算法</h2><figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">bool</span> <span class="title">g</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> Work[m]=Available;</span><br><span class="line">    <span class="keyword">bool</span> Finish[n]=<span class="literal">false</span>;</span><br><span class="line">    <span class="keyword">bool</span> flag=<span class="literal">true</span>;</span><br><span class="line">    <span class="keyword">while</span>(flag)&#123;</span><br><span class="line">        flag=<span class="literal">false</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;n;i++)&#123;</span><br><span class="line">            <span class="keyword">if</span>(Finish[i]==<span class="literal">false</span>&amp;&amp;Request[i]&lt;=Work)&#123;</span><br><span class="line">                flag=<span class="literal">true</span>;</span><br><span class="line">                Finish=<span class="literal">true</span>;</span><br><span class="line">                Work=Work+Allocation[i];<span class="comment">//恢复</span></span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;n;i++)&#123;</span><br><span class="line">        <span class="keyword">if</span>(Finish[i]==<span class="literal">false</span>)	<span class="keyword">return</span>  <span class="literal">false</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h1 id="主存储器管理"><a href="#主存储器管理" class="headerlink" title="主存储器管理"></a>主存储器管理</h1><h2 id="内存"><a href="#内存" class="headerlink" title="内存"></a>内存</h2><h3 id="内存分区"><a href="#内存分区" class="headerlink" title="内存分区"></a>内存分区</h3><ul>
+<li>静态分区</li>
+<li>动态分区</li>
+</ul>
+<h3 id="内存区分配"><a href="#内存区分配" class="headerlink" title="内存区分配"></a>内存区分配</h3><ul>
+<li>first fit，FF，最先适应</li>
+<li>best fit，BF，最佳适应</li>
+<li>worst fit，WF，最坏适应</li>
+</ul>
+<h2 id="页式存储"><a href="#页式存储" class="headerlink" title="页式存储"></a>页式存储</h2><ul>
+<li>EAT,effective access time 内存的有效访问时间<script type="math/tex; mode=display">
+EAT=快表命中率\cdot (快表访问时间+内存访问时间)+(1-快表命中率)\cdot (快表访问时间+2\cdot 内存访问时间)\\
+其中，不命中时，访问页表计入内存访问一次</script></li>
+</ul>
 ]]></content>
       <categories>
         <category>操作系统</category>
@@ -928,6 +1090,37 @@ n个输入,可行解为n个输入的子集\\
 ]]></content>
       <categories>
         <category>algorithm</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>iterator</title>
+    <url>/2019/10/09/%20%E8%BF%AD%E4%BB%A3%E5%99%A8/</url>
+    <content><![CDATA[<h3 id="C-迭代器"><a href="#C-迭代器" class="headerlink" title="C++ 迭代器"></a>C++ 迭代器</h3><ul>
+<li>定义：可以是概念本身，可以是迭代器类型，可以是某个迭代器对象。</li>
+<li>总之，它能使我们能访问容器的元素或者改变某个元素。</li>
+</ul>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; Vec;</span><br><span class="line"><span class="keyword">auto</span> it=Vec.begin();</span><br><span class="line"><span class="keyword">while</span>(it!=Vec.end())&#123;							</span><br><span class="line">    <span class="built_in">cout</span>&lt;&lt;*it&lt;&lt;<span class="built_in">endl</span>;							<span class="comment">//解引用</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">auto</span> it=Vec.cbegin();					</span><br><span class="line"><span class="keyword">while</span>(it!=Vec.cend())&#123;					</span><br><span class="line">    <span class="built_in">cout</span>&lt;&lt;*it&lt;&lt;<span class="built_in">endl</span>;					</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>其中<code>end</code>成员我们称之为尾后迭代器<code>of-the-end iterator</code>，其为尾元素的下一个位置。</li>
+<li>其中<code>Vec.cbegin()</code>的返回值<code>vector&lt;int&gt;::const_iterator</code>，为<code>C++11</code>新标准引入的函数。</li>
+<li><strong>迭代器失效</strong>，若向迭代器所属的容器中添加元素，那么迭代器失效。</li>
+<li>运算<ul>
+<li>所有容器均支持递增运算<code>it++</code>，也支持<code>==</code>和<code>!=</code>比较</li>
+<li>其中<code>string</code>和<code>vector</code>支持的运算更多</li>
+</ul>
+</li>
+</ul>
+<h3 id="Java-Iterator"><a href="#Java-Iterator" class="headerlink" title="Java Iterator"></a>Java Iterator</h3><ul>
+<li><p>定义：是集合类的接口</p>
+</li>
+<li><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">interface</span> <span class="title">Iterator</span>&lt;<span class="title">E</span>&gt;</span>&#123;</span><br><span class="line">    <span class="function">E <span class="title">next</span><span class="params">()</span></span>;</span><br><span class="line">    <span class="function"><span class="keyword">boolean</span> <span class="title">hasNext</span><span class="params">()</span></span>;</span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">remove</span><span class="params">()</span></span>;</span><br><span class="line">    <span class="function"><span class="keyword">default</span> <span class="keyword">void</span> <span class="title">forEachRemaining</span><span class="params">(Consumer&lt;? <span class="keyword">super</span> E&gt; action)</span></span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><figure class="highlight java"><table><tr><td class="code"><pre><span class="line">Collection&lt;String&gt; C;</span><br><span class="line">Iterator&lt;String&gt; iter=C.iterator();</span><br><span class="line"><span class="keyword">while</span>(iter.hasNext())&#123;</span><br><span class="line">    String element =iter.next();</span><br><span class="line">    <span class="comment">//do something</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+]]></content>
+      <categories>
+        <category>垃圾场</category>
       </categories>
   </entry>
   <entry>

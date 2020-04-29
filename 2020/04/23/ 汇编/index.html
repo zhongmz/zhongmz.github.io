@@ -4,19 +4,20 @@
 <head><meta name="generator" content="Hexo 3.9.0">
   <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="utf-8">
   
-  <title>Category: 算法设计与分析 | Xxgzbd&#39;s Blog</title>
+  <title>汇编 | Xxgzbd&#39;s Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="记录">
+  <meta name="description" content="控制转义指令    指令 描述 举例     JZ jump if zero JZ   AA1   JNZ jump if not zero JNZ   AA1   JNC jump if not carry(进位) JNC DST   INT n n为中断的类型码              INC increase 1 INC a   SHL Shift Logical Left SHL DST">
 <meta name="keywords" content="algorithm math">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Xxgzbd&#39;s Blog">
-<meta property="og:url" content="http://yoursite.com/categories/算法设计与分析/index.html">
+<meta property="og:type" content="article">
+<meta property="og:title" content="汇编">
+<meta property="og:url" content="http://yoursite.com/2020/04/23/ 汇编/index.html">
 <meta property="og:site_name" content="Xxgzbd&#39;s Blog">
-<meta property="og:description" content="记录">
+<meta property="og:description" content="控制转义指令    指令 描述 举例     JZ jump if zero JZ   AA1   JNZ jump if not zero JNZ   AA1   JNC jump if not carry(进位) JNC DST   INT n n为中断的类型码              INC increase 1 INC a   SHL Shift Logical Left SHL DST">
 <meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2020-04-24T09:27:30.024Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Xxgzbd&#39;s Blog">
-<meta name="twitter:description" content="记录">
+<meta name="twitter:title" content="汇编">
+<meta name="twitter:description" content="控制转义指令    指令 描述 举例     JZ jump if zero JZ   AA1   JNZ jump if not zero JNZ   AA1   JNC jump if not carry(进位) JNC DST   INT n n为中断的类型码              INC increase 1 INC a   SHL Shift Logical Left SHL DST">
   
     <link rel="alternative" href="/atom.xml" title="Xxgzbd&#39;s Blog" type="application/atom+xml">
   
@@ -69,39 +70,145 @@
   </div>
 </header>
     <div class="outer">
-      <section id="main">
-  
-  
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2020" class="archive-year">2020</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2020/02/13/ 算法设计及分析/" class="archive-article-date">
-  <time datetime="2020-02-13T14:42:33.000Z" itemprop="datePublished">2月 13</time>
+      <section id="main"><article id="post-汇编" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2020/04/23/ 汇编/" class="article-date">
+  <time datetime="2020-04-23T08:56:52.000Z" itemprop="datePublished">2020-04-23</time>
 </a>
-      
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/微机原理/">微机原理</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/02/13/ 算法设计及分析/">算法设计与分析</a>
+    <h1 class="article-title" itemprop="name">
+      汇编
     </h1>
   
 
-    </header>
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        
+    <div id="toc">
+      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#控制转义指令"><span class="toc-text">控制转义指令</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#中断指令"><span class="toc-text">中断指令</span></a></li></ol></li></ol>
+    </div>
+    
+    
+        <h1 id="控制转义指令"><a href="#控制转义指令" class="headerlink" title="控制转义指令"></a>控制转义指令</h1><div class="table-container">
+<table>
+<thead>
+<tr>
+<th>指令</th>
+<th>描述</th>
+<th>举例</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>JZ</td>
+<td>jump if zero</td>
+<td>JZ   AA1</td>
+</tr>
+<tr>
+<td>JNZ</td>
+<td>jump if not zero</td>
+<td>JNZ   AA1</td>
+</tr>
+<tr>
+<td>JNC</td>
+<td>jump if not carry(进位)</td>
+<td>JNC DST</td>
+</tr>
+<tr>
+<td>INT n</td>
+<td>n为中断的<a href="##中断指令">类型码</a></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>INC</td>
+<td>increase 1</td>
+<td>INC a</td>
+</tr>
+<tr>
+<td>SHL</td>
+<td>Shift Logical Left</td>
+<td>SHL DST 1</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</div>
+<h2 id="中断指令"><a href="#中断指令" class="headerlink" title="中断指令"></a>中断指令</h2><ul>
+<li><p>INT n</p>
+</li>
+<li><p>其中n为8位无符号数，触发类型码为n的中断</p>
+</li>
+<li><p>INT 21H 系统功能调用</p>
+<ol>
+<li>AH 为功能调用编号</li>
+<li>设置入口参数</li>
+<li>CPU执行INT 21H</li>
+<li>给出出口参数</li>
+</ol>
+<p>| AH   | 功能           | 入口参数    | 出口参数    |<br>| —— | ——————— | —————- | —————- |<br>| 01   | 键盘键入并回显 | 无          | AL=输入字符 |<br>| 02   | 显示输出       | DL=输出字符 | 无          |<br>| 4C   | 带返回码终止   | AL=返回码   | 无          |</p>
+</li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      
+        <a data-url="http://yoursite.com/2020/04/23/ 汇编/" data-id="ck9l0nbr3000oqsvicyowxzqs" class="article-share-link" data-share="baidu" data-title="汇编">分享到</a>
+      
+
+      
+        <a href="http://yoursite.com/2020/04/23/ 汇编/#ds-thread" class="article-comment-link">评论</a>
+      
+
+      
+    </footer>
   </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2020/04/11/ 微型计算机/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">上一篇</strong>
+      <div class="article-nav-title">微机原理</div>
+    </a>
+  
+</nav>
+
+  
 </article>
-  
-  
-    </div></section>
-  
+
+
+  <section id="comments">
+    <div id="ds-thread" class="ds-thread" data-thread-key="2020/04/23/ 汇编/" data-title="汇编" data-url="http://yoursite.com/2020/04/23/ 汇编/"></div>
+  </section>
+
 
 </section>
       
