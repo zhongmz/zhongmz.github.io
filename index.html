@@ -71,6 +71,471 @@
     <div class="outer">
       <section id="main">
   
+    <article id="post-Python" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2020/05/12/ Python/" class="article-date">
+  <time datetime="2020-05-12T08:56:52.000Z" itemprop="datePublished">2020-05-12</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Python/">Python</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/05/12/ Python/">Python</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        
+    <div id="toc">
+      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#基础"><span class="toc-text">基础</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#函数"><span class="toc-text">函数</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#面向对象"><span class="toc-text">面向对象</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#网络编程"><span class="toc-text">网络编程</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Socket"><span class="toc-text">Socket</span></a></li></ol></li></ol>
+    </div>
+    
+    
+        <h1 id="基础"><a href="#基础" class="headerlink" title="基础"></a>基础</h1><h2 id="函数"><a href="#函数" class="headerlink" title="函数"></a>函数</h2><ul>
+<li>按引用传递参数</li>
+</ul>
+<h2 id="面向对象"><a href="#面向对象" class="headerlink" title="面向对象"></a>面向对象</h2><ul>
+<li><p>类 </p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Person</span><span class="params">(object)</span>:</span></span><br><span class="line">    __slots__=(<span class="string">'_name'</span>,<span class="string">'_age'</span>,<span class="string">'_gender'</span>)<span class="comment">#</span></span><br><span class="line">    <span class="comment">#限定Person对象只能绑定_name,_age和_gender</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self,name,age)</span>:</span><span class="comment">#构造器</span></span><br><span class="line">        self._name=name</span><br><span class="line">        self._age=age</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h1 id="网络编程"><a href="#网络编程" class="headerlink" title="网络编程"></a>网络编程</h1><ul>
+<li><code>TCP/IP</code>四层模型，网络接口层，网络层，传输层，应用层</li>
+<li><code>IP</code>为网际协议，服务于网络层。</li>
+<li><code>TCP</code>为传输控制协议</li>
+</ul>
+<ul>
+<li><code>C/S</code>模式和<code>B/S</code>模式，<code>C</code>指的是<code>Client</code>客户端，<code>B</code>指的是<code>Browser</code>浏览器，通过<code>B</code>或者<code>C</code>能对<code>S</code>（服务器）进行访问。<code>C</code>与<code>S</code>的对比？？？？？？？？？？？</li>
+<li>去中心化的网络应用模式</li>
+</ul>
+<ul>
+<li><code>HTTP</code>超文本传输协议，<code>HTTPS</code>超文本传输安全协议</li>
+</ul>
+<ul>
+<li><p><code>XML</code></p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?xml version="1.0" encoding="UTF-8"?&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">message</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">from</span>&gt;</span>Alice<span class="tag">&lt;/<span class="name">from</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">to</span>&gt;</span>Bob<span class="tag">&lt;/<span class="name">to</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">content</span>&gt;</span>Will you marry me?<span class="tag">&lt;/<span class="name">content</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">message</span>&gt;</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p><code>JSON</code></p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    <span class="attr">"from"</span>: <span class="string">"Alice"</span>,</span><br><span class="line">    <span class="attr">"to"</span>: <span class="string">"Bob"</span>,</span><br><span class="line">    <span class="attr">"content"</span>: <span class="string">"Will you marry me?"</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>（恐</p>
+</li>
+</ul>
+<h2 id="Socket"><a href="#Socket" class="headerlink" title="Socket"></a>Socket</h2><ul>
+<li><p>什么是<code>Socket</code>?</p>
+<p><code>Socket</code>又称”套接字”，应用程序通常通过”套接字”向网络发出请求或者应答网络请求，使主机间或者一台计算机上的进程间可以通讯。</p>
+</li>
+<li><p><code>import socket</code></p>
+</li>
+<li><p><code>socket.socket(family,type,proto)</code>来创建套接字。其中，<code>family</code>为<code>AF_UNIX</code>或者<code>AF_INET</code>；<code>type</code>为<code>SOCK_STREAM</code>或者<code>SOCK_DGRAM</code>；<code>protocol</code>一般为<code>0</code></p>
+</li>
+<li></li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      
+        <a data-url="http://yoursite.com/2020/05/12/ Python/" data-id="cka7x30g5000bisviarwkx5au" class="article-share-link" data-share="baidu" data-title="Python">分享到</a>
+      
+
+      
+        <a href="http://yoursite.com/2020/05/12/ Python/#ds-thread" class="article-comment-link">评论</a>
+      
+
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+
+  
+    <article id="post-汇编_Debug" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2020/05/12/ 汇编_Debug/" class="article-date">
+  <time datetime="2020-05-12T08:56:52.000Z" itemprop="datePublished">2020-05-12</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/汇编/">汇编</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/05/12/ 汇编_Debug/">Debug</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        
+    <div id="toc">
+      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#0x01-前期准备"><span class="toc-text">0x01 前期准备</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#0x02-命令介绍"><span class="toc-text">0x02 命令介绍</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#R命令的使用"><span class="toc-text">R命令的使用</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#H命令的使用"><span class="toc-text">H命令的使用</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#D命令的使用"><span class="toc-text">D命令的使用</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#E命令的使用"><span class="toc-text">E命令的使用</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#F命令的使用"><span class="toc-text">F命令的使用</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#M命令的使用"><span class="toc-text">M命令的使用</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#C命令的使用"><span class="toc-text">C命令的使用</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#S命令的使用"><span class="toc-text">S命令的使用</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#A命令的使用"><span class="toc-text">A命令的使用</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#G命令的使用"><span class="toc-text">G命令的使用</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#U命令的使用"><span class="toc-text">U命令的使用</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#N命令的使用"><span class="toc-text">N命令的使用</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#W命令的使用"><span class="toc-text">W命令的使用</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#L命令的使用"><span class="toc-text">L命令的使用</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#T命令的使用"><span class="toc-text">T命令的使用</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#P命令的使用"><span class="toc-text">P命令的使用</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#I命令的使用"><span class="toc-text">I命令的使用</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#O命令的使用"><span class="toc-text">O命令的使用</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Q命令的使用"><span class="toc-text">Q命令的使用</span></a></li></ol></li></ol></li></ol>
+    </div>
+    
+    
+        <h1 id="0x01-前期准备"><a href="#0x01-前期准备" class="headerlink" title="0x01 前期准备"></a>0x01 前期准备</h1><ul>
+<li><p>安装<code>DOSBox</code></p>
+</li>
+<li><p>设置盘符</p>
+</li>
+<li><p><img src="汇编_Debug.assets/image-20200514154924432.png" alt="image-20200514154924432"></p>
+<p>当出现了<code>-_</code>的闪烁符号时候说明我们成功进入了<code>debug</code>中。</p>
+</li>
+</ul>
+<h1 id="0x02-命令介绍"><a href="#0x02-命令介绍" class="headerlink" title="0x02 命令介绍"></a>0x02 命令介绍</h1><p>以下所有命令均在<code>debug</code>模式下输入，即<code>-_</code>，并且，每一种命令不会导致控制寄存器指令指针<code>IP</code>的移动。</p>
+<ul>
+<li>需要注意的是，<code>Instruction Pointer</code>存放下一次要取出指令的偏移地址（假设您没有直接指定地址）</li>
+<li><code>CS:IP</code>指示下一条要取出的指令的实际地址。</li>
+<li><code>IP</code>不能由程序直接存取，由<code>BIU</code>来修改（<code>BIU</code>是什么？？？</li>
+</ul>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th>命令</th>
+<th>作用</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>R</td>
+<td>观看或修改寄存器的值</td>
+</tr>
+<tr>
+<td>H</td>
+<td>计算两个16进制数的和与差</td>
+</tr>
+<tr>
+<td>D</td>
+<td>显示内存区域的内容</td>
+</tr>
+<tr>
+<td>E</td>
+<td>改变内存单位的内容</td>
+</tr>
+<tr>
+<td>F</td>
+<td>使用指定值填充内存</td>
+</tr>
+<tr>
+<td>M</td>
+<td>将指定内存区域的数据复制到指定地址</td>
+</tr>
+<tr>
+<td>C</td>
+<td>比较两块内存的内容</td>
+</tr>
+<tr>
+<td>S</td>
+<td>搜索指定串</td>
+</tr>
+<tr>
+<td>A</td>
+<td>输入汇编命令</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th>G</th>
+<th>执行汇编指令</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>U</td>
+<td>对机器代码反汇编</td>
+</tr>
+<tr>
+<td>N</td>
+<td>设置文件名，将汇编程序进行存盘</td>
+</tr>
+<tr>
+<td>W</td>
+<td>将文件写入磁盘</td>
+</tr>
+<tr>
+<td>L</td>
+<td>读入内存</td>
+</tr>
+<tr>
+<td>T</td>
+<td>执行汇编程序，单步跟踪</td>
+</tr>
+<tr>
+<td>P</td>
+<td>执行汇编程序，单步跟踪，但不会跟踪子程序或软中断</td>
+</tr>
+<tr>
+<td>I</td>
+<td>从计算机输入端口读取数据</td>
+</tr>
+<tr>
+<td>O</td>
+<td>向计算机输出端口输出数据</td>
+</tr>
+<tr>
+<td>Q</td>
+<td>回到DOS状态</td>
+</tr>
+</tbody>
+</table>
+</div>
+<ul>
+<li>可用<code>Ctrl+S</code>来暂停屏幕输出</li>
+</ul>
+<p>以下<code>转载</code></p>
+<h3 id="R命令的使用"><a href="#R命令的使用" class="headerlink" title="R命令的使用"></a>R命令的使用</h3><p>R命令作用：观看和修改寄存器的值。</p>
+<p>在提示符“-”下输入以下命令：R。DEBUG将会显示出当前所有寄存器和标志位的状态。</p>
+<p>接下来再输入命令RCX。在提示符“：”后输入100。该命令的作用是将寄存器CX的值设置为100（注意：DEBUG使用的是十六进制，这里的100相当于十进制的256。）</p>
+<p>最后再执行R命令，观看修改后的寄存器值。</p>
+<h3 id="H命令的使用"><a href="#H命令的使用" class="headerlink" title="H命令的使用"></a>H命令的使用</h3><p>H命令作用：计算两个十六进制数的和与差。</p>
+<p>在提示符“–”下输入以下命令：H 10 1。观看命令执行结果。</p>
+<p>运行结果的前一个数是计算出来的和，后一个数是计算出来的差。计算结果均用十六进制形式表示。</p>
+<h3 id="D命令的使用"><a href="#D命令的使用" class="headerlink" title="D命令的使用"></a>D命令的使用</h3><p>D命令作用：显示内存区域的内容。</p>
+<p>在提示符“–”下连续执行命令R、D、D。观看命令执行结果。</p>
+<p>前面已经介绍过了，命令R的作用是显示当前寄存器的值。而命令D的作用是显示内存区域的内容，最左边是内存的起始地址，中间以十六进制的形式显示内存值，最右边是以ASCII码的形式显示内存值。每行最多显示16个字节的内容。</p>
+<p>命令D可以带参数也可省略参数。设DEBUG启动时DS的值为X，当省略参数时，命令D显示内容以X：100为起始，每次显示128个字节的内容。以后再执行不带参数的命令D时，DEBUG将按上次的位置接着显示下去。</p>
+<p>带参数时DEBUG能够显示指定地址范围的内容。带参数的方式有三种：</p>
+<p>方式一：d [起始位置]。DEBUG从起始位置开始显示128个字节的内容。在提示符“-”下执行命令D 1AF5:100。观看命令执行结果。</p>
+<p>方式二：d [起始位置] [结束位置]。DEBUG从起始位置开始一直显示到结束位置。在提示符“-”下执行命令D DS:100 1FF。观看命令执行结果。</p>
+<p>方式三：d [起始位置] [L长度]，长度以L参数为标识。DEBUG从起始位置开始显示指定长度的内容。在提示符“-”下执行命令D DS:100 L10。观看命令执行结果。</p>
+<h3 id="E命令的使用"><a href="#E命令的使用" class="headerlink" title="E命令的使用"></a>E命令的使用</h3><p>E命令作用：改变内存单位的内容。</p>
+<p>E命令的使用方式为：E [起始位置]。</p>
+<p>在提示符“-”下输入以下命令：E 1AF5:100。</p>
+<p>DEBUG首先显示[1AF5:0000]的内容00.，这时可以修改该字节的值。如果还要修改后续的内容，可以按空格键继续。当要跳过某个字节时，可以按连续的两个空格跳到后一个字节去。</p>
+<h3 id="F命令的使用"><a href="#F命令的使用" class="headerlink" title="F命令的使用"></a>F命令的使用</h3><p>F命令作用：使用指定的值填充指定内存区域中的地址。</p>
+<p>F命令的使用方式为：F [范围] [填充列表]。</p>
+<p>在提示符“-”下输入以下命令：F 1AF5:100 L20 1 2 3 4 5。执行命令D 1AF5:100观看命令执行结果。</p>
+<p>说明：该命令是用字节序列01、02、03、04、05轮流填充从1AF5:100开始长度为20H的内存区域。</p>
+<p>在提示符“-”下输入以下命令：F 1AF5:100 13F 41 42 43 44。</p>
+<p>说明：该命令是用字节序列41、42、43、44轮流填充从1AF5:100开始一直到1AF5:13F的内存区域。</p>
+<h3 id="M命令的使用"><a href="#M命令的使用" class="headerlink" title="M命令的使用"></a>M命令的使用</h3><p>M命令作用：将指定内存区域的数据复制到指定的地址去。</p>
+<p>M命令的使用方式为：M [范围] [指定地址]。</p>
+<p>在提示符“-”下输入以下命令：M 1AF5:100 13F 1AF5:140。执行命令D 1AF5:100观看命令执行结果。</p>
+<h3 id="C命令的使用"><a href="#C命令的使用" class="headerlink" title="C命令的使用"></a>C命令的使用</h3><p>C命令作用：将两块内存的内容进行比较。</p>
+<p>C命令的使用方式为：C [范围] [指定地址]，意思就是将指定范围的内存区域与从指定地址开始的相同长度的内存区域逐个字节进行比较，列出不同的内容。</p>
+<p>在提示符“-”下输入以下命令：C 1AF5:100 13F 1AF5:140。由于两块内容完全相同，所以命令执行后没有任何显示。</p>
+<p>在提示符“-”下输入以下命令：C 1AF5:100 107 1AF5:180，比较的区域长度为8个字节。命令执行后列出比较结果不同的各个字节。</p>
+<h3 id="S命令的使用"><a href="#S命令的使用" class="headerlink" title="S命令的使用"></a>S命令的使用</h3><p>S命令作用：在指定的内存区域中搜索指定的串。</p>
+<p>S命令的使用方式为：S [范围] [指定串]。</p>
+<p>在提示符“-”下输入以下命令：D 1AF5:100 11F。显示该区域的内存值。</p>
+<p>在提示符“-”下输入以下命令：S 1AF5:100 11F 41 42 43 44。搜索该区域是否存在字节串41 42 43 44，并将搜索结果一一列出。</p>
+<p>从执行结果可以看出，总共搜索到八处。</p>
+<h3 id="A命令的使用"><a href="#A命令的使用" class="headerlink" title="A命令的使用"></a>A命令的使用</h3><p>A命令作用：输入汇编指令。</p>
+<p>以下的程序要在屏幕上显示“ABCD”四个字符。</p>
+<p>首先用E命令将“ABCD$”四个字符预先放在内存CS:200处，然后执行A100命令输入汇编程序代码：</p>
+<p>MOV AX,CS</p>
+<p>MOV DS,AX</p>
+<p>MOV DX,200</p>
+<p>MOV AH,9</p>
+<p>INT 21</p>
+<p>INT 20</p>
+<p>（说明：前两行汇编指令用于将段寄存器CS的值赋给段寄存器DS。第三到第五行汇编代码的作用是显示以“$”为结尾的字符串。最后一行用于结束程序。</p>
+<h3 id="G命令的使用"><a href="#G命令的使用" class="headerlink" title="G命令的使用"></a>G命令的使用</h3><p>G命令作用：执行汇编指令。</p>
+<p>G命令的使用方法是：G [=起始地址] [断点地址]，意思是从起始地址开始执行到断点地址。如果不设置断点，则程序一直运行到中止指令才停止。</p>
+<p>在设置完示例九的的内存数据并且输入完示例九的程序后运行这些汇编代码。在DEBUG中执行命令G=100，观看运行结果。</p>
+<p>汇编程序运行后在屏幕上显示出“ABCD”四个字符。</p>
+<p>接下来在DEBUG中执行G=100 10B，意思是从地址CS：100开始，一直运行到CS：10B停止。观看运行结果。</p>
+<p>命令执行后，不但显示出字符串“ABCD”，而且列出当前寄存器和标志位的值。</p>
+<h3 id="U命令的使用"><a href="#U命令的使用" class="headerlink" title="U命令的使用"></a>U命令的使用</h3><p>U命令作用：对机器代码反汇编显示。</p>
+<p>U命令的使用方法是：U [范围]。如果范围参数只输入了起始地址，则只对20H个字节的机器代码反汇编。执行命令U100，观看反汇编结果。</p>
+<p>执行命令U100 10B，观看反汇编结果。该命令的作用是对从100到10B的机器代码进行反汇编。</p>
+<h3 id="N命令的使用"><a href="#N命令的使用" class="headerlink" title="N命令的使用"></a>N命令的使用</h3><p>N命令作用：设置文件名，为将刚才编写的汇编程序存盘做准备。</p>
+<p>以下的DEBUG命令序列作用将刚才的汇编程序存为磁盘的COM可执行程序。</p>
+<p>D200 20F</p>
+<p>U100 10C</p>
+<p>N E:\FIRST.COM</p>
+<p>RCX</p>
+<p>:110</p>
+<p>W</p>
+<p>第一和第二条命令的作用是检查一下刚才编写的汇编指令。第三条命令的作用是设置存盘文件名为E:\FIRST.COM，第四条命令的作用是设置存盘文件大小为110H个字节。最后一条命令是将文件存盘。</p>
+<p>文件存盘后执行E:\FIRST.COM，观看存盘的可执行文件的运行效果。</p>
+<h3 id="W命令的使用"><a href="#W命令的使用" class="headerlink" title="W命令的使用"></a>W命令的使用</h3><p>W命令作用：将文件或者特定扇区写入磁盘。</p>
+<p>在示例“N命令的使用”中已经实验了如何使用W命令将文件存盘。</p>
+<p>在没有很好地掌握汇编语言和磁盘文件系统前，暂时不要使用W命令写磁盘扇区，否则很容易损坏磁盘文件，甚至破坏整个磁盘的文件系统。</p>
+<h3 id="L命令的使用"><a href="#L命令的使用" class="headerlink" title="L命令的使用"></a>L命令的使用</h3><p>L命令作用：从磁盘中将文件或扇区内容读入内存。</p>
+<p>将文件调入内存必须先用DEBUG的N命令设定文件名。以下例子是将E:\FIRST.COM读入内容。</p>
+<p>N FIRST.COM</p>
+<p>L</p>
+<p>观看调入程序的汇编代码可以使用DEBUG的U命令，用U100观看调入的COM文件。</p>
+<p>读取磁盘扇区的方式是：L [内存地址] [磁盘驱动器号] [起始扇区] [扇区数]。“内存地址”指定要在其中加载文件或扇区内容的内存位置，如果不指定“内存地址”的话，DEBUG将使用CS寄存器中的当前地址。“磁盘驱动器号”指定包含读取指定扇区的磁盘的驱动器，该值是数值型：0=A，1=B，2=C等。“起始扇区”指定要加载其内容的第一个扇区的十六进制数。“扇区数”指定要加载其内容的连续扇区的十六进制数。</p>
+<p>只有要加载特定扇区的内容而不是加载文件时，才能使用[磁盘驱动器号] [起始扇区] [扇区数]参数。</p>
+<p>例如：要将C盘第一扇区读取到内存DS:300的位置，相应的DEBUG命令为L DS:300 2 1 1。但是由于Windows操作系统对文件系统的保护，这条命令可能会被操作系统禁止运行。</p>
+<h3 id="T命令的使用"><a href="#T命令的使用" class="headerlink" title="T命令的使用"></a>T命令的使用</h3><p>T命令作用：执行汇编程序，单步跟踪。</p>
+<p>T命令的使用方式是T [=地址] [指令数]。如果忽略“地址”的话，T命令从CS:IP处开始运行。“指令数”是要单步执行的指令的数量。</p>
+<p>以下示例对E:\FIRST.COM进行单步跟踪。</p>
+<p>N E:\FIRST.COM</p>
+<p>L</p>
+<p>U100 10B</p>
+<p>R</p>
+<p>T=100</p>
+<p>T</p>
+<p>第一、二条命令是装入文件，第三条命令是列出程序反汇编代码，第四条命令是显示当前寄存器值，第五条命令是从CS:100处开始单步跟踪，第六条命令是继续跟踪后续的指令。</p>
+<h3 id="P命令的使用"><a href="#P命令的使用" class="headerlink" title="P命令的使用"></a>P命令的使用</h3><p>P命令作用：执行汇编程序，单步跟踪。与T命令不同的是：P命令不会跟踪进入子程序或软中断。</p>
+<p>P命令的使用方式与T命令的使用方式完全相同。</p>
+<h3 id="I命令的使用"><a href="#I命令的使用" class="headerlink" title="I命令的使用"></a>I命令的使用</h3><p>I命令作用：从计算机输入端口读取数据并显示。</p>
+<p>I命令的用法是I [端口地址]。例如从3F8号端口读取数据并显示的命令为：I 3F8。这里不对该命令做解释。</p>
+<h3 id="O命令的使用"><a href="#O命令的使用" class="headerlink" title="O命令的使用"></a>O命令的使用</h3><p>O命令作用：向计算机输出端口送出数据。</p>
+<p>O命令的用法是O [端口地址] [字节值]。例如向278号端口发出数据20H的命令为：I 278 20。这里不对该命令做解释。</p>
+<h3 id="Q命令的使用"><a href="#Q命令的使用" class="headerlink" title="Q命令的使用"></a>Q命令的使用</h3><p>Q命令的作用是退出DEBUG，回到DOS状态。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      
+        <a data-url="http://yoursite.com/2020/05/12/ 汇编_Debug/" data-id="cka7x30gv0016isvi878r8c1l" class="article-share-link" data-share="baidu" data-title="Debug">分享到</a>
+      
+
+      
+        <a href="http://yoursite.com/2020/05/12/ 汇编_Debug/#ds-thread" class="article-comment-link">评论</a>
+      
+
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+
+  
+    <article id="post-重读C++ Primer" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2020/05/07/ 重读C++ Primer/" class="article-date">
+  <time datetime="2020-05-07T14:56:52.000Z" itemprop="datePublished">2020-05-07</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Read/">Read</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/05/07/ 重读C++ Primer/">重读C++ Primer</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        
+    <div id="toc">
+      <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#列表初始化"><span class="toc-text">列表初始化</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#vector是如何增长的"><span class="toc-text">vector是如何增长的</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#deque是如何增长的"><span class="toc-text">deque是如何增长的</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#使用动态内存的原因"><span class="toc-text">使用动态内存的原因</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#区分"><span class="toc-text">区分</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#智能指针"><span class="toc-text">智能指针</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#动态数组"><span class="toc-text">动态数组</span></a></li></ol></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#泛型算法"><span class="toc-text">泛型算法</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#初识"><span class="toc-text">初识</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#容器适配器"><span class="toc-text">容器适配器</span></a>
+    </div>
+    
+    
+        <h4 id="列表初始化"><a href="#列表初始化" class="headerlink" title="列表初始化"></a>列表初始化</h4><h4 id="vector是如何增长的"><a href="#vector是如何增长的" class="headerlink" title="vector是如何增长的"></a>vector是如何增长的</h4><p>​    容器内元素是连续存储的，若容器需要的空间大于现在位置所拥有的空间，那么vector会执行一次内存分配和内存释放操作。而标准库的实现者为了重新分配的次数减少，每次重新分配时都会分配比需求更大的内存空间。</p>
+<ul>
+<li>栈内存</li>
+<li>静态内存</li>
+<li>动态内存</li>
+</ul>
+<h4 id="deque是如何增长的"><a href="#deque是如何增长的" class="headerlink" title="deque是如何增长的"></a>deque是如何增长的</h4><ul>
+<li><p><code>deque</code>是<code>list</code>与<code>vector</code>这两个顺序容器的结合体。</p>
+<p><img src="重读C++ Primer.assets/image-20200513112016158.png" alt="image-20200513112016158"></p>
+</li>
+</ul>
+<ul>
+<li>不过在进行中间元素的插入和删除的时候，其效率远远低于<code>list</code>和<code>vector</code>，这也是其使用复杂的迭代器框架所带来的代价。</li>
+<li>支持随机访问。</li>
+<li>前端插入与删除效率比<code>vector</code>高。</li>
+<li>插入与删除不会导致重新分配空间。</li>
+</ul>
+<h4 id="使用动态内存的原因"><a href="#使用动态内存的原因" class="headerlink" title="使用动态内存的原因"></a>使用动态内存的原因</h4><ul>
+<li>程序不知道自己需要使用多少对象</li>
+<li>程序不知道所需对象的准确类型</li>
+<li>程序需要在多个对象间共享数据</li>
+</ul>
+<h5 id="区分"><a href="#区分" class="headerlink" title="区分"></a>区分</h5><ul>
+<li><code>string *ps1=new string</code></li>
+<li><code>string *ps2=new string()</code></li>
+<li><code>int *pi1=new int</code></li>
+<li><code>int *pi2=new int()</code></li>
+</ul>
+<h5 id="智能指针"><a href="#智能指针" class="headerlink" title="智能指针"></a>智能指针</h5><ul>
+<li><code>shared_ptr&lt;int&gt;p=make_shared&lt;int&gt;(10);</code></li>
+<li><code>auto p=make_shared&lt;int&gt;(10);</code></li>
+<li>引用计数<code>reference count</code>，每拷贝一次<code>shared_ptr</code>，计数器加一。</li>
+<li>当<code>reference count</code>变为0时，自动销毁。</li>
+<li>不要混用<code>shared_ptr和内置指针</code></li>
+</ul>
+<h5 id="动态数组"><a href="#动态数组" class="headerlink" title="动态数组"></a>动态数组</h5><ul>
+<li>动态数组不是数组类型</li>
+<li><code>int *pia=new int[10];</code></li>
+<li><code>pia[1]=10; cout&lt;&lt;pia[1]&lt;&lt;endl;</code></li>
+<li><code>delete [] pia;</code></li>
+</ul>
+<ul>
+<li><code>unique_ptr</code>支持动态数组，<code>shared_ptr</code>不支持管理动态数组，因为<code>shared_ptr</code>没有动态数组的删除器。</li>
+</ul>
+<h1 id="泛型算法"><a href="#泛型算法" class="headerlink" title="泛型算法"></a>泛型算法</h1><h2 id="初识"><a href="#初识" class="headerlink" title="初识"></a>初识</h2><ul>
+<li><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">string</span> sum</span><br><span class="line">    =accumulate(V.cbegin(),V.cend(),<span class="built_in">string</span>(<span class="string">""</span>));</span><br><span class="line"><span class="comment">//正确</span></span><br><span class="line"><span class="built_in">string</span> sum</span><br><span class="line">    =accumulate(V.cbegin(),V.cend(),<span class="string">""</span>);</span><br><span class="line"><span class="comment">//错误，const char *上没有定义+运算符</span></span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h2 id="容器适配器"><a href="#容器适配器" class="headerlink" title="容器适配器"></a>容器适配器</h2><ul>
+<li><p>容器，迭代器，函数都有适配器。本质上，一个适配器是一种机制，使得事物的行为看起来像另外一种事物。</p>
+</li>
+<li><p>默认情况下<code>stack</code>和<code>queue</code>是基于<code>deque</code>实现；而<code>priority_queue</code>则是基于<code>vector</code>实现。</p>
+</li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      
+        <a data-url="http://yoursite.com/2020/05/07/ 重读C++ Primer/" data-id="cka7x30h6001iisviiijj62vw" class="article-share-link" data-share="baidu" data-title="重读C++ Primer">分享到</a>
+      
+
+      
+        <a href="http://yoursite.com/2020/05/07/ 重读C++ Primer/#ds-thread" class="article-comment-link">评论</a>
+      
+
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+
+  
     <article id="post-汇编" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2020/04/23/ 汇编/" class="article-date">
@@ -175,12 +640,19 @@
 <p>| AH   | 功能           | 入口参数    | 出口参数    |<br>| —— | ——————— | —————- | —————- |<br>| 01   | 键盘键入并回显 | 无          | AL=输入字符 |<br>| 02   | 显示输出       | DL=输出字符 | 无          |<br>| 4C   | 带返回码终止   | AL=返回码   | 无          |</p>
 </li>
 </ul>
+<p>[Debug]<a href="https://blog.csdn.net/liuer2004_82/article/details/52638516" target="_blank" rel="noopener">https://blog.csdn.net/liuer2004_82/article/details/52638516</a></p>
+<p>DOSBox</p>
+<ul>
+<li>动态CPU内核：具备<code>i386</code>指令集合的系统，能利用动态指令转换。</li>
+<li>其中<code>i386</code>处理器为<code>32</code>位系统，地址线为32位；采用<code>Cache</code>来解决内存速度瓶颈问题。</li>
+<li></li>
+</ul>
 
       
     </div>
     <footer class="article-footer">
       
-        <a data-url="http://yoursite.com/2020/04/23/ 汇编/" data-id="ck9l0nbr3000oqsvicyowxzqs" class="article-share-link" data-share="baidu" data-title="汇编">分享到</a>
+        <a data-url="http://yoursite.com/2020/04/23/ 汇编/" data-id="cka7x30gf000sisviwpllb8x2" class="article-share-link" data-share="baidu" data-title="汇编">分享到</a>
       
 
       
@@ -225,7 +697,7 @@
       
         
     <div id="toc">
-      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#从入门到入土"><span class="toc-text">从入门到入土</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#8086"><span class="toc-text">8086</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Prntium"><span class="toc-text">Prntium</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#可由8086的16位寄存器变为32位的寄存器如，AX-gt-EAX"><span class="toc-text">可由8086的16位寄存器变为32位的寄存器如，AX-&gt;EAX</span></a></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#通用寄存器"><span class="toc-text">通用寄存器</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#系统级寄存器"><span class="toc-text">系统级寄存器</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#系统地址寄存器"><span class="toc-text">系统地址寄存器</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#控制寄存器"><span class="toc-text">控制寄存器</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#总线周期"><span class="toc-text">总线周期</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#寻址"><span class="toc-text">寻址</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#存储器寻址"><span class="toc-text">存储器寻址</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Pentium保护模式及存储管理"><span class="toc-text">Pentium保护模式及存储管理</span></a></li></ol>
+      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#从入门到入土"><span class="toc-text">从入门到入土</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#8086"><span class="toc-text">8086</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Prntium"><span class="toc-text">Prntium</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#可由8086的16位寄存器变为32位的寄存器如，AX-gt-EAX"><span class="toc-text">可由8086的16位寄存器变为32位的寄存器如，AX-&gt;EAX</span></a></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#通用寄存器"><span class="toc-text">通用寄存器</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#系统级寄存器"><span class="toc-text">系统级寄存器</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#系统地址寄存器"><span class="toc-text">系统地址寄存器</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#控制寄存器"><span class="toc-text">控制寄存器</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#总线周期"><span class="toc-text">总线周期</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#寻址"><span class="toc-text">寻址</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#存储器寻址"><span class="toc-text">存储器寻址</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Pentium保护模式及存储管理"><span class="toc-text">Pentium保护模式及存储管理</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#保护模式"><span class="toc-text">保护模式</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#分类"><span class="toc-text">分类</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#特权管理"><span class="toc-text">特权管理</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#段间转移"><span class="toc-text">段间转移</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#分页"><span class="toc-text">分页</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#IN-OUT"><span class="toc-text">IN/OUT</span></a></li></ol>
     </div>
     
     
@@ -366,14 +838,53 @@
 </ul>
 <h1 id="Pentium保护模式及存储管理"><a href="#Pentium保护模式及存储管理" class="headerlink" title="Pentium保护模式及存储管理"></a>Pentium保护模式及存储管理</h1><ul>
 <li>GDT，全局描述符表，系统只有一个</li>
+<li>LDT，局部描述符表，每个任务一个</li>
+<li>IDT，中断描述符表，保存门描述符，整个系统一个</li>
+<li>TSS,Task State Segment，任务状态段，每个任务一个</li>
+</ul>
+<h2 id="保护模式"><a href="#保护模式" class="headerlink" title="保护模式"></a>保护模式</h2><h3 id="分类"><a href="#分类" class="headerlink" title="分类"></a>分类</h3><ul>
+<li>任务间存储空间保护</li>
+<li>段属性和界限保护</li>
+<li>特权级与特权级保护</li>
+</ul>
+<h4 id="特权管理"><a href="#特权管理" class="headerlink" title="特权管理"></a>特权管理</h4><ul>
+<li>CPL,Current Privilege Level，即代码段描述符中的DPL。</li>
+<li>DPL,Descriptor Privilege Level，保存在该段的段描述符的特权级位。</li>
+<li>RPL,Request Privilege Level，新装入段寄存器的段选择符的特权级。</li>
+<li>高特权级可访问特权级低的数据，低特权级可调用特权级高程序。</li>
+</ul>
+<h3 id="段间转移"><a href="#段间转移" class="headerlink" title="段间转移"></a>段间转移</h3><ul>
+<li>任务内转移<ul>
+<li>段内 NEAR，改变IP，检查目标指令位置是否超出段长</li>
+<li>段间 FAR，从一个段到另外一个段（跳转？中断？）<ul>
+<li>同一特权级，直接转移，可使用段描述符实现</li>
+<li>不同特权级，间接转移，可使用调用门调用，使用中断门/陷阱门中断</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>任务间切换<ul>
+<li>直接，给任务寄存器TR送一个段选择符，然后TR找到TSS描述符，找到对应的段。</li>
+<li>间接，给TR送一个段选择符，然后TR找到任务门描述符，找到对应段。</li>
+</ul>
+</li>
+</ul>
+<h2 id="分页"><a href="#分页" class="headerlink" title="分页"></a>分页</h2><ul>
+<li>PWT ,P     Write Through</li>
+<li>PCD,</li>
+<li>P，若P=0，那么为该页在主存中不存在</li>
 <li></li>
+</ul>
+<h1 id="IN-OUT"><a href="#IN-OUT" class="headerlink" title="IN/OUT"></a>IN/OUT</h1><ul>
+<li>DMA，Direct Memory Access</li>
+<li>外设-&gt;DMA-&gt;CPU</li>
 </ul>
 
       
     </div>
     <footer class="article-footer">
       
-        <a data-url="http://yoursite.com/2020/04/11/ 微型计算机/" data-id="ck9l0nbr4000rqsvii40e63j1" class="article-share-link" data-share="baidu" data-title="微机原理">分享到</a>
+        <a data-url="http://yoursite.com/2020/04/11/ 微型计算机/" data-id="cka7x30ge000qisviweihrmxl" class="article-share-link" data-share="baidu" data-title="微机原理">分享到</a>
       
 
       
@@ -525,7 +1036,7 @@ x^k-c_1x^{k-1}-\dots-c_k=0\\</script></li>
     </div>
     <footer class="article-footer">
       
-        <a data-url="http://yoursite.com/2020/04/06/ 组合数学/" data-id="ck9l0nbrd0017qsvisdk2s701" class="article-share-link" data-share="baidu" data-title="组合数学">分享到</a>
+        <a data-url="http://yoursite.com/2020/04/06/ 组合数学/" data-id="cka7x30h5001hisvi8lbmwxq9" class="article-share-link" data-share="baidu" data-title="组合数学">分享到</a>
       
 
       
@@ -726,7 +1237,7 @@ Cov(X,Y)=E(XY)-E(X)E(Y)</script></li>
     </div>
     <footer class="article-footer">
       
-        <a data-url="http://yoursite.com/2020/04/03/ 概率论与数理统计/" data-id="ck9l0nbr90010qsvi87r4ntk6" class="article-share-link" data-share="baidu" data-title="随机数学">分享到</a>
+        <a data-url="http://yoursite.com/2020/04/03/ 概率论与数理统计/" data-id="cka7x30gt0014isvivtq68g7g" class="article-share-link" data-share="baidu" data-title="随机数学">分享到</a>
       
 
       
@@ -797,7 +1308,7 @@ Cov(X,Y)=E(XY)-E(X)E(Y)</script></li>
     </div>
     <footer class="article-footer">
       
-        <a data-url="http://yoursite.com/2020/04/02/ Java核心技术i/" data-id="ck9l0nbqp0006qsvi5fq1gyf9" class="article-share-link" data-share="baidu" data-title="Java核心技术i">分享到</a>
+        <a data-url="http://yoursite.com/2020/04/02/ Java核心技术i/" data-id="cka7x30ft0001isvi2uc69kdy" class="article-share-link" data-share="baidu" data-title="Java核心技术i">分享到</a>
       
 
       
@@ -1017,7 +1528,7 @@ t_{cpuB}=IC*(2/8*2+6/8*1)*1.25T</script><p>最后即可得答案。</p>
     </div>
     <footer class="article-footer">
       
-        <a data-url="http://yoursite.com/2020/03/31/ 计算机系统结构/" data-id="ck9l0nbrb0014qsviqzazyvtt" class="article-share-link" data-share="baidu" data-title="计算机系统结构">分享到</a>
+        <a data-url="http://yoursite.com/2020/03/31/ 计算机系统结构/" data-id="cka7x30h2001disvibxb7enqt" class="article-share-link" data-share="baidu" data-title="计算机系统结构">分享到</a>
       
 
       
@@ -1062,11 +1573,11 @@ t_{cpuB}=IC*(2/8*2+6/8*1)*1.25T</script><p>最后即可得答案。</p>
       
         
     <div id="toc">
-      <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#中断"><span class="toc-text">中断</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#同步"><span class="toc-text">同步</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#死锁"><span class="toc-text">死锁</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#死锁的避免"><span class="toc-text">死锁的避免</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#银行家算法"><span class="toc-text">银行家算法</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Shoshamin-amp-amp-Coffman的死锁检测算法"><span class="toc-text">Shoshamin&amp;&amp;Coffman的死锁检测算法</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#主存储器管理"><span class="toc-text">主存储器管理</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#内存"><span class="toc-text">内存</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#内存分区"><span class="toc-text">内存分区</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#内存区分配"><span class="toc-text">内存区分配</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#页式存储"><span class="toc-text">页式存储</span></a>
+      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#前言"><span class="toc-text">前言</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#互斥"><span class="toc-text">互斥</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#软件实现互斥"><span class="toc-text">软件实现互斥</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Dekker"><span class="toc-text">Dekker</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Peterson"><span class="toc-text">Peterson</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Lamport"><span class="toc-text">Lamport</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Eisenberg-Mcguire"><span class="toc-text">Eisenberg_Mcguire</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#同步"><span class="toc-text">同步</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#死锁"><span class="toc-text">死锁</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#死锁的避免"><span class="toc-text">死锁的避免</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#银行家算法"><span class="toc-text">银行家算法</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Shoshamin-amp-amp-Coffman的死锁检测算法"><span class="toc-text">Shoshamin&amp;&amp;Coffman的死锁检测算法</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#主存储器管理"><span class="toc-text">主存储器管理</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#内存"><span class="toc-text">内存</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#内存分区"><span class="toc-text">内存分区</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#内存区分配"><span class="toc-text">内存区分配</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#页式存储"><span class="toc-text">页式存储</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#虚拟存储系统"><span class="toc-text">虚拟存储系统</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#外存储器管理技术"><span class="toc-text">外存储器管理技术</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#策略"><span class="toc-text">策略</span></a></li></ol></li></ol></li></ol>
     </div>
     
     
-        <h3 id="中断"><a href="#中断" class="headerlink" title="中断"></a>中断</h3><p>1 <em>中断</em>，在程序运行过程中出现某种紧急事件，必须中止当前正在运行的程序，转去处理此事件，然后再恢复原来运行的程序。有$\begin{Bmatrix} 强迫性中断\ 自愿性中断\  \end {Bmatrix}$。</p>
+        <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>1 <em>中断</em>，在程序运行过程中出现某种紧急事件，必须中止当前正在运行的程序，转去处理此事件，然后再恢复原来运行的程序。有$\begin{Bmatrix} 强迫性中断\ 自愿性中断\  \end {Bmatrix}$。</p>
 <p>2 <em>中断系统</em>，中断装置+中断处理程序</p>
 <p>3 <em>中断装置</em>，识别中断源$\Longrightarrow$ 保存现场$(运行的物理环境：地址寄存器，通用寄存器，浮点寄存器，SP，PSW，PC，文件表)\Longrightarrow $引出中断程序</p>
 <p>1 进程互斥；进程同步；进程饥饿；进程死机；进程饿死</p>
@@ -1076,13 +1587,15 @@ t_{cpuB}=IC*(2/8*2+6/8*1)*1.25T</script><p>最后即可得答案。</p>
 <p>5 $PSW,program\ status\ word$，程序状态字，表示当前程序的运行环境，状态</p>
 <p>6 $JCB\ ,Job\ Control\ Block$，作业控制块，是标志作业存在的数据结构，其中包含系统对作业进行管理所需要的全部信息。</p>
 <p>7 $PC$，指令计数。</p>
-<p><strong>处理及调度算法</strong></p>
 <p>1 $FCFS,first\ come\ first\ service $，先到先服务。</p>
 <p>。。。</p>
 <p><strong>程序并发执行的条件</strong></p>
 <p>满足$Bernstein 条件$</p>
 <p>$race\ condition,竞争条件，多个进程在访问变量时，因实际交叉次序不同而导致执行结果不同$</p>
-<p><strong>Peterson互斥算法</strong></p>
+<h1 id="互斥"><a href="#互斥" class="headerlink" title="互斥"></a>互斥</h1><h2 id="软件实现互斥"><a href="#软件实现互斥" class="headerlink" title="软件实现互斥"></a>软件实现互斥</h2><h3 id="Dekker"><a href="#Dekker" class="headerlink" title="Dekker"></a>Dekker</h3><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//参数id为当前的线程号</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">Dekker_Lock</span><span class="params">(<span class="keyword">int</span> id)</span></span>&#123;</span><br><span class="line">	flag[id]=<span class="number">1</span>;</span><br><span class="line">	<span class="keyword">int</span> id0=(id+<span class="number">1</span>)%<span class="number">2</span>;</span><br><span class="line">	<span class="keyword">while</span>(flag[id0]==<span class="number">1</span>)&#123;</span><br><span class="line">		<span class="keyword">if</span>(turn==id0)&#123;</span><br><span class="line">			flag[id]=<span class="number">0</span>;</span><br><span class="line">			<span class="keyword">while</span>(turn==id0)&#123;</span><br><span class="line">				;<span class="comment">//do nothing</span></span><br><span class="line">			&#125;</span><br><span class="line">			flag[id]=<span class="number">1</span>;<span class="comment">//为了防止其他进程进入临界区</span></span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">Dekker_unLock</span><span class="params">(<span class="keyword">int</span> id)</span></span>&#123;</span><br><span class="line">	turn=(id+<span class="number">1</span>)%<span class="number">2</span>;</span><br><span class="line">	flag[id]=<span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="Peterson"><a href="#Peterson" class="headerlink" title="Peterson"></a>Peterson</h3><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">Peterson_Lock</span><span class="params">(<span class="keyword">int</span> id)</span></span>&#123;</span><br><span class="line">	flag[id]=<span class="number">1</span>;</span><br><span class="line">	turn=(id+<span class="number">1</span>)%<span class="number">2</span>;<span class="comment">//让给对方，判断对方是否需要</span></span><br><span class="line">	<span class="keyword">while</span>(flag[<span class="number">1</span>]==<span class="number">1</span>&amp;&amp;turn==(id+<span class="number">1</span>)%<span class="number">2</span>)	;<span class="comment">//do nothing</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">Peterson_unLock</span><span class="params">(<span class="keyword">int</span> id)</span></span>&#123;</span><br><span class="line">	flag[id]=<span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="Lamport"><a href="#Lamport" class="headerlink" title="Lamport"></a>Lamport</h3><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">find_max</span><span class="params">()</span></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> i=<span class="number">0</span>;</span><br><span class="line">	<span class="keyword">int</span> max_flag=<span class="number">0</span>;</span><br><span class="line">	<span class="keyword">for</span>(i=<span class="number">0</span>;i&lt;g_totalThreads;i++)&#123;</span><br><span class="line">		<span class="keyword">if</span>(number[i]&gt;number[max_flag]) max_flag=i;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> max_flag;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">bool</span> <span class="title">If_choose</span><span class="params">()</span></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> i=<span class="number">0</span>;</span><br><span class="line">	<span class="keyword">for</span>(i=<span class="number">0</span>;i&lt;g_totalThreads;i++)&#123;</span><br><span class="line">		<span class="keyword">if</span>(choosing[i]==<span class="number">1</span>)	<span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">Lamport_Lock</span><span class="params">(<span class="keyword">int</span> id)</span></span>&#123;</span><br><span class="line">	choosing[id]=<span class="number">1</span>;</span><br><span class="line">	number[id]=find_max()+<span class="number">1</span>;</span><br><span class="line">	choosing[id]=<span class="number">0</span>;</span><br><span class="line">	<span class="keyword">int</span> j=<span class="number">0</span>;</span><br><span class="line">	<span class="keyword">for</span>(j=<span class="number">0</span>;j&lt;g_totalThreads;j++)&#123;</span><br><span class="line">		<span class="keyword">while</span>(If_choose()==<span class="literal">false</span>)	;</span><br><span class="line">		<span class="keyword">while</span>(number[j]!=<span class="number">0</span></span><br><span class="line">              &amp;&amp;(number[j]&lt;number[id]</span><br><span class="line">                 ||(number[j]==number[id]&amp;&amp;j&lt;id))) ;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">Lamport_unLock</span><span class="params">(<span class="keyword">int</span> id)</span></span>&#123;</span><br><span class="line">	number[id]=<span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="Eisenberg-Mcguire"><a href="#Eisenberg-Mcguire" class="headerlink" title="Eisenberg_Mcguire"></a>Eisenberg_Mcguire</h3><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">Eisenberg_Mcguire_Lock</span><span class="params">(<span class="keyword">int</span> id)</span></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> j;</span><br><span class="line">	<span class="keyword">do</span>&#123;</span><br><span class="line">		flag[id]=want_in;</span><br><span class="line">		j=turn;</span><br><span class="line">		<span class="keyword">while</span>(j!=id)&#123;</span><br><span class="line">			<span class="keyword">if</span>(flag[j]!=idle)&#123;</span><br><span class="line">				j=turn;</span><br><span class="line">			&#125;<span class="keyword">else</span>&#123;</span><br><span class="line">				j=(j+<span class="number">1</span>)%g_totalThreads;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">		flag[id]=in_cs;</span><br><span class="line">		j=<span class="number">0</span>;</span><br><span class="line">		<span class="keyword">while</span>((j&lt;g_totalThreads)&amp;&amp;(j==id||Flag[j]!=in_cs))&#123;</span><br><span class="line">			j++;</span><br><span class="line">		&#125;<span class="comment">//判断所有其他进程是否in_cs</span></span><br><span class="line">	&#125;<span class="keyword">while</span> (j!=g_totalThreads);</span><br><span class="line">	turn=id;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">Eisenberg_Mcguire_unLock</span><span class="params">(<span class="keyword">int</span> id)</span></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> j=(turn+<span class="number">1</span>)%g_totalThreads;</span><br><span class="line">	<span class="keyword">while</span>(flag[j]==idle)&#123;</span><br><span class="line">		j=(j+<span class="number">1</span>)%g_totalThreads;</span><br><span class="line">	&#125;</span><br><span class="line">	turn=j;</span><br><span class="line">	flag[id]=idle;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>$bus \ request\ protocol,总线请求协议$</p>
 <h2 id="同步"><a href="#同步" class="headerlink" title="同步"></a>同步</h2><p>$synchronization,同步$</p>
 <p>$process\ cooperation,进程合作$</p>
@@ -1114,308 +1627,23 @@ t_{cpuB}=IC*(2/8*2+6/8*1)*1.25T</script><p>最后即可得答案。</p>
 EAT=快表命中率\cdot (快表访问时间+内存访问时间)+(1-快表命中率)\cdot (快表访问时间+2\cdot 内存访问时间)\\
 其中，不命中时，访问页表计入内存访问一次</script></li>
 </ul>
+<h1 id="虚拟存储系统"><a href="#虚拟存储系统" class="headerlink" title="虚拟存储系统"></a>虚拟存储系统</h1><h2 id="外存储器管理技术"><a href="#外存储器管理技术" class="headerlink" title="外存储器管理技术"></a>外存储器管理技术</h2><h3 id="策略"><a href="#策略" class="headerlink" title="策略"></a>策略</h3><ul>
+<li>平均分配</li>
+<li>按进程程序长度分配</li>
+<li>按进程优先级的比例分配</li>
+<li>按进程长度和优先级的比例分配</li>
+<li>ee</li>
+</ul>
 
       
     </div>
     <footer class="article-footer">
       
-        <a data-url="http://yoursite.com/2020/03/31/ 操作系统/" data-id="ck9l0nbr1000mqsviw49knspe" class="article-share-link" data-share="baidu" data-title="操作系统">分享到</a>
+        <a data-url="http://yoursite.com/2020/03/31/ 操作系统/" data-id="cka7x30gx0019isvig0zb0qkk" class="article-share-link" data-share="baidu" data-title="操作系统">分享到</a>
       
 
       
         <a href="http://yoursite.com/2020/03/31/ 操作系统/#ds-thread" class="article-comment-link">评论</a>
-      
-
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-
-
-  
-    <article id="post-离散数学第4讲" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2020/03/21/ 离散数学第4讲/" class="article-date">
-  <time datetime="2020-03-21T08:09:17.000Z" itemprop="datePublished">2020-03-21</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/离散数学/">离散数学</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/03/21/ 离散数学第4讲/">state machine&amp;Euclidean Alg</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        
-    <div id="toc">
-      
-    </div>
-    
-    
-        <p><em>state machine</em></p>
-<p><a href="https://leetcode-cn.com/problems/water-and-jug-problem/" target="_blank" rel="noopener">水壶问题</a></p>
-<p>有两个容量分别为 <em>x</em>升 和 <em>y</em>升 的水壶以及无限多的水。请判断能否通过使用这两个水壶，从而可以得到恰好 <em>z</em>升 的水？</p>
-<p>如果可以，最后请用以上水壶中的一或两个来盛放取得的 <em>z升</em> 水。</p>
-<p>你允许：</p>
-<ul>
-<li>装满任意一个水壶</li>
-<li>清空任意一个水壶</li>
-<li>从一个水壶向另外一个水壶倒水，直到装满或者倒空</li>
-</ul>
-<p><strong>示例 1:</strong> </p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">输入: x = 3, y = 5, z = 4</span><br><span class="line">输出: True</span><br></pre></td></tr></table></figure>
-<p><strong>示例 2:</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">输入: x = 2, y = 6, z = 5</span><br><span class="line">输出: False</span><br></pre></td></tr></table></figure>
-<p>我们不妨将每一次两个水壶中所拥有的水的体积作为该时刻的状态。</p>
-<p><strong>状态表示</strong>为$P(n)=(a,b)$。</p>
-<p>其中，$a$表示容量为$x$升的水壶所有的水，$b$表示容量为$y$升的水壶所有的水。</p>
-<p><strong>状态转移</strong>有装满一个水壶；清空一个水壶；从一个水壶向另外一个水壶倒水，知道装满或者倒空。</p>
-<p><strong>最终状态</strong>必然有$a_0+b_0=z$</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">结论：ans=GCD(x,y)|z</span><br></pre></td></tr></table></figure>
-<p>容易推理出若$m|a_0,m|b_0,则有m|z$</p>
-<p>那么我们需要寻找这样的状态$(a_0,b_0)$</p>
-<script type="math/tex; mode=display">
-证明：m|x且m|y\Longrightarrow m|a且m|b</script><p>不妨设$m|x且m|y$。</p>
-<p>显然$P(0)=(0,0),任意m|0符合(1)式$</p>
-<p>设$P(n)=(a,b),m|a且m|b$</p>
-<p>证明$P(n+1)=(a_1,b_1),m|a_1,m|b_1$</p>
-<p>根据状态转移有</p>
-<script type="math/tex; mode=display">
-P(n+1)=\left\{
-\begin{array}{lr}
-(a,0)\\
-(0,b)\\
-(x,b)\\
-(a,y)\\
-(a-(y-b),y)\\
-(0,a+b)\\
-(x,b-(x-a))\\
-(a+b,0)\\
-\end{array}
-\right.</script><p>只证$(2)式$的每一个数字都能被$m$整除，答案是显然的。</p>
-<p>那么我们就可以得到最终的状态$(a_0,b_0)必然有m|a_0,m|b_0,那么有m|z$。</p>
-<p>为了保证每一个$m$的取值都能满足以上推论。</p>
-<p>必然需要满足$GCD(x,y)|z$</p>
-<p>所以有$z\%GCD(x,y)==0$</p>
-<p><em>Euclidean Alg</em></p>
-<script type="math/tex; mode=display">
-GCD(a,b)=GCD(Remainder(b,a),a)\\
-其中，Remainder(b,a)=b-q*a=b\%a\geq0\ \ \ \ \ a,b,q均为正整数</script><p>证明$m|a且m|b\Longrightarrow m|Remainder(b,a)且m|a$</p>
-<p>答案是显然的。</p>
-<p>现只需证明$m|Remainder(b,a) 且m|a\Longrightarrow  m|b$</p>
-<script type="math/tex; mode=display">
-已知b-qa=k_1m,a=k_2m\\
-有b=(k_1+k_2q)m\\
-有m|b</script><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">GCD</span><span class="params">(<span class="keyword">int</span> a,<span class="keyword">int</span> b)</span></span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(a==<span class="number">0</span>||b==<span class="number">0</span>)  <span class="keyword">return</span> max(a,b);</span><br><span class="line">        <span class="keyword">int</span> c;</span><br><span class="line">        <span class="keyword">while</span>(b%a!=<span class="number">0</span>)&#123;</span><br><span class="line">            c=b%a;</span><br><span class="line">            b=a;</span><br><span class="line">            a=c;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> a;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">bool</span> <span class="title">canMeasureWater</span><span class="params">(<span class="keyword">int</span> x, <span class="keyword">int</span> y, <span class="keyword">int</span> z)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(z==<span class="number">0</span>)    <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">        <span class="keyword">if</span>(z&gt;x+y)<span class="keyword">return</span> <span class="literal">false</span>; </span><br><span class="line">        <span class="keyword">int</span> m=GCD(x,y);</span><br><span class="line">        <span class="keyword">if</span>(z%m==<span class="number">0</span>)  <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-
-      
-    </div>
-    <footer class="article-footer">
-      
-        <a data-url="http://yoursite.com/2020/03/21/ 离散数学第4讲/" data-id="ck9l0nbr7000wqsvijnlsj4iy" class="article-share-link" data-share="baidu" data-title="state machine&amp;Euclidean Alg">分享到</a>
-      
-
-      
-        <a href="http://yoursite.com/2020/03/21/ 离散数学第4讲/#ds-thread" class="article-comment-link">评论</a>
-      
-
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-
-
-  
-    <article id="post-算法设计及分析" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2020/02/13/ 算法设计及分析/" class="article-date">
-  <time datetime="2020-02-13T14:42:33.000Z" itemprop="datePublished">2020-02-13</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/算法设计与分析/">算法设计与分析</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/02/13/ 算法设计及分析/">算法设计与分析</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        
-    <div id="toc">
-      <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#2"><span class="toc-text">2</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-贪心方法"><span class="toc-text">3 贪心方法</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-一般方法"><span class="toc-text">1 一般方法</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#核心：选取能产生最优解的量度标准"><span class="toc-text">核心：选取能产生最优解的量度标准</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2背包"><span class="toc-text">2背包</span></a></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#动态规划"><span class="toc-text">动态规划</span></a>
-    </div>
-    
-    
-        <h3 id="2"><a href="#2" class="headerlink" title="2"></a>2</h3><p>证明$f(n)=O(g(n))$，有</p>
-<script type="math/tex; mode=display">
-\exists c,n_0,对于\forall n\geq n_0 有 f(n)\leq c*g(n)</script><p>即$g(n)$时$f(n)$的渐近上限。</p>
-<p>证明$f(n)=\Omega (g(n))$，有</p>
-<script type="math/tex; mode=display">
-\exists c,n_0,对于\forall n\geq n_0 有 f(n)\geq c*g(n)</script><p>即$g(n)$时$f(n)$的渐近下限。</p>
-<p>若同时满足$(1),(2)$</p>
-<p>则有</p>
-<script type="math/tex; mode=display">
-f(n)=\Theta (g(n)),且g(n)=\theta (f(n))</script><h3 id="3-贪心方法"><a href="#3-贪心方法" class="headerlink" title="3 贪心方法"></a>3 贪心方法</h3><h4 id="1-一般方法"><a href="#1-一般方法" class="headerlink" title="1 一般方法"></a>1 一般方法</h4><script type="math/tex; mode=display">
-n个输入,可行解为n个输入的子集\\
-约束条件\Longrightarrow 可行解 根据目标函数\Longrightarrow最优解</script><h4 id="核心：选取能产生最优解的量度标准"><a href="#核心：选取能产生最优解的量度标准" class="headerlink" title="核心：选取能产生最优解的量度标准"></a>核心：选取能产生最优解的量度标准</h4><h4 id="2背包"><a href="#2背包" class="headerlink" title="2背包"></a>2背包</h4><p><strong>定理5.1</strong></p>
-<ul>
-<li>如果$p_1 /w_1 ≥ p_2 /w_2 ≥ … ≥ p_n /w_n $，则算法<br>GREEDY-KNAPSACK 对于给定的背包问题实例<br>生成一个最优解。</li>
-</ul>
-<p><strong>证明</strong></p>
-<p>​    设$X=(x_1,…,x_n)$是算法生成的解</p>
-<p>1.若所有的$x_i$=1,显然这个解就是最优解。</p>
-<p>2.否则，设j是使得$x_j!=1$的最小下标，那么由算法可知</p>
-<ul>
-<li>对于$1\leq i&lt;j$，$x_i=1$</li>
-<li>对于$j&lt;i\leq n$，$x_i=0$</li>
-<li>对于$i=j$，$0\leq x_i&lt;1$</li>
-</ul>
-<p>3.若$X$不是最优解，那么必然存在一个最优解$Y=(y_1…y_n),使得\sum p_i y_i&gt;\sum p_ix_i,那么必然有\sum w_iy_i=M$</p>
-<p>设$k$是使得$y_k!=x_k$的最小下标，这样的$k$必然存在</p>
-<ul>
-<li>$k&lt;j$时，由于$x_k=1$,必然有$y_k&lt; x_k$</li>
-<li>$k=j$时，若$y_k&gt;x_k$，那么必然有$\sum w_i y_i&gt;M$，矛盾，故必然有$y_k&lt;x_k$</li>
-<li>$k&gt;j$时，若$y_k&gt;x_k$，那么必然有$\sum w_i y_i&gt;M$，矛盾，故必然有$y_k&lt;x_k$</li>
-</ul>
-<p>故有$y_k&lt;x_k$。</p>
-<p>4.现在使得$y<em>k=x_k$,那么其代价为$y</em>{k+1},…y_n$必须减去同样多的重量，使得总容量为$M$,那么导致了新解$Z$。<br>有</p>
-<script type="math/tex; mode=display">
-\sum _{k<i\leq n}w_i(y_i-z_i)=w_k(z_k-y_k)</script><p>5.那么有</p>
-<script type="math/tex; mode=display">
-\sum _{1\leq i\leq n}p_iz_i=\sum _{1\leq i \leq n}p_iy_i+(z_k-y_k)p_k-\sum _{k< i\leq n}p_i(y_i-z_i)
-\geq \sum _{1\leq i\leq n}p_iy_i</script><p>6.那么必然有</p>
-<script type="math/tex; mode=display">
-\sum _{1\leq i\leq n}p_iz_i=
-\sum _{1\leq i\leq n}p_iy_i</script><ul>
-<li><p>若此时</p>
-<script type="math/tex; mode=display">
-\sum _{1\leq i\leq n}p_iz_i=
-\sum _{1\leq i\leq n}p_ix_i\\
-则证毕</script></li>
-<li><p>否则，重复上面讨论，必然最终得到</p>
-<script type="math/tex; mode=display">
-\sum _{1\leq i\leq n}p_iz_i=
-\sum _{1\leq i\leq n}p_ix_i\\</script></li>
-</ul>
-<p>证毕</p>
-<p><strong>定理5.2</strong>，设$I为最优解，J为贪心解$<br>1.证明$I,J$是互不包含的关系</p>
-<ul>
-<li>若$I=J$，则证毕</li>
-<li>若$I\subset J$，与$I$为最优解矛盾</li>
-<li>若$J\subset I$，那么必然存在$b\in I且b\notin J$，设$J^{’}\subset J$，因为$I$是可行解，那么根据算法，当$J^{‘}考虑到b时，此时J^{‘}\cup {b}$必然也是可行解，与算法矛盾，那么证明其不成立完毕。</li>
-</ul>
-<p>2.证明$I=J$，设$I!=J$</p>
-<ul>
-<li>设有$A={a|a\in J且a\notin I},B={b|b\in I且b\notin J}，P_a=max{P_i|i\in A},P_b=max{P_i|i\in B}$，证明$P_a\geq P_b$: 若$P_b&gt;P_a$,那么当$J^{‘}考虑到b时，此时J^{‘}\cup {b}必然时可行解$，与算法矛盾。</li>
-</ul>
-<p>证毕</p>
-<p><strong>定理5.3</strong></p>
-<ul>
-<li>若$\delta $可行，那么$J$必然存在$\delta$这样的排列可行，必要性证毕</li>
-<li>现在证明充分性，若$J$可行，证明$\delta可行$，若$J$可行，必然有$a 为可行解$，现在证明$\delta$时可行解。设$\delta=i_1,i_2,…i_k;a=r_1,r_2,…r_k$令$a是使得r_a!=i_a$的最小下标，必然有$r_b=i_a$,显然$b&gt;a$,那么在$a$中将$r_a与r_b$互换，，这样的互换不违反期限。通过不断的互换，可以得到$\delta$</li>
-</ul>
-<p>证毕</p>
-<h1 id="动态规划"><a href="#动态规划" class="headerlink" title="动态规划"></a>动态规划</h1><ul>
-<li>多阶段过程</li>
-<li>满足最优性原理</li>
-<li>建立递推关系式</li>
-</ul>
-
-      
-    </div>
-    <footer class="article-footer">
-      
-        <a data-url="http://yoursite.com/2020/02/13/ 算法设计及分析/" data-id="ck9l0nbra0013qsvii0l6gnss" class="article-share-link" data-share="baidu" data-title="算法设计与分析">分享到</a>
-      
-
-      
-        <a href="http://yoursite.com/2020/02/13/ 算法设计及分析/#ds-thread" class="article-comment-link">评论</a>
-      
-
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-
-
-  
-    <article id="post-Warshall" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2019/11/18/ Warshall/" class="article-date">
-  <time datetime="2019-11-18T13:44:59.000Z" itemprop="datePublished">2019-11-18</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/algorithm/">algorithm</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/11/18/ Warshall/">Warshall&amp;All_componet</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        
-    <div id="toc">
-      <ol class="toc"><li class="toc-item toc-level-5"><a class="toc-link" href="#Warshall-amp-All-componet"><span class="toc-text">Warshall &amp; All_componet</span></a></li></ol>
-    </div>
-    
-    
-        <h5 id="Warshall-amp-All-componet"><a href="#Warshall-amp-All-componet" class="headerlink" title="Warshall &amp; All_componet"></a>Warshall &amp; All_componet</h5><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br><span class="line">165</span><br><span class="line">166</span><br><span class="line">167</span><br><span class="line">168</span><br><span class="line">169</span><br><span class="line">170</span><br><span class="line">171</span><br><span class="line">172</span><br><span class="line">173</span><br><span class="line">174</span><br><span class="line">175</span><br><span class="line">176</span><br><span class="line">177</span><br><span class="line">178</span><br><span class="line">179</span><br><span class="line">180</span><br><span class="line">181</span><br><span class="line">182</span><br><span class="line">183</span><br><span class="line">184</span><br><span class="line">185</span><br><span class="line">186</span><br><span class="line">187</span><br><span class="line">188</span><br><span class="line">189</span><br><span class="line">190</span><br><span class="line">191</span><br><span class="line">192</span><br><span class="line">193</span><br><span class="line">194</span><br><span class="line">195</span><br><span class="line">196</span><br><span class="line">197</span><br><span class="line">198</span><br><span class="line">199</span><br><span class="line">200</span><br><span class="line">201</span><br><span class="line">202</span><br><span class="line">203</span><br><span class="line">204</span><br><span class="line">205</span><br><span class="line">206</span><br><span class="line">207</span><br><span class="line">208</span><br><span class="line">209</span><br><span class="line">210</span><br><span class="line">211</span><br><span class="line">212</span><br><span class="line">213</span><br><span class="line">214</span><br><span class="line">215</span><br><span class="line">216</span><br><span class="line">217</span><br><span class="line">218</span><br><span class="line">219</span><br><span class="line">220</span><br><span class="line">221</span><br><span class="line">222</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">Edge</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line">    <span class="keyword">int</span> VerAdj;</span><br><span class="line">    <span class="keyword">int</span> cost;</span><br><span class="line">    Edge*link;</span><br><span class="line">&#125;;</span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">Vertex</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line">    <span class="keyword">int</span> VerName;</span><br><span class="line">    Edge*adjacent;</span><br><span class="line">&#125;;</span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">node</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line">    <span class="keyword">int</span> VerName;</span><br><span class="line">    node*link;</span><br><span class="line">&#125;;</span><br><span class="line"><span class="keyword">int</span> graphsize;</span><br><span class="line"><span class="keyword">int</span> edgesize;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> MAX=<span class="number">1e2</span>;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">Init</span><span class="params">(Vertex S[])</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">"%d%d"</span>,&amp;graphsize,&amp;edgesize);</span><br><span class="line">    <span class="keyword">int</span> i,j,k;</span><br><span class="line">    <span class="keyword">int</span> from,to,cost;</span><br><span class="line">    <span class="keyword">for</span>(i=<span class="number">0</span>;i&lt;graphsize;i++)</span><br><span class="line">    &#123;</span><br><span class="line">        S[i].adjacent=<span class="literal">NULL</span>;</span><br><span class="line">        S[i].VerName=i;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">for</span>(i=<span class="number">1</span>;i&lt;=edgesize;i++)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="built_in">scanf</span>(<span class="string">"%d%d"</span>,&amp;from,&amp;to);</span><br><span class="line">        Edge*p=<span class="keyword">new</span> Edge;</span><br><span class="line">        p-&gt;cost=<span class="number">0</span>;</span><br><span class="line">        p-&gt;link=<span class="literal">NULL</span>;</span><br><span class="line">        p-&gt;VerAdj=to;</span><br><span class="line">        Edge*q=S[from].adjacent;</span><br><span class="line">        <span class="keyword">if</span>(q==<span class="literal">NULL</span>)</span><br><span class="line">        &#123;</span><br><span class="line">            S[from].adjacent=p;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span></span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">if</span>(q-&gt;VerAdj&gt;=p-&gt;VerAdj)</span><br><span class="line"></span><br><span class="line">            &#123;</span><br><span class="line">                <span class="keyword">if</span>(q-&gt;VerAdj&gt;p-&gt;VerAdj)</span><br><span class="line">                &#123;</span><br><span class="line">                    p-&gt;link=q;</span><br><span class="line">                    S[from].adjacent=p;</span><br><span class="line">                &#125;</span><br><span class="line">                <span class="keyword">else</span></span><br><span class="line">                &#123;</span><br><span class="line">                    <span class="keyword">if</span>(q-&gt;cost&gt;p-&gt;cost)</span><br><span class="line">                    &#123;</span><br><span class="line">                        <span class="keyword">delete</span> q;</span><br><span class="line">                        S[from].adjacent=p;</span><br><span class="line">                    &#125;</span><br><span class="line">                    <span class="keyword">else</span></span><br><span class="line">                    &#123;</span><br><span class="line">                        <span class="keyword">delete</span> p;</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;</span><br><span class="line"></span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">else</span></span><br><span class="line">            &#123;</span><br><span class="line">                <span class="keyword">while</span>(q-&gt;link!=<span class="literal">NULL</span>)</span><br><span class="line">                &#123;</span><br><span class="line">                    <span class="keyword">if</span>(q-&gt;link-&gt;VerAdj&gt;=p-&gt;VerAdj)</span><br><span class="line">                    &#123;</span><br><span class="line">                        <span class="keyword">break</span>;</span><br><span class="line">                    &#125;</span><br><span class="line">                    q=q-&gt;link;</span><br><span class="line">                &#125;</span><br><span class="line">                <span class="keyword">if</span>(q-&gt;link==<span class="literal">NULL</span>)</span><br><span class="line">                &#123;</span><br><span class="line">                    p-&gt;link=q-&gt;link;</span><br><span class="line">                    q-&gt;link=p;</span><br><span class="line">                &#125;</span><br><span class="line">                <span class="keyword">else</span></span><br><span class="line">                &#123;</span><br><span class="line">                    <span class="keyword">if</span>(q-&gt;link-&gt;VerAdj==p-&gt;VerAdj)</span><br><span class="line">                    &#123;</span><br><span class="line">                        <span class="keyword">if</span>(q-&gt;link-&gt;cost&gt;p-&gt;cost)</span><br><span class="line">                        &#123;</span><br><span class="line">                            Edge*q0=q-&gt;link;</span><br><span class="line">                            p-&gt;link=q0-&gt;link;</span><br><span class="line">                            q-&gt;link=p;</span><br><span class="line">                            <span class="keyword">delete</span> q0;</span><br><span class="line">                        &#125;</span><br><span class="line">                        <span class="keyword">else</span></span><br><span class="line">                            <span class="keyword">delete</span> p;</span><br><span class="line">                    &#125;</span><br><span class="line">                    <span class="keyword">else</span></span><br><span class="line">                    &#123;</span><br><span class="line">                        p-&gt;link=q-&gt;link;</span><br><span class="line">                        q-&gt;link=p;</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;</span><br><span class="line"></span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">Warshall</span><span class="params">(Vertex S[],<span class="keyword">int</span> WSM[MAX][MAX])</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> i,j,k;</span><br><span class="line">    Edge*p;</span><br><span class="line">    <span class="keyword">int</span> a;</span><br><span class="line">    <span class="keyword">for</span>(i=<span class="number">0</span>;i&lt;graphsize;i++)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">for</span>(j=<span class="number">0</span>;j&lt;graphsize;j++)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">if</span>(i==j)</span><br><span class="line">                WSM[i][j]=<span class="number">1</span>;</span><br><span class="line">            <span class="keyword">else</span></span><br><span class="line">            &#123;</span><br><span class="line">                WSM[i][j]=<span class="number">0</span>;</span><br><span class="line">                WSM[j][i]=<span class="number">0</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span>(i=<span class="number">0</span>;i&lt;graphsize;i++)</span><br><span class="line">    &#123;</span><br><span class="line">        p=S[i].adjacent;</span><br><span class="line">        a=S[i].VerName;</span><br><span class="line">        <span class="keyword">while</span>(p!=<span class="literal">NULL</span>)</span><br><span class="line">        &#123;</span><br><span class="line">            WSM[a][p-&gt;VerAdj]=<span class="number">1</span>;</span><br><span class="line">            p=p-&gt;link;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">for</span>(k=<span class="number">0</span>;k&lt;graphsize;k++)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">for</span>(i=<span class="number">0</span>;i&lt;graphsize;i++)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">if</span>(WSM[i][k]==<span class="number">1</span>)</span><br><span class="line">            &#123;</span><br><span class="line">                <span class="keyword">for</span>(j=<span class="number">0</span>;j&lt;graphsize;j++)</span><br><span class="line">                &#123;</span><br><span class="line">                    WSM[i][j]=(WSM[i][j])||(WSM[k][j]);</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">All_componet</span><span class="params">(Vertex S[])</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> WSM[MAX][MAX];</span><br><span class="line">    <span class="keyword">int</span> markedList[MAX];</span><br><span class="line">    <span class="keyword">int</span> i,j,k;</span><br><span class="line">    <span class="keyword">for</span>(i=<span class="number">0</span>;i&lt;graphsize;i++)</span><br><span class="line">        markedList[i]=<span class="number">0</span>;</span><br><span class="line">    Warshall(S,WSM);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">int</span> t=<span class="number">0</span>;</span><br><span class="line">    <span class="keyword">int</span> v;</span><br><span class="line">    <span class="keyword">for</span>(v=<span class="number">0</span>;v&lt;graphsize;v++)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">if</span>(markedList[v]==<span class="number">0</span>)</span><br><span class="line">        &#123;</span><br><span class="line"></span><br><span class="line">            markedList[v]=<span class="number">1</span>;</span><br><span class="line">            node*scList=<span class="keyword">new</span> node;</span><br><span class="line">            scList-&gt;VerName=v;</span><br><span class="line">            scList-&gt;link=<span class="literal">NULL</span>;</span><br><span class="line">            node*q=scList;</span><br><span class="line">            <span class="keyword">for</span>(i=<span class="number">0</span>;i&lt;graphsize;i++)</span><br><span class="line">            &#123;</span><br><span class="line">                <span class="keyword">if</span>(i!=v&amp;&amp;WSM[v][i]==<span class="number">1</span>&amp;&amp;WSM[i][v]==<span class="number">1</span>)</span><br><span class="line">                &#123;</span><br><span class="line">                    markedList[i]=<span class="number">1</span>;</span><br><span class="line">                    node*p=<span class="keyword">new</span> node;</span><br><span class="line">                    p-&gt;VerName=i;</span><br><span class="line">                    p-&gt;link=<span class="literal">NULL</span>;</span><br><span class="line">                    q-&gt;link=p;</span><br><span class="line">                    q=q-&gt;link;</span><br><span class="line">                &#125;</span><br><span class="line"></span><br><span class="line">            &#125;</span><br><span class="line">            <span class="built_in">printf</span>(<span class="string">"t:%d\n"</span>,t);</span><br><span class="line">            t=t+<span class="number">1</span>;</span><br><span class="line">            q=scList;</span><br><span class="line">            node*q0;</span><br><span class="line">            <span class="keyword">while</span>(q!=<span class="literal">NULL</span>)</span><br><span class="line">            &#123;</span><br><span class="line">                <span class="built_in">printf</span>(<span class="string">"%d "</span>,q-&gt;VerName);</span><br><span class="line">                q0=q;</span><br><span class="line">                q=q-&gt;link;</span><br><span class="line">                <span class="keyword">delete</span> q0;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="built_in">cout</span>&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">6 7</span></span><br><span class="line"><span class="comment">0 1</span></span><br><span class="line"><span class="comment">0 3</span></span><br><span class="line"><span class="comment">1 2</span></span><br><span class="line"><span class="comment">2 0</span></span><br><span class="line"><span class="comment">3 4</span></span><br><span class="line"><span class="comment">4 5</span></span><br><span class="line"><span class="comment">5 4</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    Vertex S[MAX];</span><br><span class="line">    Init(S);</span><br><span class="line">    All_componet(S);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-      
-    </div>
-    <footer class="article-footer">
-      
-        <a data-url="http://yoursite.com/2019/11/18/ Warshall/" data-id="ck9l0nbqz000iqsvi648qfs92" class="article-share-link" data-share="baidu" data-title="Warshall&amp;All_componet">分享到</a>
-      
-
-      
-        <a href="http://yoursite.com/2019/11/18/ Warshall/#ds-thread" class="article-comment-link">评论</a>
       
 
       
@@ -1441,7 +1669,7 @@ n个输入,可行解为n个输入的子集\\
   <div class="widget-wrap">
     <h3 class="widget-title">分类</h3>
     <div class="widget">
-      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Java/">Java</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Linux/">Linux</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/algorithm/">algorithm</a><span class="category-list-count">8</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/垃圾场/">垃圾场</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/微机原理/">微机原理</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/操作系统/">操作系统</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/机器学习/">机器学习</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/离散数学/">离散数学</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/算法设计与分析/">算法设计与分析</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/组合数学/">组合数学</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/计算机系统结构/">计算机系统结构</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/随机数学/">随机数学</a><span class="category-list-count">1</span></li></ul>
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Java/">Java</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Linux/">Linux</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Machine-Learning/">Machine Learning</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Python/">Python</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Read/">Read</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/algorithm/">algorithm</a><span class="category-list-count">8</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/垃圾场/">垃圾场</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/微机原理/">微机原理</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/操作系统/">操作系统</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/机器学习/">机器学习</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/汇编/">汇编</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/离散数学/">离散数学</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/算法设计与分析/">算法设计与分析</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/组合数学/">组合数学</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/计算机系统结构/">计算机系统结构</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/随机数学/">随机数学</a><span class="category-list-count">1</span></li></ul>
     </div>
   </div>
 
@@ -1454,7 +1682,7 @@ n个输入,可行解为n个输入的子集\\
   <div class="widget-wrap">
     <h3 class="widget-title">归档</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/04/">四月 2020</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/03/">三月 2020</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/02/">二月 2020</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/11/">十一月 2019</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/10/">十月 2019</a><span class="archive-list-count">7</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/08/">八月 2019</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/04/">四月 2012</a><span class="archive-list-count">1</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/05/">五月 2020</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/04/">四月 2020</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/03/">三月 2020</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/02/">二月 2020</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/11/">十一月 2019</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/10/">十月 2019</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/08/">八月 2019</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/04/">四月 2012</a><span class="archive-list-count">1</span></li></ul>
     </div>
   </div>
 
@@ -1466,23 +1694,23 @@ n个输入,可行解为n个输入的子集\\
       <ul>
         
           <li>
+            <a href="/2020/05/12/ Python/">Python</a>
+          </li>
+        
+          <li>
+            <a href="/2020/05/12/ 汇编_Debug/">Debug</a>
+          </li>
+        
+          <li>
+            <a href="/2020/05/07/ 重读C++ Primer/">重读C++ Primer</a>
+          </li>
+        
+          <li>
             <a href="/2020/04/23/ 汇编/">汇编</a>
           </li>
         
           <li>
             <a href="/2020/04/11/ 微型计算机/">微机原理</a>
-          </li>
-        
-          <li>
-            <a href="/2020/04/06/ 组合数学/">组合数学</a>
-          </li>
-        
-          <li>
-            <a href="/2020/04/03/ 概率论与数理统计/">随机数学</a>
-          </li>
-        
-          <li>
-            <a href="/2020/04/02/ Java核心技术i/">Java核心技术i</a>
           </li>
         
       </ul>
