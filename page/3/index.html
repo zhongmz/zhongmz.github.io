@@ -71,6 +71,181 @@
     <div class="outer">
       <section id="main">
   
+    <article id="post-qpow" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/10/21/ qpow/" class="article-date">
+  <time datetime="2019-10-20T17:18:42.000Z" itemprop="datePublished">2019-10-21</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/algorithm/">algorithm</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/10/21/ qpow/">qpow</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="快速幂"><a href="#快速幂" class="headerlink" title="快速幂"></a>快速幂</h3><h5 id="假设"><a href="#假设" class="headerlink" title="假设"></a>假设</h5><p>​    求x^n的值</p>
+<h5 id="时间复杂度"><a href="#时间复杂度" class="headerlink" title="时间复杂度"></a>时间复杂度</h5><p>​    O(log n)</p>
+<h5 id="解释"><a href="#解释" class="headerlink" title="解释"></a>解释</h5><p>​    通过加大底数的权重来使得乘法次数更少</p>
+<p>​    1.假设n为奇数：x^n=x*x^(n-1)            则将x计入结果</p>
+<p>​    2.假设n为偶数：x^n=x^(n/2)*x^(n/2)    则将x的权重变为x^2</p>
+<h5 id="实现代码"><a href="#实现代码" class="headerlink" title="实现代码"></a>实现代码</h5><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*快速幂运算 log 2 n*/</span></span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">long</span> <span class="keyword">long</span> LL;</span><br><span class="line"><span class="function">LL <span class="title">qpow</span><span class="params">(LL a, LL n, LL mod)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	LL result = <span class="number">1</span>;</span><br><span class="line">	<span class="keyword">while</span> (n!=<span class="number">0</span>)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">if</span> (n &amp; <span class="number">1</span>)</span><br><span class="line">			result = (result * a) % mod;<span class="comment">//计入结果</span></span><br><span class="line">		a = (a * a) % mod;<span class="comment">//权重变大</span></span><br><span class="line">		n &gt;&gt;= <span class="number">1</span>;<span class="comment">//n=n/2;</span></span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> result;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+    <footer class="article-footer">
+      
+        <a data-url="http://yoursite.com/2019/10/21/ qpow/" data-id="ckaexuwji0011g8vib8yy4dwq" class="article-share-link" data-share="baidu" data-title="qpow">分享到</a>
+      
+
+      
+        <a href="http://yoursite.com/2019/10/21/ qpow/#ds-thread" class="article-comment-link">评论</a>
+      
+
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+
+  
+    <article id="post-Kruskal" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/10/10/ Kruskal/" class="article-date">
+  <time datetime="2019-10-10T14:56:52.000Z" itemprop="datePublished">2019-10-10</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/algorithm/">algorithm</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/10/10/ Kruskal/">Kruskal</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="Kruskal"><a href="#Kruskal" class="headerlink" title="Kruskal"></a>Kruskal</h3><blockquote>
+<p>Kruskal总是维护无向连通图的最小生成森林</p>
+<p>最终得到该图的最小生成树</p>
+</blockquote>
+<h5 id="由来"><a href="#由来" class="headerlink" title="由来"></a>由来</h5><p>​    <strong>Kruskal算法</strong>是一种用来查找<a href="https://baike.baidu.com/item/最小生成树" target="_blank" rel="noopener">最小生成树</a>的贪心算法，由Joseph Kruskal在1956年发表。</p>
+<h5 id="假设"><a href="#假设" class="headerlink" title="假设"></a>假设</h5><p>​    有n个点m条无向边的图，且已知每一条边(x,y,z)，代表点x和点y之间有哦权值为z的无向边。    </p>
+<h5 id="时间复杂度"><a href="#时间复杂度" class="headerlink" title="时间复杂度"></a>时间复杂度</h5><p>​    O(m log m)</p>
+<h5 id="预备知识"><a href="#预备知识" class="headerlink" title="预备知识"></a>预备知识</h5><p>​    并查集        <del>先挖坑</del></p>
+<h5 id="解释"><a href="#解释" class="headerlink" title="解释"></a>解释</h5><p>​        在遍历所给无向连通图的过程中，kruskal 总是维护着最小生成森林。</p>
+<p>​    最终得到最小生成树。</p>
+<p>​        有以下步骤：</p>
+<p>​    1.初始化并查集，每一个点各自构成一个集合</p>
+<p>​    2.对边集S进行从小到大排序</p>
+<p>​    3.从S中取出一条边（注意：现在是从S中从小到大取出，判断这条边的两个端点是否属于同一个集合（使用并查集维护），不是则将端点x和端点y使用并查集combine起来。且将边加入最小生成森林。</p>
+<p>​    4.不断重复S直至访问完所有边</p>
+<h5 id="实现代码"><a href="#实现代码" class="headerlink" title="实现代码"></a>实现代码</h5><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//以边集来保存图，假设有m条边</span></span><br><span class="line"><span class="comment">//时间复杂度为mlogm</span></span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> MAX=<span class="number">11010</span>;</span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">edge</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line">    <span class="keyword">int</span> x;</span><br><span class="line">    <span class="keyword">int</span> y;</span><br><span class="line">    <span class="keyword">int</span> z;</span><br><span class="line">&#125;;<span class="comment">//代表x和y两点之间有路且权值为z</span></span><br><span class="line">edge S[MAX];</span><br><span class="line"><span class="keyword">int</span> Father[MAX];</span><br><span class="line"><span class="keyword">int</span> n,m;</span><br><span class="line"><span class="keyword">int</span> ans;</span><br><span class="line"><span class="keyword">bool</span> <span class="keyword">operator</span> &lt;(<span class="keyword">const</span> edge&amp;a,<span class="keyword">const</span> edge&amp;b)</span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">return</span> a.z&lt;b.z;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">void</span> <span class="title">Init</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> i;</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">"%d%d"</span>,&amp;n,&amp;m);</span><br><span class="line">    <span class="keyword">for</span>(i=<span class="number">1</span>;i&lt;=m;i++)</span><br><span class="line">        <span class="built_in">scanf</span>(<span class="string">"%d%d%d"</span>,&amp;S[i].x,&amp;S[i].y,&amp;S[i].z);</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//并查集找父亲</span></span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">int</span> <span class="title">Find</span><span class="params">(<span class="keyword">int</span> x)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">while</span>(x!=Father[x])</span><br><span class="line">        x=Father[x];</span><br><span class="line">    <span class="keyword">return</span> x;   </span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//combine</span></span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">void</span> <span class="title">combine</span><span class="params">(<span class="keyword">int</span> x,<span class="keyword">int</span> y)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">       Father[x]=y;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">void</span> <span class="title">Kruskal</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    ans=<span class="number">0</span>;</span><br><span class="line">    <span class="keyword">int</span> x;</span><br><span class="line">    <span class="keyword">int</span> y;</span><br><span class="line">    <span class="keyword">int</span> i;</span><br><span class="line">    <span class="keyword">for</span>(i=<span class="number">1</span>;i&lt;=n;i++)</span><br><span class="line">        Father[i]=i;</span><br><span class="line">    sort(S+<span class="number">1</span>,S+m+<span class="number">1</span>);</span><br><span class="line">    <span class="keyword">for</span>(i=<span class="number">1</span>;i&lt;=m;i++)</span><br><span class="line">    &#123;</span><br><span class="line">        x=Find(S[i].x);</span><br><span class="line">        y=Find(S[i].y);</span><br><span class="line">        <span class="keyword">if</span>(x!=y)</span><br><span class="line">        &#123;</span><br><span class="line">            ans=ans+S[i].z;</span><br><span class="line">            combine(x,y);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p><a href="http://acm.hdu.edu.cn/showproblem.php?pid=1233" target="_blank" rel="noopener">模板题</a></p>
+</blockquote>
+<p>​    回顾学习算法的第四天。<del>戒掉可乐的第四天</del></p>
+<p>​        Orz</p>
+<p>​        Orz</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      
+        <a data-url="http://yoursite.com/2019/10/10/ Kruskal/" data-id="ckaexuwjb000rg8vidlfa26hp" class="article-share-link" data-share="baidu" data-title="Kruskal">分享到</a>
+      
+
+      
+        <a href="http://yoursite.com/2019/10/10/ Kruskal/#ds-thread" class="article-comment-link">评论</a>
+      
+
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+
+  
+    <article id="post-机器不学习" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/10/10/ 机器不学习/" class="article-date">
+  <time datetime="2019-10-10T14:56:52.000Z" itemprop="datePublished">2019-10-10</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Machine-Learning/">Machine Learning</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/10/10/ 机器不学习/">垃圾箱</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <blockquote>
+<p>学习是系统通过经验提升性能的过程</p>
+</blockquote>
+
+      
+    </div>
+    <footer class="article-footer">
+      
+        <a data-url="http://yoursite.com/2019/10/10/ 机器不学习/" data-id="ckaexuwjk0013g8vi38v9djpj" class="article-share-link" data-share="baidu" data-title="垃圾箱">分享到</a>
+      
+
+      
+        <a href="http://yoursite.com/2019/10/10/ 机器不学习/#ds-thread" class="article-comment-link">评论</a>
+      
+
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+
+  
     <article id="post-Manacher" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2019/10/09/ Manacher/" class="article-date">
@@ -97,12 +272,6 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        
-    <div id="toc">
-      <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#由来"><span class="toc-text">由来</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#作用"><span class="toc-text">作用</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#时间复杂度"><span class="toc-text">时间复杂度</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#原理"><span class="toc-text">原理</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#1-字符串处理"><span class="toc-text">1.字符串处理</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#2-Len数组"><span class="toc-text">2.Len数组</span></a></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#代码实现"><span class="toc-text">代码实现</span></a></li></ol>
-    </div>
-    
-    
         <h3 id="由来"><a href="#由来" class="headerlink" title="由来"></a>由来</h3><p>​    1975年，一个叫Manacher的人发明了一个Manacher算法</p>
 <h3 id="作用"><a href="#作用" class="headerlink" title="作用"></a>作用</h3><p>​    给定一个字符串S，求出其最大回文子串</p>
 <h3 id="时间复杂度"><a href="#时间复杂度" class="headerlink" title="时间复杂度"></a>时间复杂度</h3><blockquote>
@@ -213,7 +382,7 @@
     </div>
     <footer class="article-footer">
       
-        <a data-url="http://yoursite.com/2019/10/09/ Manacher/" data-id="cka7x30fy0005isviprg89o04" class="article-share-link" data-share="baidu" data-title="Manacher">分享到</a>
+        <a data-url="http://yoursite.com/2019/10/09/ Manacher/" data-id="ckaexuwis0007g8vij8l6a7m2" class="article-share-link" data-share="baidu" data-title="Manacher">分享到</a>
       
 
       
@@ -256,12 +425,6 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        
-    <div id="toc">
-      <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#C-迭代器"><span class="toc-text">C++ 迭代器</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Java-Iterator"><span class="toc-text">Java Iterator</span></a></li></ol>
-    </div>
-    
-    
         <h3 id="C-迭代器"><a href="#C-迭代器" class="headerlink" title="C++ 迭代器"></a>C++ 迭代器</h3><ul>
 <li>定义：可以是概念本身，可以是迭代器类型，可以是某个迭代器对象。</li>
 <li>总之，它能使我们能访问容器的元素或者改变某个元素。</li>
@@ -290,7 +453,7 @@
     </div>
     <footer class="article-footer">
       
-        <a data-url="http://yoursite.com/2019/10/09/ 迭代器/" data-id="cka7x30h3001eisvis4yamvkf" class="article-share-link" data-share="baidu" data-title="iterator">分享到</a>
+        <a data-url="http://yoursite.com/2019/10/09/ 迭代器/" data-id="ckaexuwk0001ng8vi57zvinmm" class="article-share-link" data-share="baidu" data-title="iterator">分享到</a>
       
 
       
@@ -333,12 +496,6 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        
-    <div id="toc">
-      <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#名字由来"><span class="toc-text">名字由来</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#时间复杂度"><span class="toc-text">时间复杂度</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#原理"><span class="toc-text">原理</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#引出"><span class="toc-text">引出</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#Next函数的产生"><span class="toc-text">Next函数的产生</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#NextPro数组的产生"><span class="toc-text">NextPro数组的产生</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#KMPSearch代码"><span class="toc-text">KMPSearch代码</span></a></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#这个讲解很棒"><span class="toc-text">这个讲解很棒</span></a></li></ol>
-    </div>
-    
-    
         <h3 id="名字由来"><a href="#名字由来" class="headerlink" title="名字由来"></a>名字由来</h3><p>​    由<strong>K</strong>nuth，<strong>M</strong>orris,<strong>P</strong>ratt三人所设计的线性时间字符串匹配算法</p>
 <h3 id="时间复杂度"><a href="#时间复杂度" class="headerlink" title="时间复杂度"></a>时间复杂度</h3><p>​    设有长度为n的文本串S和长度为m的匹配串P，求匹配串成功匹配文本串字串的首地址</p>
 <p>​    O(n+m)</p>
@@ -354,7 +511,7 @@
     </div>
     <footer class="article-footer">
       
-        <a data-url="http://yoursite.com/2019/10/01/ KMP/" data-id="cka7x30fp0000isviwpqydqxg" class="article-share-link" data-share="baidu" data-title="KMP">分享到</a>
+        <a data-url="http://yoursite.com/2019/10/01/ KMP/" data-id="ckaexuwig0000g8viqoy78h4t" class="article-share-link" data-share="baidu" data-title="KMP">分享到</a>
       
 
       
@@ -393,12 +550,6 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        
-    <div id="toc">
-      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Quick-Start"><span class="toc-text">Quick Start</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Create-a-new-post"><span class="toc-text">Create a new post</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Run-server"><span class="toc-text">Run server</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Generate-static-files"><span class="toc-text">Generate static files</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Deploy-to-remote-sites"><span class="toc-text">Deploy to remote sites</span></a></li></ol></li></ol>
-    </div>
-    
-    
         <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
 <h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
 <p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
@@ -413,7 +564,7 @@
     </div>
     <footer class="article-footer">
       
-        <a data-url="http://yoursite.com/2019/08/30/ hello-world/" data-id="cka7x30gb000lisvijhvzka97" class="article-share-link" data-share="baidu" data-title="Hello World">分享到</a>
+        <a data-url="http://yoursite.com/2019/08/30/ hello-world/" data-id="ckaexuwja000pg8vivp046g87" class="article-share-link" data-share="baidu" data-title="Hello World">分享到</a>
       
 
       
@@ -456,12 +607,6 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        
-    <div id="toc">
-      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#VI"><span class="toc-text">VI</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#Command"><span class="toc-text">Command</span></a></li></ol></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#文件"><span class="toc-text">文件</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#创建文件"><span class="toc-text">创建文件</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#移除文件"><span class="toc-text">移除文件</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#复制文件"><span class="toc-text">复制文件</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#移动文件"><span class="toc-text">移动文件</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Shell"><span class="toc-text">Shell</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Shell-变量"><span class="toc-text">Shell 变量</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#kill"><span class="toc-text">kill</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#tee-分离输出"><span class="toc-text">tee 分离输出</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#expr"><span class="toc-text">expr</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#选项"><span class="toc-text">选项</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#全局变量"><span class="toc-text">全局变量</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#PS1，用于编辑命令行的格式"><span class="toc-text">PS1，用于编辑命令行的格式</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#正则表达式"><span class="toc-text">正则表达式</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#元字符"><span class="toc-text">元字符</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#关机"><span class="toc-text">关机</span></a></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#grep"><span class="toc-text">grep</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#echo"><span class="toc-text">echo</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#ls"><span class="toc-text">ls</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#cd"><span class="toc-text">cd</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#clear"><span class="toc-text">clear</span></a></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#test"><span class="toc-text">test</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#元字符-1"><span class="toc-text">元字符</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#转义字符"><span class="toc-text">转义字符</span></a></li></ol>
-    </div>
-    
-    
         <h1 id="VI"><a href="#VI" class="headerlink" title="VI"></a>VI</h1><h5 id="Command"><a href="#Command" class="headerlink" title="Command"></a>Command</h5><p>$:wq，保存并退出$</p>
 <p>$:w,保存$</p>
 <p>$:w \ filename,另存为filename$</p>
@@ -599,7 +744,7 @@
     </div>
     <footer class="article-footer">
       
-        <a data-url="http://yoursite.com/2012/04/04/ Linux/" data-id="cka7x30g00007isviys1n0nfq" class="article-share-link" data-share="baidu" data-title="Linux">分享到</a>
+        <a data-url="http://yoursite.com/2012/04/04/ Linux/" data-id="ckaexuwin0003g8vi2vftnlzc" class="article-share-link" data-share="baidu" data-title="Linux">分享到</a>
       
 
       
@@ -629,7 +774,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">分类</h3>
     <div class="widget">
-      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Java/">Java</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Linux/">Linux</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Machine-Learning/">Machine Learning</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Python/">Python</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Read/">Read</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/algorithm/">algorithm</a><span class="category-list-count">8</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/垃圾场/">垃圾场</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/微机原理/">微机原理</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/操作系统/">操作系统</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/机器学习/">机器学习</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/汇编/">汇编</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/离散数学/">离散数学</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/算法设计与分析/">算法设计与分析</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/组合数学/">组合数学</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/计算机系统结构/">计算机系统结构</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/随机数学/">随机数学</a><span class="category-list-count">1</span></li></ul>
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Java/">Java</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Linux/">Linux</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Machine-Learning/">Machine Learning</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Python/">Python</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Read/">Read</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/algorithm/">algorithm</a><span class="category-list-count">8</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/垃圾场/">垃圾场</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/微机原理/">微机原理</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/操作系统/">操作系统</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/机器学习/">机器学习</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/汇编/">汇编</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/离散数学/">离散数学</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/算法设计与分析/">算法设计与分析</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/组合数学/">组合数学</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/计算机系统结构/">计算机系统结构</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/随机数学/">随机数学</a><span class="category-list-count">1</span></li></ul>
     </div>
   </div>
 
@@ -642,7 +787,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">归档</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/05/">五月 2020</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/04/">四月 2020</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/03/">三月 2020</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/02/">二月 2020</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/11/">十一月 2019</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/10/">十月 2019</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/08/">八月 2019</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/04/">四月 2012</a><span class="archive-list-count">1</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/05/">五月 2020</a><span class="archive-list-count">6</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/04/">四月 2020</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/03/">三月 2020</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/02/">二月 2020</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/11/">十一月 2019</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/10/">十月 2019</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/08/">八月 2019</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/04/">四月 2012</a><span class="archive-list-count">1</span></li></ul>
     </div>
   </div>
 
@@ -654,6 +799,14 @@
       <ul>
         
           <li>
+            <a href="/2020/05/17/ 图像/">图像</a>
+          </li>
+        
+          <li>
+            <a href="/2020/05/12/ Octave/">Octave</a>
+          </li>
+        
+          <li>
             <a href="/2020/05/12/ Python/">Python</a>
           </li>
         
@@ -662,15 +815,7 @@
           </li>
         
           <li>
-            <a href="/2020/05/07/ 重读C++ Primer/">重读C++ Primer</a>
-          </li>
-        
-          <li>
-            <a href="/2020/04/23/ 汇编/">汇编</a>
-          </li>
-        
-          <li>
-            <a href="/2020/04/11/ 微型计算机/">微机原理</a>
+            <a href="/2020/05/12/ 计算方法/">Python</a>
           </li>
         
       </ul>

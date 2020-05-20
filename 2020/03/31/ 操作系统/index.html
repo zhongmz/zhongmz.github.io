@@ -14,7 +14,7 @@
 <meta property="og:site_name" content="Xxgzbd&#39;s Blog">
 <meta property="og:description" content="前言1 中断，在程序运行过程中出现某种紧急事件，必须中止当前正在运行的程序，转去处理此事件，然后再恢复原来运行的程序。有$\begin{Bmatrix} 强迫性中断\ 自愿性中断\  \end {Bmatrix}$。 2 中断系统，中断装置+中断处理程序 3 中断装置，识别中断源$\Longrightarrow$ 保存现场$(运行的物理环境：地址寄存器，通用寄存器，浮点寄存器，SP，PSW，PC，">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2020-05-12T11:27:09.370Z">
+<meta property="og:updated_time" content="2020-05-19T08:35:59.813Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="操作系统">
 <meta name="twitter:description" content="前言1 中断，在程序运行过程中出现某种紧急事件，必须中止当前正在运行的程序，转去处理此事件，然后再恢复原来运行的程序。有$\begin{Bmatrix} 强迫性中断\ 自愿性中断\  \end {Bmatrix}$。 2 中断系统，中断装置+中断处理程序 3 中断装置，识别中断源$\Longrightarrow$ 保存现场$(运行的物理环境：地址寄存器，通用寄存器，浮点寄存器，SP，PSW，PC，">
@@ -96,12 +96,6 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        
-    <div id="toc">
-      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#前言"><span class="toc-text">前言</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#互斥"><span class="toc-text">互斥</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#软件实现互斥"><span class="toc-text">软件实现互斥</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Dekker"><span class="toc-text">Dekker</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Peterson"><span class="toc-text">Peterson</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Lamport"><span class="toc-text">Lamport</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Eisenberg-Mcguire"><span class="toc-text">Eisenberg_Mcguire</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#同步"><span class="toc-text">同步</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#死锁"><span class="toc-text">死锁</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#死锁的避免"><span class="toc-text">死锁的避免</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#银行家算法"><span class="toc-text">银行家算法</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Shoshamin-amp-amp-Coffman的死锁检测算法"><span class="toc-text">Shoshamin&amp;&amp;Coffman的死锁检测算法</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#主存储器管理"><span class="toc-text">主存储器管理</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#内存"><span class="toc-text">内存</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#内存分区"><span class="toc-text">内存分区</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#内存区分配"><span class="toc-text">内存区分配</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#页式存储"><span class="toc-text">页式存储</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#虚拟存储系统"><span class="toc-text">虚拟存储系统</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#外存储器管理技术"><span class="toc-text">外存储器管理技术</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#策略"><span class="toc-text">策略</span></a></li></ol></li></ol></li></ol>
-    </div>
-    
-    
         <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>1 <em>中断</em>，在程序运行过程中出现某种紧急事件，必须中止当前正在运行的程序，转去处理此事件，然后再恢复原来运行的程序。有$\begin{Bmatrix} 强迫性中断\ 自愿性中断\  \end {Bmatrix}$。</p>
 <p>2 <em>中断系统</em>，中断装置+中断处理程序</p>
 <p>3 <em>中断装置</em>，识别中断源$\Longrightarrow$ 保存现场$(运行的物理环境：地址寄存器，通用寄存器，浮点寄存器，SP，PSW，PC，文件表)\Longrightarrow $引出中断程序</p>
@@ -112,6 +106,7 @@
 <p>5 $PSW,program\ status\ word$，程序状态字，表示当前程序的运行环境，状态</p>
 <p>6 $JCB\ ,Job\ Control\ Block$，作业控制块，是标志作业存在的数据结构，其中包含系统对作业进行管理所需要的全部信息。</p>
 <p>7 $PC$，指令计数。</p>
+<p>8 $FCB,file\ control \ block$，文件控制块</p>
 <p>1 $FCFS,first\ come\ first\ service $，先到先服务。</p>
 <p>。。。</p>
 <p><strong>程序并发执行的条件</strong></p>
@@ -164,7 +159,7 @@ EAT=快表命中率\cdot (快表访问时间+内存访问时间)+(1-快表命中
     </div>
     <footer class="article-footer">
       
-        <a data-url="http://yoursite.com/2020/03/31/ 操作系统/" data-id="cka7x30gx0019isvig0zb0qkk" class="article-share-link" data-share="baidu" data-title="操作系统">分享到</a>
+        <a data-url="http://yoursite.com/2020/03/31/ 操作系统/" data-id="ckaexuwjg000yg8vizvt07dxk" class="article-share-link" data-share="baidu" data-title="操作系统">分享到</a>
       
 
       
@@ -212,7 +207,7 @@ EAT=快表命中率\cdot (快表访问时间+内存访问时间)+(1-快表命中
   <div class="widget-wrap">
     <h3 class="widget-title">分类</h3>
     <div class="widget">
-      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Java/">Java</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Linux/">Linux</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Machine-Learning/">Machine Learning</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Python/">Python</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Read/">Read</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/algorithm/">algorithm</a><span class="category-list-count">8</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/垃圾场/">垃圾场</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/微机原理/">微机原理</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/操作系统/">操作系统</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/机器学习/">机器学习</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/汇编/">汇编</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/离散数学/">离散数学</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/算法设计与分析/">算法设计与分析</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/组合数学/">组合数学</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/计算机系统结构/">计算机系统结构</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/随机数学/">随机数学</a><span class="category-list-count">1</span></li></ul>
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Java/">Java</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Linux/">Linux</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Machine-Learning/">Machine Learning</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Python/">Python</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Read/">Read</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/algorithm/">algorithm</a><span class="category-list-count">8</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/垃圾场/">垃圾场</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/微机原理/">微机原理</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/操作系统/">操作系统</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/机器学习/">机器学习</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/汇编/">汇编</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/离散数学/">离散数学</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/算法设计与分析/">算法设计与分析</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/组合数学/">组合数学</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/计算机系统结构/">计算机系统结构</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/随机数学/">随机数学</a><span class="category-list-count">1</span></li></ul>
     </div>
   </div>
 
@@ -225,7 +220,7 @@ EAT=快表命中率\cdot (快表访问时间+内存访问时间)+(1-快表命中
   <div class="widget-wrap">
     <h3 class="widget-title">归档</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/05/">五月 2020</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/04/">四月 2020</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/03/">三月 2020</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/02/">二月 2020</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/11/">十一月 2019</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/10/">十月 2019</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/08/">八月 2019</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/04/">四月 2012</a><span class="archive-list-count">1</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/05/">五月 2020</a><span class="archive-list-count">6</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/04/">四月 2020</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/03/">三月 2020</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/02/">二月 2020</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/11/">十一月 2019</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/10/">十月 2019</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/08/">八月 2019</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/04/">四月 2012</a><span class="archive-list-count">1</span></li></ul>
     </div>
   </div>
 
@@ -237,6 +232,14 @@ EAT=快表命中率\cdot (快表访问时间+内存访问时间)+(1-快表命中
       <ul>
         
           <li>
+            <a href="/2020/05/17/ 图像/">图像</a>
+          </li>
+        
+          <li>
+            <a href="/2020/05/12/ Octave/">Octave</a>
+          </li>
+        
+          <li>
             <a href="/2020/05/12/ Python/">Python</a>
           </li>
         
@@ -245,15 +248,7 @@ EAT=快表命中率\cdot (快表访问时间+内存访问时间)+(1-快表命中
           </li>
         
           <li>
-            <a href="/2020/05/07/ 重读C++ Primer/">重读C++ Primer</a>
-          </li>
-        
-          <li>
-            <a href="/2020/04/23/ 汇编/">汇编</a>
-          </li>
-        
-          <li>
-            <a href="/2020/04/11/ 微型计算机/">微机原理</a>
+            <a href="/2020/05/12/ 计算方法/">Python</a>
           </li>
         
       </ul>
