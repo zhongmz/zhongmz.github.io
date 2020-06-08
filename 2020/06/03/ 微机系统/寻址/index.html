@@ -1,0 +1,410 @@
+
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.9.0">
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="utf-8">
+  
+  <title>寻址 | Xxgzbd&#39;s Blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="bx,si,di,bp 在8086CPU中，只有4个寄存器再用[…]`来进行内存的寻址。  可以使用4个寄存器单独出现，亦或，bx+si,bx+di,bp+si,bp+di  若使用bp，那么段地址默认为ss  若使用bx，那么段地址默认为ds  数据在哪  CPU内部 内存 端口   数据多长  寄存器指明数据尺寸  若无寄存器，则有word ptr或byte ptr指明，比如 1mov wor">
+<meta name="keywords" content="algorithm math">
+<meta property="og:type" content="article">
+<meta property="og:title" content="寻址">
+<meta property="og:url" content="http://yoursite.com/2020/06/03/ 微机系统/寻址/index.html">
+<meta property="og:site_name" content="Xxgzbd&#39;s Blog">
+<meta property="og:description" content="bx,si,di,bp 在8086CPU中，只有4个寄存器再用[…]`来进行内存的寻址。  可以使用4个寄存器单独出现，亦或，bx+si,bx+di,bp+si,bp+di  若使用bp，那么段地址默认为ss  若使用bx，那么段地址默认为ds  数据在哪  CPU内部 内存 端口   数据多长  寄存器指明数据尺寸  若无寄存器，则有word ptr或byte ptr指明，比如 1mov wor">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2020-06-04T10:16:37.250Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="寻址">
+<meta name="twitter:description" content="bx,si,di,bp 在8086CPU中，只有4个寄存器再用[…]`来进行内存的寻址。  可以使用4个寄存器单独出现，亦或，bx+si,bx+di,bp+si,bp+di  若使用bp，那么段地址默认为ss  若使用bx，那么段地址默认为ds  数据在哪  CPU内部 内存 端口   数据多长  寄存器指明数据尺寸  若无寄存器，则有word ptr或byte ptr指明，比如 1mov wor">
+  
+    <link rel="alternative" href="/atom.xml" title="Xxgzbd&#39;s Blog" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  <!--[if lt IE 9]><script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7/html5shiv.min.js"></script><![endif]--><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+  
+  
+</head></html>
+<body>
+<!-- hexo-inject:begin --><!-- hexo-inject:end --><div id="container">
+  <div id="wrap">
+    <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Xxgzbd&#39;s Blog</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//www.baidu.com/baidu" method="get" accept-charset="utf-8" class="search-form">
+          <input type="search" name="word" maxlength="20" class="search-form-input" placeholder="Search">
+          <input type="submit" value="" class="search-form-submit">
+          <input name=tn type=hidden value="bds">
+          <input name=cl type=hidden value="3">
+          <input name=ct type=hidden value="2097152">
+          <input type="hidden" name="si" value="yoursite.com">
+        </form>
+      </div>
+    </div>
+  </div>
+</header>
+    <div class="outer">
+      <section id="main"><article id="post-微机系统/寻址" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2020/06/03/ 微机系统/寻址/" class="article-date">
+  <time datetime="2020-06-03T13:49:19.000Z" itemprop="datePublished">2020-06-03</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/微机原理/">微机原理</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      寻址
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="bx-si-di-bp"><a href="#bx-si-di-bp" class="headerlink" title="bx,si,di,bp"></a><code>bx,si,di,bp</code></h1><ul>
+<li><p><code>在</code>8086CPU<code>中，只有4个寄存器再用</code>[…]`来进行内存的寻址。</p>
+</li>
+<li><p>可以使用4个寄存器单独出现，亦或，<code>bx+si</code>,<code>bx+di</code>,<code>bp+si</code>,<code>bp+di</code></p>
+</li>
+<li><p>若使用<code>bp</code>，那么段地址默认为<code>ss</code></p>
+</li>
+<li><p>若使用<code>bx</code>，那么段地址默认为<code>ds</code></p>
+</li>
+<li><p>数据在哪</p>
+<ul>
+<li>CPU内部</li>
+<li>内存</li>
+<li>端口</li>
+</ul>
+</li>
+<li><p>数据多长</p>
+<ul>
+<li><p>寄存器指明数据尺寸</p>
+</li>
+<li><p>若无寄存器，则有<code>word ptr</code>或<code>byte ptr</code>指明，比如</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mov word ptr ds:[0],1</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>有些指令默认了数据尺寸，比如<code>push</code>只进行字操作。</p>
+</li>
+</ul>
+</li>
+</ul>
+<h1 id="Example-1"><a href="#Example-1" class="headerlink" title="Example 1"></a>Example 1</h1><ul>
+<li>子程序<ul>
+<li><code>ret</code></li>
+<li><code>call</code></li>
+<li>现场保存：<code>stack</code></li>
+</ul>
+</li>
+<li>跳转<ul>
+<li><code>jmp</code></li>
+<li><code>jcxz</code></li>
+</ul>
+</li>
+<li><code>how to show on the screen</code></li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br></pre></td><td class="code"><pre><span class="line">assume cs:code</span><br><span class="line">data segment</span><br><span class="line">    db &apos;Welcome to masm!&apos;,0</span><br><span class="line">data ends</span><br><span class="line"></span><br><span class="line">stack segment</span><br><span class="line">    dw 16 dup (0)</span><br><span class="line">stack ends</span><br><span class="line"></span><br><span class="line">code segment</span><br><span class="line">   start:</span><br><span class="line">   mov dh,8</span><br><span class="line">   mov dl,3</span><br><span class="line">   mov cl,2</span><br><span class="line">   mov ax,data</span><br><span class="line">   mov ds,ax</span><br><span class="line">   mov ax,stack</span><br><span class="line">   mov ss,ax</span><br><span class="line">   mov sp,32</span><br><span class="line">   mov si,0</span><br><span class="line">   </span><br><span class="line">   call show_str</span><br><span class="line">   mov ax,4c00h</span><br><span class="line">   int 21h    </span><br><span class="line">   </span><br><span class="line">   </span><br><span class="line">   </span><br><span class="line">   show_str:</span><br><span class="line">   push ax</span><br><span class="line">   push cx</span><br><span class="line">   push dx</span><br><span class="line">   push ds</span><br><span class="line">   push si</span><br><span class="line">   </span><br><span class="line">   mov ah,0</span><br><span class="line">   mov al,dh</span><br><span class="line">   mov dh,160</span><br><span class="line">   mul dh</span><br><span class="line">   mov bx,ax;save the row</span><br><span class="line">   </span><br><span class="line">   mov ah,0</span><br><span class="line">   mov al,dl</span><br><span class="line">   mov dl,2</span><br><span class="line">   mul dl</span><br><span class="line">   mov cx,ax;save the column</span><br><span class="line">   mov di,cx</span><br><span class="line">   </span><br><span class="line">   mov ax,0b800h</span><br><span class="line">   mov es,ax</span><br><span class="line">   </span><br><span class="line">   mov si,0  </span><br><span class="line">   mov al,cl</span><br><span class="line">   s:</span><br><span class="line">   mov cx,0</span><br><span class="line">   mov cl,ds:[si]</span><br><span class="line">   jcxz q</span><br><span class="line">   </span><br><span class="line">   mov ch,al</span><br><span class="line">   inc si</span><br><span class="line">   mov es:[bx+di],cx</span><br><span class="line">   add di,2</span><br><span class="line">   jmp s</span><br><span class="line">   </span><br><span class="line">   </span><br><span class="line">   </span><br><span class="line">  </span><br><span class="line">   q:</span><br><span class="line">   pop si</span><br><span class="line">   pop ds</span><br><span class="line">   pop dx</span><br><span class="line">   pop cx</span><br><span class="line">   pop ax</span><br><span class="line">   ret</span><br><span class="line">code ends</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">end start</span><br></pre></td></tr></table></figure>
+<h1 id="Example2"><a href="#Example2" class="headerlink" title="Example2"></a>Example2</h1><ul>
+<li>进行不会产生溢出的除法运算</li>
+<li>其中<code>cx</code>存余数，<code>dx</code>存高16位商，<code>ax</code>存低16位商</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line">assume cs:code</span><br><span class="line">stack segment</span><br><span class="line">    dw 16 dup(0)</span><br><span class="line">stack ends</span><br><span class="line"></span><br><span class="line">code segment</span><br><span class="line">    start:</span><br><span class="line">    mov ax,stack</span><br><span class="line">    mov ss,ax</span><br><span class="line">    mov sp,32</span><br><span class="line">    mov ax,4240h</span><br><span class="line">    mov dx,000fh</span><br><span class="line">    mov cx,0ah</span><br><span class="line">    call divdw</span><br><span class="line">    mov ax,4c00h</span><br><span class="line">    int 21h</span><br><span class="line">    </span><br><span class="line">    divdw:</span><br><span class="line">    push bx</span><br><span class="line">    mov bx,ax</span><br><span class="line">    mov ax,dx</span><br><span class="line">    mov dx,0</span><br><span class="line">    div cx</span><br><span class="line">    push ax</span><br><span class="line">    mov ax,bx</span><br><span class="line">    div cx</span><br><span class="line">    mov cx,dx          ;保存余数</span><br><span class="line">    pop dx;得到高位的商</span><br><span class="line">    </span><br><span class="line">    </span><br><span class="line">    </span><br><span class="line">    pop bx</span><br><span class="line">    ret</span><br><span class="line">    </span><br><span class="line">    </span><br><span class="line">code ends</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">end start</span><br></pre></td></tr></table></figure>
+<h1 id="Example3"><a href="#Example3" class="headerlink" title="Example3"></a>Example3</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br></pre></td><td class="code"><pre><span class="line">assume cs:code</span><br><span class="line">stack segment</span><br><span class="line">    dw 16 dup(0)</span><br><span class="line">stack ends</span><br><span class="line">data segment</span><br><span class="line">    db 10 dup(0)</span><br><span class="line">data ends</span><br><span class="line"></span><br><span class="line">code segment</span><br><span class="line">   start:</span><br><span class="line">   mov ax,12666</span><br><span class="line">   mov bx,data</span><br><span class="line">   mov ds,bx</span><br><span class="line">   mov si,0</span><br><span class="line">   call dtoc</span><br><span class="line">   </span><br><span class="line">   mov dh,8</span><br><span class="line">   mov dl,3</span><br><span class="line">   mov cl,2</span><br><span class="line">   call show_str</span><br><span class="line">   </span><br><span class="line">   mov ax,4c00h</span><br><span class="line">   int 21h</span><br><span class="line">   dtoc:</span><br><span class="line">   push ax</span><br><span class="line">   push si</span><br><span class="line">   mov bx,10</span><br><span class="line">   s1:</span><br><span class="line">   mov dx,0</span><br><span class="line">   div bx</span><br><span class="line">   mov cx,ax</span><br><span class="line">   jcxz q1</span><br><span class="line">   add dl,30h</span><br><span class="line">   mov ds:[si],dl</span><br><span class="line">   inc si</span><br><span class="line">   mov ax,cx</span><br><span class="line">   jmp s1</span><br><span class="line">   q1:</span><br><span class="line">   mov dl,0</span><br><span class="line">   mov ds:[si],dl</span><br><span class="line">   inc si</span><br><span class="line">   pop si</span><br><span class="line">   pop ax</span><br><span class="line">   ret</span><br><span class="line">   </span><br><span class="line">   </span><br><span class="line">   show_str:</span><br><span class="line">   push ax</span><br><span class="line">   push cx</span><br><span class="line">   push dx</span><br><span class="line">   push ds</span><br><span class="line">   push si</span><br><span class="line">   </span><br><span class="line">   mov ah,0</span><br><span class="line">   mov al,dh</span><br><span class="line">   mov dh,160</span><br><span class="line">   mul dh</span><br><span class="line">   mov bx,ax;save the row</span><br><span class="line">   </span><br><span class="line">   mov ah,0</span><br><span class="line">   mov al,dl</span><br><span class="line">   mov dl,2</span><br><span class="line">   mul dl</span><br><span class="line">   mov cx,ax;save the column</span><br><span class="line">   mov di,cx</span><br><span class="line">   </span><br><span class="line">   mov ax,0b800h</span><br><span class="line">   mov es,ax</span><br><span class="line">   </span><br><span class="line">   mov si,0  </span><br><span class="line">   mov al,cl</span><br><span class="line">   s:</span><br><span class="line">   mov cx,0</span><br><span class="line">   mov cl,ds:[si]</span><br><span class="line">   jcxz q</span><br><span class="line">   </span><br><span class="line">   mov ch,al</span><br><span class="line">   inc si</span><br><span class="line">   mov es:[bx+di],cx</span><br><span class="line">   add di,2</span><br><span class="line">   jmp s</span><br><span class="line">   </span><br><span class="line">   </span><br><span class="line">   </span><br><span class="line">  </span><br><span class="line">   q:</span><br><span class="line">   pop si</span><br><span class="line">   pop ds</span><br><span class="line">   pop dx</span><br><span class="line">   pop cx</span><br><span class="line">   pop ax</span><br><span class="line">   ret</span><br><span class="line">   </span><br><span class="line">   </span><br><span class="line">   </span><br><span class="line">   </span><br><span class="line">    </span><br><span class="line">    </span><br><span class="line">code ends</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">end start</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+    <footer class="article-footer">
+      
+        <a data-url="http://yoursite.com/2020/06/03/ 微机系统/寻址/" data-id="ckb681qyb001q54vipb0tp6hn" class="article-share-link" data-share="baidu" data-title="寻址">分享到</a>
+      
+
+      
+        <a href="http://yoursite.com/2020/06/03/ 微机系统/寻址/#ds-thread" class="article-comment-link">评论</a>
+      
+
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2020/06/06/ 微机系统/标志寄存器/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">下一篇</strong>
+      <div class="article-nav-title">
+        
+          标志寄存器
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2020/06/03/ page/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">上一篇</strong>
+      <div class="article-nav-title">page</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+  <section id="comments">
+    <div id="ds-thread" class="ds-thread" data-thread-key="2020/06/03/ 微机系统/寻址/" data-title="寻址" data-url="http://yoursite.com/2020/06/03/ 微机系统/寻址/"></div>
+  </section>
+
+
+</section>
+      
+      <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">分类</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Java/">Java</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Linux/">Linux</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Machine-Learning/">Machine Learning</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Read/">Read</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/algorithm/">algorithm</a><span class="category-list-count">8</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/web技术/">web技术</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/垃圾场/">垃圾场</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/微机原理/">微机原理</a><span class="category-list-count">7</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/操作系统/">操作系统</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/机器学习/">机器学习</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/离散数学/">离散数学</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/算法设计与分析/">算法设计与分析</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/组合数学/">组合数学</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/计算方法/">计算方法</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/计算机系统结构/">计算机系统结构</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/随机数学/">随机数学</a><span class="category-list-count">1</span></li></ul>
+    </div>
+  </div>
+
+  
+    
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">归档</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/06/">六月 2020</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/05/">五月 2020</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/04/">四月 2020</a><span class="archive-list-count">6</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/03/">三月 2020</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/02/">二月 2020</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/11/">十一月 2019</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/10/">十月 2019</a><span class="archive-list-count">8</span></li></ul>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">近期文章</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2020/06/06/ 微机系统/中断/">中断</a>
+          </li>
+        
+          <li>
+            <a href="/2020/06/06/ 微机系统/标志寄存器/">标志寄存器</a>
+          </li>
+        
+          <li>
+            <a href="/2020/06/03/ 微机系统/寻址/">寻址</a>
+          </li>
+        
+          <li>
+            <a href="/2020/06/03/ page/">page</a>
+          </li>
+        
+          <li>
+            <a href="/2020/05/30/ 微机系统/汇编_Loop_多段/">Loop_多段</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">友情链接</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="https://endacsd.com/" target="_blank">endATql</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+      
+    </div>
+    <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2020 钟美智<br>
+      Powered by <a href="//hexo.io/" target="_blank">Hexo</a>
+      .
+      Theme by <a href="https://github.com/xiangming/landscape-plus" target="_blank">Landscape-plus</a>
+      <!-- ����ͳ�� -->
+      <br>
+      <span style="display: inline;" id="busuanzi_container_site_uv">number1 <span id="busuanzi_value_site_uv" font="΢���ź�" style="color:white"></span> times</span>
+      <span style="display: inline;" id="busuanzi_container_site_pv">number2 <span id="busuanzi_value_site_pv" font="΢���ź�" style="color:white"></span> times</span>
+
+    </div>
+  </div>
+</footer>
+
+
+  </div>
+  <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+  <!-- totop start -->
+<div id="totop">
+<a title="返回顶部"><img src="/img/scrollup.png"/></a>
+</div>
+
+<!-- totop end -->
+
+<!-- 多说公共js代码 start -->
+<script type="text/javascript">
+var duoshuoQuery = {short_name:"reqianduan"};
+  (function() {
+    var ds = document.createElement('script');
+    ds.type = 'text/javascript';ds.async = true;
+    ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+    ds.charset = 'UTF-8';
+    (document.getElementsByTagName('head')[0]
+     || document.getElementsByTagName('body')[0]).appendChild(ds);
+  })();
+  </script>
+<!-- 多说公共js代码 end -->
+
+
+<!-- 百度分享 start -->
+
+<div id="article-share-box" class="article-share-box">
+  <div id="bdshare" class="bdsharebuttonbox article-share-links">
+    <a class="article-share-weibo" data-cmd="tsina" title="分享到新浪微博"></a>
+    <a class="article-share-weixin" data-cmd="weixin" title="分享到微信"></a>
+    <a class="article-share-qq" data-cmd="sqq" title="分享到QQ"></a>
+    <a class="article-share-renren" data-cmd="renren" title="分享到人人网"></a>
+    <a class="article-share-more" data-cmd="more" title="更多"></a>
+  </div>
+</div>
+<script>
+  function SetShareData(cmd, config) {
+    if (shareDataTitle && shareDataUrl) {
+      config.bdText = shareDataTitle;
+      config.bdUrl = shareDataUrl;
+    }
+    return config;
+  }
+  window._bd_share_config={
+    "common":{onBeforeClick: SetShareData},
+    "share":{"bdCustomStyle":"/css/bdshare.css"}
+  };
+  with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='//bdimg.share.baidu.com/static/api/js/share.js?cdnversion='+~(-new Date()/36e5)];
+</script>
+
+<!-- 百度分享 end -->
+
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+
+
+
+
+<! -- mathjax config similar to math.stackexchange -->
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+                processEscapes: true
+                    
+}
+  
+        });
+</script>
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+tex2jax: {
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+                  
+}
+    
+        });
+</script>
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Queue(function() {
+            var all = MathJax.Hub.getAllJax(), i;
+            for(i=0; i < all.length; i += 1) {
+                            all[i].SourceElement().parentNode.className += ' has-jax';
+                                    
+            }
+                
+        });
+</script>
+
+<script type="text/javascript" src="//cdn.bootcss.com/mathjax/2.5.3/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+<script src="/js/script.js"></script>
+
+<script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+</div><!-- hexo-inject:begin --><!-- Begin: Injected MathJax -->
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({"tex2jax":{"inlineMath":[["$","$"],["\\(","\\)"]],"skipTags":["script","noscript","style","textarea","pre","code"],"processEscapes":true},"TeX":{"equationNumbers":{"autoNumber":"AMS"}}});
+</script>
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+      all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+  });
+</script>
+
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js">
+</script>
+<!-- End: Injected MathJax -->
+<!-- hexo-inject:end -->
+</body>
+</html>

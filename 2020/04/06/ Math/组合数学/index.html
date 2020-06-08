@@ -14,10 +14,12 @@
 <meta property="og:site_name" content="Xxgzbd&#39;s Blog">
 <meta property="og:description" content="1n阶幻方，其幻和为：  \frac {n*(1+n^2)}{2}存在性：存在除2阶外的任意阶幻方。 计数与分类：奇数阶幻方；4n阶幻方；4n+2阶幻方。 构造方法：见课本 优化问题：略 2鸽巢原理 Ramsey定理 3线排列 圆排列 n元素集合的$r-$圆排列数为  \frac {1}{r}P(n,r)=\frac {n!}{r(n-r)!}集合的排列数和组合数 多重集合的排列  M=\{ \i">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2020-06-01T07:30:33.692Z">
+<meta property="og:image" content="https://i.loli.net/2020/06/05/hYyRiKZAk4gQI9V.jpg">
+<meta property="og:updated_time" content="2020-06-05T17:57:18.139Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="组合数学">
 <meta name="twitter:description" content="1n阶幻方，其幻和为：  \frac {n*(1+n^2)}{2}存在性：存在除2阶外的任意阶幻方。 计数与分类：奇数阶幻方；4n阶幻方；4n+2阶幻方。 构造方法：见课本 优化问题：略 2鸽巢原理 Ramsey定理 3线排列 圆排列 n元素集合的$r-$圆排列数为  \frac {1}{r}P(n,r)=\frac {n!}{r(n-r)!}集合的排列数和组合数 多重集合的排列  M=\{ \i">
+<meta name="twitter:image" content="https://i.loli.net/2020/06/05/hYyRiKZAk4gQI9V.jpg">
   
     <link rel="alternative" href="/atom.xml" title="Xxgzbd&#39;s Blog" type="application/atom+xml">
   
@@ -185,16 +187,59 @@ G(x)=\prod _{i=1}^{n}(\sum_{j=0}^{k_i}x^j)\\
 其中，x_k为G(x)展开式中x^k的系数。</script></li>
 <li></li>
 </ul>
-<h1 id="递推关系"><a href="#递推关系" class="headerlink" title="递推关系"></a>递推关系</h1><ul>
+<h1 id="递推关系"><a href="#递推关系" class="headerlink" title="递推关系"></a>递推关系</h1><h2 id="解线性常系数齐次递推关系"><a href="#解线性常系数齐次递推关系" class="headerlink" title="解线性常系数齐次递推关系"></a>解线性常系数齐次递推关系</h2><ul>
+<li><p>一些问题</p>
+<ul>
+<li>爬楼梯问题</li>
+<li>Fibonacci数列</li>
+<li>Hanoi塔问题</li>
+<li>涂色问题</li>
+</ul>
+</li>
 <li><script type="math/tex; mode=display">
-f(n)=c_1(n)f(n-1)+c_2(n)f(n-2)+\dots+c_k(n)f(n-k)+g(n)\\
 若c_i(n)为常数，那么称之为k阶常系数线性递推关系\\
 若g(n)=0，则称之为齐次的\\</script></li>
+<li><p>求解递推关系</p>
+</li>
+</ul>
+<ol>
+<li><p>使用特征方程求解特征根</p>
+<script type="math/tex; mode=display">
+x_1=?\\
+x_2=?\\
+...\\</script><ol>
+<li><p>那么有通解</p>
+<script type="math/tex; mode=display">
+f(n)=c_1x_1^n+c_2x_2^n+...</script></li>
+<li><p>代入原方程求解$c_i$</p>
+</li>
+</ol>
+</li>
+</ol>
+<ul>
 <li><p>特征方程</p>
 <script type="math/tex; mode=display">
 x^k-c_1x^{k-1}-\dots-c_k=0\\</script></li>
+<li><p>重根</p>
+</li>
 </ul>
-<h1 id="Polya定理"><a href="#Polya定理" class="headerlink" title="Polya定理"></a>Polya定理</h1><ul>
+<script type="math/tex; mode=display">
+  若有e重根x_i，那么x_i^n,nx_i^n....n^{e-1}x_i^n都是原递推关系的解</script><ul>
+<li>复数根<script type="math/tex; mode=display">
+有x_1=a+bi\\
+那么有c_1e^{ax}(cos(bx)+i*sin(bx))\\</script></li>
+</ul>
+<h2 id="解线性常系数非齐次递推关系"><a href="#解线性常系数非齐次递推关系" class="headerlink" title="解线性常系数非齐次递推关系"></a>解线性常系数非齐次递推关系</h2><ol>
+<li>特征方程</li>
+<li>判断$g(n)$的格式，属于哪一种，得到非齐次特解</li>
+<li>回代特解求$c_i$</li>
+</ol>
+<p><img src="https://i.loli.net/2020/06/05/hYyRiKZAk4gQI9V.jpg" alt="IMG_1292_20200605-171010_.PNG"></p>
+<h2 id="迭代与归纳解非线性递推关系"><a href="#迭代与归纳解非线性递推关系" class="headerlink" title="迭代与归纳解非线性递推关系"></a>迭代与归纳解非线性递推关系</h2><h1 id="课后例题"><a href="#课后例题" class="headerlink" title="课后例题"></a>课后例题</h1><ul>
+<li>例6.5.2</li>
+<li>习题6.4(2)(3)</li>
+</ul>
+<h1 id="Polya-定理"><a href="#Polya-定理" class="headerlink" title="$Polya$定理"></a>$Polya$定理</h1><ul>
 <li>Q：用m种颜色对n个对象涂色，一个对象涂任意一种颜色，则在置换群H的作用下不等价的方案数为多少？</li>
 </ul>
 <ol>
@@ -208,7 +253,7 @@ L=\frac{1}{|H|}[m^{\lambda(\sigma_1)}+m^{\lambda(\sigma_2)}+...+m^{\lambda (\sig
 m为m种颜色</script></li>
 </ol>
 <ul>
-<li>带有约束条件的涂色问题：若要求有3个对象要红色，2个对象要蓝色的涂色方案有多少？</li>
+<li>Q：带有约束条件的涂色问题：若要求有3个对象要红色，2个对象要蓝色的涂色方案有多少？</li>
 </ul>
 <ol>
 <li><p>构造置换群<code>H</code></p>
@@ -216,15 +261,19 @@ m为m种颜色</script></li>
 <li><script type="math/tex; mode=display">
 s_k=x_1^k+x_2^k+...+x_n^k\\
 f(x_1...x_n)=\frac{1}{|H|}\sum{s_k^{\lambda{(\sigma_k)}}}</script></li>
-<li><p>对于所约束的条件，找到符合的项，其前面的系数即ans</p>
+<li><p>对于所约束的条件，找到符合的项，其前面的系数即$ans$</p>
 </li>
 </ol>
+<h2 id="重点"><a href="#重点" class="headerlink" title="重点"></a>重点</h2><ul>
+<li>构造<code>H</code></li>
+<li>阅读<code>例7.6.1</code>和<code>例7.6.2</code></li>
+</ul>
 
       
     </div>
     <footer class="article-footer">
       
-        <a data-url="http://yoursite.com/2020/04/06/ Math/组合数学/" data-id="ckazemjc1001lg0viho2n81zq" class="article-share-link" data-share="baidu" data-title="组合数学">分享到</a>
+        <a data-url="http://yoursite.com/2020/04/06/ Math/组合数学/" data-id="ckb681qy9001m54vitbozmk9v" class="article-share-link" data-share="baidu" data-title="组合数学">分享到</a>
       
 
       
@@ -238,11 +287,11 @@ f(x_1...x_n)=\frac{1}{|H|}\sum{s_k^{\lambda{(\sigma_k)}}}</script></li>
     
 <nav id="article-nav">
   
-    <a href="/2020/04/11/ 微机系统/微型计算机/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2020/04/11/ 微机系统/寄存器概析/" id="article-nav-newer" class="article-nav-link-wrap">
       <strong class="article-nav-caption">下一篇</strong>
       <div class="article-nav-title">
         
-          微机原理
+          寄存器名称概析
         
       </div>
     </a>
@@ -272,7 +321,7 @@ f(x_1...x_n)=\frac{1}{|H|}\sum{s_k^{\lambda{(\sigma_k)}}}</script></li>
   <div class="widget-wrap">
     <h3 class="widget-title">分类</h3>
     <div class="widget">
-      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Java/">Java</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Linux/">Linux</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Machine-Learning/">Machine Learning</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Read/">Read</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/algorithm/">algorithm</a><span class="category-list-count">8</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/web技术/">web技术</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/垃圾场/">垃圾场</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/微机原理/">微机原理</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/操作系统/">操作系统</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/机器学习/">机器学习</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/汇编/">汇编</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/离散数学/">离散数学</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/算法设计与分析/">算法设计与分析</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/组合数学/">组合数学</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/计算方法/">计算方法</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/计算机系统结构/">计算机系统结构</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/随机数学/">随机数学</a><span class="category-list-count">1</span></li></ul>
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Java/">Java</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Linux/">Linux</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Machine-Learning/">Machine Learning</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Read/">Read</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/algorithm/">algorithm</a><span class="category-list-count">8</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/web技术/">web技术</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/垃圾场/">垃圾场</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/微机原理/">微机原理</a><span class="category-list-count">7</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/操作系统/">操作系统</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/机器学习/">机器学习</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/离散数学/">离散数学</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/算法设计与分析/">算法设计与分析</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/组合数学/">组合数学</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/计算方法/">计算方法</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/计算机系统结构/">计算机系统结构</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/随机数学/">随机数学</a><span class="category-list-count">1</span></li></ul>
     </div>
   </div>
 
@@ -285,7 +334,7 @@ f(x_1...x_n)=\frac{1}{|H|}\sum{s_k^{\lambda{(\sigma_k)}}}</script></li>
   <div class="widget-wrap">
     <h3 class="widget-title">归档</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/05/">五月 2020</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/04/">四月 2020</a><span class="archive-list-count">6</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/03/">三月 2020</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/02/">二月 2020</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/11/">十一月 2019</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/10/">十月 2019</a><span class="archive-list-count">8</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/06/">六月 2020</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/05/">五月 2020</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/04/">四月 2020</a><span class="archive-list-count">6</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/03/">三月 2020</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/02/">二月 2020</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/11/">十一月 2019</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/10/">十月 2019</a><span class="archive-list-count">8</span></li></ul>
     </div>
   </div>
 
@@ -297,23 +346,23 @@ f(x_1...x_n)=\frac{1}{|H|}\sum{s_k^{\lambda{(\sigma_k)}}}</script></li>
       <ul>
         
           <li>
-            <a href="/2020/05/30/ 微机系统/汇编_2/">汇编-2</a>
+            <a href="/2020/06/06/ 微机系统/中断/">中断</a>
           </li>
         
           <li>
-            <a href="/2020/05/28/ MachineLearning/线性代数/">线性代数概知</a>
+            <a href="/2020/06/06/ 微机系统/标志寄存器/">标志寄存器</a>
           </li>
         
           <li>
-            <a href="/2020/05/23/ MachineLearning/西瓜书-支持向量机/">细品西瓜-支持向量机</a>
+            <a href="/2020/06/03/ 微机系统/寻址/">寻址</a>
           </li>
         
           <li>
-            <a href="/2020/05/17/ MachineLearning/图像/">(no title)</a>
+            <a href="/2020/06/03/ page/">page</a>
           </li>
         
           <li>
-            <a href="/2020/05/16/ MachineLearning/计算方法/">计算方法</a>
+            <a href="/2020/05/30/ 微机系统/汇编_Loop_多段/">Loop_多段</a>
           </li>
         
       </ul>
@@ -347,9 +396,16 @@ f(x_1...x_n)=\frac{1}{|H|}\sum{s_k^{\lambda{(\sigma_k)}}}</script></li>
       Powered by <a href="//hexo.io/" target="_blank">Hexo</a>
       .
       Theme by <a href="https://github.com/xiangming/landscape-plus" target="_blank">Landscape-plus</a>
+      <!-- ����ͳ�� -->
+      <br>
+      <span style="display: inline;" id="busuanzi_container_site_uv">number1 <span id="busuanzi_value_site_uv" font="΢���ź�" style="color:white"></span> times</span>
+      <span style="display: inline;" id="busuanzi_container_site_pv">number2 <span id="busuanzi_value_site_pv" font="΢���ź�" style="color:white"></span> times</span>
+
     </div>
   </div>
 </footer>
+
+
   </div>
   <nav id="mobile-nav">
   
@@ -452,6 +508,8 @@ MathJax.Hub.Queue(function() {
 
 
 <script src="/js/script.js"></script>
+
+<script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
 
 </div><!-- hexo-inject:begin --><!-- Begin: Injected MathJax -->
 <script type="text/x-mathjax-config">

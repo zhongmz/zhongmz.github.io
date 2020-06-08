@@ -71,9 +71,253 @@
     <div class="outer">
       <section id="main">
   
-    <article id="post-微机系统/汇编_2" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-微机系统/中断" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2020/05/30/ 微机系统/汇编_2/" class="article-date">
+    <a href="/2020/06/06/ 微机系统/中断/" class="article-date">
+  <time datetime="2020-06-06T13:49:19.000Z" itemprop="datePublished">2020-06-06</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/微机原理/">微机原理</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/06/06/ 微机系统/中断/">中断</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="bx-si-di-bp"><a href="#bx-si-di-bp" class="headerlink" title="bx,si,di,bp"></a><code>bx,si,di,bp</code></h1><ul>
+<li><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line">assume cs:code</span><br><span class="line">code segment</span><br><span class="line">    start:</span><br><span class="line">    mov ax,cs</span><br><span class="line">    mov ds,ax</span><br><span class="line">    mov si,offset sqr</span><br><span class="line">    mov ax,0</span><br><span class="line">    mov es,ax</span><br><span class="line">    mov di,200h</span><br><span class="line">    mov cx,offset sqrend-offset sqr</span><br><span class="line">    cld</span><br><span class="line">    rep movsb</span><br><span class="line">    </span><br><span class="line">    mov ax,0</span><br><span class="line">    mov es,ax</span><br><span class="line">    mov word ptr es:[7ch*4],200h</span><br><span class="line">    mov word ptr es:[7ch*4+2],0</span><br><span class="line">    </span><br><span class="line">    mov ax,4c00h</span><br><span class="line">    int 21h</span><br><span class="line">    </span><br><span class="line">    sqr:</span><br><span class="line">    mul ax</span><br><span class="line">    iret</span><br><span class="line">    </span><br><span class="line">    sqrend:</span><br><span class="line">    nop</span><br><span class="line">    </span><br><span class="line">    code ends</span><br><span class="line">end start</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      
+        <a data-url="http://yoursite.com/2020/06/06/ 微机系统/中断/" data-id="ckb681qya001p54vi2yqc3a83" class="article-share-link" data-share="baidu" data-title="中断">分享到</a>
+      
+
+      
+        <a href="http://yoursite.com/2020/06/06/ 微机系统/中断/#ds-thread" class="article-comment-link">评论</a>
+      
+
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+
+  
+    <article id="post-微机系统/标志寄存器" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2020/06/06/ 微机系统/标志寄存器/" class="article-date">
+  <time datetime="2020-06-06T13:49:19.000Z" itemprop="datePublished">2020-06-06</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/微机原理/">微机原理</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/06/06/ 微机系统/标志寄存器/">标志寄存器</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="bx-si-di-bp"><a href="#bx-si-di-bp" class="headerlink" title="bx,si,di,bp"></a><code>bx,si,di,bp</code></h1><ul>
+<li></li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      
+        <a data-url="http://yoursite.com/2020/06/06/ 微机系统/标志寄存器/" data-id="ckb681qyd001u54vireycpgx3" class="article-share-link" data-share="baidu" data-title="标志寄存器">分享到</a>
+      
+
+      
+        <a href="http://yoursite.com/2020/06/06/ 微机系统/标志寄存器/#ds-thread" class="article-comment-link">评论</a>
+      
+
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+
+  
+    <article id="post-微机系统/寻址" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2020/06/03/ 微机系统/寻址/" class="article-date">
+  <time datetime="2020-06-03T13:49:19.000Z" itemprop="datePublished">2020-06-03</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/微机原理/">微机原理</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/06/03/ 微机系统/寻址/">寻址</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="bx-si-di-bp"><a href="#bx-si-di-bp" class="headerlink" title="bx,si,di,bp"></a><code>bx,si,di,bp</code></h1><ul>
+<li><p><code>在</code>8086CPU<code>中，只有4个寄存器再用</code>[…]`来进行内存的寻址。</p>
+</li>
+<li><p>可以使用4个寄存器单独出现，亦或，<code>bx+si</code>,<code>bx+di</code>,<code>bp+si</code>,<code>bp+di</code></p>
+</li>
+<li><p>若使用<code>bp</code>，那么段地址默认为<code>ss</code></p>
+</li>
+<li><p>若使用<code>bx</code>，那么段地址默认为<code>ds</code></p>
+</li>
+<li><p>数据在哪</p>
+<ul>
+<li>CPU内部</li>
+<li>内存</li>
+<li>端口</li>
+</ul>
+</li>
+<li><p>数据多长</p>
+<ul>
+<li><p>寄存器指明数据尺寸</p>
+</li>
+<li><p>若无寄存器，则有<code>word ptr</code>或<code>byte ptr</code>指明，比如</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mov word ptr ds:[0],1</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>有些指令默认了数据尺寸，比如<code>push</code>只进行字操作。</p>
+</li>
+</ul>
+</li>
+</ul>
+<h1 id="Example-1"><a href="#Example-1" class="headerlink" title="Example 1"></a>Example 1</h1><ul>
+<li>子程序<ul>
+<li><code>ret</code></li>
+<li><code>call</code></li>
+<li>现场保存：<code>stack</code></li>
+</ul>
+</li>
+<li>跳转<ul>
+<li><code>jmp</code></li>
+<li><code>jcxz</code></li>
+</ul>
+</li>
+<li><code>how to show on the screen</code></li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br></pre></td><td class="code"><pre><span class="line">assume cs:code</span><br><span class="line">data segment</span><br><span class="line">    db &apos;Welcome to masm!&apos;,0</span><br><span class="line">data ends</span><br><span class="line"></span><br><span class="line">stack segment</span><br><span class="line">    dw 16 dup (0)</span><br><span class="line">stack ends</span><br><span class="line"></span><br><span class="line">code segment</span><br><span class="line">   start:</span><br><span class="line">   mov dh,8</span><br><span class="line">   mov dl,3</span><br><span class="line">   mov cl,2</span><br><span class="line">   mov ax,data</span><br><span class="line">   mov ds,ax</span><br><span class="line">   mov ax,stack</span><br><span class="line">   mov ss,ax</span><br><span class="line">   mov sp,32</span><br><span class="line">   mov si,0</span><br><span class="line">   </span><br><span class="line">   call show_str</span><br><span class="line">   mov ax,4c00h</span><br><span class="line">   int 21h    </span><br><span class="line">   </span><br><span class="line">   </span><br><span class="line">   </span><br><span class="line">   show_str:</span><br><span class="line">   push ax</span><br><span class="line">   push cx</span><br><span class="line">   push dx</span><br><span class="line">   push ds</span><br><span class="line">   push si</span><br><span class="line">   </span><br><span class="line">   mov ah,0</span><br><span class="line">   mov al,dh</span><br><span class="line">   mov dh,160</span><br><span class="line">   mul dh</span><br><span class="line">   mov bx,ax;save the row</span><br><span class="line">   </span><br><span class="line">   mov ah,0</span><br><span class="line">   mov al,dl</span><br><span class="line">   mov dl,2</span><br><span class="line">   mul dl</span><br><span class="line">   mov cx,ax;save the column</span><br><span class="line">   mov di,cx</span><br><span class="line">   </span><br><span class="line">   mov ax,0b800h</span><br><span class="line">   mov es,ax</span><br><span class="line">   </span><br><span class="line">   mov si,0  </span><br><span class="line">   mov al,cl</span><br><span class="line">   s:</span><br><span class="line">   mov cx,0</span><br><span class="line">   mov cl,ds:[si]</span><br><span class="line">   jcxz q</span><br><span class="line">   </span><br><span class="line">   mov ch,al</span><br><span class="line">   inc si</span><br><span class="line">   mov es:[bx+di],cx</span><br><span class="line">   add di,2</span><br><span class="line">   jmp s</span><br><span class="line">   </span><br><span class="line">   </span><br><span class="line">   </span><br><span class="line">  </span><br><span class="line">   q:</span><br><span class="line">   pop si</span><br><span class="line">   pop ds</span><br><span class="line">   pop dx</span><br><span class="line">   pop cx</span><br><span class="line">   pop ax</span><br><span class="line">   ret</span><br><span class="line">code ends</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">end start</span><br></pre></td></tr></table></figure>
+<h1 id="Example2"><a href="#Example2" class="headerlink" title="Example2"></a>Example2</h1><ul>
+<li>进行不会产生溢出的除法运算</li>
+<li>其中<code>cx</code>存余数，<code>dx</code>存高16位商，<code>ax</code>存低16位商</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line">assume cs:code</span><br><span class="line">stack segment</span><br><span class="line">    dw 16 dup(0)</span><br><span class="line">stack ends</span><br><span class="line"></span><br><span class="line">code segment</span><br><span class="line">    start:</span><br><span class="line">    mov ax,stack</span><br><span class="line">    mov ss,ax</span><br><span class="line">    mov sp,32</span><br><span class="line">    mov ax,4240h</span><br><span class="line">    mov dx,000fh</span><br><span class="line">    mov cx,0ah</span><br><span class="line">    call divdw</span><br><span class="line">    mov ax,4c00h</span><br><span class="line">    int 21h</span><br><span class="line">    </span><br><span class="line">    divdw:</span><br><span class="line">    push bx</span><br><span class="line">    mov bx,ax</span><br><span class="line">    mov ax,dx</span><br><span class="line">    mov dx,0</span><br><span class="line">    div cx</span><br><span class="line">    push ax</span><br><span class="line">    mov ax,bx</span><br><span class="line">    div cx</span><br><span class="line">    mov cx,dx          ;保存余数</span><br><span class="line">    pop dx;得到高位的商</span><br><span class="line">    </span><br><span class="line">    </span><br><span class="line">    </span><br><span class="line">    pop bx</span><br><span class="line">    ret</span><br><span class="line">    </span><br><span class="line">    </span><br><span class="line">code ends</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">end start</span><br></pre></td></tr></table></figure>
+<h1 id="Example3"><a href="#Example3" class="headerlink" title="Example3"></a>Example3</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br></pre></td><td class="code"><pre><span class="line">assume cs:code</span><br><span class="line">stack segment</span><br><span class="line">    dw 16 dup(0)</span><br><span class="line">stack ends</span><br><span class="line">data segment</span><br><span class="line">    db 10 dup(0)</span><br><span class="line">data ends</span><br><span class="line"></span><br><span class="line">code segment</span><br><span class="line">   start:</span><br><span class="line">   mov ax,12666</span><br><span class="line">   mov bx,data</span><br><span class="line">   mov ds,bx</span><br><span class="line">   mov si,0</span><br><span class="line">   call dtoc</span><br><span class="line">   </span><br><span class="line">   mov dh,8</span><br><span class="line">   mov dl,3</span><br><span class="line">   mov cl,2</span><br><span class="line">   call show_str</span><br><span class="line">   </span><br><span class="line">   mov ax,4c00h</span><br><span class="line">   int 21h</span><br><span class="line">   dtoc:</span><br><span class="line">   push ax</span><br><span class="line">   push si</span><br><span class="line">   mov bx,10</span><br><span class="line">   s1:</span><br><span class="line">   mov dx,0</span><br><span class="line">   div bx</span><br><span class="line">   mov cx,ax</span><br><span class="line">   jcxz q1</span><br><span class="line">   add dl,30h</span><br><span class="line">   mov ds:[si],dl</span><br><span class="line">   inc si</span><br><span class="line">   mov ax,cx</span><br><span class="line">   jmp s1</span><br><span class="line">   q1:</span><br><span class="line">   mov dl,0</span><br><span class="line">   mov ds:[si],dl</span><br><span class="line">   inc si</span><br><span class="line">   pop si</span><br><span class="line">   pop ax</span><br><span class="line">   ret</span><br><span class="line">   </span><br><span class="line">   </span><br><span class="line">   show_str:</span><br><span class="line">   push ax</span><br><span class="line">   push cx</span><br><span class="line">   push dx</span><br><span class="line">   push ds</span><br><span class="line">   push si</span><br><span class="line">   </span><br><span class="line">   mov ah,0</span><br><span class="line">   mov al,dh</span><br><span class="line">   mov dh,160</span><br><span class="line">   mul dh</span><br><span class="line">   mov bx,ax;save the row</span><br><span class="line">   </span><br><span class="line">   mov ah,0</span><br><span class="line">   mov al,dl</span><br><span class="line">   mov dl,2</span><br><span class="line">   mul dl</span><br><span class="line">   mov cx,ax;save the column</span><br><span class="line">   mov di,cx</span><br><span class="line">   </span><br><span class="line">   mov ax,0b800h</span><br><span class="line">   mov es,ax</span><br><span class="line">   </span><br><span class="line">   mov si,0  </span><br><span class="line">   mov al,cl</span><br><span class="line">   s:</span><br><span class="line">   mov cx,0</span><br><span class="line">   mov cl,ds:[si]</span><br><span class="line">   jcxz q</span><br><span class="line">   </span><br><span class="line">   mov ch,al</span><br><span class="line">   inc si</span><br><span class="line">   mov es:[bx+di],cx</span><br><span class="line">   add di,2</span><br><span class="line">   jmp s</span><br><span class="line">   </span><br><span class="line">   </span><br><span class="line">   </span><br><span class="line">  </span><br><span class="line">   q:</span><br><span class="line">   pop si</span><br><span class="line">   pop ds</span><br><span class="line">   pop dx</span><br><span class="line">   pop cx</span><br><span class="line">   pop ax</span><br><span class="line">   ret</span><br><span class="line">   </span><br><span class="line">   </span><br><span class="line">   </span><br><span class="line">   </span><br><span class="line">    </span><br><span class="line">    </span><br><span class="line">code ends</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">end start</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+    <footer class="article-footer">
+      
+        <a data-url="http://yoursite.com/2020/06/03/ 微机系统/寻址/" data-id="ckb681qyb001q54vipb0tp6hn" class="article-share-link" data-share="baidu" data-title="寻址">分享到</a>
+      
+
+      
+        <a href="http://yoursite.com/2020/06/03/ 微机系统/寻址/#ds-thread" class="article-comment-link">评论</a>
+      
+
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+
+  
+    <article id="post-page" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2020/06/03/ page/" class="article-date">
+  <time datetime="2020-06-03T13:49:01.000Z" itemprop="datePublished">2020-06-03</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/06/03/ page/">page</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        
+      
+    </div>
+    <footer class="article-footer">
+      
+        <a data-url="http://yoursite.com/2020/06/03/ page/" data-id="ckb681qx0000554vifyjuiv20" class="article-share-link" data-share="baidu" data-title="page">分享到</a>
+      
+
+      
+        <a href="http://yoursite.com/2020/06/03/ page/#ds-thread" class="article-comment-link">评论</a>
+      
+
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+
+  
+    <article id="post-微机系统/汇编_Loop_多段" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2020/05/30/ 微机系统/汇编_Loop_多段/" class="article-date">
   <time datetime="2020-05-30T08:56:52.000Z" itemprop="datePublished">2020-05-30</time>
 </a>
     
@@ -89,7 +333,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2020/05/30/ 微机系统/汇编_2/">汇编-2</a>
+      <a class="article-title" href="/2020/05/30/ 微机系统/汇编_Loop_多段/">Loop_多段</a>
     </h1>
   
 
@@ -144,16 +388,17 @@
 </li>
 </ul>
 <h3 id="eg-将文本大写化"><a href="#eg-将文本大写化" class="headerlink" title="eg 将文本大写化"></a>eg 将文本大写化</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">assume cs:codesg,ds:datasg</span><br><span class="line">datasg segment</span><br><span class="line">    db &apos;BaSiC&apos;</span><br><span class="line">    datasg ends</span><br><span class="line">codesg segment</span><br><span class="line">    start:</span><br><span class="line">    mov ax,datasg</span><br><span class="line">    mov ds,ax</span><br><span class="line">    </span><br><span class="line">    mov bx,0</span><br><span class="line">    mov cx,5</span><br><span class="line">    s:</span><br><span class="line">    mov al,[bx]</span><br><span class="line">    and al,11011111B</span><br><span class="line">    mov [bx],al</span><br><span class="line">    inc bx</span><br><span class="line">    </span><br><span class="line">    loop s</span><br><span class="line">    </span><br><span class="line">    mov ax,4c00h</span><br><span class="line">    int 21h</span><br><span class="line">    </span><br><span class="line">    codesg ends</span><br><span class="line">end start</span><br></pre></td></tr></table></figure>
+<h1 id="一个综合练习"><a href="#一个综合练习" class="headerlink" title="一个综合练习"></a>一个综合练习</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br></pre></td><td class="code"><pre><span class="line">assume  cs:codesg      </span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">data segment</span><br><span class="line">db &apos;1975&apos;, &apos;1976&apos;, &apos;1977&apos;, &apos;1978&apos;, &apos;1979&apos;, &apos;1980&apos;, &apos;1981&apos;, &apos;1982&apos;, &apos;1983&apos;</span><br><span class="line">db &apos;1984&apos;, &apos;1985&apos;, &apos;1986&apos;, &apos;1987&apos;, &apos;1988&apos;, &apos;1989&apos;, &apos;1990&apos;, &apos;1991&apos;, &apos;1992&apos;</span><br><span class="line">db &apos;1993&apos;, &apos;1994&apos;, &apos;1995&apos;</span><br><span class="line">  </span><br><span class="line">dd 16, 22, 382, 1356, 2390, 8000, 16000, 24486, 50065, 97479, 140417, 197514</span><br><span class="line">dd 345980, 590827, 803530, 1183000, 1843000, 2759000, 3753000, 4649000, 5937000</span><br><span class="line"></span><br><span class="line">dw 3, 7, 9, 13, 28, 38, 130, 220, 476, 778, 1001, 1442, 2258, 2793, 4037, 5635, 8226</span><br><span class="line">dw 11542, 14430, 15257, 17800</span><br><span class="line">data ends</span><br><span class="line"></span><br><span class="line">  </span><br><span class="line">  </span><br><span class="line">table segment</span><br><span class="line">db 21 dup (&apos;year summ ne ?? &apos;)</span><br><span class="line">table ends</span><br><span class="line"></span><br><span class="line">stack segment</span><br><span class="line">dw 8 dup(0)</span><br><span class="line">stack ends</span><br><span class="line"></span><br><span class="line">codesg segment</span><br><span class="line">    start:</span><br><span class="line">    mov ax,data</span><br><span class="line">    mov es,ax</span><br><span class="line">    mov ax,table</span><br><span class="line">    mov ds,ax</span><br><span class="line">    ;初始化 </span><br><span class="line">    </span><br><span class="line">    getyear:</span><br><span class="line">    mov bx,0</span><br><span class="line">    mov bp,0</span><br><span class="line">    mov cx,15h</span><br><span class="line">    s11:</span><br><span class="line">    mov si,0</span><br><span class="line">    mov dx,cx</span><br><span class="line">    mov cx,4</span><br><span class="line">    s12:</span><br><span class="line">    mov al,es:[bp]</span><br><span class="line">    mov ds:[bx+si],al</span><br><span class="line">    </span><br><span class="line">    inc bp</span><br><span class="line">    inc si</span><br><span class="line">    </span><br><span class="line">    loop s12</span><br><span class="line">    </span><br><span class="line">    mov cx,dx</span><br><span class="line">    add bx,10h</span><br><span class="line">    loop s11</span><br><span class="line">    </span><br><span class="line">    </span><br><span class="line">    getspace:</span><br><span class="line">    mov bx,0</span><br><span class="line">    mov cx,15h</span><br><span class="line">    space1:</span><br><span class="line">    mov al,&apos; &apos;</span><br><span class="line">    mov ds:[bx+4],al</span><br><span class="line">    add bx,10h</span><br><span class="line">    </span><br><span class="line">    loop space1</span><br><span class="line">    </span><br><span class="line">   </span><br><span class="line">    mov bx,0</span><br><span class="line">    mov cx,15h</span><br><span class="line">    getincome:</span><br><span class="line">    mov ax,es:[bp]</span><br><span class="line">    mov ds:[bx+5],ax</span><br><span class="line">    add bp,2</span><br><span class="line">    mov ax,es:[bp]</span><br><span class="line">    mov ds:[bx+7],ax</span><br><span class="line">    add bp,2</span><br><span class="line">    mov al,&apos; &apos;</span><br><span class="line">    mov ds:[bx+9],al</span><br><span class="line">    add bx,10h</span><br><span class="line">    </span><br><span class="line">    loop getincome</span><br><span class="line">    </span><br><span class="line">    </span><br><span class="line">    mov bx,0</span><br><span class="line">    mov cx,15h</span><br><span class="line">    getnum:</span><br><span class="line">    mov ax,es:[bp]</span><br><span class="line">    mov ds:[bx+0ah],ax</span><br><span class="line">    add bp,2</span><br><span class="line">    mov ax,&apos; &apos;</span><br><span class="line">    mov ds:[bx+0ch],al</span><br><span class="line">    </span><br><span class="line">    add bx,10h</span><br><span class="line">    loop getnum</span><br><span class="line">    </span><br><span class="line">    mov bx,0</span><br><span class="line">    mov cx,15h</span><br><span class="line">    getaverage:</span><br><span class="line">    mov ax,ds:[bx+5]</span><br><span class="line">    mov dx,ds:[bx+7]</span><br><span class="line">    div word ptr ds:[bx+0ah]  </span><br><span class="line">    mov ds:[bx+0dh],ax</span><br><span class="line">    mov al,&apos; &apos;</span><br><span class="line">    mov ds:[bx+0fh],al</span><br><span class="line">    add bx,10h</span><br><span class="line">    loop getaverage</span><br><span class="line">    </span><br><span class="line">    </span><br><span class="line">    </span><br><span class="line">    </span><br><span class="line">    </span><br><span class="line">    </span><br><span class="line">    </span><br><span class="line">     </span><br><span class="line">    </span><br><span class="line">    </span><br><span class="line">    </span><br><span class="line">    mov ax,4c00h</span><br><span class="line">    int 21h</span><br><span class="line">codesg ends</span><br><span class="line">end start</span><br></pre></td></tr></table></figure>
 
       
     </div>
     <footer class="article-footer">
       
-        <a data-url="http://yoursite.com/2020/05/30/ 微机系统/汇编_2/" data-id="ckazemjc7001tg0vi2mkail73" class="article-share-link" data-share="baidu" data-title="汇编-2">分享到</a>
+        <a data-url="http://yoursite.com/2020/05/30/ 微机系统/汇编_Loop_多段/" data-id="ckb681qyf001y54viog8twma1" class="article-share-link" data-share="baidu" data-title="Loop_多段">分享到</a>
       
 
       
-        <a href="http://yoursite.com/2020/05/30/ 微机系统/汇编_2/#ds-thread" class="article-comment-link">评论</a>
+        <a href="http://yoursite.com/2020/05/30/ 微机系统/汇编_Loop_多段/#ds-thread" class="article-comment-link">评论</a>
       
 
       
@@ -166,14 +411,14 @@
 
 
   
-    <article id="post-MachineLearning/线性代数" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-微机系统/汇编_DosBox" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2020/05/28/ MachineLearning/线性代数/" class="article-date">
-  <time datetime="2020-05-28T08:56:52.000Z" itemprop="datePublished">2020-05-28</time>
+    <a href="/2020/05/30/ 微机系统/汇编_DosBox/" class="article-date">
+  <time datetime="2020-05-30T08:56:52.000Z" itemprop="datePublished">2020-05-30</time>
 </a>
     
   <div class="article-category">
-    <a class="article-category-link" href="/categories/Machine-Learning/">Machine Learning</a>
+    <a class="article-category-link" href="/categories/微机原理/">微机原理</a>
   </div>
 
   </div>
@@ -184,217 +429,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2020/05/28/ MachineLearning/线性代数/">线性代数概知</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="矩阵初等变换"><a href="#矩阵初等变换" class="headerlink" title="矩阵初等变换"></a>矩阵初等变换</h1><ul>
-<li>倍法变换：某行*非零的数</li>
-<li>消法变换：某行*某数加到另外一行</li>
-<li>换法变换：交换两行</li>
-</ul>
-
-      
-    </div>
-    <footer class="article-footer">
-      
-        <a data-url="http://yoursite.com/2020/05/28/ MachineLearning/线性代数/" data-id="ckazemjbw001ag0vigmog2k3i" class="article-share-link" data-share="baidu" data-title="线性代数概知">分享到</a>
-      
-
-      
-        <a href="http://yoursite.com/2020/05/28/ MachineLearning/线性代数/#ds-thread" class="article-comment-link">评论</a>
-      
-
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-
-
-  
-    <article id="post-MachineLearning/西瓜书-支持向量机" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2020/05/23/ MachineLearning/西瓜书-支持向量机/" class="article-date">
-  <time datetime="2020-05-23T01:56:52.000Z" itemprop="datePublished">2020-05-23</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/Machine-Learning/">Machine Learning</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/05/23/ MachineLearning/西瓜书-支持向量机/">细品西瓜-支持向量机</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><ul>
-<li>超平面：在<a href="https://zh.wikipedia.org/wiki/數學" target="_blank" rel="noopener">数学</a>中，<strong>超平面（Hyperplane）</strong>是n维欧氏空间中，<a href="https://zh.wikipedia.org/wiki/餘維數" target="_blank" rel="noopener">余维度</a>为1的<a href="https://zh.wikipedia.org/wiki/子空間" target="_blank" rel="noopener">子空间</a>。即超平面是n维空间中的n-1维的子空间。它是平面中的直线、空间中的平面之推广。</li>
-<li></li>
-</ul>
-
-      
-    </div>
-    <footer class="article-footer">
-      
-        <a data-url="http://yoursite.com/2020/05/23/ MachineLearning/西瓜书-支持向量机/" data-id="ckazemjby001fg0vij8hlk231" class="article-share-link" data-share="baidu" data-title="细品西瓜-支持向量机">分享到</a>
-      
-
-      
-        <a href="http://yoursite.com/2020/05/23/ MachineLearning/西瓜书-支持向量机/#ds-thread" class="article-comment-link">评论</a>
-      
-
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-
-
-  
-    <article id="post-MachineLearning/图像" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2020/05/17/ MachineLearning/图像/" class="article-date">
-  <time datetime="2020-05-17T12:53:29.119Z" itemprop="datePublished">2020-05-17</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="图像插值方法"><a href="#图像插值方法" class="headerlink" title="图像插值方法"></a>图像插值方法</h1><ul>
-<li>最近邻域法</li>
-<li>双线性插值法</li>
-</ul>
-<p>扫描矩阵的获取</p>
-<p>映射矩阵的建立</p>
-<p>扫描矩阵{S}=偏心运动矩阵*球面子孔路径矩阵</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      
-        <a data-url="http://yoursite.com/2020/05/17/ MachineLearning/图像/" data-id="ckazemjbt0015g0vi6gvhwh04" class="article-share-link" data-share="baidu" data-title="">分享到</a>
-      
-
-      
-        <a href="http://yoursite.com/2020/05/17/ MachineLearning/图像/#ds-thread" class="article-comment-link">评论</a>
-      
-
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-
-
-  
-    <article id="post-MachineLearning/计算方法" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2020/05/16/ MachineLearning/计算方法/" class="article-date">
-  <time datetime="2020-05-16T05:59:03.700Z" itemprop="datePublished">2020-05-16</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/计算方法/">计算方法</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/05/16/ MachineLearning/计算方法/">计算方法</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>1</p>
-<h1 id="误差"><a href="#误差" class="headerlink" title="误差"></a>误差</h1><ul>
-<li>误差计算<ul>
-<li>定义1.3</li>
-<li>定理1.1</li>
-</ul>
-</li>
-</ul>
-<h1 id="线性代数方程组的数值解"><a href="#线性代数方程组的数值解" class="headerlink" title="线性代数方程组的数值解"></a>线性代数方程组的数值解</h1><ul>
-<li>克莱姆法则</li>
-<li>直接法<ul>
-<li>高斯消元法</li>
-</ul>
-</li>
-<li>迭代法，适用于系数矩阵为大型稀疏矩阵</li>
-</ul>
-
-      
-    </div>
-    <footer class="article-footer">
-      
-        <a data-url="http://yoursite.com/2020/05/16/ MachineLearning/计算方法/" data-id="ckazemjbz001hg0vii7vckoed" class="article-share-link" data-share="baidu" data-title="计算方法">分享到</a>
-      
-
-      
-        <a href="http://yoursite.com/2020/05/16/ MachineLearning/计算方法/#ds-thread" class="article-comment-link">评论</a>
-      
-
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-
-
-  
-    <article id="post-微机系统/汇编_Debug" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2020/05/14/ 微机系统/汇编_Debug/" class="article-date">
-  <time datetime="2020-05-14T07:34:17.951Z" itemprop="datePublished">2020-05-14</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/汇编/">汇编</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/05/14/ 微机系统/汇编_Debug/">Debug</a>
+      <a class="article-title" href="/2020/05/30/ 微机系统/汇编_DosBox/">Debug_DosBox</a>
     </h1>
   
 
@@ -616,11 +651,11 @@
     </div>
     <footer class="article-footer">
       
-        <a data-url="http://yoursite.com/2020/05/14/ 微机系统/汇编_Debug/" data-id="ckazemjc6001sg0vi56j0mkne" class="article-share-link" data-share="baidu" data-title="Debug">分享到</a>
+        <a data-url="http://yoursite.com/2020/05/30/ 微机系统/汇编_DosBox/" data-id="ckb681qyg002054viz6i0wh68" class="article-share-link" data-share="baidu" data-title="Debug_DosBox">分享到</a>
       
 
       
-        <a href="http://yoursite.com/2020/05/14/ 微机系统/汇编_Debug/#ds-thread" class="article-comment-link">评论</a>
+        <a href="http://yoursite.com/2020/05/30/ 微机系统/汇编_DosBox/#ds-thread" class="article-comment-link">评论</a>
       
 
       
@@ -633,14 +668,14 @@
 
 
   
-    <article id="post-Algorithm/Python" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-MachineLearning/线性代数" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2020/05/12/ Algorithm/Python/" class="article-date">
-  <time datetime="2020-05-12T08:56:52.000Z" itemprop="datePublished">2020-05-12</time>
+    <a href="/2020/05/28/ MachineLearning/线性代数/" class="article-date">
+  <time datetime="2020-05-28T08:56:52.000Z" itemprop="datePublished">2020-05-28</time>
 </a>
     
   <div class="article-category">
-    <a class="article-category-link" href="/categories/web技术/">web技术</a>
+    <a class="article-category-link" href="/categories/Machine-Learning/">Machine Learning</a>
   </div>
 
   </div>
@@ -651,7 +686,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2020/05/12/ Algorithm/Python/">web技术概知</a>
+      <a class="article-title" href="/2020/05/28/ MachineLearning/线性代数/">线性代数概知</a>
     </h1>
   
 
@@ -659,60 +694,73 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="基础"><a href="#基础" class="headerlink" title="基础"></a>基础</h1><h2 id="函数"><a href="#函数" class="headerlink" title="函数"></a>函数</h2><ul>
-<li>按引用传递参数</li>
+        <h1 id="矩阵初等变换"><a href="#矩阵初等变换" class="headerlink" title="矩阵初等变换"></a>矩阵初等变换</h1><ul>
+<li>倍法变换：某行*非零的数</li>
+<li>消法变换：某行*某数加到另外一行</li>
+<li>换法变换：交换两行</li>
 </ul>
-<h2 id="面向对象"><a href="#面向对象" class="headerlink" title="面向对象"></a>面向对象</h2><ul>
-<li><p>类 </p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Person</span><span class="params">(object)</span>:</span></span><br><span class="line">    __slots__=(<span class="string">'_name'</span>,<span class="string">'_age'</span>,<span class="string">'_gender'</span>)<span class="comment">#</span></span><br><span class="line">    <span class="comment">#限定Person对象只能绑定_name,_age和_gender</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self,name,age)</span>:</span><span class="comment">#构造器</span></span><br><span class="line">        self._name=name</span><br><span class="line">        self._age=age</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-<h1 id="网络编程"><a href="#网络编程" class="headerlink" title="网络编程"></a>网络编程</h1><ul>
-<li><code>TCP/IP</code>四层模型，网络接口层，网络层，传输层，应用层</li>
-<li><code>IP</code>为网际协议，服务于网络层。</li>
-<li><code>TCP</code>为传输控制协议</li>
-</ul>
-<ul>
-<li><code>C/S</code>模式和<code>B/S</code>模式，<code>C</code>指的是<code>Client</code>客户端，<code>B</code>指的是<code>Browser</code>浏览器，通过<code>B</code>或者<code>C</code>能对<code>S</code>（服务器）进行访问。<code>C</code>与<code>S</code>的对比？？？？？？？？？？？</li>
-<li>去中心化的网络应用模式</li>
-</ul>
-<ul>
-<li><code>HTTP</code>超文本传输协议，<code>HTTPS</code>超文本传输安全协议</li>
-</ul>
-<ul>
-<li><p><code>XML</code></p>
-<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?xml version="1.0" encoding="UTF-8"?&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">message</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">from</span>&gt;</span>Alice<span class="tag">&lt;/<span class="name">from</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">to</span>&gt;</span>Bob<span class="tag">&lt;/<span class="name">to</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">content</span>&gt;</span>Will you marry me?<span class="tag">&lt;/<span class="name">content</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">message</span>&gt;</span></span><br></pre></td></tr></table></figure>
-</li>
-<li><p><code>JSON</code></p>
-<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    <span class="attr">"from"</span>: <span class="string">"Alice"</span>,</span><br><span class="line">    <span class="attr">"to"</span>: <span class="string">"Bob"</span>,</span><br><span class="line">    <span class="attr">"content"</span>: <span class="string">"Will you marry me?"</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>（恐</p>
-</li>
-</ul>
-<h2 id="Socket"><a href="#Socket" class="headerlink" title="Socket"></a>Socket</h2><ul>
-<li><p>什么是<code>Socket</code>?</p>
-<p><code>Socket</code>又称”套接字”，应用程序通常通过”套接字”向网络发出请求或者应答网络请求，使主机间或者一台计算机上的进程间可以通讯。</p>
-</li>
-<li><p><code>import socket</code></p>
-</li>
-<li><p><code>socket.socket(family,type,proto)</code>来创建套接字。其中，<code>family</code>为<code>AF_UNIX</code>或者<code>AF_INET</code>；<code>type</code>为<code>SOCK_STREAM</code>或者<code>SOCK_DGRAM</code>；<code>protocol</code>一般为<code>0</code></p>
-</li>
+
+      
+    </div>
+    <footer class="article-footer">
+      
+        <a data-url="http://yoursite.com/2020/05/28/ MachineLearning/线性代数/" data-id="ckb681qy4001d54viptc5d12f" class="article-share-link" data-share="baidu" data-title="线性代数概知">分享到</a>
+      
+
+      
+        <a href="http://yoursite.com/2020/05/28/ MachineLearning/线性代数/#ds-thread" class="article-comment-link">评论</a>
+      
+
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+
+  
+    <article id="post-MachineLearning/西瓜书-支持向量机" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2020/05/23/ MachineLearning/西瓜书-支持向量机/" class="article-date">
+  <time datetime="2020-05-23T01:56:52.000Z" itemprop="datePublished">2020-05-23</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Machine-Learning/">Machine Learning</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/05/23/ MachineLearning/西瓜书-支持向量机/">细品西瓜-支持向量机</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><ul>
+<li>超平面：在<a href="https://zh.wikipedia.org/wiki/數學" target="_blank" rel="noopener">数学</a>中，<strong>超平面（Hyperplane）</strong>是n维欧氏空间中，<a href="https://zh.wikipedia.org/wiki/餘維數" target="_blank" rel="noopener">余维度</a>为1的<a href="https://zh.wikipedia.org/wiki/子空間" target="_blank" rel="noopener">子空间</a>。即超平面是n维空间中的n-1维的子空间。它是平面中的直线、空间中的平面之推广。</li>
 <li></li>
 </ul>
-<h1 id="HTTP"><a href="#HTTP" class="headerlink" title="HTTP"></a>HTTP</h1><ul>
-<li><code>HTTP</code>是基于客户端/服务端的架构模型</li>
-<li>使用<code>URL Uniform Resource Identifiers</code>来传输数据和建立连接</li>
-</ul>
 
       
     </div>
     <footer class="article-footer">
       
-        <a data-url="http://yoursite.com/2020/05/12/ Algorithm/Python/" data-id="ckazemjbo000vg0vitnhf078z" class="article-share-link" data-share="baidu" data-title="web技术概知">分享到</a>
+        <a data-url="http://yoursite.com/2020/05/23/ MachineLearning/西瓜书-支持向量机/" data-id="ckb681qy6001g54vi99iuns7u" class="article-share-link" data-share="baidu" data-title="细品西瓜-支持向量机">分享到</a>
       
 
       
-        <a href="http://yoursite.com/2020/05/12/ Algorithm/Python/#ds-thread" class="article-comment-link">评论</a>
+        <a href="http://yoursite.com/2020/05/23/ MachineLearning/西瓜书-支持向量机/#ds-thread" class="article-comment-link">评论</a>
       
 
       
@@ -725,96 +773,35 @@
 
 
   
-    <article id="post-重读C++ Primer" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-MachineLearning/图像" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2020/05/07/ 重读C++ Primer/" class="article-date">
-  <time datetime="2020-05-07T14:56:52.000Z" itemprop="datePublished">2020-05-07</time>
+    <a href="/2020/05/17/ MachineLearning/图像/" class="article-date">
+  <time datetime="2020-05-17T12:53:29.119Z" itemprop="datePublished">2020-05-17</time>
 </a>
     
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/Read/">Read</a>
-  </div>
-
   </div>
   <div class="article-inner">
     
     
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/05/07/ 重读C++ Primer/">重读C++ Primer</a>
-    </h1>
-  
-
-      </header>
-    
     <div class="article-entry" itemprop="articleBody">
       
-        <h4 id="列表初始化"><a href="#列表初始化" class="headerlink" title="列表初始化"></a>列表初始化</h4><h4 id="vector是如何增长的"><a href="#vector是如何增长的" class="headerlink" title="vector是如何增长的"></a>vector是如何增长的</h4><p>​    容器内元素是连续存储的，若容器需要的空间大于现在位置所拥有的空间，那么vector会执行一次内存分配和内存释放操作。而标准库的实现者为了重新分配的次数减少，每次重新分配时都会分配比需求更大的内存空间。</p>
-<ul>
-<li>栈内存</li>
-<li>静态内存</li>
-<li>动态内存</li>
+        <h1 id="图像插值方法"><a href="#图像插值方法" class="headerlink" title="图像插值方法"></a>图像插值方法</h1><ul>
+<li>最近邻域法</li>
+<li>双线性插值法</li>
 </ul>
-<h4 id="deque是如何增长的"><a href="#deque是如何增长的" class="headerlink" title="deque是如何增长的"></a>deque是如何增长的</h4><ul>
-<li><p><code>deque</code>是<code>list</code>与<code>vector</code>这两个顺序容器的结合体。</p>
-<p><img src="https://i.loli.net/2020/05/20/o9ulHIRFbyfXtxG.png" alt="image-20200513112016158.png"></p>
-</li>
-</ul>
-<ul>
-<li>不过在进行中间元素的插入和删除的时候，其效率远远低于<code>list</code>和<code>vector</code>，这也是其使用复杂的迭代器框架所带来的代价。</li>
-<li>支持随机访问。</li>
-<li>前端插入与删除效率比<code>vector</code>高。</li>
-<li>插入与删除不会导致重新分配空间。</li>
-</ul>
-<h4 id="使用动态内存的原因"><a href="#使用动态内存的原因" class="headerlink" title="使用动态内存的原因"></a>使用动态内存的原因</h4><ul>
-<li>程序不知道自己需要使用多少对象</li>
-<li>程序不知道所需对象的准确类型</li>
-<li>程序需要在多个对象间共享数据</li>
-</ul>
-<h5 id="区分"><a href="#区分" class="headerlink" title="区分"></a>区分</h5><ul>
-<li><code>string *ps1=new string</code></li>
-<li><code>string *ps2=new string()</code></li>
-<li><code>int *pi1=new int</code></li>
-<li><code>int *pi2=new int()</code></li>
-</ul>
-<h5 id="智能指针"><a href="#智能指针" class="headerlink" title="智能指针"></a>智能指针</h5><ul>
-<li><code>shared_ptr&lt;int&gt;p=make_shared&lt;int&gt;(10);</code></li>
-<li><code>auto p=make_shared&lt;int&gt;(10);</code></li>
-<li>引用计数<code>reference count</code>，每拷贝一次<code>shared_ptr</code>，计数器加一。</li>
-<li>当<code>reference count</code>变为0时，自动销毁。</li>
-<li>不要混用<code>shared_ptr和内置指针</code></li>
-</ul>
-<h5 id="动态数组"><a href="#动态数组" class="headerlink" title="动态数组"></a>动态数组</h5><ul>
-<li>动态数组不是数组类型</li>
-<li><code>int *pia=new int[10];</code></li>
-<li><code>pia[1]=10; cout&lt;&lt;pia[1]&lt;&lt;endl;</code></li>
-<li><code>delete [] pia;</code></li>
-</ul>
-<ul>
-<li><code>unique_ptr</code>支持动态数组，<code>shared_ptr</code>不支持管理动态数组，因为<code>shared_ptr</code>没有动态数组的删除器。</li>
-</ul>
-<h1 id="泛型算法"><a href="#泛型算法" class="headerlink" title="泛型算法"></a>泛型算法</h1><h2 id="初识"><a href="#初识" class="headerlink" title="初识"></a>初识</h2><ul>
-<li><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">string</span> sum</span><br><span class="line">    =accumulate(V.cbegin(),V.cend(),<span class="built_in">string</span>(<span class="string">""</span>));</span><br><span class="line"><span class="comment">//正确</span></span><br><span class="line"><span class="built_in">string</span> sum</span><br><span class="line">    =accumulate(V.cbegin(),V.cend(),<span class="string">""</span>);</span><br><span class="line"><span class="comment">//错误，const char *上没有定义+运算符</span></span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-<h2 id="容器适配器"><a href="#容器适配器" class="headerlink" title="容器适配器"></a>容器适配器</h2><ul>
-<li><p>容器，迭代器，函数都有适配器。本质上，一个适配器是一种机制，使得事物的行为看起来像另外一种事物。</p>
-</li>
-<li><p>默认情况下<code>stack</code>和<code>queue</code>是基于<code>deque</code>实现；而<code>priority_queue</code>则是基于<code>vector</code>实现。</p>
-</li>
-</ul>
+<p>扫描矩阵的获取</p>
+<p>映射矩阵的建立</p>
+<p>扫描矩阵{S}=偏心运动矩阵*球面子孔路径矩阵</p>
 
       
     </div>
     <footer class="article-footer">
       
-        <a data-url="http://yoursite.com/2020/05/07/ 重读C++ Primer/" data-id="ckazemjao000ag0viiuwrys60" class="article-share-link" data-share="baidu" data-title="重读C++ Primer">分享到</a>
+        <a data-url="http://yoursite.com/2020/05/17/ MachineLearning/图像/" data-id="ckb681qy1001654vim7fgh89i" class="article-share-link" data-share="baidu" data-title="">分享到</a>
       
 
       
-        <a href="http://yoursite.com/2020/05/07/ 重读C++ Primer/#ds-thread" class="article-comment-link">评论</a>
+        <a href="http://yoursite.com/2020/05/17/ MachineLearning/图像/#ds-thread" class="article-comment-link">评论</a>
       
 
       
@@ -827,14 +814,14 @@
 
 
   
-    <article id="post-微机系统/汇编" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-MachineLearning/计算方法" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2020/04/23/ 微机系统/汇编/" class="article-date">
-  <time datetime="2020-04-23T08:56:52.000Z" itemprop="datePublished">2020-04-23</time>
+    <a href="/2020/05/16/ MachineLearning/计算方法/" class="article-date">
+  <time datetime="2020-05-16T05:59:03.700Z" itemprop="datePublished">2020-05-16</time>
 </a>
     
   <div class="article-category">
-    <a class="article-category-link" href="/categories/微机原理/">微机原理</a>
+    <a class="article-category-link" href="/categories/计算方法/">计算方法</a>
   </div>
 
   </div>
@@ -845,7 +832,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2020/04/23/ 微机系统/汇编/">汇编</a>
+      <a class="article-title" href="/2020/05/16/ MachineLearning/计算方法/">计算方法</a>
     </h1>
   
 
@@ -853,328 +840,32 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="控制转义指令"><a href="#控制转义指令" class="headerlink" title="控制转义指令"></a>控制转义指令</h1><div class="table-container">
-<table>
-<thead>
-<tr>
-<th>指令</th>
-<th>描述</th>
-<th>举例</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>JZ</td>
-<td>jump if zero</td>
-<td>JZ   AA1</td>
-</tr>
-<tr>
-<td>JNZ</td>
-<td>jump if not zero</td>
-<td>JNZ   AA1</td>
-</tr>
-<tr>
-<td>JNC</td>
-<td>jump if not carry(进位)</td>
-<td>JNC DST</td>
-</tr>
-<tr>
-<td>INT n</td>
-<td>n为中断的<a href="##中断指令">类型码</a></td>
-<td></td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td>INC</td>
-<td>increase 1</td>
-<td>INC a</td>
-</tr>
-<tr>
-<td>SHL</td>
-<td>Shift Logical Left</td>
-<td>SHL DST 1</td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-</tr>
-</tbody>
-</table>
-</div>
-<h2 id="中断指令"><a href="#中断指令" class="headerlink" title="中断指令"></a>中断指令</h2><ul>
-<li><p>INT n</p>
-</li>
-<li><p>其中n为8位无符号数，触发类型码为n的中断</p>
-</li>
-<li><p>INT 21H 系统功能调用</p>
-<ol>
-<li>AH 为功能调用编号</li>
-<li>设置入口参数</li>
-<li>CPU执行INT 21H</li>
-<li>给出出口参数</li>
-</ol>
-<p>| AH   | 功能           | 入口参数    | 出口参数    |<br>| —— | ——————— | —————- | —————- |<br>| 01   | 键盘键入并回显 | 无          | AL=输入字符 |<br>| 02   | 显示输出       | DL=输出字符 | 无          |<br>| 4C   | 带返回码终止   | AL=返回码   | 无          |</p>
+        <p>1</p>
+<h1 id="误差"><a href="#误差" class="headerlink" title="误差"></a>误差</h1><ul>
+<li>误差计算<ul>
+<li>定义1.3</li>
+<li>定理1.1</li>
+</ul>
 </li>
 </ul>
-<p>[Debug]<a href="https://blog.csdn.net/liuer2004_82/article/details/52638516" target="_blank" rel="noopener">https://blog.csdn.net/liuer2004_82/article/details/52638516</a></p>
-<p>DOSBox</p>
-<ul>
-<li>动态CPU内核：具备<code>i386</code>指令集合的系统，能利用动态指令转换。</li>
-<li>其中<code>i386</code>处理器为<code>32</code>位系统，地址线为32位；采用<code>Cache</code>来解决内存速度瓶颈问题。</li>
+<h1 id="线性代数方程组的数值解"><a href="#线性代数方程组的数值解" class="headerlink" title="线性代数方程组的数值解"></a>线性代数方程组的数值解</h1><ul>
+<li>克莱姆法则</li>
+<li>直接法<ul>
+<li>高斯消元法</li>
 </ul>
-<h1 id="注意"><a href="#注意" class="headerlink" title="注意"></a>注意</h1><ul>
-<li><code>ffffh</code>是错误的表示，永远不要第一个数值为字母，应该为<code>0ffffh</code>.</li>
-<li>若使用<code>dl</code>来累加，当数值范围1个字节所能表示的范围即<code>8位</code>，CPU不会进位到<code>dh</code>，而是直接抹去。</li>
-<li><code>[bx]</code>，表示<code>bx</code>中存放的偏移地址<code>EA</code>。但是在<code>ax</code>,<code>cx</code>,<code>dx</code>不能进行如是的操作。我们也能从这些寄存器的名字看出。</li>
-<li>段前缀：用于显式地指明内存单元的段地址</li>
-<li><code>assume</code>的时候，即使<code>ds:data</code>，那么<code>ds</code>进入<code>code</code>的时候<code>(ds)</code>也不一定未<code>(data)</code></li>
+</li>
+<li>迭代法，适用于系数矩阵为大型稀疏矩阵</li>
 </ul>
 
       
     </div>
     <footer class="article-footer">
       
-        <a data-url="http://yoursite.com/2020/04/23/ 微机系统/汇编/" data-id="ckazemjc4001pg0vi1eax36r5" class="article-share-link" data-share="baidu" data-title="汇编">分享到</a>
+        <a data-url="http://yoursite.com/2020/05/16/ MachineLearning/计算方法/" data-id="ckb681qy7001i54vi75akbelk" class="article-share-link" data-share="baidu" data-title="计算方法">分享到</a>
       
 
       
-        <a href="http://yoursite.com/2020/04/23/ 微机系统/汇编/#ds-thread" class="article-comment-link">评论</a>
-      
-
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-
-
-  
-    <article id="post-微机系统/微型计算机" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2020/04/11/ 微机系统/微型计算机/" class="article-date">
-  <time datetime="2020-04-11T14:56:52.000Z" itemprop="datePublished">2020-04-11</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/微机原理/">微机原理</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/04/11/ 微机系统/微型计算机/">微机原理</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="从入门到入土"><a href="#从入门到入土" class="headerlink" title="从入门到入土"></a>从入门到入土</h1><ul>
-<li>字长，</li>
-<li>主频，CPU的时钟频率，决定计算机运算速度</li>
-<li>CISC，Complex Instruction Set Computer</li>
-<li>RISC，Reduced Instruction Set Computer</li>
-<li>发展</li>
-</ul>
-<h1 id="8086"><a href="#8086" class="headerlink" title="8086"></a>8086</h1><ul>
-<li>AX,Accumulator Register，累加器</li>
-<li>BX,Base Register，基址寄存器</li>
-<li>CX,Counter Register，计数器</li>
-<li>DX,DataRegister，数据寄存器</li>
-</ul>
-<ul>
-<li>SP,Stack Pointer，堆栈指针</li>
-<li>BP,Base Pointer，基址指针</li>
-<li>SI,Source Index，源变址寄存器</li>
-<li>DI,Destination Index，目的变址寄存器,<a href>其中，SI与DI隐含使用</a></li>
-</ul>
-<ul>
-<li>CS,Code Segment，代码段寄存器</li>
-<li>SS,Stack Segment，堆栈段寄存器</li>
-<li>DS,Data Segment，数据段寄存器</li>
-<li>ES,Extra Segment，附加段寄存器</li>
-</ul>
-<ul>
-<li><p>IP,Instruction Pointer，指令指针，<a href>CS:IP在地址加法器中形成物理地址，由BIU修改，不能直接修改</a></p>
-</li>
-<li><p>FL,flag，标志寄存器</p>
-<ul>
-<li><p>CF,Carry Flag，进位或错误标志，CF=1,否则CF=0</p>
-</li>
-<li><p>PF,Parity Flag，低8位结果偶数个1，PF=1，否则PF=0</p>
-</li>
-<li><p>AF,Auxiliary Carry Flag，D3有进位或借位，AF=1</p>
-</li>
-<li><p>ZF,Zero Flag，结果为0，ZF=1</p>
-</li>
-<li><p>SF,Sign Flag，结果为正，SF=0</p>
-</li>
-<li><p>OF,Overflow Flaw，有符号数算数运算超出表示范围，OF=1</p>
-</li>
-</ul>
-<hr>
-<p>  DF,Dirction Flag</p>
-<ul>
-<li><p>IF,Interrupt Enable Flag</p>
-</li>
-<li><p>TF,Trap Flag</p>
-</li>
-</ul>
-</li>
-</ul>
-<h1 id="Prntium"><a href="#Prntium" class="headerlink" title="Prntium"></a>Prntium</h1><h5 id="可由8086的16位寄存器变为32位的寄存器如，AX-gt-EAX"><a href="#可由8086的16位寄存器变为32位的寄存器如，AX-gt-EAX" class="headerlink" title="可由8086的16位寄存器变为32位的寄存器如，AX-&gt;EAX"></a>可由8086的16位寄存器变为32位的寄存器如，AX-&gt;EAX</h5><h2 id="通用寄存器"><a href="#通用寄存器" class="headerlink" title="通用寄存器"></a>通用寄存器</h2><ul>
-<li>AX,Accumulator Register，累加器</li>
-<li>BX,Base Register，基址寄存器</li>
-<li>CX,Counter Register，计数器</li>
-<li>DX,DataRegister，数据寄存器</li>
-</ul>
-<ul>
-<li>SP,Stack Pointer，堆栈指针</li>
-<li>BP,Base Pointer，基址指针</li>
-<li>SI,Source Index，源变址寄存器</li>
-<li>DI,Destination Index，目的变址寄存器,<a href>其中，SI与DI隐含使用</a></li>
-</ul>
-<h2 id="段寄存器"><a href="#段寄存器" class="headerlink" title="段寄存器"></a>段寄存器</h2><p>段寄存器可用于作为段前缀</p>
-<ul>
-<li>CS,Code Segment，代码段寄存器</li>
-<li>SS,Stack Segment，堆栈段寄存器</li>
-<li>DS,Data Segment，数据段寄存器</li>
-<li>ES,Extra Segment，附加段寄存器</li>
-<li>FS，附加段寄存器</li>
-<li><p>GS，附加段寄存器</p>
-</li>
-<li><p>IP,Instruction Pointer，指令指针，<a href>CS:IP在地址加法器中形成物理地址，由BIU修改，不能直接修改</a></p>
-</li>
-</ul>
-<ul>
-<li><p>FL,FR,flag，标志寄存器</p>
-<ul>
-<li><p>CF,Carry Flag，进位或错误标志，CF=1,否则CF=0</p>
-</li>
-<li><p>PF,Parity Flag，低8位结果偶数个1，PF=1，否则PF=0</p>
-</li>
-<li><p>AF,Auxiliary Carry Flag，D3有进位或借位，AF=1</p>
-</li>
-<li><p>ZF,Zero Flag，结果为0，ZF=1</p>
-</li>
-<li><p>SF,Sign Flag，结果为正，SF=0</p>
-</li>
-<li><p>OF,Overflow Flaw，有符号数算数运算超出表示范围，OF=1</p>
-</li>
-</ul>
-<hr>
-<p>  DF,Dirction Flag</p>
-<ul>
-<li><p>IF,Interrupt Enable Flag</p>
-</li>
-<li><p>TF,Trap Flag</p>
-</li>
-</ul>
-</li>
-</ul>
-<h2 id="系统级寄存器"><a href="#系统级寄存器" class="headerlink" title="系统级寄存器"></a>系统级寄存器</h2><h3 id="系统地址寄存器"><a href="#系统地址寄存器" class="headerlink" title="系统地址寄存器"></a>系统地址寄存器</h3><ul>
-<li>GDTR,Global Descriptor Table Register，全局描述符表寄存器</li>
-<li>IDTR,Interrupt Descriptor Table Register，中断描述符表寄存器</li>
-<li>LDTR,Local Descriptor Table Register，局部描述符表寄存器</li>
-<li>TR,Task Register，任务状态寄存器</li>
-</ul>
-<h3 id="控制寄存器"><a href="#控制寄存器" class="headerlink" title="控制寄存器"></a>控制寄存器</h3><ul>
-<li>CR0</li>
-<li>CR1</li>
-<li>CR2</li>
-<li>CR3</li>
-<li>CR4</li>
-</ul>
-<h2 id="总线周期"><a href="#总线周期" class="headerlink" title="总线周期"></a>总线周期</h2><ul>
-<li>工作时序</li>
-<li>时钟周期</li>
-<li>总线周期</li>
-<li>指令周期</li>
-<li>总线请求</li>
-<li>总线响应</li>
-<li>中断响应</li>
-<li>中断响应周期</li>
-<li>8086时钟状态</li>
-<li></li>
-</ul>
-<h1 id="寻址"><a href="#寻址" class="headerlink" title="寻址"></a>寻址</h1><ul>
-<li>立即数</li>
-<li>寄存器</li>
-<li>存储器</li>
-</ul>
-<h2 id="存储器寻址"><a href="#存储器寻址" class="headerlink" title="存储器寻址"></a>存储器寻址</h2><ul>
-<li>Effective Address,EA，有效地址，偏移地址</li>
-</ul>
-<h1 id="Pentium保护模式及存储管理"><a href="#Pentium保护模式及存储管理" class="headerlink" title="Pentium保护模式及存储管理"></a>Pentium保护模式及存储管理</h1><ul>
-<li>GDT，全局描述符表，系统只有一个</li>
-<li>LDT，局部描述符表，每个任务一个</li>
-<li>IDT，中断描述符表，保存门描述符，整个系统一个</li>
-<li>TSS,Task State Segment，任务状态段，每个任务一个</li>
-</ul>
-<h2 id="保护模式"><a href="#保护模式" class="headerlink" title="保护模式"></a>保护模式</h2><h3 id="分类"><a href="#分类" class="headerlink" title="分类"></a>分类</h3><ul>
-<li>任务间存储空间保护</li>
-<li>段属性和界限保护</li>
-<li>特权级与特权级保护</li>
-</ul>
-<h4 id="特权管理"><a href="#特权管理" class="headerlink" title="特权管理"></a>特权管理</h4><ul>
-<li>CPL,Current Privilege Level，即代码段描述符中的DPL。</li>
-<li>DPL,Descriptor Privilege Level，保存在该段的段描述符的特权级位。</li>
-<li>RPL,Request Privilege Level，新装入段寄存器的段选择符的特权级。</li>
-<li>高特权级可访问特权级低的数据，低特权级可调用特权级高程序。</li>
-</ul>
-<h3 id="段间转移"><a href="#段间转移" class="headerlink" title="段间转移"></a>段间转移</h3><ul>
-<li>任务内转移<ul>
-<li>段内 NEAR，改变IP，检查目标指令位置是否超出段长</li>
-<li>段间 FAR，从一个段到另外一个段（跳转？中断？）<ul>
-<li>同一特权级，直接转移，可使用段描述符实现</li>
-<li>不同特权级，间接转移，可使用调用门调用，使用中断门/陷阱门中断</li>
-</ul>
-</li>
-</ul>
-</li>
-<li>任务间切换<ul>
-<li>直接，给任务寄存器TR送一个段选择符，然后TR找到TSS描述符，找到对应的段。</li>
-<li>间接，给TR送一个段选择符，然后TR找到任务门描述符，找到对应段。</li>
-</ul>
-</li>
-</ul>
-<h2 id="分页"><a href="#分页" class="headerlink" title="分页"></a>分页</h2><ul>
-<li>PWT ,P     Write Through</li>
-<li>PCD,</li>
-<li>P，若P=0，那么为该页在主存中不存在</li>
-<li></li>
-</ul>
-<h1 id="IN-OUT"><a href="#IN-OUT" class="headerlink" title="IN/OUT"></a>IN/OUT</h1><ul>
-<li>DMA，Direct Memory Access</li>
-<li>外设-&gt;DMA-&gt;CPU</li>
-</ul>
-
-      
-    </div>
-    <footer class="article-footer">
-      
-        <a data-url="http://yoursite.com/2020/04/11/ 微机系统/微型计算机/" data-id="ckazemjc3001og0vilbgpsenx" class="article-share-link" data-share="baidu" data-title="微机原理">分享到</a>
-      
-
-      
-        <a href="http://yoursite.com/2020/04/11/ 微机系统/微型计算机/#ds-thread" class="article-comment-link">评论</a>
+        <a href="http://yoursite.com/2020/05/16/ MachineLearning/计算方法/#ds-thread" class="article-comment-link">评论</a>
       
 
       
@@ -1190,7 +881,7 @@
 
 
   <nav id="page-nav">
-    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/2/">下一页 &raquo;</a>
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><a class="extend next" rel="next" href="/page/2/">下一页 &raquo;</a>
   </nav>
 </section>
       
@@ -1200,7 +891,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">分类</h3>
     <div class="widget">
-      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Java/">Java</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Linux/">Linux</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Machine-Learning/">Machine Learning</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Read/">Read</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/algorithm/">algorithm</a><span class="category-list-count">8</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/web技术/">web技术</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/垃圾场/">垃圾场</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/微机原理/">微机原理</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/操作系统/">操作系统</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/机器学习/">机器学习</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/汇编/">汇编</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/离散数学/">离散数学</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/算法设计与分析/">算法设计与分析</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/组合数学/">组合数学</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/计算方法/">计算方法</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/计算机系统结构/">计算机系统结构</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/随机数学/">随机数学</a><span class="category-list-count">1</span></li></ul>
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Java/">Java</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Linux/">Linux</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Machine-Learning/">Machine Learning</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Read/">Read</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/algorithm/">algorithm</a><span class="category-list-count">8</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/web技术/">web技术</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/垃圾场/">垃圾场</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/微机原理/">微机原理</a><span class="category-list-count">7</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/操作系统/">操作系统</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/机器学习/">机器学习</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/离散数学/">离散数学</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/算法设计与分析/">算法设计与分析</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/组合数学/">组合数学</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/计算方法/">计算方法</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/计算机系统结构/">计算机系统结构</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/随机数学/">随机数学</a><span class="category-list-count">1</span></li></ul>
     </div>
   </div>
 
@@ -1213,7 +904,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">归档</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/05/">五月 2020</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/04/">四月 2020</a><span class="archive-list-count">6</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/03/">三月 2020</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/02/">二月 2020</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/11/">十一月 2019</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/10/">十月 2019</a><span class="archive-list-count">8</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/06/">六月 2020</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/05/">五月 2020</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/04/">四月 2020</a><span class="archive-list-count">6</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/03/">三月 2020</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/02/">二月 2020</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/11/">十一月 2019</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/10/">十月 2019</a><span class="archive-list-count">8</span></li></ul>
     </div>
   </div>
 
@@ -1225,23 +916,23 @@
       <ul>
         
           <li>
-            <a href="/2020/05/30/ 微机系统/汇编_2/">汇编-2</a>
+            <a href="/2020/06/06/ 微机系统/中断/">中断</a>
           </li>
         
           <li>
-            <a href="/2020/05/28/ MachineLearning/线性代数/">线性代数概知</a>
+            <a href="/2020/06/06/ 微机系统/标志寄存器/">标志寄存器</a>
           </li>
         
           <li>
-            <a href="/2020/05/23/ MachineLearning/西瓜书-支持向量机/">细品西瓜-支持向量机</a>
+            <a href="/2020/06/03/ 微机系统/寻址/">寻址</a>
           </li>
         
           <li>
-            <a href="/2020/05/17/ MachineLearning/图像/">(no title)</a>
+            <a href="/2020/06/03/ page/">page</a>
           </li>
         
           <li>
-            <a href="/2020/05/16/ MachineLearning/计算方法/">计算方法</a>
+            <a href="/2020/05/30/ 微机系统/汇编_Loop_多段/">Loop_多段</a>
           </li>
         
       </ul>
@@ -1275,9 +966,16 @@
       Powered by <a href="//hexo.io/" target="_blank">Hexo</a>
       .
       Theme by <a href="https://github.com/xiangming/landscape-plus" target="_blank">Landscape-plus</a>
+      <!-- ����ͳ�� -->
+      <br>
+      <span style="display: inline;" id="busuanzi_container_site_uv">number1 <span id="busuanzi_value_site_uv" font="΢���ź�" style="color:white"></span> times</span>
+      <span style="display: inline;" id="busuanzi_container_site_pv">number2 <span id="busuanzi_value_site_pv" font="΢���ź�" style="color:white"></span> times</span>
+
     </div>
   </div>
 </footer>
+
+
   </div>
   <nav id="mobile-nav">
   
@@ -1380,6 +1078,8 @@ MathJax.Hub.Queue(function() {
 
 
 <script src="/js/script.js"></script>
+
+<script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
 
 </div><!-- hexo-inject:begin --><!-- Begin: Injected MathJax -->
 <script type="text/x-mathjax-config">

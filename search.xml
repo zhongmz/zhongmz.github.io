@@ -1,8 +1,93 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>汇编-2</title>
-    <url>/2020/05/30/%20%E5%BE%AE%E6%9C%BA%E7%B3%BB%E7%BB%9F/%E6%B1%87%E7%BC%96_2/</url>
+    <title>中断</title>
+    <url>/2020/06/06/%20%E5%BE%AE%E6%9C%BA%E7%B3%BB%E7%BB%9F/%E4%B8%AD%E6%96%AD/</url>
+    <content><![CDATA[<h1 id="bx-si-di-bp"><a href="#bx-si-di-bp" class="headerlink" title="bx,si,di,bp"></a><code>bx,si,di,bp</code></h1><ul>
+<li><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">assume cs:code</span><br><span class="line">code segment</span><br><span class="line">    start:</span><br><span class="line">    mov ax,cs</span><br><span class="line">    mov ds,ax</span><br><span class="line">    mov si,offset sqr</span><br><span class="line">    mov ax,0</span><br><span class="line">    mov es,ax</span><br><span class="line">    mov di,200h</span><br><span class="line">    mov cx,offset sqrend-offset sqr</span><br><span class="line">    cld</span><br><span class="line">    rep movsb</span><br><span class="line">    </span><br><span class="line">    mov ax,0</span><br><span class="line">    mov es,ax</span><br><span class="line">    mov word ptr es:[7ch*4],200h</span><br><span class="line">    mov word ptr es:[7ch*4+2],0</span><br><span class="line">    </span><br><span class="line">    mov ax,4c00h</span><br><span class="line">    int 21h</span><br><span class="line">    </span><br><span class="line">    sqr:</span><br><span class="line">    mul ax</span><br><span class="line">    iret</span><br><span class="line">    </span><br><span class="line">    sqrend:</span><br><span class="line">    nop</span><br><span class="line">    </span><br><span class="line">    code ends</span><br><span class="line">end start</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+]]></content>
+      <categories>
+        <category>微机原理</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>标志寄存器</title>
+    <url>/2020/06/06/%20%E5%BE%AE%E6%9C%BA%E7%B3%BB%E7%BB%9F/%E6%A0%87%E5%BF%97%E5%AF%84%E5%AD%98%E5%99%A8/</url>
+    <content><![CDATA[<h1 id="bx-si-di-bp"><a href="#bx-si-di-bp" class="headerlink" title="bx,si,di,bp"></a><code>bx,si,di,bp</code></h1><ul>
+<li></li>
+</ul>
+]]></content>
+      <categories>
+        <category>微机原理</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>寻址</title>
+    <url>/2020/06/03/%20%E5%BE%AE%E6%9C%BA%E7%B3%BB%E7%BB%9F/%E5%AF%BB%E5%9D%80/</url>
+    <content><![CDATA[<h1 id="bx-si-di-bp"><a href="#bx-si-di-bp" class="headerlink" title="bx,si,di,bp"></a><code>bx,si,di,bp</code></h1><ul>
+<li><p><code>在</code>8086CPU<code>中，只有4个寄存器再用</code>[…]`来进行内存的寻址。</p>
+</li>
+<li><p>可以使用4个寄存器单独出现，亦或，<code>bx+si</code>,<code>bx+di</code>,<code>bp+si</code>,<code>bp+di</code></p>
+</li>
+<li><p>若使用<code>bp</code>，那么段地址默认为<code>ss</code></p>
+</li>
+<li><p>若使用<code>bx</code>，那么段地址默认为<code>ds</code></p>
+</li>
+<li><p>数据在哪</p>
+<ul>
+<li>CPU内部</li>
+<li>内存</li>
+<li>端口</li>
+</ul>
+</li>
+<li><p>数据多长</p>
+<ul>
+<li><p>寄存器指明数据尺寸</p>
+</li>
+<li><p>若无寄存器，则有<code>word ptr</code>或<code>byte ptr</code>指明，比如</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">mov word ptr ds:[0],1</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>有些指令默认了数据尺寸，比如<code>push</code>只进行字操作。</p>
+</li>
+</ul>
+</li>
+</ul>
+<h1 id="Example-1"><a href="#Example-1" class="headerlink" title="Example 1"></a>Example 1</h1><ul>
+<li>子程序<ul>
+<li><code>ret</code></li>
+<li><code>call</code></li>
+<li>现场保存：<code>stack</code></li>
+</ul>
+</li>
+<li>跳转<ul>
+<li><code>jmp</code></li>
+<li><code>jcxz</code></li>
+</ul>
+</li>
+<li><code>how to show on the screen</code></li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">assume cs:code</span><br><span class="line">data segment</span><br><span class="line">    db &apos;Welcome to masm!&apos;,0</span><br><span class="line">data ends</span><br><span class="line"></span><br><span class="line">stack segment</span><br><span class="line">    dw 16 dup (0)</span><br><span class="line">stack ends</span><br><span class="line"></span><br><span class="line">code segment</span><br><span class="line">   start:</span><br><span class="line">   mov dh,8</span><br><span class="line">   mov dl,3</span><br><span class="line">   mov cl,2</span><br><span class="line">   mov ax,data</span><br><span class="line">   mov ds,ax</span><br><span class="line">   mov ax,stack</span><br><span class="line">   mov ss,ax</span><br><span class="line">   mov sp,32</span><br><span class="line">   mov si,0</span><br><span class="line">   </span><br><span class="line">   call show_str</span><br><span class="line">   mov ax,4c00h</span><br><span class="line">   int 21h    </span><br><span class="line">   </span><br><span class="line">   </span><br><span class="line">   </span><br><span class="line">   show_str:</span><br><span class="line">   push ax</span><br><span class="line">   push cx</span><br><span class="line">   push dx</span><br><span class="line">   push ds</span><br><span class="line">   push si</span><br><span class="line">   </span><br><span class="line">   mov ah,0</span><br><span class="line">   mov al,dh</span><br><span class="line">   mov dh,160</span><br><span class="line">   mul dh</span><br><span class="line">   mov bx,ax;save the row</span><br><span class="line">   </span><br><span class="line">   mov ah,0</span><br><span class="line">   mov al,dl</span><br><span class="line">   mov dl,2</span><br><span class="line">   mul dl</span><br><span class="line">   mov cx,ax;save the column</span><br><span class="line">   mov di,cx</span><br><span class="line">   </span><br><span class="line">   mov ax,0b800h</span><br><span class="line">   mov es,ax</span><br><span class="line">   </span><br><span class="line">   mov si,0  </span><br><span class="line">   mov al,cl</span><br><span class="line">   s:</span><br><span class="line">   mov cx,0</span><br><span class="line">   mov cl,ds:[si]</span><br><span class="line">   jcxz q</span><br><span class="line">   </span><br><span class="line">   mov ch,al</span><br><span class="line">   inc si</span><br><span class="line">   mov es:[bx+di],cx</span><br><span class="line">   add di,2</span><br><span class="line">   jmp s</span><br><span class="line">   </span><br><span class="line">   </span><br><span class="line">   </span><br><span class="line">  </span><br><span class="line">   q:</span><br><span class="line">   pop si</span><br><span class="line">   pop ds</span><br><span class="line">   pop dx</span><br><span class="line">   pop cx</span><br><span class="line">   pop ax</span><br><span class="line">   ret</span><br><span class="line">code ends</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">end start</span><br></pre></td></tr></table></figure>
+<h1 id="Example2"><a href="#Example2" class="headerlink" title="Example2"></a>Example2</h1><ul>
+<li>进行不会产生溢出的除法运算</li>
+<li>其中<code>cx</code>存余数，<code>dx</code>存高16位商，<code>ax</code>存低16位商</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">assume cs:code</span><br><span class="line">stack segment</span><br><span class="line">    dw 16 dup(0)</span><br><span class="line">stack ends</span><br><span class="line"></span><br><span class="line">code segment</span><br><span class="line">    start:</span><br><span class="line">    mov ax,stack</span><br><span class="line">    mov ss,ax</span><br><span class="line">    mov sp,32</span><br><span class="line">    mov ax,4240h</span><br><span class="line">    mov dx,000fh</span><br><span class="line">    mov cx,0ah</span><br><span class="line">    call divdw</span><br><span class="line">    mov ax,4c00h</span><br><span class="line">    int 21h</span><br><span class="line">    </span><br><span class="line">    divdw:</span><br><span class="line">    push bx</span><br><span class="line">    mov bx,ax</span><br><span class="line">    mov ax,dx</span><br><span class="line">    mov dx,0</span><br><span class="line">    div cx</span><br><span class="line">    push ax</span><br><span class="line">    mov ax,bx</span><br><span class="line">    div cx</span><br><span class="line">    mov cx,dx          ;保存余数</span><br><span class="line">    pop dx;得到高位的商</span><br><span class="line">    </span><br><span class="line">    </span><br><span class="line">    </span><br><span class="line">    pop bx</span><br><span class="line">    ret</span><br><span class="line">    </span><br><span class="line">    </span><br><span class="line">code ends</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">end start</span><br></pre></td></tr></table></figure>
+<h1 id="Example3"><a href="#Example3" class="headerlink" title="Example3"></a>Example3</h1><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">assume cs:code</span><br><span class="line">stack segment</span><br><span class="line">    dw 16 dup(0)</span><br><span class="line">stack ends</span><br><span class="line">data segment</span><br><span class="line">    db 10 dup(0)</span><br><span class="line">data ends</span><br><span class="line"></span><br><span class="line">code segment</span><br><span class="line">   start:</span><br><span class="line">   mov ax,12666</span><br><span class="line">   mov bx,data</span><br><span class="line">   mov ds,bx</span><br><span class="line">   mov si,0</span><br><span class="line">   call dtoc</span><br><span class="line">   </span><br><span class="line">   mov dh,8</span><br><span class="line">   mov dl,3</span><br><span class="line">   mov cl,2</span><br><span class="line">   call show_str</span><br><span class="line">   </span><br><span class="line">   mov ax,4c00h</span><br><span class="line">   int 21h</span><br><span class="line">   dtoc:</span><br><span class="line">   push ax</span><br><span class="line">   push si</span><br><span class="line">   mov bx,10</span><br><span class="line">   s1:</span><br><span class="line">   mov dx,0</span><br><span class="line">   div bx</span><br><span class="line">   mov cx,ax</span><br><span class="line">   jcxz q1</span><br><span class="line">   add dl,30h</span><br><span class="line">   mov ds:[si],dl</span><br><span class="line">   inc si</span><br><span class="line">   mov ax,cx</span><br><span class="line">   jmp s1</span><br><span class="line">   q1:</span><br><span class="line">   mov dl,0</span><br><span class="line">   mov ds:[si],dl</span><br><span class="line">   inc si</span><br><span class="line">   pop si</span><br><span class="line">   pop ax</span><br><span class="line">   ret</span><br><span class="line">   </span><br><span class="line">   </span><br><span class="line">   show_str:</span><br><span class="line">   push ax</span><br><span class="line">   push cx</span><br><span class="line">   push dx</span><br><span class="line">   push ds</span><br><span class="line">   push si</span><br><span class="line">   </span><br><span class="line">   mov ah,0</span><br><span class="line">   mov al,dh</span><br><span class="line">   mov dh,160</span><br><span class="line">   mul dh</span><br><span class="line">   mov bx,ax;save the row</span><br><span class="line">   </span><br><span class="line">   mov ah,0</span><br><span class="line">   mov al,dl</span><br><span class="line">   mov dl,2</span><br><span class="line">   mul dl</span><br><span class="line">   mov cx,ax;save the column</span><br><span class="line">   mov di,cx</span><br><span class="line">   </span><br><span class="line">   mov ax,0b800h</span><br><span class="line">   mov es,ax</span><br><span class="line">   </span><br><span class="line">   mov si,0  </span><br><span class="line">   mov al,cl</span><br><span class="line">   s:</span><br><span class="line">   mov cx,0</span><br><span class="line">   mov cl,ds:[si]</span><br><span class="line">   jcxz q</span><br><span class="line">   </span><br><span class="line">   mov ch,al</span><br><span class="line">   inc si</span><br><span class="line">   mov es:[bx+di],cx</span><br><span class="line">   add di,2</span><br><span class="line">   jmp s</span><br><span class="line">   </span><br><span class="line">   </span><br><span class="line">   </span><br><span class="line">  </span><br><span class="line">   q:</span><br><span class="line">   pop si</span><br><span class="line">   pop ds</span><br><span class="line">   pop dx</span><br><span class="line">   pop cx</span><br><span class="line">   pop ax</span><br><span class="line">   ret</span><br><span class="line">   </span><br><span class="line">   </span><br><span class="line">   </span><br><span class="line">   </span><br><span class="line">    </span><br><span class="line">    </span><br><span class="line">code ends</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">end start</span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>微机原理</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>page</title>
+    <url>/2020/06/03/%20page/</url>
+    <content><![CDATA[]]></content>
+  </entry>
+  <entry>
+    <title>Loop_多段</title>
+    <url>/2020/05/30/%20%E5%BE%AE%E6%9C%BA%E7%B3%BB%E7%BB%9F/%E6%B1%87%E7%BC%96_Loop_%E5%A4%9A%E6%AE%B5/</url>
     <content><![CDATA[<h1 id="Loop"><a href="#Loop" class="headerlink" title="Loop"></a>Loop</h1><ul>
 <li>计算$2^{11}$</li>
 </ul>
@@ -50,75 +135,15 @@
 </li>
 </ul>
 <h3 id="eg-将文本大写化"><a href="#eg-将文本大写化" class="headerlink" title="eg 将文本大写化"></a>eg 将文本大写化</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">assume cs:codesg,ds:datasg</span><br><span class="line">datasg segment</span><br><span class="line">    db &apos;BaSiC&apos;</span><br><span class="line">    datasg ends</span><br><span class="line">codesg segment</span><br><span class="line">    start:</span><br><span class="line">    mov ax,datasg</span><br><span class="line">    mov ds,ax</span><br><span class="line">    </span><br><span class="line">    mov bx,0</span><br><span class="line">    mov cx,5</span><br><span class="line">    s:</span><br><span class="line">    mov al,[bx]</span><br><span class="line">    and al,11011111B</span><br><span class="line">    mov [bx],al</span><br><span class="line">    inc bx</span><br><span class="line">    </span><br><span class="line">    loop s</span><br><span class="line">    </span><br><span class="line">    mov ax,4c00h</span><br><span class="line">    int 21h</span><br><span class="line">    </span><br><span class="line">    codesg ends</span><br><span class="line">end start</span><br></pre></td></tr></table></figure>
+<h1 id="一个综合练习"><a href="#一个综合练习" class="headerlink" title="一个综合练习"></a>一个综合练习</h1><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">assume  cs:codesg      </span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">data segment</span><br><span class="line">db &apos;1975&apos;, &apos;1976&apos;, &apos;1977&apos;, &apos;1978&apos;, &apos;1979&apos;, &apos;1980&apos;, &apos;1981&apos;, &apos;1982&apos;, &apos;1983&apos;</span><br><span class="line">db &apos;1984&apos;, &apos;1985&apos;, &apos;1986&apos;, &apos;1987&apos;, &apos;1988&apos;, &apos;1989&apos;, &apos;1990&apos;, &apos;1991&apos;, &apos;1992&apos;</span><br><span class="line">db &apos;1993&apos;, &apos;1994&apos;, &apos;1995&apos;</span><br><span class="line">  </span><br><span class="line">dd 16, 22, 382, 1356, 2390, 8000, 16000, 24486, 50065, 97479, 140417, 197514</span><br><span class="line">dd 345980, 590827, 803530, 1183000, 1843000, 2759000, 3753000, 4649000, 5937000</span><br><span class="line"></span><br><span class="line">dw 3, 7, 9, 13, 28, 38, 130, 220, 476, 778, 1001, 1442, 2258, 2793, 4037, 5635, 8226</span><br><span class="line">dw 11542, 14430, 15257, 17800</span><br><span class="line">data ends</span><br><span class="line"></span><br><span class="line">  </span><br><span class="line">  </span><br><span class="line">table segment</span><br><span class="line">db 21 dup (&apos;year summ ne ?? &apos;)</span><br><span class="line">table ends</span><br><span class="line"></span><br><span class="line">stack segment</span><br><span class="line">dw 8 dup(0)</span><br><span class="line">stack ends</span><br><span class="line"></span><br><span class="line">codesg segment</span><br><span class="line">    start:</span><br><span class="line">    mov ax,data</span><br><span class="line">    mov es,ax</span><br><span class="line">    mov ax,table</span><br><span class="line">    mov ds,ax</span><br><span class="line">    ;初始化 </span><br><span class="line">    </span><br><span class="line">    getyear:</span><br><span class="line">    mov bx,0</span><br><span class="line">    mov bp,0</span><br><span class="line">    mov cx,15h</span><br><span class="line">    s11:</span><br><span class="line">    mov si,0</span><br><span class="line">    mov dx,cx</span><br><span class="line">    mov cx,4</span><br><span class="line">    s12:</span><br><span class="line">    mov al,es:[bp]</span><br><span class="line">    mov ds:[bx+si],al</span><br><span class="line">    </span><br><span class="line">    inc bp</span><br><span class="line">    inc si</span><br><span class="line">    </span><br><span class="line">    loop s12</span><br><span class="line">    </span><br><span class="line">    mov cx,dx</span><br><span class="line">    add bx,10h</span><br><span class="line">    loop s11</span><br><span class="line">    </span><br><span class="line">    </span><br><span class="line">    getspace:</span><br><span class="line">    mov bx,0</span><br><span class="line">    mov cx,15h</span><br><span class="line">    space1:</span><br><span class="line">    mov al,&apos; &apos;</span><br><span class="line">    mov ds:[bx+4],al</span><br><span class="line">    add bx,10h</span><br><span class="line">    </span><br><span class="line">    loop space1</span><br><span class="line">    </span><br><span class="line">   </span><br><span class="line">    mov bx,0</span><br><span class="line">    mov cx,15h</span><br><span class="line">    getincome:</span><br><span class="line">    mov ax,es:[bp]</span><br><span class="line">    mov ds:[bx+5],ax</span><br><span class="line">    add bp,2</span><br><span class="line">    mov ax,es:[bp]</span><br><span class="line">    mov ds:[bx+7],ax</span><br><span class="line">    add bp,2</span><br><span class="line">    mov al,&apos; &apos;</span><br><span class="line">    mov ds:[bx+9],al</span><br><span class="line">    add bx,10h</span><br><span class="line">    </span><br><span class="line">    loop getincome</span><br><span class="line">    </span><br><span class="line">    </span><br><span class="line">    mov bx,0</span><br><span class="line">    mov cx,15h</span><br><span class="line">    getnum:</span><br><span class="line">    mov ax,es:[bp]</span><br><span class="line">    mov ds:[bx+0ah],ax</span><br><span class="line">    add bp,2</span><br><span class="line">    mov ax,&apos; &apos;</span><br><span class="line">    mov ds:[bx+0ch],al</span><br><span class="line">    </span><br><span class="line">    add bx,10h</span><br><span class="line">    loop getnum</span><br><span class="line">    </span><br><span class="line">    mov bx,0</span><br><span class="line">    mov cx,15h</span><br><span class="line">    getaverage:</span><br><span class="line">    mov ax,ds:[bx+5]</span><br><span class="line">    mov dx,ds:[bx+7]</span><br><span class="line">    div word ptr ds:[bx+0ah]  </span><br><span class="line">    mov ds:[bx+0dh],ax</span><br><span class="line">    mov al,&apos; &apos;</span><br><span class="line">    mov ds:[bx+0fh],al</span><br><span class="line">    add bx,10h</span><br><span class="line">    loop getaverage</span><br><span class="line">    </span><br><span class="line">    </span><br><span class="line">    </span><br><span class="line">    </span><br><span class="line">    </span><br><span class="line">    </span><br><span class="line">    </span><br><span class="line">     </span><br><span class="line">    </span><br><span class="line">    </span><br><span class="line">    </span><br><span class="line">    mov ax,4c00h</span><br><span class="line">    int 21h</span><br><span class="line">codesg ends</span><br><span class="line">end start</span><br></pre></td></tr></table></figure>
 ]]></content>
       <categories>
         <category>微机原理</category>
       </categories>
   </entry>
   <entry>
-    <title>线性代数概知</title>
-    <url>/2020/05/28/%20MachineLearning/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0/</url>
-    <content><![CDATA[<h1 id="矩阵初等变换"><a href="#矩阵初等变换" class="headerlink" title="矩阵初等变换"></a>矩阵初等变换</h1><ul>
-<li>倍法变换：某行*非零的数</li>
-<li>消法变换：某行*某数加到另外一行</li>
-<li>换法变换：交换两行</li>
-</ul>
-]]></content>
-      <categories>
-        <category>Machine Learning</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>细品西瓜-支持向量机</title>
-    <url>/2020/05/23/%20MachineLearning/%E8%A5%BF%E7%93%9C%E4%B9%A6-%E6%94%AF%E6%8C%81%E5%90%91%E9%87%8F%E6%9C%BA/</url>
-    <content><![CDATA[<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><ul>
-<li>超平面：在<a href="https://zh.wikipedia.org/wiki/數學" target="_blank" rel="noopener">数学</a>中，<strong>超平面（Hyperplane）</strong>是n维欧氏空间中，<a href="https://zh.wikipedia.org/wiki/餘維數" target="_blank" rel="noopener">余维度</a>为1的<a href="https://zh.wikipedia.org/wiki/子空間" target="_blank" rel="noopener">子空间</a>。即超平面是n维空间中的n-1维的子空间。它是平面中的直线、空间中的平面之推广。</li>
-<li></li>
-</ul>
-]]></content>
-      <categories>
-        <category>Machine Learning</category>
-      </categories>
-  </entry>
-  <entry>
-    <title></title>
-    <url>/2020/05/17/%20MachineLearning/%E5%9B%BE%E5%83%8F/</url>
-    <content><![CDATA[<h1 id="图像插值方法"><a href="#图像插值方法" class="headerlink" title="图像插值方法"></a>图像插值方法</h1><ul>
-<li>最近邻域法</li>
-<li>双线性插值法</li>
-</ul>
-<p>扫描矩阵的获取</p>
-<p>映射矩阵的建立</p>
-<p>扫描矩阵{S}=偏心运动矩阵*球面子孔路径矩阵</p>
-]]></content>
-  </entry>
-  <entry>
-    <title>计算方法</title>
-    <url>/2020/05/16/%20MachineLearning/%E8%AE%A1%E7%AE%97%E6%96%B9%E6%B3%95/</url>
-    <content><![CDATA[<p>1</p>
-<h1 id="误差"><a href="#误差" class="headerlink" title="误差"></a>误差</h1><ul>
-<li>误差计算<ul>
-<li>定义1.3</li>
-<li>定理1.1</li>
-</ul>
-</li>
-</ul>
-<h1 id="线性代数方程组的数值解"><a href="#线性代数方程组的数值解" class="headerlink" title="线性代数方程组的数值解"></a>线性代数方程组的数值解</h1><ul>
-<li>克莱姆法则</li>
-<li>直接法<ul>
-<li>高斯消元法</li>
-</ul>
-</li>
-<li>迭代法，适用于系数矩阵为大型稀疏矩阵</li>
-</ul>
-]]></content>
-      <categories>
-        <category>计算方法</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>Debug</title>
-    <url>/2020/05/14/%20%E5%BE%AE%E6%9C%BA%E7%B3%BB%E7%BB%9F/%E6%B1%87%E7%BC%96_Debug/</url>
+    <title>Debug_DosBox</title>
+    <url>/2020/05/30/%20%E5%BE%AE%E6%9C%BA%E7%B3%BB%E7%BB%9F/%E6%B1%87%E7%BC%96_DosBox/</url>
     <content><![CDATA[<h1 id="0x01-前期准备"><a href="#0x01-前期准备" class="headerlink" title="0x01 前期准备"></a>0x01 前期准备</h1><ul>
 <li><p>安装<code>DOSBox</code></p>
 </li>
@@ -330,7 +355,68 @@
 <h3 id="Q命令的使用"><a href="#Q命令的使用" class="headerlink" title="Q命令的使用"></a>Q命令的使用</h3><p>Q命令的作用是退出DEBUG，回到DOS状态。</p>
 ]]></content>
       <categories>
-        <category>汇编</category>
+        <category>微机原理</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>线性代数概知</title>
+    <url>/2020/05/28/%20MachineLearning/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0/</url>
+    <content><![CDATA[<h1 id="矩阵初等变换"><a href="#矩阵初等变换" class="headerlink" title="矩阵初等变换"></a>矩阵初等变换</h1><ul>
+<li>倍法变换：某行*非零的数</li>
+<li>消法变换：某行*某数加到另外一行</li>
+<li>换法变换：交换两行</li>
+</ul>
+]]></content>
+      <categories>
+        <category>Machine Learning</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>细品西瓜-支持向量机</title>
+    <url>/2020/05/23/%20MachineLearning/%E8%A5%BF%E7%93%9C%E4%B9%A6-%E6%94%AF%E6%8C%81%E5%90%91%E9%87%8F%E6%9C%BA/</url>
+    <content><![CDATA[<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><ul>
+<li>超平面：在<a href="https://zh.wikipedia.org/wiki/數學" target="_blank" rel="noopener">数学</a>中，<strong>超平面（Hyperplane）</strong>是n维欧氏空间中，<a href="https://zh.wikipedia.org/wiki/餘維數" target="_blank" rel="noopener">余维度</a>为1的<a href="https://zh.wikipedia.org/wiki/子空間" target="_blank" rel="noopener">子空间</a>。即超平面是n维空间中的n-1维的子空间。它是平面中的直线、空间中的平面之推广。</li>
+<li></li>
+</ul>
+]]></content>
+      <categories>
+        <category>Machine Learning</category>
+      </categories>
+  </entry>
+  <entry>
+    <title></title>
+    <url>/2020/05/17/%20MachineLearning/%E5%9B%BE%E5%83%8F/</url>
+    <content><![CDATA[<h1 id="图像插值方法"><a href="#图像插值方法" class="headerlink" title="图像插值方法"></a>图像插值方法</h1><ul>
+<li>最近邻域法</li>
+<li>双线性插值法</li>
+</ul>
+<p>扫描矩阵的获取</p>
+<p>映射矩阵的建立</p>
+<p>扫描矩阵{S}=偏心运动矩阵*球面子孔路径矩阵</p>
+]]></content>
+  </entry>
+  <entry>
+    <title>计算方法</title>
+    <url>/2020/05/16/%20MachineLearning/%E8%AE%A1%E7%AE%97%E6%96%B9%E6%B3%95/</url>
+    <content><![CDATA[<p>1</p>
+<h1 id="误差"><a href="#误差" class="headerlink" title="误差"></a>误差</h1><ul>
+<li>误差计算<ul>
+<li>定义1.3</li>
+<li>定理1.1</li>
+</ul>
+</li>
+</ul>
+<h1 id="线性代数方程组的数值解"><a href="#线性代数方程组的数值解" class="headerlink" title="线性代数方程组的数值解"></a>线性代数方程组的数值解</h1><ul>
+<li>克莱姆法则</li>
+<li>直接法<ul>
+<li>高斯消元法</li>
+</ul>
+</li>
+<li>迭代法，适用于系数矩阵为大型稀疏矩阵</li>
+</ul>
+]]></content>
+      <categories>
+        <category>计算方法</category>
       </categories>
   </entry>
   <entry>
@@ -448,8 +534,8 @@
       </categories>
   </entry>
   <entry>
-    <title>汇编</title>
-    <url>/2020/04/23/%20%E5%BE%AE%E6%9C%BA%E7%B3%BB%E7%BB%9F/%E6%B1%87%E7%BC%96/</url>
+    <title>指令合集</title>
+    <url>/2020/04/23/%20%E5%BE%AE%E6%9C%BA%E7%B3%BB%E7%BB%9F/%E6%8C%87%E4%BB%A4%E5%90%88%E9%9B%86/</url>
     <content><![CDATA[<h1 id="控制转义指令"><a href="#控制转义指令" class="headerlink" title="控制转义指令"></a>控制转义指令</h1><div class="table-container">
 <table>
 <thead>
@@ -541,8 +627,8 @@
       </categories>
   </entry>
   <entry>
-    <title>微机原理</title>
-    <url>/2020/04/11/%20%E5%BE%AE%E6%9C%BA%E7%B3%BB%E7%BB%9F/%E5%BE%AE%E5%9E%8B%E8%AE%A1%E7%AE%97%E6%9C%BA/</url>
+    <title>寄存器名称概析</title>
+    <url>/2020/04/11/%20%E5%BE%AE%E6%9C%BA%E7%B3%BB%E7%BB%9F/%E5%AF%84%E5%AD%98%E5%99%A8%E6%A6%82%E6%9E%90/</url>
     <content><![CDATA[<h1 id="从入门到入土"><a href="#从入门到入土" class="headerlink" title="从入门到入土"></a>从入门到入土</h1><ul>
 <li>字长，</li>
 <li>主频，CPU的时钟频率，决定计算机运算速度</li>
@@ -819,16 +905,59 @@ G(x)=\prod _{i=1}^{n}(\sum_{j=0}^{k_i}x^j)\\
 其中，x_k为G(x)展开式中x^k的系数。</script></li>
 <li></li>
 </ul>
-<h1 id="递推关系"><a href="#递推关系" class="headerlink" title="递推关系"></a>递推关系</h1><ul>
+<h1 id="递推关系"><a href="#递推关系" class="headerlink" title="递推关系"></a>递推关系</h1><h2 id="解线性常系数齐次递推关系"><a href="#解线性常系数齐次递推关系" class="headerlink" title="解线性常系数齐次递推关系"></a>解线性常系数齐次递推关系</h2><ul>
+<li><p>一些问题</p>
+<ul>
+<li>爬楼梯问题</li>
+<li>Fibonacci数列</li>
+<li>Hanoi塔问题</li>
+<li>涂色问题</li>
+</ul>
+</li>
 <li><script type="math/tex; mode=display">
-f(n)=c_1(n)f(n-1)+c_2(n)f(n-2)+\dots+c_k(n)f(n-k)+g(n)\\
 若c_i(n)为常数，那么称之为k阶常系数线性递推关系\\
 若g(n)=0，则称之为齐次的\\</script></li>
+<li><p>求解递推关系</p>
+</li>
+</ul>
+<ol>
+<li><p>使用特征方程求解特征根</p>
+<script type="math/tex; mode=display">
+x_1=?\\
+x_2=?\\
+...\\</script><ol>
+<li><p>那么有通解</p>
+<script type="math/tex; mode=display">
+f(n)=c_1x_1^n+c_2x_2^n+...</script></li>
+<li><p>代入原方程求解$c_i$</p>
+</li>
+</ol>
+</li>
+</ol>
+<ul>
 <li><p>特征方程</p>
 <script type="math/tex; mode=display">
 x^k-c_1x^{k-1}-\dots-c_k=0\\</script></li>
+<li><p>重根</p>
+</li>
 </ul>
-<h1 id="Polya定理"><a href="#Polya定理" class="headerlink" title="Polya定理"></a>Polya定理</h1><ul>
+<script type="math/tex; mode=display">
+  若有e重根x_i，那么x_i^n,nx_i^n....n^{e-1}x_i^n都是原递推关系的解</script><ul>
+<li>复数根<script type="math/tex; mode=display">
+有x_1=a+bi\\
+那么有c_1e^{ax}(cos(bx)+i*sin(bx))\\</script></li>
+</ul>
+<h2 id="解线性常系数非齐次递推关系"><a href="#解线性常系数非齐次递推关系" class="headerlink" title="解线性常系数非齐次递推关系"></a>解线性常系数非齐次递推关系</h2><ol>
+<li>特征方程</li>
+<li>判断$g(n)$的格式，属于哪一种，得到非齐次特解</li>
+<li>回代特解求$c_i$</li>
+</ol>
+<p><img src="https://i.loli.net/2020/06/05/hYyRiKZAk4gQI9V.jpg" alt="IMG_1292_20200605-171010_.PNG"></p>
+<h2 id="迭代与归纳解非线性递推关系"><a href="#迭代与归纳解非线性递推关系" class="headerlink" title="迭代与归纳解非线性递推关系"></a>迭代与归纳解非线性递推关系</h2><h1 id="课后例题"><a href="#课后例题" class="headerlink" title="课后例题"></a>课后例题</h1><ul>
+<li>例6.5.2</li>
+<li>习题6.4(2)(3)</li>
+</ul>
+<h1 id="Polya-定理"><a href="#Polya-定理" class="headerlink" title="$Polya$定理"></a>$Polya$定理</h1><ul>
 <li>Q：用m种颜色对n个对象涂色，一个对象涂任意一种颜色，则在置换群H的作用下不等价的方案数为多少？</li>
 </ul>
 <ol>
@@ -842,7 +971,7 @@ L=\frac{1}{|H|}[m^{\lambda(\sigma_1)}+m^{\lambda(\sigma_2)}+...+m^{\lambda (\sig
 m为m种颜色</script></li>
 </ol>
 <ul>
-<li>带有约束条件的涂色问题：若要求有3个对象要红色，2个对象要蓝色的涂色方案有多少？</li>
+<li>Q：带有约束条件的涂色问题：若要求有3个对象要红色，2个对象要蓝色的涂色方案有多少？</li>
 </ul>
 <ol>
 <li><p>构造置换群<code>H</code></p>
@@ -850,9 +979,13 @@ m为m种颜色</script></li>
 <li><script type="math/tex; mode=display">
 s_k=x_1^k+x_2^k+...+x_n^k\\
 f(x_1...x_n)=\frac{1}{|H|}\sum{s_k^{\lambda{(\sigma_k)}}}</script></li>
-<li><p>对于所约束的条件，找到符合的项，其前面的系数即ans</p>
+<li><p>对于所约束的条件，找到符合的项，其前面的系数即$ans$</p>
 </li>
 </ol>
+<h2 id="重点"><a href="#重点" class="headerlink" title="重点"></a>重点</h2><ul>
+<li>构造<code>H</code></li>
+<li>阅读<code>例7.6.1</code>和<code>例7.6.2</code></li>
+</ul>
 ]]></content>
       <categories>
         <category>组合数学</category>
