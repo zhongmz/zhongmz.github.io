@@ -1,6 +1,53 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>计数方法</title>
+    <url>/2020/06/08/%20Math/%E8%AE%A1%E6%95%B0%E6%96%B9%E6%B3%95/</url>
+    <content><![CDATA[<h1 id="二项式定理"><a href="#二项式定理" class="headerlink" title="二项式定理"></a>二项式定理</h1><script type="math/tex; mode=display">
+{(x+y)}^n=\dbinom{n}{0}x^0y^n+\dbinom{n}{1}x^1y^{n-1}...+\dbinom{n}{n-1}x^{n-1}y^1+\dbinom{n}{n}x^ny^0，其中n\geq 0</script><ul>
+<li>对称关系</li>
+<li>递推关系<code>Pascal</code>公式</li>
+<li>单峰性</li>
+</ul>
+<script type="math/tex; mode=display">
+即有：\dbinom{n}{k}\\
+(1)\     \dbinom{n}{k}=\dbinom{n}{n-k} \\
+(2)\     \dbinom{n}{k}=\dbinom{n-1}{k}+\dbinom{n-1}{k-1}\\
+(3)\     \dbinom{n}{\frac{n}{2}}为max\\</script><h1 id="牛顿二项式"><a href="#牛顿二项式" class="headerlink" title="牛顿二项式"></a>牛顿二项式</h1><p>设有$\dbinom{a}{r}$</p>
+<ol>
+<li>当$a=-n$<script type="math/tex; mode=display">
+\dbinom{a}{r}=\dbinom{-n}{r}=(-1)^r\dbinom{n+r-1}{r}</script></li>
+</ol>
+<h1 id="多项式定理"><a href="#多项式定理" class="headerlink" title="多项式定理"></a>多项式定理</h1><p>设$n$为正整数，则</p>
+<script type="math/tex; mode=display">
+(x_1+x_2+...+x_t)=\sum\dbinom{n}{n_1n_2...n_t}x_1^{n_1}...x_t^{n_t}\\
+其中
+\dbinom{n}{n_1n_2...n_t}=\frac{n!}{n_1!n_2!...n_t!}并且n_1+n_2...+n_t=n</script><ol>
+<li>其展开式在合并同类项后不同项目数目为$\dbinom{n+t-1}{n}$</li>
+</ol>
+<h1 id="组合恒等式"><a href="#组合恒等式" class="headerlink" title="组合恒等式"></a>组合恒等式</h1><ul>
+<li><code>page  55: 6</code> </li>
+<li></li>
+</ul>
+]]></content>
+      <categories>
+        <category>组合数学</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>中断</title>
+    <url>/2020/06/06/%20%E5%BE%AE%E6%9C%BA%E7%B3%BB%E7%BB%9F/notice/</url>
+    <content><![CDATA[<ol>
+<li><p>换行</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">mov ah,2</span><br><span class="line">mov dl,0DH</span><br><span class="line">int 21h</span><br><span class="line">mov dl,0AH</span><br><span class="line">INT 21H</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+]]></content>
+      <categories>
+        <category>微机原理</category>
+      </categories>
+  </entry>
+  <entry>
     <title>中断</title>
     <url>/2020/06/06/%20%E5%BE%AE%E6%9C%BA%E7%B3%BB%E7%BB%9F/%E4%B8%AD%E6%96%AD/</url>
     <content><![CDATA[<h1 id="bx-si-di-bp"><a href="#bx-si-di-bp" class="headerlink" title="bx,si,di,bp"></a><code>bx,si,di,bp</code></h1><ul>
@@ -18,6 +65,20 @@
     <content><![CDATA[<h1 id="bx-si-di-bp"><a href="#bx-si-di-bp" class="headerlink" title="bx,si,di,bp"></a><code>bx,si,di,bp</code></h1><ul>
 <li></li>
 </ul>
+]]></content>
+      <categories>
+        <category>微机原理</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>汇编实验</title>
+    <url>/2020/06/06/%20%E5%BE%AE%E6%9C%BA%E7%B3%BB%E7%BB%9F/%E6%B1%87%E7%BC%96%E5%AE%9E%E9%AA%8C/</url>
+    <content><![CDATA[<h1 id="0x01"><a href="#0x01" class="headerlink" title="0x01"></a>0x01</h1><p>从键盘输入一系列以$为结束符的字符串，然后对其中的非数字字符计数，并显示出计数结果</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">assume cs:code</span><br><span class="line">data1 segment</span><br><span class="line"> DB &quot;Please input the word !&quot;,0dh,0ah,0</span><br><span class="line">   </span><br><span class="line">data1 ends</span><br><span class="line"></span><br><span class="line">data segment</span><br><span class="line">    </span><br><span class="line">    db 10 dup (0)</span><br><span class="line">data ends</span><br><span class="line"></span><br><span class="line">ANS segment</span><br><span class="line">    DB 0dh,0ah,&quot;answer=&quot;,0</span><br><span class="line">ANS ends</span><br><span class="line"></span><br><span class="line">stack segment</span><br><span class="line">   db 128 dup (0) </span><br><span class="line">stack ends</span><br><span class="line">code segment</span><br><span class="line">    start:</span><br><span class="line">    </span><br><span class="line">    mov ax,stack</span><br><span class="line">    mov ss,ax</span><br><span class="line">    mov sp,128</span><br><span class="line">    </span><br><span class="line">    mov ax,data1</span><br><span class="line">    mov ds,ax</span><br><span class="line">    mov cx,19h</span><br><span class="line">    mov bx,0</span><br><span class="line">    call show_str </span><br><span class="line">    </span><br><span class="line">    mov dx,0</span><br><span class="line">    s2:</span><br><span class="line">    ;counter save in dx</span><br><span class="line">    </span><br><span class="line">    </span><br><span class="line">    a1:</span><br><span class="line">    mov ah,1</span><br><span class="line">    int 21h</span><br><span class="line">    cmp al,&apos;$&apos;</span><br><span class="line">    jne a2</span><br><span class="line">    </span><br><span class="line">    mov ax,ANS</span><br><span class="line">    mov ds,ax</span><br><span class="line">    mov cx,7</span><br><span class="line">    mov bx,0</span><br><span class="line">    call show_str</span><br><span class="line">    mov cx,dx</span><br><span class="line">    jcxz Q2</span><br><span class="line">    call show</span><br><span class="line">    </span><br><span class="line">    Q1:</span><br><span class="line">    mov ax,4c00h</span><br><span class="line">    int 21h   </span><br><span class="line">    Q2:</span><br><span class="line">    mov dl,&apos;0&apos;</span><br><span class="line">    </span><br><span class="line">    mov ah,2</span><br><span class="line">    int 21h</span><br><span class="line">    mov ax,4c00h</span><br><span class="line">    int 21h</span><br><span class="line">    </span><br><span class="line">    </span><br><span class="line">    a2:</span><br><span class="line">    cmp al,&apos;1&apos;</span><br><span class="line">    jb a3</span><br><span class="line">    cmp al,&apos;9&apos;</span><br><span class="line">    ja a3</span><br><span class="line">    </span><br><span class="line">    jmp a1</span><br><span class="line">    a3:</span><br><span class="line">    inc dx</span><br><span class="line">    jmp a1</span><br><span class="line">    </span><br><span class="line">    </span><br><span class="line">    ;input: ds,bx</span><br><span class="line">    ;using bx,cx,dx</span><br><span class="line">    show_str:</span><br><span class="line">    push ax</span><br><span class="line">    push dx</span><br><span class="line">    push bx</span><br><span class="line">    push cx</span><br><span class="line">    mov dh,0</span><br><span class="line">    s11:</span><br><span class="line">    </span><br><span class="line">    mov DL,[BX]</span><br><span class="line">    mov cx,dx</span><br><span class="line">    jcxz zero </span><br><span class="line">    mov ah,2</span><br><span class="line">    int 21h</span><br><span class="line">    inc bx</span><br><span class="line">    loop s11</span><br><span class="line">    zero:</span><br><span class="line">    pop cx</span><br><span class="line">    pop bx</span><br><span class="line">    pop dx</span><br><span class="line">    pop ax</span><br><span class="line">    ret                                </span><br><span class="line">    ;-------------------------------------------------------------------------</span><br><span class="line">    </span><br><span class="line">    </span><br><span class="line">    </span><br><span class="line">    </span><br><span class="line">    </span><br><span class="line">    </span><br><span class="line">    ;input: dx</span><br><span class="line">    ;output [data to string and show the string]</span><br><span class="line">    show:</span><br><span class="line">    push ax</span><br><span class="line">    push bx</span><br><span class="line">    push ds</span><br><span class="line">    push si</span><br><span class="line">    push dx</span><br><span class="line">    push cx</span><br><span class="line">    </span><br><span class="line">    mov ax,dx</span><br><span class="line">    mov bx,data</span><br><span class="line">    mov ds,bx</span><br><span class="line">    mov si,0</span><br><span class="line">    call dtoc</span><br><span class="line">    </span><br><span class="line">    mov ax,data</span><br><span class="line">    mov ds,ax</span><br><span class="line">    mov bx,0</span><br><span class="line">    call show_str</span><br><span class="line">    </span><br><span class="line">    pop cx</span><br><span class="line">    pop dx</span><br><span class="line">    pop si</span><br><span class="line">    pop ds</span><br><span class="line">    pop bx</span><br><span class="line">    pop ax</span><br><span class="line">    ret</span><br><span class="line">    ;--------------------------------------------------------------------------------  </span><br><span class="line">    </span><br><span class="line">    </span><br><span class="line">    </span><br><span class="line">    </span><br><span class="line">    ; input ax</span><br><span class="line">    ; output translate the ax to string and save in the data from offset data:0000h</span><br><span class="line">    dtoc:   push ax</span><br><span class="line">    push si</span><br><span class="line">    push di</span><br><span class="line">    push dx</span><br><span class="line">    push bx</span><br><span class="line">    push cx</span><br><span class="line">    mov di, 0</span><br><span class="line">    mov dx, 0</span><br><span class="line">    mov bx, 10</span><br><span class="line">    </span><br><span class="line">    devide: mov cx, ax</span><br><span class="line">    jcxz stop</span><br><span class="line">    div bx</span><br><span class="line">    inc di</span><br><span class="line">    push dx</span><br><span class="line">    mov dx, 0</span><br><span class="line">    jmp devide</span><br><span class="line">    stop:   mov cx, di</span><br><span class="line">    string: pop bx</span><br><span class="line">    add bx, 30h</span><br><span class="line">    mov [si], bl</span><br><span class="line">    inc si</span><br><span class="line">    loop string</span><br><span class="line">    </span><br><span class="line">    pop cx</span><br><span class="line">    pop bx</span><br><span class="line">    pop dx</span><br><span class="line">    pop di</span><br><span class="line">    pop si</span><br><span class="line">    pop ax</span><br><span class="line">    ret</span><br><span class="line"></span><br><span class="line">code ends</span><br><span class="line">end start</span><br></pre></td></tr></table></figure>
+<h1 id="0x02"><a href="#0x02" class="headerlink" title="0x02"></a>0x02</h1><p>定义一个字变量DAT1，长度为1，把DAT1中的数据按字节单元依次显示到屏幕上，显示方式为 段地址：偏移量 十六进制字节数据.</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">assume cs:code</span><br><span class="line"></span><br><span class="line">data1 segment</span><br><span class="line">   DAT1 DW 1234H</span><br><span class="line">data1 ends</span><br><span class="line"></span><br><span class="line">data segment</span><br><span class="line">    dw 128 dup (0)</span><br><span class="line">data ends</span><br><span class="line">stack segment</span><br><span class="line">    dw 128 dup (0)</span><br><span class="line">    </span><br><span class="line">stack ends  </span><br><span class="line">code segment</span><br><span class="line">    start:</span><br><span class="line">    </span><br><span class="line">    mov ax,stack</span><br><span class="line">    mov ss,ax</span><br><span class="line">    mov ax,128</span><br><span class="line">    mov sp,ax</span><br><span class="line">    mov ax,data</span><br><span class="line">    mov ds,ax</span><br><span class="line">    mov ax,data1</span><br><span class="line">    mov es,ax</span><br><span class="line">    mov bx,0</span><br><span class="line">  </span><br><span class="line">    mov ax,0</span><br><span class="line">    mov si,ax</span><br><span class="line">    mov ax,4</span><br><span class="line">    mov di,ax</span><br><span class="line">    mov ax,data1</span><br><span class="line">    call dtoc16</span><br><span class="line">    mov ax,&apos;h&apos;</span><br><span class="line">    mov ds:[4],ax</span><br><span class="line">    mov ax,&apos;:&apos;</span><br><span class="line">    mov ds:[5],ax</span><br><span class="line">    mov ax,0</span><br><span class="line">    mov si,6</span><br><span class="line">    call dtoc16</span><br><span class="line">    mov al,&apos;h&apos;</span><br><span class="line">    mov ds:[10],ax</span><br><span class="line">    </span><br><span class="line">    mov al,&apos; &apos;</span><br><span class="line">    mov ds:[11],ax</span><br><span class="line">    </span><br><span class="line">    mov si,12</span><br><span class="line">    mov di,2</span><br><span class="line">    mov al,es:[0]</span><br><span class="line">    mov ah,0</span><br><span class="line">    call dtoc16</span><br><span class="line">    mov al,0dh</span><br><span class="line">    mov ds:[14],al</span><br><span class="line">    mov al,0ah</span><br><span class="line">    </span><br><span class="line">    mov ds:[15],al</span><br><span class="line">    mov ax,data1</span><br><span class="line">    mov di,4</span><br><span class="line">    mov si,16</span><br><span class="line">    call dtoc16</span><br><span class="line">    mov al,&apos;h&apos;</span><br><span class="line">    mov ds:[20],al</span><br><span class="line">    mov al,&apos;:&apos;</span><br><span class="line">    mov ds:[21],al</span><br><span class="line">    mov ax,1</span><br><span class="line">    mov di,4</span><br><span class="line">    mov si,22</span><br><span class="line">    call dtoc16</span><br><span class="line">    mov ds:[26],&apos;h&apos;</span><br><span class="line">    mov ds:[27],&apos; &apos;</span><br><span class="line">    tes:</span><br><span class="line">    mov si,28</span><br><span class="line">    mov di,2</span><br><span class="line">    mov al,es:[1]</span><br><span class="line">    mov ah,0</span><br><span class="line">    </span><br><span class="line">    call dtoc16</span><br><span class="line">    </span><br><span class="line">    </span><br><span class="line">    </span><br><span class="line">    </span><br><span class="line">    </span><br><span class="line">    </span><br><span class="line">    </span><br><span class="line">    </span><br><span class="line">    </span><br><span class="line">    </span><br><span class="line">    </span><br><span class="line">    call show_str</span><br><span class="line">    </span><br><span class="line">    </span><br><span class="line">    mov ax,4c00h</span><br><span class="line">    int 21h</span><br><span class="line">    </span><br><span class="line">    </span><br><span class="line">    </span><br><span class="line">    </span><br><span class="line">    </span><br><span class="line">    </span><br><span class="line">    </span><br><span class="line">    </span><br><span class="line">    ;input</span><br><span class="line">    ;ax: as the data to string</span><br><span class="line">    ;ds: segment address in the memory to save string</span><br><span class="line">    ;si: the begin of offset address in the memory to save string</span><br><span class="line">    ;di: how many byte to use</span><br><span class="line">    dtoc16:</span><br><span class="line">    push ax</span><br><span class="line">    push bx</span><br><span class="line">    push cx</span><br><span class="line">    push dx</span><br><span class="line">    </span><br><span class="line">    mov bx,16</span><br><span class="line">    mov cx,4</span><br><span class="line">    ;devide16:</span><br><span class="line">    s:</span><br><span class="line">    mov dx,0</span><br><span class="line">    div bx</span><br><span class="line">    push dx</span><br><span class="line">     </span><br><span class="line">    loop s</span><br><span class="line">    mov cx,di</span><br><span class="line">    cmp cx,2</span><br><span class="line">    jne string</span><br><span class="line">    pop ax</span><br><span class="line">    pop ax </span><br><span class="line">    string:</span><br><span class="line">    pop ax</span><br><span class="line">    add ax,30h</span><br><span class="line">    mov ds:[si],al</span><br><span class="line">    inc si</span><br><span class="line">    loop string</span><br><span class="line">    </span><br><span class="line">    pop dx</span><br><span class="line">    pop cx</span><br><span class="line">    pop bx</span><br><span class="line">    pop ax</span><br><span class="line">    ret</span><br><span class="line">    </span><br><span class="line">    </span><br><span class="line">    </span><br><span class="line">    </span><br><span class="line">    show_str:</span><br><span class="line">    push ax</span><br><span class="line">    push dx</span><br><span class="line">    push bx</span><br><span class="line">    push cx</span><br><span class="line">    mov dh,0</span><br><span class="line">    s11:</span><br><span class="line">    </span><br><span class="line">    mov DL,[BX]</span><br><span class="line">    mov cx,dx</span><br><span class="line">    jcxz zero </span><br><span class="line">    mov ah,2</span><br><span class="line">    int 21h</span><br><span class="line">    inc bx</span><br><span class="line">    loop s11</span><br><span class="line">    zero:</span><br><span class="line">    pop cx</span><br><span class="line">    pop bx</span><br><span class="line">    pop dx</span><br><span class="line">    pop ax</span><br><span class="line">    ret</span><br><span class="line"></span><br><span class="line">    </span><br><span class="line">    </span><br><span class="line">code ends</span><br><span class="line">end start</span><br></pre></td></tr></table></figure>
+<h1 id="0x05"><a href="#0x05" class="headerlink" title="0x05"></a>0x05</h1><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">assume cs:code</span><br><span class="line">code segment</span><br><span class="line">   mov ax,0B800H</span><br><span class="line">   mov ds,ax</span><br><span class="line">   mov bx,0</span><br><span class="line">   mov si,0</span><br><span class="line">   mov cx,16</span><br><span class="line">   mov al,&apos;W&apos;</span><br><span class="line">   mov ah,01110100B</span><br><span class="line">   s:  </span><br><span class="line">   mov ds:[bx+si],ax</span><br><span class="line">   inc ah</span><br><span class="line">   add bx,160</span><br><span class="line">   add si,2</span><br><span class="line">   </span><br><span class="line">   </span><br><span class="line">   </span><br><span class="line">   loop s</span><br><span class="line">   </span><br><span class="line">   mov ax,4c00h</span><br><span class="line">   int 21h    </span><br><span class="line">    </span><br><span class="line">code ends</span><br></pre></td></tr></table></figure>
+<h1 id="0x06"><a href="#0x06" class="headerlink" title="0x06"></a>0x06</h1><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">assume cs:code</span><br><span class="line">stack segment</span><br><span class="line">    dw 128 dup (0) </span><br><span class="line">stack ends</span><br><span class="line">code segment</span><br><span class="line">   start:</span><br><span class="line">   mov ax,stack</span><br><span class="line">   mov ss,ax</span><br><span class="line">   mov sp,128</span><br><span class="line">   mov ax,0B800H</span><br><span class="line">   mov ds,ax</span><br><span class="line">   mov bx,158+158</span><br><span class="line">   mov si,0</span><br><span class="line">   mov cx,20</span><br><span class="line">   mov al,&apos; &apos;</span><br><span class="line">   mov ah,01000100B</span><br><span class="line">   </span><br><span class="line">   s1:     </span><br><span class="line">   push cx</span><br><span class="line">   mov bp,bx</span><br><span class="line">   mov di,si</span><br><span class="line">   </span><br><span class="line">   mov cx,2</span><br><span class="line">   </span><br><span class="line">   ;清屏</span><br><span class="line">   call Clear_Screen</span><br><span class="line">   s2:</span><br><span class="line">   push cx</span><br><span class="line">   </span><br><span class="line">   mov cx,9  </span><br><span class="line">   s3:</span><br><span class="line">   mov ds:[bp+di],ax</span><br><span class="line">   </span><br><span class="line">   add di,2</span><br><span class="line">   loop s3</span><br><span class="line">   </span><br><span class="line">   pop cx</span><br><span class="line">   add bp,158</span><br><span class="line">   mov di,si</span><br><span class="line">   </span><br><span class="line">   loop s2</span><br><span class="line">   mov dl,&apos;O&apos;</span><br><span class="line">   mov dh,00000100B</span><br><span class="line">   mov ds:[bp+si],dx</span><br><span class="line">   mov ds:[bp+si+16],dx</span><br><span class="line">   </span><br><span class="line">   pop cx</span><br><span class="line">   add si,2</span><br><span class="line">   </span><br><span class="line">   loop s1</span><br><span class="line">   </span><br><span class="line">   mov ax,4c00h</span><br><span class="line">   int 21h    </span><br><span class="line">   Clear_Screen:</span><br><span class="line">   push ax</span><br><span class="line">   MOV AX,0003H</span><br><span class="line">   INT 10H</span><br><span class="line">   pop ax</span><br><span class="line">   ret</span><br><span class="line">code ends</span><br><span class="line">end start</span><br></pre></td></tr></table></figure>
 ]]></content>
       <categories>
         <category>微机原理</category>
@@ -75,67 +136,6 @@
 </ul>
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">assume cs:code</span><br><span class="line">stack segment</span><br><span class="line">    dw 16 dup(0)</span><br><span class="line">stack ends</span><br><span class="line"></span><br><span class="line">code segment</span><br><span class="line">    start:</span><br><span class="line">    mov ax,stack</span><br><span class="line">    mov ss,ax</span><br><span class="line">    mov sp,32</span><br><span class="line">    mov ax,4240h</span><br><span class="line">    mov dx,000fh</span><br><span class="line">    mov cx,0ah</span><br><span class="line">    call divdw</span><br><span class="line">    mov ax,4c00h</span><br><span class="line">    int 21h</span><br><span class="line">    </span><br><span class="line">    divdw:</span><br><span class="line">    push bx</span><br><span class="line">    mov bx,ax</span><br><span class="line">    mov ax,dx</span><br><span class="line">    mov dx,0</span><br><span class="line">    div cx</span><br><span class="line">    push ax</span><br><span class="line">    mov ax,bx</span><br><span class="line">    div cx</span><br><span class="line">    mov cx,dx          ;保存余数</span><br><span class="line">    pop dx;得到高位的商</span><br><span class="line">    </span><br><span class="line">    </span><br><span class="line">    </span><br><span class="line">    pop bx</span><br><span class="line">    ret</span><br><span class="line">    </span><br><span class="line">    </span><br><span class="line">code ends</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">end start</span><br></pre></td></tr></table></figure>
 <h1 id="Example3"><a href="#Example3" class="headerlink" title="Example3"></a>Example3</h1><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">assume cs:code</span><br><span class="line">stack segment</span><br><span class="line">    dw 16 dup(0)</span><br><span class="line">stack ends</span><br><span class="line">data segment</span><br><span class="line">    db 10 dup(0)</span><br><span class="line">data ends</span><br><span class="line"></span><br><span class="line">code segment</span><br><span class="line">   start:</span><br><span class="line">   mov ax,12666</span><br><span class="line">   mov bx,data</span><br><span class="line">   mov ds,bx</span><br><span class="line">   mov si,0</span><br><span class="line">   call dtoc</span><br><span class="line">   </span><br><span class="line">   mov dh,8</span><br><span class="line">   mov dl,3</span><br><span class="line">   mov cl,2</span><br><span class="line">   call show_str</span><br><span class="line">   </span><br><span class="line">   mov ax,4c00h</span><br><span class="line">   int 21h</span><br><span class="line">   dtoc:</span><br><span class="line">   push ax</span><br><span class="line">   push si</span><br><span class="line">   mov bx,10</span><br><span class="line">   s1:</span><br><span class="line">   mov dx,0</span><br><span class="line">   div bx</span><br><span class="line">   mov cx,ax</span><br><span class="line">   jcxz q1</span><br><span class="line">   add dl,30h</span><br><span class="line">   mov ds:[si],dl</span><br><span class="line">   inc si</span><br><span class="line">   mov ax,cx</span><br><span class="line">   jmp s1</span><br><span class="line">   q1:</span><br><span class="line">   mov dl,0</span><br><span class="line">   mov ds:[si],dl</span><br><span class="line">   inc si</span><br><span class="line">   pop si</span><br><span class="line">   pop ax</span><br><span class="line">   ret</span><br><span class="line">   </span><br><span class="line">   </span><br><span class="line">   show_str:</span><br><span class="line">   push ax</span><br><span class="line">   push cx</span><br><span class="line">   push dx</span><br><span class="line">   push ds</span><br><span class="line">   push si</span><br><span class="line">   </span><br><span class="line">   mov ah,0</span><br><span class="line">   mov al,dh</span><br><span class="line">   mov dh,160</span><br><span class="line">   mul dh</span><br><span class="line">   mov bx,ax;save the row</span><br><span class="line">   </span><br><span class="line">   mov ah,0</span><br><span class="line">   mov al,dl</span><br><span class="line">   mov dl,2</span><br><span class="line">   mul dl</span><br><span class="line">   mov cx,ax;save the column</span><br><span class="line">   mov di,cx</span><br><span class="line">   </span><br><span class="line">   mov ax,0b800h</span><br><span class="line">   mov es,ax</span><br><span class="line">   </span><br><span class="line">   mov si,0  </span><br><span class="line">   mov al,cl</span><br><span class="line">   s:</span><br><span class="line">   mov cx,0</span><br><span class="line">   mov cl,ds:[si]</span><br><span class="line">   jcxz q</span><br><span class="line">   </span><br><span class="line">   mov ch,al</span><br><span class="line">   inc si</span><br><span class="line">   mov es:[bx+di],cx</span><br><span class="line">   add di,2</span><br><span class="line">   jmp s</span><br><span class="line">   </span><br><span class="line">   </span><br><span class="line">   </span><br><span class="line">  </span><br><span class="line">   q:</span><br><span class="line">   pop si</span><br><span class="line">   pop ds</span><br><span class="line">   pop dx</span><br><span class="line">   pop cx</span><br><span class="line">   pop ax</span><br><span class="line">   ret</span><br><span class="line">   </span><br><span class="line">   </span><br><span class="line">   </span><br><span class="line">   </span><br><span class="line">    </span><br><span class="line">    </span><br><span class="line">code ends</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">end start</span><br></pre></td></tr></table></figure>
-]]></content>
-      <categories>
-        <category>微机原理</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>page</title>
-    <url>/2020/06/03/%20page/</url>
-    <content><![CDATA[]]></content>
-  </entry>
-  <entry>
-    <title>Loop_多段</title>
-    <url>/2020/05/30/%20%E5%BE%AE%E6%9C%BA%E7%B3%BB%E7%BB%9F/%E6%B1%87%E7%BC%96_Loop_%E5%A4%9A%E6%AE%B5/</url>
-    <content><![CDATA[<h1 id="Loop"><a href="#Loop" class="headerlink" title="Loop"></a>Loop</h1><ul>
-<li>计算$2^{11}$</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">assume cs:code</span><br><span class="line">code segment</span><br><span class="line">    mov ax,2</span><br><span class="line">    mov cx,11</span><br><span class="line">    s: add ax,ax	</span><br><span class="line">    loop s</span><br><span class="line">    </span><br><span class="line">    mov ax,4c00h</span><br><span class="line">    int 21h</span><br><span class="line">    code ends</span><br><span class="line">end</span><br></pre></td></tr></table></figure>
-<p>其中</p>
-<ul>
-<li><p>s标识了一个地址，这个地址处有一条指令<code>add ax,ax</code></p>
-</li>
-<li><p><code>loop s</code>,CPU进行2步操作</p>
-<ol>
-<li>(<code>cx</code>)—</li>
-<li>判断<code>cx</code>是否为0，若<code>cx</code>不为0，则转到<code>s</code>，反之，顺序执行。</li>
-</ol>
-</li>
-<li><p><code>track:</code>当我们使用1字节的数据对1字的寄存器赋值的时候，可以使用另外一个1字的寄存器作为媒介来获得所需要的数据</p>
-</li>
-<li><p>计算$([0006h])^{11}$</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">assume cs:code</span><br><span class="line">code segment</span><br><span class="line">    mov ax,0ffffh</span><br><span class="line">    mov ds,ax</span><br><span class="line">    mov sp,0006h</span><br><span class="line">    mov ah,0h</span><br><span class="line">    mov al,[6h]</span><br><span class="line">    mov cx,3</span><br><span class="line">    mov dx,0</span><br><span class="line">    s: add dx,al</span><br><span class="line">    loop s</span><br><span class="line">    </span><br><span class="line">    </span><br><span class="line">    mov ax,4c00h</span><br><span class="line">    int 21h</span><br><span class="line">    code ends</span><br><span class="line">end</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>累加<code>ffff:0000</code>~<code>ffff:000A</code>单元中的数据的和，结果存储在<code>dx</code>中</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">assume cs:code</span><br><span class="line">code segment</span><br><span class="line">    mov ax,0ffffh</span><br><span class="line">    mov ds,ax                              ;初始化把 ds设置好</span><br><span class="line">    mov bx,0h                              ;基址寄存器初始化，为了偏移地址寻址</span><br><span class="line">    mov cx,12                              ;计数器初始化</span><br><span class="line">    mov ah,0                               </span><br><span class="line">    mov dx,0                               ;初始化</span><br><span class="line">    </span><br><span class="line">    s: mov al,[bx]</span><br><span class="line">    add dx,ax</span><br><span class="line">    inc bx</span><br><span class="line">    loop s</span><br><span class="line">    </span><br><span class="line">    mov ax,4c00h</span><br><span class="line">    int 21h</span><br><span class="line">    code ends</span><br><span class="line">end</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-<h1 id="多段程序"><a href="#多段程序" class="headerlink" title="多段程序"></a>多段程序</h1><ul>
-<li><p>若我们需要使用到自己所需要的数据，而这些数据初始信息并非内存，而是实实在在的数据</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">assume</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>其中，我们来讨论下<code>end</code>的作用：</p>
-<ol>
-<li>通知编译器程序结束</li>
-<li>通知编译器 这段程序的入口在上面地方</li>
-</ol>
-</li>
-<li><p>我们不妨再来讨论以下可执行文件<code>bin</code>的执行过程</p>
-<ol>
-<li>由其他程序将可执行文件加载如内存</li>
-<li>设置<code>CS:IP</code>指向程序的第一条指令的位置</li>
-<li>程序运行结束，返回到加载者位置。</li>
-</ol>
-</li>
-<li><p>eg：将数据<code>0123h</code>…<code>0987h</code>逆序存储到原来的位置。</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">assume cs:codesg</span><br><span class="line">codesg segment</span><br><span class="line">    dw 0123h,0456h,0789h,0abch,0defh,0fedh,0cbah,0987h</span><br><span class="line">    dw 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0</span><br><span class="line">    </span><br><span class="line">    start: mov ax,cs</span><br><span class="line">    mov ss,ax</span><br><span class="line">    mov sp,30h</span><br><span class="line">    </span><br><span class="line">    mov bx,0</span><br><span class="line">    mov cx,8</span><br><span class="line">    </span><br><span class="line">    s:push cs:[bx]</span><br><span class="line">    add bx,2</span><br><span class="line">    loop s</span><br><span class="line">    </span><br><span class="line">    mov bx,0</span><br><span class="line">    mov cx,8</span><br><span class="line">    </span><br><span class="line">    s0:pop cs:[bx]</span><br><span class="line">    add bx,2</span><br><span class="line">    loop s0</span><br><span class="line">    mov ax,4c00h</span><br><span class="line">    int 21h</span><br><span class="line">    </span><br><span class="line">    codesg ends</span><br><span class="line">end start</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>其中，<code>23</code>这个字节数据保存在偏移地址为0的位置。</p>
-</li>
-</ul>
-<h3 id="eg-将文本大写化"><a href="#eg-将文本大写化" class="headerlink" title="eg 将文本大写化"></a>eg 将文本大写化</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">assume cs:codesg,ds:datasg</span><br><span class="line">datasg segment</span><br><span class="line">    db &apos;BaSiC&apos;</span><br><span class="line">    datasg ends</span><br><span class="line">codesg segment</span><br><span class="line">    start:</span><br><span class="line">    mov ax,datasg</span><br><span class="line">    mov ds,ax</span><br><span class="line">    </span><br><span class="line">    mov bx,0</span><br><span class="line">    mov cx,5</span><br><span class="line">    s:</span><br><span class="line">    mov al,[bx]</span><br><span class="line">    and al,11011111B</span><br><span class="line">    mov [bx],al</span><br><span class="line">    inc bx</span><br><span class="line">    </span><br><span class="line">    loop s</span><br><span class="line">    </span><br><span class="line">    mov ax,4c00h</span><br><span class="line">    int 21h</span><br><span class="line">    </span><br><span class="line">    codesg ends</span><br><span class="line">end start</span><br></pre></td></tr></table></figure>
-<h1 id="一个综合练习"><a href="#一个综合练习" class="headerlink" title="一个综合练习"></a>一个综合练习</h1><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">assume  cs:codesg      </span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">data segment</span><br><span class="line">db &apos;1975&apos;, &apos;1976&apos;, &apos;1977&apos;, &apos;1978&apos;, &apos;1979&apos;, &apos;1980&apos;, &apos;1981&apos;, &apos;1982&apos;, &apos;1983&apos;</span><br><span class="line">db &apos;1984&apos;, &apos;1985&apos;, &apos;1986&apos;, &apos;1987&apos;, &apos;1988&apos;, &apos;1989&apos;, &apos;1990&apos;, &apos;1991&apos;, &apos;1992&apos;</span><br><span class="line">db &apos;1993&apos;, &apos;1994&apos;, &apos;1995&apos;</span><br><span class="line">  </span><br><span class="line">dd 16, 22, 382, 1356, 2390, 8000, 16000, 24486, 50065, 97479, 140417, 197514</span><br><span class="line">dd 345980, 590827, 803530, 1183000, 1843000, 2759000, 3753000, 4649000, 5937000</span><br><span class="line"></span><br><span class="line">dw 3, 7, 9, 13, 28, 38, 130, 220, 476, 778, 1001, 1442, 2258, 2793, 4037, 5635, 8226</span><br><span class="line">dw 11542, 14430, 15257, 17800</span><br><span class="line">data ends</span><br><span class="line"></span><br><span class="line">  </span><br><span class="line">  </span><br><span class="line">table segment</span><br><span class="line">db 21 dup (&apos;year summ ne ?? &apos;)</span><br><span class="line">table ends</span><br><span class="line"></span><br><span class="line">stack segment</span><br><span class="line">dw 8 dup(0)</span><br><span class="line">stack ends</span><br><span class="line"></span><br><span class="line">codesg segment</span><br><span class="line">    start:</span><br><span class="line">    mov ax,data</span><br><span class="line">    mov es,ax</span><br><span class="line">    mov ax,table</span><br><span class="line">    mov ds,ax</span><br><span class="line">    ;初始化 </span><br><span class="line">    </span><br><span class="line">    getyear:</span><br><span class="line">    mov bx,0</span><br><span class="line">    mov bp,0</span><br><span class="line">    mov cx,15h</span><br><span class="line">    s11:</span><br><span class="line">    mov si,0</span><br><span class="line">    mov dx,cx</span><br><span class="line">    mov cx,4</span><br><span class="line">    s12:</span><br><span class="line">    mov al,es:[bp]</span><br><span class="line">    mov ds:[bx+si],al</span><br><span class="line">    </span><br><span class="line">    inc bp</span><br><span class="line">    inc si</span><br><span class="line">    </span><br><span class="line">    loop s12</span><br><span class="line">    </span><br><span class="line">    mov cx,dx</span><br><span class="line">    add bx,10h</span><br><span class="line">    loop s11</span><br><span class="line">    </span><br><span class="line">    </span><br><span class="line">    getspace:</span><br><span class="line">    mov bx,0</span><br><span class="line">    mov cx,15h</span><br><span class="line">    space1:</span><br><span class="line">    mov al,&apos; &apos;</span><br><span class="line">    mov ds:[bx+4],al</span><br><span class="line">    add bx,10h</span><br><span class="line">    </span><br><span class="line">    loop space1</span><br><span class="line">    </span><br><span class="line">   </span><br><span class="line">    mov bx,0</span><br><span class="line">    mov cx,15h</span><br><span class="line">    getincome:</span><br><span class="line">    mov ax,es:[bp]</span><br><span class="line">    mov ds:[bx+5],ax</span><br><span class="line">    add bp,2</span><br><span class="line">    mov ax,es:[bp]</span><br><span class="line">    mov ds:[bx+7],ax</span><br><span class="line">    add bp,2</span><br><span class="line">    mov al,&apos; &apos;</span><br><span class="line">    mov ds:[bx+9],al</span><br><span class="line">    add bx,10h</span><br><span class="line">    </span><br><span class="line">    loop getincome</span><br><span class="line">    </span><br><span class="line">    </span><br><span class="line">    mov bx,0</span><br><span class="line">    mov cx,15h</span><br><span class="line">    getnum:</span><br><span class="line">    mov ax,es:[bp]</span><br><span class="line">    mov ds:[bx+0ah],ax</span><br><span class="line">    add bp,2</span><br><span class="line">    mov ax,&apos; &apos;</span><br><span class="line">    mov ds:[bx+0ch],al</span><br><span class="line">    </span><br><span class="line">    add bx,10h</span><br><span class="line">    loop getnum</span><br><span class="line">    </span><br><span class="line">    mov bx,0</span><br><span class="line">    mov cx,15h</span><br><span class="line">    getaverage:</span><br><span class="line">    mov ax,ds:[bx+5]</span><br><span class="line">    mov dx,ds:[bx+7]</span><br><span class="line">    div word ptr ds:[bx+0ah]  </span><br><span class="line">    mov ds:[bx+0dh],ax</span><br><span class="line">    mov al,&apos; &apos;</span><br><span class="line">    mov ds:[bx+0fh],al</span><br><span class="line">    add bx,10h</span><br><span class="line">    loop getaverage</span><br><span class="line">    </span><br><span class="line">    </span><br><span class="line">    </span><br><span class="line">    </span><br><span class="line">    </span><br><span class="line">    </span><br><span class="line">    </span><br><span class="line">     </span><br><span class="line">    </span><br><span class="line">    </span><br><span class="line">    </span><br><span class="line">    mov ax,4c00h</span><br><span class="line">    int 21h</span><br><span class="line">codesg ends</span><br><span class="line">end start</span><br></pre></td></tr></table></figure>
 ]]></content>
       <categories>
         <category>微机原理</category>
@@ -353,6 +353,62 @@
 <h3 id="O命令的使用"><a href="#O命令的使用" class="headerlink" title="O命令的使用"></a>O命令的使用</h3><p>O命令作用：向计算机输出端口送出数据。</p>
 <p>O命令的用法是O [端口地址] [字节值]。例如向278号端口发出数据20H的命令为：I 278 20。这里不对该命令做解释。</p>
 <h3 id="Q命令的使用"><a href="#Q命令的使用" class="headerlink" title="Q命令的使用"></a>Q命令的使用</h3><p>Q命令的作用是退出DEBUG，回到DOS状态。</p>
+]]></content>
+      <categories>
+        <category>微机原理</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>Loop_多段</title>
+    <url>/2020/05/30/%20%E5%BE%AE%E6%9C%BA%E7%B3%BB%E7%BB%9F/%E6%B1%87%E7%BC%96_Loop_%E5%A4%9A%E6%AE%B5/</url>
+    <content><![CDATA[<h1 id="Loop"><a href="#Loop" class="headerlink" title="Loop"></a>Loop</h1><ul>
+<li>计算$2^{11}$</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">assume cs:code</span><br><span class="line">code segment</span><br><span class="line">    mov ax,2</span><br><span class="line">    mov cx,11</span><br><span class="line">    s: add ax,ax	</span><br><span class="line">    loop s</span><br><span class="line">    </span><br><span class="line">    mov ax,4c00h</span><br><span class="line">    int 21h</span><br><span class="line">    code ends</span><br><span class="line">end</span><br></pre></td></tr></table></figure>
+<p>其中</p>
+<ul>
+<li><p>s标识了一个地址，这个地址处有一条指令<code>add ax,ax</code></p>
+</li>
+<li><p><code>loop s</code>,CPU进行2步操作</p>
+<ol>
+<li>(<code>cx</code>)—</li>
+<li>判断<code>cx</code>是否为0，若<code>cx</code>不为0，则转到<code>s</code>，反之，顺序执行。</li>
+</ol>
+</li>
+<li><p><code>track:</code>当我们使用1字节的数据对1字的寄存器赋值的时候，可以使用另外一个1字的寄存器作为媒介来获得所需要的数据</p>
+</li>
+<li><p>计算$([0006h])^{11}$</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">assume cs:code</span><br><span class="line">code segment</span><br><span class="line">    mov ax,0ffffh</span><br><span class="line">    mov ds,ax</span><br><span class="line">    mov sp,0006h</span><br><span class="line">    mov ah,0h</span><br><span class="line">    mov al,[6h]</span><br><span class="line">    mov cx,3</span><br><span class="line">    mov dx,0</span><br><span class="line">    s: add dx,al</span><br><span class="line">    loop s</span><br><span class="line">    </span><br><span class="line">    </span><br><span class="line">    mov ax,4c00h</span><br><span class="line">    int 21h</span><br><span class="line">    code ends</span><br><span class="line">end</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>累加<code>ffff:0000</code>~<code>ffff:000A</code>单元中的数据的和，结果存储在<code>dx</code>中</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">assume cs:code</span><br><span class="line">code segment</span><br><span class="line">    mov ax,0ffffh</span><br><span class="line">    mov ds,ax                              ;初始化把 ds设置好</span><br><span class="line">    mov bx,0h                              ;基址寄存器初始化，为了偏移地址寻址</span><br><span class="line">    mov cx,12                              ;计数器初始化</span><br><span class="line">    mov ah,0                               </span><br><span class="line">    mov dx,0                               ;初始化</span><br><span class="line">    </span><br><span class="line">    s: mov al,[bx]</span><br><span class="line">    add dx,ax</span><br><span class="line">    inc bx</span><br><span class="line">    loop s</span><br><span class="line">    </span><br><span class="line">    mov ax,4c00h</span><br><span class="line">    int 21h</span><br><span class="line">    code ends</span><br><span class="line">end</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h1 id="多段程序"><a href="#多段程序" class="headerlink" title="多段程序"></a>多段程序</h1><ul>
+<li><p>若我们需要使用到自己所需要的数据，而这些数据初始信息并非内存，而是实实在在的数据</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">assume</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>其中，我们来讨论下<code>end</code>的作用：</p>
+<ol>
+<li>通知编译器程序结束</li>
+<li>通知编译器 这段程序的入口在上面地方</li>
+</ol>
+</li>
+<li><p>我们不妨再来讨论以下可执行文件<code>bin</code>的执行过程</p>
+<ol>
+<li>由其他程序将可执行文件加载如内存</li>
+<li>设置<code>CS:IP</code>指向程序的第一条指令的位置</li>
+<li>程序运行结束，返回到加载者位置。</li>
+</ol>
+</li>
+<li><p>eg：将数据<code>0123h</code>…<code>0987h</code>逆序存储到原来的位置。</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">assume cs:codesg</span><br><span class="line">codesg segment</span><br><span class="line">    dw 0123h,0456h,0789h,0abch,0defh,0fedh,0cbah,0987h</span><br><span class="line">    dw 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0</span><br><span class="line">    </span><br><span class="line">    start: mov ax,cs</span><br><span class="line">    mov ss,ax</span><br><span class="line">    mov sp,30h</span><br><span class="line">    </span><br><span class="line">    mov bx,0</span><br><span class="line">    mov cx,8</span><br><span class="line">    </span><br><span class="line">    s:push cs:[bx]</span><br><span class="line">    add bx,2</span><br><span class="line">    loop s</span><br><span class="line">    </span><br><span class="line">    mov bx,0</span><br><span class="line">    mov cx,8</span><br><span class="line">    </span><br><span class="line">    s0:pop cs:[bx]</span><br><span class="line">    add bx,2</span><br><span class="line">    loop s0</span><br><span class="line">    mov ax,4c00h</span><br><span class="line">    int 21h</span><br><span class="line">    </span><br><span class="line">    codesg ends</span><br><span class="line">end start</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>其中，<code>23</code>这个字节数据保存在偏移地址为0的位置。</p>
+</li>
+</ul>
+<h3 id="eg-将文本大写化"><a href="#eg-将文本大写化" class="headerlink" title="eg 将文本大写化"></a>eg 将文本大写化</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">assume cs:codesg,ds:datasg</span><br><span class="line">datasg segment</span><br><span class="line">    db &apos;BaSiC&apos;</span><br><span class="line">    datasg ends</span><br><span class="line">codesg segment</span><br><span class="line">    start:</span><br><span class="line">    mov ax,datasg</span><br><span class="line">    mov ds,ax</span><br><span class="line">    </span><br><span class="line">    mov bx,0</span><br><span class="line">    mov cx,5</span><br><span class="line">    s:</span><br><span class="line">    mov al,[bx]</span><br><span class="line">    and al,11011111B</span><br><span class="line">    mov [bx],al</span><br><span class="line">    inc bx</span><br><span class="line">    </span><br><span class="line">    loop s</span><br><span class="line">    </span><br><span class="line">    mov ax,4c00h</span><br><span class="line">    int 21h</span><br><span class="line">    </span><br><span class="line">    codesg ends</span><br><span class="line">end start</span><br></pre></td></tr></table></figure>
+<h1 id="一个综合练习"><a href="#一个综合练习" class="headerlink" title="一个综合练习"></a>一个综合练习</h1><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">assume  cs:codesg      </span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">data segment</span><br><span class="line">db &apos;1975&apos;, &apos;1976&apos;, &apos;1977&apos;, &apos;1978&apos;, &apos;1979&apos;, &apos;1980&apos;, &apos;1981&apos;, &apos;1982&apos;, &apos;1983&apos;</span><br><span class="line">db &apos;1984&apos;, &apos;1985&apos;, &apos;1986&apos;, &apos;1987&apos;, &apos;1988&apos;, &apos;1989&apos;, &apos;1990&apos;, &apos;1991&apos;, &apos;1992&apos;</span><br><span class="line">db &apos;1993&apos;, &apos;1994&apos;, &apos;1995&apos;</span><br><span class="line">  </span><br><span class="line">dd 16, 22, 382, 1356, 2390, 8000, 16000, 24486, 50065, 97479, 140417, 197514</span><br><span class="line">dd 345980, 590827, 803530, 1183000, 1843000, 2759000, 3753000, 4649000, 5937000</span><br><span class="line"></span><br><span class="line">dw 3, 7, 9, 13, 28, 38, 130, 220, 476, 778, 1001, 1442, 2258, 2793, 4037, 5635, 8226</span><br><span class="line">dw 11542, 14430, 15257, 17800</span><br><span class="line">data ends</span><br><span class="line"></span><br><span class="line">  </span><br><span class="line">  </span><br><span class="line">table segment</span><br><span class="line">db 21 dup (&apos;year summ ne ?? &apos;)</span><br><span class="line">table ends</span><br><span class="line"></span><br><span class="line">stack segment</span><br><span class="line">dw 8 dup(0)</span><br><span class="line">stack ends</span><br><span class="line"></span><br><span class="line">codesg segment</span><br><span class="line">    start:</span><br><span class="line">    mov ax,data</span><br><span class="line">    mov es,ax</span><br><span class="line">    mov ax,table</span><br><span class="line">    mov ds,ax</span><br><span class="line">    ;初始化 </span><br><span class="line">    </span><br><span class="line">    getyear:</span><br><span class="line">    mov bx,0</span><br><span class="line">    mov bp,0</span><br><span class="line">    mov cx,15h</span><br><span class="line">    s11:</span><br><span class="line">    mov si,0</span><br><span class="line">    mov dx,cx</span><br><span class="line">    mov cx,4</span><br><span class="line">    s12:</span><br><span class="line">    mov al,es:[bp]</span><br><span class="line">    mov ds:[bx+si],al</span><br><span class="line">    </span><br><span class="line">    inc bp</span><br><span class="line">    inc si</span><br><span class="line">    </span><br><span class="line">    loop s12</span><br><span class="line">    </span><br><span class="line">    mov cx,dx</span><br><span class="line">    add bx,10h</span><br><span class="line">    loop s11</span><br><span class="line">    </span><br><span class="line">    </span><br><span class="line">    getspace:</span><br><span class="line">    mov bx,0</span><br><span class="line">    mov cx,15h</span><br><span class="line">    space1:</span><br><span class="line">    mov al,&apos; &apos;</span><br><span class="line">    mov ds:[bx+4],al</span><br><span class="line">    add bx,10h</span><br><span class="line">    </span><br><span class="line">    loop space1</span><br><span class="line">    </span><br><span class="line">   </span><br><span class="line">    mov bx,0</span><br><span class="line">    mov cx,15h</span><br><span class="line">    getincome:</span><br><span class="line">    mov ax,es:[bp]</span><br><span class="line">    mov ds:[bx+5],ax</span><br><span class="line">    add bp,2</span><br><span class="line">    mov ax,es:[bp]</span><br><span class="line">    mov ds:[bx+7],ax</span><br><span class="line">    add bp,2</span><br><span class="line">    mov al,&apos; &apos;</span><br><span class="line">    mov ds:[bx+9],al</span><br><span class="line">    add bx,10h</span><br><span class="line">    </span><br><span class="line">    loop getincome</span><br><span class="line">    </span><br><span class="line">    </span><br><span class="line">    mov bx,0</span><br><span class="line">    mov cx,15h</span><br><span class="line">    getnum:</span><br><span class="line">    mov ax,es:[bp]</span><br><span class="line">    mov ds:[bx+0ah],ax</span><br><span class="line">    add bp,2</span><br><span class="line">    mov ax,&apos; &apos;</span><br><span class="line">    mov ds:[bx+0ch],al</span><br><span class="line">    </span><br><span class="line">    add bx,10h</span><br><span class="line">    loop getnum</span><br><span class="line">    </span><br><span class="line">    mov bx,0</span><br><span class="line">    mov cx,15h</span><br><span class="line">    getaverage:</span><br><span class="line">    mov ax,ds:[bx+5]</span><br><span class="line">    mov dx,ds:[bx+7]</span><br><span class="line">    div word ptr ds:[bx+0ah]  </span><br><span class="line">    mov ds:[bx+0dh],ax</span><br><span class="line">    mov al,&apos; &apos;</span><br><span class="line">    mov ds:[bx+0fh],al</span><br><span class="line">    add bx,10h</span><br><span class="line">    loop getaverage</span><br><span class="line">    </span><br><span class="line">    </span><br><span class="line">    </span><br><span class="line">    </span><br><span class="line">    </span><br><span class="line">    </span><br><span class="line">    </span><br><span class="line">     </span><br><span class="line">    </span><br><span class="line">    </span><br><span class="line">    </span><br><span class="line">    mov ax,4c00h</span><br><span class="line">    int 21h</span><br><span class="line">codesg ends</span><br><span class="line">end start</span><br></pre></td></tr></table></figure>
 ]]></content>
       <categories>
         <category>微机原理</category>
@@ -847,41 +903,91 @@ M=\{ \infty \cdot a_1,\infty \cdot a_2...\infty \cdot a_n\},r \geq n,则M中每�
 \dbinom{n}{k}\\
 (1)\     \dbinom{n}{k}=\dbinom{n}{n-k} \\
 (2)\     \dbinom{n}{k}=\dbinom{n-1}{k}+\dbinom{n-1}{k-1}\\
-(3)\     \dbinom{n}{\frac{n}{2}}为max\\</script><h3 id="牛顿二项式"><a href="#牛顿二项式" class="headerlink" title="牛顿二项式"></a>牛顿二项式</h3><h1 id="容斥原理"><a href="#容斥原理" class="headerlink" title="容斥原理"></a>容斥原理</h1><p>$S中不具有性质P_1,P_2\dots,P_m的元素个数为$$​</p>
+(3)\     \dbinom{n}{\frac{n}{2}}为max\\</script><h3 id="牛顿二项式"><a href="#牛顿二项式" class="headerlink" title="牛顿二项式"></a>牛顿二项式</h3><h1 id="容斥原理"><a href="#容斥原理" class="headerlink" title="容斥原理"></a>容斥原理</h1><h2 id="0x01-定义"><a href="#0x01-定义" class="headerlink" title="0x01 定义"></a>0x01 定义</h2><p>$S中不具有性质P_1,P_2\dots,P_m的元素个数为$​</p>
 <script type="math/tex; mode=display">
-|\overline{A_1}\cap\overline{A_2}\cap\dots\cap\overline{A_m}|\\=|S|-\sum_{ i= 1}^{m}|A_i|+\sum_{1\leq i<j\leq m}|A_i\cap A_j|-\sum_{1\leq i<j<k\leq m}|A_i\cap A_j\cap A_k|+\dots +(-1)^{m}|A_1\cap A_2\cap\dots\cap A_m|</script><p>不妨设</p>
+|\overline{A_1}\cap\overline{A_2}\cap\dots\cap\overline{A_m}|\\=|S|-\sum_{ i= 1}^{m}|A_i|+\sum_{1\leq i<j\leq m}|A_i\cap A_j|-\sum_{1\leq i<j<k\leq m}|A_i\cap A_j\cap A_k|+\dots +(-1)^{m}|A_1\cap A_2\cap\dots\cap A_m|</script><p>那么容易推出</p>
+<script type="math/tex; mode=display">
+|A_1\cup A_2\cup A_3|=|A_1|+|A_2|+|A_3|-(|A_1\cap A_2|+|A_2\cap A_3|+|A_1\cap A_3|)+|A_1\cap A_2\cap A_3|</script><h2 id="0x02-欧拉函数-phi-n"><a href="#0x02-欧拉函数-phi-n" class="headerlink" title="0x02 欧拉函数$\phi (n)$"></a>0x02 欧拉函数$\phi (n)$</h2><p>设</p>
+<script type="math/tex; mode=display">
+n=p_1^{a_1}p_2^{a_2}p_3^{a_3}p_4^{a_4}...p_k^{a_k}</script><p>有</p>
+<script type="math/tex; mode=display">
+\phi(n)=n(1-\frac{1}{p_1})(1-\frac{1}{p_2})...(1-\frac{1}{p_k})</script><h2 id="0x03-Jordon公式"><a href="#0x03-Jordon公式" class="headerlink" title="0x03 Jordon公式"></a>0x03 Jordon公式</h2><p>不妨设</p>
 <p>$W(0)=|S|$</p>
 <p>$W(1)=\displaystyle\sum_{i=1}^{m}|A_i|$</p>
 <p>$W(2)=\displaystyle\sum_{1\leq i&lt;j\leq m}|A_i\cap A_j|$</p>
 <p>$\dots$</p>
 <p>$W(m)=|A_1\cap A_2\cap \dots A_m|$</p>
 <p>那么有原式为$W(0)-W(1)+\dots+(-1)^mW(m)$</p>
-<p><strong>Jordon公式</strong></p>
 <p>集合S中恰好具有$r(0\leq r\leq m)$种特性质的元素个数</p>
 <p>$M(r)=W(r)-\dbinom{r+1}{r}W(r+1)+\dots+(-1)^{m-r}\dbinom{m}{r}W(m)=\displaystyle\sum_{i=0}^{m-r}(-1)^i\dbinom{r+i}{r}W(r+i)$</p>
-<p><strong>对称筛公式</strong></p>
+<h2 id="0x04-对称筛公式"><a href="#0x04-对称筛公式" class="headerlink" title="0x04 对称筛公式"></a>0x04 对称筛公式</h2><p>用于当对象的性质是对称的，即无差别的。</p>
 <p>即当</p>
 <script type="math/tex; mode=display">
 \\N=|S|\\N(1)=|A_1|=|A_2|=\dots=|A_m|\\N(2)=|A_1\cap A_2|=\dots=|A_{m-1}\cap A_{m}|\\
 ...</script><p>有</p>
 <script type="math/tex; mode=display">
-|\overline{A_1}\cap \overline{A_2}\cap\dots\cap \overline{A_m}|=N-\dbinom{m}{1}N(1)+\dots+\dbinom{m}{m}N(m)</script><h2 id="错位排列"><a href="#错位排列" class="headerlink" title="错位排列"></a>错位排列</h2><p>​    每个物体$i$都不在第$i$个位置上的排列称为错位排列$Derangement$，通常使用$D_n$表示错位排列数</p>
+|\overline{A_1}\cap \overline{A_2}\cap\dots\cap \overline{A_m}|=N-\dbinom{m}{1}N(1)+\dots+\dbinom{m}{m}N(m)</script><h2 id="0x05-多重集的r-组合数"><a href="#0x05-多重集的r-组合数" class="headerlink" title="0x05 多重集的r-组合数"></a>0x05 多重集的r-组合数</h2><ul>
+<li>见例4.2.1</li>
+</ul>
+<ol>
+<li>求无穷集的r-组合数</li>
+<li>注意全集是哪一个，约束条件是什么？</li>
+<li>构造性质</li>
+<li>求各个子集的模</li>
+<li>根据公式求解</li>
+</ol>
+<h2 id="0x06-错位排列"><a href="#0x06-错位排列" class="headerlink" title="0x06 错位排列"></a>0x06 错位排列</h2><p>​        每个物体$i$都不在第$i$个位置上的排列称为错位排列$Derangement$，通常使用$D_n$表示错位排列数</p>
 <p>对于$n\geq 1$有</p>
 <script type="math/tex; mode=display">
-D_n=n!(1-\frac{1}{1!}+\frac{1}{2!}-\dots+(-1)^n\frac{1}{n!})</script><h2 id="有限制条件的排列问题"><a href="#有限制条件的排列问题" class="headerlink" title="有限制条件的排列问题"></a>有限制条件的排列问题</h2><p>​    一般来说，令$I={ 1,2,\dots ,n}$在$I$的排列中不出现12，23，34，…，(n-1)n的排列称为有限制条件的排列。通常把排列的个数记作$Q_n$</p>
+D_n=n!(1-\frac{1}{1!}+\frac{1}{2!}-\dots+(-1)^n\frac{1}{n!})</script><ul>
+<li><p>其中可以根据高等数学的知识得，当n较大时</p>
+<script type="math/tex; mode=display">
+P(错位排列出现)=\frac{1}{e}</script></li>
+<li></li>
+</ul>
+<p>可以证明$D_n$满足以下递推式</p>
+<script type="math/tex; mode=display">
+\begin{cases}
+D_n=(n-1)(D_{n-1}+D_{n-2})\\
+D_1=0\\
+D_0=1\\
+\end{cases}</script><h2 id="0x07-有限制条件的排列问题"><a href="#0x07-有限制条件的排列问题" class="headerlink" title="0x07 有限制条件的排列问题"></a>0x07 有限制条件的排列问题</h2><p>​    一般来说，令$I={ 1,2,\dots ,n}$在$I$的排列中不出现12，23，34，…，(n-1)n的排列称为有限制条件的排列。通常把排列的个数记作$Q_n$</p>
 <p>对于$n\geq 1$有</p>
 <script type="math/tex; mode=display">
-Q_n=n!-\dbinom{n-1}{1}(n-1)!+\dbinom{n-1}{2}(n-2)!-\dots+(-1)^{n-1}\cdot 1!</script><h2 id="棋盘多项式与有禁区的排列"><a href="#棋盘多项式与有禁区的排列" class="headerlink" title="棋盘多项式与有禁区的排列"></a>棋盘多项式与有禁区的排列</h2><p>设$C$是一个棋盘，$r_k(C)$表示把$k$个棋子布到$C$中的方案数。</p>
-<p>设$C_i$是从棋盘$C$中删除指定方格所在行所在列所剩余的棋盘，$C_l$是从棋盘$C$中删除指定方格后所剩余的棋盘，则有</p>
+Q_n=n!-\dbinom{n-1}{1}(n-1)!+\dbinom{n-1}{2}(n-2)!-\dots+(-1)^{n-1}\cdot 1!</script><p>可以通过数学公式变形得到</p>
 <script type="math/tex; mode=display">
-r_k(C)=r_{k-1}(C_i)+r_k(C_l)\  其中k\geq 1</script><p>设棋盘$C$是由$C_1$和$C_2$两部分组成，且其布棋方案是互相独立的，则有</p>
+\begin{cases}
+Q_n=D_n+D_{n-1}\\
+Q_1=1\\
+Q_0=0
+\end{cases}</script><h2 id="棋盘多项式与有禁区的排列"><a href="#棋盘多项式与有禁区的排列" class="headerlink" title="棋盘多项式与有禁区的排列"></a>棋盘多项式与有禁区的排列</h2><p>设$C$是一个棋盘，$r_k(C)$表示把$k$个棋子布到$C$中的方案数。</p>
+<ul>
+<li><p>若k大于$|C|,则有 r_k(C)=0$</p>
+</li>
+<li><p>$r_1(C)=|C|$</p>
+</li>
+<li><p>若$C_1$与$C_2$的形状相同，那么有$r_k(C_1)=r_k(C_2)$</p>
+</li>
+<li><p>设$C_i$是从棋盘$C$中删除指定方格所在行所在列所剩余的棋盘，$C_l$是从棋盘$C$中删除指定方格后所剩余的棋盘，则有</p>
+</li>
+</ul>
 <script type="math/tex; mode=display">
-r_k(C)=\displaystyle\sum_{i=0}^{k}r_i(C_1)\cdot r_{k-i}(C_2)</script><p><strong>棋盘多项式，车多项式</strong></p>
+r_k(C)=r_{k-1}(C_i)+r_k(C_l)\  其中k\geq 1</script><ul>
+<li>设棋盘$C$是由$C_1$和$C_2$两部分组成，且其布棋方案是互相独立的，则有</li>
+</ul>
 <script type="math/tex; mode=display">
+r_k(C)=\displaystyle\sum_{i=0}^{k}r_i(C_1)\cdot r_{k-i}(C_2)</script><h3 id="棋盘多项式，车多项式"><a href="#棋盘多项式，车多项式" class="headerlink" title="棋盘多项式，车多项式"></a>棋盘多项式，车多项式</h3><script type="math/tex; mode=display">
 R(C)=\displaystyle\sum_{k=0}^{\infty}r_k(C)x^k</script><p>有</p>
 <p>$R(C)=xR(C_i)+R(C_l)$</p>
 <p>$R(C=R(C_1)\cdot R(C_2)$</p>
-<h1 id="生成函数"><a href="#生成函数" class="headerlink" title="生成函数"></a>生成函数</h1><h2 id="一些性质与常见的生成函数"><a href="#一些性质与常见的生成函数" class="headerlink" title="一些性质与常见的生成函数"></a>一些性质与常见的生成函数</h2><p>设有一个有限或无限的数列 ${a_0,a_1,…,a_k,..}$，做形式幂级数</p>
+<p><img src="https://i.loli.net/2020/06/12/QExUTs5lK19436C.jpg" alt="IMG_1302_20200612-154902_.PNG"></p>
+<h2 id="有禁区的棋盘"><a href="#有禁区的棋盘" class="headerlink" title="有禁区的棋盘"></a>有禁区的棋盘</h2><ol>
+<li>求禁区的棋盘多项式</li>
+<li>求$r_1,r_2…r_n$</li>
+<li>带入公式求解排列数</li>
+</ol>
+<script type="math/tex; mode=display">
+N=n!-r_1(n-1)!+r_2(n-2)!+...+(-1)^nr_n0!</script><h1 id="生成函数"><a href="#生成函数" class="headerlink" title="生成函数"></a>生成函数</h1><h2 id="一些性质与常见的生成函数"><a href="#一些性质与常见的生成函数" class="headerlink" title="一些性质与常见的生成函数"></a>一些性质与常见的生成函数</h2><p>设有一个有限或无限的数列 ${a_0,a_1,…,a_k,..}$，做形式幂级数</p>
 <script type="math/tex; mode=display">
 G(x)=a_0+a_1x+\dots+a_kx^k+\dots,</script><p>称$G(x)$为数列${ a_0,a_1,…,a_k,..}$的（普通）生成函数，并记作$G{a_k}$</p>
 <script type="math/tex; mode=display">
@@ -905,7 +1011,10 @@ G(x)=\prod _{i=1}^{n}(\sum_{j=0}^{k_i}x^j)\\
 其中，x_k为G(x)展开式中x^k的系数。</script></li>
 <li></li>
 </ul>
-<h1 id="递推关系"><a href="#递推关系" class="headerlink" title="递推关系"></a>递推关系</h1><h2 id="解线性常系数齐次递推关系"><a href="#解线性常系数齐次递推关系" class="headerlink" title="解线性常系数齐次递推关系"></a>解线性常系数齐次递推关系</h2><ul>
+<h2 id="Catalan数列"><a href="#Catalan数列" class="headerlink" title="Catalan数列"></a>Catalan数列</h2><script type="math/tex; mode=display">
+h(n)=\sum_{k=1}^{n-1}h(k)h(n-k)\\</script><p>推理可得，一个凸n+1边形中有$\frac{1}{n}\dbinom{2n-2}{n-1}$种不同的剖分方法</p>
+<h2 id="常见数列的生成函数"><a href="#常见数列的生成函数" class="headerlink" title="常见数列的生成函数"></a>常见数列的生成函数</h2><script type="math/tex; mode=display">
+a_k=k+1,G(x)=\frac{1}{(1-x)^2}</script><h1 id="递推关系"><a href="#递推关系" class="headerlink" title="递推关系"></a>递推关系</h1><h2 id="解线性常系数齐次递推关系"><a href="#解线性常系数齐次递推关系" class="headerlink" title="解线性常系数齐次递推关系"></a>解线性常系数齐次递推关系</h2><ul>
 <li><p>一些问题</p>
 <ul>
 <li>爬楼梯问题</li>
@@ -953,12 +1062,10 @@ x^k-c_1x^{k-1}-\dots-c_k=0\\</script></li>
 <li>回代特解求$c_i$</li>
 </ol>
 <p><img src="https://i.loli.net/2020/06/05/hYyRiKZAk4gQI9V.jpg" alt="IMG_1292_20200605-171010_.PNG"></p>
-<h2 id="迭代与归纳解非线性递推关系"><a href="#迭代与归纳解非线性递推关系" class="headerlink" title="迭代与归纳解非线性递推关系"></a>迭代与归纳解非线性递推关系</h2><h1 id="课后例题"><a href="#课后例题" class="headerlink" title="课后例题"></a>课后例题</h1><ul>
-<li>例6.5.2</li>
-<li>习题6.4(2)(3)</li>
-</ul>
-<h1 id="Polya-定理"><a href="#Polya-定理" class="headerlink" title="$Polya$定理"></a>$Polya$定理</h1><ul>
-<li>Q：用m种颜色对n个对象涂色，一个对象涂任意一种颜色，则在置换群H的作用下不等价的方案数为多少？</li>
+<h2 id="迭代与归纳解非线性递推关系"><a href="#迭代与归纳解非线性递推关系" class="headerlink" title="迭代与归纳解非线性递推关系"></a>迭代与归纳解非线性递推关系</h2><ul>
+<li><h1 id="Polya-定理"><a href="#Polya-定理" class="headerlink" title="$Polya$定理"></a>$Polya$定理</h1></li>
+<li><p>Q：用m种颜色对n个对象涂色，一个对象涂任意一种颜色，则在置换群H的作用下不等价的方案数为多少？</p>
+</li>
 </ul>
 <ol>
 <li><p>构造置换群<code>H</code>，其中置换群的意义为：寻找等价类；这些等价类在这些$\sigma$的作用下的等价。从而寻找等价类的数量</p>
@@ -985,6 +1092,11 @@ f(x_1...x_n)=\frac{1}{|H|}\sum{s_k^{\lambda{(\sigma_k)}}}</script></li>
 <h2 id="重点"><a href="#重点" class="headerlink" title="重点"></a>重点</h2><ul>
 <li>构造<code>H</code></li>
 <li>阅读<code>例7.6.1</code>和<code>例7.6.2</code></li>
+</ul>
+<h1 id="课后例题"><a href="#课后例题" class="headerlink" title="课后例题"></a>课后例题</h1><ul>
+<li>例4.4 注意题干条件存在着所有人必存在一种情况，那么可以构造另外一种容斥</li>
+<li>例6.5.2</li>
+<li>习题6.4(2)(3)</li>
 </ul>
 ]]></content>
       <categories>
@@ -1286,6 +1398,182 @@ Cov(X,Y)=E(XY)-E(X)E(Y)</script></li>
 u=\frac{\overline{X}-\mu}{\sigma/\sqrt{n}}为N(0,1)分布</script>]]></content>
       <categories>
         <category>随机数学</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>Linux复习</title>
+    <url>/2020/04/02/%20Linux%E5%A4%8D%E4%B9%A0/</url>
+    <content><![CDATA[<ul>
+<li>使用缓冲</li>
+</ul>
+<h1 id="0x01"><a href="#0x01" class="headerlink" title="0x01"></a>0x01</h1><ul>
+<li>计算机分类<ol>
+<li>巨型计算机</li>
+<li>大型计算机</li>
+<li>小型计算机</li>
+<li>微型计算机</li>
+</ol>
+</li>
+<li>计算机基本组成<ol>
+<li>输入</li>
+<li>处理</li>
+<li>输出</li>
+<li>存储</li>
+</ol>
+</li>
+<li>计算机的硬件模块<ol>
+<li>输入设备</li>
+<li>处理器单元<ul>
+<li>算术逻辑单元</li>
+<li>寄存器</li>
+<li>控制单元</li>
+</ul>
+</li>
+<li>内存<ul>
+<li>随机存储器 <code>RAM Random Access Memory</code>，不能提供永久存储，当电源中断时，内容丢失</li>
+<li>只读存储器 <code>ROM Read Only Memory</code>，用于永久保存产商放置在系统中的程序和数据，不能修改</li>
+</ul>
+</li>
+<li>外部存储器</li>
+<li>输出设备</li>
+</ol>
+</li>
+<li>操作系统模型<ol>
+<li>硬件</li>
+<li>内核</li>
+<li>服务层</li>
+<li>命令层<code>shell</code></li>
+<li>用户层</li>
+</ol>
+</li>
+</ul>
+<h1 id="0x02"><a href="#0x02" class="headerlink" title="0x02"></a>0x02</h1><ul>
+<li><p><code>UNIX</code>最初用汇编语言开发</p>
+</li>
+<li><p>汇编语言编写的程序是与机器相关的</p>
+</li>
+<li><p>1973年,<code>Ken</code>和<code>Dennis</code>成功用C语言重写了<code>UNIX</code>，其中95%为C语言，只有很少部分是汇编语言代码</p>
+</li>
+<li><p><code>UNIX</code>2个主要版本</p>
+<ol>
+<li><code>AT&amp;T UNIX</code>系统V，本书讨论的命令适用于<code>SVR4,UNIX System V Release 4</code></li>
+<li><code>Berkeley UNIX</code>，其版本称为<code>BSD,Berkeley Software Distribution</code></li>
+</ol>
+<p>其他的<code>UNIX</code>变种都是基于这两个版本</p>
+</li>
+<li><p>一些其他的变种，几乎所有的变种都是基于系统<code>V</code></p>
+<ol>
+<li>AIX -&gt;IBM公司开发</li>
+<li>HP-UX-&gt;惠普公司</li>
+<li>LINUX-&gt;芬兰赫尔辛基大学的学生<code>Linux Torvalds</code>的想法</li>
+<li>Solaris也称SunOS-&gt;Sun公司基于V第2版和BSD4.3开发</li>
+<li><code>UnixWare</code>，Novell 公司开发，后来卖给了Santa Cruz Operation公司</li>
+</ol>
+</li>
+<li><p><code>UNIX</code>模型</p>
+<ol>
+<li>内核</li>
+<li>常驻模块</li>
+<li>工具层，<code>Shell</code></li>
+<li>虚拟计算机</li>
+<li>进程</li>
+</ol>
+</li>
+<li><p><code>UNIX</code>特性</p>
+<ol>
+<li>可移植</li>
+<li>多用户</li>
+<li>多任务</li>
+<li>多级文件系统</li>
+<li>与设备独立的输入输出操作</li>
+<li>用户界面<code>Shell</code></li>
+</ol>
+</li>
+</ul>
+<h1 id="0x03"><a href="#0x03" class="headerlink" title="0x03"></a>0x03</h1><ul>
+<li><p>登录</p>
+<ol>
+<li>修改口令 <code>passwd</code></li>
+</ol>
+</li>
+<li><p>口令格式</p>
+<ol>
+<li>新口令与旧口令3个字符不同</li>
+<li>长度至少6个字符，至少2个字母和1个数字</li>
+<li>不能与用户标识相同</li>
+</ol>
+</li>
+<li><p>退出系统 <code>[Ctrl-d]</code></p>
+</li>
+<li><p>在没有退出系统前关闭终端电源并没有结束用户与UNIX系统的交互</p>
+</li>
+<li><p>基本的命令行格式</p>
+<ol>
+<li>命令名</li>
+<li>命令选项</li>
+<li>命令参数</li>
+</ol>
+<p>字段间用1个或多个空格隔开</p>
+</li>
+<li><p><code>UNIX系统</code>对大小写敏感</p>
+</li>
+</ul>
+<h2 id="一些命令"><a href="#一些命令" class="headerlink" title="一些命令"></a>一些命令</h2><ul>
+<li><code>who</code>，列出当前登录系统的所用用户登录名，终端号，登录时间</li>
+<li><code>who am i</code>，显示本终端用户的信息</li>
+<li><code>cal</code>显示日历表<ol>
+<li><code>cal 2 2001</code>显示2001年2月的日历表</li>
+<li><code>cal 2001</code>显示2001年的日历表</li>
+<li><code>learn</code> 包括若干课程的计算机辅助教学程序</li>
+<li><code>help</code> 提供多级菜单来引导用户学习命令</li>
+<li><code>man</code> 显示在线系统文档的内容，<code>man cal</code>可以查找<code>cal</code>的帮助信息</li>
+</ol>
+</li>
+<li>中断程序运行，<code>[Del]</code>或[<code>Ctrl-c</code>]中断键</li>
+</ul>
+<h2 id="Shell种类"><a href="#Shell种类" class="headerlink" title="Shell种类"></a>Shell种类</h2><ul>
+<li><code>Bourne shell</code></li>
+<li><code>Korn shell</code>是<code>Bourne shell</code>的超集</li>
+<li><code>C shell</code>是<code>BSD UNIX</code>的一部分</li>
+</ul>
+<h2 id="登录过程"><a href="#登录过程" class="headerlink" title="登录过程"></a>登录过程</h2><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">st=&gt;start: UNIX系统启动，操作系统的内核装入内存</span><br><span class="line">op1=&gt;operation: 用户登录，shell 程序装入内存</span><br><span class="line">op2=&gt;operation: init程序为系统的每一个终端端口激活getty程序</span><br><span class="line">op3=&gt;operation: getty程序在相应终端上显示login，并等待用户输入</span><br><span class="line">op4=&gt;operation: 若登录成功，进入shell程序</span><br><span class="line">op5=&gt;operation: 若用户退出程序，shell终止</span><br><span class="line">op6=&gt;operation: UNIX在终端启动一个新的getty程序并等待新用户登录</span><br><span class="line">e=&gt;end: 结束</span><br><span class="line"></span><br><span class="line">st-&gt;op2-&gt;op3-&gt;op4-&gt;op1-&gt;op5-&gt;op6-&gt;e</span><br></pre></td></tr></table></figure>
+<h1 id="0x04"><a href="#0x04" class="headerlink" title="0x04"></a>0x04</h1><ul>
+<li>vi编辑器</li>
+</ul>
+<ul>
+<li>编辑器<ol>
+<li>行编辑器，如emacs，ex</li>
+<li>全屏编辑器，如vi</li>
+</ol>
+</li>
+<li>发展过程<code>ed-&gt;ex-&gt;vi</code>，其中<code>vi</code>由<code>ex</code>发展而来</li>
+</ul>
+<ul>
+<li><code>vi</code>的两个版本<ol>
+<li><code>view</code>编辑器</li>
+<li><code>vedit</code>编辑器</li>
+</ol>
+</li>
+<li><code>vi</code>的工作模式<ol>
+<li>命令模式</li>
+<li>文本输入模式</li>
+</ol>
+</li>
+</ul>
+<h2 id="命令模式"><a href="#命令模式" class="headerlink" title="命令模式"></a>命令模式</h2><p><img src="https://i.loli.net/2020/06/13/LPZjoiwgb6xflBc.jpg" alt="IMG_1308_20200613-122112_.PNG"></p>
+<h2 id="文本输入模式"><a href="#文本输入模式" class="headerlink" title="文本输入模式"></a>文本输入模式</h2><p><img src="https://i.loli.net/2020/06/13/L9tziUZ2d3e6OvB.jpg" alt="IMG_1309_20200613-122125_.PNG"></p>
+<ul>
+<li>缩写和宏</li>
+</ul>
+<h1 id="0x00"><a href="#0x00" class="headerlink" title="0x00"></a>0x00</h1><ul>
+<li>字节，8位，适合存储字符</li>
+<li>字，一种字节组合，在不同系统中字的大小不同</li>
+<li><code>[Spacebar]</code>:一个空格</li>
+<li><code>[Tab]</code>:8个空格</li>
+</ul>
+]]></content>
+      <categories>
+        <category>Linux</category>
       </categories>
   </entry>
   <entry>

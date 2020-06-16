@@ -71,6 +71,391 @@
     <div class="outer">
       <section id="main">
   
+    <article id="post-Java核心技术i" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2020/04/02/ Java核心技术i/" class="article-date">
+  <time datetime="2020-04-02T14:56:52.000Z" itemprop="datePublished">2020-04-02</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Java/">Java</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/04/02/ Java核心技术i/">Java核心技术i</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>$\lambda 表达式形式：参数，箭头 (-&gt;) 以及一个表达式$</p>
+<p>无需指定$\lambda 表达式的返回类型$</p>
+<p>只有当$\lambda$表达式的体只调用一个方法而不做其他操作时，才能把$\lambda$表达式重写为方法。page248</p>
+<p>$\lambda$就是闭包</p>
+<p>$\lambda$捕获的变量是事实最终变量$effectively\ final$</p>
+<p>$exception\ handing ,异常处理 \ throw\ 抛出\ exception\ handler\ 异常处理器$</p>
+<p>$只需要声明\ IOException,检查型(checked)异常$</p>
+<p>$i.找到一个合适的异常类\ ii.创建这个类的一个对象\ iii.将对象抛出$</p>
+<h1 id="集合"><a href="#集合" class="headerlink" title="集合"></a>集合</h1><h2 id="迭代器·Iterator接口"><a href="#迭代器·Iterator接口" class="headerlink" title="迭代器·Iterator接口"></a>迭代器·Iterator接口</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">interface</span> <span class="title">Interator</span>&lt;<span class="title">E</span>&gt;</span>&#123;</span><br><span class="line">    <span class="function">E <span class="title">next</span><span class="params">()</span></span>;</span><br><span class="line">    <span class="function"><span class="keyword">boolean</span> <span class="title">hasNext</span><span class="params">()</span></span>;</span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">remove</span><span class="params">()</span></span>;</span><br><span class="line">    <span class="function"><span class="keyword">default</span> <span class="keyword">void</span> <span class="title">forEachRemain</span><span class="params">(Consumer&lt;? <span class="keyword">super</span> E&gt; action)</span></span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="Collection"><a href="#Collection" class="headerlink" title="Collection"></a>Collection</h2><h3 id="Queue"><a href="#Queue" class="headerlink" title="Queue"></a>Queue</h3><p>实现方式</p>
+<ul>
+<li>循环数组</li>
+<li>链表</li>
+</ul>
+<h2 id="Map"><a href="#Map" class="headerlink" title="Map"></a>Map</h2><h1 id="IO流"><a href="#IO流" class="headerlink" title="IO流"></a>IO流</h1><ul>
+<li>字节流在直接在文件中操作，字符流需要使用缓冲区</li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      
+        <a data-url="http://yoursite.com/2020/04/02/ Java核心技术i/" data-id="ckbhepctt0002o0viv3o4qjvk" class="article-share-link" data-share="baidu" data-title="Java核心技术i">分享到</a>
+      
+
+      
+        <a href="http://yoursite.com/2020/04/02/ Java核心技术i/#ds-thread" class="article-comment-link">评论</a>
+      
+
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+
+  
+    <article id="post-操作系统" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2020/03/31/ 操作系统/" class="article-date">
+  <time datetime="2020-03-31T06:23:43.314Z" itemprop="datePublished">2020-03-31</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/操作系统/">操作系统</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/03/31/ 操作系统/">操作系统</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>1 <em>中断</em>，在程序运行过程中出现某种紧急事件，必须中止当前正在运行的程序，转去处理此事件，然后再恢复原来运行的程序。有$\begin{Bmatrix} 强迫性中断\ 自愿性中断\  \end {Bmatrix}$。</p>
+<p>2 <em>中断系统</em>，中断装置+中断处理程序</p>
+<p>3 <em>中断装置</em>，识别中断源$\Longrightarrow$ 保存现场$(运行的物理环境：地址寄存器，通用寄存器，浮点寄存器，SP，PSW，PC，文件表)\Longrightarrow $引出中断程序</p>
+<p>1 进程互斥；进程同步；进程饥饿；进程死机；进程饿死</p>
+<p>2 $吞吐量=\frac{任务数量}{处理时间}$</p>
+<p>3 $PCB,process\  control\ block $，进程控制块，是标志进程存在的数据结构，其中包含系统对进程进行管理所需要的全部信息。</p>
+<p>4 $TCB,thread\  control\ block$，线程控制块，是标志线程存在的数据结构，其中包含系统对线程进行管理所需要的全部信息。</p>
+<p>5 $PSW,program\ status\ word$，程序状态字，表示当前程序的运行环境，状态</p>
+<p>6 $JCB\ ,Job\ Control\ Block$，作业控制块，是标志作业存在的数据结构，其中包含系统对作业进行管理所需要的全部信息。</p>
+<p>7 $PC$，指令计数。</p>
+<p>8 $FCB,file\ control \ block$，文件控制块</p>
+<p>1 $FCFS,first\ come\ first\ service $，先到先服务。</p>
+<p>。。。</p>
+<p><strong>程序并发执行的条件</strong></p>
+<p>满足$Bernstein 条件$</p>
+<p>$race\ condition,竞争条件，多个进程在访问变量时，因实际交叉次序不同而导致执行结果不同$</p>
+<h1 id="互斥"><a href="#互斥" class="headerlink" title="互斥"></a>互斥</h1><h2 id="软件实现互斥"><a href="#软件实现互斥" class="headerlink" title="软件实现互斥"></a>软件实现互斥</h2><h3 id="Dekker"><a href="#Dekker" class="headerlink" title="Dekker"></a>Dekker</h3><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//参数id为当前的线程号</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">Dekker_Lock</span><span class="params">(<span class="keyword">int</span> id)</span></span>&#123;</span><br><span class="line">	flag[id]=<span class="number">1</span>;</span><br><span class="line">	<span class="keyword">int</span> id0=(id+<span class="number">1</span>)%<span class="number">2</span>;</span><br><span class="line">	<span class="keyword">while</span>(flag[id0]==<span class="number">1</span>)&#123;</span><br><span class="line">		<span class="keyword">if</span>(turn==id0)&#123;</span><br><span class="line">			flag[id]=<span class="number">0</span>;</span><br><span class="line">			<span class="keyword">while</span>(turn==id0)&#123;</span><br><span class="line">				;<span class="comment">//do nothing</span></span><br><span class="line">			&#125;</span><br><span class="line">			flag[id]=<span class="number">1</span>;<span class="comment">//为了防止其他进程进入临界区</span></span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">Dekker_unLock</span><span class="params">(<span class="keyword">int</span> id)</span></span>&#123;</span><br><span class="line">	turn=(id+<span class="number">1</span>)%<span class="number">2</span>;</span><br><span class="line">	flag[id]=<span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="Peterson"><a href="#Peterson" class="headerlink" title="Peterson"></a>Peterson</h3><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">Peterson_Lock</span><span class="params">(<span class="keyword">int</span> id)</span></span>&#123;</span><br><span class="line">	flag[id]=<span class="number">1</span>;</span><br><span class="line">	turn=(id+<span class="number">1</span>)%<span class="number">2</span>;<span class="comment">//让给对方，判断对方是否需要</span></span><br><span class="line">	<span class="keyword">while</span>(flag[<span class="number">1</span>]==<span class="number">1</span>&amp;&amp;turn==(id+<span class="number">1</span>)%<span class="number">2</span>)	;<span class="comment">//do nothing</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">Peterson_unLock</span><span class="params">(<span class="keyword">int</span> id)</span></span>&#123;</span><br><span class="line">	flag[id]=<span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="Lamport"><a href="#Lamport" class="headerlink" title="Lamport"></a>Lamport</h3><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">find_max</span><span class="params">()</span></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> i=<span class="number">0</span>;</span><br><span class="line">	<span class="keyword">int</span> max_flag=<span class="number">0</span>;</span><br><span class="line">	<span class="keyword">for</span>(i=<span class="number">0</span>;i&lt;g_totalThreads;i++)&#123;</span><br><span class="line">		<span class="keyword">if</span>(number[i]&gt;number[max_flag]) max_flag=i;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> max_flag;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">bool</span> <span class="title">If_choose</span><span class="params">()</span></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> i=<span class="number">0</span>;</span><br><span class="line">	<span class="keyword">for</span>(i=<span class="number">0</span>;i&lt;g_totalThreads;i++)&#123;</span><br><span class="line">		<span class="keyword">if</span>(choosing[i]==<span class="number">1</span>)	<span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">Lamport_Lock</span><span class="params">(<span class="keyword">int</span> id)</span></span>&#123;</span><br><span class="line">	choosing[id]=<span class="number">1</span>;</span><br><span class="line">	number[id]=find_max()+<span class="number">1</span>;</span><br><span class="line">	choosing[id]=<span class="number">0</span>;</span><br><span class="line">	<span class="keyword">int</span> j=<span class="number">0</span>;</span><br><span class="line">	<span class="keyword">for</span>(j=<span class="number">0</span>;j&lt;g_totalThreads;j++)&#123;</span><br><span class="line">		<span class="keyword">while</span>(If_choose()==<span class="literal">false</span>)	;</span><br><span class="line">		<span class="keyword">while</span>(number[j]!=<span class="number">0</span></span><br><span class="line">              &amp;&amp;(number[j]&lt;number[id]</span><br><span class="line">                 ||(number[j]==number[id]&amp;&amp;j&lt;id))) ;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">Lamport_unLock</span><span class="params">(<span class="keyword">int</span> id)</span></span>&#123;</span><br><span class="line">	number[id]=<span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="Eisenberg-Mcguire"><a href="#Eisenberg-Mcguire" class="headerlink" title="Eisenberg_Mcguire"></a>Eisenberg_Mcguire</h3><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">Eisenberg_Mcguire_Lock</span><span class="params">(<span class="keyword">int</span> id)</span></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> j;</span><br><span class="line">	<span class="keyword">do</span>&#123;</span><br><span class="line">		flag[id]=want_in;</span><br><span class="line">		j=turn;</span><br><span class="line">		<span class="keyword">while</span>(j!=id)&#123;</span><br><span class="line">			<span class="keyword">if</span>(flag[j]!=idle)&#123;</span><br><span class="line">				j=turn;</span><br><span class="line">			&#125;<span class="keyword">else</span>&#123;</span><br><span class="line">				j=(j+<span class="number">1</span>)%g_totalThreads;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">		flag[id]=in_cs;</span><br><span class="line">		j=<span class="number">0</span>;</span><br><span class="line">		<span class="keyword">while</span>((j&lt;g_totalThreads)&amp;&amp;(j==id||Flag[j]!=in_cs))&#123;</span><br><span class="line">			j++;</span><br><span class="line">		&#125;<span class="comment">//判断所有其他进程是否in_cs</span></span><br><span class="line">	&#125;<span class="keyword">while</span> (j!=g_totalThreads);</span><br><span class="line">	turn=id;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">Eisenberg_Mcguire_unLock</span><span class="params">(<span class="keyword">int</span> id)</span></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> j=(turn+<span class="number">1</span>)%g_totalThreads;</span><br><span class="line">	<span class="keyword">while</span>(flag[j]==idle)&#123;</span><br><span class="line">		j=(j+<span class="number">1</span>)%g_totalThreads;</span><br><span class="line">	&#125;</span><br><span class="line">	turn=j;</span><br><span class="line">	flag[id]=idle;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>$bus \ request\ protocol,总线请求协议$</p>
+<h2 id="同步"><a href="#同步" class="headerlink" title="同步"></a>同步</h2><p>$synchronization,同步$</p>
+<p>$process\ cooperation,进程合作$</p>
+<p>$cooperation\ process,合作进程$</p>
+<p>$semaphore,信号量；PV$</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">semaphore</span>&#123;</span></span><br><span class="line">    <span class="keyword">int</span> value;</span><br><span class="line">    pointer_to_PCB <span class="built_in">queue</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>$primitive,原语，不可间断的程序$</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">P</span><span class="params">(semaphore *s)</span></span>&#123;</span><br><span class="line">    s-&gt;value--;</span><br><span class="line">    <span class="keyword">if</span>(s-&gt;value&lt;<span class="number">0</span>)</span><br><span class="line">        asleep(s-&gt;<span class="built_in">queue</span>);</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">V</span><span class="params">(semphore *s)</span></span>&#123;</span><br><span class="line">    s-&gt;value++;</span><br><span class="line">    <span class="keyword">if</span>(s-&gt;value&gt;=<span class="number">0</span>)</span><br><span class="line">        wakeup(s-&gt;<span class="built_in">queue</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>$e.g$</p>
+<ul>
+<li>司机-售票员问题，同步</li>
+<li>生产者-消费者问题，单资源管理</li>
+<li>读者-写者问题，互斥同时提高并发性</li>
+<li>吸烟者问题，多资源管理</li>
+</ul>
+<h1 id="死锁"><a href="#死锁" class="headerlink" title="死锁"></a>死锁</h1><h2 id="死锁的避免"><a href="#死锁的避免" class="headerlink" title="死锁的避免"></a>死锁的避免</h2><h3 id="银行家算法"><a href="#银行家算法" class="headerlink" title="银行家算法"></a>银行家算法</h3><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> n;<span class="comment">//进程总数</span></span><br><span class="line"><span class="keyword">int</span> m;<span class="comment">//资源类的总数</span></span><br><span class="line"><span class="keyword">int</span> Available[m];<span class="comment">//当前可用资源数，初始化为资源总量</span></span><br><span class="line"><span class="keyword">int</span> Claim[n,m];<span class="comment">//进程i最多需要j种资源的数量</span></span><br><span class="line"><span class="keyword">int</span> Allocation[n,m];<span class="comment">//进程i现在占有j种资源的数量，初始化为0</span></span><br><span class="line"><span class="keyword">int</span> Need[n,m];<span class="comment">//进程i还需要j种资源的数量，初始化为Claim[i][j]</span></span><br><span class="line"><span class="keyword">int</span> Request[n,m];<span class="comment">//进程i当前申请j种资源的数量</span></span><br><span class="line"><span class="function"><span class="keyword">bool</span> <span class="title">g</span><span class="params">()</span></span>;</span><br><span class="line"><span class="function"><span class="keyword">bool</span> <span class="title">f</span><span class="params">(<span class="keyword">int</span> i)</span></span>&#123;<span class="comment">//进程i发出资源申请</span></span><br><span class="line">	<span class="keyword">if</span>(Request[i]&gt;Need[i])	<span class="keyword">return</span> <span class="literal">false</span>;<span class="comment">//大于尚需资源</span></span><br><span class="line">	<span class="keyword">if</span>(Request[i]&gt;Available[i])	<span class="keyword">return</span> <span class="literal">false</span>;<span class="comment">//大于当前资源数</span></span><br><span class="line">	<span class="comment">//资源预分配</span></span><br><span class="line">	Available=Available-Request[i];</span><br><span class="line">	Allocation[i]=Allocation[i]+Request[i];</span><br><span class="line">	Need[i]=Need[i]-Request[i];</span><br><span class="line">	<span class="keyword">return</span> g();<span class="comment">//检测算法</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">bool</span> <span class="title">g</span><span class="params">()</span></span>&#123;<span class="comment">//判断是否会发生死锁状态</span></span><br><span class="line">	<span class="keyword">int</span> Work[m];</span><br><span class="line">	Work=Available;<span class="comment">//防止影响到原来的Availabe</span></span><br><span class="line">	<span class="keyword">bool</span> Finish[n]=<span class="literal">false</span>;<span class="comment">//有哪些已经完成了</span></span><br><span class="line">	<span class="keyword">bool</span> flag=<span class="literal">true</span>;</span><br><span class="line">    <span class="keyword">int</span> i=<span class="number">1</span>;</span><br><span class="line">    <span class="keyword">while</span>(flag)&#123;</span><br><span class="line">    	flag=<span class="literal">false</span>;</span><br><span class="line">        <span class="keyword">for</span>(i=<span class="number">0</span>;i&lt;n;i++)&#123;</span><br><span class="line">        	<span class="keyword">if</span>(Finish[i]==<span class="literal">false</span>&amp;&amp;Need[i]&lt;=Work[i])&#123;<span class="comment">//i可执行</span></span><br><span class="line">                <span class="comment">/*</span></span><br><span class="line"><span class="comment">                注意再Shoshami和Coffman所提出的是</span></span><br><span class="line"><span class="comment">                Finish[i]==false&amp;&amp;Request[i]&lt;=Work[i]</span></span><br><span class="line"><span class="comment">                </span></span><br><span class="line"><span class="comment">                */</span></span><br><span class="line">                flag=<span class="literal">true</span>;</span><br><span class="line">                Work=Work+Allocation[i];<span class="comment">//恢复资源</span></span><br><span class="line">        		Finish[i]=<span class="literal">true</span>;</span><br><span class="line">        	&#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">for</span>(i=<span class="number">0</span>;i&lt;n;i++)&#123;</span><br><span class="line">        <span class="keyword">if</span>(Finish[i]==<span class="literal">false</span>)	<span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="Shoshamin-amp-amp-Coffman的死锁检测算法"><a href="#Shoshamin-amp-amp-Coffman的死锁检测算法" class="headerlink" title="Shoshamin&amp;&amp;Coffman的死锁检测算法"></a>Shoshamin&amp;&amp;Coffman的死锁检测算法</h2><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">bool</span> <span class="title">g</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> Work[m]=Available;</span><br><span class="line">    <span class="keyword">bool</span> Finish[n]=<span class="literal">false</span>;</span><br><span class="line">    <span class="keyword">bool</span> flag=<span class="literal">true</span>;</span><br><span class="line">    <span class="keyword">while</span>(flag)&#123;</span><br><span class="line">        flag=<span class="literal">false</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;n;i++)&#123;</span><br><span class="line">            <span class="keyword">if</span>(Finish[i]==<span class="literal">false</span>&amp;&amp;Request[i]&lt;=Work)&#123;</span><br><span class="line">                flag=<span class="literal">true</span>;</span><br><span class="line">                Finish=<span class="literal">true</span>;</span><br><span class="line">                Work=Work+Allocation[i];<span class="comment">//恢复</span></span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;n;i++)&#123;</span><br><span class="line">        <span class="keyword">if</span>(Finish[i]==<span class="literal">false</span>)	<span class="keyword">return</span>  <span class="literal">false</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h1 id="主存储器管理"><a href="#主存储器管理" class="headerlink" title="主存储器管理"></a>主存储器管理</h1><h2 id="内存"><a href="#内存" class="headerlink" title="内存"></a>内存</h2><h3 id="内存分区"><a href="#内存分区" class="headerlink" title="内存分区"></a>内存分区</h3><ul>
+<li>静态分区</li>
+<li>动态分区</li>
+</ul>
+<h3 id="内存区分配"><a href="#内存区分配" class="headerlink" title="内存区分配"></a>内存区分配</h3><ul>
+<li>first fit，FF，最先适应</li>
+<li>best fit，BF，最佳适应</li>
+<li>worst fit，WF，最坏适应</li>
+</ul>
+<h2 id="页式存储"><a href="#页式存储" class="headerlink" title="页式存储"></a>页式存储</h2><ul>
+<li>EAT,effective access time 内存的有效访问时间<script type="math/tex; mode=display">
+EAT=快表命中率\cdot (快表访问时间+内存访问时间)+(1-快表命中率)\cdot (快表访问时间+2\cdot 内存访问时间)\\
+其中，不命中时，访问页表计入内存访问一次</script></li>
+</ul>
+<h1 id="虚拟存储系统"><a href="#虚拟存储系统" class="headerlink" title="虚拟存储系统"></a>虚拟存储系统</h1><h2 id="外存储器管理技术"><a href="#外存储器管理技术" class="headerlink" title="外存储器管理技术"></a>外存储器管理技术</h2><h3 id="策略"><a href="#策略" class="headerlink" title="策略"></a>策略</h3><ul>
+<li>平均分配</li>
+<li>按进程程序长度分配</li>
+<li>按进程优先级的比例分配</li>
+<li>按进程长度和优先级的比例分配</li>
+<li>ee</li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      
+        <a data-url="http://yoursite.com/2020/03/31/ 操作系统/" data-id="ckbhepcty0006o0viq3ff68m3" class="article-share-link" data-share="baidu" data-title="操作系统">分享到</a>
+      
+
+      
+        <a href="http://yoursite.com/2020/03/31/ 操作系统/#ds-thread" class="article-comment-link">评论</a>
+      
+
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+
+  
+    <article id="post-计算机系统结构" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2020/03/31/ 计算机系统结构/" class="article-date">
+  <time datetime="2020-03-31T06:20:46.000Z" itemprop="datePublished">2020-03-31</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/计算机系统结构/">计算机系统结构</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/03/31/ 计算机系统结构/">计算机系统结构</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><ul>
+<li>1字节=1 byte=1 B</li>
+<li>1KB=$1^{10}$B</li>
+<li></li>
+</ul>
+<h4 id="1"><a href="#1" class="headerlink" title="1"></a>1</h4><p><em>系统结构，组成，实现</em></p>
+<ol>
+<li>计算机系统结构：计算机系统的软，硬件的界面。</li>
+<li>计算机组成：计算机系统结构的逻辑实现。</li>
+<li>计算机实现：计算机组成的物理实现</li>
+</ol>
+<p>换句话来说，我们设计计算机的时间轴为：$系统结构\longrightarrow 组成\longrightarrow 实现$</p>
+<p>$t_{cpu}:$执行一段程序所用的CPU时间。</p>
+<p>$IC:$该段程序的指令条数，取决于指令集<em>结构</em> 和编译技术。</p>
+<p>$CPI,Cycle \ Per \ Instruction:$平均每一条指令所需要的时钟周期，取决于<em>组成</em>和指令集<em>结构</em></p>
+<p>$T:$时钟周期，取决于<em>实现</em> 和<em>组成</em></p>
+<h4 id="3-流水线"><a href="#3-流水线" class="headerlink" title="3 流水线"></a>3 流水线</h4><p><em>以静态，线性，顺序流水线为例</em></p>
+<p>$吞吐率\ ThroughPut\ TP=\frac{n}{T_k}=\frac{任务数量}{运行时间}=\frac{n}{(k+n-1)\Delta t}$</p>
+<p>$加速比\ Speedup\ S=\frac{T_s}{T_k}=\frac{顺序执行时间}{运行时间}=\frac{nk}{k+m-1}$</p>
+<p>$效率\ Efficiency\ E=\frac{n\Delta t}{T_k}=\frac{设备实际使用时间}{运行时间*设备数目}=\frac{n}{k+n-1}$</p>
+<p><strong>dependence 相关</strong>，<em>两条指令之间存在某种依赖关系</em></p>
+<p><strong>真数据相关，data dependence</strong>，$①指令j使用指令i产生的结果;②指令j与指令k数据相关，指令k又与指令i数据相关$</p>
+<p><strong>名相关，name dependence</strong>，如果两条指令使用相同的名，但是它们之间没有数据流动</p>
+<p>$anti-dependence,反相关，指令j写的名与指令i读的名相同；\ output\ dependence,输出相关,指令j与指令i写的名相同。 $</p>
+<p><strong>控制相关，control dependence </strong>，有分支指令引起的相关。</p>
+<p><strong>流水线冲突 pipline hazards</strong>，<em>由于相关的存在，使得下一条指令不能再指定的时钟周期执行</em></p>
+<p><strong>结构冲突</strong></p>
+<p><strong>数据冲突</strong>，相关的指令靠得足够近。</p>
+<p>$RAM,Read \ After \ Write ,写后读冲突，真数据相关$</p>
+<p>$WAW,Write \ After \ Write ，写后写冲突，输出相关，在五段流水线(MIPS)中不会发生$</p>
+<p>$WAR,Write \ After  \ Read,读后写冲突.反相关$</p>
+<p>仅发生在这样的情况：有些指令的写操作被提前了，有些操作的读操作被滞后了，即指令被重新排序了,在五段流水线(MIPS)中不会发生</p>
+<h4 id="4-指令级并行​"><a href="#4-指令级并行​" class="headerlink" title="4 指令级并行​"></a>4 指令级并行​</h4><script type="math/tex; mode=display">
+ILP,Instruction-Level\ Parallelism,指令级并行\left\{    \begin{array}{lr}        基于硬件（代码执行中）的动态开发方法\\        基于软件（代码执行前）的静态开发方法            \end{array}\right.\\</script><p>$CPI<em>{实际流水线}=CPI</em>{理想}+停顿<em>{结构冲突}+停顿</em>{数据冲突}+停顿_{控制冲突}$</p>
+<p>$IPC,Instructions \ Per\  Cycle,每个时钟周期完成的指令条数$</p>
+<p>$CDB,Common\ Data \ Bus,公共数据总线$</p>
+<p>$IS,Issue,流出阶段：指令译码，检查是否存在结构冲突。$</p>
+<p>$RO,Read\ Operands,读操作数：检测数据冲突$</p>
+<p>$BHT,Branch\ History\ Table\ ,Branch\ Predicition\ Buffer,分支历史表，分支预测缓冲器\是最简单的动态分支预测方法$</p>
+<p>$BTB,Branch\ Target\ Buffer,分支目标缓冲器，也称分支目标Cache$</p>
+<p>$branch\ folding,分支折叠$</p>
+<p>$speculation,前瞻执行$</p>
+<p>$ROB,ReOrder\ Buffer，再定序缓冲器，为了在猜错的情况下能够恢复现场$</p>
+<p>$Tomasulo算法$</p>
+<p>$基于硬件的前瞻算法，顺序流出，乱序执行，顺序确认$</p>
+<h1 id="存储系统"><a href="#存储系统" class="headerlink" title="存储系统"></a>存储系统</h1><p><img src="计算机系统结构.assets/image-20200416180748349.png" alt="image-20200416180748349"></p>
+<h2 id="局部性原理-principle-of-locality"><a href="#局部性原理-principle-of-locality" class="headerlink" title="局部性原理  principle of locality"></a>局部性原理  principle of locality</h2><ul>
+<li>空间局部性：程序将要用到的信息很有可能于正在使用的信息相邻</li>
+<li>时间局部性：程序将要用到的信息很可能就是现在正在使用的信息</li>
+</ul>
+<h2 id="Cache"><a href="#Cache" class="headerlink" title="Cache"></a>Cache</h2><h3 id="Cache命中：CPU能在缓存中访问到"><a href="#Cache命中：CPU能在缓存中访问到" class="headerlink" title="Cache命中：CPU能在缓存中访问到"></a>Cache命中：CPU能在缓存中访问到</h3><h3 id="存储层次的四个基本问题"><a href="#存储层次的四个基本问题" class="headerlink" title="存储层次的四个基本问题"></a>存储层次的四个基本问题</h3><ol>
+<li>映像规则</li>
+<li>查找算法</li>
+<li>替换算法<ol>
+<li>随机法</li>
+<li>FIFO,First-In-First-Out 先入先出法</li>
+<li>LRU,Least-Recently-Used 最近最少使用法</li>
+</ol>
+</li>
+<li>写策略<ol>
+<li>写直达</li>
+<li>写回</li>
+<li>按写分配</li>
+<li>不按写分配</li>
+</ol>
+</li>
+</ol>
+<h3 id="映像规则"><a href="#映像规则" class="headerlink" title="映像规则"></a>映像规则</h3><ul>
+<li>fully associative mapping 全相联映像</li>
+<li>direct mapping 直接映像 $j=i\  mod M$</li>
+<li>set associative n路组相联映像 n为每一组的块数</li>
+</ul>
+<h3 id="Cache性能分析"><a href="#Cache性能分析" class="headerlink" title="Cache性能分析"></a>Cache性能分析</h3><ul>
+<li><p>平均访存时间=命中时间+不命中率*不命中开销</p>
+</li>
+<li><p>CPU时间=（CPU执行周期数+访存次数$<em>$不命中率$</em>$不命中开销）$*$时钟周期时间</p>
+<h4 id="性能改进"><a href="#性能改进" class="headerlink" title="性能改进"></a>性能改进</h4><ol>
+<li><p>降低不命中率</p>
+<ul>
+<li><p>减少强制性不命中—增加块的大小 ，<u>增加命中时间</u></p>
+</li>
+<li><p>减少容量不命中—增加Cache容量，<u>成本增加，命中时间增加，一般用于片外Cache</u></p>
+</li>
+<li><p>减少冲突不命中—提高相联度，<u>增加命中时间</u></p>
+</li>
+<li>伪相联组</li>
+</ul>
+<p><img src="计算机系统结构.assets/image-20200416205726717.png" alt="image-20200416205726717"></p>
+</li>
+<li><p>降低不命中开销</p>
+<ul>
+<li>让读不命中优先于写不命中</li>
+<li>写缓冲合并</li>
+<li>请求字处理技术</li>
+<li>非阻塞Cache</li>
+</ul>
+</li>
+<li><p>减少命中时间</p>
+<ul>
+<li>简单小Cache</li>
+<li>虚拟Cache</li>
+<li>Cache访问流水化</li>
+<li><p>踪迹Cache</p>
+</li>
+<li><p>伪相联组</p>
+</li>
+</ul>
+</li>
+</ol>
+</li>
+</ul>
+<h2 id="并行主存系统"><a href="#并行主存系统" class="headerlink" title="并行主存系统"></a>并行主存系统</h2><ul>
+<li>性能指标<ol>
+<li>延迟，存储器的访问时间，启动一次存储器到完成该操作所需要的时间</li>
+<li>带宽，单位时间内存储器存取的信息量</li>
+</ol>
+</li>
+<li>普通存储器：单体单字宽存储器</li>
+<li>并行主存：<ul>
+<li>提高存储带宽</li>
+<li>种类：单体多字存储器和多体交叉存储器</li>
+</ul>
+</li>
+</ul>
+<h3 id="单体m字"><a href="#单体m字" class="headerlink" title="单体m字"></a>单体m字</h3><ul>
+<li>一个存储体，给一个地址，在一个存储周期，取m个CPU字</li>
+<li>$B_M=m*\frac{W}{T_M}$，带宽为单体单字的m倍</li>
+<li>主要用于主存与Cache</li>
+</ul>
+<h3 id="多体交叉存储器"><a href="#多体交叉存储器" class="headerlink" title="多体交叉存储器"></a>多体交叉存储器</h3><ul>
+<li>高位交叉编址</li>
+<li>低位交叉编址</li>
+<li>提高带宽</li>
+</ul>
+<h1 id="输入-输出系统"><a href="#输入-输出系统" class="headerlink" title="输入/输出系统"></a>输入/输出系统</h1><p>$MTTF,Mean\ Time\ To\ Failure,平均失效前时间$</p>
+<p>$MTTR,Mean\ Time\ To \ Repair，平均修复时间$</p>
+<p>$MTBF=MTTF+MTTR,Mean\ Time\ Between\ Failure,平均失效间隔时间$</p>
+<p>$reliability,可靠性$</p>
+<script type="math/tex; mode=display">
+衡量标准：MTTF,其中失效率=\frac{1}{MTTF}</script><p>$availability,可用性$</p>
+<script type="math/tex; mode=display">
+可用性=\frac{MTTF}{MTTR+MTTF}</script><p>$dependability,可信性，不可度量$</p>
+<p>提高系统组成部件可靠性的方法：$valid\ construction,有效构建方法；error\ correction,纠错方法$</p>
+<p><a href="[https://baike.baidu.com/item/%E6%80%BB%E7%BA%BF%E4%BB%B2%E8%A3%81/10538148?fr=aladdin](https://baike.baidu.com/item/总线仲裁/10538148?fr=aladdin">仲裁</a>)</p>
+<p><a href="[https://baike.baidu.com/item/%E7%A8%8B%E5%BA%8F%E6%9F%A5%E8%AF%A2%E6%96%B9%E5%BC%8F/7716839?fr=aladdin](https://baike.baidu.com/item/程序查询方式/7716839?fr=aladdin">程序查询方式</a>)</p>
+<h3 id="通道流量分析"><a href="#通道流量分析" class="headerlink" title="通道流量分析"></a>通道流量分析</h3><ul>
+<li>$T_S,设备选择时间$</li>
+<li>$T_D,传送一个字节所用的时间$</li>
+<li>$p:在一个通道上连接的设备数目，且这些设备都同时在工作$</li>
+<li>$n:每台设备传送的字节数$</li>
+<li>$k:数组多路通道传输一个数据块中包含的字节数。一般情况下，k&lt;n$</li>
+<li>$T:通道完成全部数据传送工作所需要的时间$</li>
+</ul>
+<h5 id="EG"><a href="#EG" class="headerlink" title="EG"></a>EG</h5><p>$e.g.1$</p>
+<p><img src="https://i.loli.net/2020/04/08/7rioSuvb5ew9sGK.png" alt="image-20200308150608490.png"></p>
+<p>解</p>
+<p>不妨设加速比为S</p>
+<p>那么有</p>
+<script type="math/tex; mode=display">
+S=\frac {time_前}{time_后}=\frac{11.1\%*2+33.3\%*20+38.9\%*10+16.7\%*4}{11.1\%*1+33.3\%*15+38.9\%*3+16.7\%*1}=\frac{11.44}{6.44}=1.77</script><p>$e.g.2$</p>
+<p>考虑条件分支指令的两种不同设计方法：<br>（1）CPUA：通过比较指令设置条件码，然后测试条件码进行分支。<br>（2）CPUB：在分支指令中包括比较过程。<br>在这两种CPU中，条件分支指令都占用2个时钟周期，而所有其他指令占用1个时钟周期。对于CPUA，执行的指令中分支指令占20%；由于每条分支指令之前都需要有比较指令，因此比较指令也占20%。不妨假设其他指令条数相同。由于CPUA在分支时不需要比较，因此CPUB的时钟周期时间是CPUA的1.25倍。问：<strong>哪一个CPU更快</strong>？如果CPUB的时钟周期时间只是CPUA的1.1倍，哪一个CPU更快呢？</p>
+<p>$t_{cpu}=IC<em>CPI</em>T$</p>
+<p>那么有</p>
+<script type="math/tex; mode=display">
+t_{cpuA}=IC*(0.4*2+0.6*1)*T \\
+t_{cpuB}=IC*(2/8*2+6/8*1)*1.25T</script><p>最后即可得答案。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      
+        <a data-url="http://yoursite.com/2020/03/31/ 计算机系统结构/" data-id="ckbhepcu1000ao0viebehwn5f" class="article-share-link" data-share="baidu" data-title="计算机系统结构">分享到</a>
+      
+
+      
+        <a href="http://yoursite.com/2020/03/31/ 计算机系统结构/#ds-thread" class="article-comment-link">评论</a>
+      
+
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+
+  
     <article id="post-MachineLearning/离散数学第4讲" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2020/03/21/ MachineLearning/离散数学第4讲/" class="article-date">
@@ -157,7 +542,7 @@ GCD(a,b)=GCD(Remainder(b,a),a)\\
     </div>
     <footer class="article-footer">
       
-        <a data-url="http://yoursite.com/2020/03/21/ MachineLearning/离散数学第4讲/" data-id="ckb681qy2001854vi8gpisi10" class="article-share-link" data-share="baidu" data-title="state machine&amp;Euclidean Alg">分享到</a>
+        <a data-url="http://yoursite.com/2020/03/21/ MachineLearning/离散数学第4讲/" data-id="ckbhepcv4001ao0vidqo4dmm9" class="article-share-link" data-share="baidu" data-title="state machine&amp;Euclidean Alg">分享到</a>
       
 
       
@@ -288,7 +673,7 @@ n个输入,可行解为n个输入的子集\\
     </div>
     <footer class="article-footer">
       
-        <a data-url="http://yoursite.com/2020/02/13/ 算法设计及分析/" data-id="ckb681qx3000754vivi01tcjq" class="article-share-link" data-share="baidu" data-title="算法设计与分析">分享到</a>
+        <a data-url="http://yoursite.com/2020/02/13/ 算法设计及分析/" data-id="ckbhepctz0007o0vi2btrziex" class="article-share-link" data-share="baidu" data-title="算法设计与分析">分享到</a>
       
 
       
@@ -337,7 +722,7 @@ n个输入,可行解为n个输入的子集\\
     </div>
     <footer class="article-footer">
       
-        <a data-url="http://yoursite.com/2019/11/18/ Algorithm/Warshall/" data-id="ckb681qxw000w54vi4jbe73l4" class="article-share-link" data-share="baidu" data-title="Warshall&amp;All_componet">分享到</a>
+        <a data-url="http://yoursite.com/2019/11/18/ Algorithm/Warshall/" data-id="ckbhepcut000yo0vit8y10lqw" class="article-share-link" data-share="baidu" data-title="Warshall&amp;All_componet">分享到</a>
       
 
       
@@ -386,7 +771,7 @@ n个输入,可行解为n个输入的子集\\
     </div>
     <footer class="article-footer">
       
-        <a data-url="http://yoursite.com/2019/11/13/ Algorithm/Prim/" data-id="ckb681qxv000v54vihd6sy0r2" class="article-share-link" data-share="baidu" data-title="Prim">分享到</a>
+        <a data-url="http://yoursite.com/2019/11/13/ Algorithm/Prim/" data-id="ckbhepcuo000to0vix0eggo7e" class="article-share-link" data-share="baidu" data-title="Prim">分享到</a>
       
 
       
@@ -435,7 +820,7 @@ n个输入,可行解为n个输入的子集\\
     </div>
     <footer class="article-footer">
       
-        <a data-url="http://yoursite.com/2019/11/13/ MachineLearning/Kmeans/" data-id="ckb681qy0001454vinwddnrdx" class="article-share-link" data-share="baidu" data-title="Kmeans">分享到</a>
+        <a data-url="http://yoursite.com/2019/11/13/ MachineLearning/Kmeans/" data-id="ckbhepcv7001eo0vi2l9cto69" class="article-share-link" data-share="baidu" data-title="Kmeans">分享到</a>
       
 
       
@@ -484,7 +869,7 @@ n个输入,可行解为n个输入的子集\\
     </div>
     <footer class="article-footer">
       
-        <a data-url="http://yoursite.com/2019/10/27/ Algorithm/BinTree/" data-id="ckb681qxo000o54vicra41smy" class="article-share-link" data-share="baidu" data-title="BinTree">分享到</a>
+        <a data-url="http://yoursite.com/2019/10/27/ Algorithm/BinTree/" data-id="ckbhepcus000xo0vi5i5ewn5l" class="article-share-link" data-share="baidu" data-title="BinTree">分享到</a>
       
 
       
@@ -535,198 +920,11 @@ n个输入,可行解为n个输入的子集\\
     </div>
     <footer class="article-footer">
       
-        <a data-url="http://yoursite.com/2019/10/21/ Algorithm/EulerSieve/" data-id="ckb681qxq000p54vizkvolbre" class="article-share-link" data-share="baidu" data-title="EulerSieve">分享到</a>
+        <a data-url="http://yoursite.com/2019/10/21/ Algorithm/EulerSieve/" data-id="ckbhepcum000qo0viopnrmzgj" class="article-share-link" data-share="baidu" data-title="EulerSieve">分享到</a>
       
 
       
         <a href="http://yoursite.com/2019/10/21/ Algorithm/EulerSieve/#ds-thread" class="article-comment-link">评论</a>
-      
-
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-
-
-  
-    <article id="post-Algorithm/qpow" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2019/10/21/ Algorithm/qpow/" class="article-date">
-  <time datetime="2019-10-20T17:18:42.000Z" itemprop="datePublished">2019-10-21</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/algorithm/">algorithm</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/10/21/ Algorithm/qpow/">qpow</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="快速幂"><a href="#快速幂" class="headerlink" title="快速幂"></a>快速幂</h3><h5 id="假设"><a href="#假设" class="headerlink" title="假设"></a>假设</h5><p>​    求x^n的值</p>
-<h5 id="时间复杂度"><a href="#时间复杂度" class="headerlink" title="时间复杂度"></a>时间复杂度</h5><p>​    O(log n)</p>
-<h5 id="解释"><a href="#解释" class="headerlink" title="解释"></a>解释</h5><p>​    通过加大底数的权重来使得乘法次数更少</p>
-<p>​    1.假设n为奇数：x^n=x*x^(n-1)            则将x计入结果</p>
-<p>​    2.假设n为偶数：x^n=x^(n/2)*x^(n/2)    则将x的权重变为x^2</p>
-<h5 id="实现代码"><a href="#实现代码" class="headerlink" title="实现代码"></a>实现代码</h5><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*快速幂运算 log 2 n*/</span></span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">long</span> <span class="keyword">long</span> LL;</span><br><span class="line"><span class="function">LL <span class="title">qpow</span><span class="params">(LL a, LL n, LL mod)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	LL result = <span class="number">1</span>;</span><br><span class="line">	<span class="keyword">while</span> (n!=<span class="number">0</span>)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">if</span> (n &amp; <span class="number">1</span>)</span><br><span class="line">			result = (result * a) % mod;<span class="comment">//计入结果</span></span><br><span class="line">		a = (a * a) % mod;<span class="comment">//权重变大</span></span><br><span class="line">		n &gt;&gt;= <span class="number">1</span>;<span class="comment">//n=n/2;</span></span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> result;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-      
-    </div>
-    <footer class="article-footer">
-      
-        <a data-url="http://yoursite.com/2019/10/21/ Algorithm/qpow/" data-id="ckb681qxz001154vib9xcnwpc" class="article-share-link" data-share="baidu" data-title="qpow">分享到</a>
-      
-
-      
-        <a href="http://yoursite.com/2019/10/21/ Algorithm/qpow/#ds-thread" class="article-comment-link">评论</a>
-      
-
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-
-
-  
-    <article id="post-Algorithm/Kruskal" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2019/10/10/ Algorithm/Kruskal/" class="article-date">
-  <time datetime="2019-10-10T14:56:52.000Z" itemprop="datePublished">2019-10-10</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/algorithm/">algorithm</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/10/10/ Algorithm/Kruskal/">Kruskal</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="Kruskal"><a href="#Kruskal" class="headerlink" title="Kruskal"></a>Kruskal</h3><blockquote>
-<p>Kruskal总是维护无向连通图的最小生成森林</p>
-<p>最终得到该图的最小生成树</p>
-</blockquote>
-<h5 id="由来"><a href="#由来" class="headerlink" title="由来"></a>由来</h5><p>​    <strong>Kruskal算法</strong>是一种用来查找<a href="https://baike.baidu.com/item/最小生成树" target="_blank" rel="noopener">最小生成树</a>的贪心算法，由Joseph Kruskal在1956年发表。</p>
-<h5 id="假设"><a href="#假设" class="headerlink" title="假设"></a>假设</h5><p>​    有n个点m条无向边的图，且已知每一条边(x,y,z)，代表点x和点y之间有哦权值为z的无向边。    </p>
-<h5 id="时间复杂度"><a href="#时间复杂度" class="headerlink" title="时间复杂度"></a>时间复杂度</h5><p>​    O(m log m)</p>
-<h5 id="预备知识"><a href="#预备知识" class="headerlink" title="预备知识"></a>预备知识</h5><p>​    并查集        <del>先挖坑</del></p>
-<h5 id="解释"><a href="#解释" class="headerlink" title="解释"></a>解释</h5><p>​        在遍历所给无向连通图的过程中，kruskal 总是维护着最小生成森林。</p>
-<p>​    最终得到最小生成树。</p>
-<p>​        有以下步骤：</p>
-<p>​    1.初始化并查集，每一个点各自构成一个集合</p>
-<p>​    2.对边集S进行从小到大排序</p>
-<p>​    3.从S中取出一条边（注意：现在是从S中从小到大取出，判断这条边的两个端点是否属于同一个集合（使用并查集维护），不是则将端点x和端点y使用并查集combine起来。且将边加入最小生成森林。</p>
-<p>​    4.不断重复S直至访问完所有边</p>
-<h5 id="实现代码"><a href="#实现代码" class="headerlink" title="实现代码"></a>实现代码</h5><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//以边集来保存图，假设有m条边</span></span><br><span class="line"><span class="comment">//时间复杂度为mlogm</span></span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> MAX=<span class="number">11010</span>;</span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">edge</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line">    <span class="keyword">int</span> x;</span><br><span class="line">    <span class="keyword">int</span> y;</span><br><span class="line">    <span class="keyword">int</span> z;</span><br><span class="line">&#125;;<span class="comment">//代表x和y两点之间有路且权值为z</span></span><br><span class="line">edge S[MAX];</span><br><span class="line"><span class="keyword">int</span> Father[MAX];</span><br><span class="line"><span class="keyword">int</span> n,m;</span><br><span class="line"><span class="keyword">int</span> ans;</span><br><span class="line"><span class="keyword">bool</span> <span class="keyword">operator</span> &lt;(<span class="keyword">const</span> edge&amp;a,<span class="keyword">const</span> edge&amp;b)</span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">return</span> a.z&lt;b.z;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">void</span> <span class="title">Init</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> i;</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">"%d%d"</span>,&amp;n,&amp;m);</span><br><span class="line">    <span class="keyword">for</span>(i=<span class="number">1</span>;i&lt;=m;i++)</span><br><span class="line">        <span class="built_in">scanf</span>(<span class="string">"%d%d%d"</span>,&amp;S[i].x,&amp;S[i].y,&amp;S[i].z);</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//并查集找父亲</span></span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">int</span> <span class="title">Find</span><span class="params">(<span class="keyword">int</span> x)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">while</span>(x!=Father[x])</span><br><span class="line">        x=Father[x];</span><br><span class="line">    <span class="keyword">return</span> x;   </span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//combine</span></span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">void</span> <span class="title">combine</span><span class="params">(<span class="keyword">int</span> x,<span class="keyword">int</span> y)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">       Father[x]=y;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">void</span> <span class="title">Kruskal</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    ans=<span class="number">0</span>;</span><br><span class="line">    <span class="keyword">int</span> x;</span><br><span class="line">    <span class="keyword">int</span> y;</span><br><span class="line">    <span class="keyword">int</span> i;</span><br><span class="line">    <span class="keyword">for</span>(i=<span class="number">1</span>;i&lt;=n;i++)</span><br><span class="line">        Father[i]=i;</span><br><span class="line">    sort(S+<span class="number">1</span>,S+m+<span class="number">1</span>);</span><br><span class="line">    <span class="keyword">for</span>(i=<span class="number">1</span>;i&lt;=m;i++)</span><br><span class="line">    &#123;</span><br><span class="line">        x=Find(S[i].x);</span><br><span class="line">        y=Find(S[i].y);</span><br><span class="line">        <span class="keyword">if</span>(x!=y)</span><br><span class="line">        &#123;</span><br><span class="line">            ans=ans+S[i].z;</span><br><span class="line">            combine(x,y);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<blockquote>
-<p><a href="http://acm.hdu.edu.cn/showproblem.php?pid=1233" target="_blank" rel="noopener">模板题</a></p>
-</blockquote>
-<p>​    回顾学习算法的第四天。<del>戒掉可乐的第四天</del></p>
-<p>​        Orz</p>
-<p>​        Orz</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      
-        <a data-url="http://yoursite.com/2019/10/10/ Algorithm/Kruskal/" data-id="ckb681qxs000s54vii9e3ew63" class="article-share-link" data-share="baidu" data-title="Kruskal">分享到</a>
-      
-
-      
-        <a href="http://yoursite.com/2019/10/10/ Algorithm/Kruskal/#ds-thread" class="article-comment-link">评论</a>
-      
-
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-
-
-  
-    <article id="post-MachineLearning/西瓜1" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2019/10/10/ MachineLearning/西瓜1/" class="article-date">
-  <time datetime="2019-10-10T14:56:52.000Z" itemprop="datePublished">2019-10-10</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/Machine-Learning/">Machine Learning</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/10/10/ MachineLearning/西瓜1/">细品西瓜-前传</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <blockquote>
-<p>学习是系统通过经验提升性能的过程</p>
-</blockquote>
-<h1 id="绪论"><a href="#绪论" class="headerlink" title="绪论"></a>绪论</h1><p><img src="https://i.loli.net/2020/05/21/QFJ72DNUGHBapCu.png" alt="OPVZRH_GXENVFBGWT__V_KU.png"></p>
-<ul>
-<li>假设空间</li>
-<li>版本空间</li>
-</ul>
-<h1 id="模型评估与选择"><a href="#模型评估与选择" class="headerlink" title="模型评估与选择"></a>模型评估与选择</h1><ul>
-<li>过拟合：将训练样本自身的一些特点作为所有样本的一般特性，导致泛化性能下降，学习能力过于强大。</li>
-<li>欠拟合：学习能力不足。</li>
-<li>模型选择泛化误差最小的模型</li>
-<li>ROC,Receiver Operating Characteristic 受试者工作特征</li>
-<li>AUC,Area Under ROC Curve ROC曲线下的面积</li>
-</ul>
-
-      
-    </div>
-    <footer class="article-footer">
-      
-        <a data-url="http://yoursite.com/2019/10/10/ MachineLearning/西瓜1/" data-id="ckb681qy3001b54viztnts1g4" class="article-share-link" data-share="baidu" data-title="细品西瓜-前传">分享到</a>
-      
-
-      
-        <a href="http://yoursite.com/2019/10/10/ MachineLearning/西瓜1/#ds-thread" class="article-comment-link">评论</a>
       
 
       
@@ -752,7 +950,7 @@ n个输入,可行解为n个输入的子集\\
   <div class="widget-wrap">
     <h3 class="widget-title">分类</h3>
     <div class="widget">
-      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Java/">Java</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Linux/">Linux</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Machine-Learning/">Machine Learning</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Read/">Read</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/algorithm/">algorithm</a><span class="category-list-count">8</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/web技术/">web技术</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/垃圾场/">垃圾场</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/微机原理/">微机原理</a><span class="category-list-count">7</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/操作系统/">操作系统</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/机器学习/">机器学习</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/离散数学/">离散数学</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/算法设计与分析/">算法设计与分析</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/组合数学/">组合数学</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/计算方法/">计算方法</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/计算机系统结构/">计算机系统结构</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/随机数学/">随机数学</a><span class="category-list-count">1</span></li></ul>
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Java/">Java</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Linux/">Linux</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Machine-Learning/">Machine Learning</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Read/">Read</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/algorithm/">algorithm</a><span class="category-list-count">8</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/web技术/">web技术</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/垃圾场/">垃圾场</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/微机原理/">微机原理</a><span class="category-list-count">9</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/操作系统/">操作系统</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/机器学习/">机器学习</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/离散数学/">离散数学</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/算法设计与分析/">算法设计与分析</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/组合数学/">组合数学</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/计算方法/">计算方法</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/计算机系统结构/">计算机系统结构</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/随机数学/">随机数学</a><span class="category-list-count">1</span></li></ul>
     </div>
   </div>
 
@@ -765,7 +963,7 @@ n个输入,可行解为n个输入的子集\\
   <div class="widget-wrap">
     <h3 class="widget-title">归档</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/06/">六月 2020</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/05/">五月 2020</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/04/">四月 2020</a><span class="archive-list-count">6</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/03/">三月 2020</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/02/">二月 2020</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/11/">十一月 2019</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/10/">十月 2019</a><span class="archive-list-count">8</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/06/">六月 2020</a><span class="archive-list-count">6</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/05/">五月 2020</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/04/">四月 2020</a><span class="archive-list-count">7</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/03/">三月 2020</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/02/">二月 2020</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/11/">十一月 2019</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/10/">十月 2019</a><span class="archive-list-count">8</span></li></ul>
     </div>
   </div>
 
@@ -777,6 +975,14 @@ n个输入,可行解为n个输入的子集\\
       <ul>
         
           <li>
+            <a href="/2020/06/08/ Math/计数方法/">计数方法</a>
+          </li>
+        
+          <li>
+            <a href="/2020/06/06/ 微机系统/notice/">中断</a>
+          </li>
+        
+          <li>
             <a href="/2020/06/06/ 微机系统/中断/">中断</a>
           </li>
         
@@ -785,15 +991,7 @@ n个输入,可行解为n个输入的子集\\
           </li>
         
           <li>
-            <a href="/2020/06/03/ 微机系统/寻址/">寻址</a>
-          </li>
-        
-          <li>
-            <a href="/2020/06/03/ page/">page</a>
-          </li>
-        
-          <li>
-            <a href="/2020/05/30/ 微机系统/汇编_Loop_多段/">Loop_多段</a>
+            <a href="/2020/06/06/ 微机系统/汇编实验/">汇编实验</a>
           </li>
         
       </ul>

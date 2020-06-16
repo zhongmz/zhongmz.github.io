@@ -14,12 +14,13 @@
 <meta property="og:site_name" content="Xxgzbd&#39;s Blog">
 <meta property="og:description" content="1n阶幻方，其幻和为：  \frac {n*(1+n^2)}{2}存在性：存在除2阶外的任意阶幻方。 计数与分类：奇数阶幻方；4n阶幻方；4n+2阶幻方。 构造方法：见课本 优化问题：略 2鸽巢原理 Ramsey定理 3线排列 圆排列 n元素集合的$r-$圆排列数为  \frac {1}{r}P(n,r)=\frac {n!}{r(n-r)!}集合的排列数和组合数 多重集合的排列  M=\{ \i">
 <meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="https://i.loli.net/2020/06/12/QExUTs5lK19436C.jpg">
 <meta property="og:image" content="https://i.loli.net/2020/06/05/hYyRiKZAk4gQI9V.jpg">
-<meta property="og:updated_time" content="2020-06-05T17:57:18.139Z">
+<meta property="og:updated_time" content="2020-06-12T09:23:19.807Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="组合数学">
 <meta name="twitter:description" content="1n阶幻方，其幻和为：  \frac {n*(1+n^2)}{2}存在性：存在除2阶外的任意阶幻方。 计数与分类：奇数阶幻方；4n阶幻方；4n+2阶幻方。 构造方法：见课本 优化问题：略 2鸽巢原理 Ramsey定理 3线排列 圆排列 n元素集合的$r-$圆排列数为  \frac {1}{r}P(n,r)=\frac {n!}{r(n-r)!}集合的排列数和组合数 多重集合的排列  M=\{ \i">
-<meta name="twitter:image" content="https://i.loli.net/2020/06/05/hYyRiKZAk4gQI9V.jpg">
+<meta name="twitter:image" content="https://i.loli.net/2020/06/12/QExUTs5lK19436C.jpg">
   
     <link rel="alternative" href="/atom.xml" title="Xxgzbd&#39;s Blog" type="application/atom+xml">
   
@@ -129,41 +130,91 @@ M=\{ \infty \cdot a_1,\infty \cdot a_2...\infty \cdot a_n\},r \geq n,则M中每�
 \dbinom{n}{k}\\
 (1)\     \dbinom{n}{k}=\dbinom{n}{n-k} \\
 (2)\     \dbinom{n}{k}=\dbinom{n-1}{k}+\dbinom{n-1}{k-1}\\
-(3)\     \dbinom{n}{\frac{n}{2}}为max\\</script><h3 id="牛顿二项式"><a href="#牛顿二项式" class="headerlink" title="牛顿二项式"></a>牛顿二项式</h3><h1 id="容斥原理"><a href="#容斥原理" class="headerlink" title="容斥原理"></a>容斥原理</h1><p>$S中不具有性质P_1,P_2\dots,P_m的元素个数为$$​</p>
+(3)\     \dbinom{n}{\frac{n}{2}}为max\\</script><h3 id="牛顿二项式"><a href="#牛顿二项式" class="headerlink" title="牛顿二项式"></a>牛顿二项式</h3><h1 id="容斥原理"><a href="#容斥原理" class="headerlink" title="容斥原理"></a>容斥原理</h1><h2 id="0x01-定义"><a href="#0x01-定义" class="headerlink" title="0x01 定义"></a>0x01 定义</h2><p>$S中不具有性质P_1,P_2\dots,P_m的元素个数为$​</p>
 <script type="math/tex; mode=display">
-|\overline{A_1}\cap\overline{A_2}\cap\dots\cap\overline{A_m}|\\=|S|-\sum_{ i= 1}^{m}|A_i|+\sum_{1\leq i<j\leq m}|A_i\cap A_j|-\sum_{1\leq i<j<k\leq m}|A_i\cap A_j\cap A_k|+\dots +(-1)^{m}|A_1\cap A_2\cap\dots\cap A_m|</script><p>不妨设</p>
+|\overline{A_1}\cap\overline{A_2}\cap\dots\cap\overline{A_m}|\\=|S|-\sum_{ i= 1}^{m}|A_i|+\sum_{1\leq i<j\leq m}|A_i\cap A_j|-\sum_{1\leq i<j<k\leq m}|A_i\cap A_j\cap A_k|+\dots +(-1)^{m}|A_1\cap A_2\cap\dots\cap A_m|</script><p>那么容易推出</p>
+<script type="math/tex; mode=display">
+|A_1\cup A_2\cup A_3|=|A_1|+|A_2|+|A_3|-(|A_1\cap A_2|+|A_2\cap A_3|+|A_1\cap A_3|)+|A_1\cap A_2\cap A_3|</script><h2 id="0x02-欧拉函数-phi-n"><a href="#0x02-欧拉函数-phi-n" class="headerlink" title="0x02 欧拉函数$\phi (n)$"></a>0x02 欧拉函数$\phi (n)$</h2><p>设</p>
+<script type="math/tex; mode=display">
+n=p_1^{a_1}p_2^{a_2}p_3^{a_3}p_4^{a_4}...p_k^{a_k}</script><p>有</p>
+<script type="math/tex; mode=display">
+\phi(n)=n(1-\frac{1}{p_1})(1-\frac{1}{p_2})...(1-\frac{1}{p_k})</script><h2 id="0x03-Jordon公式"><a href="#0x03-Jordon公式" class="headerlink" title="0x03 Jordon公式"></a>0x03 Jordon公式</h2><p>不妨设</p>
 <p>$W(0)=|S|$</p>
 <p>$W(1)=\displaystyle\sum_{i=1}^{m}|A_i|$</p>
 <p>$W(2)=\displaystyle\sum_{1\leq i&lt;j\leq m}|A_i\cap A_j|$</p>
 <p>$\dots$</p>
 <p>$W(m)=|A_1\cap A_2\cap \dots A_m|$</p>
 <p>那么有原式为$W(0)-W(1)+\dots+(-1)^mW(m)$</p>
-<p><strong>Jordon公式</strong></p>
 <p>集合S中恰好具有$r(0\leq r\leq m)$种特性质的元素个数</p>
 <p>$M(r)=W(r)-\dbinom{r+1}{r}W(r+1)+\dots+(-1)^{m-r}\dbinom{m}{r}W(m)=\displaystyle\sum_{i=0}^{m-r}(-1)^i\dbinom{r+i}{r}W(r+i)$</p>
-<p><strong>对称筛公式</strong></p>
+<h2 id="0x04-对称筛公式"><a href="#0x04-对称筛公式" class="headerlink" title="0x04 对称筛公式"></a>0x04 对称筛公式</h2><p>用于当对象的性质是对称的，即无差别的。</p>
 <p>即当</p>
 <script type="math/tex; mode=display">
 \\N=|S|\\N(1)=|A_1|=|A_2|=\dots=|A_m|\\N(2)=|A_1\cap A_2|=\dots=|A_{m-1}\cap A_{m}|\\
 ...</script><p>有</p>
 <script type="math/tex; mode=display">
-|\overline{A_1}\cap \overline{A_2}\cap\dots\cap \overline{A_m}|=N-\dbinom{m}{1}N(1)+\dots+\dbinom{m}{m}N(m)</script><h2 id="错位排列"><a href="#错位排列" class="headerlink" title="错位排列"></a>错位排列</h2><p>​    每个物体$i$都不在第$i$个位置上的排列称为错位排列$Derangement$，通常使用$D_n$表示错位排列数</p>
+|\overline{A_1}\cap \overline{A_2}\cap\dots\cap \overline{A_m}|=N-\dbinom{m}{1}N(1)+\dots+\dbinom{m}{m}N(m)</script><h2 id="0x05-多重集的r-组合数"><a href="#0x05-多重集的r-组合数" class="headerlink" title="0x05 多重集的r-组合数"></a>0x05 多重集的r-组合数</h2><ul>
+<li>见例4.2.1</li>
+</ul>
+<ol>
+<li>求无穷集的r-组合数</li>
+<li>注意全集是哪一个，约束条件是什么？</li>
+<li>构造性质</li>
+<li>求各个子集的模</li>
+<li>根据公式求解</li>
+</ol>
+<h2 id="0x06-错位排列"><a href="#0x06-错位排列" class="headerlink" title="0x06 错位排列"></a>0x06 错位排列</h2><p>​        每个物体$i$都不在第$i$个位置上的排列称为错位排列$Derangement$，通常使用$D_n$表示错位排列数</p>
 <p>对于$n\geq 1$有</p>
 <script type="math/tex; mode=display">
-D_n=n!(1-\frac{1}{1!}+\frac{1}{2!}-\dots+(-1)^n\frac{1}{n!})</script><h2 id="有限制条件的排列问题"><a href="#有限制条件的排列问题" class="headerlink" title="有限制条件的排列问题"></a>有限制条件的排列问题</h2><p>​    一般来说，令$I={ 1,2,\dots ,n}$在$I$的排列中不出现12，23，34，…，(n-1)n的排列称为有限制条件的排列。通常把排列的个数记作$Q_n$</p>
+D_n=n!(1-\frac{1}{1!}+\frac{1}{2!}-\dots+(-1)^n\frac{1}{n!})</script><ul>
+<li><p>其中可以根据高等数学的知识得，当n较大时</p>
+<script type="math/tex; mode=display">
+P(错位排列出现)=\frac{1}{e}</script></li>
+<li></li>
+</ul>
+<p>可以证明$D_n$满足以下递推式</p>
+<script type="math/tex; mode=display">
+\begin{cases}
+D_n=(n-1)(D_{n-1}+D_{n-2})\\
+D_1=0\\
+D_0=1\\
+\end{cases}</script><h2 id="0x07-有限制条件的排列问题"><a href="#0x07-有限制条件的排列问题" class="headerlink" title="0x07 有限制条件的排列问题"></a>0x07 有限制条件的排列问题</h2><p>​    一般来说，令$I={ 1,2,\dots ,n}$在$I$的排列中不出现12，23，34，…，(n-1)n的排列称为有限制条件的排列。通常把排列的个数记作$Q_n$</p>
 <p>对于$n\geq 1$有</p>
 <script type="math/tex; mode=display">
-Q_n=n!-\dbinom{n-1}{1}(n-1)!+\dbinom{n-1}{2}(n-2)!-\dots+(-1)^{n-1}\cdot 1!</script><h2 id="棋盘多项式与有禁区的排列"><a href="#棋盘多项式与有禁区的排列" class="headerlink" title="棋盘多项式与有禁区的排列"></a>棋盘多项式与有禁区的排列</h2><p>设$C$是一个棋盘，$r_k(C)$表示把$k$个棋子布到$C$中的方案数。</p>
-<p>设$C_i$是从棋盘$C$中删除指定方格所在行所在列所剩余的棋盘，$C_l$是从棋盘$C$中删除指定方格后所剩余的棋盘，则有</p>
+Q_n=n!-\dbinom{n-1}{1}(n-1)!+\dbinom{n-1}{2}(n-2)!-\dots+(-1)^{n-1}\cdot 1!</script><p>可以通过数学公式变形得到</p>
 <script type="math/tex; mode=display">
-r_k(C)=r_{k-1}(C_i)+r_k(C_l)\  其中k\geq 1</script><p>设棋盘$C$是由$C_1$和$C_2$两部分组成，且其布棋方案是互相独立的，则有</p>
+\begin{cases}
+Q_n=D_n+D_{n-1}\\
+Q_1=1\\
+Q_0=0
+\end{cases}</script><h2 id="棋盘多项式与有禁区的排列"><a href="#棋盘多项式与有禁区的排列" class="headerlink" title="棋盘多项式与有禁区的排列"></a>棋盘多项式与有禁区的排列</h2><p>设$C$是一个棋盘，$r_k(C)$表示把$k$个棋子布到$C$中的方案数。</p>
+<ul>
+<li><p>若k大于$|C|,则有 r_k(C)=0$</p>
+</li>
+<li><p>$r_1(C)=|C|$</p>
+</li>
+<li><p>若$C_1$与$C_2$的形状相同，那么有$r_k(C_1)=r_k(C_2)$</p>
+</li>
+<li><p>设$C_i$是从棋盘$C$中删除指定方格所在行所在列所剩余的棋盘，$C_l$是从棋盘$C$中删除指定方格后所剩余的棋盘，则有</p>
+</li>
+</ul>
 <script type="math/tex; mode=display">
-r_k(C)=\displaystyle\sum_{i=0}^{k}r_i(C_1)\cdot r_{k-i}(C_2)</script><p><strong>棋盘多项式，车多项式</strong></p>
+r_k(C)=r_{k-1}(C_i)+r_k(C_l)\  其中k\geq 1</script><ul>
+<li>设棋盘$C$是由$C_1$和$C_2$两部分组成，且其布棋方案是互相独立的，则有</li>
+</ul>
 <script type="math/tex; mode=display">
+r_k(C)=\displaystyle\sum_{i=0}^{k}r_i(C_1)\cdot r_{k-i}(C_2)</script><h3 id="棋盘多项式，车多项式"><a href="#棋盘多项式，车多项式" class="headerlink" title="棋盘多项式，车多项式"></a>棋盘多项式，车多项式</h3><script type="math/tex; mode=display">
 R(C)=\displaystyle\sum_{k=0}^{\infty}r_k(C)x^k</script><p>有</p>
 <p>$R(C)=xR(C_i)+R(C_l)$</p>
 <p>$R(C=R(C_1)\cdot R(C_2)$</p>
-<h1 id="生成函数"><a href="#生成函数" class="headerlink" title="生成函数"></a>生成函数</h1><h2 id="一些性质与常见的生成函数"><a href="#一些性质与常见的生成函数" class="headerlink" title="一些性质与常见的生成函数"></a>一些性质与常见的生成函数</h2><p>设有一个有限或无限的数列 ${a_0,a_1,…,a_k,..}$，做形式幂级数</p>
+<p><img src="https://i.loli.net/2020/06/12/QExUTs5lK19436C.jpg" alt="IMG_1302_20200612-154902_.PNG"></p>
+<h2 id="有禁区的棋盘"><a href="#有禁区的棋盘" class="headerlink" title="有禁区的棋盘"></a>有禁区的棋盘</h2><ol>
+<li>求禁区的棋盘多项式</li>
+<li>求$r_1,r_2…r_n$</li>
+<li>带入公式求解排列数</li>
+</ol>
+<script type="math/tex; mode=display">
+N=n!-r_1(n-1)!+r_2(n-2)!+...+(-1)^nr_n0!</script><h1 id="生成函数"><a href="#生成函数" class="headerlink" title="生成函数"></a>生成函数</h1><h2 id="一些性质与常见的生成函数"><a href="#一些性质与常见的生成函数" class="headerlink" title="一些性质与常见的生成函数"></a>一些性质与常见的生成函数</h2><p>设有一个有限或无限的数列 ${a_0,a_1,…,a_k,..}$，做形式幂级数</p>
 <script type="math/tex; mode=display">
 G(x)=a_0+a_1x+\dots+a_kx^k+\dots,</script><p>称$G(x)$为数列${ a_0,a_1,…,a_k,..}$的（普通）生成函数，并记作$G{a_k}$</p>
 <script type="math/tex; mode=display">
@@ -187,7 +238,10 @@ G(x)=\prod _{i=1}^{n}(\sum_{j=0}^{k_i}x^j)\\
 其中，x_k为G(x)展开式中x^k的系数。</script></li>
 <li></li>
 </ul>
-<h1 id="递推关系"><a href="#递推关系" class="headerlink" title="递推关系"></a>递推关系</h1><h2 id="解线性常系数齐次递推关系"><a href="#解线性常系数齐次递推关系" class="headerlink" title="解线性常系数齐次递推关系"></a>解线性常系数齐次递推关系</h2><ul>
+<h2 id="Catalan数列"><a href="#Catalan数列" class="headerlink" title="Catalan数列"></a>Catalan数列</h2><script type="math/tex; mode=display">
+h(n)=\sum_{k=1}^{n-1}h(k)h(n-k)\\</script><p>推理可得，一个凸n+1边形中有$\frac{1}{n}\dbinom{2n-2}{n-1}$种不同的剖分方法</p>
+<h2 id="常见数列的生成函数"><a href="#常见数列的生成函数" class="headerlink" title="常见数列的生成函数"></a>常见数列的生成函数</h2><script type="math/tex; mode=display">
+a_k=k+1,G(x)=\frac{1}{(1-x)^2}</script><h1 id="递推关系"><a href="#递推关系" class="headerlink" title="递推关系"></a>递推关系</h1><h2 id="解线性常系数齐次递推关系"><a href="#解线性常系数齐次递推关系" class="headerlink" title="解线性常系数齐次递推关系"></a>解线性常系数齐次递推关系</h2><ul>
 <li><p>一些问题</p>
 <ul>
 <li>爬楼梯问题</li>
@@ -235,12 +289,10 @@ x^k-c_1x^{k-1}-\dots-c_k=0\\</script></li>
 <li>回代特解求$c_i$</li>
 </ol>
 <p><img src="https://i.loli.net/2020/06/05/hYyRiKZAk4gQI9V.jpg" alt="IMG_1292_20200605-171010_.PNG"></p>
-<h2 id="迭代与归纳解非线性递推关系"><a href="#迭代与归纳解非线性递推关系" class="headerlink" title="迭代与归纳解非线性递推关系"></a>迭代与归纳解非线性递推关系</h2><h1 id="课后例题"><a href="#课后例题" class="headerlink" title="课后例题"></a>课后例题</h1><ul>
-<li>例6.5.2</li>
-<li>习题6.4(2)(3)</li>
-</ul>
-<h1 id="Polya-定理"><a href="#Polya-定理" class="headerlink" title="$Polya$定理"></a>$Polya$定理</h1><ul>
-<li>Q：用m种颜色对n个对象涂色，一个对象涂任意一种颜色，则在置换群H的作用下不等价的方案数为多少？</li>
+<h2 id="迭代与归纳解非线性递推关系"><a href="#迭代与归纳解非线性递推关系" class="headerlink" title="迭代与归纳解非线性递推关系"></a>迭代与归纳解非线性递推关系</h2><ul>
+<li><h1 id="Polya-定理"><a href="#Polya-定理" class="headerlink" title="$Polya$定理"></a>$Polya$定理</h1></li>
+<li><p>Q：用m种颜色对n个对象涂色，一个对象涂任意一种颜色，则在置换群H的作用下不等价的方案数为多少？</p>
+</li>
 </ul>
 <ol>
 <li><p>构造置换群<code>H</code>，其中置换群的意义为：寻找等价类；这些等价类在这些$\sigma$的作用下的等价。从而寻找等价类的数量</p>
@@ -268,12 +320,17 @@ f(x_1...x_n)=\frac{1}{|H|}\sum{s_k^{\lambda{(\sigma_k)}}}</script></li>
 <li>构造<code>H</code></li>
 <li>阅读<code>例7.6.1</code>和<code>例7.6.2</code></li>
 </ul>
+<h1 id="课后例题"><a href="#课后例题" class="headerlink" title="课后例题"></a>课后例题</h1><ul>
+<li>例4.4 注意题干条件存在着所有人必存在一种情况，那么可以构造另外一种容斥</li>
+<li>例6.5.2</li>
+<li>习题6.4(2)(3)</li>
+</ul>
 
       
     </div>
     <footer class="article-footer">
       
-        <a data-url="http://yoursite.com/2020/04/06/ Math/组合数学/" data-id="ckb681qy9001m54vitbozmk9v" class="article-share-link" data-share="baidu" data-title="组合数学">分享到</a>
+        <a data-url="http://yoursite.com/2020/04/06/ Math/组合数学/" data-id="ckbhepcvi001wo0viehocxati" class="article-share-link" data-share="baidu" data-title="组合数学">分享到</a>
       
 
       
@@ -321,7 +378,7 @@ f(x_1...x_n)=\frac{1}{|H|}\sum{s_k^{\lambda{(\sigma_k)}}}</script></li>
   <div class="widget-wrap">
     <h3 class="widget-title">分类</h3>
     <div class="widget">
-      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Java/">Java</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Linux/">Linux</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Machine-Learning/">Machine Learning</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Read/">Read</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/algorithm/">algorithm</a><span class="category-list-count">8</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/web技术/">web技术</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/垃圾场/">垃圾场</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/微机原理/">微机原理</a><span class="category-list-count">7</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/操作系统/">操作系统</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/机器学习/">机器学习</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/离散数学/">离散数学</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/算法设计与分析/">算法设计与分析</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/组合数学/">组合数学</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/计算方法/">计算方法</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/计算机系统结构/">计算机系统结构</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/随机数学/">随机数学</a><span class="category-list-count">1</span></li></ul>
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Java/">Java</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Linux/">Linux</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Machine-Learning/">Machine Learning</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Read/">Read</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/algorithm/">algorithm</a><span class="category-list-count">8</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/web技术/">web技术</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/垃圾场/">垃圾场</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/微机原理/">微机原理</a><span class="category-list-count">9</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/操作系统/">操作系统</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/机器学习/">机器学习</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/离散数学/">离散数学</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/算法设计与分析/">算法设计与分析</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/组合数学/">组合数学</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/计算方法/">计算方法</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/计算机系统结构/">计算机系统结构</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/随机数学/">随机数学</a><span class="category-list-count">1</span></li></ul>
     </div>
   </div>
 
@@ -334,7 +391,7 @@ f(x_1...x_n)=\frac{1}{|H|}\sum{s_k^{\lambda{(\sigma_k)}}}</script></li>
   <div class="widget-wrap">
     <h3 class="widget-title">归档</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/06/">六月 2020</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/05/">五月 2020</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/04/">四月 2020</a><span class="archive-list-count">6</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/03/">三月 2020</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/02/">二月 2020</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/11/">十一月 2019</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/10/">十月 2019</a><span class="archive-list-count">8</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/06/">六月 2020</a><span class="archive-list-count">6</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/05/">五月 2020</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/04/">四月 2020</a><span class="archive-list-count">7</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/03/">三月 2020</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/02/">二月 2020</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/11/">十一月 2019</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/10/">十月 2019</a><span class="archive-list-count">8</span></li></ul>
     </div>
   </div>
 
@@ -346,6 +403,14 @@ f(x_1...x_n)=\frac{1}{|H|}\sum{s_k^{\lambda{(\sigma_k)}}}</script></li>
       <ul>
         
           <li>
+            <a href="/2020/06/08/ Math/计数方法/">计数方法</a>
+          </li>
+        
+          <li>
+            <a href="/2020/06/06/ 微机系统/notice/">中断</a>
+          </li>
+        
+          <li>
             <a href="/2020/06/06/ 微机系统/中断/">中断</a>
           </li>
         
@@ -354,15 +419,7 @@ f(x_1...x_n)=\frac{1}{|H|}\sum{s_k^{\lambda{(\sigma_k)}}}</script></li>
           </li>
         
           <li>
-            <a href="/2020/06/03/ 微机系统/寻址/">寻址</a>
-          </li>
-        
-          <li>
-            <a href="/2020/06/03/ page/">page</a>
-          </li>
-        
-          <li>
-            <a href="/2020/05/30/ 微机系统/汇编_Loop_多段/">Loop_多段</a>
+            <a href="/2020/06/06/ 微机系统/汇编实验/">汇编实验</a>
           </li>
         
       </ul>
