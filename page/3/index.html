@@ -71,14 +71,14 @@
     <div class="outer">
       <section id="main">
   
-    <article id="post-Java核心技术i" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-Linux复习" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2020/04/02/ Java核心技术i/" class="article-date">
+    <a href="/2020/04/02/ Linux复习/" class="article-date">
   <time datetime="2020-04-02T14:56:52.000Z" itemprop="datePublished">2020-04-02</time>
 </a>
     
   <div class="article-category">
-    <a class="article-category-link" href="/categories/Java/">Java</a>
+    <a class="article-category-link" href="/categories/Linux/">Linux</a>
   </div>
 
   </div>
@@ -89,7 +89,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2020/04/02/ Java核心技术i/">Java核心技术i</a>
+      <a class="article-title" href="/2020/04/02/ Linux复习/">Linux复习</a>
     </h1>
   
 
@@ -97,33 +97,184 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>$\lambda 表达式形式：参数，箭头 (-&gt;) 以及一个表达式$</p>
-<p>无需指定$\lambda 表达式的返回类型$</p>
-<p>只有当$\lambda$表达式的体只调用一个方法而不做其他操作时，才能把$\lambda$表达式重写为方法。page248</p>
-<p>$\lambda$就是闭包</p>
-<p>$\lambda$捕获的变量是事实最终变量$effectively\ final$</p>
-<p>$exception\ handing ,异常处理 \ throw\ 抛出\ exception\ handler\ 异常处理器$</p>
-<p>$只需要声明\ IOException,检查型(checked)异常$</p>
-<p>$i.找到一个合适的异常类\ ii.创建这个类的一个对象\ iii.将对象抛出$</p>
-<h1 id="集合"><a href="#集合" class="headerlink" title="集合"></a>集合</h1><h2 id="迭代器·Iterator接口"><a href="#迭代器·Iterator接口" class="headerlink" title="迭代器·Iterator接口"></a>迭代器·Iterator接口</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">interface</span> <span class="title">Interator</span>&lt;<span class="title">E</span>&gt;</span>&#123;</span><br><span class="line">    <span class="function">E <span class="title">next</span><span class="params">()</span></span>;</span><br><span class="line">    <span class="function"><span class="keyword">boolean</span> <span class="title">hasNext</span><span class="params">()</span></span>;</span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">remove</span><span class="params">()</span></span>;</span><br><span class="line">    <span class="function"><span class="keyword">default</span> <span class="keyword">void</span> <span class="title">forEachRemain</span><span class="params">(Consumer&lt;? <span class="keyword">super</span> E&gt; action)</span></span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="Collection"><a href="#Collection" class="headerlink" title="Collection"></a>Collection</h2><h3 id="Queue"><a href="#Queue" class="headerlink" title="Queue"></a>Queue</h3><p>实现方式</p>
-<ul>
-<li>循环数组</li>
-<li>链表</li>
+        <ul>
+<li>使用缓冲</li>
 </ul>
-<h2 id="Map"><a href="#Map" class="headerlink" title="Map"></a>Map</h2><h1 id="IO流"><a href="#IO流" class="headerlink" title="IO流"></a>IO流</h1><ul>
-<li>字节流在直接在文件中操作，字符流需要使用缓冲区</li>
+<h1 id="0x01"><a href="#0x01" class="headerlink" title="0x01"></a>0x01</h1><ul>
+<li>计算机分类<ol>
+<li>巨型计算机</li>
+<li>大型计算机</li>
+<li>小型计算机</li>
+<li>微型计算机</li>
+</ol>
+</li>
+<li>计算机基本组成<ol>
+<li>输入</li>
+<li>处理</li>
+<li>输出</li>
+<li>存储</li>
+</ol>
+</li>
+<li>计算机的硬件模块<ol>
+<li>输入设备</li>
+<li>处理器单元<ul>
+<li>算术逻辑单元</li>
+<li>寄存器</li>
+<li>控制单元</li>
+</ul>
+</li>
+<li>内存<ul>
+<li>随机存储器 <code>RAM Random Access Memory</code>，不能提供永久存储，当电源中断时，内容丢失</li>
+<li>只读存储器 <code>ROM Read Only Memory</code>，用于永久保存产商放置在系统中的程序和数据，不能修改</li>
+</ul>
+</li>
+<li>外部存储器</li>
+<li>输出设备</li>
+</ol>
+</li>
+<li>操作系统模型<ol>
+<li>硬件</li>
+<li>内核</li>
+<li>服务层</li>
+<li>命令层<code>shell</code></li>
+<li>用户层</li>
+</ol>
+</li>
+</ul>
+<h1 id="0x02"><a href="#0x02" class="headerlink" title="0x02"></a>0x02</h1><ul>
+<li><p><code>UNIX</code>最初用汇编语言开发</p>
+</li>
+<li><p>汇编语言编写的程序是与机器相关的</p>
+</li>
+<li><p>1973年,<code>Ken</code>和<code>Dennis</code>成功用C语言重写了<code>UNIX</code>，其中95%为C语言，只有很少部分是汇编语言代码</p>
+</li>
+<li><p><code>UNIX</code>2个主要版本</p>
+<ol>
+<li><code>AT&amp;T UNIX</code>系统V，本书讨论的命令适用于<code>SVR4,UNIX System V Release 4</code></li>
+<li><code>Berkeley UNIX</code>，其版本称为<code>BSD,Berkeley Software Distribution</code></li>
+</ol>
+<p>其他的<code>UNIX</code>变种都是基于这两个版本</p>
+</li>
+<li><p>一些其他的变种，几乎所有的变种都是基于系统<code>V</code></p>
+<ol>
+<li>AIX -&gt;IBM公司开发</li>
+<li>HP-UX-&gt;惠普公司</li>
+<li>LINUX-&gt;芬兰赫尔辛基大学的学生<code>Linux Torvalds</code>的想法</li>
+<li>Solaris也称SunOS-&gt;Sun公司基于V第2版和BSD4.3开发</li>
+<li><code>UnixWare</code>，Novell 公司开发，后来卖给了Santa Cruz Operation公司</li>
+</ol>
+</li>
+<li><p><code>UNIX</code>模型</p>
+<ol>
+<li>内核</li>
+<li>常驻模块</li>
+<li>工具层，<code>Shell</code></li>
+<li>虚拟计算机</li>
+<li>进程</li>
+</ol>
+</li>
+<li><p><code>UNIX</code>特性</p>
+<ol>
+<li>可移植</li>
+<li>多用户</li>
+<li>多任务</li>
+<li>多级文件系统</li>
+<li>与设备独立的输入输出操作</li>
+<li>用户界面<code>Shell</code></li>
+</ol>
+</li>
+</ul>
+<h1 id="0x03"><a href="#0x03" class="headerlink" title="0x03"></a>0x03</h1><ul>
+<li><p>登录</p>
+<ol>
+<li>修改口令 <code>passwd</code></li>
+</ol>
+</li>
+<li><p>口令格式</p>
+<ol>
+<li>新口令与旧口令3个字符不同</li>
+<li>长度至少6个字符，至少2个字母和1个数字</li>
+<li>不能与用户标识相同</li>
+</ol>
+</li>
+<li><p>退出系统 <code>[Ctrl-d]</code></p>
+</li>
+<li><p>在没有退出系统前关闭终端电源并没有结束用户与UNIX系统的交互</p>
+</li>
+<li><p>基本的命令行格式</p>
+<ol>
+<li>命令名</li>
+<li>命令选项</li>
+<li>命令参数</li>
+</ol>
+<p>字段间用1个或多个空格隔开</p>
+</li>
+<li><p><code>UNIX系统</code>对大小写敏感</p>
+</li>
+</ul>
+<h2 id="一些命令"><a href="#一些命令" class="headerlink" title="一些命令"></a>一些命令</h2><ul>
+<li><code>who</code>，列出当前登录系统的所用用户登录名，终端号，登录时间</li>
+<li><code>who am i</code>，显示本终端用户的信息</li>
+<li><code>cal</code>显示日历表<ol>
+<li><code>cal 2 2001</code>显示2001年2月的日历表</li>
+<li><code>cal 2001</code>显示2001年的日历表</li>
+<li><code>learn</code> 包括若干课程的计算机辅助教学程序</li>
+<li><code>help</code> 提供多级菜单来引导用户学习命令</li>
+<li><code>man</code> 显示在线系统文档的内容，<code>man cal</code>可以查找<code>cal</code>的帮助信息</li>
+</ol>
+</li>
+<li>中断程序运行，<code>[Del]</code>或[<code>Ctrl-c</code>]中断键</li>
+</ul>
+<h2 id="Shell种类"><a href="#Shell种类" class="headerlink" title="Shell种类"></a>Shell种类</h2><ul>
+<li><code>Bourne shell</code></li>
+<li><code>Korn shell</code>是<code>Bourne shell</code>的超集</li>
+<li><code>C shell</code>是<code>BSD UNIX</code>的一部分</li>
+</ul>
+<h2 id="登录过程"><a href="#登录过程" class="headerlink" title="登录过程"></a>登录过程</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">st=&gt;start: UNIX系统启动，操作系统的内核装入内存</span><br><span class="line">op1=&gt;operation: 用户登录，shell 程序装入内存</span><br><span class="line">op2=&gt;operation: init程序为系统的每一个终端端口激活getty程序</span><br><span class="line">op3=&gt;operation: getty程序在相应终端上显示login，并等待用户输入</span><br><span class="line">op4=&gt;operation: 若登录成功，进入shell程序</span><br><span class="line">op5=&gt;operation: 若用户退出程序，shell终止</span><br><span class="line">op6=&gt;operation: UNIX在终端启动一个新的getty程序并等待新用户登录</span><br><span class="line">e=&gt;end: 结束</span><br><span class="line"></span><br><span class="line">st-&gt;op2-&gt;op3-&gt;op4-&gt;op1-&gt;op5-&gt;op6-&gt;e</span><br></pre></td></tr></table></figure>
+<h1 id="0x04"><a href="#0x04" class="headerlink" title="0x04"></a>0x04</h1><ul>
+<li>vi编辑器</li>
+</ul>
+<ul>
+<li>编辑器<ol>
+<li>行编辑器，如emacs，ex</li>
+<li>全屏编辑器，如vi</li>
+</ol>
+</li>
+<li>发展过程<code>ed-&gt;ex-&gt;vi</code>，其中<code>vi</code>由<code>ex</code>发展而来</li>
+</ul>
+<ul>
+<li><code>vi</code>的两个版本<ol>
+<li><code>view</code>编辑器</li>
+<li><code>vedit</code>编辑器</li>
+</ol>
+</li>
+<li><code>vi</code>的工作模式<ol>
+<li>命令模式</li>
+<li>文本输入模式</li>
+</ol>
+</li>
+</ul>
+<h2 id="命令模式"><a href="#命令模式" class="headerlink" title="命令模式"></a>命令模式</h2><p><img src="https://i.loli.net/2020/06/13/LPZjoiwgb6xflBc.jpg" alt="IMG_1308_20200613-122112_.PNG"></p>
+<h2 id="文本输入模式"><a href="#文本输入模式" class="headerlink" title="文本输入模式"></a>文本输入模式</h2><p><img src="https://i.loli.net/2020/06/13/L9tziUZ2d3e6OvB.jpg" alt="IMG_1309_20200613-122125_.PNG"></p>
+<ul>
+<li>缩写和宏</li>
+</ul>
+<h1 id="0x00"><a href="#0x00" class="headerlink" title="0x00"></a>0x00</h1><ul>
+<li>字节，8位，适合存储字符</li>
+<li>字，一种字节组合，在不同系统中字的大小不同</li>
+<li><code>[Spacebar]</code>:一个空格</li>
+<li><code>[Tab]</code>:8个空格</li>
 </ul>
 
       
     </div>
     <footer class="article-footer">
       
-        <a data-url="http://yoursite.com/2020/04/02/ Java核心技术i/" data-id="ckbhepctt0002o0viv3o4qjvk" class="article-share-link" data-share="baidu" data-title="Java核心技术i">分享到</a>
+        <a data-url="http://yoursite.com/2020/04/02/ Linux复习/" data-id="ckbhesk380005w4viqkrfagms" class="article-share-link" data-share="baidu" data-title="Linux复习">分享到</a>
       
 
       
-        <a href="http://yoursite.com/2020/04/02/ Java核心技术i/#ds-thread" class="article-comment-link">评论</a>
+        <a href="http://yoursite.com/2020/04/02/ Linux复习/#ds-thread" class="article-comment-link">评论</a>
       
 
       
@@ -225,7 +376,7 @@ EAT=快表命中率\cdot (快表访问时间+内存访问时间)+(1-快表命中
     </div>
     <footer class="article-footer">
       
-        <a data-url="http://yoursite.com/2020/03/31/ 操作系统/" data-id="ckbhepcty0006o0viq3ff68m3" class="article-share-link" data-share="baidu" data-title="操作系统">分享到</a>
+        <a data-url="http://yoursite.com/2020/03/31/ 操作系统/" data-id="ckbhesk3a0007w4vien1tnc3m" class="article-share-link" data-share="baidu" data-title="操作系统">分享到</a>
       
 
       
@@ -439,7 +590,7 @@ t_{cpuB}=IC*(2/8*2+6/8*1)*1.25T</script><p>最后即可得答案。</p>
     </div>
     <footer class="article-footer">
       
-        <a data-url="http://yoursite.com/2020/03/31/ 计算机系统结构/" data-id="ckbhepcu1000ao0viebehwn5f" class="article-share-link" data-share="baidu" data-title="计算机系统结构">分享到</a>
+        <a data-url="http://yoursite.com/2020/03/31/ 计算机系统结构/" data-id="ckbhesk3f000dw4vi1g92fran" class="article-share-link" data-share="baidu" data-title="计算机系统结构">分享到</a>
       
 
       
@@ -542,7 +693,7 @@ GCD(a,b)=GCD(Remainder(b,a),a)\\
     </div>
     <footer class="article-footer">
       
-        <a data-url="http://yoursite.com/2020/03/21/ MachineLearning/离散数学第4讲/" data-id="ckbhepcv4001ao0vidqo4dmm9" class="article-share-link" data-share="baidu" data-title="state machine&amp;Euclidean Alg">分享到</a>
+        <a data-url="http://yoursite.com/2020/03/21/ MachineLearning/离散数学第4讲/" data-id="ckbhesk490018w4villtmjt9a" class="article-share-link" data-share="baidu" data-title="state machine&amp;Euclidean Alg">分享到</a>
       
 
       
@@ -673,7 +824,7 @@ n个输入,可行解为n个输入的子集\\
     </div>
     <footer class="article-footer">
       
-        <a data-url="http://yoursite.com/2020/02/13/ 算法设计及分析/" data-id="ckbhepctz0007o0vi2btrziex" class="article-share-link" data-share="baidu" data-title="算法设计与分析">分享到</a>
+        <a data-url="http://yoursite.com/2020/02/13/ 算法设计及分析/" data-id="ckbhesk390006w4viben09adt" class="article-share-link" data-share="baidu" data-title="算法设计与分析">分享到</a>
       
 
       
@@ -722,7 +873,7 @@ n个输入,可行解为n个输入的子集\\
     </div>
     <footer class="article-footer">
       
-        <a data-url="http://yoursite.com/2019/11/18/ Algorithm/Warshall/" data-id="ckbhepcut000yo0vit8y10lqw" class="article-share-link" data-share="baidu" data-title="Warshall&amp;All_componet">分享到</a>
+        <a data-url="http://yoursite.com/2019/11/18/ Algorithm/Warshall/" data-id="ckbhesk480015w4vit3xr1x00" class="article-share-link" data-share="baidu" data-title="Warshall&amp;All_componet">分享到</a>
       
 
       
@@ -771,7 +922,7 @@ n个输入,可行解为n个输入的子集\\
     </div>
     <footer class="article-footer">
       
-        <a data-url="http://yoursite.com/2019/11/13/ Algorithm/Prim/" data-id="ckbhepcuo000to0vix0eggo7e" class="article-share-link" data-share="baidu" data-title="Prim">分享到</a>
+        <a data-url="http://yoursite.com/2019/11/13/ Algorithm/Prim/" data-id="ckbhesk41000tw4vi6iwwmnhv" class="article-share-link" data-share="baidu" data-title="Prim">分享到</a>
       
 
       
@@ -820,7 +971,7 @@ n个输入,可行解为n个输入的子集\\
     </div>
     <footer class="article-footer">
       
-        <a data-url="http://yoursite.com/2019/11/13/ MachineLearning/Kmeans/" data-id="ckbhepcv7001eo0vi2l9cto69" class="article-share-link" data-share="baidu" data-title="Kmeans">分享到</a>
+        <a data-url="http://yoursite.com/2019/11/13/ MachineLearning/Kmeans/" data-id="ckbhesk4a001aw4vi92ylfhip" class="article-share-link" data-share="baidu" data-title="Kmeans">分享到</a>
       
 
       
@@ -869,7 +1020,7 @@ n个输入,可行解为n个输入的子集\\
     </div>
     <footer class="article-footer">
       
-        <a data-url="http://yoursite.com/2019/10/27/ Algorithm/BinTree/" data-id="ckbhepcus000xo0vi5i5ewn5l" class="article-share-link" data-share="baidu" data-title="BinTree">分享到</a>
+        <a data-url="http://yoursite.com/2019/10/27/ Algorithm/BinTree/" data-id="ckbhesk3z000rw4vig9jewzxx" class="article-share-link" data-share="baidu" data-title="BinTree">分享到</a>
       
 
       
@@ -920,7 +1071,7 @@ n个输入,可行解为n个输入的子集\\
     </div>
     <footer class="article-footer">
       
-        <a data-url="http://yoursite.com/2019/10/21/ Algorithm/EulerSieve/" data-id="ckbhepcum000qo0viopnrmzgj" class="article-share-link" data-share="baidu" data-title="EulerSieve">分享到</a>
+        <a data-url="http://yoursite.com/2019/10/21/ Algorithm/EulerSieve/" data-id="ckbhesk3y000qw4vi2y4mqkx8" class="article-share-link" data-share="baidu" data-title="EulerSieve">分享到</a>
       
 
       

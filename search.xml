@@ -1401,6 +1401,31 @@ u=\frac{\overline{X}-\mu}{\sigma/\sqrt{n}}为N(0,1)分布</script>]]></content>
       </categories>
   </entry>
   <entry>
+    <title>Java核心技术i</title>
+    <url>/2020/04/02/%20Java%E6%A0%B8%E5%BF%83%E6%8A%80%E6%9C%AFi/</url>
+    <content><![CDATA[<p>$\lambda 表达式形式：参数，箭头 (-&gt;) 以及一个表达式$</p>
+<p>无需指定$\lambda 表达式的返回类型$</p>
+<p>只有当$\lambda$表达式的体只调用一个方法而不做其他操作时，才能把$\lambda$表达式重写为方法。page248</p>
+<p>$\lambda$就是闭包</p>
+<p>$\lambda$捕获的变量是事实最终变量$effectively\ final$</p>
+<p>$exception\ handing ,异常处理 \ throw\ 抛出\ exception\ handler\ 异常处理器$</p>
+<p>$只需要声明\ IOException,检查型(checked)异常$</p>
+<p>$i.找到一个合适的异常类\ ii.创建这个类的一个对象\ iii.将对象抛出$</p>
+<h1 id="集合"><a href="#集合" class="headerlink" title="集合"></a>集合</h1><h2 id="迭代器·Iterator接口"><a href="#迭代器·Iterator接口" class="headerlink" title="迭代器·Iterator接口"></a>迭代器·Iterator接口</h2><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">interface</span> <span class="title">Interator</span>&lt;<span class="title">E</span>&gt;</span>&#123;</span><br><span class="line">    <span class="function">E <span class="title">next</span><span class="params">()</span></span>;</span><br><span class="line">    <span class="function"><span class="keyword">boolean</span> <span class="title">hasNext</span><span class="params">()</span></span>;</span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">remove</span><span class="params">()</span></span>;</span><br><span class="line">    <span class="function"><span class="keyword">default</span> <span class="keyword">void</span> <span class="title">forEachRemain</span><span class="params">(Consumer&lt;? <span class="keyword">super</span> E&gt; action)</span></span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="Collection"><a href="#Collection" class="headerlink" title="Collection"></a>Collection</h2><h3 id="Queue"><a href="#Queue" class="headerlink" title="Queue"></a>Queue</h3><p>实现方式</p>
+<ul>
+<li>循环数组</li>
+<li>链表</li>
+</ul>
+<h2 id="Map"><a href="#Map" class="headerlink" title="Map"></a>Map</h2><h1 id="IO流"><a href="#IO流" class="headerlink" title="IO流"></a>IO流</h1><ul>
+<li>字节流在直接在文件中操作，字符流需要使用缓冲区</li>
+</ul>
+]]></content>
+      <categories>
+        <category>Java</category>
+      </categories>
+  </entry>
+  <entry>
     <title>Linux复习</title>
     <url>/2020/04/02/%20Linux%E5%A4%8D%E4%B9%A0/</url>
     <content><![CDATA[<ul>
@@ -1574,31 +1599,6 @@ u=\frac{\overline{X}-\mu}{\sigma/\sqrt{n}}为N(0,1)分布</script>]]></content>
 ]]></content>
       <categories>
         <category>Linux</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>Java核心技术i</title>
-    <url>/2020/04/02/%20Java%E6%A0%B8%E5%BF%83%E6%8A%80%E6%9C%AFi/</url>
-    <content><![CDATA[<p>$\lambda 表达式形式：参数，箭头 (-&gt;) 以及一个表达式$</p>
-<p>无需指定$\lambda 表达式的返回类型$</p>
-<p>只有当$\lambda$表达式的体只调用一个方法而不做其他操作时，才能把$\lambda$表达式重写为方法。page248</p>
-<p>$\lambda$就是闭包</p>
-<p>$\lambda$捕获的变量是事实最终变量$effectively\ final$</p>
-<p>$exception\ handing ,异常处理 \ throw\ 抛出\ exception\ handler\ 异常处理器$</p>
-<p>$只需要声明\ IOException,检查型(checked)异常$</p>
-<p>$i.找到一个合适的异常类\ ii.创建这个类的一个对象\ iii.将对象抛出$</p>
-<h1 id="集合"><a href="#集合" class="headerlink" title="集合"></a>集合</h1><h2 id="迭代器·Iterator接口"><a href="#迭代器·Iterator接口" class="headerlink" title="迭代器·Iterator接口"></a>迭代器·Iterator接口</h2><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">interface</span> <span class="title">Interator</span>&lt;<span class="title">E</span>&gt;</span>&#123;</span><br><span class="line">    <span class="function">E <span class="title">next</span><span class="params">()</span></span>;</span><br><span class="line">    <span class="function"><span class="keyword">boolean</span> <span class="title">hasNext</span><span class="params">()</span></span>;</span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">remove</span><span class="params">()</span></span>;</span><br><span class="line">    <span class="function"><span class="keyword">default</span> <span class="keyword">void</span> <span class="title">forEachRemain</span><span class="params">(Consumer&lt;? <span class="keyword">super</span> E&gt; action)</span></span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="Collection"><a href="#Collection" class="headerlink" title="Collection"></a>Collection</h2><h3 id="Queue"><a href="#Queue" class="headerlink" title="Queue"></a>Queue</h3><p>实现方式</p>
-<ul>
-<li>循环数组</li>
-<li>链表</li>
-</ul>
-<h2 id="Map"><a href="#Map" class="headerlink" title="Map"></a>Map</h2><h1 id="IO流"><a href="#IO流" class="headerlink" title="IO流"></a>IO流</h1><ul>
-<li>字节流在直接在文件中操作，字符流需要使用缓冲区</li>
-</ul>
-]]></content>
-      <categories>
-        <category>Java</category>
       </categories>
   </entry>
   <entry>
