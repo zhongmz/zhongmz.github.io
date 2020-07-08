@@ -111,13 +111,18 @@
     </div>
     <footer class="article-footer">
       
-        <a data-url="http://yoursite.com/2019/10/01/ Algorithm/KMP/" data-id="ckcd742ot000u5cvi9it814fw" class="article-share-link" data-share="baidu" data-title="KMP">分享到</a>
+        <a data-url="http://yoursite.com/2019/10/01/ Algorithm/KMP/" data-id="ckcd78c7u000sokvipkcas0yw" class="article-share-link" data-share="baidu" data-title="KMP">分享到</a>
       
 
       
         <a href="http://yoursite.com/2019/10/01/ Algorithm/KMP/#ds-thread" class="article-comment-link">评论</a>
       
 
+      
+        <a href="/2019/10/01/ Algorithm/KMP/#comments" class="article-comment-link">
+          <span class="post-comments-count valine-comment-count" data-xid="/2019/10/01/ Algorithm/KMP/" itemprop="commentCount"></span>
+          文章评论
+        </a>
       
 
       
@@ -148,6 +153,9 @@
   </section>
 
   
+  <section id="comments" class="vcomment">
+  </section>
+
 
 </section>
       
@@ -345,6 +353,29 @@ MathJax.Hub.Queue(function() {
 
 <script src="/js/script.js"></script>
 
+
+  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  <script src="//unpkg.com/valine/dist/Valine.min.js"></script>
+<script>
+    var GUEST_INFO = ['nick','mail','link'];
+    var guest_info = 'nick,mail,link'.split(',').filter(function(item){
+        return GUEST_INFO.indexOf(item) > -1
+    });
+    var notify = 'true' == true;
+    var verify = 'false' == true;
+    new Valine({
+        el: '.vcomment',
+        notify: notify,
+        verify: verify,
+        appId: "dw13T43mcFlm089XK3HgRVyd-gzGzoHsz# leancloud application app id",
+        appKey: "fK65073FUmnd7otc0FX8Y0E3# leancloud application app key",
+        placeholder: "Just go go",
+        pageSize:'10',
+        avatar:'mm',
+        lang:'zh-cn',
+        path:'/'
+    });
+</script>
  
 
 
