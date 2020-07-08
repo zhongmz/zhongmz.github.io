@@ -17,7 +17,7 @@
 <meta property="og:image" content="https://i.loli.net/2020/07/08/lGQbRz3yvTJ4B1I.png">
 <meta property="og:image" content="https://i.loli.net/2020/07/08/nRyjckhQYSJsgKa.png">
 <meta property="og:image" content="https://github.com/fengdu78/Coursera-ML-AndrewNg-Notes/raw/master/images/2516821097bda5dfaf0b94e55de851e0.png">
-<meta property="og:updated_time" content="2020-07-08T03:25:28.528Z">
+<meta property="og:updated_time" content="2020-07-08T09:22:54.244Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="SVM">
 <meta name="twitter:description" content="我们知道 逻辑回归激励函数  h_{\theta}(x)=\frac{1}{1+e^{-\theta^{T}x}} 本质上，支持向量机的代价函数与逻辑回归的代价函数无差别，但是为了使得后面计算更直观些，我们不妨稍微调整一下支持向量机的代价函数。  回顾逻辑回归代价函数  -(ylog(h_{\theta}(x))+(1-y)log(1-h_{\theta}(x))) 而支持向量机代价函数  C\s">
@@ -103,7 +103,7 @@
         <p>我们知道</p>
 <p>逻辑回归激励函数</p>
 <script type="math/tex; mode=display">
-h_{\theta}(x)=\frac{1}{1+e^{-\theta^{T}x}}</script><p><img src="https://i.loli.net/2020/07/08/lGQbRz3yvTJ4B1I.png" alt="D6V`DOYMLRTZ@TL_BG__F_9.png"></p>
+h_{\theta}(x)=\frac{1}{1+e^{-\theta^{T}x}}</script><p><img src="https://i.loli.net/2020/07/08/lGQbRz3yvTJ4B1I.png" alt="激励函数"></p>
 <p>本质上，支持向量机的代价函数与逻辑回归的代价函数无差别，但是为了使得后面计算更直观些，我们不妨稍微调整一下支持向量机的代价函数。</p>
 <ul>
 <li><p>回顾逻辑回归代价函数</p>
@@ -116,7 +116,7 @@ C\sum_{i=1}^{m}[y^{(i)}cost_1(\theta^{T}x^{(i)})+(1-y^{i})cost_0(\theta^{T}x^{(i
 </li>
 </ul>
 <p>而SVM也被人们称之为大间距分类器。</p>
-<p><img src="https://i.loli.net/2020/07/08/nRyjckhQYSJsgKa.png" alt="QQ1_K0_05ABZ_85__MD6_ZU.png"></p>
+<p><img src="https://i.loli.net/2020/07/08/nRyjckhQYSJsgKa.png" alt="大间距分类器"></p>
 <p>即，使得间距最大。</p>
 <ul>
 <li>核函数</li>
@@ -128,7 +128,7 @@ C\sum_{i=1}^{m}[y^{(i)}cost_1(\theta^{T}x^{(i)})+(1-y^{i})cost_0(\theta^{T}x^{(i
 \theta_0+\theta_1f_1+\theta_2f_2+\theta_3f_3+\theta_4f_4+...</script><h3 id="高斯核函数"><a href="#高斯核函数" class="headerlink" title="高斯核函数"></a>高斯核函数</h3><ul>
 <li>根据$x$的各个特征选取<code>landmarks</code></li>
 </ul>
-<p><img src="https://github.com/fengdu78/Coursera-ML-AndrewNg-Notes/raw/master/images/2516821097bda5dfaf0b94e55de851e0.png" alt="img"></p>
+<p><img src="https://github.com/fengdu78/Coursera-ML-AndrewNg-Notes/raw/master/images/2516821097bda5dfaf0b94e55de851e0.png" alt="核函数"></p>
 <script type="math/tex; mode=display">
 example:\\
 f_1=similarity(x,l^{(1)})=e^{-\frac{||x-l^{(1)}||^2}{2\sigma^2}}</script><p>那么</p>
@@ -173,11 +173,13 @@ min C\sum_{i=1}^{m}[y^{(i)}cost_1(\theta^{T}f^{(i)})+(1-y^{i})cost_0(\theta^{T}f
     </div>
     <footer class="article-footer">
       
-        <a data-url="http://yoursite.com/2020/07/08/ MachineLearning/SVM/" data-id="ckcd5j6vb0013jcvi3g54xpqi" class="article-share-link" data-share="baidu" data-title="SVM">分享到</a>
+        <a data-url="http://yoursite.com/2020/07/08/ MachineLearning/SVM/" data-id="ckcd6ud580018xkvickep0jga" class="article-share-link" data-share="baidu" data-title="SVM">分享到</a>
       
 
       
         <a href="http://yoursite.com/2020/07/08/ MachineLearning/SVM/#ds-thread" class="article-comment-link">评论</a>
+      
+
       
 
       
@@ -203,6 +205,7 @@ min C\sum_{i=1}^{m}[y^{(i)}cost_1(\theta^{T}f^{(i)})+(1-y^{i})cost_0(\theta^{T}f
     <div id="ds-thread" class="ds-thread" data-thread-key="2020/07/08/ MachineLearning/SVM/" data-title="SVM" data-url="http://yoursite.com/2020/07/08/ MachineLearning/SVM/"></div>
   </section>
 
+  
 
 </section>
       
@@ -399,6 +402,9 @@ MathJax.Hub.Queue(function() {
 
 
 <script src="/js/script.js"></script>
+
+ 
+
 
 <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
 
