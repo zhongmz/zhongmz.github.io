@@ -4,20 +4,19 @@
 <head><meta name="generator" content="Hexo 3.9.0">
   <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="utf-8">
   
-  <title>iterator | Xxgzbd&#39;s Blog</title>
+  <title>Archives: 2020/7 | Xxgzbd&#39;s Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="C++ 迭代器 定义：可以是概念本身，可以是迭代器类型，可以是某个迭代器对象。 总之，它能使我们能访问容器的元素或者改变某个元素。  123456789vector&amp;lt;int&amp;gt; Vec;auto it=Vec.begin();while(it!=Vec.end())&amp;#123;							    cout&amp;lt;&amp;lt;*it&amp;lt;&amp;lt;endl;							//解引用&amp;#125">
+  <meta name="description" content="记录">
 <meta name="keywords" content="algorithm math">
-<meta property="og:type" content="article">
-<meta property="og:title" content="iterator">
-<meta property="og:url" content="http://yoursite.com/2019/10/09/ 迭代器/index.html">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Xxgzbd&#39;s Blog">
+<meta property="og:url" content="http://yoursite.com/archives/2020/07/index.html">
 <meta property="og:site_name" content="Xxgzbd&#39;s Blog">
-<meta property="og:description" content="C++ 迭代器 定义：可以是概念本身，可以是迭代器类型，可以是某个迭代器对象。 总之，它能使我们能访问容器的元素或者改变某个元素。  123456789vector&amp;lt;int&amp;gt; Vec;auto it=Vec.begin();while(it!=Vec.end())&amp;#123;							    cout&amp;lt;&amp;lt;*it&amp;lt;&amp;lt;endl;							//解引用&amp;#125">
+<meta property="og:description" content="记录">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2020-04-29T07:25:52.395Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="iterator">
-<meta name="twitter:description" content="C++ 迭代器 定义：可以是概念本身，可以是迭代器类型，可以是某个迭代器对象。 总之，它能使我们能访问容器的元素或者改变某个元素。  123456789vector&amp;lt;int&amp;gt; Vec;auto it=Vec.begin();while(it!=Vec.end())&amp;#123;							    cout&amp;lt;&amp;lt;*it&amp;lt;&amp;lt;endl;							//解引用&amp;#125">
+<meta name="twitter:title" content="Xxgzbd&#39;s Blog">
+<meta name="twitter:description" content="记录">
   
     <link rel="alternative" href="/atom.xml" title="Xxgzbd&#39;s Blog" type="application/atom+xml">
   
@@ -70,99 +69,39 @@
   </div>
 </header>
     <div class="outer">
-      <section id="main"><article id="post-迭代器" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2019/10/09/ 迭代器/" class="article-date">
-  <time datetime="2019-10-09T15:21:21.000Z" itemprop="datePublished">2019-10-09</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/垃圾场/">垃圾场</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
+      <section id="main">
   
-    <h1 class="article-title" itemprop="name">
-      iterator
+  
+    
+    
+      
+      
+      <section class="archives-wrap">
+        <div class="archive-year-wrap">
+          <a href="/archives/2020" class="archive-year">2020</a>
+        </div>
+        <div class="archives">
+    
+    <article class="archive-article archive-type-post">
+  <div class="archive-article-inner">
+    <header class="archive-article-header">
+      <a href="/2020/07/08/ MachineLearning/SVM/" class="archive-article-date">
+  <time datetime="2020-07-08T01:56:52.000Z" itemprop="datePublished">7月 8</time>
+</a>
+      
+  
+    <h1 itemprop="name">
+      <a class="archive-article-title" href="/2020/07/08/ MachineLearning/SVM/">SVM</a>
     </h1>
   
 
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="C-迭代器"><a href="#C-迭代器" class="headerlink" title="C++ 迭代器"></a>C++ 迭代器</h3><ul>
-<li>定义：可以是概念本身，可以是迭代器类型，可以是某个迭代器对象。</li>
-<li>总之，它能使我们能访问容器的元素或者改变某个元素。</li>
-</ul>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; Vec;</span><br><span class="line"><span class="keyword">auto</span> it=Vec.begin();</span><br><span class="line"><span class="keyword">while</span>(it!=Vec.end())&#123;							</span><br><span class="line">    <span class="built_in">cout</span>&lt;&lt;*it&lt;&lt;<span class="built_in">endl</span>;							<span class="comment">//解引用</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">auto</span> it=Vec.cbegin();					</span><br><span class="line"><span class="keyword">while</span>(it!=Vec.cend())&#123;					</span><br><span class="line">    <span class="built_in">cout</span>&lt;&lt;*it&lt;&lt;<span class="built_in">endl</span>;					</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<ul>
-<li>其中<code>end</code>成员我们称之为尾后迭代器<code>of-the-end iterator</code>，其为尾元素的下一个位置。</li>
-<li>其中<code>Vec.cbegin()</code>的返回值<code>vector&lt;int&gt;::const_iterator</code>，为<code>C++11</code>新标准引入的函数。</li>
-<li><strong>迭代器失效</strong>，若向迭代器所属的容器中添加元素，那么迭代器失效。</li>
-<li>运算<ul>
-<li>所有容器均支持递增运算<code>it++</code>，也支持<code>==</code>和<code>!=</code>比较</li>
-<li>其中<code>string</code>和<code>vector</code>支持的运算更多</li>
-</ul>
-</li>
-</ul>
-<h3 id="Java-Iterator"><a href="#Java-Iterator" class="headerlink" title="Java Iterator"></a>Java Iterator</h3><ul>
-<li><p>定义：是集合类的接口</p>
-</li>
-<li><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">interface</span> <span class="title">Iterator</span>&lt;<span class="title">E</span>&gt;</span>&#123;</span><br><span class="line">    <span class="function">E <span class="title">next</span><span class="params">()</span></span>;</span><br><span class="line">    <span class="function"><span class="keyword">boolean</span> <span class="title">hasNext</span><span class="params">()</span></span>;</span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">remove</span><span class="params">()</span></span>;</span><br><span class="line">    <span class="function"><span class="keyword">default</span> <span class="keyword">void</span> <span class="title">forEachRemaining</span><span class="params">(Consumer&lt;? <span class="keyword">super</span> E&gt; action)</span></span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-</li>
-<li><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">Collection&lt;String&gt; C;</span><br><span class="line">Iterator&lt;String&gt; iter=C.iterator();</span><br><span class="line"><span class="keyword">while</span>(iter.hasNext())&#123;</span><br><span class="line">    String element =iter.next();</span><br><span class="line">    <span class="comment">//do something</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-
-      
-    </div>
-    <footer class="article-footer">
-      
-        <a data-url="http://yoursite.com/2019/10/09/ 迭代器/" data-id="ckcd5j6ua0006jcviitok4q1m" class="article-share-link" data-share="baidu" data-title="iterator">分享到</a>
-      
-
-      
-        <a href="http://yoursite.com/2019/10/09/ 迭代器/#ds-thread" class="article-comment-link">评论</a>
-      
-
-      
-    </footer>
+    </header>
   </div>
-  
-    
-<nav id="article-nav">
-  
-    <a href="/2019/10/10/ MachineLearning/西瓜1/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">下一篇</strong>
-      <div class="article-nav-title">
-        
-          细品西瓜-前传
-        
-      </div>
-    </a>
-  
-  
-    <a href="/2019/10/09/ Algorithm/Manacher/" id="article-nav-older" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">上一篇</strong>
-      <div class="article-nav-title">Manacher</div>
-    </a>
-  
-</nav>
-
-  
 </article>
-
-
-  <section id="comments">
-    <div id="ds-thread" class="ds-thread" data-thread-key="2019/10/09/ 迭代器/" data-title="iterator" data-url="http://yoursite.com/2019/10/09/ 迭代器/"></div>
-  </section>
-
+  
+  
+    </div></section>
+  
 
 </section>
       

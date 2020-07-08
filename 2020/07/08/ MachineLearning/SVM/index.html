@@ -4,20 +4,24 @@
 <head><meta name="generator" content="Hexo 3.9.0">
   <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="utf-8">
   
-  <title>细品西瓜-支持向量机 | Xxgzbd&#39;s Blog</title>
+  <title>SVM | Xxgzbd&#39;s Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="前言 超平面：在数学中，超平面（Hyperplane）是n维欧氏空间中，余维度为1的子空间。即超平面是n维空间中的n-1维的子空间。它是平面中的直线、空间中的平面之推广。">
+  <meta name="description" content="我们知道 逻辑回归激励函数  h_{\theta}(x)=\frac{1}{1+e^{-\theta^{T}x}} 本质上，支持向量机的代价函数与逻辑回归的代价函数无差别，但是为了使得后面计算更直观些，我们不妨稍微调整一下支持向量机的代价函数。  回顾逻辑回归代价函数  -(ylog(h_{\theta}(x))+(1-y)log(1-h_{\theta}(x))) 而支持向量机代价函数  C\s">
 <meta name="keywords" content="algorithm math">
 <meta property="og:type" content="article">
-<meta property="og:title" content="细品西瓜-支持向量机">
-<meta property="og:url" content="http://yoursite.com/2020/05/23/ MachineLearning/西瓜书-支持向量机/index.html">
+<meta property="og:title" content="SVM">
+<meta property="og:url" content="http://yoursite.com/2020/07/08/ MachineLearning/SVM/index.html">
 <meta property="og:site_name" content="Xxgzbd&#39;s Blog">
-<meta property="og:description" content="前言 超平面：在数学中，超平面（Hyperplane）是n维欧氏空间中，余维度为1的子空间。即超平面是n维空间中的n-1维的子空间。它是平面中的直线、空间中的平面之推广。">
+<meta property="og:description" content="我们知道 逻辑回归激励函数  h_{\theta}(x)=\frac{1}{1+e^{-\theta^{T}x}} 本质上，支持向量机的代价函数与逻辑回归的代价函数无差别，但是为了使得后面计算更直观些，我们不妨稍微调整一下支持向量机的代价函数。  回顾逻辑回归代价函数  -(ylog(h_{\theta}(x))+(1-y)log(1-h_{\theta}(x))) 而支持向量机代价函数  C\s">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2020-06-03T13:43:38.314Z">
+<meta property="og:image" content="https://i.loli.net/2020/07/08/lGQbRz3yvTJ4B1I.png">
+<meta property="og:image" content="https://i.loli.net/2020/07/08/nRyjckhQYSJsgKa.png">
+<meta property="og:image" content="https://github.com/fengdu78/Coursera-ML-AndrewNg-Notes/raw/master/images/2516821097bda5dfaf0b94e55de851e0.png">
+<meta property="og:updated_time" content="2020-07-08T03:25:28.528Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="细品西瓜-支持向量机">
-<meta name="twitter:description" content="前言 超平面：在数学中，超平面（Hyperplane）是n维欧氏空间中，余维度为1的子空间。即超平面是n维空间中的n-1维的子空间。它是平面中的直线、空间中的平面之推广。">
+<meta name="twitter:title" content="SVM">
+<meta name="twitter:description" content="我们知道 逻辑回归激励函数  h_{\theta}(x)=\frac{1}{1+e^{-\theta^{T}x}} 本质上，支持向量机的代价函数与逻辑回归的代价函数无差别，但是为了使得后面计算更直观些，我们不妨稍微调整一下支持向量机的代价函数。  回顾逻辑回归代价函数  -(ylog(h_{\theta}(x))+(1-y)log(1-h_{\theta}(x))) 而支持向量机代价函数  C\s">
+<meta name="twitter:image" content="https://i.loli.net/2020/07/08/lGQbRz3yvTJ4B1I.png">
   
     <link rel="alternative" href="/atom.xml" title="Xxgzbd&#39;s Blog" type="application/atom+xml">
   
@@ -70,10 +74,10 @@
   </div>
 </header>
     <div class="outer">
-      <section id="main"><article id="post-MachineLearning/西瓜书-支持向量机" class="article article-type-post" itemscope itemprop="blogPost">
+      <section id="main"><article id="post-MachineLearning/SVM" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2020/05/23/ MachineLearning/西瓜书-支持向量机/" class="article-date">
-  <time datetime="2020-05-23T01:56:52.000Z" itemprop="datePublished">2020-05-23</time>
+    <a href="/2020/07/08/ MachineLearning/SVM/" class="article-date">
+  <time datetime="2020-07-08T01:56:52.000Z" itemprop="datePublished">2020-07-08</time>
 </a>
     
   <div class="article-category">
@@ -88,7 +92,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      细品西瓜-支持向量机
+      SVM
     </h1>
   
 
@@ -96,20 +100,84 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><ul>
-<li>超平面：在<a href="https://zh.wikipedia.org/wiki/數學" target="_blank" rel="noopener">数学</a>中，<strong>超平面（Hyperplane）</strong>是n维欧氏空间中，<a href="https://zh.wikipedia.org/wiki/餘維數" target="_blank" rel="noopener">余维度</a>为1的<a href="https://zh.wikipedia.org/wiki/子空間" target="_blank" rel="noopener">子空间</a>。即超平面是n维空间中的n-1维的子空间。它是平面中的直线、空间中的平面之推广。</li>
-<li></li>
+        <p>我们知道</p>
+<p>逻辑回归激励函数</p>
+<script type="math/tex; mode=display">
+h_{\theta}(x)=\frac{1}{1+e^{-\theta^{T}x}}</script><p><img src="https://i.loli.net/2020/07/08/lGQbRz3yvTJ4B1I.png" alt="D6V`DOYMLRTZ@TL_BG__F_9.png"></p>
+<p>本质上，支持向量机的代价函数与逻辑回归的代价函数无差别，但是为了使得后面计算更直观些，我们不妨稍微调整一下支持向量机的代价函数。</p>
+<ul>
+<li><p>回顾逻辑回归代价函数</p>
+<script type="math/tex; mode=display">
+-(ylog(h_{\theta}(x))+(1-y)log(1-h_{\theta}(x)))</script></li>
+<li><p>而支持向量机代价函数</p>
+<script type="math/tex; mode=display">
+C\sum_{i=1}^{m}[y^{(i)}cost_1(\theta^{T}x^{(i)})+(1-y^{i})cost_0(\theta^{T}x^{(i)})]+\frac{1}{2}\sum_{i=1}^{n}\theta^2_j\\
+其中,cost_0(z)=-log(1-\frac{1}{1+e^{-z}}),cost_1(z)=log\frac{1}{1+e^{-z}}</script><p>其中，C可以理解为$\frac{1}{\lambda}$</p>
+</li>
+</ul>
+<p>而SVM也被人们称之为大间距分类器。</p>
+<p><img src="https://i.loli.net/2020/07/08/nRyjckhQYSJsgKa.png" alt="QQ1_K0_05ABZ_85__MD6_ZU.png"></p>
+<p>即，使得间距最大。</p>
+<ul>
+<li>核函数</li>
+</ul>
+<h2 id="Kernels"><a href="#Kernels" class="headerlink" title="Kernels"></a>Kernels</h2><p>设存在2个特征，我们设其假设函数为</p>
+<script type="math/tex; mode=display">
+\theta_0+\theta_1x_1+\theta_2x_2+\theta_3x_1x_2+\theta_4x_1^2+...</script><p>再进行一些优化</p>
+<script type="math/tex; mode=display">
+\theta_0+\theta_1f_1+\theta_2f_2+\theta_3f_3+\theta_4f_4+...</script><h3 id="高斯核函数"><a href="#高斯核函数" class="headerlink" title="高斯核函数"></a>高斯核函数</h3><ul>
+<li>根据$x$的各个特征选取<code>landmarks</code></li>
+</ul>
+<p><img src="https://github.com/fengdu78/Coursera-ML-AndrewNg-Notes/raw/master/images/2516821097bda5dfaf0b94e55de851e0.png" alt="img"></p>
+<script type="math/tex; mode=display">
+example:\\
+f_1=similarity(x,l^{(1)})=e^{-\frac{||x-l^{(1)}||^2}{2\sigma^2}}</script><p>那么</p>
+<script type="math/tex; mode=display">
+f_1称为核函数</script><p>不妨再重新回顾下过程</p>
+<ol>
+<li><p>Given</p>
+<script type="math/tex; mode=display">
+(x^{(1)},y^{(1)}),(x^{(2)},y^{(2)})...(x^{(m)},y^{(m)})\\</script></li>
+<li><p>Choose</p>
+<script type="math/tex; mode=display">
+l^{(1)}=x^{(1)},l^{(2)}=x^{(2)},...l^{(m)}=x^{(m)}</script></li>
+<li><p>Get $f_i$</p>
+<script type="math/tex; mode=display">
+f_1=similarity(x,l^{(1)})\\
+...</script></li>
+<li><p>对于$x_{(i)}$</p>
+<script type="math/tex; mode=display">
+f^{(i)}_1\\
+f^{(i)}_2\\
+f^{(i)}_3\\
+...\\
+f^{(i)}_m\\</script></li>
+<li><script type="math/tex; mode=display">
+min C\sum_{i=1}^{m}[y^{(i)}cost_1(\theta^{T}f^{(i)})+(1-y^{i})cost_0(\theta^{T}f^{(i)})]+\frac{1}{2}\sum_{i=1}^{n}\theta^2_j\\
+其中,cost_0(z)=-log(1-\frac{1}{1+e^{-z}}),cost_1(z)=log\frac{1}{1+e^{-z}}</script></li>
+</ol>
+<h2 id="对于参数"><a href="#对于参数" class="headerlink" title="对于参数"></a>对于参数</h2><ul>
+<li>C<ul>
+<li>Large C: Lower bias, high variance</li>
+<li>Small C: Higher bias, low variance</li>
+</ul>
+</li>
+<li>$\sigma^2$<ul>
+<li>Large $\sigma^2$: Higher bias lower variance</li>
+<li>Small $\sigma^2$: Lower bias higher variance</li>
+</ul>
+</li>
 </ul>
 
       
     </div>
     <footer class="article-footer">
       
-        <a data-url="http://yoursite.com/2020/05/23/ MachineLearning/西瓜书-支持向量机/" data-id="ckbheywzv001ds4vip9rukeq7" class="article-share-link" data-share="baidu" data-title="细品西瓜-支持向量机">分享到</a>
+        <a data-url="http://yoursite.com/2020/07/08/ MachineLearning/SVM/" data-id="ckcd5j6vb0013jcvi3g54xpqi" class="article-share-link" data-share="baidu" data-title="SVM">分享到</a>
       
 
       
-        <a href="http://yoursite.com/2020/05/23/ MachineLearning/西瓜书-支持向量机/#ds-thread" class="article-comment-link">评论</a>
+        <a href="http://yoursite.com/2020/07/08/ MachineLearning/SVM/#ds-thread" class="article-comment-link">评论</a>
       
 
       
@@ -119,19 +187,10 @@
     
 <nav id="article-nav">
   
-    <a href="/2020/05/28/ MachineLearning/线性代数/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">下一篇</strong>
-      <div class="article-nav-title">
-        
-          线性代数概知
-        
-      </div>
-    </a>
   
-  
-    <a href="/2020/05/17/ MachineLearning/图像/" id="article-nav-older" class="article-nav-link-wrap">
+    <a href="/2020/06/08/ Math/计数方法/" id="article-nav-older" class="article-nav-link-wrap">
       <strong class="article-nav-caption">上一篇</strong>
-      <div class="article-nav-title"></div>
+      <div class="article-nav-title">计数方法</div>
     </a>
   
 </nav>
@@ -141,7 +200,7 @@
 
 
   <section id="comments">
-    <div id="ds-thread" class="ds-thread" data-thread-key="2020/05/23/ MachineLearning/西瓜书-支持向量机/" data-title="细品西瓜-支持向量机" data-url="http://yoursite.com/2020/05/23/ MachineLearning/西瓜书-支持向量机/"></div>
+    <div id="ds-thread" class="ds-thread" data-thread-key="2020/07/08/ MachineLearning/SVM/" data-title="SVM" data-url="http://yoursite.com/2020/07/08/ MachineLearning/SVM/"></div>
   </section>
 
 
@@ -166,7 +225,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">归档</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/06/">六月 2020</a><span class="archive-list-count">6</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/05/">五月 2020</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/04/">四月 2020</a><span class="archive-list-count">7</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/03/">三月 2020</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/02/">二月 2020</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/11/">十一月 2019</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/10/">十月 2019</a><span class="archive-list-count">8</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/07/">七月 2020</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/06/">六月 2020</a><span class="archive-list-count">6</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/05/">五月 2020</a><span class="archive-list-count">7</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/04/">四月 2020</a><span class="archive-list-count">7</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/03/">三月 2020</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/02/">二月 2020</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/11/">十一月 2019</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/10/">十月 2019</a><span class="archive-list-count">8</span></li></ul>
     </div>
   </div>
 
@@ -178,11 +237,11 @@
       <ul>
         
           <li>
-            <a href="/2020/06/08/ Math/计数方法/">计数方法</a>
+            <a href="/2020/07/08/ MachineLearning/SVM/">SVM</a>
           </li>
         
           <li>
-            <a href="/2020/06/06/ 微机系统/中断/">中断</a>
+            <a href="/2020/06/08/ Math/计数方法/">计数方法</a>
           </li>
         
           <li>
@@ -190,11 +249,11 @@
           </li>
         
           <li>
-            <a href="/2020/06/06/ 微机系统/标志寄存器/">标志寄存器</a>
+            <a href="/2020/06/06/ 微机系统/中断/">中断</a>
           </li>
         
           <li>
-            <a href="/2020/06/06/ 微机系统/汇编实验/">汇编实验</a>
+            <a href="/2020/06/06/ 微机系统/标志寄存器/">标志寄存器</a>
           </li>
         
       </ul>

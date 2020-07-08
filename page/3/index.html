@@ -97,10 +97,7 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <ul>
-<li>使用缓冲</li>
-</ul>
-<h1 id="0x01"><a href="#0x01" class="headerlink" title="0x01"></a>0x01</h1><ul>
+        <h1 id="0x01"><a href="#0x01" class="headerlink" title="0x01"></a>0x01</h1><ul>
 <li>计算机分类<ol>
 <li>巨型计算机</li>
 <li>大型计算机</li>
@@ -254,23 +251,249 @@
 </ol>
 </li>
 </ul>
-<h2 id="命令模式"><a href="#命令模式" class="headerlink" title="命令模式"></a>命令模式</h2><p><img src="https://i.loli.net/2020/06/13/LPZjoiwgb6xflBc.jpg" alt="IMG_1308_20200613-122112_.PNG"></p>
-<h2 id="文本输入模式"><a href="#文本输入模式" class="headerlink" title="文本输入模式"></a>文本输入模式</h2><p><img src="https://i.loli.net/2020/06/13/L9tziUZ2d3e6OvB.jpg" alt="IMG_1309_20200613-122125_.PNG"></p>
 <ul>
-<li>缩写和宏</li>
+<li><p>缩写<code>ab</code></p>
+<ol>
+<li>缩写的指定是临时的，它们只是在当前编辑会话中有效</li>
+</ol>
+</li>
+<li><p>宏<code>map</code></p>
+<ol>
+<li><code>map</code>给用户在命令模式下的捷径</li>
+<li>供用户可用的键只有少数几个<code>K</code>,<code>q</code>,<code>V</code>,<code>[Ctrl-e]</code>,<code>[Ctrl-e]</code></li>
+<li>宏的指定是临时的，它们只是在当前编辑会话中有效</li>
+</ol>
+</li>
+<li><p>设置<code>.exrc</code></p>
+<ol>
+<li><p>欲设置编辑器环境启动有效，则将设置的环境写到<code>.exrc</code>中，其启动原理为</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">1.用户打开vi编辑器</span><br><span class="line">2.vi根据当前工作目录的.exrc文件设置编辑环境(若无则查找用户主目录,否则为默认环境)</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+</li>
+<li><p>在<code>vi</code>编辑器中允许<code>UNIX Shell</code>命令，<code>: !</code>+<code>命令</code></p>
+</li>
+<li>行连接<code>J</code></li>
+<li>搜索和替换</li>
+</ul>
+<h2 id="命令模式"><a href="#命令模式" class="headerlink" title="命令模式"></a>命令模式</h2><h2 id><a href="#" class="headerlink" title></a><img src="https://i.loli.net/2020/06/13/LPZjoiwgb6xflBc.jpg" alt="IMG_1308_20200613-122112_.PNG"></h2><p><img src="https://i.loli.net/2020/06/17/GHsQd38TivOm5EF.jpg" alt="IMG_1322_20200617-135032_.PNG"></p>
+<h2 id="文本输入模式"><a href="#文本输入模式" class="headerlink" title="文本输入模式"></a>文本输入模式</h2><p><img src="https://i.loli.net/2020/06/13/L9tziUZ2d3e6OvB.jpg" alt="IMG_1309_20200613-122125_.PNG"></p>
+<h1 id="0x05"><a href="#0x05" class="headerlink" title="0x05"></a>0x05</h1><ul>
+<li>文件系统</li>
+</ul>
+<ul>
+<li>分类<ol>
+<li>规则文件</li>
+<li>目录文件</li>
+<li>特殊文件，即，设备</li>
+</ol>
+</li>
+</ul>
+<ul>
+<li>一些奇怪的目录说法<ol>
+<li>用户主目录</li>
+<li>根目录，根目录用<code>/</code>命名</li>
+<li>工作目录</li>
+</ol>
+</li>
+<li>文件名<ol>
+<li>最大长度取决于<code>UNIX</code>的版本和系统厂商</li>
+<li>所有<code>UNIX</code>系统允许至少14个字符长的文件名，大多数可支持长达255个字符的长度</li>
+<li>字母数字组合</li>
+</ol>
+</li>
+<li>输出重定向</li>
+<li>输入重定向</li>
+<li></li>
+</ul>
+<p><img src="https://i.loli.net/2020/06/17/lhg1CDsJXaYrxAE.jpg" alt="IMG_1324_20200617-160425_.PNG"></p>
+<p><img src="https://i.loli.net/2020/06/17/sLBHSoxr1wdjvPJ.jpg" alt="IMG_1326_20200617-164445_.PNG"></p>
+<p><img src="https://i.loli.net/2020/06/17/Z3lVfoCUxOWAgea.jpg" alt="IMG_1327_20200617-164459_.PNG"></p>
+<p><img src="https://i.loli.net/2020/06/17/hpovxurS5U7VTgY.jpg" alt="IMG_1328_20200617-164511_.PNG"></p>
+<p><img src="https://i.loli.net/2020/06/17/sLBHSoxr1wdjvPJ.jpg" alt="IMG_1326_20200617-164445_.PNG"></p>
+<h1 id="0x06-shell"><a href="#0x06-shell" class="headerlink" title="0x06 shell"></a>0x06 shell</h1><ul>
+<li><p><code>UNIX</code>操作系统组成</p>
+<ol>
+<li>内核</li>
+<li>应用</li>
+</ol>
+</li>
+<li><p>用户与操作系统通过<code>shell</code>进行通信，而基于硬件的操作由内核完成。</p>
+</li>
+<li><p><code>shell</code>主要特征</p>
+<ul>
+<li>命令执行</li>
+<li>文件名替换</li>
+<li><code>I/O</code>重定向</li>
+<li>管道</li>
+<li>环境控制</li>
+<li>后台计算</li>
+<li><code>shell</code>脚本</li>
+</ul>
+</li>
+<li><p>引用字符，用于消除元字符的特殊含义</p>
+<ul>
+<li>反斜杠<code>\</code></li>
+<li>双引号<code>&quot; &quot;</code>：不可消除<code>$</code>，单引号，双引号，<code>!</code></li>
+<li>单引号<code>&#39;&#39;</code>：不可消除单引号</li>
+</ul>
+</li>
+<li><p><code>shell</code>变量</p>
+<ul>
+<li>环境变量，即标准变量</li>
+<li>局部变量</li>
+<li>若变量中有空格，需要使用引用字符</li>
+<li>一些<code>shell</code>变量<ul>
+<li><code>PATH</code>变量设置<code>shell</code>在定位命令时所查找的目录名</li>
+<li><code>PS1</code>变量设置用户提示符字符串</li>
+<li><code>PS2</code>变量设置用户尚未键入完整命令前安回车键的命令提示符</li>
+<li><code>CDPATH</code>变量设置<code>cd</code>命令所查找的的目录</li>
+<li><code>SHELL</code>变量设置用户登录<code>shell</code>的完整路径</li>
+<li><code>TERM</code>变量设置用户终端类型</li>
+<li><code>TZ</code>变量设置用户所在时区</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>更多的元字符</p>
+<ul>
+<li><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">  - `;`，可以键入多个命令用分号隔开</span><br><span class="line">  - `( )`，命令编组</span><br><span class="line">  - `&amp;`，后台计算，一个命令其后紧跟`&amp;`</span><br><span class="line"></span><br><span class="line">- 更多的`UNIX`系统工具</span><br><span class="line"></span><br><span class="line">  - 延时计时，`sleep`命令</span><br><span class="line"></span><br><span class="line">  - `ps`，显示PID</span><br><span class="line"></span><br><span class="line">  - `nohup`</span><br><span class="line"></span><br><span class="line">  - `kill`，终止一个进程，即向指定的线程发送一个信号</span><br><span class="line"></span><br><span class="line">  - `tee`，分离输出</span><br><span class="line"></span><br><span class="line">    - ep</span><br><span class="line"></span><br><span class="line">      ```shell</span><br><span class="line">      sort phone.list | tee phone.sort</span><br></pre></td></tr></table></figure>
+<ul>
+<li>解释：管道将<code>sort</code>命令的输出给tee，tee显示到终端和保存到<code>phone.sort</code></li>
+</ul>
+</li>
+<li><p><code>grep</code>，文件搜索</p>
+</li>
+<li><p><code>sort</code>，文本文件排序，按行将指定文件内容排序。若有2行第一个字符相同，则比较第2个字符…以此类推</p>
+</li>
+<li><p><code>export</code>，将本<code>shell</code>变量可用于其子<code>shell</code></p>
+</li>
+<li><p><code>echo</code>，其中<code>-e</code>激活转义字符</p>
+</li>
+</ul>
+</li>
+<li><p>启动文件</p>
+<ul>
+<li><p>即用户在登录时，<code>shell</code>查看这2个特殊文件，并执行2个文件中的命令</p>
+</li>
+<li><p>系统策略<code>/etc/profile</code></p>
+</li>
+<li>用户策略，位于用户主目录的<code>.profile</code>文件</li>
+</ul>
+</li>
+</ul>
+<p><img src="https://i.loli.net/2020/06/19/L125ze876EbmcHU.jpg" alt="IMG_1335_20200619-141526_.PNG"></p>
+<p><a href="https://imgchr.com/i/NuzruQ" target="_blank" rel="noopener"><img src="https://s1.ax1x.com/2020/06/19/NuzruQ.md.jpg" alt="NuzruQ.md.jpg" style="zoom:200%;"></a></p>
+<p><img src="https://i.loli.net/2020/06/19/NKCWV3UlqJ9H5FL.jpg" alt="IMG_1337_20200619-141552_.PNG" style="zoom:200%;"></p>
+<h1 id="0x07-shell-编程"><a href="#0x07-shell-编程" class="headerlink" title="0x07 shell 编程"></a>0x07 shell 编程</h1><ul>
+<li><p><code>shell</code>会忽略以<code>#</code>开头的行</p>
+</li>
+<li><p>执行脚本</p>
+<ul>
+<li>使用<code>sh</code>命令，即调用另外一个<code>shell</code>来读取文件，执行命令</li>
+<li>将脚本:footprints:变成可执行文件，<code>chmod</code>命令</li>
+</ul>
+</li>
+<li><p>转义字符</p>
+</li>
+<li><p>执行命令<code>.</code>，使用户在当前<code>shell</code>允许程序，而不创建新的子进程。</p>
+</li>
+<li><p>想使用的<code>PATH</code>长期有效，则将改变后的<code>PAHT</code>放到<code>.profile</code>中。</p>
+</li>
+<li><p>读取输入<code>read</code></p>
+</li>
+<li><p>命令行参数</p>
+<ul>
+<li><p>使用特殊<code>shell</code>位置变量</p>
+<p><img src="https://i.loli.net/2020/06/19/btow6OkYhf9J31A.jpg" alt="IMG_1340_20200619-153021_.PNG"></p>
+</li>
+<li><p>赋值<code>set</code>命令</p>
+<p><img src="https://i.loli.net/2020/06/19/oXHQe3Y2qIUz5FD.jpg" alt="IMG_1341_20200619-153444_.PNG"></p>
+</li>
+</ul>
+</li>
+<li><p><code>exit n</code>，终止程序，若没有提供退出值<code>n</code>，那么通常赋值最后一个命令的退出值</p>
+<h2 id="条件与试验"><a href="#条件与试验" class="headerlink" title="条件与试验"></a>条件与试验</h2><ul>
+<li><code>if-then</code>结构</li>
+<li><code>[  ]</code>必须用<code>[]</code>方括号括起来，必须有空格包围</li>
+<li><code>if-then-else</code></li>
+<li><code>if-then-elif</code></li>
+</ul>
+</li>
+<li><p><code>test</code>命令，若表达式为真，则<code>test</code>为0，否则返回非0</p>
+</li>
+<li><p>参数替换<code>{}</code>，即简单版的<code>if-else</code>结构</p>
+</li>
+<li><p>算术运算符<code>expr 1 + 2</code>，运算符与运算元素之间必须有空格</p>
+<ul>
+<li>单独使用会把最终答案输出到屏幕上</li>
+<li>可以用于数字与字母的<code>ASCII</code>码的比较</li>
+</ul>
+</li>
+<li><p>算术操作<code>let (ksh)</code></p>
+<ul>
+<li><code>let</code>自动使用变量的值，直接键入<code>x</code>不需要<code>$x</code></li>
+<li><code>let</code>不需要<code>\</code>来消除<code>* %</code>的特殊含义</li>
+</ul>
+<h2 id="循环"><a href="#循环" class="headerlink" title="循环"></a>循环</h2><ul>
+<li><code>for-in-done</code>结构</li>
+<li><code>while</code>结构</li>
+<li><code>let</code>的命令缩写，下面版本仅适用于<code>ksh</code>，<code>(( ))</code></li>
+</ul>
+</li>
+</ul>
+<ul>
+<li>调试<code>shell</code></li>
+</ul>
+<p><img src="https://s1.ax1x.com/2020/06/19/NK5EQ0.jpg" alt="NK5EQ0.jpg"><br><img src="https://s1.ax1x.com/2020/06/19/NK5kzq.jpg" alt="NK5kzq.jpg"></p>
+<h1 id="0x08-磁盘"><a href="#0x08-磁盘" class="headerlink" title="0x08 磁盘"></a>0x08 磁盘</h1><ul>
+<li>最大文件数目由以下决定<ul>
+<li>未用存储空间大小</li>
+<li>用于保存索引节点的存储空间大小</li>
+</ul>
+</li>
 </ul>
 <h1 id="0x00"><a href="#0x00" class="headerlink" title="0x00"></a>0x00</h1><ul>
-<li>字节，8位，适合存储字符</li>
-<li>字，一种字节组合，在不同系统中字的大小不同</li>
-<li><code>[Spacebar]</code>:一个空格</li>
-<li><code>[Tab]</code>:8个空格</li>
+<li><p>字节，8位，适合存储字符</p>
+</li>
+<li><p>字，一种字节组合，在不同系统中字的大小不同</p>
+</li>
+<li><p><code>[Spacebar]</code>:一个空格</p>
+</li>
+<li><p><code>[Tab]</code>:8个空格</p>
+</li>
+<li><p><code>UNIX</code>中文件时字节序列</p>
+</li>
+<li><p><code>.</code>表示当前目录</p>
+</li>
+<li><p><code>..</code>表示父目录</p>
+</li>
+<li><p>显示当前<code>shell</code>的名称</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">echo $SHELL</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><code>:x</code>可以保存文件并退出vi编辑器</p>
+</li>
+<li><p>绝大多数<code>UNIX</code>命令是保存在磁盘上的程序，称之为系统工具。</p>
+</li>
+<li><p><code>shell</code>变量名可使用字母；数字；下划线，但第一个必须为字母</p>
+</li>
+<li><p>关于<code>KORN shell</code>的内容请参考<code>Page 165</code></p>
+</li>
+<li><p>将值存入变量时，等号两边不允许有空格</p>
+</li>
+<li><p><code>date</code></p>
+<p><img src="https://i.loli.net/2020/06/19/kSIMnzYJcV8BRCw.jpg" alt="IMG_1342_20200619-161810_.PNG"></p>
+</li>
+<li><p><code>if [ ]</code>，<code>[ ]</code>与任何东西都需要有空格，包括<code>if</code></p>
+</li>
 </ul>
+<p><a href="https://yanbin.blog/" target="_blank" rel="noopener">https://yanbin.blog/</a></p>
 
       
     </div>
     <footer class="article-footer">
       
-        <a data-url="http://yoursite.com/2020/04/02/ Linux复习/" data-id="ckbheywy90002s4viobbkhcpn" class="article-share-link" data-share="baidu" data-title="Linux复习">分享到</a>
+        <a data-url="http://yoursite.com/2020/04/02/ Linux复习/" data-id="ckcd5j6u40002jcvipc6kf5wl" class="article-share-link" data-share="baidu" data-title="Linux复习">分享到</a>
       
 
       
@@ -376,7 +599,7 @@ EAT=快表命中率\cdot (快表访问时间+内存访问时间)+(1-快表命中
     </div>
     <footer class="article-footer">
       
-        <a data-url="http://yoursite.com/2020/03/31/ 操作系统/" data-id="ckbheywyc0005s4viq4e8eb6y" class="article-share-link" data-share="baidu" data-title="操作系统">分享到</a>
+        <a data-url="http://yoursite.com/2020/03/31/ 操作系统/" data-id="ckcd5j6ub0007jcvia0462ub6" class="article-share-link" data-share="baidu" data-title="操作系统">分享到</a>
       
 
       
@@ -590,7 +813,7 @@ t_{cpuB}=IC*(2/8*2+6/8*1)*1.25T</script><p>最后即可得答案。</p>
     </div>
     <footer class="article-footer">
       
-        <a data-url="http://yoursite.com/2020/03/31/ 计算机系统结构/" data-id="ckbheywyg0009s4vizyjw0ijr" class="article-share-link" data-share="baidu" data-title="计算机系统结构">分享到</a>
+        <a data-url="http://yoursite.com/2020/03/31/ 计算机系统结构/" data-id="ckcd5j6ud0009jcvib5ebry6o" class="article-share-link" data-share="baidu" data-title="计算机系统结构">分享到</a>
       
 
       
@@ -693,7 +916,7 @@ GCD(a,b)=GCD(Remainder(b,a),a)\\
     </div>
     <footer class="article-footer">
       
-        <a data-url="http://yoursite.com/2020/03/21/ MachineLearning/离散数学第4讲/" data-id="ckbheywzu001bs4vi7v6s02il" class="article-share-link" data-share="baidu" data-title="state machine&amp;Euclidean Alg">分享到</a>
+        <a data-url="http://yoursite.com/2020/03/21/ MachineLearning/离散数学第4讲/" data-id="ckcd5j6vk001gjcviwn4m7s47" class="article-share-link" data-share="baidu" data-title="state machine&amp;Euclidean Alg">分享到</a>
       
 
       
@@ -824,7 +1047,7 @@ n个输入,可行解为n个输入的子集\\
     </div>
     <footer class="article-footer">
       
-        <a data-url="http://yoursite.com/2020/02/13/ 算法设计及分析/" data-id="ckbheywyf0007s4vigw481vq7" class="article-share-link" data-share="baidu" data-title="算法设计与分析">分享到</a>
+        <a data-url="http://yoursite.com/2020/02/13/ 算法设计及分析/" data-id="ckcd5j6ue000ajcviqvzbvyn2" class="article-share-link" data-share="baidu" data-title="算法设计与分析">分享到</a>
       
 
       
@@ -873,7 +1096,7 @@ n个输入,可行解为n个输入的子集\\
     </div>
     <footer class="article-footer">
       
-        <a data-url="http://yoursite.com/2019/11/18/ Algorithm/Warshall/" data-id="ckbheywzl000xs4viy0srp14x" class="article-share-link" data-share="baidu" data-title="Warshall&amp;All_componet">分享到</a>
+        <a data-url="http://yoursite.com/2019/11/18/ Algorithm/Warshall/" data-id="ckcd5j6v6000xjcvi12wophf3" class="article-share-link" data-share="baidu" data-title="Warshall&amp;All_componet">分享到</a>
       
 
       
@@ -922,7 +1145,7 @@ n个输入,可行解为n个输入的子集\\
     </div>
     <footer class="article-footer">
       
-        <a data-url="http://yoursite.com/2019/11/13/ Algorithm/Prim/" data-id="ckbheywzn0011s4vi92glgb0m" class="article-share-link" data-share="baidu" data-title="Prim">分享到</a>
+        <a data-url="http://yoursite.com/2019/11/13/ Algorithm/Prim/" data-id="ckcd5j6v4000ujcvim2xgjn9o" class="article-share-link" data-share="baidu" data-title="Prim">分享到</a>
       
 
       
@@ -971,7 +1194,7 @@ n个输入,可行解为n个输入的子集\\
     </div>
     <footer class="article-footer">
       
-        <a data-url="http://yoursite.com/2019/11/13/ MachineLearning/Kmeans/" data-id="ckbheywzr0016s4vi7rz5kt4p" class="article-share-link" data-share="baidu" data-title="Kmeans">分享到</a>
+        <a data-url="http://yoursite.com/2019/11/13/ MachineLearning/Kmeans/" data-id="ckcd5j6vg001bjcviz0t1vgl5" class="article-share-link" data-share="baidu" data-title="Kmeans">分享到</a>
       
 
       
@@ -1020,7 +1243,7 @@ n个输入,可行解为n个输入的子集\\
     </div>
     <footer class="article-footer">
       
-        <a data-url="http://yoursite.com/2019/10/27/ Algorithm/BinTree/" data-id="ckbheywzd000qs4vixdywc8kx" class="article-share-link" data-share="baidu" data-title="BinTree">分享到</a>
+        <a data-url="http://yoursite.com/2019/10/27/ Algorithm/BinTree/" data-id="ckcd5j6v3000tjcvi3ccctv5n" class="article-share-link" data-share="baidu" data-title="BinTree">分享到</a>
       
 
       
@@ -1071,7 +1294,7 @@ n个输入,可行解为n个输入的子集\\
     </div>
     <footer class="article-footer">
       
-        <a data-url="http://yoursite.com/2019/10/21/ Algorithm/EulerSieve/" data-id="ckbheywzj000vs4vi23qzefob" class="article-share-link" data-share="baidu" data-title="EulerSieve">分享到</a>
+        <a data-url="http://yoursite.com/2019/10/21/ Algorithm/EulerSieve/" data-id="ckcd5j6v1000qjcvik3efnljc" class="article-share-link" data-share="baidu" data-title="EulerSieve">分享到</a>
       
 
       
@@ -1114,7 +1337,7 @@ n个输入,可行解为n个输入的子集\\
   <div class="widget-wrap">
     <h3 class="widget-title">归档</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/06/">六月 2020</a><span class="archive-list-count">6</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/05/">五月 2020</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/04/">四月 2020</a><span class="archive-list-count">7</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/03/">三月 2020</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/02/">二月 2020</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/11/">十一月 2019</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/10/">十月 2019</a><span class="archive-list-count">8</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/07/">七月 2020</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/06/">六月 2020</a><span class="archive-list-count">6</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/05/">五月 2020</a><span class="archive-list-count">7</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/04/">四月 2020</a><span class="archive-list-count">7</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/03/">三月 2020</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/02/">二月 2020</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/11/">十一月 2019</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/10/">十月 2019</a><span class="archive-list-count">8</span></li></ul>
     </div>
   </div>
 
@@ -1126,11 +1349,11 @@ n个输入,可行解为n个输入的子集\\
       <ul>
         
           <li>
-            <a href="/2020/06/08/ Math/计数方法/">计数方法</a>
+            <a href="/2020/07/08/ MachineLearning/SVM/">SVM</a>
           </li>
         
           <li>
-            <a href="/2020/06/06/ 微机系统/中断/">中断</a>
+            <a href="/2020/06/08/ Math/计数方法/">计数方法</a>
           </li>
         
           <li>
@@ -1138,11 +1361,11 @@ n个输入,可行解为n个输入的子集\\
           </li>
         
           <li>
-            <a href="/2020/06/06/ 微机系统/标志寄存器/">标志寄存器</a>
+            <a href="/2020/06/06/ 微机系统/中断/">中断</a>
           </li>
         
           <li>
-            <a href="/2020/06/06/ 微机系统/汇编实验/">汇编实验</a>
+            <a href="/2020/06/06/ 微机系统/标志寄存器/">标志寄存器</a>
           </li>
         
       </ul>

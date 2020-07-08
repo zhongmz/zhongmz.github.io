@@ -71,6 +71,122 @@
     <div class="outer">
       <section id="main">
   
+    <article id="post-MachineLearning/SVM" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2020/07/08/ MachineLearning/SVM/" class="article-date">
+  <time datetime="2020-07-08T01:56:52.000Z" itemprop="datePublished">2020-07-08</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Machine-Learning/">Machine Learning</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/07/08/ MachineLearning/SVM/">SVM</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>我们知道</p>
+<p>逻辑回归激励函数</p>
+<script type="math/tex; mode=display">
+h_{\theta}(x)=\frac{1}{1+e^{-\theta^{T}x}}</script><p><img src="https://i.loli.net/2020/07/08/lGQbRz3yvTJ4B1I.png" alt="D6V`DOYMLRTZ@TL_BG__F_9.png"></p>
+<p>本质上，支持向量机的代价函数与逻辑回归的代价函数无差别，但是为了使得后面计算更直观些，我们不妨稍微调整一下支持向量机的代价函数。</p>
+<ul>
+<li><p>回顾逻辑回归代价函数</p>
+<script type="math/tex; mode=display">
+-(ylog(h_{\theta}(x))+(1-y)log(1-h_{\theta}(x)))</script></li>
+<li><p>而支持向量机代价函数</p>
+<script type="math/tex; mode=display">
+C\sum_{i=1}^{m}[y^{(i)}cost_1(\theta^{T}x^{(i)})+(1-y^{i})cost_0(\theta^{T}x^{(i)})]+\frac{1}{2}\sum_{i=1}^{n}\theta^2_j\\
+其中,cost_0(z)=-log(1-\frac{1}{1+e^{-z}}),cost_1(z)=log\frac{1}{1+e^{-z}}</script><p>其中，C可以理解为$\frac{1}{\lambda}$</p>
+</li>
+</ul>
+<p>而SVM也被人们称之为大间距分类器。</p>
+<p><img src="https://i.loli.net/2020/07/08/nRyjckhQYSJsgKa.png" alt="QQ1_K0_05ABZ_85__MD6_ZU.png"></p>
+<p>即，使得间距最大。</p>
+<ul>
+<li>核函数</li>
+</ul>
+<h2 id="Kernels"><a href="#Kernels" class="headerlink" title="Kernels"></a>Kernels</h2><p>设存在2个特征，我们设其假设函数为</p>
+<script type="math/tex; mode=display">
+\theta_0+\theta_1x_1+\theta_2x_2+\theta_3x_1x_2+\theta_4x_1^2+...</script><p>再进行一些优化</p>
+<script type="math/tex; mode=display">
+\theta_0+\theta_1f_1+\theta_2f_2+\theta_3f_3+\theta_4f_4+...</script><h3 id="高斯核函数"><a href="#高斯核函数" class="headerlink" title="高斯核函数"></a>高斯核函数</h3><ul>
+<li>根据$x$的各个特征选取<code>landmarks</code></li>
+</ul>
+<p><img src="https://github.com/fengdu78/Coursera-ML-AndrewNg-Notes/raw/master/images/2516821097bda5dfaf0b94e55de851e0.png" alt="img"></p>
+<script type="math/tex; mode=display">
+example:\\
+f_1=similarity(x,l^{(1)})=e^{-\frac{||x-l^{(1)}||^2}{2\sigma^2}}</script><p>那么</p>
+<script type="math/tex; mode=display">
+f_1称为核函数</script><p>不妨再重新回顾下过程</p>
+<ol>
+<li><p>Given</p>
+<script type="math/tex; mode=display">
+(x^{(1)},y^{(1)}),(x^{(2)},y^{(2)})...(x^{(m)},y^{(m)})\\</script></li>
+<li><p>Choose</p>
+<script type="math/tex; mode=display">
+l^{(1)}=x^{(1)},l^{(2)}=x^{(2)},...l^{(m)}=x^{(m)}</script></li>
+<li><p>Get $f_i$</p>
+<script type="math/tex; mode=display">
+f_1=similarity(x,l^{(1)})\\
+...</script></li>
+<li><p>对于$x_{(i)}$</p>
+<script type="math/tex; mode=display">
+f^{(i)}_1\\
+f^{(i)}_2\\
+f^{(i)}_3\\
+...\\
+f^{(i)}_m\\</script></li>
+<li><script type="math/tex; mode=display">
+min C\sum_{i=1}^{m}[y^{(i)}cost_1(\theta^{T}f^{(i)})+(1-y^{i})cost_0(\theta^{T}f^{(i)})]+\frac{1}{2}\sum_{i=1}^{n}\theta^2_j\\
+其中,cost_0(z)=-log(1-\frac{1}{1+e^{-z}}),cost_1(z)=log\frac{1}{1+e^{-z}}</script></li>
+</ol>
+<h2 id="对于参数"><a href="#对于参数" class="headerlink" title="对于参数"></a>对于参数</h2><ul>
+<li>C<ul>
+<li>Large C: Lower bias, high variance</li>
+<li>Small C: Higher bias, low variance</li>
+</ul>
+</li>
+<li>$\sigma^2$<ul>
+<li>Large $\sigma^2$: Higher bias lower variance</li>
+<li>Small $\sigma^2$: Lower bias higher variance</li>
+</ul>
+</li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      
+        <a data-url="http://yoursite.com/2020/07/08/ MachineLearning/SVM/" data-id="ckcd5j6vb0013jcvi3g54xpqi" class="article-share-link" data-share="baidu" data-title="SVM">分享到</a>
+      
+
+      
+        <a href="http://yoursite.com/2020/07/08/ MachineLearning/SVM/#ds-thread" class="article-comment-link">评论</a>
+      
+
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+
+  
     <article id="post-Math/计数方法" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2020/06/08/ Math/计数方法/" class="article-date">
@@ -128,63 +244,11 @@
     </div>
     <footer class="article-footer">
       
-        <a data-url="http://yoursite.com/2020/06/08/ Math/计数方法/" data-id="ckbheyx03001rs4vifg5dtb01" class="article-share-link" data-share="baidu" data-title="计数方法">分享到</a>
+        <a data-url="http://yoursite.com/2020/06/08/ Math/计数方法/" data-id="ckcd5j6vu001wjcvi4ouqzqkm" class="article-share-link" data-share="baidu" data-title="计数方法">分享到</a>
       
 
       
         <a href="http://yoursite.com/2020/06/08/ Math/计数方法/#ds-thread" class="article-comment-link">评论</a>
-      
-
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-
-
-  
-    <article id="post-微机系统/中断" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2020/06/06/ 微机系统/中断/" class="article-date">
-  <time datetime="2020-06-06T13:49:19.000Z" itemprop="datePublished">2020-06-06</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/微机原理/">微机原理</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/06/06/ 微机系统/中断/">中断</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="bx-si-di-bp"><a href="#bx-si-di-bp" class="headerlink" title="bx,si,di,bp"></a><code>bx,si,di,bp</code></h1><ul>
-<li><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line">assume cs:code</span><br><span class="line">code segment</span><br><span class="line">    start:</span><br><span class="line">    mov ax,cs</span><br><span class="line">    mov ds,ax</span><br><span class="line">    mov si,offset sqr</span><br><span class="line">    mov ax,0</span><br><span class="line">    mov es,ax</span><br><span class="line">    mov di,200h</span><br><span class="line">    mov cx,offset sqrend-offset sqr</span><br><span class="line">    cld</span><br><span class="line">    rep movsb</span><br><span class="line">    </span><br><span class="line">    mov ax,0</span><br><span class="line">    mov es,ax</span><br><span class="line">    mov word ptr es:[7ch*4],200h</span><br><span class="line">    mov word ptr es:[7ch*4+2],0</span><br><span class="line">    </span><br><span class="line">    mov ax,4c00h</span><br><span class="line">    int 21h</span><br><span class="line">    </span><br><span class="line">    sqr:</span><br><span class="line">    mul ax</span><br><span class="line">    iret</span><br><span class="line">    </span><br><span class="line">    sqrend:</span><br><span class="line">    nop</span><br><span class="line">    </span><br><span class="line">    code ends</span><br><span class="line">end start</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-
-      
-    </div>
-    <footer class="article-footer">
-      
-        <a data-url="http://yoursite.com/2020/06/06/ 微机系统/中断/" data-id="ckbheyx04001ss4vin6z357fh" class="article-share-link" data-share="baidu" data-title="中断">分享到</a>
-      
-
-      
-        <a href="http://yoursite.com/2020/06/06/ 微机系统/中断/#ds-thread" class="article-comment-link">评论</a>
       
 
       
@@ -233,11 +297,63 @@
     </div>
     <footer class="article-footer">
       
-        <a data-url="http://yoursite.com/2020/06/06/ 微机系统/notice/" data-id="ckbheyx05001vs4vij65yn6mb" class="article-share-link" data-share="baidu" data-title="中断">分享到</a>
+        <a data-url="http://yoursite.com/2020/06/06/ 微机系统/notice/" data-id="ckcd5j6vp001njcvieash4v06" class="article-share-link" data-share="baidu" data-title="中断">分享到</a>
       
 
       
         <a href="http://yoursite.com/2020/06/06/ 微机系统/notice/#ds-thread" class="article-comment-link">评论</a>
+      
+
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+
+  
+    <article id="post-微机系统/中断" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2020/06/06/ 微机系统/中断/" class="article-date">
+  <time datetime="2020-06-06T13:49:19.000Z" itemprop="datePublished">2020-06-06</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/微机原理/">微机原理</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/06/06/ 微机系统/中断/">中断</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="bx-si-di-bp"><a href="#bx-si-di-bp" class="headerlink" title="bx,si,di,bp"></a><code>bx,si,di,bp</code></h1><ul>
+<li><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line">assume cs:code</span><br><span class="line">code segment</span><br><span class="line">    start:</span><br><span class="line">    mov ax,cs</span><br><span class="line">    mov ds,ax</span><br><span class="line">    mov si,offset sqr</span><br><span class="line">    mov ax,0</span><br><span class="line">    mov es,ax</span><br><span class="line">    mov di,200h</span><br><span class="line">    mov cx,offset sqrend-offset sqr</span><br><span class="line">    cld</span><br><span class="line">    rep movsb</span><br><span class="line">    </span><br><span class="line">    mov ax,0</span><br><span class="line">    mov es,ax</span><br><span class="line">    mov word ptr es:[7ch*4],200h</span><br><span class="line">    mov word ptr es:[7ch*4+2],0</span><br><span class="line">    </span><br><span class="line">    mov ax,4c00h</span><br><span class="line">    int 21h</span><br><span class="line">    </span><br><span class="line">    sqr:</span><br><span class="line">    mul ax</span><br><span class="line">    iret</span><br><span class="line">    </span><br><span class="line">    sqrend:</span><br><span class="line">    nop</span><br><span class="line">    </span><br><span class="line">    code ends</span><br><span class="line">end start</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      
+        <a data-url="http://yoursite.com/2020/06/06/ 微机系统/中断/" data-id="ckcd5j6vw0020jcvinnk49zck" class="article-share-link" data-share="baidu" data-title="中断">分享到</a>
+      
+
+      
+        <a href="http://yoursite.com/2020/06/06/ 微机系统/中断/#ds-thread" class="article-comment-link">评论</a>
       
 
       
@@ -284,7 +400,7 @@
     </div>
     <footer class="article-footer">
       
-        <a data-url="http://yoursite.com/2020/06/06/ 微机系统/标志寄存器/" data-id="ckbheyx090023s4vih4ezqnki" class="article-share-link" data-share="baidu" data-title="标志寄存器">分享到</a>
+        <a data-url="http://yoursite.com/2020/06/06/ 微机系统/标志寄存器/" data-id="ckcd5j6vz0024jcviwqjrtejo" class="article-share-link" data-share="baidu" data-title="标志寄存器">分享到</a>
       
 
       
@@ -338,7 +454,7 @@
     </div>
     <footer class="article-footer">
       
-        <a data-url="http://yoursite.com/2020/06/06/ 微机系统/汇编实验/" data-id="ckbheyx0a0024s4vi3ylh2gvy" class="article-share-link" data-share="baidu" data-title="汇编实验">分享到</a>
+        <a data-url="http://yoursite.com/2020/06/06/ 微机系统/汇编实验/" data-id="ckcd5j6w4002ajcviq4p6fgww" class="article-share-link" data-share="baidu" data-title="汇编实验">分享到</a>
       
 
       
@@ -435,7 +551,7 @@
     </div>
     <footer class="article-footer">
       
-        <a data-url="http://yoursite.com/2020/06/03/ 微机系统/寻址/" data-id="ckbheyx080020s4vi4n3y8aqy" class="article-share-link" data-share="baidu" data-title="寻址">分享到</a>
+        <a data-url="http://yoursite.com/2020/06/03/ 微机系统/寻址/" data-id="ckcd5j6vx0021jcvihhcjtrzp" class="article-share-link" data-share="baidu" data-title="寻址">分享到</a>
       
 
       
@@ -531,7 +647,7 @@
     </div>
     <footer class="article-footer">
       
-        <a data-url="http://yoursite.com/2020/05/30/ 微机系统/汇编_Loop_多段/" data-id="ckbheyx0b0026s4vi8fx474c4" class="article-share-link" data-share="baidu" data-title="Loop_多段">分享到</a>
+        <a data-url="http://yoursite.com/2020/05/30/ 微机系统/汇编_Loop_多段/" data-id="ckcd5j6w00025jcvipk2444ll" class="article-share-link" data-share="baidu" data-title="Loop_多段">分享到</a>
       
 
       
@@ -788,7 +904,7 @@
     </div>
     <footer class="article-footer">
       
-        <a data-url="http://yoursite.com/2020/05/30/ 微机系统/汇编_DosBox/" data-id="ckbheyx0c0028s4vivz6ogi7r" class="article-share-link" data-share="baidu" data-title="Debug_DosBox">分享到</a>
+        <a data-url="http://yoursite.com/2020/05/30/ 微机系统/汇编_DosBox/" data-id="ckcd5j6w20028jcviouexuziw" class="article-share-link" data-share="baidu" data-title="Debug_DosBox">分享到</a>
       
 
       
@@ -841,63 +957,11 @@
     </div>
     <footer class="article-footer">
       
-        <a data-url="http://yoursite.com/2020/05/28/ MachineLearning/线性代数/" data-id="ckbheywzy001is4vigjp64xbu" class="article-share-link" data-share="baidu" data-title="线性代数概知">分享到</a>
+        <a data-url="http://yoursite.com/2020/05/28/ MachineLearning/线性代数/" data-id="ckcd5j6vf0018jcvi6vy44ypu" class="article-share-link" data-share="baidu" data-title="线性代数概知">分享到</a>
       
 
       
         <a href="http://yoursite.com/2020/05/28/ MachineLearning/线性代数/#ds-thread" class="article-comment-link">评论</a>
-      
-
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-
-
-  
-    <article id="post-MachineLearning/西瓜书-支持向量机" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2020/05/23/ MachineLearning/西瓜书-支持向量机/" class="article-date">
-  <time datetime="2020-05-23T01:56:52.000Z" itemprop="datePublished">2020-05-23</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/Machine-Learning/">Machine Learning</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/05/23/ MachineLearning/西瓜书-支持向量机/">细品西瓜-支持向量机</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><ul>
-<li>超平面：在<a href="https://zh.wikipedia.org/wiki/數學" target="_blank" rel="noopener">数学</a>中，<strong>超平面（Hyperplane）</strong>是n维欧氏空间中，<a href="https://zh.wikipedia.org/wiki/餘維數" target="_blank" rel="noopener">余维度</a>为1的<a href="https://zh.wikipedia.org/wiki/子空間" target="_blank" rel="noopener">子空间</a>。即超平面是n维空间中的n-1维的子空间。它是平面中的直线、空间中的平面之推广。</li>
-<li></li>
-</ul>
-
-      
-    </div>
-    <footer class="article-footer">
-      
-        <a data-url="http://yoursite.com/2020/05/23/ MachineLearning/西瓜书-支持向量机/" data-id="ckbheywzv001ds4vip9rukeq7" class="article-share-link" data-share="baidu" data-title="细品西瓜-支持向量机">分享到</a>
-      
-
-      
-        <a href="http://yoursite.com/2020/05/23/ MachineLearning/西瓜书-支持向量机/#ds-thread" class="article-comment-link">评论</a>
       
 
       
@@ -936,7 +1000,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">归档</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/06/">六月 2020</a><span class="archive-list-count">6</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/05/">五月 2020</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/04/">四月 2020</a><span class="archive-list-count">7</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/03/">三月 2020</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/02/">二月 2020</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/11/">十一月 2019</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/10/">十月 2019</a><span class="archive-list-count">8</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/07/">七月 2020</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/06/">六月 2020</a><span class="archive-list-count">6</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/05/">五月 2020</a><span class="archive-list-count">7</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/04/">四月 2020</a><span class="archive-list-count">7</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/03/">三月 2020</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/02/">二月 2020</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/11/">十一月 2019</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/10/">十月 2019</a><span class="archive-list-count">8</span></li></ul>
     </div>
   </div>
 
@@ -948,11 +1012,11 @@
       <ul>
         
           <li>
-            <a href="/2020/06/08/ Math/计数方法/">计数方法</a>
+            <a href="/2020/07/08/ MachineLearning/SVM/">SVM</a>
           </li>
         
           <li>
-            <a href="/2020/06/06/ 微机系统/中断/">中断</a>
+            <a href="/2020/06/08/ Math/计数方法/">计数方法</a>
           </li>
         
           <li>
@@ -960,11 +1024,11 @@
           </li>
         
           <li>
-            <a href="/2020/06/06/ 微机系统/标志寄存器/">标志寄存器</a>
+            <a href="/2020/06/06/ 微机系统/中断/">中断</a>
           </li>
         
           <li>
-            <a href="/2020/06/06/ 微机系统/汇编实验/">汇编实验</a>
+            <a href="/2020/06/06/ 微机系统/标志寄存器/">标志寄存器</a>
           </li>
         
       </ul>
