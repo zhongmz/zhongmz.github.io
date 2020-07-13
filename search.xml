@@ -181,6 +181,100 @@ min C\sum_{i=1}^{m}[y^{(i)}cost_1(\theta^{T}f^{(i)})+(1-y^{i})cost_0(\theta^{T}f
       </categories>
   </entry>
   <entry>
+    <title>OS习题</title>
+    <url>/2020/07/02/%20%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/OS%E4%B9%A0%E9%A2%98/</url>
+    <content><![CDATA[<h2 id="0x01"><a href="#0x01" class="headerlink" title="0x01"></a>0x01</h2><h4 id="1"><a href="#1" class="headerlink" title="1"></a>1</h4><p>什么是操作系统？操作系统有哪些特点？</p>
+<ul>
+<li><p>操作系统是位于硬件层之上，所有其他系统软件层之下的一个系统软件，通过它管理系统中的各种软件和资源，使它们能被充分利用，方便用户使用计算机系统。</p>
+</li>
+<li><p>特点</p>
+<ul>
+<li>并发性</li>
+<li>共享性</li>
+<li>异步性</li>
+<li>虚拟性</li>
+</ul>
+</li>
+</ul>
+<h4 id="2"><a href="#2" class="headerlink" title="2"></a>2</h4><p>硬件将处理器划分为两种，即管态和目态，这样做会给操作系统的设计带来什么好处？</p>
+<ul>
+<li>防止用户侵入系统，起到保护系统的作用</li>
+</ul>
+<h4 id="3"><a href="#3" class="headerlink" title="3"></a>3</h4><p>何为特权指令？试举例说明。如果允许用户进程执行特权指令，会带来什么后果？举例说明</p>
+<ul>
+<li>特权指令：只能在管态下才能执行的指令称为特权指令</li>
+<li>允许用户进程执行特权指令，则可能会导致停机，影响其他程序允许，甚至整个系统</li>
+</ul>
+<h4 id="4"><a href="#4" class="headerlink" title="4"></a>4</h4><p>中断向量在计算机中的存储位置是由硬件决定的，还是由软件决定的？</p>
+<ul>
+<li>是由硬件决定的</li>
+</ul>
+<h4 id="5"><a href="#5" class="headerlink" title="5"></a>5</h4><p>中断向量的内容是由操作系统决定的还是由用户程序决定的？</p>
+<ul>
+<li>是由操作系统决定的</li>
+</ul>
+<h4 id="6-为什么？？"><a href="#6-为什么？？" class="headerlink" title="6 为什么？？"></a>6 为什么？？</h4><p>中断向量内的处理器状态字应当标明为管态还是目态？为什么？</p>
+<ul>
+<li>应标明为管态</li>
+<li>处理机状态由目态转为管态的唯一途径是中断，因此会产生中断向量，此时需要把中断向量的处理器状态字标明为管态。</li>
+</ul>
+<h4 id="7"><a href="#7" class="headerlink" title="7"></a>7</h4><p>系统如何由目态转换为管态？如何由管态转换为目态？</p>
+<ul>
+<li>唯一途径是中断</li>
+<li>修改程序状态字<code>PSW</code></li>
+</ul>
+<h4 id="8"><a href="#8" class="headerlink" title="8"></a>8</h4><p>中断与程序并发之间的关系是什么？</p>
+<ul>
+<li>中断时程序并发的前提条件，若没有中断，操作系统则不能获得系统控制权，无法对处理器重新分配。</li>
+</ul>
+<h4 id="9"><a href="#9" class="headerlink" title="9"></a>9</h4><p>根据用途说明“栈”和“堆”的差别？</p>
+<ul>
+<li>栈用来实现中断嵌套和子程序调用的参数，返回断点，局部变量，返回值</li>
+<li>堆是为动态变量分配存储空间</li>
+</ul>
+<h4 id="10"><a href="#10" class="headerlink" title="10"></a>10</h4><p>何谓系统栈？何谓用户栈？系统栈有何用途？用户栈有何用途？</p>
+<ul>
+<li>系统栈在逻辑上属于操作系统空间，是系统空间中的一个区域。</li>
+<li>用户栈属于用户空间，是内存中用户空间的一个区域。</li>
+<li>系统栈用途：一是保存操作系统子程序间相互调用的返回点，参数，局部变量，返回值；二是中断响应时保存中断现场</li>
+<li>用户栈用途：一是保存用户函数调用时的返回点，参数，局部变量，返回值。</li>
+</ul>
+<h4 id="11"><a href="#11" class="headerlink" title="11"></a>11</h4><p>为何无法确定用户堆栈段的长度？</p>
+<ul>
+<li><p>用户堆栈段的长度取决于</p>
+<ul>
+<li>进程子程序嵌套深度</li>
+<li>子程序的参数和局部变量的数量和类型</li>
+<li>动态变量的数量和类型</li>
+</ul>
+<p>这些在进程运行前无法确定，导致堆栈段的长度无法预先确定。</p>
+</li>
+</ul>
+<h4 id="12"><a href="#12" class="headerlink" title="12"></a>12</h4><p>为何堆栈段的动态扩充可能导致进程空间的变迁？</p>
+<ul>
+<li>堆栈段的扩充意味着存储区域的增加，并要求与原来存储区域连续。若原存储处可扩展区域被其他进程所占用，可能需要将整个进程空间搬迁到另外一个区域，从而导致了进程空间的变迁。</li>
+</ul>
+<h4 id="13"><a href="#13" class="headerlink" title="13"></a>13</h4><p>何谓并行？何谓并发？在单处理器系统中，下述并行和并发信息哪些可能发生，哪些不会发生？</p>
+<ol>
+<li>进程与进程之间的并行</li>
+<li>进程与进程之间的并发</li>
+<li>处理器与设备之间的并行</li>
+<li>处理器与通道之间的并行</li>
+<li>通道与通道之间的并行</li>
+<li>设备与设备之间的并行</li>
+</ol>
+<ul>
+<li>并行指的时在微观上的同时，在绝对的同一时刻由多个进程同时向前推进</li>
+<li>并发不需要微观上的同时，只需要从宏观上看多个程序都在向前推进</li>
+<li>不可能发生：<code>(1)</code></li>
+</ul>
+<h4 id="14"><a href="#14" class="headerlink" title="14"></a>14</h4><p>何谓作业？它包括哪几个部分？各个部分的用途时什么？</p>
+]]></content>
+      <categories>
+        <category>OS</category>
+      </categories>
+  </entry>
+  <entry>
     <title>计数方法</title>
     <url>/2020/06/08/%20Math/%E8%AE%A1%E6%95%B0%E6%96%B9%E6%B3%95/</url>
     <content><![CDATA[<h1 id="二项式定理"><a href="#二项式定理" class="headerlink" title="二项式定理"></a>二项式定理</h1><script type="math/tex; mode=display">
@@ -1982,8 +2076,8 @@ u=\frac{\overline{X}-\mu}{\sigma/\sqrt{n}}为N(0,1)分布</script>]]></content>
       </categories>
   </entry>
   <entry>
-    <title>操作系统</title>
-    <url>/2020/03/31/%20%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/</url>
+    <title>OS教程</title>
+    <url>/2020/03/31/%20%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/OS%E6%95%99%E7%A8%8B/</url>
     <content><![CDATA[<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>1 <em>中断</em>，在程序运行过程中出现某种紧急事件，必须中止当前正在运行的程序，转去处理此事件，然后再恢复原来运行的程序。有$\begin{Bmatrix} 强迫性中断\ 自愿性中断\  \end {Bmatrix}$。</p>
 <p>2 <em>中断系统</em>，中断装置+中断处理程序</p>
 <p>3 <em>中断装置</em>，识别中断源$\Longrightarrow$ 保存现场$(运行的物理环境：地址寄存器，通用寄存器，浮点寄存器，SP，PSW，PC，文件表)\Longrightarrow $引出中断程序</p>
@@ -2044,7 +2138,7 @@ EAT=快表命中率\cdot (快表访问时间+内存访问时间)+(1-快表命中
 </ul>
 ]]></content>
       <categories>
-        <category>操作系统</category>
+        <category>OS</category>
       </categories>
   </entry>
   <entry>
