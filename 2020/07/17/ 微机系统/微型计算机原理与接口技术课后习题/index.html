@@ -10,12 +10,13 @@
 <meta name="keywords" content="algorithm math">
 <meta property="og:type" content="article">
 <meta property="og:title" content="微型计算机接口技术课后习题">
-<meta property="og:url" content="http://yoursite.com/2020/06/06/ 微机系统/微型计算机原理与接口技术课后习题/index.html">
+<meta property="og:url" content="http://yoursite.com/2020/07/17/ 微机系统/微型计算机原理与接口技术课后习题/index.html">
 <meta property="og:site_name" content="Xxgzbd&#39;s Blog">
 <meta property="og:description" content="0x01 Pentium保护模式存储管理1.1简述虚拟存储器的含义，试在存储层次，功能，结构，信息传送单位，操作过程等方面对比虚拟存储器和Cache存储器。  虚拟存储器是由主存储器，辅助存储器，辅助硬件和操作系统管理软件组成的一种存储体系。 其目的是为了增加存储器的容量，速度接近于主存储器，单位造价接近辅助存储器   1.2简要说明虚拟存储器的工作原理  应用程序访问虚拟存储器时，给出逻辑地址。">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="https://s1.ax1x.com/2020/07/12/U3FHh9.png">
-<meta property="og:updated_time" content="2020-07-12T08:42:24.525Z">
+<meta property="og:image" content="https://i.loli.net/2020/07/17/aJcEH9tLU73FjkS.png">
+<meta property="og:updated_time" content="2020-07-17T06:36:28.119Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="微型计算机接口技术课后习题">
 <meta name="twitter:description" content="0x01 Pentium保护模式存储管理1.1简述虚拟存储器的含义，试在存储层次，功能，结构，信息传送单位，操作过程等方面对比虚拟存储器和Cache存储器。  虚拟存储器是由主存储器，辅助存储器，辅助硬件和操作系统管理软件组成的一种存储体系。 其目的是为了增加存储器的容量，速度接近于主存储器，单位造价接近辅助存储器   1.2简要说明虚拟存储器的工作原理  应用程序访问虚拟存储器时，给出逻辑地址。">
@@ -74,8 +75,8 @@
     <div class="outer">
       <section id="main"><article id="post-微机系统/微型计算机原理与接口技术课后习题" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2020/06/06/ 微机系统/微型计算机原理与接口技术课后习题/" class="article-date">
-  <time datetime="2020-06-06T13:49:19.000Z" itemprop="datePublished">2020-06-06</time>
+    <a href="/2020/07/17/ 微机系统/微型计算机原理与接口技术课后习题/" class="article-date">
+  <time datetime="2020-07-17T06:49:19.000Z" itemprop="datePublished">2020-07-17</time>
 </a>
     
   <div class="article-category">
@@ -194,21 +195,103 @@
 <li>当G=0时，该段的最大数据容量是多少个字节？</li>
 <li>当G=1时，该段的最大数据容量时多少个字节？</li>
 </ol>
+<h2 id="0x03-中断"><a href="#0x03-中断" class="headerlink" title="0x03 中断"></a>0x03 中断</h2><h4 id="3-1"><a href="#3-1" class="headerlink" title="3.1"></a>3.1</h4><p>什么叫中断？在微机系统中为什么要使用中断？</p>
+<ul>
+<li>CPU在正常执行当前程序，由某一事件引起CPU暂时停止当前任务，转去执行请求CPU暂停的服务程序，该服务程序执行完后又返回继续执行被暂停的程序，这一过程叫中断</li>
+<li>主要作用<ul>
+<li>实现主机与<code>I/O</code>设备的并行工作</li>
+<li>利用中断进行实时处理</li>
+<li>利用中断方式进行人机对话</li>
+<li>故障处理</li>
+<li>多处理机系统中各处理机之间协调作用</li>
+</ul>
+</li>
+</ul>
+<h4 id="3-2"><a href="#3-2" class="headerlink" title="3.2"></a>3.2</h4><p>什么叫中断源？中断嵌套的含义是什么？</p>
+<ul>
+<li>凡是能够提出中断请求的设备或异常故障均被称为中断源</li>
+<li>在执行中断服务程序的过程中又发生新的中断</li>
+</ul>
+<h4 id="3-3"><a href="#3-3" class="headerlink" title="3.3"></a>3.3</h4><p><code>Pentium</code>微处理机内部有哪几类中断源？简要说明各类的特点是什么？</p>
+<ul>
+<li>分为四类中断<ul>
+<li>可屏蔽中断<code>INTR</code></li>
+<li>非屏蔽中断<code>NMI</code></li>
+<li>软件中断（执行<code>INTO</code>,<code>INT3</code>,<code>INT n</code>,<code>BOUND</code>指令引起的中断）</li>
+<li>异常</li>
+</ul>
+</li>
+<li><code>INTR</code>通常是由<code>Intel 8259A</code>中断控制器驱动，向<code>INTR</code>引脚发中断请求，通过数据总线向CPU发中断类型码</li>
+<li><code>NMI</code>通常用来通知<code>CPU</code>发生重大故障的事件，比如电源掉电。不受<code>IF</code>中断允许标志的影响，优先级非常高。上升沿触发信号</li>
+<li>软件中断<ul>
+<li>人为设置在程序中</li>
+<li>类型码包含在指令中，所以不执行中断响应总线周期</li>
+<li>除<code>BOUND</code>指令外，中断返回地址为下一条指令</li>
+</ul>
+</li>
+<li>异常是在CPU执行一条指令过程中出现的错误或者检测的异常情况产生的</li>
+</ul>
+<h4 id="3-4"><a href="#3-4" class="headerlink" title="3.4"></a>3.4</h4><p>在<code>Pentium</code>微处理机中中断和异常有何异同？</p>
+<ul>
+<li>中断是用来处理CPU以外的异常事件</li>
+<li>异常时用来处理执行指令期间由CPU本身检测出来的某些异常事情作出的响应</li>
+</ul>
+<h4 id="3-5"><a href="#3-5" class="headerlink" title="3.5"></a>3.5</h4><p>通常CPU响应外部中断的条件有哪些？</p>
+<ul>
+<li>有中断请求</li>
+<li>中断标志位<code>IF</code>=1</li>
+</ul>
+<h4 id="3-6"><a href="#3-6" class="headerlink" title="3.6"></a>3.6</h4><p>简述CPU响应中断后，中断处理的过程，用流程图表示</p>
+<p><img src="https://i.loli.net/2020/07/17/aJcEH9tLU73FjkS.png" alt="Pentium实模式下中断处理过程"></p>
+<h4 id="3-7"><a href="#3-7" class="headerlink" title="3.7"></a>3.7</h4><p>什么情况下需要有中断判优机构？程序查询式和中断向量式2种中断源识别与判优方案各有什么特点？</p>
+<ul>
+<li>系统遇到多个中断源同时请求中断的情况下，需要有中断判优机构。</li>
+<li>程序查询式是软件查询，较为灵活，但是中断源多时，转至中断服务程序时间长</li>
+<li>中断向量式是硬件优先级排队电路确定优先级，速度块，但是优先级固定不变。</li>
+</ul>
+<h4 id="3-8"><a href="#3-8" class="headerlink" title="3.8"></a>3.8</h4><p>什么叫中断向量？试说明<code>Pentium</code>微处理机可屏蔽硬件中断是怎样获得中断向量，从而进入中断程序的。</p>
+<ul>
+<li><p>中断向量是中断服务程序的入口地址。</p>
+</li>
+<li><p>根据<code>8259A</code>送道数据总线的中断类型码*4取得中断向量，把中断向量的前2个字节装入<code>IP</code>，后2个字节装入<code>CS</code>，这样CPU执行的下一条指令就是中断服务程序的第一条指令，也就是说，CPU进入了中断服务程序。</p>
+</li>
+</ul>
+<h4 id="3-9"><a href="#3-9" class="headerlink" title="3.9"></a>3.9</h4><p>中断描述符表的作用是什么？其内保存的是什么信息？</p>
+<ul>
+<li>中断描述符表保存门描述符</li>
+<li>门描述符中保存的信息有段选择符，32位偏移，还有属性用来在GDT或LDT中找到中断服务程序的基地址。</li>
+</ul>
+<h4 id="3-10"><a href="#3-10" class="headerlink" title="3.10"></a>3.10</h4><p><code>8259A</code>芯片是一种什么类型的芯片？试着说明<code>8259</code>芯片的主要功能。</p>
+<ul>
+<li>是一种中断管理芯片，简称PIC</li>
+<li>主要作用<ul>
+<li>管理8级优先权中断源</li>
+<li>对任何级别中断源可单独屏蔽</li>
+<li>向CPU发送可编程的标识码，即中断类型码</li>
+<li>可与<code>Pentium</code>的CPU直接连接，不需要外加电路</li>
+<li>多种工作方式</li>
+</ul>
+</li>
+</ul>
+<h4 id="38"><a href="#38" class="headerlink" title="38"></a>38</h4><p><code>INTR</code>与<code>NMI</code>的区别</p>
+<ul>
+<li>CPU在响应<code>NMI</code>时，不从外部设备读取中断类型码，因为<code>NMI</code>的中断类型码固定为2</li>
+</ul>
 
       
     </div>
     <footer class="article-footer">
       
-        <a data-url="http://yoursite.com/2020/06/06/ 微机系统/微型计算机原理与接口技术课后习题/" data-id="ckciujdp50021zcvi9pkyzhxx" class="article-share-link" data-share="baidu" data-title="微型计算机接口技术课后习题">分享到</a>
+        <a data-url="http://yoursite.com/2020/07/17/ 微机系统/微型计算机原理与接口技术课后习题/" data-id="ckcpv4b7a0026s4viu2j0ncbh" class="article-share-link" data-share="baidu" data-title="微型计算机接口技术课后习题">分享到</a>
       
 
       
-        <a href="http://yoursite.com/2020/06/06/ 微机系统/微型计算机原理与接口技术课后习题/#ds-thread" class="article-comment-link">评论</a>
+        <a href="http://yoursite.com/2020/07/17/ 微机系统/微型计算机原理与接口技术课后习题/#ds-thread" class="article-comment-link">评论</a>
       
 
       
-        <a href="/2020/06/06/ 微机系统/微型计算机原理与接口技术课后习题/#comments" class="article-comment-link">
-          <span class="post-comments-count valine-comment-count" data-xid="/2020/06/06/ 微机系统/微型计算机原理与接口技术课后习题/" itemprop="commentCount"></span>
+        <a href="/2020/07/17/ 微机系统/微型计算机原理与接口技术课后习题/#comments" class="article-comment-link">
+          <span class="post-comments-count valine-comment-count" data-xid="/2020/07/17/ 微机系统/微型计算机原理与接口技术课后习题/" itemprop="commentCount"></span>
           文章评论
         </a>
       
@@ -220,19 +303,19 @@
     
 <nav id="article-nav">
   
-    <a href="/2020/06/06/ 微机系统/中断/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2020/07/17/ 微机系统/习题/" id="article-nav-newer" class="article-nav-link-wrap">
       <strong class="article-nav-caption">下一篇</strong>
       <div class="article-nav-title">
         
-          中断
+          练习
         
       </div>
     </a>
   
   
-    <a href="/2020/06/06/ 微机系统/汇编实验/" id="article-nav-older" class="article-nav-link-wrap">
+    <a href="/2020/07/14/ 操作系统/OS习题/" id="article-nav-older" class="article-nav-link-wrap">
       <strong class="article-nav-caption">上一篇</strong>
-      <div class="article-nav-title">汇编实验</div>
+      <div class="article-nav-title">OS习题</div>
     </a>
   
 </nav>
@@ -242,7 +325,7 @@
 
 
   <section id="comments">
-    <div id="ds-thread" class="ds-thread" data-thread-key="2020/06/06/ 微机系统/微型计算机原理与接口技术课后习题/" data-title="微型计算机接口技术课后习题" data-url="http://yoursite.com/2020/06/06/ 微机系统/微型计算机原理与接口技术课后习题/"></div>
+    <div id="ds-thread" class="ds-thread" data-thread-key="2020/07/17/ 微机系统/微型计算机原理与接口技术课后习题/" data-title="微型计算机接口技术课后习题" data-url="http://yoursite.com/2020/07/17/ 微机系统/微型计算机原理与接口技术课后习题/"></div>
   </section>
 
   
@@ -258,7 +341,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">分类</h3>
     <div class="widget">
-      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Java/">Java</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Linux/">Linux</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Machine-Learning/">Machine Learning</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Read/">Read</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/algorithm/">algorithm</a><span class="category-list-count">8</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/web技术/">web技术</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/垃圾场/">垃圾场</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/微机原理/">微机原理</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/接口技术/">接口技术</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/操作系统/">操作系统</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/机器学习/">机器学习</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/汇编/">汇编</a><span class="category-list-count">7</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/离散数学/">离散数学</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/算法设计与分析/">算法设计与分析</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/组合数学/">组合数学</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/计算方法/">计算方法</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/计算机系统结构/">计算机系统结构</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/随机数学/">随机数学</a><span class="category-list-count">1</span></li></ul>
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Java/">Java</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Linux/">Linux</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Machine-Learning/">Machine Learning</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/OS/">OS</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Read/">Read</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/algorithm/">algorithm</a><span class="category-list-count">8</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/web技术/">web技术</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/垃圾场/">垃圾场</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/接口技术/">接口技术</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/机器学习/">机器学习</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/汇编/">汇编</a><span class="category-list-count">8</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/离散数学/">离散数学</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/算法设计与分析/">算法设计与分析</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/组合数学/">组合数学</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/计算方法/">计算方法</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/计算机系统结构/">计算机系统结构</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/随机数学/">随机数学</a><span class="category-list-count">1</span></li></ul>
     </div>
   </div>
 
@@ -271,7 +354,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">归档</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/07/">七月 2020</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/06/">六月 2020</a><span class="archive-list-count">6</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/05/">五月 2020</a><span class="archive-list-count">7</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/04/">四月 2020</a><span class="archive-list-count">7</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/03/">三月 2020</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/02/">二月 2020</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/11/">十一月 2019</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/10/">十月 2019</a><span class="archive-list-count">8</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/07/">七月 2020</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/06/">六月 2020</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/05/">五月 2020</a><span class="archive-list-count">7</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/04/">四月 2020</a><span class="archive-list-count">7</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/03/">三月 2020</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/02/">二月 2020</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/11/">十一月 2019</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/10/">十月 2019</a><span class="archive-list-count">8</span></li></ul>
     </div>
   </div>
 
@@ -283,23 +366,23 @@
       <ul>
         
           <li>
+            <a href="/2020/07/17/ 微机系统/习题/">练习</a>
+          </li>
+        
+          <li>
+            <a href="/2020/07/17/ 微机系统/微型计算机原理与接口技术课后习题/">微型计算机接口技术课后习题</a>
+          </li>
+        
+          <li>
+            <a href="/2020/07/14/ 操作系统/OS习题/">OS习题</a>
+          </li>
+        
+          <li>
             <a href="/2020/07/08/ MachineLearning/SVM/">SVM</a>
           </li>
         
           <li>
             <a href="/2020/06/08/ Math/计数方法/">计数方法</a>
-          </li>
-        
-          <li>
-            <a href="/2020/06/06/ 微机系统/notice/">中断</a>
-          </li>
-        
-          <li>
-            <a href="/2020/06/06/ 微机系统/中断/">中断</a>
-          </li>
-        
-          <li>
-            <a href="/2020/06/06/ 微机系统/微型计算机原理与接口技术课后习题/">微型计算机接口技术课后习题</a>
           </li>
         
       </ul>

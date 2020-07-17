@@ -71,6 +71,211 @@
     <div class="outer">
       <section id="main">
   
+    <article id="post-Math/概率论与数理统计" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2020/04/03/ Math/概率论与数理统计/" class="article-date">
+  <time datetime="2020-04-03T04:42:33.000Z" itemprop="datePublished">2020-04-03</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/随机数学/">随机数学</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/04/03/ Math/概率论与数理统计/">随机数学</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="随机事件及其概率"><a href="#随机事件及其概率" class="headerlink" title="随机事件及其概率"></a>随机事件及其概率</h1><h2 id="引入"><a href="#引入" class="headerlink" title="引入"></a>引入</h2><p>随机试验，简称为试验；若均满足：<strong>可重复性；可观测性；随机性。</strong></p>
+<p>$E:$    试验</p>
+<p>$w$:    样本点</p>
+<p>$\Omega = ${ $w_1,w_2…w_i$ } :    样本空间</p>
+<p>$A$，其中$A\subseteqq \Omega$:    事件</p>
+<p>{$w_i$} :    基本事件</p>
+<p>$\Omega$:    必然事件</p>
+<p>$\phi$:    不可能事件</p>
+<p>若 试验结果 $w\in A$,则称事件A发生</p>
+<h3 id="事件的关系"><a href="#事件的关系" class="headerlink" title="事件的关系"></a>事件的关系</h3><p>$A\subseteqq B $:    包含</p>
+<p>$A=B$:    相等</p>
+<p>互斥：    不能同时发生</p>
+<p>$\bar{A}=B$:    互逆，对立</p>
+<h3 id="事件的运算"><a href="#事件的运算" class="headerlink" title="事件的运算"></a>事件的运算</h3><p>$A\cup B=${$w|w\in A或w\in B$}</p>
+<p>$A\cap B或AB=${$w|w\in A或w\in B$}</p>
+<p>$A-B=${$w|w\in A且 w\notin B$}</p>
+<p>$\overline {A\cup B}=\overline A\cap \overline B$</p>
+<p>$\overline {A\cap B}=\overline A\cup \overline B$</p>
+<p>$n_A$:    事件A发生的频数</p>
+<p>$f_n(A)$:    事件A发生的频率</p>
+<p>$其中 f_n(A)=\frac{n_A}{n}$</p>
+<p><strong>减法公式：</strong>$P(B-A)=P(B)-P(AB)$</p>
+<p><strong>加法公式：</strong>$P(A\cup B)=P(A)+P(B)-P(AB)$</p>
+<h3 id="古典概型：有限个样本点；基本事件发生的可能性相同。"><a href="#古典概型：有限个样本点；基本事件发生的可能性相同。" class="headerlink" title="古典概型：有限个样本点；基本事件发生的可能性相同。"></a>古典概型：有限个样本点；基本事件发生的可能性相同。</h3><h2 id="几何概型"><a href="#几何概型" class="headerlink" title="几何概型"></a>几何概型</h2><h2 id="条件概型"><a href="#条件概型" class="headerlink" title="条件概型"></a>条件概型</h2><p>$P(B|A)=\frac{P(AB)}{P(A)} \Longrightarrow P(AB)=P(A)P(B|A)$</p>
+<p>条件概型的性质：非负性；<strong>规范性：$P(\Omega |A)=1$</strong>；可列可加性：对于<strong>不相容</strong>的事件$B_1,B_2,\cdot \cdot \cdot $有</p>
+<script type="math/tex; mode=display">
+P((\cup_{i=1}^\infty B_i )|A)=\sum_{i=1}^\infty P(B_i|A)</script><p><strong>全概率公式：</strong></p>
+<script type="math/tex; mode=display">
+P(B)=\sum\limits_{i=1}^nP(A_i)P(B|A_i)</script><p>其中：</p>
+<script type="math/tex; mode=display">
+\cup _{i=1} ^n A_i=\Omega 且 \cap _{i=1} ^n A_i=\Phi</script><p><em>推导：</em></p>
+<p><em>对任意事件B，有</em></p>
+<script type="math/tex; mode=display">
+B=B\cap \Omega =B\cap (\cup _{i=1} ^n A_i)=\cup _{i=1} ^n {A_iB}</script><p><img src="https://i.loli.net/2020/04/08/lSNC6yKmUEb7RgW.jpg" alt="概率_25.jpg"></p>
+<p>由条件概型的性质可得全概率公式。若某问题可画出概率树，那么该问题属于条件概型，甚至符合全概率公式。</p>
+<p><strong>贝叶斯公式：</strong></p>
+<script type="math/tex; mode=display">
+P(A_j|B)=\frac{P(A_jB)}{P(B)}=\frac{P(B|A_j)P(A_j)}{\sum_{i=1}^nP(A_i)P(B|A_i)}</script><h2 id="独立性"><a href="#独立性" class="headerlink" title="独立性"></a>独立性</h2><p>如果</p>
+<script type="math/tex; mode=display">
+P(AB)=P(A)P(B)\\
+P(\overline{A}B)=P(\overline{A})P(B)\\
+P(\overline{A}\overline{B})=P(\overline{A})P(\overline{B})</script><p>则称事件A与事件B相互独立。</p>
+<h2 id="伯努利"><a href="#伯努利" class="headerlink" title="伯努利"></a>伯努利</h2><p>若某试验$E$是n重伯努利试验，即试验$E$只有两个对立的结果，将其进行n次。设$P(A)=p$。</p>
+<p>有</p>
+<script type="math/tex; mode=display">
+P_n(k)=(_k^n)p^k(1-p)^{n-k}=C_n^kp^k(1-p)^{n-k}</script><h1 id="随机变量及其概率分布"><a href="#随机变量及其概率分布" class="headerlink" title="随机变量及其概率分布"></a>随机变量及其概率分布</h1><h2 id="随机变量"><a href="#随机变量" class="headerlink" title="随机变量"></a>随机变量</h2><p>性质：</p>
+<p>$P${$a&lt;X\leq b$}$=P{ X\leq b}-P{ X\leq a}=F(b)-F(a)$</p>
+<p>单调不减</p>
+<p>$F(-\infty )=lim_{x\rightarrow -\infty }F(x)=0$</p>
+<p>$F(+\infty )=lim_{x\rightarrow +\infty }F(x)=1$</p>
+<p>F(x)是右连续的，即$F(x^{+})=F(x)$</p>
+<h2 id="离散型随机变量"><a href="#离散型随机变量" class="headerlink" title="离散型随机变量"></a>离散型随机变量</h2><p>两点分布</p>
+<p>二项分布，伯努利试验记作$X ~B(n,p) X在(n+1)p处取得最大值$</p>
+<p>几何分布</p>
+<p>泊松分布：</p>
+<script type="math/tex; mode=display">
+P\{ X=k\}=\frac{\lambda ^ke^{-\lambda}}{k!}\\
+其中，\lambda为服从参数,记作X P(\lambda)</script><h2 id="连续型随机变量"><a href="#连续型随机变量" class="headerlink" title="连续型随机变量"></a>连续型随机变量</h2><h3 id="均匀分布"><a href="#均匀分布" class="headerlink" title="均匀分布"></a>均匀分布</h3><script type="math/tex; mode=display">
+f(x)=\left\{    \begin{array}{lr}        \frac{1}{b-a},a<x<b\\        0,其他            \end{array}\right.\\</script><h3 id="指数分布"><a href="#指数分布" class="headerlink" title="指数分布"></a>指数分布</h3><script type="math/tex; mode=display">
+f(x)=\left\{    \begin{array}{lr}        \lambda e^{-\lambda x} &x>0,\\        0&x\leq 0            \end{array}\right.\\F(x)=\left\{    \begin{array}{lr}    1-e^{-\lambda x}&x>0\\    0&x\leq0\\    \end{array}    \right.\\其中，\lambda>0是常数，称为X服从参数为\lambda的指数分布\\</script><h3 id="正态分布"><a href="#正态分布" class="headerlink" title="正态分布"></a>正态分布</h3><p>$N(\mu ,\sigma^2)$有概率密度函数</p>
+<script type="math/tex; mode=display">
+f(x)=\frac{1}{\sqrt{2\pi }\sigma}e^{-\frac{(x-u)^2}{2\sigma^2}},-\infty <x<+\infty\\F(\mu)=\frac{1}{2}\\f(\mu)=\frac{1}{\sqrt{2\pi}\sigma}</script><h4 id="标准正态分布"><a href="#标准正态分布" class="headerlink" title="标准正态分布"></a>标准正态分布</h4><p>$N(\mu,\sigma^2)=N(0,1)$</p>
+<script type="math/tex; mode=display">
+f(x)=\frac{1}{\sqrt{2\pi}}e^{-\frac{x^2}{2}}</script><p>其中$u,\sigma$为服从参数。当$u,\sigma$分布为0，1时，则称$X$服从标准正态分布</p>
+<script type="math/tex; mode=display">
+F(x)=\Phi (\frac{x-\mu}{\sigma})</script><h1 id="二维连续型随机变量"><a href="#二维连续型随机变量" class="headerlink" title="二维连续型随机变量"></a>二维连续型随机变量</h1><h2 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h2><script type="math/tex; mode=display">
+F(x,y)=\int_{-\infty}^{x}\int_{-\infty}^yf(u,v)dudv\\其中F(x,y)为概率分布函数,f(x,y)为联合概率密度。\\</script><script type="math/tex; mode=display">
+1.f(x,y)\ge 0\\
+2. \int_{-\infty}^{+\infty}\int_{-\infty}^{+\infty}f(u,v)dudv=1\\
+3.若G是xOy上的一个区域，则,P\{(X,Y)\in G\}=\displaystyle\iint_{G}f(x,y)dxdy\\
+4.关于Y的边缘概率密度函数f_Y(y)=\displaystyle\int_{-\infty}^{+\infty}f(x,y)dx\\</script><p><strong>独立性</strong></p>
+<p>随机变量X和Y相互独立的充要条件：</p>
+<ul>
+<li>$f(x,y)=f_X(x)f_Y(y)$</li>
+<li>$F(x,y)=F_X(x)F_Y(y)$</li>
+<li>$P(X,Y)=P_X(X)P_Y(Y)$</li>
+<li>$E(XY)=E(X)E(Y)$</li>
+</ul>
+<p>若$X_1,X_2$相互独立，那么$F_1(x)F_2(x)$一定是某一随机变量的分布密度，但$f_1(x)f_2(x)$不一定为概率密度</p>
+<h2 id="连续型"><a href="#连续型" class="headerlink" title="连续型"></a>连续型</h2><h3 id="均匀分布-1"><a href="#均匀分布-1" class="headerlink" title="均匀分布"></a>均匀分布</h3><script type="math/tex; mode=display">
+设D是xOy面上的有界区域，其面积为A，若\\f(x,y)=\left\{    \begin{array}{lr}        \frac{1}{A}&(x,y)\in D,\\        0&其他            \end{array}\right.\\则称(X,Y)在区域D上服从均匀分布。</script><h3 id="正态分布-1"><a href="#正态分布-1" class="headerlink" title="正态分布"></a>正态分布</h3><script type="math/tex; mode=display">
+f(x,y)=\frac{1}{2\pi \sigma_1 \sigma_2 \sqrt{1-\rho^2} }\cdot e^{\frac{-1}{2(1-\rho^2)}[\frac{(x-\mu_1)^2}{\sigma_1^2}-2\rho \frac{(x-\mu_1)(y-\mu_2)}{\sigma_1\sigma_2}+\frac{(y-\mu_2)^2}{\sigma_2^2}]},(x,y)\in R^2\\其中\sigma_i>0,-1<\rho<1,记作(X,Y) ~N(\mu_1,\mu_2,\sigma_1^2,\sigma_2^2,\rho)</script><h2 id="条件分布"><a href="#条件分布" class="headerlink" title="条件分布"></a>条件分布</h2><script type="math/tex; mode=display">
+离散型：P\{X=x_i|Y=y_j\}=\frac{P{X=x_i,Y=y_j}}{P{Y=y_j}}=\frac{p_{ij}}{p_{\cdot j}}\\
+连续型条件Y=y下X的条件概率密度函数f_{X|Y}(x|y)=\frac{f(x,y)}{f_Y{y}}</script><h2 id="连续型函数分布​"><a href="#连续型函数分布​" class="headerlink" title="连续型函数分布​"></a>连续型函数分布​</h2><script type="math/tex; mode=display">
+有Z=X+Y\\公式法f_Z(z)=\displaystyle \int _{-\infty}^{+\infty}f(x,z-x)dx=\displaystyle \int _{-\infty} ^{+\infty}f(z-y,y)dy\\分布函数法\\
+Z=X+Y,若X和Y相互独立\\f_Z(z)=\displaystyle \int _{-\infty} ^{+\infty}f_X(x)f_Y(z-x)dx\\</script><p>$这个公式称为f_X(x)与f_Y(y)的$<strong>卷积公式</strong></p>
+<p>$Z=max{X,Y},X与Y相互独立$</p>
+<p>$F_Z(z)=F_X(x)F_Y(y)$</p>
+<p>$Z=min{X,Y},X与Y相互独立$</p>
+<p>$F_Z(z)=1-[1-F_X(z)][1-F_Y(z)]$</p>
+<h1 id="数字特征"><a href="#数字特征" class="headerlink" title="数字特征"></a>数字特征</h1><h2 id="数学期望"><a href="#数学期望" class="headerlink" title="数学期望"></a>数学期望</h2><h3 id="定义-1"><a href="#定义-1" class="headerlink" title="定义"></a>定义</h3><p><strong>离散型数学期望的定义</strong></p>
+<ul>
+<li><p>其随机变量$X$的分布律为$P{X=x_k}=p_k,(k=1,2,…)$，</p>
+<p>若级数</p>
+<script type="math/tex; mode=display">
+\sum _{k=1}^{\infty}x_kp_k绝对收敛，记作E(X)=\sum _{k=1}^{\infty} x_kp_k</script></li>
+</ul>
+<p><strong>连续型数学期望的定义</strong></p>
+<ul>
+<li><p>随机变量$X$的概率密度为$f(x)$</p>
+<p>若</p>
+<script type="math/tex; mode=display">
+\sum _{-\infty}^{+\infty}xf(x)dx绝对收敛，记作E(X)=\int _{-\infty}^{+\infty}x(x)</script></li>
+</ul>
+<h3 id="函数"><a href="#函数" class="headerlink" title="函数"></a>函数</h3><p>$Y=g(X)$</p>
+<ul>
+<li><p>离散 $E(Y)=\sum g(x_k)p_k$</p>
+</li>
+<li><p>连续</p>
+<script type="math/tex; mode=display">
+E(Y)=\int g(x_k)f(x)dx</script></li>
+</ul>
+<h2 id="方差"><a href="#方差" class="headerlink" title="方差"></a>方差</h2><ul>
+<li>$D(X)=E(X^2)-[E(X)]^2$</li>
+<li>$D(X\pm Y)=D(X)+D(Y)\pm 2Cov(X,Y)$</li>
+</ul>
+<h3 id="协方差"><a href="#协方差" class="headerlink" title="协方差"></a>协方差</h3><ul>
+<li><script type="math/tex; mode=display">
+Cov(X,Y)=E(XY)-E(X)E(Y)</script></li>
+<li><p>$Cov(aX,bY)=abCov(X,Y)$</p>
+</li>
+<li><p>$Cov(X+Y,Z)=Cov(X,Z)+Cov(Y,Z)$</p>
+</li>
+<li></li>
+</ul>
+<h3 id="相关系数"><a href="#相关系数" class="headerlink" title="相关系数"></a>相关系数</h3><ul>
+<li><script type="math/tex; mode=display">
+\rho_{XY}=\frac{Cov(X,Y)}{\sqrt{D(X)}\sqrt{D(Y)}}
+那么\rho 为X和Y的相关系数</script></li>
+<li><p>若$\rho_{XY}=0,称X与Y不相关，但不一定独立$</p>
+</li>
+<li><p>$|\rho _{XY}|\leq 1$</p>
+</li>
+<li><p>若X与Y相互独立，则$\rho _{XY}=0$</p>
+</li>
+<li><p>$|\rho|=1的充分必要条件为存在常数a,b使得P{a+bX}=1$</p>
+</li>
+</ul>
+<h4 id="相关性"><a href="#相关性" class="headerlink" title="相关性"></a>相关性</h4><p>下列命题等价</p>
+<ul>
+<li>$Cov(X,Y)=0$</li>
+<li>$X,Y不相关$</li>
+<li>$E(XY)=E(X)E(Y)$</li>
+<li>$D(X+Y)=D(X)+D(Y)$</li>
+<li>$D(X-Y)=D(X)+D(Y)$</li>
+<li>$\rho _{XY}=0$</li>
+</ul>
+<h1 id="样本函数及其概率分布"><a href="#样本函数及其概率分布" class="headerlink" title="样本函数及其概率分布"></a>样本函数及其概率分布</h1><script type="math/tex; mode=display">
+设X ~{ N(\mu,\sigma^2)},X_1,X_2,...X_n是来自总体的样本，\overline{X}为样本均值，则随机变量\\
+u=\frac{\overline{X}-\mu}{\sigma/\sqrt{n}}为N(0,1)分布</script>
+      
+    </div>
+    <footer class="article-footer">
+      
+        <a data-url="http://yoursite.com/2020/04/03/ Math/概率论与数理统计/" data-id="ckcpv4b6o0013s4viie7pqo6q" class="article-share-link" data-share="baidu" data-title="随机数学">分享到</a>
+      
+
+      
+        <a href="http://yoursite.com/2020/04/03/ Math/概率论与数理统计/#ds-thread" class="article-comment-link">评论</a>
+      
+
+      
+        <a href="/2020/04/03/ Math/概率论与数理统计/#comments" class="article-comment-link">
+          <span class="post-comments-count valine-comment-count" data-xid="/2020/04/03/ Math/概率论与数理统计/" itemprop="commentCount"></span>
+          文章评论
+        </a>
+      
+
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+
+
+  
     <article id="post-Java核心技术i" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2020/04/02/ Java核心技术i/" class="article-date">
@@ -119,7 +324,7 @@
     </div>
     <footer class="article-footer">
       
-        <a data-url="http://yoursite.com/2020/04/02/ Java核心技术i/" data-id="ckcjuflyk00003ovi383zrxck" class="article-share-link" data-share="baidu" data-title="Java核心技术i">分享到</a>
+        <a data-url="http://yoursite.com/2020/04/02/ Java核心技术i/" data-id="ckcpv4b5c0000s4vivw0vm5qm" class="article-share-link" data-share="baidu" data-title="Java核心技术i">分享到</a>
       
 
       
@@ -566,7 +771,7 @@
     </div>
     <footer class="article-footer">
       
-        <a data-url="http://yoursite.com/2020/04/02/ Linux复习/" data-id="ckcjuflyp00023ovizwk24qyt" class="article-share-link" data-share="baidu" data-title="Linux复习">分享到</a>
+        <a data-url="http://yoursite.com/2020/04/02/ Linux复习/" data-id="ckcpv4b5m0006s4vihd2j1zbi" class="article-share-link" data-share="baidu" data-title="Linux复习">分享到</a>
       
 
       
@@ -680,7 +885,7 @@ EAT=快表命中率\cdot (快表访问时间+内存访问时间)+(1-快表命中
     </div>
     <footer class="article-footer">
       
-        <a data-url="http://yoursite.com/2020/03/31/ 操作系统/OS教程/" data-id="ckcjufm2700203ovie07zbzvr" class="article-share-link" data-share="baidu" data-title="OS教程">分享到</a>
+        <a data-url="http://yoursite.com/2020/03/31/ 操作系统/OS教程/" data-id="ckcpv4b7h002ls4vi1pwrtuha" class="article-share-link" data-share="baidu" data-title="OS教程">分享到</a>
       
 
       
@@ -902,7 +1107,7 @@ t_{cpuB}=IC*(2/8*2+6/8*1)*1.25T</script><p>最后即可得答案。</p>
     </div>
     <footer class="article-footer">
       
-        <a data-url="http://yoursite.com/2020/03/31/ 计算机系统结构/" data-id="ckcjuflyu00053oviuwusu1xp" class="article-share-link" data-share="baidu" data-title="计算机系统结构">分享到</a>
+        <a data-url="http://yoursite.com/2020/03/31/ 计算机系统结构/" data-id="ckcpv4b5n0007s4vi4vy7g2i8" class="article-share-link" data-share="baidu" data-title="计算机系统结构">分享到</a>
       
 
       
@@ -1013,7 +1218,7 @@ GCD(a,b)=GCD(Remainder(b,a),a)\\
     </div>
     <footer class="article-footer">
       
-        <a data-url="http://yoursite.com/2020/03/21/ MachineLearning/离散数学第4讲/" data-id="ckcjufm1e001h3ovi3m0tpqdn" class="article-share-link" data-share="baidu" data-title="state machine&amp;Euclidean Alg">分享到</a>
+        <a data-url="http://yoursite.com/2020/03/21/ MachineLearning/离散数学第4讲/" data-id="ckcpv4b6u001hs4vii7kziscq" class="article-share-link" data-share="baidu" data-title="state machine&amp;Euclidean Alg">分享到</a>
       
 
       
@@ -1152,7 +1357,7 @@ n个输入,可行解为n个输入的子集\\
     </div>
     <footer class="article-footer">
       
-        <a data-url="http://yoursite.com/2020/02/13/ 算法设计及分析/" data-id="ckcjuflyw00083ovikqu4xcah" class="article-share-link" data-share="baidu" data-title="算法设计与分析">分享到</a>
+        <a data-url="http://yoursite.com/2020/02/13/ 算法设计及分析/" data-id="ckcpv4b5l0005s4vi2klq3ztc" class="article-share-link" data-share="baidu" data-title="算法设计与分析">分享到</a>
       
 
       
@@ -1209,7 +1414,7 @@ n个输入,可行解为n个输入的子集\\
     </div>
     <footer class="article-footer">
       
-        <a data-url="http://yoursite.com/2019/11/18/ Algorithm/Warshall/" data-id="ckcjufm0p000v3ovivhk1uvuq" class="article-share-link" data-share="baidu" data-title="Warshall&amp;All_componet">分享到</a>
+        <a data-url="http://yoursite.com/2019/11/18/ Algorithm/Warshall/" data-id="ckcpv4b6l000ys4vibhuvxmb6" class="article-share-link" data-share="baidu" data-title="Warshall&amp;All_componet">分享到</a>
       
 
       
@@ -1266,7 +1471,7 @@ n个输入,可行解为n个输入的子集\\
     </div>
     <footer class="article-footer">
       
-        <a data-url="http://yoursite.com/2019/11/13/ Algorithm/Prim/" data-id="ckcjufm0e000q3ovihbgzhhlz" class="article-share-link" data-share="baidu" data-title="Prim">分享到</a>
+        <a data-url="http://yoursite.com/2019/11/13/ Algorithm/Prim/" data-id="ckcpv4b6d000qs4vifpql0abe" class="article-share-link" data-share="baidu" data-title="Prim">分享到</a>
       
 
       
@@ -1323,7 +1528,7 @@ n个输入,可行解为n个输入的子集\\
     </div>
     <footer class="article-footer">
       
-        <a data-url="http://yoursite.com/2019/11/13/ MachineLearning/Kmeans/" data-id="ckcjufm1100153ovivd5o79kx" class="article-share-link" data-share="baidu" data-title="Kmeans">分享到</a>
+        <a data-url="http://yoursite.com/2019/11/13/ MachineLearning/Kmeans/" data-id="ckcpv4b6r001as4visbqdjjag" class="article-share-link" data-share="baidu" data-title="Kmeans">分享到</a>
       
 
       
@@ -1333,63 +1538,6 @@ n个输入,可行解为n个输入的子集\\
       
         <a href="/2019/11/13/ MachineLearning/Kmeans/#comments" class="article-comment-link">
           <span class="post-comments-count valine-comment-count" data-xid="/2019/11/13/ MachineLearning/Kmeans/" itemprop="commentCount"></span>
-          文章评论
-        </a>
-      
-
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-
-
-  
-    <article id="post-Algorithm/BinTree" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2019/10/27/ Algorithm/BinTree/" class="article-date">
-  <time datetime="2019-10-27T04:28:29.000Z" itemprop="datePublished">2019-10-27</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/algorithm/">algorithm</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/10/27/ Algorithm/BinTree/">BinTree</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br><span class="line">165</span><br><span class="line">166</span><br><span class="line">167</span><br><span class="line">168</span><br><span class="line">169</span><br><span class="line">170</span><br><span class="line">171</span><br><span class="line">172</span><br><span class="line">173</span><br><span class="line">174</span><br><span class="line">175</span><br><span class="line">176</span><br><span class="line">177</span><br><span class="line">178</span><br><span class="line">179</span><br><span class="line">180</span><br><span class="line">181</span><br><span class="line">182</span><br><span class="line">183</span><br><span class="line">184</span><br><span class="line">185</span><br><span class="line">186</span><br><span class="line">187</span><br><span class="line">188</span><br><span class="line">189</span><br><span class="line">190</span><br><span class="line">191</span><br><span class="line">192</span><br><span class="line">193</span><br><span class="line">194</span><br><span class="line">195</span><br><span class="line">196</span><br><span class="line">197</span><br><span class="line">198</span><br><span class="line">199</span><br><span class="line">200</span><br><span class="line">201</span><br><span class="line">202</span><br><span class="line">203</span><br><span class="line">204</span><br><span class="line">205</span><br><span class="line">206</span><br><span class="line">207</span><br><span class="line">208</span><br><span class="line">209</span><br><span class="line">210</span><br><span class="line">211</span><br><span class="line">212</span><br><span class="line">213</span><br><span class="line">214</span><br><span class="line">215</span><br><span class="line">216</span><br><span class="line">217</span><br><span class="line">218</span><br><span class="line">219</span><br><span class="line">220</span><br><span class="line">221</span><br><span class="line">222</span><br><span class="line">223</span><br><span class="line">224</span><br><span class="line">225</span><br><span class="line">226</span><br><span class="line">227</span><br><span class="line">228</span><br><span class="line">229</span><br><span class="line">230</span><br><span class="line">231</span><br><span class="line">232</span><br><span class="line">233</span><br><span class="line">234</span><br><span class="line">235</span><br><span class="line">236</span><br><span class="line">237</span><br><span class="line">238</span><br><span class="line">239</span><br><span class="line">240</span><br><span class="line">241</span><br><span class="line">242</span><br><span class="line">243</span><br><span class="line">244</span><br><span class="line">245</span><br><span class="line">246</span><br><span class="line">247</span><br><span class="line">248</span><br><span class="line">249</span><br><span class="line">250</span><br><span class="line">251</span><br><span class="line">252</span><br><span class="line">253</span><br><span class="line">254</span><br><span class="line">255</span><br><span class="line">256</span><br><span class="line">257</span><br><span class="line">258</span><br><span class="line">259</span><br><span class="line">260</span><br><span class="line">261</span><br><span class="line">262</span><br><span class="line">263</span><br><span class="line">264</span><br><span class="line">265</span><br><span class="line">266</span><br><span class="line">267</span><br><span class="line">268</span><br><span class="line">269</span><br><span class="line">270</span><br><span class="line">271</span><br><span class="line">272</span><br><span class="line">273</span><br><span class="line">274</span><br><span class="line">275</span><br><span class="line">276</span><br><span class="line">277</span><br><span class="line">278</span><br><span class="line">279</span><br><span class="line">280</span><br><span class="line">281</span><br><span class="line">282</span><br><span class="line">283</span><br><span class="line">284</span><br><span class="line">285</span><br><span class="line">286</span><br><span class="line">287</span><br><span class="line">288</span><br><span class="line">289</span><br><span class="line">290</span><br><span class="line">291</span><br><span class="line">292</span><br><span class="line">293</span><br><span class="line">294</span><br><span class="line">295</span><br><span class="line">296</span><br><span class="line">297</span><br><span class="line">298</span><br><span class="line">299</span><br><span class="line">300</span><br><span class="line">301</span><br><span class="line">302</span><br><span class="line">303</span><br><span class="line">304</span><br><span class="line">305</span><br><span class="line">306</span><br><span class="line">307</span><br><span class="line">308</span><br><span class="line">309</span><br><span class="line">310</span><br><span class="line">311</span><br><span class="line">312</span><br><span class="line">313</span><br><span class="line">314</span><br><span class="line">315</span><br><span class="line">316</span><br><span class="line">317</span><br><span class="line">318</span><br><span class="line">319</span><br><span class="line">320</span><br><span class="line">321</span><br><span class="line">322</span><br><span class="line">323</span><br><span class="line">324</span><br><span class="line">325</span><br><span class="line">326</span><br><span class="line">327</span><br><span class="line">328</span><br><span class="line">329</span><br><span class="line">330</span><br><span class="line">331</span><br><span class="line">332</span><br><span class="line">333</span><br><span class="line">334</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;stack&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;utility&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;queue&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">template</span>&lt;<span class="class"><span class="keyword">class</span> <span class="title">T</span>&gt;</span></span><br><span class="line"><span class="class"><span class="title">class</span> <span class="title">BinTreeNode</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    BinTreeNode&lt;T&gt;*left;</span><br><span class="line">    BinTreeNode&lt;T&gt;*right;</span><br><span class="line">    T data;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    BinTreeNode(<span class="keyword">const</span> T&amp;item,BinTreeNode&lt;T&gt;*L=<span class="literal">NULL</span>,BinTreeNode&lt;T&gt;*R=<span class="literal">NULL</span>):data(item),left(L),right(R)&#123;&#125;</span><br><span class="line">    BinTreeNode&lt;T&gt;*GetLeft()<span class="keyword">const</span></span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">return</span> left;</span><br><span class="line">    &#125;</span><br><span class="line">    BinTreeNode&lt;T&gt;*GetRight()<span class="keyword">const</span></span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">return</span> right;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">SetLeft</span><span class="params">(BinTreeNode&lt;T&gt;*L)</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        left=L;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">SetRight</span><span class="params">(BinTreeNode&lt;T&gt;*R)</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        right=R;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function">T&amp; <span class="title">GetData</span><span class="params">()</span></span>&#123;<span class="keyword">return</span> data;&#125;</span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">SetData</span><span class="params">(<span class="keyword">const</span> T&amp;item)</span></span>&#123;data=item;&#125;</span><br><span class="line">&#125;;</span><br><span class="line"><span class="keyword">template</span>&lt;<span class="class"><span class="keyword">class</span> <span class="title">T</span>&gt;</span></span><br><span class="line"><span class="class"><span class="title">class</span> <span class="title">BinTree</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    BinTreeNode&lt;T&gt;*root;</span><br><span class="line">    T stop;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    BinTree(BinTreeNode&lt;T&gt;*t=<span class="literal">NULL</span>):root(t)&#123;&#125;</span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">PreOrder</span><span class="params">(BinTreeNode&lt;T&gt;*t)</span><span class="keyword">const</span></span>;</span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">InOrder</span><span class="params">(BinTreeNode&lt;T&gt;*t)</span><span class="keyword">const</span></span>;</span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">PostOrder</span><span class="params">(BinTreeNode&lt;T&gt;*t)</span><span class="keyword">const</span></span>;</span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">LevelOrder</span><span class="params">(BinTreeNode&lt;T&gt;*t)</span><span class="keyword">const</span></span>;</span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">NorecPreOrder</span><span class="params">(BinTreeNode&lt;T&gt;*t)</span><span class="keyword">const</span></span>;</span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">NorecInOrder</span><span class="params">(BinTreeNode&lt;T&gt;*t)</span><span class="keyword">const</span></span>;</span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">NorecPostOrder</span><span class="params">(BinTreeNode&lt;T&gt;*t)</span><span class="keyword">const</span></span>;</span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">CreateBinTree</span><span class="params">(T tostop)</span></span>;</span><br><span class="line">    BinTreeNode&lt;T&gt;* Create();</span><br><span class="line">    BinTreeNode&lt;T&gt;*CopyTree(BinTreeNode&lt;T&gt;*t);</span><br><span class="line">    BinTreeNode&lt;T&gt;*Father(BinTreeNode&lt;T&gt;*t,BinTreeNode&lt;T&gt;*p);</span><br><span class="line">    BinTreeNode&lt;T&gt;*Find(BinTreeNode&lt;T&gt;*t,<span class="keyword">const</span> T&amp;item)<span class="keyword">const</span>;</span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">InsertLeft</span><span class="params">(T item,BinTreeNode&lt;T&gt;*t)</span></span>;</span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">InsertRight</span><span class="params">(T item,BinTreeNode&lt;T&gt;*s)</span></span>;</span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">DelSubtree</span><span class="params">(BinTreeNode&lt;T&gt;*t)</span></span>;</span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">Del</span><span class="params">(BinTreeNode&lt;T&gt;*t)</span></span>;</span><br><span class="line">    BinTreeNode&lt;T&gt;*GetRoot()&#123;<span class="keyword">return</span> root;&#125;</span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">SetRoot</span><span class="params">(BinTreeNode&lt;T&gt;*t)</span></span>&#123;root=t;&#125;</span><br><span class="line">    <span class="function">T <span class="title">getStop</span><span class="params">()</span></span>&#123;<span class="keyword">return</span> stop;&#125;</span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">SetStop</span><span class="params">(T tostop)</span></span>&#123;stop=tostop;&#125;</span><br><span class="line">    <span class="function"><span class="keyword">bool</span> <span class="title">IsEmpty</span><span class="params">()</span></span>&#123;<span class="keyword">return</span> root==<span class="literal">NULL</span>;&#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">template</span>&lt;<span class="class"><span class="keyword">class</span> <span class="title">T</span>&gt;</span></span><br><span class="line"><span class="class"><span class="title">void</span> <span class="title">BinTree</span>&lt;T&gt;:</span>:PreOrder(BinTreeNode&lt;T&gt;*t)<span class="keyword">const</span></span><br><span class="line">&#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span>(t!=<span class="literal">NULL</span>)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="built_in">cout</span>&lt;&lt;t-&gt;GetData()&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">        PreOrder(t-&gt;GetLeft());</span><br><span class="line">        PreOrder(t-&gt;GetRight());</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">template</span>&lt;<span class="class"><span class="keyword">class</span> <span class="title">T</span>&gt;</span></span><br><span class="line"><span class="class"><span class="title">void</span> <span class="title">BinTree</span>&lt;T&gt;:</span>:InOrder(BinTreeNode&lt;T&gt;*t)<span class="keyword">const</span></span><br><span class="line">&#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span>(t!=<span class="literal">NULL</span>)</span><br><span class="line">    &#123;</span><br><span class="line">        InOrder(t-&gt;GetLeft());</span><br><span class="line">        <span class="built_in">cout</span>&lt;&lt;t-&gt;GetData()&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">        InOrder(t-&gt;GetRight());</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">template</span>&lt;<span class="class"><span class="keyword">class</span> <span class="title">T</span>&gt;</span></span><br><span class="line"><span class="class"><span class="title">void</span> <span class="title">BinTree</span>&lt;T&gt;:</span>:PostOrder(BinTreeNode&lt;T&gt;*t)<span class="keyword">const</span></span><br><span class="line">&#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span>(t!=<span class="literal">NULL</span>)</span><br><span class="line">    &#123;</span><br><span class="line">        PostOrder(t-&gt;GetLeft());</span><br><span class="line">        PostOrder(t-&gt;GetRight());</span><br><span class="line">        <span class="built_in">cout</span>&lt;&lt;t-&gt;GetData()&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">template</span>&lt;<span class="class"><span class="keyword">class</span> <span class="title">T</span>&gt;</span></span><br><span class="line"><span class="class"><span class="title">void</span> <span class="title">BinTree</span>&lt;T&gt;:</span>:NorecInOrder(BinTreeNode&lt;T&gt;*t)<span class="keyword">const</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="built_in">stack</span>&lt;BinTreeNode&lt;T&gt;*&gt;S;</span><br><span class="line">    <span class="keyword">while</span>(t!=<span class="literal">NULL</span>||S.empty()==<span class="literal">false</span>)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">while</span>(t!=<span class="literal">NULL</span>)</span><br><span class="line">        &#123;</span><br><span class="line">            S.push(t);</span><br><span class="line">            t=t-&gt;GetLeft();</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span>(S.empty()==<span class="literal">true</span>)<span class="keyword">return</span> ;</span><br><span class="line">        t=S.top();</span><br><span class="line">        S.pop();</span><br><span class="line">        <span class="built_in">cout</span>&lt;&lt;t-&gt;GetData()&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">        t=t-&gt;GetRight();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">template</span>&lt;<span class="class"><span class="keyword">class</span> <span class="title">T</span>&gt;</span></span><br><span class="line"><span class="class"><span class="title">void</span> <span class="title">BinTree</span>&lt;T&gt;:</span>:NorecPreOrder(BinTreeNode&lt;T&gt;*t)<span class="keyword">const</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">if</span>(t==<span class="literal">NULL</span>)<span class="keyword">return</span> ;</span><br><span class="line">    <span class="built_in">stack</span>&lt;BinTreeNode&lt;T&gt;*&gt;S;</span><br><span class="line">    S.push(t);</span><br><span class="line">    <span class="keyword">while</span>(S.empty()==<span class="literal">false</span>)</span><br><span class="line">    &#123;</span><br><span class="line">        t=S.top();</span><br><span class="line">        S.pop();</span><br><span class="line">        <span class="built_in">cout</span>&lt;&lt;t-&gt;GetData()&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">        <span class="keyword">if</span>(t-&gt;GetRight()!=<span class="literal">NULL</span>) S.push(t-&gt;GetRight());</span><br><span class="line">        <span class="keyword">if</span>(t-&gt;GetLeft()!=<span class="literal">NULL</span>) S.push(t-&gt;GetLeft());</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">template</span>&lt;<span class="class"><span class="keyword">class</span> <span class="title">T</span>&gt;</span></span><br><span class="line"><span class="class"><span class="title">void</span> <span class="title">BinTree</span>&lt;T&gt;:</span>:NorecPostOrder(BinTreeNode&lt;T&gt;*t)<span class="keyword">const</span></span><br><span class="line">&#123;</span><br><span class="line">    pair&lt;BinTreeNode&lt;T&gt;*,<span class="keyword">int</span>&gt; p;</span><br><span class="line">    <span class="keyword">if</span>(t==<span class="literal">NULL</span>)<span class="keyword">return</span> ;</span><br><span class="line">    p=make_pair(t,<span class="number">0</span>);</span><br><span class="line">    <span class="built_in">stack</span>&lt;pair&lt;BinTreeNode&lt;T&gt;*,<span class="keyword">int</span>&gt;&gt;S;</span><br><span class="line">    S.push(p);</span><br><span class="line">    <span class="keyword">while</span>(S.empty()==<span class="literal">false</span>)</span><br><span class="line">    &#123;</span><br><span class="line">        p=S.top();</span><br><span class="line">        S.pop();</span><br><span class="line">        <span class="keyword">if</span>(p.second==<span class="number">0</span>)</span><br><span class="line">        &#123;</span><br><span class="line">            p.second++;</span><br><span class="line">            S.push(p);</span><br><span class="line">            <span class="keyword">if</span>((p.first)-&gt;GetLeft()!=<span class="literal">NULL</span>)</span><br><span class="line">            &#123;</span><br><span class="line">                p.first=(p.first)-&gt;GetLeft();</span><br><span class="line">                p.second=<span class="number">0</span>;</span><br><span class="line">                S.push(p);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span></span><br><span class="line">        &#123;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">            <span class="keyword">if</span>(p.second==<span class="number">1</span>)</span><br><span class="line">            &#123;</span><br><span class="line">                p.second++;</span><br><span class="line">                S.push(p);</span><br><span class="line">                <span class="keyword">if</span>((p.first)-&gt;GetRight()!=<span class="literal">NULL</span>)</span><br><span class="line">                &#123;</span><br><span class="line">                    p.first=(p.first)-&gt;GetRight();</span><br><span class="line">                    p.second=<span class="number">0</span>;</span><br><span class="line">                    S.push(p);</span><br><span class="line">                &#125;</span><br><span class="line"></span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">else</span></span><br><span class="line">            &#123;</span><br><span class="line">                <span class="built_in">cout</span>&lt;&lt;p.first-&gt;GetData()&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">template</span>&lt;<span class="class"><span class="keyword">class</span> <span class="title">T</span>&gt;</span></span><br><span class="line"><span class="class"><span class="title">void</span> <span class="title">BinTree</span>&lt;T&gt;:</span>:LevelOrder(BinTreeNode&lt;T&gt;*t)<span class="keyword">const</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="built_in">queue</span>&lt;BinTreeNode&lt;T&gt;*&gt;Q;</span><br><span class="line">    <span class="keyword">if</span>(t==<span class="literal">NULL</span>)<span class="keyword">return</span> ;</span><br><span class="line">    BinTreeNode&lt;T&gt; *p=t;</span><br><span class="line">    Q.push(p);</span><br><span class="line">    <span class="keyword">while</span>(Q.empty()==<span class="literal">false</span>)</span><br><span class="line">    &#123;</span><br><span class="line">        p=Q.front();</span><br><span class="line">        Q.pop();</span><br><span class="line">        <span class="built_in">cout</span>&lt;&lt;p-&gt;GetData()&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">        <span class="keyword">if</span>(p-&gt;GetLeft()!=<span class="literal">NULL</span>)</span><br><span class="line">        &#123;</span><br><span class="line">            Q.push(p-&gt;GetLeft());</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span>(p-&gt;GetRight()!=<span class="literal">NULL</span>)</span><br><span class="line">        &#123;</span><br><span class="line">            Q.push(p-&gt;GetRight());</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">template</span>&lt;<span class="class"><span class="keyword">class</span> <span class="title">T</span>&gt;</span></span><br><span class="line"><span class="class"><span class="title">void</span> <span class="title">BinTree</span>&lt;T&gt;:</span>:CreateBinTree(T tostop)</span><br><span class="line">&#123;</span><br><span class="line">    SetStop(tostop);</span><br><span class="line">    root=Create();</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">template</span>&lt;<span class="class"><span class="keyword">class</span> <span class="title">T</span>&gt;</span></span><br><span class="line"><span class="class"><span class="title">BinTreeNode</span>&lt;T&gt;* <span class="title">BinTree</span>&lt;T&gt;:</span>:Create()</span><br><span class="line">&#123;</span><br><span class="line"></span><br><span class="line">    BinTreeNode&lt;T&gt;*t,*t1,*t2;</span><br><span class="line">    T item;</span><br><span class="line">    <span class="built_in">cin</span>&gt;&gt;item;</span><br><span class="line">    <span class="keyword">if</span>(item==stop)</span><br><span class="line">    &#123;</span><br><span class="line">        t=<span class="literal">NULL</span>;</span><br><span class="line">        <span class="keyword">return</span> t;</span><br><span class="line">    &#125;</span><br><span class="line">    t=<span class="keyword">new</span> BinTreeNode&lt;T&gt;(item,<span class="literal">NULL</span>,<span class="literal">NULL</span>);</span><br><span class="line">    t1=Create();</span><br><span class="line">    t-&gt;SetLeft(t1);</span><br><span class="line">    t2=Create();</span><br><span class="line">    t-&gt;SetRight(t2);</span><br><span class="line">    <span class="keyword">return</span> t;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">template</span>&lt;<span class="class"><span class="keyword">class</span> <span class="title">T</span>&gt;</span></span><br><span class="line"><span class="class"><span class="title">BinTreeNode</span>&lt;T&gt;*<span class="title">BinTree</span>&lt;T&gt;:</span>:CopyTree(BinTreeNode&lt;T&gt;*t)</span><br><span class="line">&#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span>(t==<span class="literal">NULL</span>)<span class="keyword">return</span> <span class="literal">NULL</span>;</span><br><span class="line">    BinTreeNode&lt;T&gt;*L=<span class="literal">nullptr</span>,*R=<span class="literal">nullptr</span>;</span><br><span class="line">    <span class="keyword">if</span>(t-&gt;GetLeft()!=<span class="literal">NULL</span>)</span><br><span class="line">    &#123;</span><br><span class="line">        L=CopyTree(t-&gt;GetLeft());</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span>(t-&gt;GetRight()!=<span class="literal">NULL</span>)</span><br><span class="line">    &#123;</span><br><span class="line">        R=CopyTree(t-&gt;GetRight());</span><br><span class="line">    &#125;</span><br><span class="line">    BinTreeNode&lt;T&gt;*nod=<span class="keyword">new</span> BinTreeNode&lt;T&gt;(t-&gt;GetData(),L,R);</span><br><span class="line">    <span class="keyword">return</span> nod;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">template</span>&lt;<span class="class"><span class="keyword">class</span> <span class="title">T</span>&gt;</span></span><br><span class="line"><span class="class"><span class="title">BinTreeNode</span>&lt;T&gt;*<span class="title">BinTree</span>&lt;T&gt;:</span>:Father(BinTreeNode&lt;T&gt;*t,BinTreeNode&lt;T&gt;*p)</span><br><span class="line">&#123;</span><br><span class="line"></span><br><span class="line">    BinTreeNode&lt;T&gt;*q;</span><br><span class="line">    <span class="keyword">if</span>(t==<span class="literal">NULL</span>||p==<span class="literal">NULL</span>) <span class="keyword">return</span> <span class="literal">NULL</span>;</span><br><span class="line">    <span class="keyword">if</span>(t-&gt;GetLeft()==p||t-&gt;GetRight()==p) <span class="keyword">return</span> t;</span><br><span class="line">    q=Father(t-&gt;GetLeft(),p);</span><br><span class="line">    <span class="keyword">if</span>(q!=<span class="literal">NULL</span>)<span class="keyword">return</span> q;</span><br><span class="line">    <span class="keyword">return</span> Father(t-&gt;GetRight(),p);</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">template</span>&lt;<span class="class"><span class="keyword">class</span> <span class="title">T</span>&gt;</span></span><br><span class="line"><span class="class"><span class="title">BinTreeNode</span>&lt;T&gt;*<span class="title">BinTree</span>&lt;T&gt;:</span>:Find(BinTreeNode&lt;T&gt;*t,<span class="keyword">const</span> T&amp;item)<span class="keyword">const</span></span><br><span class="line">&#123;</span><br><span class="line"></span><br><span class="line">    BinTreeNode&lt;T&gt;*p;</span><br><span class="line">    <span class="keyword">if</span>(t==<span class="literal">NULL</span>)<span class="keyword">return</span> <span class="literal">NULL</span>;</span><br><span class="line">    <span class="keyword">if</span>(t-&gt;data==item) <span class="keyword">return</span> t;</span><br><span class="line">    p=Find(t-&gt;GetLeft(),item);</span><br><span class="line">    <span class="keyword">if</span>(p!=<span class="literal">NULL</span>) <span class="keyword">return</span> p;</span><br><span class="line">    p=Find(t-&gt;GetRight(),item);</span><br><span class="line">    <span class="keyword">return</span> p;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">template</span>&lt;<span class="class"><span class="keyword">class</span> <span class="title">T</span>&gt;</span></span><br><span class="line"><span class="class"><span class="title">void</span> <span class="title">BinTree</span>&lt;T&gt;:</span>:Del(BinTreeNode&lt;T&gt;*t)</span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">if</span>(t!=<span class="literal">NULL</span>)</span><br><span class="line">    &#123;</span><br><span class="line">        Del(t-&gt;GetLeft());</span><br><span class="line">        Del(t-&gt;GetRight());</span><br><span class="line">        <span class="keyword">delete</span> t;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">template</span>&lt;<span class="class"><span class="keyword">class</span> <span class="title">T</span>&gt;</span></span><br><span class="line"><span class="class"><span class="title">void</span> <span class="title">BinTree</span>&lt;T&gt;:</span>:InsertLeft(T item,BinTreeNode&lt;T&gt;*s)</span><br><span class="line">&#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span>(s==<span class="literal">NULL</span>) <span class="keyword">return</span> ;</span><br><span class="line">    BinTreeNode&lt;T&gt;*p=<span class="keyword">new</span> BinTreeNode&lt;T&gt;(item);</span><br><span class="line">    p-&gt;SetLeft(s-&gt;GetLeft());</span><br><span class="line">    p-&gt;SetRight(<span class="literal">NULL</span>);</span><br><span class="line">    s-&gt;SetLeft(p);</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">template</span>&lt;<span class="class"><span class="keyword">class</span> <span class="title">T</span>&gt;</span></span><br><span class="line"><span class="class"><span class="title">void</span> <span class="title">BinTree</span>&lt;T&gt;:</span>:InsertRight(T item,BinTreeNode&lt;T&gt;*s)</span><br><span class="line">&#123;</span><br><span class="line">   <span class="keyword">if</span>(s==<span class="literal">NULL</span>) <span class="keyword">return</span> ;</span><br><span class="line">    BinTreeNode&lt;T&gt;*p=<span class="keyword">new</span> BinTreeNode&lt;T&gt;(item);</span><br><span class="line">    p-&gt;SetRight(s-&gt;GetRight());</span><br><span class="line">    s-&gt;SetRight(p);</span><br><span class="line">    p-&gt;SetLeft(<span class="literal">NULL</span>);</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">template</span>&lt;<span class="class"><span class="keyword">class</span> <span class="title">T</span>&gt;</span></span><br><span class="line"><span class="class"><span class="title">void</span> <span class="title">BinTree</span>&lt;T&gt;:</span>:DelSubtree(BinTreeNode&lt;T&gt;*t)</span><br><span class="line">&#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span>(t==<span class="literal">NULL</span>)<span class="keyword">return</span> ;</span><br><span class="line">    <span class="keyword">if</span>(t==root)</span><br><span class="line">    &#123;</span><br><span class="line">        Del(t);</span><br><span class="line">        root=<span class="literal">NULL</span>;</span><br><span class="line">        <span class="keyword">return</span> ;</span><br><span class="line">    &#125;</span><br><span class="line">    BinTreeNode&lt;T&gt;*f=Father(root,t);</span><br><span class="line">    <span class="keyword">if</span>(f!=<span class="literal">nullptr</span>)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">if</span>(f-&gt;GetLeft()==t) f-&gt;SetLeft(<span class="literal">NULL</span>);</span><br><span class="line">        <span class="keyword">if</span>(f-&gt;GetRight()==t)f-&gt;SetRight((<span class="literal">NULL</span>));</span><br><span class="line">    &#125;</span><br><span class="line">    Del(t);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line"></span><br><span class="line">    BinTree&lt;<span class="keyword">int</span>&gt; t;</span><br><span class="line">    t.CreateBinTree(<span class="number">-1</span>);</span><br><span class="line">    BinTreeNode&lt;<span class="keyword">int</span>&gt;*t2=t.Find(t.root,<span class="number">4</span>);</span><br><span class="line">    t.InsertRight(<span class="number">6</span>,t2);</span><br><span class="line">    t.InOrder(t.root);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">1 2 4 -1 5 -1 -1 -1 3 -1 -1</span></span><br><span class="line"><span class="comment">*/</span></span><br></pre></td></tr></table></figure>
-
-      
-    </div>
-    <footer class="article-footer">
-      
-        <a data-url="http://yoursite.com/2019/10/27/ Algorithm/BinTree/" data-id="ckcjufm0a000o3ovioyjbm2d4" class="article-share-link" data-share="baidu" data-title="BinTree">分享到</a>
-      
-
-      
-        <a href="http://yoursite.com/2019/10/27/ Algorithm/BinTree/#ds-thread" class="article-comment-link">评论</a>
-      
-
-      
-        <a href="/2019/10/27/ Algorithm/BinTree/#comments" class="article-comment-link">
-          <span class="post-comments-count valine-comment-count" data-xid="/2019/10/27/ Algorithm/BinTree/" itemprop="commentCount"></span>
           文章评论
         </a>
       
@@ -1418,7 +1566,7 @@ n个输入,可行解为n个输入的子集\\
   <div class="widget-wrap">
     <h3 class="widget-title">分类</h3>
     <div class="widget">
-      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Java/">Java</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Linux/">Linux</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Machine-Learning/">Machine Learning</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/OS/">OS</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Read/">Read</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/algorithm/">algorithm</a><span class="category-list-count">8</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/web技术/">web技术</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/垃圾场/">垃圾场</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/接口技术/">接口技术</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/机器学习/">机器学习</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/汇编/">汇编</a><span class="category-list-count">8</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/离散数学/">离散数学</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/算法设计与分析/">算法设计与分析</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/组合数学/">组合数学</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/计算方法/">计算方法</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/计算机系统结构/">计算机系统结构</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/随机数学/">随机数学</a><span class="category-list-count">1</span></li></ul>
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Java/">Java</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Linux/">Linux</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Machine-Learning/">Machine Learning</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/OS/">OS</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Read/">Read</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/algorithm/">algorithm</a><span class="category-list-count">8</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/web技术/">web技术</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/垃圾场/">垃圾场</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/接口技术/">接口技术</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/机器学习/">机器学习</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/汇编/">汇编</a><span class="category-list-count">8</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/离散数学/">离散数学</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/算法设计与分析/">算法设计与分析</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/组合数学/">组合数学</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/计算方法/">计算方法</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/计算机系统结构/">计算机系统结构</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/随机数学/">随机数学</a><span class="category-list-count">1</span></li></ul>
     </div>
   </div>
 
@@ -1431,7 +1579,7 @@ n个输入,可行解为n个输入的子集\\
   <div class="widget-wrap">
     <h3 class="widget-title">归档</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/07/">七月 2020</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/06/">六月 2020</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/05/">五月 2020</a><span class="archive-list-count">7</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/04/">四月 2020</a><span class="archive-list-count">7</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/03/">三月 2020</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/02/">二月 2020</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/11/">十一月 2019</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/10/">十月 2019</a><span class="archive-list-count">8</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/07/">七月 2020</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/06/">六月 2020</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/05/">五月 2020</a><span class="archive-list-count">7</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/04/">四月 2020</a><span class="archive-list-count">7</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/03/">三月 2020</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/02/">二月 2020</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/11/">十一月 2019</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/10/">十月 2019</a><span class="archive-list-count">8</span></li></ul>
     </div>
   </div>
 
@@ -1443,7 +1591,15 @@ n个输入,可行解为n个输入的子集\\
       <ul>
         
           <li>
-            <a href="/2020/07/12/ 微机系统/微型计算机原理与接口技术课后习题/">微型计算机接口技术课后习题</a>
+            <a href="/2020/07/17/ 微机系统/习题/">练习</a>
+          </li>
+        
+          <li>
+            <a href="/2020/07/17/ 微机系统/微型计算机原理与接口技术课后习题/">微型计算机接口技术课后习题</a>
+          </li>
+        
+          <li>
+            <a href="/2020/07/14/ 操作系统/OS习题/">OS习题</a>
           </li>
         
           <li>
@@ -1451,15 +1607,7 @@ n个输入,可行解为n个输入的子集\\
           </li>
         
           <li>
-            <a href="/2020/07/02/ 操作系统/OS习题/">OS习题</a>
-          </li>
-        
-          <li>
             <a href="/2020/06/08/ Math/计数方法/">计数方法</a>
-          </li>
-        
-          <li>
-            <a href="/2020/06/06/ 微机系统/notice/">OTHERS</a>
           </li>
         
       </ul>

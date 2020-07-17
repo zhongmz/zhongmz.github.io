@@ -71,10 +71,10 @@
     <div class="outer">
       <section id="main">
   
-    <article id="post-微机系统/微型计算机原理与接口技术课后习题" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-微机系统/习题" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2020/07/12/ 微机系统/微型计算机原理与接口技术课后习题/" class="article-date">
-  <time datetime="2020-07-12T13:49:19.000Z" itemprop="datePublished">2020-07-12</time>
+    <a href="/2020/07/17/ 微机系统/习题/" class="article-date">
+  <time datetime="2020-07-17T13:49:19.000Z" itemprop="datePublished">2020-07-17</time>
 </a>
     
   <div class="article-category">
@@ -89,7 +89,63 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2020/07/12/ 微机系统/微型计算机原理与接口技术课后习题/">微型计算机接口技术课后习题</a>
+      <a class="article-title" href="/2020/07/17/ 微机系统/习题/">练习</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h4 id="1"><a href="#1" class="headerlink" title="1"></a>1</h4><h4 id><a href="#" class="headerlink" title=" "></a> </h4>
+      
+    </div>
+    <footer class="article-footer">
+      
+        <a data-url="http://yoursite.com/2020/07/17/ 微机系统/习题/" data-id="ckcpv4b6x001ls4vi36pyuzhn" class="article-share-link" data-share="baidu" data-title="练习">分享到</a>
+      
+
+      
+        <a href="http://yoursite.com/2020/07/17/ 微机系统/习题/#ds-thread" class="article-comment-link">评论</a>
+      
+
+      
+        <a href="/2020/07/17/ 微机系统/习题/#comments" class="article-comment-link">
+          <span class="post-comments-count valine-comment-count" data-xid="/2020/07/17/ 微机系统/习题/" itemprop="commentCount"></span>
+          文章评论
+        </a>
+      
+
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+
+
+  
+    <article id="post-微机系统/微型计算机原理与接口技术课后习题" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2020/07/17/ 微机系统/微型计算机原理与接口技术课后习题/" class="article-date">
+  <time datetime="2020-07-17T06:49:19.000Z" itemprop="datePublished">2020-07-17</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/接口技术/">接口技术</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/07/17/ 微机系统/微型计算机原理与接口技术课后习题/">微型计算机接口技术课后习题</a>
     </h1>
   
 
@@ -193,21 +249,333 @@
 <li>当G=0时，该段的最大数据容量是多少个字节？</li>
 <li>当G=1时，该段的最大数据容量时多少个字节？</li>
 </ol>
+<h2 id="0x03-中断"><a href="#0x03-中断" class="headerlink" title="0x03 中断"></a>0x03 中断</h2><h4 id="3-1"><a href="#3-1" class="headerlink" title="3.1"></a>3.1</h4><p>什么叫中断？在微机系统中为什么要使用中断？</p>
+<ul>
+<li>CPU在正常执行当前程序，由某一事件引起CPU暂时停止当前任务，转去执行请求CPU暂停的服务程序，该服务程序执行完后又返回继续执行被暂停的程序，这一过程叫中断</li>
+<li>主要作用<ul>
+<li>实现主机与<code>I/O</code>设备的并行工作</li>
+<li>利用中断进行实时处理</li>
+<li>利用中断方式进行人机对话</li>
+<li>故障处理</li>
+<li>多处理机系统中各处理机之间协调作用</li>
+</ul>
+</li>
+</ul>
+<h4 id="3-2"><a href="#3-2" class="headerlink" title="3.2"></a>3.2</h4><p>什么叫中断源？中断嵌套的含义是什么？</p>
+<ul>
+<li>凡是能够提出中断请求的设备或异常故障均被称为中断源</li>
+<li>在执行中断服务程序的过程中又发生新的中断</li>
+</ul>
+<h4 id="3-3"><a href="#3-3" class="headerlink" title="3.3"></a>3.3</h4><p><code>Pentium</code>微处理机内部有哪几类中断源？简要说明各类的特点是什么？</p>
+<ul>
+<li>分为四类中断<ul>
+<li>可屏蔽中断<code>INTR</code></li>
+<li>非屏蔽中断<code>NMI</code></li>
+<li>软件中断（执行<code>INTO</code>,<code>INT3</code>,<code>INT n</code>,<code>BOUND</code>指令引起的中断）</li>
+<li>异常</li>
+</ul>
+</li>
+<li><code>INTR</code>通常是由<code>Intel 8259A</code>中断控制器驱动，向<code>INTR</code>引脚发中断请求，通过数据总线向CPU发中断类型码</li>
+<li><code>NMI</code>通常用来通知<code>CPU</code>发生重大故障的事件，比如电源掉电。不受<code>IF</code>中断允许标志的影响，优先级非常高。上升沿触发信号</li>
+<li>软件中断<ul>
+<li>人为设置在程序中</li>
+<li>类型码包含在指令中，所以不执行中断响应总线周期</li>
+<li>除<code>BOUND</code>指令外，中断返回地址为下一条指令</li>
+</ul>
+</li>
+<li>异常是在CPU执行一条指令过程中出现的错误或者检测的异常情况产生的</li>
+</ul>
+<h4 id="3-4"><a href="#3-4" class="headerlink" title="3.4"></a>3.4</h4><p>在<code>Pentium</code>微处理机中中断和异常有何异同？</p>
+<ul>
+<li>中断是用来处理CPU以外的异常事件</li>
+<li>异常时用来处理执行指令期间由CPU本身检测出来的某些异常事情作出的响应</li>
+</ul>
+<h4 id="3-5"><a href="#3-5" class="headerlink" title="3.5"></a>3.5</h4><p>通常CPU响应外部中断的条件有哪些？</p>
+<ul>
+<li>有中断请求</li>
+<li>中断标志位<code>IF</code>=1</li>
+</ul>
+<h4 id="3-6"><a href="#3-6" class="headerlink" title="3.6"></a>3.6</h4><p>简述CPU响应中断后，中断处理的过程，用流程图表示</p>
+<p><img src="https://i.loli.net/2020/07/17/aJcEH9tLU73FjkS.png" alt="Pentium实模式下中断处理过程"></p>
+<h4 id="3-7"><a href="#3-7" class="headerlink" title="3.7"></a>3.7</h4><p>什么情况下需要有中断判优机构？程序查询式和中断向量式2种中断源识别与判优方案各有什么特点？</p>
+<ul>
+<li>系统遇到多个中断源同时请求中断的情况下，需要有中断判优机构。</li>
+<li>程序查询式是软件查询，较为灵活，但是中断源多时，转至中断服务程序时间长</li>
+<li>中断向量式是硬件优先级排队电路确定优先级，速度块，但是优先级固定不变。</li>
+</ul>
+<h4 id="3-8"><a href="#3-8" class="headerlink" title="3.8"></a>3.8</h4><p>什么叫中断向量？试说明<code>Pentium</code>微处理机可屏蔽硬件中断是怎样获得中断向量，从而进入中断程序的。</p>
+<ul>
+<li><p>中断向量是中断服务程序的入口地址。</p>
+</li>
+<li><p>根据<code>8259A</code>送道数据总线的中断类型码*4取得中断向量，把中断向量的前2个字节装入<code>IP</code>，后2个字节装入<code>CS</code>，这样CPU执行的下一条指令就是中断服务程序的第一条指令，也就是说，CPU进入了中断服务程序。</p>
+</li>
+</ul>
+<h4 id="3-9"><a href="#3-9" class="headerlink" title="3.9"></a>3.9</h4><p>中断描述符表的作用是什么？其内保存的是什么信息？</p>
+<ul>
+<li>中断描述符表保存门描述符</li>
+<li>门描述符中保存的信息有段选择符，32位偏移，还有属性用来在GDT或LDT中找到中断服务程序的基地址。</li>
+</ul>
+<h4 id="3-10"><a href="#3-10" class="headerlink" title="3.10"></a>3.10</h4><p><code>8259A</code>芯片是一种什么类型的芯片？试着说明<code>8259</code>芯片的主要功能。</p>
+<ul>
+<li>是一种中断管理芯片，简称PIC</li>
+<li>主要作用<ul>
+<li>管理8级优先权中断源</li>
+<li>对任何级别中断源可单独屏蔽</li>
+<li>向CPU发送可编程的标识码，即中断类型码</li>
+<li>可与<code>Pentium</code>的CPU直接连接，不需要外加电路</li>
+<li>多种工作方式</li>
+</ul>
+</li>
+</ul>
+<h4 id="38"><a href="#38" class="headerlink" title="38"></a>38</h4><p><code>INTR</code>与<code>NMI</code>的区别</p>
+<ul>
+<li>CPU在响应<code>NMI</code>时，不从外部设备读取中断类型码，因为<code>NMI</code>的中断类型码固定为2</li>
+</ul>
 
       
     </div>
     <footer class="article-footer">
       
-        <a data-url="http://yoursite.com/2020/07/12/ 微机系统/微型计算机原理与接口技术课后习题/" data-id="ckcjufm1r001x3ovimmdddara" class="article-share-link" data-share="baidu" data-title="微型计算机接口技术课后习题">分享到</a>
+        <a data-url="http://yoursite.com/2020/07/17/ 微机系统/微型计算机原理与接口技术课后习题/" data-id="ckcpv4b7a0026s4viu2j0ncbh" class="article-share-link" data-share="baidu" data-title="微型计算机接口技术课后习题">分享到</a>
       
 
       
-        <a href="http://yoursite.com/2020/07/12/ 微机系统/微型计算机原理与接口技术课后习题/#ds-thread" class="article-comment-link">评论</a>
+        <a href="http://yoursite.com/2020/07/17/ 微机系统/微型计算机原理与接口技术课后习题/#ds-thread" class="article-comment-link">评论</a>
       
 
       
-        <a href="/2020/07/12/ 微机系统/微型计算机原理与接口技术课后习题/#comments" class="article-comment-link">
-          <span class="post-comments-count valine-comment-count" data-xid="/2020/07/12/ 微机系统/微型计算机原理与接口技术课后习题/" itemprop="commentCount"></span>
+        <a href="/2020/07/17/ 微机系统/微型计算机原理与接口技术课后习题/#comments" class="article-comment-link">
+          <span class="post-comments-count valine-comment-count" data-xid="/2020/07/17/ 微机系统/微型计算机原理与接口技术课后习题/" itemprop="commentCount"></span>
+          文章评论
+        </a>
+      
+
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+
+
+  
+    <article id="post-操作系统/OS习题" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2020/07/14/ 操作系统/OS习题/" class="article-date">
+  <time datetime="2020-07-14T01:56:52.000Z" itemprop="datePublished">2020-07-14</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/OS/">OS</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/07/14/ 操作系统/OS习题/">OS习题</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="0x01"><a href="#0x01" class="headerlink" title="0x01"></a>0x01</h2><h4 id="1"><a href="#1" class="headerlink" title="1"></a>1</h4><p>什么是操作系统？操作系统有哪些特点？</p>
+<ul>
+<li><p>操作系统是位于硬件层之上，所有其他系统软件层之下的一个系统软件，通过它管理系统中的各种软件和资源，使它们能被充分利用，方便用户使用计算机系统。</p>
+</li>
+<li><p>特点</p>
+<ul>
+<li>并发性</li>
+<li>共享性</li>
+<li>异步性</li>
+<li>虚拟性</li>
+</ul>
+</li>
+</ul>
+<h4 id="2"><a href="#2" class="headerlink" title="2"></a>2</h4><p>硬件将处理器划分为两种，即管态和目态，这样做会给操作系统的设计带来什么好处？</p>
+<ul>
+<li>防止用户侵入系统，起到保护系统的作用</li>
+</ul>
+<h4 id="3"><a href="#3" class="headerlink" title="3"></a>3</h4><p>何为特权指令？试举例说明。如果允许用户进程执行特权指令，会带来什么后果？举例说明</p>
+<ul>
+<li>特权指令：只能在管态下才能执行的指令称为特权指令</li>
+<li>允许用户进程执行特权指令，则可能会导致停机，影响其他程序允许，甚至整个系统</li>
+</ul>
+<h4 id="4"><a href="#4" class="headerlink" title="4"></a>4</h4><p>中断向量在计算机中的存储位置是由硬件决定的，还是由软件决定的？</p>
+<ul>
+<li>是由硬件决定的</li>
+</ul>
+<h4 id="5"><a href="#5" class="headerlink" title="5"></a>5</h4><p>中断向量的内容是由操作系统决定的还是由用户程序决定的？</p>
+<ul>
+<li>是由操作系统决定的</li>
+</ul>
+<h4 id="6-为什么？？"><a href="#6-为什么？？" class="headerlink" title="6 为什么？？"></a>6 为什么？？</h4><p>中断向量内的处理器状态字应当标明为管态还是目态？为什么？</p>
+<ul>
+<li>应标明为管态</li>
+<li>处理机状态由目态转为管态的唯一途径是中断，因此会产生中断向量，此时需要把中断向量的处理器状态字标明为管态。</li>
+</ul>
+<h4 id="7"><a href="#7" class="headerlink" title="7"></a>7</h4><p>系统如何由目态转换为管态？如何由管态转换为目态？</p>
+<ul>
+<li>唯一途径是中断</li>
+<li>修改程序状态字<code>PSW</code></li>
+</ul>
+<h4 id="8"><a href="#8" class="headerlink" title="8"></a>8</h4><p>中断与程序并发之间的关系是什么？</p>
+<ul>
+<li>中断时程序并发的前提条件，若没有中断，操作系统则不能获得系统控制权，无法对处理器重新分配。</li>
+</ul>
+<h4 id="9"><a href="#9" class="headerlink" title="9"></a>9</h4><p>根据用途说明“栈”和“堆”的差别？</p>
+<ul>
+<li>栈用来实现中断嵌套和子程序调用的参数，返回断点，局部变量，返回值</li>
+<li>堆是为动态变量分配存储空间</li>
+</ul>
+<h4 id="10"><a href="#10" class="headerlink" title="10"></a>10</h4><p>何谓系统栈？何谓用户栈？系统栈有何用途？用户栈有何用途？</p>
+<ul>
+<li>系统栈在逻辑上属于操作系统空间，是系统空间中的一个区域。</li>
+<li>用户栈属于用户空间，是内存中用户空间的一个区域。</li>
+<li>系统栈用途：一是保存操作系统子程序间相互调用的返回点，参数，局部变量，返回值；二是中断响应时保存中断现场</li>
+<li>用户栈用途：一是保存用户函数调用时的返回点，参数，局部变量，返回值。</li>
+</ul>
+<h4 id="11"><a href="#11" class="headerlink" title="11"></a>11</h4><p>为何无法确定用户堆栈段的长度？</p>
+<ul>
+<li><p>用户堆栈段的长度取决于</p>
+<ul>
+<li>进程子程序嵌套深度</li>
+<li>子程序的参数和局部变量的数量和类型</li>
+<li>动态变量的数量和类型</li>
+</ul>
+<p>这些在进程运行前无法确定，导致堆栈段的长度无法预先确定。</p>
+</li>
+</ul>
+<h4 id="12"><a href="#12" class="headerlink" title="12"></a>12</h4><p>为何堆栈段的动态扩充可能导致进程空间的变迁？</p>
+<ul>
+<li>堆栈段的扩充意味着存储区域的增加，并要求与原来存储区域连续。若原存储处可扩展区域被其他进程所占用，可能需要将整个进程空间搬迁到另外一个区域，从而导致了进程空间的变迁。</li>
+</ul>
+<h4 id="13"><a href="#13" class="headerlink" title="13"></a>13</h4><p>何谓并行？何谓并发？在单处理器系统中，下述并行和并发信息哪些可能发生，哪些不会发生？</p>
+<ol>
+<li>进程与进程之间的并行</li>
+<li>进程与进程之间的并发</li>
+<li>处理器与设备之间的并行</li>
+<li>处理器与通道之间的并行</li>
+<li>通道与通道之间的并行</li>
+<li>设备与设备之间的并行</li>
+</ol>
+<ul>
+<li>并行指的时在微观上的同时，在绝对的同一时刻由多个进程同时向前推进</li>
+<li>并发不需要微观上的同时，只需要从宏观上看多个程序都在向前推进</li>
+<li>不可能发生：<code>(1)</code></li>
+</ul>
+<h4 id="14"><a href="#14" class="headerlink" title="14"></a>14</h4><p>何谓作业？它包括哪几个部分？各个部分的用途时什么？</p>
+<ul>
+<li>用户要求计算机系统为其完成的计算任务的集合称为作业</li>
+<li>作业包括<ul>
+<li>程序</li>
+<li>作业说明书</li>
+<li>数据</li>
+</ul>
+</li>
+<li>程序是完成某一功能</li>
+<li>数据是程序处理对象</li>
+<li>作业说明书用来说明作业处理的步骤</li>
+</ul>
+<h4 id="15"><a href="#15" class="headerlink" title="15"></a>15</h4><p>试述批处理操作系统与分时操作系统的区别</p>
+<ul>
+<li>批处理操作系统是以脱机操作为标志的操作系统，作业逐批进入系统，逐批离开系统。无用户干扰</li>
+<li>分时操作系统是以联机操作为标志的操作系统，适合程序的动态修改。需要与用户交互</li>
+</ul>
+<h4 id="16"><a href="#16" class="headerlink" title="16"></a>16</h4><p>从透明性和资源共享2个方面说明网络操作系统与分布式操作系统的差别。</p>
+<ul>
+<li>从透明性来看，网络操作系统用户能感觉到本地<code>HOST</code>与非本地<code>HOST</code>在地理额外i之上的差异；而在分布式系统中，所有<code>HOST</code>构成一个完整的，功能更加强大的计算机系统，掩盖了地理位置上的差异</li>
+<li>从资源共享来看，分布式操作系统比网络操作系统更能共享更多的资源，原因在于网络操作系统其<code>HOST</code>上的系统不统一，导致一个计算任务不能由另外一台<code>HOST</code>运行，但是分布式操作系统的<code>HOST</code>操作系统相同。</li>
+</ul>
+<h4 id="17"><a href="#17" class="headerlink" title="17"></a>17</h4><p>为什么构成分布式系统的主机一般都是相同的或兼容的？</p>
+<ul>
+<li>利于进程的动态迁移</li>
+</ul>
+<h4 id="18"><a href="#18" class="headerlink" title="18"></a>18</h4><p>集群系统与分布式系统有何差异？</p>
+<ul>
+<li>集群指的是将几台服务器集中在一起，实现同一业务。</li>
+<li>分布式是将不同的1业务分布在不同地方</li>
+<li>分布式结构的每一个节点都可以做集群；而集群并不一定就是分布式</li>
+</ul>
+<h4 id="19"><a href="#19" class="headerlink" title="19"></a>19</h4><p>何谓云存储？何谓云计算？</p>
+<h2 id="0x02"><a href="#0x02" class="headerlink" title="0x02"></a>0x02</h2><h4 id="1-1"><a href="#1-1" class="headerlink" title="1"></a>1</h4><p>为何引入多道程序设计？在多道程序系统中，内存中的作业的道数是否越多越好？请说明原因。</p>
+<ul>
+<li>因为系统的资源数量多，资源使用者少。为了允许多个程序同时进入系统，即增加资源使用者的数量，提高系统资源利用率。</li>
+<li>不是，一个计算机系统的资源是有限的，只能容纳适量的作业；当作业道数不合理增加，导致资源竞争大，系统开销大。</li>
+</ul>
+<h4 id="2-1"><a href="#2-1" class="headerlink" title="2"></a>2</h4><p>多道程序设计会带来哪些问题？如何解决？</p>
+<ul>
+<li>处理器资源管理问题，需要实现处理器资源在各个程序之间的分配和调度。</li>
+<li>内存资源管理问题，解决：程序使用相对地址，不使用绝对地址，实现程序的重定位，还需要防止程序之间的内存干扰</li>
+<li>设备资源管理问题，操作系统需要采取适当的分配策略据此对资源加以管理。</li>
+</ul>
+<h4 id="3-1"><a href="#3-1" class="headerlink" title="3"></a>3</h4><p>什么是进程？进程具有哪些主要特性？试比较进程与程序之间的相同点与不同点。</p>
+<ul>
+<li>进程是具有一定独立功能的程序关于一个数据集合的一次运行活动</li>
+<li>进程的特性<ol>
+<li>并发性</li>
+<li>动态性</li>
+<li>独立性</li>
+<li>交互性</li>
+<li>异步性</li>
+<li>结构性</li>
+</ol>
+</li>
+<li>程序是构成进程的组成部分之一</li>
+<li>程序是静态的，进程是动态的；程序是永久的，进程是具有生存周期的；一个程序可以对应多个进程，一个进程只能对应一个程序。</li>
+</ul>
+<h4 id="4-1"><a href="#4-1" class="headerlink" title="4"></a>4</h4><p>有人说，用户所执行的程序一定是用户自己编写的。这种说法对吗？如果不对，试举例说明之。</p>
+<ul>
+<li>不对，比如C编译程序时以用户进程身份进行，但C编译程序不是用户自己编写的。</li>
+</ul>
+<h4 id="5-1"><a href="#5-1" class="headerlink" title="5"></a>5</h4><p>什么是进程上下文？进程上下文包括哪些成分？哪些成分对目态程序是可见的？</p>
+<ul>
+<li>在<code>UNIX System V</code>中，将进程的物理实体与支持进程运行的物理环境合称为进程上下文。</li>
+<li>包括3个组成部分：<ul>
+<li>用户级上下文</li>
+<li>系统级上下文</li>
+<li>寄存器上下文</li>
+</ul>
+</li>
+<li>用户级上下文和部分寄存器上下文对目态程序是可见的。</li>
+</ul>
+<h4 id="6"><a href="#6" class="headerlink" title="6"></a>6</h4><p>进程一般具有哪三个主要状态？举例说明状态转换的原因</p>
+<ul>
+<li>运行态；就绪态；等待态</li>
+<li>当就绪态进程获得处理器，变为运行态</li>
+<li>当运行态进程被剥夺处理器，变为就绪态</li>
+<li>当运行\就绪态进程因为某一事件受阻时，变为等待态</li>
+<li>当等待事件发生，变为就绪态</li>
+</ul>
+<h2 id="0x03"><a href="#0x03" class="headerlink" title="0x03"></a>0x03</h2><h4 id="例3-1"><a href="#例3-1" class="headerlink" title="例3-1"></a>例3-1</h4><p>考虑CPU阵发进程，得到先到先服务算法调度性能指标</p>
+<ol>
+<li>甘特图</li>
+<li>列表</li>
+</ol>
+<h4 id="例3-2"><a href="#例3-2" class="headerlink" title="例3-2"></a>例3-2</h4><p>最短作业优先算法</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      
+        <a data-url="http://yoursite.com/2020/07/14/ 操作系统/OS习题/" data-id="ckcpv4b7f002gs4vibjp1eyok" class="article-share-link" data-share="baidu" data-title="OS习题">分享到</a>
+      
+
+      
+        <a href="http://yoursite.com/2020/07/14/ 操作系统/OS习题/#ds-thread" class="article-comment-link">评论</a>
+      
+
+      
+        <a href="/2020/07/14/ 操作系统/OS习题/#comments" class="article-comment-link">
+          <span class="post-comments-count valine-comment-count" data-xid="/2020/07/14/ 操作系统/OS习题/" itemprop="commentCount"></span>
           文章评论
         </a>
       
@@ -322,7 +690,7 @@ min C\sum_{i=1}^{m}[y^{(i)}cost_1(\theta^{T}f^{(i)})+(1-y^{i})cost_0(\theta^{T}f
     </div>
     <footer class="article-footer">
       
-        <a data-url="http://yoursite.com/2020/07/08/ MachineLearning/SVM/" data-id="ckcjufm0y00133ovi5mke05kk" class="article-share-link" data-share="baidu" data-title="SVM">分享到</a>
+        <a data-url="http://yoursite.com/2020/07/08/ MachineLearning/SVM/" data-id="ckcpv4b6s001cs4vicnsav99a" class="article-share-link" data-share="baidu" data-title="SVM">分享到</a>
       
 
       
@@ -332,148 +700,6 @@ min C\sum_{i=1}^{m}[y^{(i)}cost_1(\theta^{T}f^{(i)})+(1-y^{i})cost_0(\theta^{T}f
       
         <a href="/2020/07/08/ MachineLearning/SVM/#comments" class="article-comment-link">
           <span class="post-comments-count valine-comment-count" data-xid="/2020/07/08/ MachineLearning/SVM/" itemprop="commentCount"></span>
-          文章评论
-        </a>
-      
-
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-
-
-  
-    <article id="post-操作系统/OS习题" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2020/07/02/ 操作系统/OS习题/" class="article-date">
-  <time datetime="2020-07-02T14:56:52.000Z" itemprop="datePublished">2020-07-02</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/OS/">OS</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/07/02/ 操作系统/OS习题/">OS习题</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="0x01"><a href="#0x01" class="headerlink" title="0x01"></a>0x01</h2><h4 id="1"><a href="#1" class="headerlink" title="1"></a>1</h4><p>什么是操作系统？操作系统有哪些特点？</p>
-<ul>
-<li><p>操作系统是位于硬件层之上，所有其他系统软件层之下的一个系统软件，通过它管理系统中的各种软件和资源，使它们能被充分利用，方便用户使用计算机系统。</p>
-</li>
-<li><p>特点</p>
-<ul>
-<li>并发性</li>
-<li>共享性</li>
-<li>异步性</li>
-<li>虚拟性</li>
-</ul>
-</li>
-</ul>
-<h4 id="2"><a href="#2" class="headerlink" title="2"></a>2</h4><p>硬件将处理器划分为两种，即管态和目态，这样做会给操作系统的设计带来什么好处？</p>
-<ul>
-<li>防止用户侵入系统，起到保护系统的作用</li>
-</ul>
-<h4 id="3"><a href="#3" class="headerlink" title="3"></a>3</h4><p>何为特权指令？试举例说明。如果允许用户进程执行特权指令，会带来什么后果？举例说明</p>
-<ul>
-<li>特权指令：只能在管态下才能执行的指令称为特权指令</li>
-<li>允许用户进程执行特权指令，则可能会导致停机，影响其他程序允许，甚至整个系统</li>
-</ul>
-<h4 id="4"><a href="#4" class="headerlink" title="4"></a>4</h4><p>中断向量在计算机中的存储位置是由硬件决定的，还是由软件决定的？</p>
-<ul>
-<li>是由硬件决定的</li>
-</ul>
-<h4 id="5"><a href="#5" class="headerlink" title="5"></a>5</h4><p>中断向量的内容是由操作系统决定的还是由用户程序决定的？</p>
-<ul>
-<li>是由操作系统决定的</li>
-</ul>
-<h4 id="6-为什么？？"><a href="#6-为什么？？" class="headerlink" title="6 为什么？？"></a>6 为什么？？</h4><p>中断向量内的处理器状态字应当标明为管态还是目态？为什么？</p>
-<ul>
-<li>应标明为管态</li>
-<li>处理机状态由目态转为管态的唯一途径是中断，因此会产生中断向量，此时需要把中断向量的处理器状态字标明为管态。</li>
-</ul>
-<h4 id="7"><a href="#7" class="headerlink" title="7"></a>7</h4><p>系统如何由目态转换为管态？如何由管态转换为目态？</p>
-<ul>
-<li>唯一途径是中断</li>
-<li>修改程序状态字<code>PSW</code></li>
-</ul>
-<h4 id="8"><a href="#8" class="headerlink" title="8"></a>8</h4><p>中断与程序并发之间的关系是什么？</p>
-<ul>
-<li>中断时程序并发的前提条件，若没有中断，操作系统则不能获得系统控制权，无法对处理器重新分配。</li>
-</ul>
-<h4 id="9"><a href="#9" class="headerlink" title="9"></a>9</h4><p>根据用途说明“栈”和“堆”的差别？</p>
-<ul>
-<li>栈用来实现中断嵌套和子程序调用的参数，返回断点，局部变量，返回值</li>
-<li>堆是为动态变量分配存储空间</li>
-</ul>
-<h4 id="10"><a href="#10" class="headerlink" title="10"></a>10</h4><p>何谓系统栈？何谓用户栈？系统栈有何用途？用户栈有何用途？</p>
-<ul>
-<li>系统栈在逻辑上属于操作系统空间，是系统空间中的一个区域。</li>
-<li>用户栈属于用户空间，是内存中用户空间的一个区域。</li>
-<li>系统栈用途：一是保存操作系统子程序间相互调用的返回点，参数，局部变量，返回值；二是中断响应时保存中断现场</li>
-<li>用户栈用途：一是保存用户函数调用时的返回点，参数，局部变量，返回值。</li>
-</ul>
-<h4 id="11"><a href="#11" class="headerlink" title="11"></a>11</h4><p>为何无法确定用户堆栈段的长度？</p>
-<ul>
-<li><p>用户堆栈段的长度取决于</p>
-<ul>
-<li>进程子程序嵌套深度</li>
-<li>子程序的参数和局部变量的数量和类型</li>
-<li>动态变量的数量和类型</li>
-</ul>
-<p>这些在进程运行前无法确定，导致堆栈段的长度无法预先确定。</p>
-</li>
-</ul>
-<h4 id="12"><a href="#12" class="headerlink" title="12"></a>12</h4><p>为何堆栈段的动态扩充可能导致进程空间的变迁？</p>
-<ul>
-<li>堆栈段的扩充意味着存储区域的增加，并要求与原来存储区域连续。若原存储处可扩展区域被其他进程所占用，可能需要将整个进程空间搬迁到另外一个区域，从而导致了进程空间的变迁。</li>
-</ul>
-<h4 id="13"><a href="#13" class="headerlink" title="13"></a>13</h4><p>何谓并行？何谓并发？在单处理器系统中，下述并行和并发信息哪些可能发生，哪些不会发生？</p>
-<ol>
-<li>进程与进程之间的并行</li>
-<li>进程与进程之间的并发</li>
-<li>处理器与设备之间的并行</li>
-<li>处理器与通道之间的并行</li>
-<li>通道与通道之间的并行</li>
-<li>设备与设备之间的并行</li>
-</ol>
-<ul>
-<li>并行指的时在微观上的同时，在绝对的同一时刻由多个进程同时向前推进</li>
-<li>并发不需要微观上的同时，只需要从宏观上看多个程序都在向前推进</li>
-<li>不可能发生：<code>(1)</code></li>
-</ul>
-<h4 id="14"><a href="#14" class="headerlink" title="14"></a>14</h4><p>何谓作业？它包括哪几个部分？各个部分的用途时什么？</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      
-        <a data-url="http://yoursite.com/2020/07/02/ 操作系统/OS习题/" data-id="ckcjufm2d00223ovifsrlyo7v" class="article-share-link" data-share="baidu" data-title="OS习题">分享到</a>
-      
-
-      
-        <a href="http://yoursite.com/2020/07/02/ 操作系统/OS习题/#ds-thread" class="article-comment-link">评论</a>
-      
-
-      
-        <a href="/2020/07/02/ 操作系统/OS习题/#comments" class="article-comment-link">
-          <span class="post-comments-count valine-comment-count" data-xid="/2020/07/02/ 操作系统/OS习题/" itemprop="commentCount"></span>
           文章评论
         </a>
       
@@ -546,7 +772,7 @@ min C\sum_{i=1}^{m}[y^{(i)}cost_1(\theta^{T}f^{(i)})+(1-y^{i})cost_0(\theta^{T}f
     </div>
     <footer class="article-footer">
       
-        <a data-url="http://yoursite.com/2020/06/08/ Math/计数方法/" data-id="ckcjufm1h001l3ovibi8r3rrn" class="article-share-link" data-share="baidu" data-title="计数方法">分享到</a>
+        <a data-url="http://yoursite.com/2020/06/08/ Math/计数方法/" data-id="ckcpv4b6p0015s4vio8i52lci" class="article-share-link" data-share="baidu" data-title="计数方法">分享到</a>
       
 
       
@@ -556,6 +782,66 @@ min C\sum_{i=1}^{m}[y^{(i)}cost_1(\theta^{T}f^{(i)})+(1-y^{i})cost_0(\theta^{T}f
       
         <a href="/2020/06/08/ Math/计数方法/#comments" class="article-comment-link">
           <span class="post-comments-count valine-comment-count" data-xid="/2020/06/08/ Math/计数方法/" itemprop="commentCount"></span>
+          文章评论
+        </a>
+      
+
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+
+
+  
+    <article id="post-微机系统/中断" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2020/06/06/ 微机系统/中断/" class="article-date">
+  <time datetime="2020-06-06T13:49:19.000Z" itemprop="datePublished">2020-06-06</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/汇编/">汇编</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/06/06/ 微机系统/中断/">中断</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="bx-si-di-bp"><a href="#bx-si-di-bp" class="headerlink" title="bx,si,di,bp"></a><code>bx,si,di,bp</code></h1><ul>
+<li><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line">assume cs:code</span><br><span class="line">code segment</span><br><span class="line">    start:</span><br><span class="line">    mov ax,cs</span><br><span class="line">    mov ds,ax</span><br><span class="line">    mov si,offset sqr</span><br><span class="line">    mov ax,0</span><br><span class="line">    mov es,ax</span><br><span class="line">    mov di,200h</span><br><span class="line">    mov cx,offset sqrend-offset sqr</span><br><span class="line">    cld</span><br><span class="line">    rep movsb</span><br><span class="line">    </span><br><span class="line">    mov ax,0</span><br><span class="line">    mov es,ax</span><br><span class="line">    mov word ptr es:[7ch*4],200h</span><br><span class="line">    mov word ptr es:[7ch*4+2],0</span><br><span class="line">    </span><br><span class="line">    mov ax,4c00h</span><br><span class="line">    int 21h</span><br><span class="line">    </span><br><span class="line">    sqr:</span><br><span class="line">    mul ax</span><br><span class="line">    iret</span><br><span class="line">    </span><br><span class="line">    sqrend:</span><br><span class="line">    nop</span><br><span class="line">    </span><br><span class="line">    code ends</span><br><span class="line">end start</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      
+        <a data-url="http://yoursite.com/2020/06/06/ 微机系统/中断/" data-id="ckcpv4b6w001ks4vii1vq8b01" class="article-share-link" data-share="baidu" data-title="中断">分享到</a>
+      
+
+      
+        <a href="http://yoursite.com/2020/06/06/ 微机系统/中断/#ds-thread" class="article-comment-link">评论</a>
+      
+
+      
+        <a href="/2020/06/06/ 微机系统/中断/#comments" class="article-comment-link">
+          <span class="post-comments-count valine-comment-count" data-xid="/2020/06/06/ 微机系统/中断/" itemprop="commentCount"></span>
           文章评论
         </a>
       
@@ -607,7 +893,7 @@ min C\sum_{i=1}^{m}[y^{(i)}cost_1(\theta^{T}f^{(i)})+(1-y^{i})cost_0(\theta^{T}f
     </div>
     <footer class="article-footer">
       
-        <a data-url="http://yoursite.com/2020/06/06/ 微机系统/notice/" data-id="ckcjufm1j001o3ovijc8qzfze" class="article-share-link" data-share="baidu" data-title="OTHERS">分享到</a>
+        <a data-url="http://yoursite.com/2020/06/06/ 微机系统/notice/" data-id="ckcpv4b770022s4vi8x7snvq7" class="article-share-link" data-share="baidu" data-title="OTHERS">分享到</a>
       
 
       
@@ -617,66 +903,6 @@ min C\sum_{i=1}^{m}[y^{(i)}cost_1(\theta^{T}f^{(i)})+(1-y^{i})cost_0(\theta^{T}f
       
         <a href="/2020/06/06/ 微机系统/notice/#comments" class="article-comment-link">
           <span class="post-comments-count valine-comment-count" data-xid="/2020/06/06/ 微机系统/notice/" itemprop="commentCount"></span>
-          文章评论
-        </a>
-      
-
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-
-
-  
-    <article id="post-微机系统/中断" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2020/06/06/ 微机系统/中断/" class="article-date">
-  <time datetime="2020-06-06T13:49:19.000Z" itemprop="datePublished">2020-06-06</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/汇编/">汇编</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/06/06/ 微机系统/中断/">中断</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="bx-si-di-bp"><a href="#bx-si-di-bp" class="headerlink" title="bx,si,di,bp"></a><code>bx,si,di,bp</code></h1><ul>
-<li><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line">assume cs:code</span><br><span class="line">code segment</span><br><span class="line">    start:</span><br><span class="line">    mov ax,cs</span><br><span class="line">    mov ds,ax</span><br><span class="line">    mov si,offset sqr</span><br><span class="line">    mov ax,0</span><br><span class="line">    mov es,ax</span><br><span class="line">    mov di,200h</span><br><span class="line">    mov cx,offset sqrend-offset sqr</span><br><span class="line">    cld</span><br><span class="line">    rep movsb</span><br><span class="line">    </span><br><span class="line">    mov ax,0</span><br><span class="line">    mov es,ax</span><br><span class="line">    mov word ptr es:[7ch*4],200h</span><br><span class="line">    mov word ptr es:[7ch*4+2],0</span><br><span class="line">    </span><br><span class="line">    mov ax,4c00h</span><br><span class="line">    int 21h</span><br><span class="line">    </span><br><span class="line">    sqr:</span><br><span class="line">    mul ax</span><br><span class="line">    iret</span><br><span class="line">    </span><br><span class="line">    sqrend:</span><br><span class="line">    nop</span><br><span class="line">    </span><br><span class="line">    code ends</span><br><span class="line">end start</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-
-      
-    </div>
-    <footer class="article-footer">
-      
-        <a data-url="http://yoursite.com/2020/06/06/ 微机系统/中断/" data-id="ckcjufm1o001t3ovi1kb1lvjl" class="article-share-link" data-share="baidu" data-title="中断">分享到</a>
-      
-
-      
-        <a href="http://yoursite.com/2020/06/06/ 微机系统/中断/#ds-thread" class="article-comment-link">评论</a>
-      
-
-      
-        <a href="/2020/06/06/ 微机系统/中断/#comments" class="article-comment-link">
-          <span class="post-comments-count valine-comment-count" data-xid="/2020/06/06/ 微机系统/中断/" itemprop="commentCount"></span>
           文章评论
         </a>
       
@@ -729,7 +955,7 @@ min C\sum_{i=1}^{m}[y^{(i)}cost_1(\theta^{T}f^{(i)})+(1-y^{i})cost_0(\theta^{T}f
     </div>
     <footer class="article-footer">
       
-        <a data-url="http://yoursite.com/2020/06/06/ 微机系统/汇编实验/" data-id="ckcjufm3400273oviiwan6nms" class="article-share-link" data-share="baidu" data-title="汇编实验">分享到</a>
+        <a data-url="http://yoursite.com/2020/06/06/ 微机系统/汇编实验/" data-id="ckcpv4b7g002is4vixvs2crf1" class="article-share-link" data-share="baidu" data-title="汇编实验">分享到</a>
       
 
       
@@ -834,7 +1060,7 @@ min C\sum_{i=1}^{m}[y^{(i)}cost_1(\theta^{T}f^{(i)})+(1-y^{i})cost_0(\theta^{T}f
     </div>
     <footer class="article-footer">
       
-        <a data-url="http://yoursite.com/2020/06/03/ 微机系统/寻址/" data-id="ckcjufm3e002a3ovi3egsvr4c" class="article-share-link" data-share="baidu" data-title="寻址法方式">分享到</a>
+        <a data-url="http://yoursite.com/2020/06/03/ 微机系统/寻址/" data-id="ckcpv4b790024s4vijw54fnqu" class="article-share-link" data-share="baidu" data-title="寻址法方式">分享到</a>
       
 
       
@@ -1099,7 +1325,7 @@ min C\sum_{i=1}^{m}[y^{(i)}cost_1(\theta^{T}f^{(i)})+(1-y^{i})cost_0(\theta^{T}f
     </div>
     <footer class="article-footer">
       
-        <a data-url="http://yoursite.com/2020/05/30/ 微机系统/汇编_DosBox/" data-id="ckcjufm1t001y3oviuvefohar" class="article-share-link" data-share="baidu" data-title="Debug环境设置">分享到</a>
+        <a data-url="http://yoursite.com/2020/05/30/ 微机系统/汇编_DosBox/" data-id="ckcpv4b7c002as4vi4jgdnvt1" class="article-share-link" data-share="baidu" data-title="Debug环境设置">分享到</a>
       
 
       
@@ -1109,110 +1335,6 @@ min C\sum_{i=1}^{m}[y^{(i)}cost_1(\theta^{T}f^{(i)})+(1-y^{i})cost_0(\theta^{T}f
       
         <a href="/2020/05/30/ 微机系统/汇编_DosBox/#comments" class="article-comment-link">
           <span class="post-comments-count valine-comment-count" data-xid="/2020/05/30/ 微机系统/汇编_DosBox/" itemprop="commentCount"></span>
-          文章评论
-        </a>
-      
-
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-
-
-  
-    <article id="post-微机系统/汇编_Loop_多段" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2020/05/30/ 微机系统/汇编_Loop_多段/" class="article-date">
-  <time datetime="2020-05-30T08:56:52.000Z" itemprop="datePublished">2020-05-30</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/汇编/">汇编</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/05/30/ 微机系统/汇编_Loop_多段/">Loop_程序实例</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="Loop"><a href="#Loop" class="headerlink" title="Loop"></a>Loop</h1><ul>
-<li>计算$2^{11}$</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">assume cs:code</span><br><span class="line">code segment</span><br><span class="line">    mov ax,2</span><br><span class="line">    mov cx,11</span><br><span class="line">    s: add ax,ax	</span><br><span class="line">    loop s</span><br><span class="line">    </span><br><span class="line">    mov ax,4c00h</span><br><span class="line">    int 21h</span><br><span class="line">    code ends</span><br><span class="line">end</span><br></pre></td></tr></table></figure>
-<p>其中</p>
-<ul>
-<li><p>s标识了一个地址，这个地址处有一条指令<code>add ax,ax</code></p>
-</li>
-<li><p><code>loop s</code>,CPU进行2步操作</p>
-<ol>
-<li>(<code>cx</code>)—</li>
-<li>判断<code>cx</code>是否为0，若<code>cx</code>不为0，则转到<code>s</code>，反之，顺序执行。</li>
-</ol>
-</li>
-<li><p><code>track:</code>当我们使用1字节的数据对1字的寄存器赋值的时候，可以使用另外一个1字的寄存器作为媒介来获得所需要的数据</p>
-</li>
-<li><p>计算$([0006h])^{11}$</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">assume cs:code</span><br><span class="line">code segment</span><br><span class="line">    mov ax,0ffffh</span><br><span class="line">    mov ds,ax</span><br><span class="line">    mov sp,0006h</span><br><span class="line">    mov ah,0h</span><br><span class="line">    mov al,[6h]</span><br><span class="line">    mov cx,3</span><br><span class="line">    mov dx,0</span><br><span class="line">    s: add dx,al</span><br><span class="line">    loop s</span><br><span class="line">    </span><br><span class="line">    </span><br><span class="line">    mov ax,4c00h</span><br><span class="line">    int 21h</span><br><span class="line">    code ends</span><br><span class="line">end</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>累加<code>ffff:0000</code>~<code>ffff:000A</code>单元中的数据的和，结果存储在<code>dx</code>中</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">assume cs:code</span><br><span class="line">code segment</span><br><span class="line">    mov ax,0ffffh</span><br><span class="line">    mov ds,ax                              ;初始化把 ds设置好</span><br><span class="line">    mov bx,0h                              ;基址寄存器初始化，为了偏移地址寻址</span><br><span class="line">    mov cx,12                              ;计数器初始化</span><br><span class="line">    mov ah,0                               </span><br><span class="line">    mov dx,0                               ;初始化</span><br><span class="line">    </span><br><span class="line">    s: mov al,[bx]</span><br><span class="line">    add dx,ax</span><br><span class="line">    inc bx</span><br><span class="line">    loop s</span><br><span class="line">    </span><br><span class="line">    mov ax,4c00h</span><br><span class="line">    int 21h</span><br><span class="line">    code ends</span><br><span class="line">end</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-<h1 id="多段程序"><a href="#多段程序" class="headerlink" title="多段程序"></a>多段程序</h1><ul>
-<li><p>若我们需要使用到自己所需要的数据，而这些数据初始信息并非内存，而是实实在在的数据</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">assume</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>其中，我们来讨论下<code>end</code>的作用：</p>
-<ol>
-<li>通知编译器程序结束</li>
-<li>通知编译器 这段程序的入口在上面地方</li>
-</ol>
-</li>
-<li><p>我们不妨再来讨论以下可执行文件<code>bin</code>的执行过程</p>
-<ol>
-<li>由其他程序将可执行文件加载如内存</li>
-<li>设置<code>CS:IP</code>指向程序的第一条指令的位置</li>
-<li>程序运行结束，返回到加载者位置。</li>
-</ol>
-</li>
-<li><p>eg：将数据<code>0123h</code>…<code>0987h</code>逆序存储到原来的位置。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">assume cs:codesg</span><br><span class="line">codesg segment</span><br><span class="line">    dw 0123h,0456h,0789h,0abch,0defh,0fedh,0cbah,0987h</span><br><span class="line">    dw 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0</span><br><span class="line">    </span><br><span class="line">    start: mov ax,cs</span><br><span class="line">    mov ss,ax</span><br><span class="line">    mov sp,30h</span><br><span class="line">    </span><br><span class="line">    mov bx,0</span><br><span class="line">    mov cx,8</span><br><span class="line">    </span><br><span class="line">    s:push cs:[bx]</span><br><span class="line">    add bx,2</span><br><span class="line">    loop s</span><br><span class="line">    </span><br><span class="line">    mov bx,0</span><br><span class="line">    mov cx,8</span><br><span class="line">    </span><br><span class="line">    s0:pop cs:[bx]</span><br><span class="line">    add bx,2</span><br><span class="line">    loop s0</span><br><span class="line">    mov ax,4c00h</span><br><span class="line">    int 21h</span><br><span class="line">    </span><br><span class="line">    codesg ends</span><br><span class="line">end start</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>其中，<code>23</code>这个字节数据保存在偏移地址为0的位置。</p>
-</li>
-</ul>
-<h3 id="eg-将文本大写化"><a href="#eg-将文本大写化" class="headerlink" title="eg 将文本大写化"></a>eg 将文本大写化</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">assume cs:codesg,ds:datasg</span><br><span class="line">datasg segment</span><br><span class="line">    db &apos;BaSiC&apos;</span><br><span class="line">    datasg ends</span><br><span class="line">codesg segment</span><br><span class="line">    start:</span><br><span class="line">    mov ax,datasg</span><br><span class="line">    mov ds,ax</span><br><span class="line">    </span><br><span class="line">    mov bx,0</span><br><span class="line">    mov cx,5</span><br><span class="line">    s:</span><br><span class="line">    mov al,[bx]</span><br><span class="line">    and al,11011111B</span><br><span class="line">    mov [bx],al</span><br><span class="line">    inc bx</span><br><span class="line">    </span><br><span class="line">    loop s</span><br><span class="line">    </span><br><span class="line">    mov ax,4c00h</span><br><span class="line">    int 21h</span><br><span class="line">    </span><br><span class="line">    codesg ends</span><br><span class="line">end start</span><br></pre></td></tr></table></figure>
-<h1 id="一个综合练习"><a href="#一个综合练习" class="headerlink" title="一个综合练习"></a>一个综合练习</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br></pre></td><td class="code"><pre><span class="line">assume  cs:codesg      </span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">data segment</span><br><span class="line">db &apos;1975&apos;, &apos;1976&apos;, &apos;1977&apos;, &apos;1978&apos;, &apos;1979&apos;, &apos;1980&apos;, &apos;1981&apos;, &apos;1982&apos;, &apos;1983&apos;</span><br><span class="line">db &apos;1984&apos;, &apos;1985&apos;, &apos;1986&apos;, &apos;1987&apos;, &apos;1988&apos;, &apos;1989&apos;, &apos;1990&apos;, &apos;1991&apos;, &apos;1992&apos;</span><br><span class="line">db &apos;1993&apos;, &apos;1994&apos;, &apos;1995&apos;</span><br><span class="line">  </span><br><span class="line">dd 16, 22, 382, 1356, 2390, 8000, 16000, 24486, 50065, 97479, 140417, 197514</span><br><span class="line">dd 345980, 590827, 803530, 1183000, 1843000, 2759000, 3753000, 4649000, 5937000</span><br><span class="line"></span><br><span class="line">dw 3, 7, 9, 13, 28, 38, 130, 220, 476, 778, 1001, 1442, 2258, 2793, 4037, 5635, 8226</span><br><span class="line">dw 11542, 14430, 15257, 17800</span><br><span class="line">data ends</span><br><span class="line"></span><br><span class="line">  </span><br><span class="line">  </span><br><span class="line">table segment</span><br><span class="line">db 21 dup (&apos;year summ ne ?? &apos;)</span><br><span class="line">table ends</span><br><span class="line"></span><br><span class="line">stack segment</span><br><span class="line">dw 8 dup(0)</span><br><span class="line">stack ends</span><br><span class="line"></span><br><span class="line">codesg segment</span><br><span class="line">    start:</span><br><span class="line">    mov ax,data</span><br><span class="line">    mov es,ax</span><br><span class="line">    mov ax,table</span><br><span class="line">    mov ds,ax</span><br><span class="line">    ;初始化 </span><br><span class="line">    </span><br><span class="line">    getyear:</span><br><span class="line">    mov bx,0</span><br><span class="line">    mov bp,0</span><br><span class="line">    mov cx,15h</span><br><span class="line">    s11:</span><br><span class="line">    mov si,0</span><br><span class="line">    mov dx,cx</span><br><span class="line">    mov cx,4</span><br><span class="line">    s12:</span><br><span class="line">    mov al,es:[bp]</span><br><span class="line">    mov ds:[bx+si],al</span><br><span class="line">    </span><br><span class="line">    inc bp</span><br><span class="line">    inc si</span><br><span class="line">    </span><br><span class="line">    loop s12</span><br><span class="line">    </span><br><span class="line">    mov cx,dx</span><br><span class="line">    add bx,10h</span><br><span class="line">    loop s11</span><br><span class="line">    </span><br><span class="line">    </span><br><span class="line">    getspace:</span><br><span class="line">    mov bx,0</span><br><span class="line">    mov cx,15h</span><br><span class="line">    space1:</span><br><span class="line">    mov al,&apos; &apos;</span><br><span class="line">    mov ds:[bx+4],al</span><br><span class="line">    add bx,10h</span><br><span class="line">    </span><br><span class="line">    loop space1</span><br><span class="line">    </span><br><span class="line">   </span><br><span class="line">    mov bx,0</span><br><span class="line">    mov cx,15h</span><br><span class="line">    getincome:</span><br><span class="line">    mov ax,es:[bp]</span><br><span class="line">    mov ds:[bx+5],ax</span><br><span class="line">    add bp,2</span><br><span class="line">    mov ax,es:[bp]</span><br><span class="line">    mov ds:[bx+7],ax</span><br><span class="line">    add bp,2</span><br><span class="line">    mov al,&apos; &apos;</span><br><span class="line">    mov ds:[bx+9],al</span><br><span class="line">    add bx,10h</span><br><span class="line">    </span><br><span class="line">    loop getincome</span><br><span class="line">    </span><br><span class="line">    </span><br><span class="line">    mov bx,0</span><br><span class="line">    mov cx,15h</span><br><span class="line">    getnum:</span><br><span class="line">    mov ax,es:[bp]</span><br><span class="line">    mov ds:[bx+0ah],ax</span><br><span class="line">    add bp,2</span><br><span class="line">    mov ax,&apos; &apos;</span><br><span class="line">    mov ds:[bx+0ch],al</span><br><span class="line">    </span><br><span class="line">    add bx,10h</span><br><span class="line">    loop getnum</span><br><span class="line">    </span><br><span class="line">    mov bx,0</span><br><span class="line">    mov cx,15h</span><br><span class="line">    getaverage:</span><br><span class="line">    mov ax,ds:[bx+5]</span><br><span class="line">    mov dx,ds:[bx+7]</span><br><span class="line">    div word ptr ds:[bx+0ah]  </span><br><span class="line">    mov ds:[bx+0dh],ax</span><br><span class="line">    mov al,&apos; &apos;</span><br><span class="line">    mov ds:[bx+0fh],al</span><br><span class="line">    add bx,10h</span><br><span class="line">    loop getaverage</span><br><span class="line">    </span><br><span class="line">    </span><br><span class="line">    </span><br><span class="line">    </span><br><span class="line">    </span><br><span class="line">    </span><br><span class="line">    </span><br><span class="line">     </span><br><span class="line">    </span><br><span class="line">    </span><br><span class="line">    </span><br><span class="line">    mov ax,4c00h</span><br><span class="line">    int 21h</span><br><span class="line">codesg ends</span><br><span class="line">end start</span><br></pre></td></tr></table></figure>
-
-      
-    </div>
-    <footer class="article-footer">
-      
-        <a data-url="http://yoursite.com/2020/05/30/ 微机系统/汇编_Loop_多段/" data-id="ckcjufm3100263ovihg2x6zuk" class="article-share-link" data-share="baidu" data-title="Loop_程序实例">分享到</a>
-      
-
-      
-        <a href="http://yoursite.com/2020/05/30/ 微机系统/汇编_Loop_多段/#ds-thread" class="article-comment-link">评论</a>
-      
-
-      
-        <a href="/2020/05/30/ 微机系统/汇编_Loop_多段/#comments" class="article-comment-link">
-          <span class="post-comments-count valine-comment-count" data-xid="/2020/05/30/ 微机系统/汇编_Loop_多段/" itemprop="commentCount"></span>
           文章评论
         </a>
       
@@ -1241,7 +1363,7 @@ min C\sum_{i=1}^{m}[y^{(i)}cost_1(\theta^{T}f^{(i)})+(1-y^{i})cost_0(\theta^{T}f
   <div class="widget-wrap">
     <h3 class="widget-title">分类</h3>
     <div class="widget">
-      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Java/">Java</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Linux/">Linux</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Machine-Learning/">Machine Learning</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/OS/">OS</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Read/">Read</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/algorithm/">algorithm</a><span class="category-list-count">8</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/web技术/">web技术</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/垃圾场/">垃圾场</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/接口技术/">接口技术</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/机器学习/">机器学习</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/汇编/">汇编</a><span class="category-list-count">8</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/离散数学/">离散数学</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/算法设计与分析/">算法设计与分析</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/组合数学/">组合数学</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/计算方法/">计算方法</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/计算机系统结构/">计算机系统结构</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/随机数学/">随机数学</a><span class="category-list-count">1</span></li></ul>
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Java/">Java</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Linux/">Linux</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Machine-Learning/">Machine Learning</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/OS/">OS</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Read/">Read</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/algorithm/">algorithm</a><span class="category-list-count">8</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/web技术/">web技术</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/垃圾场/">垃圾场</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/接口技术/">接口技术</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/机器学习/">机器学习</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/汇编/">汇编</a><span class="category-list-count">8</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/离散数学/">离散数学</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/算法设计与分析/">算法设计与分析</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/组合数学/">组合数学</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/计算方法/">计算方法</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/计算机系统结构/">计算机系统结构</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/随机数学/">随机数学</a><span class="category-list-count">1</span></li></ul>
     </div>
   </div>
 
@@ -1254,7 +1376,7 @@ min C\sum_{i=1}^{m}[y^{(i)}cost_1(\theta^{T}f^{(i)})+(1-y^{i})cost_0(\theta^{T}f
   <div class="widget-wrap">
     <h3 class="widget-title">归档</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/07/">七月 2020</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/06/">六月 2020</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/05/">五月 2020</a><span class="archive-list-count">7</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/04/">四月 2020</a><span class="archive-list-count">7</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/03/">三月 2020</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/02/">二月 2020</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/11/">十一月 2019</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/10/">十月 2019</a><span class="archive-list-count">8</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/07/">七月 2020</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/06/">六月 2020</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/05/">五月 2020</a><span class="archive-list-count">7</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/04/">四月 2020</a><span class="archive-list-count">7</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/03/">三月 2020</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/02/">二月 2020</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/11/">十一月 2019</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/10/">十月 2019</a><span class="archive-list-count">8</span></li></ul>
     </div>
   </div>
 
@@ -1266,7 +1388,15 @@ min C\sum_{i=1}^{m}[y^{(i)}cost_1(\theta^{T}f^{(i)})+(1-y^{i})cost_0(\theta^{T}f
       <ul>
         
           <li>
-            <a href="/2020/07/12/ 微机系统/微型计算机原理与接口技术课后习题/">微型计算机接口技术课后习题</a>
+            <a href="/2020/07/17/ 微机系统/习题/">练习</a>
+          </li>
+        
+          <li>
+            <a href="/2020/07/17/ 微机系统/微型计算机原理与接口技术课后习题/">微型计算机接口技术课后习题</a>
+          </li>
+        
+          <li>
+            <a href="/2020/07/14/ 操作系统/OS习题/">OS习题</a>
           </li>
         
           <li>
@@ -1274,15 +1404,7 @@ min C\sum_{i=1}^{m}[y^{(i)}cost_1(\theta^{T}f^{(i)})+(1-y^{i})cost_0(\theta^{T}f
           </li>
         
           <li>
-            <a href="/2020/07/02/ 操作系统/OS习题/">OS习题</a>
-          </li>
-        
-          <li>
             <a href="/2020/06/08/ Math/计数方法/">计数方法</a>
-          </li>
-        
-          <li>
-            <a href="/2020/06/06/ 微机系统/notice/">OTHERS</a>
           </li>
         
       </ul>

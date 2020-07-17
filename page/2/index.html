@@ -71,6 +71,110 @@
     <div class="outer">
       <section id="main">
   
+    <article id="post-微机系统/汇编_Loop_多段" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2020/05/30/ 微机系统/汇编_Loop_多段/" class="article-date">
+  <time datetime="2020-05-30T08:56:52.000Z" itemprop="datePublished">2020-05-30</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/汇编/">汇编</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/05/30/ 微机系统/汇编_Loop_多段/">Loop_程序实例</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="Loop"><a href="#Loop" class="headerlink" title="Loop"></a>Loop</h1><ul>
+<li>计算$2^{11}$</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">assume cs:code</span><br><span class="line">code segment</span><br><span class="line">    mov ax,2</span><br><span class="line">    mov cx,11</span><br><span class="line">    s: add ax,ax	</span><br><span class="line">    loop s</span><br><span class="line">    </span><br><span class="line">    mov ax,4c00h</span><br><span class="line">    int 21h</span><br><span class="line">    code ends</span><br><span class="line">end</span><br></pre></td></tr></table></figure>
+<p>其中</p>
+<ul>
+<li><p>s标识了一个地址，这个地址处有一条指令<code>add ax,ax</code></p>
+</li>
+<li><p><code>loop s</code>,CPU进行2步操作</p>
+<ol>
+<li>(<code>cx</code>)—</li>
+<li>判断<code>cx</code>是否为0，若<code>cx</code>不为0，则转到<code>s</code>，反之，顺序执行。</li>
+</ol>
+</li>
+<li><p><code>track:</code>当我们使用1字节的数据对1字的寄存器赋值的时候，可以使用另外一个1字的寄存器作为媒介来获得所需要的数据</p>
+</li>
+<li><p>计算$([0006h])^{11}$</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">assume cs:code</span><br><span class="line">code segment</span><br><span class="line">    mov ax,0ffffh</span><br><span class="line">    mov ds,ax</span><br><span class="line">    mov sp,0006h</span><br><span class="line">    mov ah,0h</span><br><span class="line">    mov al,[6h]</span><br><span class="line">    mov cx,3</span><br><span class="line">    mov dx,0</span><br><span class="line">    s: add dx,al</span><br><span class="line">    loop s</span><br><span class="line">    </span><br><span class="line">    </span><br><span class="line">    mov ax,4c00h</span><br><span class="line">    int 21h</span><br><span class="line">    code ends</span><br><span class="line">end</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>累加<code>ffff:0000</code>~<code>ffff:000A</code>单元中的数据的和，结果存储在<code>dx</code>中</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">assume cs:code</span><br><span class="line">code segment</span><br><span class="line">    mov ax,0ffffh</span><br><span class="line">    mov ds,ax                              ;初始化把 ds设置好</span><br><span class="line">    mov bx,0h                              ;基址寄存器初始化，为了偏移地址寻址</span><br><span class="line">    mov cx,12                              ;计数器初始化</span><br><span class="line">    mov ah,0                               </span><br><span class="line">    mov dx,0                               ;初始化</span><br><span class="line">    </span><br><span class="line">    s: mov al,[bx]</span><br><span class="line">    add dx,ax</span><br><span class="line">    inc bx</span><br><span class="line">    loop s</span><br><span class="line">    </span><br><span class="line">    mov ax,4c00h</span><br><span class="line">    int 21h</span><br><span class="line">    code ends</span><br><span class="line">end</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h1 id="多段程序"><a href="#多段程序" class="headerlink" title="多段程序"></a>多段程序</h1><ul>
+<li><p>若我们需要使用到自己所需要的数据，而这些数据初始信息并非内存，而是实实在在的数据</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">assume</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>其中，我们来讨论下<code>end</code>的作用：</p>
+<ol>
+<li>通知编译器程序结束</li>
+<li>通知编译器 这段程序的入口在上面地方</li>
+</ol>
+</li>
+<li><p>我们不妨再来讨论以下可执行文件<code>bin</code>的执行过程</p>
+<ol>
+<li>由其他程序将可执行文件加载如内存</li>
+<li>设置<code>CS:IP</code>指向程序的第一条指令的位置</li>
+<li>程序运行结束，返回到加载者位置。</li>
+</ol>
+</li>
+<li><p>eg：将数据<code>0123h</code>…<code>0987h</code>逆序存储到原来的位置。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">assume cs:codesg</span><br><span class="line">codesg segment</span><br><span class="line">    dw 0123h,0456h,0789h,0abch,0defh,0fedh,0cbah,0987h</span><br><span class="line">    dw 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0</span><br><span class="line">    </span><br><span class="line">    start: mov ax,cs</span><br><span class="line">    mov ss,ax</span><br><span class="line">    mov sp,30h</span><br><span class="line">    </span><br><span class="line">    mov bx,0</span><br><span class="line">    mov cx,8</span><br><span class="line">    </span><br><span class="line">    s:push cs:[bx]</span><br><span class="line">    add bx,2</span><br><span class="line">    loop s</span><br><span class="line">    </span><br><span class="line">    mov bx,0</span><br><span class="line">    mov cx,8</span><br><span class="line">    </span><br><span class="line">    s0:pop cs:[bx]</span><br><span class="line">    add bx,2</span><br><span class="line">    loop s0</span><br><span class="line">    mov ax,4c00h</span><br><span class="line">    int 21h</span><br><span class="line">    </span><br><span class="line">    codesg ends</span><br><span class="line">end start</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>其中，<code>23</code>这个字节数据保存在偏移地址为0的位置。</p>
+</li>
+</ul>
+<h3 id="eg-将文本大写化"><a href="#eg-将文本大写化" class="headerlink" title="eg 将文本大写化"></a>eg 将文本大写化</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">assume cs:codesg,ds:datasg</span><br><span class="line">datasg segment</span><br><span class="line">    db &apos;BaSiC&apos;</span><br><span class="line">    datasg ends</span><br><span class="line">codesg segment</span><br><span class="line">    start:</span><br><span class="line">    mov ax,datasg</span><br><span class="line">    mov ds,ax</span><br><span class="line">    </span><br><span class="line">    mov bx,0</span><br><span class="line">    mov cx,5</span><br><span class="line">    s:</span><br><span class="line">    mov al,[bx]</span><br><span class="line">    and al,11011111B</span><br><span class="line">    mov [bx],al</span><br><span class="line">    inc bx</span><br><span class="line">    </span><br><span class="line">    loop s</span><br><span class="line">    </span><br><span class="line">    mov ax,4c00h</span><br><span class="line">    int 21h</span><br><span class="line">    </span><br><span class="line">    codesg ends</span><br><span class="line">end start</span><br></pre></td></tr></table></figure>
+<h1 id="一个综合练习"><a href="#一个综合练习" class="headerlink" title="一个综合练习"></a>一个综合练习</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br></pre></td><td class="code"><pre><span class="line">assume  cs:codesg      </span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">data segment</span><br><span class="line">db &apos;1975&apos;, &apos;1976&apos;, &apos;1977&apos;, &apos;1978&apos;, &apos;1979&apos;, &apos;1980&apos;, &apos;1981&apos;, &apos;1982&apos;, &apos;1983&apos;</span><br><span class="line">db &apos;1984&apos;, &apos;1985&apos;, &apos;1986&apos;, &apos;1987&apos;, &apos;1988&apos;, &apos;1989&apos;, &apos;1990&apos;, &apos;1991&apos;, &apos;1992&apos;</span><br><span class="line">db &apos;1993&apos;, &apos;1994&apos;, &apos;1995&apos;</span><br><span class="line">  </span><br><span class="line">dd 16, 22, 382, 1356, 2390, 8000, 16000, 24486, 50065, 97479, 140417, 197514</span><br><span class="line">dd 345980, 590827, 803530, 1183000, 1843000, 2759000, 3753000, 4649000, 5937000</span><br><span class="line"></span><br><span class="line">dw 3, 7, 9, 13, 28, 38, 130, 220, 476, 778, 1001, 1442, 2258, 2793, 4037, 5635, 8226</span><br><span class="line">dw 11542, 14430, 15257, 17800</span><br><span class="line">data ends</span><br><span class="line"></span><br><span class="line">  </span><br><span class="line">  </span><br><span class="line">table segment</span><br><span class="line">db 21 dup (&apos;year summ ne ?? &apos;)</span><br><span class="line">table ends</span><br><span class="line"></span><br><span class="line">stack segment</span><br><span class="line">dw 8 dup(0)</span><br><span class="line">stack ends</span><br><span class="line"></span><br><span class="line">codesg segment</span><br><span class="line">    start:</span><br><span class="line">    mov ax,data</span><br><span class="line">    mov es,ax</span><br><span class="line">    mov ax,table</span><br><span class="line">    mov ds,ax</span><br><span class="line">    ;初始化 </span><br><span class="line">    </span><br><span class="line">    getyear:</span><br><span class="line">    mov bx,0</span><br><span class="line">    mov bp,0</span><br><span class="line">    mov cx,15h</span><br><span class="line">    s11:</span><br><span class="line">    mov si,0</span><br><span class="line">    mov dx,cx</span><br><span class="line">    mov cx,4</span><br><span class="line">    s12:</span><br><span class="line">    mov al,es:[bp]</span><br><span class="line">    mov ds:[bx+si],al</span><br><span class="line">    </span><br><span class="line">    inc bp</span><br><span class="line">    inc si</span><br><span class="line">    </span><br><span class="line">    loop s12</span><br><span class="line">    </span><br><span class="line">    mov cx,dx</span><br><span class="line">    add bx,10h</span><br><span class="line">    loop s11</span><br><span class="line">    </span><br><span class="line">    </span><br><span class="line">    getspace:</span><br><span class="line">    mov bx,0</span><br><span class="line">    mov cx,15h</span><br><span class="line">    space1:</span><br><span class="line">    mov al,&apos; &apos;</span><br><span class="line">    mov ds:[bx+4],al</span><br><span class="line">    add bx,10h</span><br><span class="line">    </span><br><span class="line">    loop space1</span><br><span class="line">    </span><br><span class="line">   </span><br><span class="line">    mov bx,0</span><br><span class="line">    mov cx,15h</span><br><span class="line">    getincome:</span><br><span class="line">    mov ax,es:[bp]</span><br><span class="line">    mov ds:[bx+5],ax</span><br><span class="line">    add bp,2</span><br><span class="line">    mov ax,es:[bp]</span><br><span class="line">    mov ds:[bx+7],ax</span><br><span class="line">    add bp,2</span><br><span class="line">    mov al,&apos; &apos;</span><br><span class="line">    mov ds:[bx+9],al</span><br><span class="line">    add bx,10h</span><br><span class="line">    </span><br><span class="line">    loop getincome</span><br><span class="line">    </span><br><span class="line">    </span><br><span class="line">    mov bx,0</span><br><span class="line">    mov cx,15h</span><br><span class="line">    getnum:</span><br><span class="line">    mov ax,es:[bp]</span><br><span class="line">    mov ds:[bx+0ah],ax</span><br><span class="line">    add bp,2</span><br><span class="line">    mov ax,&apos; &apos;</span><br><span class="line">    mov ds:[bx+0ch],al</span><br><span class="line">    </span><br><span class="line">    add bx,10h</span><br><span class="line">    loop getnum</span><br><span class="line">    </span><br><span class="line">    mov bx,0</span><br><span class="line">    mov cx,15h</span><br><span class="line">    getaverage:</span><br><span class="line">    mov ax,ds:[bx+5]</span><br><span class="line">    mov dx,ds:[bx+7]</span><br><span class="line">    div word ptr ds:[bx+0ah]  </span><br><span class="line">    mov ds:[bx+0dh],ax</span><br><span class="line">    mov al,&apos; &apos;</span><br><span class="line">    mov ds:[bx+0fh],al</span><br><span class="line">    add bx,10h</span><br><span class="line">    loop getaverage</span><br><span class="line">    </span><br><span class="line">    </span><br><span class="line">    </span><br><span class="line">    </span><br><span class="line">    </span><br><span class="line">    </span><br><span class="line">    </span><br><span class="line">     </span><br><span class="line">    </span><br><span class="line">    </span><br><span class="line">    </span><br><span class="line">    mov ax,4c00h</span><br><span class="line">    int 21h</span><br><span class="line">codesg ends</span><br><span class="line">end start</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+    <footer class="article-footer">
+      
+        <a data-url="http://yoursite.com/2020/05/30/ 微机系统/汇编_Loop_多段/" data-id="ckcpv4b7e002fs4vihvl0308z" class="article-share-link" data-share="baidu" data-title="Loop_程序实例">分享到</a>
+      
+
+      
+        <a href="http://yoursite.com/2020/05/30/ 微机系统/汇编_Loop_多段/#ds-thread" class="article-comment-link">评论</a>
+      
+
+      
+        <a href="/2020/05/30/ 微机系统/汇编_Loop_多段/#comments" class="article-comment-link">
+          <span class="post-comments-count valine-comment-count" data-xid="/2020/05/30/ 微机系统/汇编_Loop_多段/" itemprop="commentCount"></span>
+          文章评论
+        </a>
+      
+
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+
+
+  
     <article id="post-MachineLearning/线性代数" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2020/05/28/ MachineLearning/线性代数/" class="article-date">
@@ -107,7 +211,7 @@
     </div>
     <footer class="article-footer">
       
-        <a data-url="http://yoursite.com/2020/05/28/ MachineLearning/线性代数/" data-id="ckcjufm1400183oviidfyt9tm" class="article-share-link" data-share="baidu" data-title="线性代数概知">分享到</a>
+        <a data-url="http://yoursite.com/2020/05/28/ MachineLearning/线性代数/" data-id="ckcpv4b6y001os4vijy9iyc3y" class="article-share-link" data-share="baidu" data-title="线性代数概知">分享到</a>
       
 
       
@@ -156,7 +260,7 @@
     </div>
     <footer class="article-footer">
       
-        <a data-url="http://yoursite.com/2020/05/17/ MachineLearning/图像/" data-id="ckcjufm17001a3oviuo5ib67l" class="article-share-link" data-share="baidu" data-title="">分享到</a>
+        <a data-url="http://yoursite.com/2020/05/17/ MachineLearning/图像/" data-id="ckcpv4b6t001fs4vip476z0wz" class="article-share-link" data-share="baidu" data-title="">分享到</a>
       
 
       
@@ -228,7 +332,7 @@
     </div>
     <footer class="article-footer">
       
-        <a data-url="http://yoursite.com/2020/05/16/ MachineLearning/计算方法/" data-id="ckcjufm19001c3ovi4xrmouj3" class="article-share-link" data-share="baidu" data-title="计算方法">分享到</a>
+        <a data-url="http://yoursite.com/2020/05/16/ MachineLearning/计算方法/" data-id="ckcpv4b7b0028s4viqfovl8in" class="article-share-link" data-share="baidu" data-title="计算方法">分享到</a>
       
 
       
@@ -328,7 +432,7 @@
     </div>
     <footer class="article-footer">
       
-        <a data-url="http://yoursite.com/2020/05/12/ Algorithm/Python/" data-id="ckcjufm0k000s3ovi4byaa3re" class="article-share-link" data-share="baidu" data-title="web技术概知">分享到</a>
+        <a data-url="http://yoursite.com/2020/05/12/ Algorithm/Python/" data-id="ckcpv4b6f000ss4visaowdg6d" class="article-share-link" data-share="baidu" data-title="web技术概知">分享到</a>
       
 
       
@@ -438,7 +542,7 @@
     </div>
     <footer class="article-footer">
       
-        <a data-url="http://yoursite.com/2020/05/07/ 重读C++ Primer/" data-id="ckcjuflyx00093ovib194cktt" class="article-share-link" data-share="baidu" data-title="重读C++ Primer">分享到</a>
+        <a data-url="http://yoursite.com/2020/05/07/ 重读C++ Primer/" data-id="ckcpv4b5p000as4vitxfvs89l" class="article-share-link" data-share="baidu" data-title="重读C++ Primer">分享到</a>
       
 
       
@@ -579,7 +683,7 @@
     </div>
     <footer class="article-footer">
       
-        <a data-url="http://yoursite.com/2020/04/23/ 微机系统/指令合集/" data-id="ckcjufm2w00233oviwi04k9re" class="article-share-link" data-share="baidu" data-title="一些指令">分享到</a>
+        <a data-url="http://yoursite.com/2020/04/23/ 微机系统/指令合集/" data-id="ckcpv4b7d002ds4vicbkd2b2v" class="article-share-link" data-share="baidu" data-title="一些指令">分享到</a>
       
 
       
@@ -814,7 +918,7 @@
     </div>
     <footer class="article-footer">
       
-        <a data-url="http://yoursite.com/2020/04/11/ 微机系统/寄存器概析/" data-id="ckcjufm1q001u3ovihicc7r1x" class="article-share-link" data-share="baidu" data-title="寄存器名称概析">分享到</a>
+        <a data-url="http://yoursite.com/2020/04/11/ 微机系统/寄存器概析/" data-id="ckcpv4b780023s4vi0ggr4z4u" class="article-share-link" data-share="baidu" data-title="寄存器名称概析">分享到</a>
       
 
       
@@ -1096,7 +1200,7 @@ f(x_1...x_n)=\frac{1}{|H|}\sum{s_k^{\lambda{(\sigma_k)}}}</script></li>
     </div>
     <footer class="article-footer">
       
-        <a data-url="http://yoursite.com/2020/04/06/ Math/组合数学/" data-id="ckcjufm1m001q3ovirxu11s7n" class="article-share-link" data-share="baidu" data-title="组合数学">分享到</a>
+        <a data-url="http://yoursite.com/2020/04/06/ Math/组合数学/" data-id="ckcpv4b6q0018s4vitx6aee71" class="article-share-link" data-share="baidu" data-title="组合数学">分享到</a>
       
 
       
@@ -1284,7 +1388,7 @@ f(x_1...x_n)=\frac{1}{|H|}\sum{s_k^{\lambda{(\sigma_k)}}}</script></li>
     </div>
     <footer class="article-footer">
       
-        <a data-url="http://yoursite.com/2020/04/04/ Linux/" data-id="ckcjuflys00043ovilemrx9is" class="article-share-link" data-share="baidu" data-title="Linux">分享到</a>
+        <a data-url="http://yoursite.com/2020/04/04/ Linux/" data-id="ckcpv4b5h0002s4vip58efisd" class="article-share-link" data-share="baidu" data-title="Linux">分享到</a>
       
 
       
@@ -1294,211 +1398,6 @@ f(x_1...x_n)=\frac{1}{|H|}\sum{s_k^{\lambda{(\sigma_k)}}}</script></li>
       
         <a href="/2020/04/04/ Linux/#comments" class="article-comment-link">
           <span class="post-comments-count valine-comment-count" data-xid="/2020/04/04/ Linux/" itemprop="commentCount"></span>
-          文章评论
-        </a>
-      
-
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-
-
-  
-    <article id="post-Math/概率论与数理统计" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2020/04/03/ Math/概率论与数理统计/" class="article-date">
-  <time datetime="2020-04-03T04:42:33.000Z" itemprop="datePublished">2020-04-03</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/随机数学/">随机数学</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/04/03/ Math/概率论与数理统计/">随机数学</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="随机事件及其概率"><a href="#随机事件及其概率" class="headerlink" title="随机事件及其概率"></a>随机事件及其概率</h1><h2 id="引入"><a href="#引入" class="headerlink" title="引入"></a>引入</h2><p>随机试验，简称为试验；若均满足：<strong>可重复性；可观测性；随机性。</strong></p>
-<p>$E:$    试验</p>
-<p>$w$:    样本点</p>
-<p>$\Omega = ${ $w_1,w_2…w_i$ } :    样本空间</p>
-<p>$A$，其中$A\subseteqq \Omega$:    事件</p>
-<p>{$w_i$} :    基本事件</p>
-<p>$\Omega$:    必然事件</p>
-<p>$\phi$:    不可能事件</p>
-<p>若 试验结果 $w\in A$,则称事件A发生</p>
-<h3 id="事件的关系"><a href="#事件的关系" class="headerlink" title="事件的关系"></a>事件的关系</h3><p>$A\subseteqq B $:    包含</p>
-<p>$A=B$:    相等</p>
-<p>互斥：    不能同时发生</p>
-<p>$\bar{A}=B$:    互逆，对立</p>
-<h3 id="事件的运算"><a href="#事件的运算" class="headerlink" title="事件的运算"></a>事件的运算</h3><p>$A\cup B=${$w|w\in A或w\in B$}</p>
-<p>$A\cap B或AB=${$w|w\in A或w\in B$}</p>
-<p>$A-B=${$w|w\in A且 w\notin B$}</p>
-<p>$\overline {A\cup B}=\overline A\cap \overline B$</p>
-<p>$\overline {A\cap B}=\overline A\cup \overline B$</p>
-<p>$n_A$:    事件A发生的频数</p>
-<p>$f_n(A)$:    事件A发生的频率</p>
-<p>$其中 f_n(A)=\frac{n_A}{n}$</p>
-<p><strong>减法公式：</strong>$P(B-A)=P(B)-P(AB)$</p>
-<p><strong>加法公式：</strong>$P(A\cup B)=P(A)+P(B)-P(AB)$</p>
-<h3 id="古典概型：有限个样本点；基本事件发生的可能性相同。"><a href="#古典概型：有限个样本点；基本事件发生的可能性相同。" class="headerlink" title="古典概型：有限个样本点；基本事件发生的可能性相同。"></a>古典概型：有限个样本点；基本事件发生的可能性相同。</h3><h2 id="几何概型"><a href="#几何概型" class="headerlink" title="几何概型"></a>几何概型</h2><h2 id="条件概型"><a href="#条件概型" class="headerlink" title="条件概型"></a>条件概型</h2><p>$P(B|A)=\frac{P(AB)}{P(A)} \Longrightarrow P(AB)=P(A)P(B|A)$</p>
-<p>条件概型的性质：非负性；<strong>规范性：$P(\Omega |A)=1$</strong>；可列可加性：对于<strong>不相容</strong>的事件$B_1,B_2,\cdot \cdot \cdot $有</p>
-<script type="math/tex; mode=display">
-P((\cup_{i=1}^\infty B_i )|A)=\sum_{i=1}^\infty P(B_i|A)</script><p><strong>全概率公式：</strong></p>
-<script type="math/tex; mode=display">
-P(B)=\sum\limits_{i=1}^nP(A_i)P(B|A_i)</script><p>其中：</p>
-<script type="math/tex; mode=display">
-\cup _{i=1} ^n A_i=\Omega 且 \cap _{i=1} ^n A_i=\Phi</script><p><em>推导：</em></p>
-<p><em>对任意事件B，有</em></p>
-<script type="math/tex; mode=display">
-B=B\cap \Omega =B\cap (\cup _{i=1} ^n A_i)=\cup _{i=1} ^n {A_iB}</script><p><img src="https://i.loli.net/2020/04/08/lSNC6yKmUEb7RgW.jpg" alt="概率_25.jpg"></p>
-<p>由条件概型的性质可得全概率公式。若某问题可画出概率树，那么该问题属于条件概型，甚至符合全概率公式。</p>
-<p><strong>贝叶斯公式：</strong></p>
-<script type="math/tex; mode=display">
-P(A_j|B)=\frac{P(A_jB)}{P(B)}=\frac{P(B|A_j)P(A_j)}{\sum_{i=1}^nP(A_i)P(B|A_i)}</script><h2 id="独立性"><a href="#独立性" class="headerlink" title="独立性"></a>独立性</h2><p>如果</p>
-<script type="math/tex; mode=display">
-P(AB)=P(A)P(B)\\
-P(\overline{A}B)=P(\overline{A})P(B)\\
-P(\overline{A}\overline{B})=P(\overline{A})P(\overline{B})</script><p>则称事件A与事件B相互独立。</p>
-<h2 id="伯努利"><a href="#伯努利" class="headerlink" title="伯努利"></a>伯努利</h2><p>若某试验$E$是n重伯努利试验，即试验$E$只有两个对立的结果，将其进行n次。设$P(A)=p$。</p>
-<p>有</p>
-<script type="math/tex; mode=display">
-P_n(k)=(_k^n)p^k(1-p)^{n-k}=C_n^kp^k(1-p)^{n-k}</script><h1 id="随机变量及其概率分布"><a href="#随机变量及其概率分布" class="headerlink" title="随机变量及其概率分布"></a>随机变量及其概率分布</h1><h2 id="随机变量"><a href="#随机变量" class="headerlink" title="随机变量"></a>随机变量</h2><p>性质：</p>
-<p>$P${$a&lt;X\leq b$}$=P{ X\leq b}-P{ X\leq a}=F(b)-F(a)$</p>
-<p>单调不减</p>
-<p>$F(-\infty )=lim_{x\rightarrow -\infty }F(x)=0$</p>
-<p>$F(+\infty )=lim_{x\rightarrow +\infty }F(x)=1$</p>
-<p>F(x)是右连续的，即$F(x^{+})=F(x)$</p>
-<h2 id="离散型随机变量"><a href="#离散型随机变量" class="headerlink" title="离散型随机变量"></a>离散型随机变量</h2><p>两点分布</p>
-<p>二项分布，伯努利试验记作$X ~B(n,p) X在(n+1)p处取得最大值$</p>
-<p>几何分布</p>
-<p>泊松分布：</p>
-<script type="math/tex; mode=display">
-P\{ X=k\}=\frac{\lambda ^ke^{-\lambda}}{k!}\\
-其中，\lambda为服从参数,记作X P(\lambda)</script><h2 id="连续型随机变量"><a href="#连续型随机变量" class="headerlink" title="连续型随机变量"></a>连续型随机变量</h2><h3 id="均匀分布"><a href="#均匀分布" class="headerlink" title="均匀分布"></a>均匀分布</h3><script type="math/tex; mode=display">
-f(x)=\left\{    \begin{array}{lr}        \frac{1}{b-a},a<x<b\\        0,其他            \end{array}\right.\\</script><h3 id="指数分布"><a href="#指数分布" class="headerlink" title="指数分布"></a>指数分布</h3><script type="math/tex; mode=display">
-f(x)=\left\{    \begin{array}{lr}        \lambda e^{-\lambda x} &x>0,\\        0&x\leq 0            \end{array}\right.\\F(x)=\left\{    \begin{array}{lr}    1-e^{-\lambda x}&x>0\\    0&x\leq0\\    \end{array}    \right.\\其中，\lambda>0是常数，称为X服从参数为\lambda的指数分布\\</script><h3 id="正态分布"><a href="#正态分布" class="headerlink" title="正态分布"></a>正态分布</h3><p>$N(\mu ,\sigma^2)$有概率密度函数</p>
-<script type="math/tex; mode=display">
-f(x)=\frac{1}{\sqrt{2\pi }\sigma}e^{-\frac{(x-u)^2}{2\sigma^2}},-\infty <x<+\infty\\F(\mu)=\frac{1}{2}\\f(\mu)=\frac{1}{\sqrt{2\pi}\sigma}</script><h4 id="标准正态分布"><a href="#标准正态分布" class="headerlink" title="标准正态分布"></a>标准正态分布</h4><p>$N(\mu,\sigma^2)=N(0,1)$</p>
-<script type="math/tex; mode=display">
-f(x)=\frac{1}{\sqrt{2\pi}}e^{-\frac{x^2}{2}}</script><p>其中$u,\sigma$为服从参数。当$u,\sigma$分布为0，1时，则称$X$服从标准正态分布</p>
-<script type="math/tex; mode=display">
-F(x)=\Phi (\frac{x-\mu}{\sigma})</script><h1 id="二维连续型随机变量"><a href="#二维连续型随机变量" class="headerlink" title="二维连续型随机变量"></a>二维连续型随机变量</h1><h2 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h2><script type="math/tex; mode=display">
-F(x,y)=\int_{-\infty}^{x}\int_{-\infty}^yf(u,v)dudv\\其中F(x,y)为概率分布函数,f(x,y)为联合概率密度。\\</script><script type="math/tex; mode=display">
-1.f(x,y)\ge 0\\
-2. \int_{-\infty}^{+\infty}\int_{-\infty}^{+\infty}f(u,v)dudv=1\\
-3.若G是xOy上的一个区域，则,P\{(X,Y)\in G\}=\displaystyle\iint_{G}f(x,y)dxdy\\
-4.关于Y的边缘概率密度函数f_Y(y)=\displaystyle\int_{-\infty}^{+\infty}f(x,y)dx\\</script><p><strong>独立性</strong></p>
-<p>随机变量X和Y相互独立的充要条件：</p>
-<ul>
-<li>$f(x,y)=f_X(x)f_Y(y)$</li>
-<li>$F(x,y)=F_X(x)F_Y(y)$</li>
-<li>$P(X,Y)=P_X(X)P_Y(Y)$</li>
-<li>$E(XY)=E(X)E(Y)$</li>
-</ul>
-<p>若$X_1,X_2$相互独立，那么$F_1(x)F_2(x)$一定是某一随机变量的分布密度，但$f_1(x)f_2(x)$不一定为概率密度</p>
-<h2 id="连续型"><a href="#连续型" class="headerlink" title="连续型"></a>连续型</h2><h3 id="均匀分布-1"><a href="#均匀分布-1" class="headerlink" title="均匀分布"></a>均匀分布</h3><script type="math/tex; mode=display">
-设D是xOy面上的有界区域，其面积为A，若\\f(x,y)=\left\{    \begin{array}{lr}        \frac{1}{A}&(x,y)\in D,\\        0&其他            \end{array}\right.\\则称(X,Y)在区域D上服从均匀分布。</script><h3 id="正态分布-1"><a href="#正态分布-1" class="headerlink" title="正态分布"></a>正态分布</h3><script type="math/tex; mode=display">
-f(x,y)=\frac{1}{2\pi \sigma_1 \sigma_2 \sqrt{1-\rho^2} }\cdot e^{\frac{-1}{2(1-\rho^2)}[\frac{(x-\mu_1)^2}{\sigma_1^2}-2\rho \frac{(x-\mu_1)(y-\mu_2)}{\sigma_1\sigma_2}+\frac{(y-\mu_2)^2}{\sigma_2^2}]},(x,y)\in R^2\\其中\sigma_i>0,-1<\rho<1,记作(X,Y) ~N(\mu_1,\mu_2,\sigma_1^2,\sigma_2^2,\rho)</script><h2 id="条件分布"><a href="#条件分布" class="headerlink" title="条件分布"></a>条件分布</h2><script type="math/tex; mode=display">
-离散型：P\{X=x_i|Y=y_j\}=\frac{P{X=x_i,Y=y_j}}{P{Y=y_j}}=\frac{p_{ij}}{p_{\cdot j}}\\
-连续型条件Y=y下X的条件概率密度函数f_{X|Y}(x|y)=\frac{f(x,y)}{f_Y{y}}</script><h2 id="连续型函数分布​"><a href="#连续型函数分布​" class="headerlink" title="连续型函数分布​"></a>连续型函数分布​</h2><script type="math/tex; mode=display">
-有Z=X+Y\\公式法f_Z(z)=\displaystyle \int _{-\infty}^{+\infty}f(x,z-x)dx=\displaystyle \int _{-\infty} ^{+\infty}f(z-y,y)dy\\分布函数法\\
-Z=X+Y,若X和Y相互独立\\f_Z(z)=\displaystyle \int _{-\infty} ^{+\infty}f_X(x)f_Y(z-x)dx\\</script><p>$这个公式称为f_X(x)与f_Y(y)的$<strong>卷积公式</strong></p>
-<p>$Z=max{X,Y},X与Y相互独立$</p>
-<p>$F_Z(z)=F_X(x)F_Y(y)$</p>
-<p>$Z=min{X,Y},X与Y相互独立$</p>
-<p>$F_Z(z)=1-[1-F_X(z)][1-F_Y(z)]$</p>
-<h1 id="数字特征"><a href="#数字特征" class="headerlink" title="数字特征"></a>数字特征</h1><h2 id="数学期望"><a href="#数学期望" class="headerlink" title="数学期望"></a>数学期望</h2><h3 id="定义-1"><a href="#定义-1" class="headerlink" title="定义"></a>定义</h3><p><strong>离散型数学期望的定义</strong></p>
-<ul>
-<li><p>其随机变量$X$的分布律为$P{X=x_k}=p_k,(k=1,2,…)$，</p>
-<p>若级数</p>
-<script type="math/tex; mode=display">
-\sum _{k=1}^{\infty}x_kp_k绝对收敛，记作E(X)=\sum _{k=1}^{\infty} x_kp_k</script></li>
-</ul>
-<p><strong>连续型数学期望的定义</strong></p>
-<ul>
-<li><p>随机变量$X$的概率密度为$f(x)$</p>
-<p>若</p>
-<script type="math/tex; mode=display">
-\sum _{-\infty}^{+\infty}xf(x)dx绝对收敛，记作E(X)=\int _{-\infty}^{+\infty}x(x)</script></li>
-</ul>
-<h3 id="函数"><a href="#函数" class="headerlink" title="函数"></a>函数</h3><p>$Y=g(X)$</p>
-<ul>
-<li><p>离散 $E(Y)=\sum g(x_k)p_k$</p>
-</li>
-<li><p>连续</p>
-<script type="math/tex; mode=display">
-E(Y)=\int g(x_k)f(x)dx</script></li>
-</ul>
-<h2 id="方差"><a href="#方差" class="headerlink" title="方差"></a>方差</h2><ul>
-<li>$D(X)=E(X^2)-[E(X)]^2$</li>
-<li>$D(X\pm Y)=D(X)+D(Y)\pm 2Cov(X,Y)$</li>
-</ul>
-<h3 id="协方差"><a href="#协方差" class="headerlink" title="协方差"></a>协方差</h3><ul>
-<li><script type="math/tex; mode=display">
-Cov(X,Y)=E(XY)-E(X)E(Y)</script></li>
-<li><p>$Cov(aX,bY)=abCov(X,Y)$</p>
-</li>
-<li><p>$Cov(X+Y,Z)=Cov(X,Z)+Cov(Y,Z)$</p>
-</li>
-<li></li>
-</ul>
-<h3 id="相关系数"><a href="#相关系数" class="headerlink" title="相关系数"></a>相关系数</h3><ul>
-<li><script type="math/tex; mode=display">
-\rho_{XY}=\frac{Cov(X,Y)}{\sqrt{D(X)}\sqrt{D(Y)}}
-那么\rho 为X和Y的相关系数</script></li>
-<li><p>若$\rho_{XY}=0,称X与Y不相关，但不一定独立$</p>
-</li>
-<li><p>$|\rho _{XY}|\leq 1$</p>
-</li>
-<li><p>若X与Y相互独立，则$\rho _{XY}=0$</p>
-</li>
-<li><p>$|\rho|=1的充分必要条件为存在常数a,b使得P{a+bX}=1$</p>
-</li>
-</ul>
-<h4 id="相关性"><a href="#相关性" class="headerlink" title="相关性"></a>相关性</h4><p>下列命题等价</p>
-<ul>
-<li>$Cov(X,Y)=0$</li>
-<li>$X,Y不相关$</li>
-<li>$E(XY)=E(X)E(Y)$</li>
-<li>$D(X+Y)=D(X)+D(Y)$</li>
-<li>$D(X-Y)=D(X)+D(Y)$</li>
-<li>$\rho _{XY}=0$</li>
-</ul>
-<h1 id="样本函数及其概率分布"><a href="#样本函数及其概率分布" class="headerlink" title="样本函数及其概率分布"></a>样本函数及其概率分布</h1><script type="math/tex; mode=display">
-设X ~{ N(\mu,\sigma^2)},X_1,X_2,...X_n是来自总体的样本，\overline{X}为样本均值，则随机变量\\
-u=\frac{\overline{X}-\mu}{\sigma/\sqrt{n}}为N(0,1)分布</script>
-      
-    </div>
-    <footer class="article-footer">
-      
-        <a data-url="http://yoursite.com/2020/04/03/ Math/概率论与数理统计/" data-id="ckcjufm1g001k3ovims4uhhc7" class="article-share-link" data-share="baidu" data-title="随机数学">分享到</a>
-      
-
-      
-        <a href="http://yoursite.com/2020/04/03/ Math/概率论与数理统计/#ds-thread" class="article-comment-link">评论</a>
-      
-
-      
-        <a href="/2020/04/03/ Math/概率论与数理统计/#comments" class="article-comment-link">
-          <span class="post-comments-count valine-comment-count" data-xid="/2020/04/03/ Math/概率论与数理统计/" itemprop="commentCount"></span>
           文章评论
         </a>
       
@@ -1527,7 +1426,7 @@ u=\frac{\overline{X}-\mu}{\sigma/\sqrt{n}}为N(0,1)分布</script>
   <div class="widget-wrap">
     <h3 class="widget-title">分类</h3>
     <div class="widget">
-      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Java/">Java</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Linux/">Linux</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Machine-Learning/">Machine Learning</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/OS/">OS</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Read/">Read</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/algorithm/">algorithm</a><span class="category-list-count">8</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/web技术/">web技术</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/垃圾场/">垃圾场</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/接口技术/">接口技术</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/机器学习/">机器学习</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/汇编/">汇编</a><span class="category-list-count">8</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/离散数学/">离散数学</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/算法设计与分析/">算法设计与分析</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/组合数学/">组合数学</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/计算方法/">计算方法</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/计算机系统结构/">计算机系统结构</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/随机数学/">随机数学</a><span class="category-list-count">1</span></li></ul>
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Java/">Java</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Linux/">Linux</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Machine-Learning/">Machine Learning</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/OS/">OS</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Read/">Read</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/algorithm/">algorithm</a><span class="category-list-count">8</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/web技术/">web技术</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/垃圾场/">垃圾场</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/接口技术/">接口技术</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/机器学习/">机器学习</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/汇编/">汇编</a><span class="category-list-count">8</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/离散数学/">离散数学</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/算法设计与分析/">算法设计与分析</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/组合数学/">组合数学</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/计算方法/">计算方法</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/计算机系统结构/">计算机系统结构</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/随机数学/">随机数学</a><span class="category-list-count">1</span></li></ul>
     </div>
   </div>
 
@@ -1540,7 +1439,7 @@ u=\frac{\overline{X}-\mu}{\sigma/\sqrt{n}}为N(0,1)分布</script>
   <div class="widget-wrap">
     <h3 class="widget-title">归档</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/07/">七月 2020</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/06/">六月 2020</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/05/">五月 2020</a><span class="archive-list-count">7</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/04/">四月 2020</a><span class="archive-list-count">7</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/03/">三月 2020</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/02/">二月 2020</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/11/">十一月 2019</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/10/">十月 2019</a><span class="archive-list-count">8</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/07/">七月 2020</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/06/">六月 2020</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/05/">五月 2020</a><span class="archive-list-count">7</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/04/">四月 2020</a><span class="archive-list-count">7</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/03/">三月 2020</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/02/">二月 2020</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/11/">十一月 2019</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/10/">十月 2019</a><span class="archive-list-count">8</span></li></ul>
     </div>
   </div>
 
@@ -1552,7 +1451,15 @@ u=\frac{\overline{X}-\mu}{\sigma/\sqrt{n}}为N(0,1)分布</script>
       <ul>
         
           <li>
-            <a href="/2020/07/12/ 微机系统/微型计算机原理与接口技术课后习题/">微型计算机接口技术课后习题</a>
+            <a href="/2020/07/17/ 微机系统/习题/">练习</a>
+          </li>
+        
+          <li>
+            <a href="/2020/07/17/ 微机系统/微型计算机原理与接口技术课后习题/">微型计算机接口技术课后习题</a>
+          </li>
+        
+          <li>
+            <a href="/2020/07/14/ 操作系统/OS习题/">OS习题</a>
           </li>
         
           <li>
@@ -1560,15 +1467,7 @@ u=\frac{\overline{X}-\mu}{\sigma/\sqrt{n}}为N(0,1)分布</script>
           </li>
         
           <li>
-            <a href="/2020/07/02/ 操作系统/OS习题/">OS习题</a>
-          </li>
-        
-          <li>
             <a href="/2020/06/08/ Math/计数方法/">计数方法</a>
-          </li>
-        
-          <li>
-            <a href="/2020/06/06/ 微机系统/notice/">OTHERS</a>
           </li>
         
       </ul>

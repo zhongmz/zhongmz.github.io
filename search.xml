@@ -1,8 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>练习</title>
+    <url>/2020/07/17/%20%E5%BE%AE%E6%9C%BA%E7%B3%BB%E7%BB%9F/%E4%B9%A0%E9%A2%98/</url>
+    <content><![CDATA[<h4 id="1"><a href="#1" class="headerlink" title="1"></a>1</h4><h4 id><a href="#" class="headerlink" title=" "></a> </h4>]]></content>
+      <categories>
+        <category>接口技术</category>
+      </categories>
+  </entry>
+  <entry>
     <title>微型计算机接口技术课后习题</title>
-    <url>/2020/07/12/%20%E5%BE%AE%E6%9C%BA%E7%B3%BB%E7%BB%9F/%E5%BE%AE%E5%9E%8B%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%8E%9F%E7%90%86%E4%B8%8E%E6%8E%A5%E5%8F%A3%E6%8A%80%E6%9C%AF%E8%AF%BE%E5%90%8E%E4%B9%A0%E9%A2%98/</url>
+    <url>/2020/07/17/%20%E5%BE%AE%E6%9C%BA%E7%B3%BB%E7%BB%9F/%E5%BE%AE%E5%9E%8B%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%8E%9F%E7%90%86%E4%B8%8E%E6%8E%A5%E5%8F%A3%E6%8A%80%E6%9C%AF%E8%AF%BE%E5%90%8E%E4%B9%A0%E9%A2%98/</url>
     <content><![CDATA[<h2 id="0x01-Pentium保护模式存储管理"><a href="#0x01-Pentium保护模式存储管理" class="headerlink" title="0x01 Pentium保护模式存储管理"></a>0x01 Pentium保护模式存储管理</h2><h4 id="1-1"><a href="#1-1" class="headerlink" title="1.1"></a>1.1</h4><p>简述虚拟存储器的含义，试在存储层次，功能，结构，信息传送单位，操作过程等方面对比虚拟存储器和Cache存储器。</p>
 <ul>
 <li>虚拟存储器是由主存储器，辅助存储器，辅助硬件和操作系统管理软件组成的一种<strong>存储体系</strong>。</li>
@@ -99,90 +107,96 @@
 <li>当G=0时，该段的最大数据容量是多少个字节？</li>
 <li>当G=1时，该段的最大数据容量时多少个字节？</li>
 </ol>
+<h2 id="0x03-中断"><a href="#0x03-中断" class="headerlink" title="0x03 中断"></a>0x03 中断</h2><h4 id="3-1"><a href="#3-1" class="headerlink" title="3.1"></a>3.1</h4><p>什么叫中断？在微机系统中为什么要使用中断？</p>
+<ul>
+<li>CPU在正常执行当前程序，由某一事件引起CPU暂时停止当前任务，转去执行请求CPU暂停的服务程序，该服务程序执行完后又返回继续执行被暂停的程序，这一过程叫中断</li>
+<li>主要作用<ul>
+<li>实现主机与<code>I/O</code>设备的并行工作</li>
+<li>利用中断进行实时处理</li>
+<li>利用中断方式进行人机对话</li>
+<li>故障处理</li>
+<li>多处理机系统中各处理机之间协调作用</li>
+</ul>
+</li>
+</ul>
+<h4 id="3-2"><a href="#3-2" class="headerlink" title="3.2"></a>3.2</h4><p>什么叫中断源？中断嵌套的含义是什么？</p>
+<ul>
+<li>凡是能够提出中断请求的设备或异常故障均被称为中断源</li>
+<li>在执行中断服务程序的过程中又发生新的中断</li>
+</ul>
+<h4 id="3-3"><a href="#3-3" class="headerlink" title="3.3"></a>3.3</h4><p><code>Pentium</code>微处理机内部有哪几类中断源？简要说明各类的特点是什么？</p>
+<ul>
+<li>分为四类中断<ul>
+<li>可屏蔽中断<code>INTR</code></li>
+<li>非屏蔽中断<code>NMI</code></li>
+<li>软件中断（执行<code>INTO</code>,<code>INT3</code>,<code>INT n</code>,<code>BOUND</code>指令引起的中断）</li>
+<li>异常</li>
+</ul>
+</li>
+<li><code>INTR</code>通常是由<code>Intel 8259A</code>中断控制器驱动，向<code>INTR</code>引脚发中断请求，通过数据总线向CPU发中断类型码</li>
+<li><code>NMI</code>通常用来通知<code>CPU</code>发生重大故障的事件，比如电源掉电。不受<code>IF</code>中断允许标志的影响，优先级非常高。上升沿触发信号</li>
+<li>软件中断<ul>
+<li>人为设置在程序中</li>
+<li>类型码包含在指令中，所以不执行中断响应总线周期</li>
+<li>除<code>BOUND</code>指令外，中断返回地址为下一条指令</li>
+</ul>
+</li>
+<li>异常是在CPU执行一条指令过程中出现的错误或者检测的异常情况产生的</li>
+</ul>
+<h4 id="3-4"><a href="#3-4" class="headerlink" title="3.4"></a>3.4</h4><p>在<code>Pentium</code>微处理机中中断和异常有何异同？</p>
+<ul>
+<li>中断是用来处理CPU以外的异常事件</li>
+<li>异常时用来处理执行指令期间由CPU本身检测出来的某些异常事情作出的响应</li>
+</ul>
+<h4 id="3-5"><a href="#3-5" class="headerlink" title="3.5"></a>3.5</h4><p>通常CPU响应外部中断的条件有哪些？</p>
+<ul>
+<li>有中断请求</li>
+<li>中断标志位<code>IF</code>=1</li>
+</ul>
+<h4 id="3-6"><a href="#3-6" class="headerlink" title="3.6"></a>3.6</h4><p>简述CPU响应中断后，中断处理的过程，用流程图表示</p>
+<p><img src="https://i.loli.net/2020/07/17/aJcEH9tLU73FjkS.png" alt="Pentium实模式下中断处理过程"></p>
+<h4 id="3-7"><a href="#3-7" class="headerlink" title="3.7"></a>3.7</h4><p>什么情况下需要有中断判优机构？程序查询式和中断向量式2种中断源识别与判优方案各有什么特点？</p>
+<ul>
+<li>系统遇到多个中断源同时请求中断的情况下，需要有中断判优机构。</li>
+<li>程序查询式是软件查询，较为灵活，但是中断源多时，转至中断服务程序时间长</li>
+<li>中断向量式是硬件优先级排队电路确定优先级，速度块，但是优先级固定不变。</li>
+</ul>
+<h4 id="3-8"><a href="#3-8" class="headerlink" title="3.8"></a>3.8</h4><p>什么叫中断向量？试说明<code>Pentium</code>微处理机可屏蔽硬件中断是怎样获得中断向量，从而进入中断程序的。</p>
+<ul>
+<li><p>中断向量是中断服务程序的入口地址。</p>
+</li>
+<li><p>根据<code>8259A</code>送道数据总线的中断类型码*4取得中断向量，把中断向量的前2个字节装入<code>IP</code>，后2个字节装入<code>CS</code>，这样CPU执行的下一条指令就是中断服务程序的第一条指令，也就是说，CPU进入了中断服务程序。</p>
+</li>
+</ul>
+<h4 id="3-9"><a href="#3-9" class="headerlink" title="3.9"></a>3.9</h4><p>中断描述符表的作用是什么？其内保存的是什么信息？</p>
+<ul>
+<li>中断描述符表保存门描述符</li>
+<li>门描述符中保存的信息有段选择符，32位偏移，还有属性用来在GDT或LDT中找到中断服务程序的基地址。</li>
+</ul>
+<h4 id="3-10"><a href="#3-10" class="headerlink" title="3.10"></a>3.10</h4><p><code>8259A</code>芯片是一种什么类型的芯片？试着说明<code>8259</code>芯片的主要功能。</p>
+<ul>
+<li>是一种中断管理芯片，简称PIC</li>
+<li>主要作用<ul>
+<li>管理8级优先权中断源</li>
+<li>对任何级别中断源可单独屏蔽</li>
+<li>向CPU发送可编程的标识码，即中断类型码</li>
+<li>可与<code>Pentium</code>的CPU直接连接，不需要外加电路</li>
+<li>多种工作方式</li>
+</ul>
+</li>
+</ul>
+<h4 id="38"><a href="#38" class="headerlink" title="38"></a>38</h4><p><code>INTR</code>与<code>NMI</code>的区别</p>
+<ul>
+<li>CPU在响应<code>NMI</code>时，不从外部设备读取中断类型码，因为<code>NMI</code>的中断类型码固定为2</li>
+</ul>
 ]]></content>
       <categories>
         <category>接口技术</category>
       </categories>
   </entry>
   <entry>
-    <title>SVM</title>
-    <url>/2020/07/08/%20MachineLearning/SVM/</url>
-    <content><![CDATA[<p>我们知道</p>
-<p>逻辑回归激励函数</p>
-<script type="math/tex; mode=display">
-h_{\theta}(x)=\frac{1}{1+e^{-\theta^{T}x}}</script><p><img src="https://i.loli.net/2020/07/08/lGQbRz3yvTJ4B1I.png" alt="激励函数"></p>
-<p>本质上，支持向量机的代价函数与逻辑回归的代价函数无差别，但是为了使得后面计算更直观些，我们不妨稍微调整一下支持向量机的代价函数。</p>
-<ul>
-<li><p>回顾逻辑回归代价函数</p>
-<script type="math/tex; mode=display">
--(ylog(h_{\theta}(x))+(1-y)log(1-h_{\theta}(x)))</script></li>
-<li><p>而支持向量机代价函数</p>
-<script type="math/tex; mode=display">
-C\sum_{i=1}^{m}[y^{(i)}cost_1(\theta^{T}x^{(i)})+(1-y^{i})cost_0(\theta^{T}x^{(i)})]+\frac{1}{2}\sum_{i=1}^{n}\theta^2_j\\
-其中,cost_0(z)=-log(1-\frac{1}{1+e^{-z}}),cost_1(z)=log\frac{1}{1+e^{-z}}</script><p>其中，C可以理解为$\frac{1}{\lambda}$</p>
-</li>
-</ul>
-<p>而SVM也被人们称之为大间距分类器。</p>
-<p><img src="https://i.loli.net/2020/07/08/nRyjckhQYSJsgKa.png" alt="大间距分类器"></p>
-<p>即，使得间距最大。</p>
-<ul>
-<li>核函数</li>
-</ul>
-<h2 id="Kernels"><a href="#Kernels" class="headerlink" title="Kernels"></a>Kernels</h2><p>设存在2个特征，我们设其假设函数为</p>
-<script type="math/tex; mode=display">
-\theta_0+\theta_1x_1+\theta_2x_2+\theta_3x_1x_2+\theta_4x_1^2+...</script><p>再进行一些优化</p>
-<script type="math/tex; mode=display">
-\theta_0+\theta_1f_1+\theta_2f_2+\theta_3f_3+\theta_4f_4+...</script><h3 id="高斯核函数"><a href="#高斯核函数" class="headerlink" title="高斯核函数"></a>高斯核函数</h3><ul>
-<li>根据$x$的各个特征选取<code>landmarks</code></li>
-</ul>
-<p><img src="https://github.com/fengdu78/Coursera-ML-AndrewNg-Notes/raw/master/images/2516821097bda5dfaf0b94e55de851e0.png" alt="核函数"></p>
-<script type="math/tex; mode=display">
-example:\\
-f_1=similarity(x,l^{(1)})=e^{-\frac{||x-l^{(1)}||^2}{2\sigma^2}}</script><p>那么</p>
-<script type="math/tex; mode=display">
-f_1称为核函数</script><p>不妨再重新回顾下过程</p>
-<ol>
-<li><p>Given</p>
-<script type="math/tex; mode=display">
-(x^{(1)},y^{(1)}),(x^{(2)},y^{(2)})...(x^{(m)},y^{(m)})\\</script></li>
-<li><p>Choose</p>
-<script type="math/tex; mode=display">
-l^{(1)}=x^{(1)},l^{(2)}=x^{(2)},...l^{(m)}=x^{(m)}</script></li>
-<li><p>Get $f_i$</p>
-<script type="math/tex; mode=display">
-f_1=similarity(x,l^{(1)})\\
-...</script></li>
-<li><p>对于$x_{(i)}$</p>
-<script type="math/tex; mode=display">
-f^{(i)}_1\\
-f^{(i)}_2\\
-f^{(i)}_3\\
-...\\
-f^{(i)}_m\\</script></li>
-<li><script type="math/tex; mode=display">
-min C\sum_{i=1}^{m}[y^{(i)}cost_1(\theta^{T}f^{(i)})+(1-y^{i})cost_0(\theta^{T}f^{(i)})]+\frac{1}{2}\sum_{i=1}^{n}\theta^2_j\\
-其中,cost_0(z)=-log(1-\frac{1}{1+e^{-z}}),cost_1(z)=log\frac{1}{1+e^{-z}}</script></li>
-</ol>
-<h2 id="对于参数"><a href="#对于参数" class="headerlink" title="对于参数"></a>对于参数</h2><ul>
-<li>C<ul>
-<li>Large C: Lower bias, high variance</li>
-<li>Small C: Higher bias, low variance</li>
-</ul>
-</li>
-<li>$\sigma^2$<ul>
-<li>Large $\sigma^2$: Higher bias lower variance</li>
-<li>Small $\sigma^2$: Lower bias higher variance</li>
-</ul>
-</li>
-</ul>
-]]></content>
-      <categories>
-        <category>Machine Learning</category>
-      </categories>
-  </entry>
-  <entry>
     <title>OS习题</title>
-    <url>/2020/07/02/%20%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/OS%E4%B9%A0%E9%A2%98/</url>
+    <url>/2020/07/14/%20%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/OS%E4%B9%A0%E9%A2%98/</url>
     <content><![CDATA[<h2 id="0x01"><a href="#0x01" class="headerlink" title="0x01"></a>0x01</h2><h4 id="1"><a href="#1" class="headerlink" title="1"></a>1</h4><p>什么是操作系统？操作系统有哪些特点？</p>
 <ul>
 <li><p>操作系统是位于硬件层之上，所有其他系统软件层之下的一个系统软件，通过它管理系统中的各种软件和资源，使它们能被充分利用，方便用户使用计算机系统。</p>
@@ -269,9 +283,173 @@ min C\sum_{i=1}^{m}[y^{(i)}cost_1(\theta^{T}f^{(i)})+(1-y^{i})cost_0(\theta^{T}f
 <li>不可能发生：<code>(1)</code></li>
 </ul>
 <h4 id="14"><a href="#14" class="headerlink" title="14"></a>14</h4><p>何谓作业？它包括哪几个部分？各个部分的用途时什么？</p>
+<ul>
+<li>用户要求计算机系统为其完成的计算任务的集合称为作业</li>
+<li>作业包括<ul>
+<li>程序</li>
+<li>作业说明书</li>
+<li>数据</li>
+</ul>
+</li>
+<li>程序是完成某一功能</li>
+<li>数据是程序处理对象</li>
+<li>作业说明书用来说明作业处理的步骤</li>
+</ul>
+<h4 id="15"><a href="#15" class="headerlink" title="15"></a>15</h4><p>试述批处理操作系统与分时操作系统的区别</p>
+<ul>
+<li>批处理操作系统是以脱机操作为标志的操作系统，作业逐批进入系统，逐批离开系统。无用户干扰</li>
+<li>分时操作系统是以联机操作为标志的操作系统，适合程序的动态修改。需要与用户交互</li>
+</ul>
+<h4 id="16"><a href="#16" class="headerlink" title="16"></a>16</h4><p>从透明性和资源共享2个方面说明网络操作系统与分布式操作系统的差别。</p>
+<ul>
+<li>从透明性来看，网络操作系统用户能感觉到本地<code>HOST</code>与非本地<code>HOST</code>在地理额外i之上的差异；而在分布式系统中，所有<code>HOST</code>构成一个完整的，功能更加强大的计算机系统，掩盖了地理位置上的差异</li>
+<li>从资源共享来看，分布式操作系统比网络操作系统更能共享更多的资源，原因在于网络操作系统其<code>HOST</code>上的系统不统一，导致一个计算任务不能由另外一台<code>HOST</code>运行，但是分布式操作系统的<code>HOST</code>操作系统相同。</li>
+</ul>
+<h4 id="17"><a href="#17" class="headerlink" title="17"></a>17</h4><p>为什么构成分布式系统的主机一般都是相同的或兼容的？</p>
+<ul>
+<li>利于进程的动态迁移</li>
+</ul>
+<h4 id="18"><a href="#18" class="headerlink" title="18"></a>18</h4><p>集群系统与分布式系统有何差异？</p>
+<ul>
+<li>集群指的是将几台服务器集中在一起，实现同一业务。</li>
+<li>分布式是将不同的1业务分布在不同地方</li>
+<li>分布式结构的每一个节点都可以做集群；而集群并不一定就是分布式</li>
+</ul>
+<h4 id="19"><a href="#19" class="headerlink" title="19"></a>19</h4><p>何谓云存储？何谓云计算？</p>
+<h2 id="0x02"><a href="#0x02" class="headerlink" title="0x02"></a>0x02</h2><h4 id="1-1"><a href="#1-1" class="headerlink" title="1"></a>1</h4><p>为何引入多道程序设计？在多道程序系统中，内存中的作业的道数是否越多越好？请说明原因。</p>
+<ul>
+<li>因为系统的资源数量多，资源使用者少。为了允许多个程序同时进入系统，即增加资源使用者的数量，提高系统资源利用率。</li>
+<li>不是，一个计算机系统的资源是有限的，只能容纳适量的作业；当作业道数不合理增加，导致资源竞争大，系统开销大。</li>
+</ul>
+<h4 id="2-1"><a href="#2-1" class="headerlink" title="2"></a>2</h4><p>多道程序设计会带来哪些问题？如何解决？</p>
+<ul>
+<li>处理器资源管理问题，需要实现处理器资源在各个程序之间的分配和调度。</li>
+<li>内存资源管理问题，解决：程序使用相对地址，不使用绝对地址，实现程序的重定位，还需要防止程序之间的内存干扰</li>
+<li>设备资源管理问题，操作系统需要采取适当的分配策略据此对资源加以管理。</li>
+</ul>
+<h4 id="3-1"><a href="#3-1" class="headerlink" title="3"></a>3</h4><p>什么是进程？进程具有哪些主要特性？试比较进程与程序之间的相同点与不同点。</p>
+<ul>
+<li>进程是具有一定独立功能的程序关于一个数据集合的一次运行活动</li>
+<li>进程的特性<ol>
+<li>并发性</li>
+<li>动态性</li>
+<li>独立性</li>
+<li>交互性</li>
+<li>异步性</li>
+<li>结构性</li>
+</ol>
+</li>
+<li>程序是构成进程的组成部分之一</li>
+<li>程序是静态的，进程是动态的；程序是永久的，进程是具有生存周期的；一个程序可以对应多个进程，一个进程只能对应一个程序。</li>
+</ul>
+<h4 id="4-1"><a href="#4-1" class="headerlink" title="4"></a>4</h4><p>有人说，用户所执行的程序一定是用户自己编写的。这种说法对吗？如果不对，试举例说明之。</p>
+<ul>
+<li>不对，比如C编译程序时以用户进程身份进行，但C编译程序不是用户自己编写的。</li>
+</ul>
+<h4 id="5-1"><a href="#5-1" class="headerlink" title="5"></a>5</h4><p>什么是进程上下文？进程上下文包括哪些成分？哪些成分对目态程序是可见的？</p>
+<ul>
+<li>在<code>UNIX System V</code>中，将进程的物理实体与支持进程运行的物理环境合称为进程上下文。</li>
+<li>包括3个组成部分：<ul>
+<li>用户级上下文</li>
+<li>系统级上下文</li>
+<li>寄存器上下文</li>
+</ul>
+</li>
+<li>用户级上下文和部分寄存器上下文对目态程序是可见的。</li>
+</ul>
+<h4 id="6"><a href="#6" class="headerlink" title="6"></a>6</h4><p>进程一般具有哪三个主要状态？举例说明状态转换的原因</p>
+<ul>
+<li>运行态；就绪态；等待态</li>
+<li>当就绪态进程获得处理器，变为运行态</li>
+<li>当运行态进程被剥夺处理器，变为就绪态</li>
+<li>当运行\就绪态进程因为某一事件受阻时，变为等待态</li>
+<li>当等待事件发生，变为就绪态</li>
+</ul>
+<h2 id="0x03"><a href="#0x03" class="headerlink" title="0x03"></a>0x03</h2><h4 id="例3-1"><a href="#例3-1" class="headerlink" title="例3-1"></a>例3-1</h4><p>考虑CPU阵发进程，得到先到先服务算法调度性能指标</p>
+<ol>
+<li>甘特图</li>
+<li>列表</li>
+</ol>
+<h4 id="例3-2"><a href="#例3-2" class="headerlink" title="例3-2"></a>例3-2</h4><p>最短作业优先算法</p>
 ]]></content>
       <categories>
         <category>OS</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>SVM</title>
+    <url>/2020/07/08/%20MachineLearning/SVM/</url>
+    <content><![CDATA[<p>我们知道</p>
+<p>逻辑回归激励函数</p>
+<script type="math/tex; mode=display">
+h_{\theta}(x)=\frac{1}{1+e^{-\theta^{T}x}}</script><p><img src="https://i.loli.net/2020/07/08/lGQbRz3yvTJ4B1I.png" alt="激励函数"></p>
+<p>本质上，支持向量机的代价函数与逻辑回归的代价函数无差别，但是为了使得后面计算更直观些，我们不妨稍微调整一下支持向量机的代价函数。</p>
+<ul>
+<li><p>回顾逻辑回归代价函数</p>
+<script type="math/tex; mode=display">
+-(ylog(h_{\theta}(x))+(1-y)log(1-h_{\theta}(x)))</script></li>
+<li><p>而支持向量机代价函数</p>
+<script type="math/tex; mode=display">
+C\sum_{i=1}^{m}[y^{(i)}cost_1(\theta^{T}x^{(i)})+(1-y^{i})cost_0(\theta^{T}x^{(i)})]+\frac{1}{2}\sum_{i=1}^{n}\theta^2_j\\
+其中,cost_0(z)=-log(1-\frac{1}{1+e^{-z}}),cost_1(z)=log\frac{1}{1+e^{-z}}</script><p>其中，C可以理解为$\frac{1}{\lambda}$</p>
+</li>
+</ul>
+<p>而SVM也被人们称之为大间距分类器。</p>
+<p><img src="https://i.loli.net/2020/07/08/nRyjckhQYSJsgKa.png" alt="大间距分类器"></p>
+<p>即，使得间距最大。</p>
+<ul>
+<li>核函数</li>
+</ul>
+<h2 id="Kernels"><a href="#Kernels" class="headerlink" title="Kernels"></a>Kernels</h2><p>设存在2个特征，我们设其假设函数为</p>
+<script type="math/tex; mode=display">
+\theta_0+\theta_1x_1+\theta_2x_2+\theta_3x_1x_2+\theta_4x_1^2+...</script><p>再进行一些优化</p>
+<script type="math/tex; mode=display">
+\theta_0+\theta_1f_1+\theta_2f_2+\theta_3f_3+\theta_4f_4+...</script><h3 id="高斯核函数"><a href="#高斯核函数" class="headerlink" title="高斯核函数"></a>高斯核函数</h3><ul>
+<li>根据$x$的各个特征选取<code>landmarks</code></li>
+</ul>
+<p><img src="https://github.com/fengdu78/Coursera-ML-AndrewNg-Notes/raw/master/images/2516821097bda5dfaf0b94e55de851e0.png" alt="核函数"></p>
+<script type="math/tex; mode=display">
+example:\\
+f_1=similarity(x,l^{(1)})=e^{-\frac{||x-l^{(1)}||^2}{2\sigma^2}}</script><p>那么</p>
+<script type="math/tex; mode=display">
+f_1称为核函数</script><p>不妨再重新回顾下过程</p>
+<ol>
+<li><p>Given</p>
+<script type="math/tex; mode=display">
+(x^{(1)},y^{(1)}),(x^{(2)},y^{(2)})...(x^{(m)},y^{(m)})\\</script></li>
+<li><p>Choose</p>
+<script type="math/tex; mode=display">
+l^{(1)}=x^{(1)},l^{(2)}=x^{(2)},...l^{(m)}=x^{(m)}</script></li>
+<li><p>Get $f_i$</p>
+<script type="math/tex; mode=display">
+f_1=similarity(x,l^{(1)})\\
+...</script></li>
+<li><p>对于$x_{(i)}$</p>
+<script type="math/tex; mode=display">
+f^{(i)}_1\\
+f^{(i)}_2\\
+f^{(i)}_3\\
+...\\
+f^{(i)}_m\\</script></li>
+<li><script type="math/tex; mode=display">
+min C\sum_{i=1}^{m}[y^{(i)}cost_1(\theta^{T}f^{(i)})+(1-y^{i})cost_0(\theta^{T}f^{(i)})]+\frac{1}{2}\sum_{i=1}^{n}\theta^2_j\\
+其中,cost_0(z)=-log(1-\frac{1}{1+e^{-z}}),cost_1(z)=log\frac{1}{1+e^{-z}}</script></li>
+</ol>
+<h2 id="对于参数"><a href="#对于参数" class="headerlink" title="对于参数"></a>对于参数</h2><ul>
+<li>C<ul>
+<li>Large C: Lower bias, high variance</li>
+<li>Small C: Higher bias, low variance</li>
+</ul>
+</li>
+<li>$\sigma^2$<ul>
+<li>Large $\sigma^2$: Higher bias lower variance</li>
+<li>Small $\sigma^2$: Lower bias higher variance</li>
+</ul>
+</li>
+</ul>
+]]></content>
+      <categories>
+        <category>Machine Learning</category>
       </categories>
   </entry>
   <entry>
@@ -309,6 +487,18 @@ min C\sum_{i=1}^{m}[y^{(i)}cost_1(\theta^{T}f^{(i)})+(1-y^{i})cost_0(\theta^{T}f
       </categories>
   </entry>
   <entry>
+    <title>中断</title>
+    <url>/2020/06/06/%20%E5%BE%AE%E6%9C%BA%E7%B3%BB%E7%BB%9F/%E4%B8%AD%E6%96%AD/</url>
+    <content><![CDATA[<h1 id="bx-si-di-bp"><a href="#bx-si-di-bp" class="headerlink" title="bx,si,di,bp"></a><code>bx,si,di,bp</code></h1><ul>
+<li><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">assume cs:code</span><br><span class="line">code segment</span><br><span class="line">    start:</span><br><span class="line">    mov ax,cs</span><br><span class="line">    mov ds,ax</span><br><span class="line">    mov si,offset sqr</span><br><span class="line">    mov ax,0</span><br><span class="line">    mov es,ax</span><br><span class="line">    mov di,200h</span><br><span class="line">    mov cx,offset sqrend-offset sqr</span><br><span class="line">    cld</span><br><span class="line">    rep movsb</span><br><span class="line">    </span><br><span class="line">    mov ax,0</span><br><span class="line">    mov es,ax</span><br><span class="line">    mov word ptr es:[7ch*4],200h</span><br><span class="line">    mov word ptr es:[7ch*4+2],0</span><br><span class="line">    </span><br><span class="line">    mov ax,4c00h</span><br><span class="line">    int 21h</span><br><span class="line">    </span><br><span class="line">    sqr:</span><br><span class="line">    mul ax</span><br><span class="line">    iret</span><br><span class="line">    </span><br><span class="line">    sqrend:</span><br><span class="line">    nop</span><br><span class="line">    </span><br><span class="line">    code ends</span><br><span class="line">end start</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+]]></content>
+      <categories>
+        <category>汇编</category>
+      </categories>
+  </entry>
+  <entry>
     <title>OTHERS</title>
     <url>/2020/06/06/%20%E5%BE%AE%E6%9C%BA%E7%B3%BB%E7%BB%9F/notice/</url>
     <content><![CDATA[<ol>
@@ -316,18 +506,6 @@ min C\sum_{i=1}^{m}[y^{(i)}cost_1(\theta^{T}f^{(i)})+(1-y^{i})cost_0(\theta^{T}f
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">mov ah,2</span><br><span class="line">mov dl,0DH</span><br><span class="line">int 21h</span><br><span class="line">mov dl,0AH</span><br><span class="line">INT 21H</span><br></pre></td></tr></table></figure>
 </li>
 </ol>
-]]></content>
-      <categories>
-        <category>汇编</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>中断</title>
-    <url>/2020/06/06/%20%E5%BE%AE%E6%9C%BA%E7%B3%BB%E7%BB%9F/%E4%B8%AD%E6%96%AD/</url>
-    <content><![CDATA[<h1 id="bx-si-di-bp"><a href="#bx-si-di-bp" class="headerlink" title="bx,si,di,bp"></a><code>bx,si,di,bp</code></h1><ul>
-<li><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">assume cs:code</span><br><span class="line">code segment</span><br><span class="line">    start:</span><br><span class="line">    mov ax,cs</span><br><span class="line">    mov ds,ax</span><br><span class="line">    mov si,offset sqr</span><br><span class="line">    mov ax,0</span><br><span class="line">    mov es,ax</span><br><span class="line">    mov di,200h</span><br><span class="line">    mov cx,offset sqrend-offset sqr</span><br><span class="line">    cld</span><br><span class="line">    rep movsb</span><br><span class="line">    </span><br><span class="line">    mov ax,0</span><br><span class="line">    mov es,ax</span><br><span class="line">    mov word ptr es:[7ch*4],200h</span><br><span class="line">    mov word ptr es:[7ch*4+2],0</span><br><span class="line">    </span><br><span class="line">    mov ax,4c00h</span><br><span class="line">    int 21h</span><br><span class="line">    </span><br><span class="line">    sqr:</span><br><span class="line">    mul ax</span><br><span class="line">    iret</span><br><span class="line">    </span><br><span class="line">    sqrend:</span><br><span class="line">    nop</span><br><span class="line">    </span><br><span class="line">    code ends</span><br><span class="line">end start</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
 ]]></content>
       <categories>
         <category>汇编</category>

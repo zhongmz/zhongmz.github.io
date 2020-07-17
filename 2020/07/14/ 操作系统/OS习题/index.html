@@ -10,11 +10,11 @@
 <meta name="keywords" content="algorithm math">
 <meta property="og:type" content="article">
 <meta property="og:title" content="OS习题">
-<meta property="og:url" content="http://yoursite.com/2020/07/02/ 操作系统/OS习题/index.html">
+<meta property="og:url" content="http://yoursite.com/2020/07/14/ 操作系统/OS习题/index.html">
 <meta property="og:site_name" content="Xxgzbd&#39;s Blog">
 <meta property="og:description" content="0x011什么是操作系统？操作系统有哪些特点？  操作系统是位于硬件层之上，所有其他系统软件层之下的一个系统软件，通过它管理系统中的各种软件和资源，使它们能被充分利用，方便用户使用计算机系统。  特点  并发性 共享性 异步性 虚拟性    2硬件将处理器划分为两种，即管态和目态，这样做会给操作系统的设计带来什么好处？  防止用户侵入系统，起到保护系统的作用  3何为特权指令？试举例说明。如果允许">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2020-07-13T01:42:19.546Z">
+<meta property="og:updated_time" content="2020-07-16T08:55:03.238Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="OS习题">
 <meta name="twitter:description" content="0x011什么是操作系统？操作系统有哪些特点？  操作系统是位于硬件层之上，所有其他系统软件层之下的一个系统软件，通过它管理系统中的各种软件和资源，使它们能被充分利用，方便用户使用计算机系统。  特点  并发性 共享性 异步性 虚拟性    2硬件将处理器划分为两种，即管态和目态，这样做会给操作系统的设计带来什么好处？  防止用户侵入系统，起到保护系统的作用  3何为特权指令？试举例说明。如果允许">
@@ -72,8 +72,8 @@
     <div class="outer">
       <section id="main"><article id="post-操作系统/OS习题" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2020/07/02/ 操作系统/OS习题/" class="article-date">
-  <time datetime="2020-07-02T14:56:52.000Z" itemprop="datePublished">2020-07-02</time>
+    <a href="/2020/07/14/ 操作系统/OS习题/" class="article-date">
+  <time datetime="2020-07-14T01:56:52.000Z" itemprop="datePublished">2020-07-14</time>
 </a>
     
   <div class="article-category">
@@ -182,21 +182,109 @@
 <li>不可能发生：<code>(1)</code></li>
 </ul>
 <h4 id="14"><a href="#14" class="headerlink" title="14"></a>14</h4><p>何谓作业？它包括哪几个部分？各个部分的用途时什么？</p>
+<ul>
+<li>用户要求计算机系统为其完成的计算任务的集合称为作业</li>
+<li>作业包括<ul>
+<li>程序</li>
+<li>作业说明书</li>
+<li>数据</li>
+</ul>
+</li>
+<li>程序是完成某一功能</li>
+<li>数据是程序处理对象</li>
+<li>作业说明书用来说明作业处理的步骤</li>
+</ul>
+<h4 id="15"><a href="#15" class="headerlink" title="15"></a>15</h4><p>试述批处理操作系统与分时操作系统的区别</p>
+<ul>
+<li>批处理操作系统是以脱机操作为标志的操作系统，作业逐批进入系统，逐批离开系统。无用户干扰</li>
+<li>分时操作系统是以联机操作为标志的操作系统，适合程序的动态修改。需要与用户交互</li>
+</ul>
+<h4 id="16"><a href="#16" class="headerlink" title="16"></a>16</h4><p>从透明性和资源共享2个方面说明网络操作系统与分布式操作系统的差别。</p>
+<ul>
+<li>从透明性来看，网络操作系统用户能感觉到本地<code>HOST</code>与非本地<code>HOST</code>在地理额外i之上的差异；而在分布式系统中，所有<code>HOST</code>构成一个完整的，功能更加强大的计算机系统，掩盖了地理位置上的差异</li>
+<li>从资源共享来看，分布式操作系统比网络操作系统更能共享更多的资源，原因在于网络操作系统其<code>HOST</code>上的系统不统一，导致一个计算任务不能由另外一台<code>HOST</code>运行，但是分布式操作系统的<code>HOST</code>操作系统相同。</li>
+</ul>
+<h4 id="17"><a href="#17" class="headerlink" title="17"></a>17</h4><p>为什么构成分布式系统的主机一般都是相同的或兼容的？</p>
+<ul>
+<li>利于进程的动态迁移</li>
+</ul>
+<h4 id="18"><a href="#18" class="headerlink" title="18"></a>18</h4><p>集群系统与分布式系统有何差异？</p>
+<ul>
+<li>集群指的是将几台服务器集中在一起，实现同一业务。</li>
+<li>分布式是将不同的1业务分布在不同地方</li>
+<li>分布式结构的每一个节点都可以做集群；而集群并不一定就是分布式</li>
+</ul>
+<h4 id="19"><a href="#19" class="headerlink" title="19"></a>19</h4><p>何谓云存储？何谓云计算？</p>
+<h2 id="0x02"><a href="#0x02" class="headerlink" title="0x02"></a>0x02</h2><h4 id="1-1"><a href="#1-1" class="headerlink" title="1"></a>1</h4><p>为何引入多道程序设计？在多道程序系统中，内存中的作业的道数是否越多越好？请说明原因。</p>
+<ul>
+<li>因为系统的资源数量多，资源使用者少。为了允许多个程序同时进入系统，即增加资源使用者的数量，提高系统资源利用率。</li>
+<li>不是，一个计算机系统的资源是有限的，只能容纳适量的作业；当作业道数不合理增加，导致资源竞争大，系统开销大。</li>
+</ul>
+<h4 id="2-1"><a href="#2-1" class="headerlink" title="2"></a>2</h4><p>多道程序设计会带来哪些问题？如何解决？</p>
+<ul>
+<li>处理器资源管理问题，需要实现处理器资源在各个程序之间的分配和调度。</li>
+<li>内存资源管理问题，解决：程序使用相对地址，不使用绝对地址，实现程序的重定位，还需要防止程序之间的内存干扰</li>
+<li>设备资源管理问题，操作系统需要采取适当的分配策略据此对资源加以管理。</li>
+</ul>
+<h4 id="3-1"><a href="#3-1" class="headerlink" title="3"></a>3</h4><p>什么是进程？进程具有哪些主要特性？试比较进程与程序之间的相同点与不同点。</p>
+<ul>
+<li>进程是具有一定独立功能的程序关于一个数据集合的一次运行活动</li>
+<li>进程的特性<ol>
+<li>并发性</li>
+<li>动态性</li>
+<li>独立性</li>
+<li>交互性</li>
+<li>异步性</li>
+<li>结构性</li>
+</ol>
+</li>
+<li>程序是构成进程的组成部分之一</li>
+<li>程序是静态的，进程是动态的；程序是永久的，进程是具有生存周期的；一个程序可以对应多个进程，一个进程只能对应一个程序。</li>
+</ul>
+<h4 id="4-1"><a href="#4-1" class="headerlink" title="4"></a>4</h4><p>有人说，用户所执行的程序一定是用户自己编写的。这种说法对吗？如果不对，试举例说明之。</p>
+<ul>
+<li>不对，比如C编译程序时以用户进程身份进行，但C编译程序不是用户自己编写的。</li>
+</ul>
+<h4 id="5-1"><a href="#5-1" class="headerlink" title="5"></a>5</h4><p>什么是进程上下文？进程上下文包括哪些成分？哪些成分对目态程序是可见的？</p>
+<ul>
+<li>在<code>UNIX System V</code>中，将进程的物理实体与支持进程运行的物理环境合称为进程上下文。</li>
+<li>包括3个组成部分：<ul>
+<li>用户级上下文</li>
+<li>系统级上下文</li>
+<li>寄存器上下文</li>
+</ul>
+</li>
+<li>用户级上下文和部分寄存器上下文对目态程序是可见的。</li>
+</ul>
+<h4 id="6"><a href="#6" class="headerlink" title="6"></a>6</h4><p>进程一般具有哪三个主要状态？举例说明状态转换的原因</p>
+<ul>
+<li>运行态；就绪态；等待态</li>
+<li>当就绪态进程获得处理器，变为运行态</li>
+<li>当运行态进程被剥夺处理器，变为就绪态</li>
+<li>当运行\就绪态进程因为某一事件受阻时，变为等待态</li>
+<li>当等待事件发生，变为就绪态</li>
+</ul>
+<h2 id="0x03"><a href="#0x03" class="headerlink" title="0x03"></a>0x03</h2><h4 id="例3-1"><a href="#例3-1" class="headerlink" title="例3-1"></a>例3-1</h4><p>考虑CPU阵发进程，得到先到先服务算法调度性能指标</p>
+<ol>
+<li>甘特图</li>
+<li>列表</li>
+</ol>
+<h4 id="例3-2"><a href="#例3-2" class="headerlink" title="例3-2"></a>例3-2</h4><p>最短作业优先算法</p>
 
       
     </div>
     <footer class="article-footer">
       
-        <a data-url="http://yoursite.com/2020/07/02/ 操作系统/OS习题/" data-id="ckcjufm2d00223ovifsrlyo7v" class="article-share-link" data-share="baidu" data-title="OS习题">分享到</a>
+        <a data-url="http://yoursite.com/2020/07/14/ 操作系统/OS习题/" data-id="ckcpv4b7f002gs4vibjp1eyok" class="article-share-link" data-share="baidu" data-title="OS习题">分享到</a>
       
 
       
-        <a href="http://yoursite.com/2020/07/02/ 操作系统/OS习题/#ds-thread" class="article-comment-link">评论</a>
+        <a href="http://yoursite.com/2020/07/14/ 操作系统/OS习题/#ds-thread" class="article-comment-link">评论</a>
       
 
       
-        <a href="/2020/07/02/ 操作系统/OS习题/#comments" class="article-comment-link">
-          <span class="post-comments-count valine-comment-count" data-xid="/2020/07/02/ 操作系统/OS习题/" itemprop="commentCount"></span>
+        <a href="/2020/07/14/ 操作系统/OS习题/#comments" class="article-comment-link">
+          <span class="post-comments-count valine-comment-count" data-xid="/2020/07/14/ 操作系统/OS习题/" itemprop="commentCount"></span>
           文章评论
         </a>
       
@@ -208,19 +296,19 @@
     
 <nav id="article-nav">
   
-    <a href="/2020/07/08/ MachineLearning/SVM/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2020/07/17/ 微机系统/微型计算机原理与接口技术课后习题/" id="article-nav-newer" class="article-nav-link-wrap">
       <strong class="article-nav-caption">下一篇</strong>
       <div class="article-nav-title">
         
-          SVM
+          微型计算机接口技术课后习题
         
       </div>
     </a>
   
   
-    <a href="/2020/06/08/ Math/计数方法/" id="article-nav-older" class="article-nav-link-wrap">
+    <a href="/2020/07/08/ MachineLearning/SVM/" id="article-nav-older" class="article-nav-link-wrap">
       <strong class="article-nav-caption">上一篇</strong>
-      <div class="article-nav-title">计数方法</div>
+      <div class="article-nav-title">SVM</div>
     </a>
   
 </nav>
@@ -230,7 +318,7 @@
 
 
   <section id="comments">
-    <div id="ds-thread" class="ds-thread" data-thread-key="2020/07/02/ 操作系统/OS习题/" data-title="OS习题" data-url="http://yoursite.com/2020/07/02/ 操作系统/OS习题/"></div>
+    <div id="ds-thread" class="ds-thread" data-thread-key="2020/07/14/ 操作系统/OS习题/" data-title="OS习题" data-url="http://yoursite.com/2020/07/14/ 操作系统/OS习题/"></div>
   </section>
 
   
@@ -246,7 +334,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">分类</h3>
     <div class="widget">
-      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Java/">Java</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Linux/">Linux</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Machine-Learning/">Machine Learning</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/OS/">OS</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Read/">Read</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/algorithm/">algorithm</a><span class="category-list-count">8</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/web技术/">web技术</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/垃圾场/">垃圾场</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/接口技术/">接口技术</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/机器学习/">机器学习</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/汇编/">汇编</a><span class="category-list-count">8</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/离散数学/">离散数学</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/算法设计与分析/">算法设计与分析</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/组合数学/">组合数学</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/计算方法/">计算方法</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/计算机系统结构/">计算机系统结构</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/随机数学/">随机数学</a><span class="category-list-count">1</span></li></ul>
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Java/">Java</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Linux/">Linux</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Machine-Learning/">Machine Learning</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/OS/">OS</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Read/">Read</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/algorithm/">algorithm</a><span class="category-list-count">8</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/web技术/">web技术</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/垃圾场/">垃圾场</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/接口技术/">接口技术</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/机器学习/">机器学习</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/汇编/">汇编</a><span class="category-list-count">8</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/离散数学/">离散数学</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/算法设计与分析/">算法设计与分析</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/组合数学/">组合数学</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/计算方法/">计算方法</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/计算机系统结构/">计算机系统结构</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/随机数学/">随机数学</a><span class="category-list-count">1</span></li></ul>
     </div>
   </div>
 
@@ -259,7 +347,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">归档</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/07/">七月 2020</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/06/">六月 2020</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/05/">五月 2020</a><span class="archive-list-count">7</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/04/">四月 2020</a><span class="archive-list-count">7</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/03/">三月 2020</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/02/">二月 2020</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/11/">十一月 2019</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/10/">十月 2019</a><span class="archive-list-count">8</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/07/">七月 2020</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/06/">六月 2020</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/05/">五月 2020</a><span class="archive-list-count">7</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/04/">四月 2020</a><span class="archive-list-count">7</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/03/">三月 2020</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/02/">二月 2020</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/11/">十一月 2019</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/10/">十月 2019</a><span class="archive-list-count">8</span></li></ul>
     </div>
   </div>
 
@@ -271,7 +359,15 @@
       <ul>
         
           <li>
-            <a href="/2020/07/12/ 微机系统/微型计算机原理与接口技术课后习题/">微型计算机接口技术课后习题</a>
+            <a href="/2020/07/17/ 微机系统/习题/">练习</a>
+          </li>
+        
+          <li>
+            <a href="/2020/07/17/ 微机系统/微型计算机原理与接口技术课后习题/">微型计算机接口技术课后习题</a>
+          </li>
+        
+          <li>
+            <a href="/2020/07/14/ 操作系统/OS习题/">OS习题</a>
           </li>
         
           <li>
@@ -279,15 +375,7 @@
           </li>
         
           <li>
-            <a href="/2020/07/02/ 操作系统/OS习题/">OS习题</a>
-          </li>
-        
-          <li>
             <a href="/2020/06/08/ Math/计数方法/">计数方法</a>
-          </li>
-        
-          <li>
-            <a href="/2020/06/06/ 微机系统/notice/">OTHERS</a>
           </li>
         
       </ul>
